@@ -1,6 +1,6 @@
 //Only for home page at the moment.
-.featured-products {
-  li {
+.featured-products .slick{
+  div {
     .product-text-wrapper {
       height: 98px;
     }
@@ -8,13 +8,12 @@
       margin: 19px 0 30px 0;
     }
   }
-  .features-headline {
-    margin-bottom: 8px;
+  .slick-arrow{
+    background-color: #ccc;
+    border-color: #eee;
+  }
+  .slick-prev{
 
-    h3 {
-      margin: 4px 5px 20px 0;
-      display: inline-block;
-    }
   }
 }
 
