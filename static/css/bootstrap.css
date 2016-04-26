@@ -8650,15 +8650,13 @@ a:hover .has-overlay h4 {
   /*home page - to make End-to-End IT solution in one line using responsive template*/
   .title-description h1 {
     width: 86%; } }
-.featured-products li .product-text-wrapper {
+.featured-products .slick div .product-text-wrapper {
   height: 98px; }
-.featured-products li .btn {
+.featured-products .slick div .btn {
   margin: 19px 0 30px 0; }
-.featured-products .features-headline {
-  margin-bottom: 8px; }
-  .featured-products .features-headline h3 {
-    margin: 4px 5px 20px 0;
-    display: inline-block; }
+.featured-products .slick .slick-arrow {
+  background-color: #ccc;
+  border-color: #eee; }
 
 /*mobile*/
 @media (max-width: 767px) {
