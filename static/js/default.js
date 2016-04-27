@@ -479,6 +479,7 @@ function slickPlugin(parentSelector) {
         return true;
       }
 
+
       if (pageType == 0) {
         cfg.slidesToShow = 1;
       }
@@ -512,18 +513,33 @@ function slickPlugin(parentSelector) {
       }
 
       if ($(this).parent().hasClass('featured-products')) {
-        cfg.slidesToShow = 3;
         cfg.rows = 2;
 
-        randomize($(this));
-
+        randomize.call($(this));
         if (pageType == 0) {
-          $(this).slick('destroy');
+          if ($(this).hasClass('slick-initialized')) {
+            $(this).slick('destroy');
+          }
+
+          $(this).css('visibility', 'visible');
+
+          $(this).find('.btn-default').attr('style', 'display: block !important');
+          $(this).find('> div').show();
+          $(this).find('> div:gt(2)').hide();
+          $('.btn-link').removeClass('btn-link').addClass('btn-default');
+
+          $('.featured-products .btn-default').on('click', function () {
+            $('.featured-products .slick > div:nth-child(3) .polaris-divider').attr('style', 'display: block !important');
+
+            for (var i = 3; i < 9; i++) {
+              $('.featured-products .slick > div').eq(i).toggle();
+            }
+
+            $('.featured-products .btn-default').attr('style', 'display: none !important');
+          });
+
+          return true;
         }
-
-        $(this).on('init', function (e, slick) {
-
-        });
       }
 
       if ($(this).find('> div').length > cfg.slidesToShow) {
@@ -616,14 +632,15 @@ function slickPlugin(parentSelector) {
       elem.css('opacity', 1);
     }
   }
-  function randomize(list) {
-    var item = list.find('> div');
+
+  function randomize() {
+    var item = $(this).find('> div');
     item.sort(function () {
       var temp = parseInt(Math.random() * item.length),
           isOddOrEven = temp % 2,
-          isPosOrNeg = temp > item.length/2 ? 1 : -1;
+          isPosOrNeg = temp > item.length / 2 ? 1 : -1;
       return ( isOddOrEven * isPosOrNeg );
-    }).appendTo(list);
+    }).appendTo($(this));
   }
 }
 

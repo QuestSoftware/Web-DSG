@@ -8650,9 +8650,9 @@ a:hover .has-overlay h4 {
   /*home page - to make End-to-End IT solution in one line using responsive template*/
   .title-description h1 {
     width: 86%; } }
-.featured-products .slick div .product-text-wrapper {
+.featured-products .slick > div .product-text-wrapper {
   height: 98px; }
-.featured-products .slick div .btn {
+.featured-products .slick > div .btn {
   margin: 19px 0 30px 0; }
 .featured-products .slick .slick-arrow {
   background-color: #ccc;
@@ -8660,14 +8660,15 @@ a:hover .has-overlay h4 {
 
 /*mobile*/
 @media (max-width: 767px) {
-  .featured-products ul li:nth-child(3) .polaris-divider, .featured-products ul li:nth-child(9) .polaris-divider {
-    display: none !important; }
-  .featured-products .btn-default {
-    margin-bottom: 20px;
-    margin-top: 9px; } }
-@media (min-width: 768px) {
-  .featured-products .pagination-container {
-    margin: 0 -15px; } }
+  .featured-products .slick > div {
+    margin-top: 20px; }
+    .featured-products .slick > div:first-child {
+      margin-top: 0; }
+    .featured-products .slick > div:nth-child(3) .polaris-divider, .featured-products .slick > div:nth-child(9) .polaris-divider {
+      display: none !important; }
+    .featured-products .slick > div .product-text-wrapper {
+      height: auto;
+      margin-bottom: 30px; } }
 #ui-loader {
   position: fixed;
   left: 50%;
