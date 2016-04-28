@@ -6260,7 +6260,10 @@
       .bootstrap .slick.slick-1170x240 .content-teaser {
         height: 240px; }
         .bootstrap .slick.slick-1170x240 .content-teaser .full-height {
-          height: 210px; } }
+          height: 210px; }
+    .bootstrap .slick.arrows-top-bottom.slick-slider {
+      padding-left: 0 !important;
+      padding-right: 0 !important; } }
   .bootstrap .tooltip {
     position: absolute;
     z-index: 1070;
@@ -7264,6 +7267,8 @@
       margin-left: 20px !important; }
     .bootstrap .mr-20-sm-only {
       margin-right: 20px !important; }
+    .bootstrap .mr-40-sm-only {
+      margin-right: 40px !important; }
     .bootstrap .mb-20-sm-only {
       margin-bottom: 20px !important; }
     .bootstrap .mb-30-sm-only {
@@ -7358,6 +7363,8 @@
       margin-right: 10px !important; }
     .bootstrap .mr-20-md {
       margin-right: 20px !important; }
+    .bootstrap .mr-40-md {
+      margin-right: 40px !important; }
     .bootstrap .pad-25-md {
       padding: 25px !important; }
     .bootstrap .pr-0-md {

@@ -485,12 +485,15 @@ function slickPlugin(parentSelector) {
       }
       else if (pageType == 1) {
         cfg.slidesToShow = $(this).data('slide-sm') || 3;
+        cfg.slidesToScroll = $(this).data('scroll-sm') || 1;
       }
       else if (pageType == 2) {
         cfg.slidesToShow = $(this).data('slide-md') || 4;
+        cfg.slidesToScroll = $(this).data('scroll-md') || 1;
       }
       else if (pageType == 3) {
         cfg.slidesToShow = $(this).data('slide-lg') || 4;
+        cfg.slidesToScroll = $(this).data('scroll-lg') || 1;
       }
 
       if ($(this).hasClass('slick-initialized')) {
@@ -514,32 +517,55 @@ function slickPlugin(parentSelector) {
 
       if ($(this).parent().hasClass('featured-products')) {
         cfg.rows = 2;
+        cfg.appendArrows = $('.featured-products .slick-arrows');
 
         randomize.call($(this));
+
         if (pageType == 0) {
+          var btnShowMore = $('.featured-products').find('.btn-default');
+
           if ($(this).hasClass('slick-initialized')) {
             $(this).slick('destroy');
           }
 
           $(this).css('visibility', 'visible');
 
-          $(this).find('.btn-default').attr('style', 'display: block !important');
-          $(this).find('> div').show();
-          $(this).find('> div:gt(2)').hide();
+          btnShowMore.show();
+          $(this).find('> div').show().end().find('> div:gt(2)').hide();
+
           $('.btn-link').removeClass('btn-link').addClass('btn-default');
 
-          $('.featured-products .btn-default').on('click', function () {
-            $('.featured-products .slick > div:nth-child(3) .polaris-divider').attr('style', 'display: block !important');
+          btnShowMore.on('click', function () {
+            var slick = $('.featured-products .slick');
+            slick.find('> div:nth-child(3) .polaris-divider').attr('style', 'display: block !important');
 
             for (var i = 3; i < 9; i++) {
-              $('.featured-products .slick > div').eq(i).toggle();
+              slick.find('> div').eq(i).toggle();
             }
 
-            $('.featured-products .btn-default').attr('style', 'display: none !important');
+            btnShowMore.hide();
           });
 
           return true;
         }
+
+        $(this).on('init reInit afterChange', function (event, slick, currentSlide) {
+          //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+          var i = (currentSlide ? currentSlide : 0) + 1,
+              totalItemsPerSlide = parseInt(cfg.slidesToShow * cfg.rows),
+              total = slick.slideCount * cfg.rows,
+              interval = totalItemsPerSlide - 1,
+              start = i * cfg.rows - 1,
+              end = start + interval;
+
+          if (end > total) {
+            start = start - cfg.slidesToShow;
+            end = total;
+          }
+
+          $('.featured-products').find('.slide-info').text('Viewing ' + start + '-' + end + ' of ' + total);
+
+        });
       }
 
       if ($(this).find('> div').length > cfg.slidesToShow) {

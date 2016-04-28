@@ -5504,6 +5504,9 @@ iframe {
   .mr-20-sm-only {
     margin-right: 20px !important; }
 
+  .mr-40-sm-only {
+    margin-right: 40px !important; }
+
   .mb-20-sm-only {
     margin-bottom: 20px !important; }
 
@@ -5634,6 +5637,9 @@ iframe {
 
   .mr-20-md {
     margin-right: 20px !important; }
+
+  .mr-40-md {
+    margin-right: 40px !important; }
 
   .pad-25-md {
     padding: 25px !important; }
@@ -8654,9 +8660,25 @@ a:hover .has-overlay h4 {
   height: 98px; }
 .featured-products .slick > div .btn {
   margin: 19px 0 30px 0; }
-.featured-products .slick .slick-arrow {
-  background-color: #ccc;
-  border-color: #eee; }
+.featured-products .slick-prev, .featured-products .slick-next {
+  border: 1px solid #eee;
+  padding: 5px 10px;
+  width: auto;
+  height: auto; }
+.featured-products .slick-prev:before, .featured-products .slick-next:before {
+  font-size: 25px;
+  font-weight: bold; }
+.featured-products .slick-arrows {
+  position: relative;
+  float: right; }
+  .featured-products .slick-arrows .slick-prev {
+    top: -8px;
+    right: 60px;
+    left: auto;
+    margin-right: 15px; }
+  .featured-products .slick-arrows .slick-next {
+    top: -8px;
+    right: 14px; }
 
 /*mobile*/
 @media (max-width: 767px) {
@@ -8669,6 +8691,9 @@ a:hover .has-overlay h4 {
     .featured-products .slick > div .product-text-wrapper {
       height: auto;
       margin-bottom: 30px; } }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .slick-arrows {
+    margin-right: 40px; } }
 #ui-loader {
   position: fixed;
   left: 50%;
@@ -9530,7 +9555,10 @@ a:hover .has-overlay h4 {
     .slick.slick-1170x240 .content-teaser {
       height: 240px; }
       .slick.slick-1170x240 .content-teaser .full-height {
-        height: 210px; } }
+        height: 210px; }
+  .slick.arrows-top-bottom.slick-slider {
+    padding-left: 0 !important;
+    padding-right: 0 !important; } }
 /*
     - Without Arrows (w/o border)
       - XS : 328x
