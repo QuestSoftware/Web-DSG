@@ -1,19 +1,38 @@
 //Only for home page at the moment.
-.featured-products .slick {
-  > div {
-    .product-text-wrapper {
-      height: 98px;
-    }
-    .btn {
-      margin: 19px 0 30px 0;
+.featured-products {
+  .slick {
+    > div {
+      .product-text-wrapper {
+        height: 98px;
+      }
+      .btn {
+        margin: 19px 0 30px 0;
+      }
     }
   }
-  .slick-arrow {
-    background-color: #ccc;
-    border-color: #eee;
+  .slick-prev, .slick-next {
+    border: 1px solid #eee;
+    padding: 5px 10px;
+    width: auto;
+    height: auto;
   }
-  .slick-prev {
-
+  .slick-prev:before, .slick-next:before{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .slick-arrows {
+    position: relative;
+    float: right;
+    .slick-prev {
+      top: -8px;
+      right: 60px;
+      left: auto;
+      margin-right:15px;
+    }
+    .slick-next {
+      top: -8px;
+      right: 14px;
+    }
   }
 }
 
@@ -22,16 +41,22 @@
   .featured-products .slick {
     > div {
       margin-top: 20px;
-      &:first-child{
-        margin-top:0;
+      &:first-child {
+        margin-top: 0;
       }
       &:nth-child(3) .polaris-divider, &:nth-child(9) .polaris-divider {
         display: none !important;
       }
       .product-text-wrapper {
         height: auto;
-        margin-bottom:30px;
+        margin-bottom: 30px;
       }
     }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+  .slick-arrows {
+    margin-right: 40px;
   }
 }

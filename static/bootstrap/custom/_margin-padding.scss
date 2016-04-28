@@ -88,8 +88,8 @@
   padding-right: 0 !important;
 }
 
-.ph-0{
-  padding-left:0 !important;
+.ph-0 {
+  padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
@@ -361,6 +361,9 @@
   .mr-20-sm-only {
     margin-right: 20px !important;
   }
+  .mr-40-sm-only {
+    margin-right: 40px !important;
+  }
   .mb-20-sm-only {
     margin-bottom: 20px !important;
   }
@@ -506,11 +509,14 @@
   .mr-20-md {
     margin-right: 20px !important;
   }
+  .mr-40-md {
+    margin-right: 40px !important;
+  }
   .pad-25-md {
     padding: 25px !important;
   }
-  .pr-0-md{
-    padding-right:0;
+  .pr-0-md {
+    padding-right: 0;
   }
 }
 
