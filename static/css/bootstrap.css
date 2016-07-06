@@ -5869,6 +5869,10 @@ iframe {
 .icon-large-computergeneric:before {
   content: "\e616"; }
 
+.icon-small-alertinfo:before {
+  content: "\e604";
+}
+
 .site-wrapper {
   overflow: hidden;
   position: relative;
@@ -9228,7 +9232,6 @@ a:hover .has-overlay h4 {
     border-right: 1px solid #ccc; }
     .comparison-table[data-xs-carousel="true"] .fixed-column tr th {
       vertical-align: top; }
-
   .comparison-table[data-xs-carousel="true"] .comparison .comparison-pagination {
     font-size: 14px;
   }
