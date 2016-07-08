@@ -56,20 +56,27 @@ $(document).ready(function () {
 
 	//GA event tracking - naveen
 	$('body').on('click', '.ga', function () {
+
+
 		var obj = {
 			hitType: 'event',
 			eventCategory: $(this).data('gac'),
-			eventAction: $(this).text(),
-			eventLabel: $(this).data('gal') === undefined ? '' : $(this).data('galabel'),
-			eventValue: $(this).data('gav') === undefined ? 0 : parseInt($(this).data('gaval'))
+			eventAction: $(this).data('gaa'),
+			eventLabel: $(this).data('gal'),
+			eventValue: $(this).data('gav'),
+			hitCallback: $(this).attr('href')
 		};
 
-		$(this).click(function (event) {
-			event.preventDefault();
+		if ($(this).data('gav', 'gal').val().length != 0) {
+			$(this).val('-');
+		}
+
+		/*$(this).click(function (e) {
+		 e.preventDefault();
 			setTimeout(function () {
 				window.open(href);
 			}, 300);
-		});
+		 });*/
 
 		var targetURLHost = parseUri($(this).attr('href'))['host'].toLowerCase();
 
