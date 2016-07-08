@@ -33,7 +33,7 @@ $(document).ready(function () {
 		$('.utility').find('> li').removeClass('open');
 	});
 
-	$('body').on('click', '.ga', function() {
+	/*$('body').on('click', '.ga', function() {
 		var obj = {
 			hitType: 'event',
 			eventCategory: $(this).data('gacat'),
@@ -52,7 +52,44 @@ $(document).ready(function () {
 		}
 
 		ga('send', obj);
+	 }); */
+
+	//GA event tracking - naveen
+	$('body').on('click', '.ga', function () {
+
+		var obj = {
+			hitType: 'event',
+			eventCategory: $(this).data('gac'),
+			eventAction: $(this).data('gaa'),
+			eventLabel: $(this).data('gal'),
+			eventValue: $(this).data('gav'),
+			hitCallback: $(this).attr('href')
+		};
+
+		if ($(this).data('gav', 'gal').val().length != 0) {
+			$(this).val('-');
+		}
+
+		/*$(this).click(function (e) {
+		 e.preventDefault();
+			setTimeout(function () {
+				window.open(href);
+			}, 300);
+		 });*/
+
+		var targetURLHost = parseUri($(this).attr('href'))['host'].toLowerCase();
+
+		if (targetURLHost != '' && location.host != targetURLHost && targetURLHost != 'www.dellsoftware.com') {
+			obj.transport = 'beacon';
+			obj.eventCategory = 'Outbound Link';
+			obj.eventAction = 'click';
+			obj.eventLabel = $(this).attr('href');
+		}
+
+		ga('send', obj);
+
 	});
+
 
 	//Prevent anchor tag from firing when href is set to # on mobile
 	$('.footer-top-section').on('click', 'a[href=#]', function (e) {
