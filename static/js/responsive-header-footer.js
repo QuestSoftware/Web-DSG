@@ -33,27 +33,6 @@ $(document).ready(function () {
 		$('.utility').find('> li').removeClass('open');
 	});
 
-	/*$('body').on('click', '.ga', function() {
-		var obj = {
-			hitType: 'event',
-			eventCategory: $(this).data('gacat'),
-			eventAction: $(this).data('gaaction'),
-			eventLabel: $(this).data('galabel') === undefined ? '':$(this).data('galabel'),
-			eventValue: $(this).data('gaval') === undefined ? 0:parseInt($(this).data('gaval'))
-		};
-
-		var targetURLHost = parseUri($(this).attr('href'))['host'].toLowerCase();
-
-		if(targetURLHost != '' && location.host != targetURLHost && targetURLHost != 'www.dellsoftware.com') {
-			obj.transport = 'beacon';
-			obj.eventCategory = 'Outbound Link';
-			obj.eventAction = 'click';
-			obj.eventLabel = $(this).attr('href');
-		}
-
-		ga('send', obj);
-	 }); */
-
 	//GA event tracking - naveen
 	//Class "ga" should only be applied on to anchor tag.
 	$('body').on('click', '.ga', function (e) {
@@ -95,6 +74,29 @@ $(document).ready(function () {
 		ga('send', obj);
 	});
 
+	//Site Catalyst Custom Event Tracking for Buy Online
+	//TODO: Might want to generalize this so that this can be used for other custom events.
+	$('body').on('click', '.btn-buy', function (e) {
+		var URL = $(this).attr('href'), URLTarget = $(this).attr('target');
+
+		//Only track links pointing to shop.software.dell.com
+		if (typeof s != "undefined" && /^https\:\/\/shop\.software\.dell\.com/.test(URL)) {
+			e.preventDefault();
+
+			s.linkTrackEvents = "event10";
+			s.events = "event10";
+			s.pageName = sc_GetPageName("");
+			sc_CookieSet("SCBuy", s.events, 20);
+			s.tl(this, 'o', $(this).text(), null, function () {
+				if (URLTarget !== undefined && URLTarget != '_self' && URLTarget != '') {
+					window.open(URL, URLTarget);
+				}
+				else {
+					location.href = URL;
+				}
+			});
+		}
+	});
 
 	//Prevent anchor tag from firing when href is set to # on mobile
 	$('.footer-top-section').on('click', 'a[href=#]', function (e) {
