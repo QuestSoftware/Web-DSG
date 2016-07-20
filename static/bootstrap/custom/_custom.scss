@@ -97,6 +97,19 @@ li {
   position: relative;
 }
 
+/* Used in comparison model and elsewhere */
+.new {
+	background-color: $dell-orange;
+	color: $white;
+	font-size: .8em;
+	line-height: 1em;
+	padding: 0 5px 2px;
+	vertical-align: super;
+	margin-left: 5px;
+
+	@include border-radius(2px);
+}
+
 /* Border */
 
 .border-b-0 {

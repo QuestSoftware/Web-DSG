@@ -220,6 +220,7 @@
   /* Background Color */
   /* TODO: Need to find where this is being used */
   /* Text */
+	/* Used in comparison model and elsewhere */
   /* Border */
   /* iframe */
   /* Vertical Alignment */
@@ -1062,7 +1063,7 @@
       line-height: 1;
       color: #777777; }
   .bootstrap h1, .bootstrap .h1, .bootstrap h2, .bootstrap .h2, .bootstrap h3, .bootstrap .h3 {
-    margin: 22px 0;
+	  margin: 22px 0;
   }
     .bootstrap h1 small,
     .bootstrap h1 .small, .bootstrap .h1 small,
@@ -1075,7 +1076,7 @@
   .bootstrap h4, .bootstrap .h4, .bootstrap h5, .bootstrap .h5, .bootstrap h6, .bootstrap .h6 {
     font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif;
     margin-top: 11px;
-    margin-bottom: 11px;
+	  margin-bottom: 11px;
   }
     .bootstrap h4 small,
     .bootstrap h4 .small, .bootstrap .h4 small,
@@ -1086,49 +1087,49 @@
     .bootstrap .h6 .small {
       font-size: 75%; }
   .bootstrap h1, .bootstrap .h1 {
-    font-size: 27px;
+	  font-size: 27px;
   }
   .bootstrap h2, .bootstrap .h2 {
-    font-size: 22px;
+	  font-size: 22px;
   }
   .bootstrap h3, .bootstrap .h3 {
-    font-size: 20px;
+	  font-size: 20px;
   }
     .bootstrap h3.feature, .bootstrap .h3.feature {
       font-size: 20px;
       line-height: 1.222222; }
   .bootstrap h4, .bootstrap .h4 {
-    font-size: 20px;
+	  font-size: 20px;
   }
   .bootstrap h5, .bootstrap .h5 {
-    font-size: 16px;
+	  font-size: 16px;
   }
   .bootstrap h6, .bootstrap .h6 {
-    font-size: 14px;
+	  font-size: 14px;
   }
   @media (min-width: 768px) {
     .bootstrap h1, .bootstrap .h1, .bootstrap h2, .bootstrap .h2, .bootstrap h3, .bootstrap .h3 {
-      margin: 33px 0;
+	    margin: 33px 0;
     }
     .bootstrap h1, .bootstrap .h1 {
       font-size: 33.75px;
       line-height: 1.2; }
     .bootstrap h2, .bootstrap .h2 {
-      font-size: 28.6px;
+	    font-size: 28.6px;
     }
     .bootstrap h3, .bootstrap .h3 {
-      font-size: 23.52941px;
+	    font-size: 23.52941px;
     }
       .bootstrap h3.feature, .bootstrap .h3.feature {
-        font-size: 28.23528px;
+	      font-size: 28.23528px;
       }
   }
   @media (min-width: 992px) {
     .bootstrap h1, .bootstrap .h1 {
-      font-size: 35.99999px;
+	    font-size: 35.99999px;
     }
     .bootstrap h2, .bootstrap .h2 {
-      font-size: 30.8px;
+	    font-size: 30.8px;
     }
   }
   .bootstrap .container h2:first-child, .bootstrap .container h3:first-child, .bootstrap .container h4:first-child, .bootstrap .container h5:first-child, .bootstrap .container h6:first-child, .bootstrap .container .h2:first-child, .bootstrap .container .h3:first-child, .bootstrap .container .h4:first-child, .bootstrap .container .h5:first-child, .bootstrap .container .h6:first-child {
@@ -1138,7 +1139,7 @@
   .bootstrap .container [class^="col-"] h1:first-child, .bootstrap .container [class^="col-"] h2:first-child, .bootstrap .container [class^="col-"] h3:first-child, .bootstrap .container [class^="col-"] h4:first-child, .bootstrap .container [class^="col-"] h5:first-child, .bootstrap .container [class^="col-"] h6:first-child, .bootstrap .container [class^="col-"] .h1:first-child, .bootstrap .container [class^="col-"] .h2:first-child, .bootstrap .container [class^="col-"] .h3:first-child, .bootstrap .container [class^="col-"] .h4:first-child, .bootstrap .container [class^="col-"] .h5:first-child, .bootstrap .container [class^="col-"] .h6:first-child {
     margin-top: 0; }
   .bootstrap p {
-    margin: 0 0 11px;
+	  margin: 0 0 11px;
   }
   .bootstrap .lead {
     margin-bottom: 22px;
@@ -1147,12 +1148,12 @@
     line-height: 1.4; }
     @media (min-width: 768px) {
       .bootstrap .lead {
-        font-size: 24px;
+	      font-size: 24px;
       }
     }
   .bootstrap small,
   .bootstrap .small {
-    font-size: 87%;
+	  font-size: 87%;
   }
   .bootstrap mark,
   .bootstrap .mark {
@@ -1231,7 +1232,7 @@
   .bootstrap ul,
   .bootstrap ol {
     margin-top: 0;
-    margin-bottom: 11px;
+	  margin-bottom: 11px;
   }
     .bootstrap ul.slim,
     .bootstrap ol.slim {
@@ -1263,7 +1264,7 @@
         padding-right: 5px; } }
   .bootstrap dl {
     margin-top: 0;
-    margin-bottom: 22px;
+	  margin-bottom: 22px;
   }
   .bootstrap dt,
   .bootstrap dd {
@@ -1335,14 +1336,14 @@
   @media (min-width: 768px) {
     .bootstrap blockquote {
       font-size: 32px;
-      margin: 0 0 22px;
+	    margin: 0 0 22px;
     }
       .bootstrap blockquote::before {
         top: 10px; }
       .bootstrap blockquote p::after {
         padding-top: 0; }
       .bootstrap blockquote footer {
-        font-size: 16px;
+	      font-size: 16px;
       }
   }
   .bootstrap .blockquote-reverse,
@@ -2203,7 +2204,7 @@
   .bootstrap .table {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 22px;
+	  margin-bottom: 22px;
   }
     .bootstrap .table > thead > tr > th,
     .bootstrap .table > thead > tr > td,
@@ -2464,7 +2465,7 @@
     .bootstrap input[type="time"],
     .bootstrap input[type="datetime-local"],
     .bootstrap input[type="month"] {
-      line-height: 36px;
+	    line-height: 36px;
     }
       .bootstrap input[type="date"].input-sm, .bootstrap .input-group-sm > input[type="date"].form-control,
       .bootstrap .input-group-sm > input[type="date"].input-group-addon,
@@ -2484,7 +2485,7 @@
       .bootstrap .input-group-sm > input[type="month"].input-group-addon,
       .bootstrap .input-group-sm > .input-group-btn > input[type="month"].btn, .input-group-sm
       .bootstrap input[type="month"] {
-        line-height: 33px;
+	      line-height: 33px;
       }
       .bootstrap input[type="date"].input-lg, .bootstrap .input-group-lg > input[type="date"].form-control,
       .bootstrap .input-group-lg > input[type="date"].input-group-addon,
@@ -2504,7 +2505,7 @@
       .bootstrap .input-group-lg > input[type="month"].input-group-addon,
       .bootstrap .input-group-lg > .input-group-btn > input[type="month"].btn, .input-group-lg
       .bootstrap input[type="month"] {
-        line-height: 49px;
+	      line-height: 49px;
       }
   }
   .bootstrap .form-group {
@@ -2563,7 +2564,7 @@
     padding-top: 7px;
     padding-bottom: 7px;
     margin-bottom: 0;
-    min-height: 38px;
+	  min-height: 38px;
   }
     .bootstrap .form-control-static.input-lg, .bootstrap .input-group-lg > .form-control-static.form-control,
     .bootstrap .input-group-lg > .form-control-static.input-group-addon,
@@ -2584,7 +2585,7 @@
   .bootstrap .input-group-sm > select.input-group-addon,
   .bootstrap .input-group-sm > .input-group-btn > select.btn {
     height: 33px;
-    line-height: 33px;
+	  line-height: 33px;
   }
   .bootstrap textarea.input-sm, .bootstrap .input-group-sm > textarea.form-control,
   .bootstrap .input-group-sm > textarea.input-group-addon,
@@ -2602,7 +2603,7 @@
     border-radius: 1px; }
   .bootstrap .form-group-sm select.form-control {
     height: 33px;
-    line-height: 33px;
+	  line-height: 33px;
   }
   .bootstrap .form-group-sm textarea.form-control,
   .bootstrap .form-group-sm select[multiple].form-control {
@@ -2612,7 +2613,7 @@
     padding: 5px 10px;
     font-size: 14px;
     line-height: 1.5;
-    min-height: 36px;
+	  min-height: 36px;
   }
   .bootstrap .input-lg, .bootstrap .input-group-lg > .form-control,
   .bootstrap .input-group-lg > .input-group-addon,
@@ -2626,7 +2627,7 @@
   .bootstrap .input-group-lg > select.input-group-addon,
   .bootstrap .input-group-lg > .input-group-btn > select.btn {
     height: 49px;
-    line-height: 49px;
+	  line-height: 49px;
   }
   .bootstrap textarea.input-lg, .bootstrap .input-group-lg > textarea.form-control,
   .bootstrap .input-group-lg > textarea.input-group-addon,
@@ -2644,7 +2645,7 @@
     border-radius: 1px; }
   .bootstrap .form-group-lg select.form-control {
     height: 49px;
-    line-height: 49px;
+	  line-height: 49px;
   }
   .bootstrap .form-group-lg textarea.form-control,
   .bootstrap .form-group-lg select[multiple].form-control {
@@ -2654,12 +2655,12 @@
     padding: 10px 16px;
     font-size: 20px;
     line-height: 1.33333;
-    min-height: 42px;
+	  min-height: 42px;
   }
   .bootstrap .has-feedback {
     position: relative; }
     .bootstrap .has-feedback .form-control {
-      padding-right: 45px;
+	    padding-right: 45px;
     }
   .bootstrap .form-control-feedback {
     position: absolute;
@@ -2677,14 +2678,14 @@
   .bootstrap .input-group-lg > .input-group-btn > .btn + .form-control-feedback {
     width: 49px;
     height: 49px;
-    line-height: 49px;
+	  line-height: 49px;
   }
   .bootstrap .input-sm + .form-control-feedback, .bootstrap .input-group-sm > .form-control + .form-control-feedback,
   .bootstrap .input-group-sm > .input-group-addon + .form-control-feedback,
   .bootstrap .input-group-sm > .input-group-btn > .btn + .form-control-feedback {
     width: 33px;
     height: 33px;
-    line-height: 33px;
+	  line-height: 33px;
   }
   .bootstrap .has-success .help-block,
   .bootstrap .has-success .control-label,
@@ -2762,7 +2763,7 @@
     .bootstrap .form-control.error:active, .bootstrap .form-control.error:focus {
       background-color: white; }
   .bootstrap .has-feedback label ~ .form-control-feedback {
-    top: 27px;
+	  top: 27px;
   }
   .bootstrap .has-feedback label.sr-only ~ .form-control-feedback {
     top: 0; }
@@ -2818,7 +2819,7 @@
     padding-top: 7px; }
   .bootstrap .form-horizontal .radio,
   .bootstrap .form-horizontal .checkbox {
-    min-height: 29px;
+	  min-height: 29px;
   }
   .bootstrap .form-horizontal .form-group {
     margin-left: -15px;
@@ -3702,12 +3703,12 @@
       .bootstrap .navbar-toggle {
         display: none; } }
   .bootstrap .navbar-nav {
-    margin: auto-22px/2/2 -15px;
+	  margin: auto-22px/2/2 -15px;
   }
     .bootstrap .navbar-nav > li > a {
       padding-top: 10px;
       padding-bottom: 10px;
-      line-height: 22px;
+	    line-height: 22px;
     }
     @media (max-width: 767px) {
       .bootstrap .navbar-nav .open .dropdown-menu {
@@ -3722,7 +3723,7 @@
         .bootstrap .navbar-nav .open .dropdown-menu .dropdown-header {
           padding: 5px 15px 5px 25px; }
         .bootstrap .navbar-nav .open .dropdown-menu > li > a {
-          line-height: 22px;
+	        line-height: 22px;
         }
           .bootstrap .navbar-nav .open .dropdown-menu > li > a:hover, .bootstrap .navbar-nav .open .dropdown-menu > li > a:focus {
             background-image: none; } }
@@ -3734,7 +3735,7 @@
           float: left; }
           .bootstrap .navbar-nav > li > a {
             padding-top: auto-22px/2;
-            padding-bottom: auto-22px/2;
+	          padding-bottom: auto-22px/2;
           }
     }
   .bootstrap .navbar-form {
@@ -3746,7 +3747,7 @@
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
     margin-top: auto-36px/2;
-    margin-bottom: auto-36px/2;
+	  margin-bottom: auto-36px/2;
   }
     @media (min-width: 768px) {
       .bootstrap .navbar-form .form-group {
@@ -3813,18 +3814,18 @@
     border-bottom-left-radius: 0; }
   .bootstrap .navbar-btn {
     margin-top: auto-36px/2;
-    margin-bottom: auto-36px/2;
+	  margin-bottom: auto-36px/2;
   }
     .bootstrap .navbar-btn.btn-sm, .bootstrap .btn-group-sm > .navbar-btn.btn {
       margin-top: auto-33px/2;
-      margin-bottom: auto-33px/2;
+	    margin-bottom: auto-33px/2;
     }
     .bootstrap .navbar-btn.btn-xs, .bootstrap .btn-group-xs > .navbar-btn.btn {
       margin-top: auto-22/2;
       margin-bottom: auto-22/2; }
   .bootstrap .navbar-text {
     margin-top: auto-22px/2;
-    margin-bottom: auto-22px/2;
+	  margin-bottom: auto-22px/2;
   }
     @media (min-width: 768px) {
       .bootstrap .navbar-text {
@@ -4045,7 +4046,7 @@
   .bootstrap .pagination-lg > li > a,
   .bootstrap .pagination-lg > li > span {
     padding: 10px 16px;
-    font-size: 20px;
+	  font-size: 20px;
   }
   .bootstrap .pagination-lg > li:first-child > a,
   .bootstrap .pagination-lg > li:first-child > span {
@@ -4058,7 +4059,7 @@
   .bootstrap .pagination-sm > li > a,
   .bootstrap .pagination-sm > li > span {
     padding: 5px 10px;
-    font-size: 14px;
+	  font-size: 14px;
   }
   .bootstrap .pagination-sm > li:first-child > a,
   .bootstrap .pagination-sm > li:first-child > span {
@@ -4589,7 +4590,7 @@
     border: 0;
     margin-bottom: 0; }
   .bootstrap .panel-group {
-    margin-bottom: 22px;
+	  margin-bottom: 22px;
   }
     .bootstrap .panel-group .panel {
       margin-bottom: 0;
@@ -4892,6 +4893,10 @@
     display: inline-block; }
   .bootstrap .icon-large-computergeneric:before {
     content: "\e616"; }
+
+.bootstrap .icon-small-alertinfo:before {
+	content: "\e604";
+}
   .bootstrap .site-wrapper {
     overflow: hidden;
     position: relative;
@@ -5526,7 +5531,8 @@
       .bootstrap.is-responsive .masthead .search-container .btn {
         top: 2px;
         right: 2px;
-        padding: 2px 12px; }
+	      padding: 1px 12px 0;
+      }
     .bootstrap.is-responsive .masthead ul.tier1 li:hover {
       background: #fff;
       color: #007db8; }
@@ -5800,7 +5806,8 @@
     .bootstrap.not-responsive .masthead .search-container .btn {
       top: 2px;
       right: 2px;
-      padding: 2px 12px; }
+	    padding: 1px 12px 0;
+    }
   .bootstrap.not-responsive .masthead ul.tier1 li:hover {
     background: #fff;
     color: #007db8; }
@@ -7017,6 +7024,19 @@
     height: 100%; }
   .bootstrap .pos-relative {
     position: relative; }
+
+.bootstrap .new {
+	background-color: #ee6411;
+	color: white;
+	font-size: .8em;
+	line-height: 1em;
+	padding: 0 5px 2px;
+	vertical-align: super;
+	margin-left: 5px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
   .bootstrap .border-b-0 {
     border-bottom: 0 !important; }
   .bootstrap iframe {

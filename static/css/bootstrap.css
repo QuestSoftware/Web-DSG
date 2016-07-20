@@ -5127,6 +5127,20 @@ li {
 .pos-relative {
   position: relative; }
 
+/* Used in comparison model and elsewhere */
+.new {
+  background-color: #ee6411;
+  color: white;
+  font-size: .8em;
+  line-height: 1em;
+  padding: 0 5px 2px;
+  vertical-align: super;
+  margin-left: 5px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
 /* Border */
 .border-b-0 {
   border-bottom: 0 !important; }
@@ -9208,12 +9222,10 @@ a:hover .has-overlay h4 {
   .comparison .btn.inactive {
     color: #aaaaaa; }
   .comparison .new {
-    background-color: #ee6411;
-    color: white;
     font-size: 14px;
     line-height: 14px;
     padding: 5px;
-    vertical-align: middle; }
+  }
   .comparison .comparison-pagination {
     margin-bottom: 20px;
     text-align: center; }
