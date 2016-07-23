@@ -62,62 +62,60 @@ else {
 	});
 }
 
-if ($.fn.multipleSelect) {
-	init();
-}
-else {
-	// load multiple select stylesheet
-	if ($('html').hasClass('ie8')) {
-		$('<link/>', {rel: 'stylesheet', href: '/static/library/css/multiple-select.css'}).appendTo('head');
-	}
+var multiSelectInit;
+function multiSelectFilters() {
 
-	//load multiple select plugin
-	$.getScript("/static/library/jQuery/jquery.multiple.select.js", function () {
-		$.fn.multipleSelect.defaults.onOpen = function (elem) {
-			var nextElem = $(elem).next(), ul = nextElem.find('ul');
-
-			if (ul.outerHeight() < ul.prop('scrollHeight') && !ul.data('width-fixed')) {
-				ul.css('width', ul.outerWidth() + $.position.scrollbarWidth());
-				ul.data('width-fixed', true);
-			}
-
-			//Check if dropdown needs to be reversed.
-			nextElem.css('right', 'auto');
-
-			if (nextElem.offset().left + nextElem.find('ul').outerWidth(true) > $('body').width()) {
-				nextElem.css('right', 0);
-			}
-			else {
-				nextElem.css('right', 'auto');
-			}
-		};
-
-		init();
-	});
-}
-
-function init() {
-	// Local variable value
+	// Local variables
 	var ajaxArr = [],
-		filterMap = {
-			trialsfreeware: {
-				callback: function () {
-					$(this).multipleSelect({
-						multiple: false,
-						selectAll: false,
-						single: true,
-						onClose: function () {
-						},
-						onUncheckAll: function () {
-							$('#trialsfreeware').multipleSelect('setSelects', ['All']);
-						}
-					});
+		filterInterval = null,
+		filterElem = $('.filters'),
+		allDropdownLabel = {};
+	filterMap = {
+		trialsfreeware: {
+			callback: function () {
+				$(this).multipleSelect({
+					multiple: false,
+					selectAll: false,
+					single: true,
+					onClose: function () {
+					},
+					onUncheckAll: function () {
+						$('#trialsfreeware').multipleSelect('setSelects', ['All']);
+					}
+				});
+			}
+		},
+		brand: {
+			data: {"type": "product line"},
+			init: true,
+			callback: function (title) {
+				$(this).parent().removeClass('hidden');
+				$(this).multipleSelect({
+					placeholder: title,
+					multiple: false,
+					selectAll: false,
+					single: true,
+					onClick: function (view) {
+						var obj = {brand: view.value};
+
+						$.each(['solution'], function (i, j) {
+							ajaxArr.push(populateDropdowns(j, $.extend({}, filterMap[j].data, obj), filterMap[j].callback));
+						});
+					}
+				});
+				$(this).multipleSelect("uncheckAll");
+			}
+		},
+		solution: {
+			data: {"type": "solution"},
+			init: true,
+			callback: function (title, prevValue) {
+				if (typeof $(this).data('multipleSelect') == 'object') {
+					$(this).next().find('ul').remove();
+					$(this).multipleSelect('refresh');
+					$(this).multipleSelect('setSelects', [prevValue]);
 				}
-			},
-			brand: {
-				data: {"type": "product line"},
-				init: true,
-				callback: function (title) {
+				else {
 					$(this).parent().removeClass('hidden');
 					$(this).multipleSelect({
 						placeholder: title,
@@ -125,157 +123,17 @@ function init() {
 						selectAll: false,
 						single: true,
 						onClick: function (view) {
-							var obj = {brand: view.value};
-
-							$.each(['solution'], function (i, j) {
-								ajaxArr.push(populateDropdowns(j, $.extend({}, filterMap[j].data, obj), filterMap[j].callback));
-							});
+							if (view.value != '') {
+								$('#product').multipleSelect('setSelects', []);
+							}
 						}
 					});
 					$(this).multipleSelect("uncheckAll");
 				}
-			},
-			solution: {
-				data: {"type": "solution"},
-				init: true,
-				callback: function (title, prevValue) {
-					if (typeof $(this).data('multipleSelect') == 'object') {
-						$(this).next().find('ul').remove();
-						$(this).multipleSelect('refresh');
-						$(this).multipleSelect('setSelects', [prevValue]);
-					}
-					else {
-						$(this).parent().removeClass('hidden');
-						$(this).multipleSelect({
-							placeholder: title,
-							multiple: false,
-							selectAll: false,
-							single: true,
-							onClick: function (view) {
-								if (view.value != '') {
-									$('#product').multipleSelect('setSelects', []);
-								}
-							}
-						});
-						$(this).multipleSelect("uncheckAll");
-					}
-				}
 			}
-		},
-		allDropdownLabel = {};
+		}
+	}
 
-	$(document).ready(function () {
-		// filters event handler
-		var filterInterval = null, filterElem = $('.filters');
-
-		//Populate all "filter by" dropdowns
-		getLocalizedContent(['EventLabelEventType', 'EventLabelDate', 'LabelAllEvents', 'EventLabelRecordedDate', 'EventLabelLocation', 'EventLabelAllDates', 'LabelAllProductLines', 'LabelAllSolutions']).done(function () {
-			$.each(filterMap, function (id, entry) {
-				if (entry.init) {
-					ajaxArr.push(populateDropdowns(id, entry.data, entry.callback));
-				}
-				else {
-					entry.callback.call($('#' + id).get(0));
-				}
-			});
-
-			allDropdownLabel = {
-				brand: getLocalizedContent('LabelAllProductLines'),
-				solution: getLocalizedContent('LabelAllSolutions')
-			};
-
-			//When filters are loaded, execute function 'hashchange'
-			$.when.apply(this, ajaxArr).done(function () {
-				$('.filters').css('opacity', 1);
-
-				if (location.hash.length) {
-					parseHashTag();
-				}
-
-				filterElem.data('continue', true).on('change', 'select', function () {
-					if (filterElem.data('continue') && filterInterval === null) {
-						filterInterval = setInterval(function () {
-							clearInterval(filterInterval);
-
-							setTimeout(function () {
-								filterInterval = null;
-							}, 100);
-
-							if (ajaxArr.length) {
-								$.when(ajaxArr).done(function () {
-									populateListing();
-									ajaxArr = [];
-								});
-							}
-							else {
-								populateListing();
-							}
-						}, 100);
-					}
-
-					setFilterNum();
-				});
-
-				ajaxArr = [];
-
-				setFilterNum();
-				populateListing();
-			}).fail(function () {
-				console.log('Failed');
-			});
-		});
-
-		// to reset drop down selected
-		$('body').on('click', '.resetfilter', function (e) {
-			e.preventDefault();
-
-			filterElem.data('continue', false);
-
-			// multiselect uncheckall
-			filterElem.find('select').each(function () {
-				if ($(this).next().is(':visible')) {
-					$(this).multipleSelect('uncheckAll');
-				}
-			});
-
-			$.each(['solution'], function (i, j) {
-				ajaxArr.push(populateDropdowns(j, filterMap[j].data, filterMap[j].callback));
-			});
-
-			$.when(ajaxArr).done(function () {
-				ajaxArr = [];
-				filterElem.data('continue', true);
-				populateListing();
-			});
-		});
-
-		$('body').on('offcanvas.hidden', function () {
-			processEllipsis('.listing-entries').done(function () {
-				setTimeout(function () {
-					if (pageType > 0) {
-						if (location.search == '?v2') {
-							listingContainer.find('.row').each(function () {
-								var columns = $(this).find('> div'),
-									firstColumn = $(columns.get(0)),
-									lastColumn = $(columns.get(1));
-
-								firstColumn.find('a').each(function (index) {
-									var h = Math.max($(this).height(), lastColumn.find('a:eq(' + index + ')').height());
-
-									columns.find('a:eq(' + index + ')').css('height', h);
-								});
-							});
-						}
-						else {
-							entryContainer.find('> a').matchHeight({byRow: false});
-						}
-					}
-
-					listingContainer.css('opacity', 1);
-				}, 100);
-			});
-		});
-	});
 
 	function parseHashTag() {
 		//Note: This should only be called once if hash tag exist on page load.
@@ -351,7 +209,166 @@ function init() {
 			}
 		});
 	}
+
+	//Populate all "filter by" dropdowns
+	getLocalizedContent(['EventLabelEventType', 'EventLabelDate', 'LabelAllEvents', 'EventLabelRecordedDate', 'EventLabelLocation', 'EventLabelAllDates', 'LabelAllProductLines', 'LabelAllSolutions']).done(function () {
+		$.each(filterMap, function (id, entry) {
+			if (entry.init) {
+				ajaxArr.push(populateDropdowns(id, entry.data, entry.callback));
+			}
+			else {
+				entry.callback.call($('#' + id).get(0));
+			}
+		});
+
+		allDropdownLabel = {
+			brand: getLocalizedContent('LabelAllProductLines'),
+			solution: getLocalizedContent('LabelAllSolutions')
+		};
+
+		//When filters are loaded, execute function 'hashchange'
+		$.when.apply(this, ajaxArr).done(function () {
+			$('.filters').css('opacity', 1);
+
+			if (location.hash.length) {
+				parseHashTag();
+			}
+
+			filterElem.data('continue', true).on('change', 'select', function () {
+				if (filterElem.data('continue') && filterInterval === null) {
+					filterInterval = setInterval(function () {
+						clearInterval(filterInterval);
+
+						setTimeout(function () {
+							filterInterval = null;
+						}, 100);
+
+						if (ajaxArr.length) {
+							$.when(ajaxArr).done(function () {
+								populateListing();
+								ajaxArr = [];
+							});
+						}
+						else {
+							populateListing();
+						}
+					}, 100);
+				}
+
+				setFilterNum();
+			});
+
+			ajaxArr = [];
+
+			setFilterNum();
+			populateListing();
+		}).fail(function () {
+			console.log('Failed');
+		});
+	});
+
+
+	function resetFilters() {
+		filterElem.data('continue', false);
+
+		// multiselect uncheckall
+		filterElem.find('select').each(function () {
+			if ($(this).next().is(':visible')) {
+				$(this).multipleSelect('uncheckAll');
+			}
+		});
+
+		$.each(['solution'], function (i, j) {
+			ajaxArr.push(populateDropdowns(j, filterMap[j].data, filterMap[j].callback));
+		});
+
+		$.when(ajaxArr).done(function () {
+			ajaxArr = [];
+			filterElem.data('continue', true);
+			populateListing();
+		});
+	}
+
+	function whenOffCanvasHidden() {
+		if (pageType > 0) {
+			if (location.search == '?v2') {
+				listingContainer.find('.row').each(function () {
+					var columns = $(this).find('> div'),
+						firstColumn = $(columns.get(0)),
+						lastColumn = $(columns.get(1));
+
+					firstColumn.find('a').each(function (index) {
+						var h = Math.max($(this).height(), lastColumn.find('a:eq(' + index + ')').height());
+
+						columns.find('a:eq(' + index + ')').css('height', h);
+					});
+				});
+			}
+			else {
+				entryContainer.find('> a').matchHeight({byRow: false});
+			}
+		}
+
+		listingContainer.css('opacity', 1);
+	}
+
+	return {
+		resetFilters: resetFilters,
+		whenOffCanvasHidden: whenOffCanvasHidden
+	}
 }
+
+if ($.fn.multipleSelect) {
+	multiSelectInit = multiSelectFilters();
+}
+else {
+	// load multiple select stylesheet
+	if ($('html').hasClass('ie8')) {
+		$('<link/>', {rel: 'stylesheet', href: '/static/library/css/multiple-select.css'}).appendTo('head');
+	}
+
+	//load multiple select plugin
+	$.getScript("/static/library/jQuery/jquery.multiple.select.js", function () {
+		$.fn.multipleSelect.defaults.onOpen = function (elem) {
+			var nextElem = $(elem).next(), ul = nextElem.find('ul');
+
+			if (ul.outerHeight() < ul.prop('scrollHeight') && !ul.data('width-fixed')) {
+				ul.css('width', ul.outerWidth() + $.position.scrollbarWidth());
+				ul.data('width-fixed', true);
+			}
+
+			//Check if dropdown needs to be reversed.
+			nextElem.css('right', 'auto');
+
+			if (nextElem.offset().left + nextElem.find('ul').outerWidth(true) > $('body').width()) {
+				nextElem.css('right', 0);
+			}
+			else {
+				nextElem.css('right', 'auto');
+			}
+		};
+
+		multiSelectInit = multiSelectFilters();
+	});
+}
+
+$(document).ready(function () {
+
+	// to reset drop down selected
+	$('body').on('click', '.resetfilter', function (e) {
+		e.preventDefault();
+		multiSelectInit.resetFilters()
+
+	});
+
+	$('body').on('offcanvas.hidden', function () {
+		processEllipsis('.listing-entries').done(function () {
+			setTimeout(function () {
+				multiSelectInit.whenOffCanvasHidden()
+			}, 100);
+		});
+	});
+});
 
 addResize(function () {
 	populateListing();
