@@ -41,7 +41,8 @@ var populateListingPending = false, //prevent populate listing to load more than
 		}
 	],
 	navList = $('#affix-nav').find('li'),
-	previous = {dataset: null, response: null};
+	previous = {dataset: null, response: null},
+	multiSelectInit;
 
 $('#affix-nav').on('click', '.disabled a', function (e) {
 	e.stopImmediatePropagation();
@@ -62,7 +63,7 @@ else {
 	});
 }
 
-var multiSelectInit;
+
 function multiSelectFilters() {
 
 	// Local variables
@@ -359,9 +360,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		multiSelectInit.resetFilters()
 
-	});
-
-	$('body').on('offcanvas.hidden', function () {
+	}).on('offcanvas.hidden', function () {
 		processEllipsis('.listing-entries').done(function () {
 			setTimeout(function () {
 				multiSelectInit.whenOffCanvasHidden()
