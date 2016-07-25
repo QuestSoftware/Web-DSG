@@ -10,40 +10,40 @@
     line-height: 15px;
     padding-top: 10px;
   }
-  ul {
-    padding-left: 1em;
-  }
+	ul {
+		padding-left: 1em;
+	}
   .row {
     margin: 0;
     position: relative;
-    &:last-of-type {
-      .selected {
-        border-bottom: 1px solid $dell-blue;
-      }
-    }
-    .selected {
-      border-right: 1px solid $dell-blue;
-      border-left: 1px solid $dell-blue;
-    }
+		&:last-of-type {
+			.selected {
+				border-bottom: 1px solid $dell-blue;
+			}
+		}
+		.selected {
+			border-right: 1px solid $dell-blue;
+			border-left: 1px solid $dell-blue;
+		}
     .active {
-      background-color: $dell-blue;
-      color: $white;
-      padding: 6px 15px;
-      margin: 0 -15px 15px;
+			background-color: $dell-blue;
+			color: $white;
+			padding: 6px 15px;
+			margin: 0 -15px 15px;
     }
     .inactive {
-      padding: 6px 15px;
-      margin: 0 -15px 15px;
+			padding: 6px 15px;
+			margin: 0 -15px 15px;
     }
     &.top-row {
       .btn {
         margin: 20px 0 5px;
       }
-      .selected {
-        border-top: 1px solid $dell-blue;
-        border-right: 1px solid $dell-blue;
-        border-left: 1px solid $dell-blue;
-      }
+			.selected {
+				border-top: 1px solid $dell-blue;
+				border-right: 1px solid $dell-blue;
+				border-left: 1px solid $dell-blue;
+			}
     }
     > div {
       padding: 0;
@@ -88,55 +88,55 @@
   .comparison {
     .comparison-pagination {
       text-align: right;
-    }
-  }
+		}
+	}
 }
 
 @media (max-width: 767px) {
-  /*comparison table*/
-  .comparison-table {
-    &[data-xs-carousel ="true"] {
-      tr {
-        th, td {
-          padding: 6px !important;
-        }
-      }
-      .fixed-column tr {
-        border-right: 1px solid #ccc;
-        th {
-          vertical-align: top;
-        }
-      }
-      .comparison {
-        .comparison-pagination {
-          font-size: 14px;
-          .btn {
-            padding: 3px;
-          }
-        }
-        .row > div {
-          > div {
-            padding: 0;
-            table {
-              thead tr {
-                th {
-                  vertical-align: top;
-                }
-              }
-              tbody td {
-                vertical-align: middle;
-              }
-            }
-          }
-        }
-      }
-    }
-    .panel:nth-child(odd) .panel-body {
-      background-color: #eeeeee;
-      padding: 15px;
-      .row:last-child p {
-        margin-bottom: 0;
-      }
+	/*comparison table*/
+	.comparison-table {
+		&[data-xs-carousel ="true"] {
+			tr {
+				th, td {
+					padding: 6px !important;
+				}
+			}
+			.fixed-column tr {
+				border-right: 1px solid #ccc;
+				th {
+					vertical-align: top;
+				}
+			}
+			.comparison {
+				.comparison-pagination {
+					font-size: 14px;
+					.btn {
+						padding: 3px;
+					}
+				}
+				.row > div {
+					> div {
+						padding: 0;
+						table {
+							thead tr {
+								th {
+									vertical-align: top;
+								}
+							}
+							tbody td {
+								vertical-align: middle;
+							}
+						}
+					}
+				}
+			}
+		}
+		.panel:nth-child(odd) .panel-body {
+			background-color: #eeeeee;
+			padding: 15px;
+			.row:last-child p {
+				margin-bottom: 0;
+			}
     }
   }
 }
