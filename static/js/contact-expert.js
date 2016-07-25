@@ -3,53 +3,53 @@ if (typeof RootPath == 'undefined') {
 }
 
 var populateListingPending = false, //prevent populate listing to load more than 1 at a time.
-		endPointURL = (((RootPath == '/') ? '' : RootPath) + '/jsonreq/cde/').replace('//', '/'),
-		listingContainer = $('.listing-entries'),
-		entryContainer = listingContainer.find('.row'),
-		hashMap = {
-			solution: 'bysolution',
-			brand: 'bybrand'
+	endPointURL = (((RootPath == '/') ? '' : RootPath) + '/jsonreq/cde/').replace('//', '/'),
+	listingContainer = $('.listing-entries'),
+	entryContainer = listingContainer.find('.row'),
+	hashMap = {
+		solution: 'bysolution',
+		brand: 'bybrand'
 		},
-		range = [
-			{
-				range: /^[ab]/i,
-				id: 'A-B',
-				row: $('#A-B').find('.row')
-			},
-			{
-				range: /^[cd]/i,
-				id: 'C-D',
-				row: $('#C-D').find('.row')
-			},
-			{
-				range: /^[ef]/i,
-				id: 'E-F',
-				row: $('#E-F').find('.row')
-			},
-			{
-				range: /^[g-m]/i,
-				id: 'G-M',
-				row: $('#G-M').find('.row')
-			},
-			{
-				range: /^[n-r]/i,
-				id: 'N-R',
-				row: $('#N-R').find('.row')
-			},
-			{
-				range: /^[s]/i,
-				id: 'S',
-				row: $('#S').find('.row')
-			},
-			{
-				range: /^[t-x]/i,
-				id: 'T-X',
-				row: $('#T-X').find('.row')
-			}
-		],
-		rangeIndex = 0,
-		affixNav = $('#affix-nav'),
-		navList = affixNav.find('li');
+	range = [
+		{
+			range: /^[ab]/i,
+			id: 'A-B',
+			row: $('#A-B').find('.row')
+		},
+		{
+			range: /^[cd]/i,
+			id: 'C-D',
+			row: $('#C-D').find('.row')
+		},
+		{
+			range: /^[ef]/i,
+			id: 'E-F',
+			row: $('#E-F').find('.row')
+		},
+		{
+			range: /^[g-m]/i,
+			id: 'G-M',
+			row: $('#G-M').find('.row')
+		},
+		{
+			range: /^[n-r]/i,
+			id: 'N-R',
+			row: $('#N-R').find('.row')
+		},
+		{
+			range: /^[s]/i,
+			id: 'S',
+			row: $('#S').find('.row')
+		},
+		{
+			range: /^[t-x]/i,
+			id: 'T-X',
+			row: $('#T-X').find('.row')
+		}
+	],
+	rangeIndex = 0,
+	affixNav = $('#affix-nav'),
+	navList = affixNav.find('li');
 
 affixNav.on('click', '.disabled a', function (e) {
 	e.stopImmediatePropagation();
@@ -108,19 +108,19 @@ else {
 function init() {
 	// Local variable value
 	var ajaxArr = [],
-			filterMap = {
-				brand: {
-					data: {"type": "product line"},
-					init: true,
-					callback: brandCallback
-				},
-				solution: {
-					data: {"type": "solution"},
-					init: true,
-					callback: solutionCallback
+		filterMap = {
+			brand: {
+				data: {"type": "product line"},
+				init: true,
+				callback: brandCallback
+			},
+			solution: {
+				data: {"type": "solution"},
+				init: true,
+				callback: solutionCallback
 				}
 			},
-			allDropdownLabel = {};
+		allDropdownLabel = {};
 
 	function brandCallback(title) {
 		$(this).parent().removeClass('hidden').end().multipleSelect({
@@ -219,60 +219,60 @@ function init() {
 
 		// to reset drop down selected
 		$('body')
-				.on('click', '.resetfilter', function (e) {
-					e.preventDefault();
+			.on('click', '.resetfilter', function (e) {
+				e.preventDefault();
 
-					filterElem.data('continue', false);
+				filterElem.data('continue', false);
 
-					// multiselect uncheckall
-					filterElem.find('select').each(function () {
-						if ($(this).next().is(':visible')) {
-							$(this).multipleSelect('uncheckAll');
-						}
-					});
-
-					$.each(['solution'], function (i, j) {
-						ajaxArr.push(populateDropdowns(j, filterMap[j].data, filterMap[j].callback));
-					});
-
-					$.when(ajaxArr).done(function () {
-						ajaxArr = [];
-						filterElem.data('continue', true);
-						populateListing();
-					});
-				})
-				.on('offcanvas.hidden', function () {
-					processEllipsis('.listing-entries').done(function () {
-						setTimeout(function () {
-							if (pageType > 0) {
-								if (location.search == '?v2') {
-									listingContainer.find('.row').each(function () {
-										var columns = $(this).find('> div'),
-												firstColumn = $(columns.get(0)),
-												lastColumn = $(columns.get(1));
-
-										firstColumn.find('a').each(function (index) {
-											var h = Math.max($(this).height(), lastColumn.find('a:eq(' + index + ')').height());
-
-											columns.find('a:eq(' + index + ')').css('height', h);
-										});
-									});
-								}
-								else {
-									entryContainer.find('> a').matchHeight({byRow: false});
-								}
-							}
-
-							listingContainer.css('opacity', 1);
-						}, 100);
-					});
+				// multiselect uncheckall
+				filterElem.find('select').each(function () {
+					if ($(this).next().is(':visible')) {
+						$(this).multipleSelect('uncheckAll');
+					}
 				});
+
+				$.each(['solution'], function (i, j) {
+					ajaxArr.push(populateDropdowns(j, filterMap[j].data, filterMap[j].callback));
+				});
+
+				$.when(ajaxArr).done(function () {
+					ajaxArr = [];
+					filterElem.data('continue', true);
+					populateListing();
+				});
+			})
+			.on('offcanvas.hidden', function () {
+				processEllipsis('.listing-entries').done(function () {
+					setTimeout(function () {
+						if (pageType > 0) {
+							if (location.search == '?v2') {
+								listingContainer.find('.row').each(function () {
+									var columns = $(this).find('> div'),
+										firstColumn = $(columns.get(0)),
+										lastColumn = $(columns.get(1));
+
+									firstColumn.find('a').each(function (index) {
+										var h = Math.max($(this).height(), lastColumn.find('a:eq(' + index + ')').height());
+
+										columns.find('a:eq(' + index + ')').css('height', h);
+									});
+								});
+							}
+							else {
+								entryContainer.find('> a').matchHeight({byRow: false});
+							}
+						}
+
+						listingContainer.css('opacity', 1);
+					}, 100);
+				});
+			});
 	});
 
 	function parseHashTag() {
 		//Note: This should only be called once if hash tag exist on page load.
 		var hash = location.hash.substr(1),
-				hashArr = hash.split('_');
+			hashArr = hash.split('_');
 
 		$.each(hashMap, function (filterName, filterMapTo) {
 			var regexp = new RegExp('^' + filterMapTo, 'i');
@@ -497,14 +497,14 @@ function buildAHashTag() {
 // iterates selected filters and createsd dataset for ajax call
 function getDataSet() {
 	var dataset = {
-				"type": "cde list"
-			},
-			mapping = {
-				productType: 'trialsfreeware',
-				solution: 'solution',
-				brand: 'brand'
-			},
-			hasError = false;
+			"type": "cde list"
+		},
+		mapping = {
+			productType: 'trialsfreeware',
+			solution: 'solution',
+			brand: 'brand'
+		},
+		hasError = false;
 
 	$.each(mapping, function (key, id) {
 		var v = $('#' + id).val();

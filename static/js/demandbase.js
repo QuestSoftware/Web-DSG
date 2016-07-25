@@ -142,20 +142,21 @@ function DemandBaseInitialize(frm, btn, companyID, ltg, connectObj, callback) {
 		if (!isAfterParseInit) { // check if db_hooks get initialized onload
 			populateRegFrmDbFields(data); // if db_hooks are not initialized then function will help to populate reg form
 			PopulateDBFieldsWebFormConnector(data, frm, source, enableSubmitButton);
-      var hasTr = $('form').find('[id^="tr_"]');
-      if (hasTr.length) {
-        if (data.country == 'CA') {
-          hasTr.show();
-        } else {
-          hasTr
-            .not('[id^="tr_OptIn"]')
-            .not('[id^="tr_Privacy"]')
-            .show();
-        }
-      }
+			var hasTr = $('form').find('[id^="tr_"]');
+			if (hasTr.length) {
+				if (data.country == 'CA') {
+					hasTr.show();
+				}
+				else {
+					hasTr
+						.not('[id^="tr_OptIn"]')
+						.not('[id^="tr_Privacy"]')
+						.show();
+				}
+			}
 			$('form').find("div[firstscreen=0]").show();
 
-    }
+		}
 	};
 
 	// When there is an error with demandbase

@@ -43,7 +43,7 @@ $(document).ready(function() {
 							videoCTA.hide();
 
 							if(!playthrough[0]) {
-								if(typeof ga == 'function') {
+								if (typeof ga == 'function') {
 									ga('send', {
 										hitType: 'event',
 										eventCategory: 'Video',
@@ -61,7 +61,7 @@ $(document).ready(function() {
 							var percentPlayed = (currentTime / totalTime) * 100;
 
 							if(percentPlayed >= 25 && !playthrough[1]) {
-								if(typeof ga == 'function') {
+								if (typeof ga == 'function') {
 									ga('send', {
 										hitType: 'event',
 										eventCategory: 'Video',
@@ -74,7 +74,7 @@ $(document).ready(function() {
 								playthrough[1] = true;
 							}
 							else if(percentPlayed >= 50 && !playthrough[2]) {
-								if(typeof ga == 'function') {
+								if (typeof ga == 'function') {
 									ga('send', {
 										hitType: 'event',
 										eventCategory: 'Video',
@@ -87,7 +87,7 @@ $(document).ready(function() {
 								playthrough[2] = true;
 							}
 							else if(percentPlayed >= 75 && !playthrough[3]) {
-								if(typeof ga == 'function') {
+								if (typeof ga == 'function') {
 									ga('send', {
 										hitType: 'event',
 										eventCategory: 'Video',
@@ -103,7 +103,7 @@ $(document).ready(function() {
 
 						player.mb.subscribe(OO.EVENTS.PLAYED, 'LearnMoreCTA', function () {
 							if(!playthrough[4]) {
-								if(typeof ga == 'function') {
+								if (typeof ga == 'function') {
 									ga('send', {
 										hitType: 'event',
 										eventCategory: 'Video',
@@ -127,9 +127,9 @@ $(document).ready(function() {
 
 						videoCTA.show().find('> a').each(function () {
               // check if learn more cta has link if not will hide it
-              if($(this).attr('href') === '' && $(this).hasClass('btn')){
+							if ($(this).attr('href') === '' && $(this).hasClass('btn')) {
                 $(this).hide();
-              }
+							}
 
 							if ($.inArray($(this).css('display'), ['block', 'inline-block']) > -1) {
 								buttonWidth += parseInt($(this).outerWidth(true)) + parseInt($(this).css('marginLeft'));

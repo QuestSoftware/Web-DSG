@@ -410,12 +410,12 @@ function appendOverlayContent(plugins, iconClass, player) {
 
     plugins.removeAttr('style');
 
-		plugins.trigger('remove-overlay');
+	  plugins.trigger('remove-overlay');
   });
 
   /*send email*/
   plugins.parents('.innerWrapper').find('.sendbutton').on('click', function () {
-    validateOOEmailForm(plugins, player.getTitle());
+	  validateOOEmailForm(plugins, player.getTitle());
   });
 
 }
