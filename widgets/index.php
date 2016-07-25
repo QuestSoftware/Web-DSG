@@ -20,7 +20,20 @@
         echo $widget->css();
     ?>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<script src="/static/library/modernizr.min.js"></script>
+	<script src="/static/library/jQuery/jquery-1.9.1.min.js"></script>
+	<!--<script src="/static/library/requireJS/requirejs.min.js" data-main="/static/js/config.js"></script>-->
+	<script src="/static/library/jQueryUI/jquery-ui-1.11.4.min.js"></script>
+	<script src="/static/library/jQuery/jquery.cookie.js"></script>
+	<script src="/static/library/jQuery/jquery.dotdotdot.js"></script>
+	<!--<script src="/static/library/jQuery/jquery.placeholder.js"></script>-->
+	<script src="/static/library/jQuery/jquery.color-2.1.2.min.js"></script>
+	<script src="/static/library/jQuery/jquery.slidepagination.js"></script>
+	<script src="/static/library/bootstrap-3.3.4.min.js"></script>
+	<script src="/static/js/responsive-header-footer.js"></script>
+	<script src="/static/js/default.js"></script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -1007,20 +1020,6 @@
         <!-- footer ends here -->
     </div>
 </div>
-
-<script src="/static/library/modernizr.min.js"></script>
-<script src="/static/library/jQuery/jquery-1.9.1.min.js"></script>
-<!--<script src="/static/library/requireJS/requirejs.min.js" data-main="/static/js/config.js"></script>-->
-<script src="/static/library/jQueryUI/jquery-ui-1.11.4.min.js"></script>
-<script src="/static/library/jQuery/jquery.cookie.js"></script>
-<script src="/static/library/jQuery/jquery.dotdotdot.js"></script>
-<!--<script src="/static/library/jQuery/jquery.placeholder.js"></script>-->
-<script src="/static/library/jQuery/jquery.color-2.1.2.min.js"></script>
-<script src="/static/library/jQuery/jquery.slidepagination.js"></script>
-<script src="/static/library/bootstrap-3.3.4.min.js"></script>
-<script src="/static/js/responsive-header-footer.js"></script>
-<script src="/static/js/default.js"></script>
-
 
 <?php
     echo $widget->js();

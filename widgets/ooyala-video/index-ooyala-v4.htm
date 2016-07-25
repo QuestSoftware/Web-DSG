@@ -1,0 +1,33 @@
+<!--
+	http://support.de.staging.ooyala.com/developers/documentation/concepts/pbv4_release_notes.html
+-->
+<div class="container">
+	<div class="media-player-container">
+		<img src="http://ak.c.ooyala.com/JrcDM1dzpLcWbnRj8MejkXYRvUUKBSSV/promo264707190" class="img-responsive img-border">
+		<div class="img-overlay vertical-center horizontal-center">
+			<div>
+				<span class="icon-ui-play-underlay"></span>
+				<span class="icon-ui-play"></span>
+			</div>
+		</div>
+		<div id="ooyalaplayer2" class="ooyalaplayer2" data-on-demand="true" data-videoid="R2cjA2dDpLyvaZ29i3XwVTsdqpfUX6MA"></div>
+		<noscript>
+			<div>Please enable Javascript to watch this video</div>
+		</noscript>
+	</div>
+</div>
+
+<script>
+	$(window).load(function() {
+		OO.ready(function() {
+			window.pp = OO.Player.create("ooyalaplayer2", "xmaWFxMzE6-Uyayrk6Y1nQSjhNF3aiiz", {
+				"pcode": "Vwd3MxOtnYiE9LQt4HXsOOybvqgE",
+				"playerBrandingId": "9eba220ad98c47cda9fdf6ba82ce607a",
+				"skin": {
+					// Config contains the configuration setting for player skin. Change to your local config when necessary.
+					"config": "/static/js/ooyala-v4-skin.json"
+				}
+			});
+		});
+	});
+</script>

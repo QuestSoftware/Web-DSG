@@ -63,118 +63,132 @@ function OOCreate(player) {
 
     addPlayerControls(plugins, player);
 
-    /*append player toolbar*/
-    plugins.css('display', '').append('<div class="player-toolbar">' +
-    '<p>' + title + '</p>' +
-    '<ul>' +
-    '<li class="info"><span></span></li>' +
-    '<li class="email"><span></span></li>' +
-    '<li class="share"><span></span></li>' +
-    '<li class="embed"><span></span></li>' +
-    '</ul>' +
-    '</div>');
+	  if ($('#' + videoProp.target).parent().data('internal')) {
+		  /* If the video player is internal use, do not show social media properties */
+		  plugins.css('display', '').append('<div class="player-toolbar"><p>' + title + '</p></div>');
 
-    enableHoverToggle(plugins);
+		  enableHoverToggle(plugins);
 
-    /*show player-toolbar when player loads for one second*/
-    plugins.show().delay(1000).fadeOut();
+		  /*show player-toolbar when player loads for one second*/
+		  plugins.show().delay(1000).fadeOut();
+	  }
+	  else {
+		  /*append player toolbar*/
 
-    /*issue where plugin is only applied to the first tab's video title and not the rest of the tabs*/
-    /* Currently using CSS to add ellipsis */
-    /* TODO: Need to find a way to do this for unsupported browsers */
-    //plugins.find('.player-toolbar > p').dotdotdot({height: 20});
+		  plugins.css('display', '').append('<div class="player-toolbar">' +
+			  '<p>' + title + '</p>' +
+			  '<ul>' +
+			  '<li class="info"><span></span></li>' +
+			  '<li class="email"><span></span></li>' +
+			  '<li class="share"><span></span></li>' +
+			  '<li class="embed"><span></span></li>' +
+			  '</ul>' +
+			  '</div>');
 
-    /*player toolbar icons click handler*/
-    plugins.find('.player-toolbar ul li').on('click', function () {
-      disableHoverToggle(plugins);
+		  enableHoverToggle(plugins);
 
-      var iconClass = $(this).attr('class'),
-          overlay = $('<div class="overlay"><div></div></div>');
+		  /*show player-toolbar when player loads for one second*/
+		  plugins.show().delay(1000).fadeOut();
 
-      //hide title
-      plugins.find('.player-toolbar > p').hide();
+		  /*issue where plugin is only applied to the first tab's video title and not the rest of the tabs*/
+		  /* Currently using CSS to add ellipsis */
+		  /* TODO: Need to find a way to do this for unsupported browsers */
+		  //plugins.find('.player-toolbar > p').dotdotdot({height: 20});
 
-      //remove any active classes from the list
-      plugins.find('.player-toolbar ul li span').removeClass('active');
+		  /*player toolbar icons click handler*/
+		  plugins.find('.player-toolbar ul li').on('click', function () {
+			  disableHoverToggle(plugins);
 
-      //stop player
-      player.pause();
+			  var iconClass = $(this).attr('class'),
+				  overlay = $('<div class="overlay"><div></div></div>');
 
-      //append overlay div
-      if (plugins.parents('.innerWrapper').find('.overlay').length == 0) {
-        overlay.appendTo(plugins.parents('.innerWrapper'));
-      }
+			  //hide title
+			  plugins.find('.player-toolbar > p').hide();
 
-      plugins.parents('.innerWrapper').find('.oo_promo div.oo_start_button').hide();
+			  //remove any active classes from the list
+			  plugins.find('.player-toolbar ul li span').removeClass('active');
 
-      plugins.find('.player-toolbar ul').show();
+			  //stop player
+			  player.pause();
 
-      plugins.removeClass('show').show().css('background', 'none');
+			  //append overlay div
+			  if (plugins.parents('.innerWrapper').find('.overlay').length == 0) {
+				  overlay.appendTo(plugins.parents('.innerWrapper'));
+			  }
 
-      plugins.parents('.innerWrapper').find('.overlay > div').empty();
+			  plugins.parents('.innerWrapper').find('.oo_promo div.oo_start_button').hide();
 
-      plugins.find('.player-toolbar').find('.' + iconClass + ' span').addClass('active');
+			  plugins.find('.player-toolbar ul').show();
 
-      //append overlay content
-      appendOverlayContent(plugins, iconClass, player);
-    });
+			  plugins.removeClass('show').show().css('background', 'none');
 
-    /*social media click handler*/
-    $('body').on('click', '.oo-toolbar a', function (e) {
-      var parent = $(this).parent(), u = '', t = $('h1').text().trim() + ' | Dell Software';
+			  plugins.parents('.innerWrapper').find('.overlay > div').empty();
 
-      if (parent.hasClass('facebook')) {
-        if (typeof s == 'object') {
-          //s.tl(this, 'o', 'Share-Facebook');
-          s.events = "event13";
-          s.eVar18 = "Facebook";
-          s.linkTrackVars = "events,eVar18";
-          s.linkTrackEvents = "event13";
-          s.tl(true, 'o', 'Social Media');
-        }
-        //_gaq.push(['_trackSocial', 'Facebook', 'Share']);
+			  plugins.find('.player-toolbar').find('.' + iconClass + ' span').addClass('active');
 
-        e.preventDefault();
-        window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(burl) + '&t=' + encodeURIComponent(t), 'facebook', 'width=480,height=240,toolbar=0,status=0,resizable=1');
-      }
-      else if (parent.hasClass('twitter')) {
-        if (typeof s == 'object') {
-          //s.tl(this, 'o', 'Share-Twitter');
-          s.events = "event13";
-          s.eVar18 = "Twitter";
-          s.linkTrackVars = "events,eVar18";
-          s.linkTrackEvents = "event13";
-          s.tl(true, 'o', 'Social Media');
-        }
+			  //append overlay content
+			  appendOverlayContent(plugins, iconClass, player);
+		  });
 
-        e.preventDefault();
-        window.open('http://twitter.com/share?via=DellSoftware&url=' + encodeURIComponent(burl) + '&text=' + encodeURIComponent(t) + ',%20&counturl=' + encodeURIComponent(u), 'twitter', 'width=480,height=380,toolbar=0,status=0,resizable=1');
-      }
-      else if (parent.hasClass('linkedin')) {
-        if (typeof s == 'object') {
-          //s.tl(this, 'o', 'Share-LinkedIn');
-          s.events = "event13";
-          s.eVar18 = "LinkedIn";
-          s.linkTrackVars = "events,eVar18";
-          s.linkTrackEvents = "event13";
-          s.tl(true, 'o', 'Social Media');
-        }
-        //_gaq.push(['_trackSocial', 'LinkedIn', 'Share']);
+		  /*social media click handler*/
+		  $('body').on('click', '.oo-toolbar a', function (e) {
+			  var parent = $(this).parent(), u = '', t = $('h1').text().trim() + ' | Dell Software';
 
-        e.preventDefault();
-        window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(burl) + '&title=' + encodeURIComponent(t), 'linkedin', 'width=480,height=360,toolbar=0,status=0,resizable=1');
-      } else if (parent.hasClass('googleshare')) {
-        if (typeof s == 'object') {
-          s.events = "event13";
-          s.eVar18 = "Google+";
-          s.linkTrackVars = "events,eVar18";
-          s.linkTrackEvents = "event13";
-          s.tl(true, 'o', 'Social Media');
-        }
-        e.preventDefault();
-        window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
-      }
-    });
+			  if (parent.hasClass('facebook')) {
+				  if (typeof s == 'object') {
+					  //s.tl(this, 'o', 'Share-Facebook');
+					  s.events = "event13";
+					  s.eVar18 = "Facebook";
+					  s.linkTrackVars = "events,eVar18";
+					  s.linkTrackEvents = "event13";
+					  s.tl(true, 'o', 'Social Media');
+				  }
+				  //_gaq.push(['_trackSocial', 'Facebook', 'Share']);
+
+				  e.preventDefault();
+				  window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(burl) + '&t=' + encodeURIComponent(t), 'facebook', 'width=480,height=240,toolbar=0,status=0,resizable=1');
+			  }
+			  else if (parent.hasClass('twitter')) {
+				  if (typeof s == 'object') {
+					  //s.tl(this, 'o', 'Share-Twitter');
+					  s.events = "event13";
+					  s.eVar18 = "Twitter";
+					  s.linkTrackVars = "events,eVar18";
+					  s.linkTrackEvents = "event13";
+					  s.tl(true, 'o', 'Social Media');
+				  }
+
+				  e.preventDefault();
+				  window.open('http://twitter.com/share?via=DellSoftware&url=' + encodeURIComponent(burl) + '&text=' + encodeURIComponent(t) + ',%20&counturl=' + encodeURIComponent(u), 'twitter', 'width=480,height=380,toolbar=0,status=0,resizable=1');
+			  }
+			  else if (parent.hasClass('linkedin')) {
+				  if (typeof s == 'object') {
+					  //s.tl(this, 'o', 'Share-LinkedIn');
+					  s.events = "event13";
+					  s.eVar18 = "LinkedIn";
+					  s.linkTrackVars = "events,eVar18";
+					  s.linkTrackEvents = "event13";
+					  s.tl(true, 'o', 'Social Media');
+				  }
+				  //_gaq.push(['_trackSocial', 'LinkedIn', 'Share']);
+
+				  e.preventDefault();
+				  window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(burl) + '&title=' + encodeURIComponent(t), 'linkedin', 'width=480,height=360,toolbar=0,status=0,resizable=1');
+			  }
+			  else if (parent.hasClass('googleshare')) {
+				  if (typeof s == 'object') {
+					  s.events = "event13";
+					  s.eVar18 = "Google+";
+					  s.linkTrackVars = "events,eVar18";
+					  s.linkTrackEvents = "event13";
+					  s.tl(true, 'o', 'Social Media');
+				  }
+				  e.preventDefault();
+				  window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
+			  }
+		  });
+	  }
+
 
     processClosedCaption(player, videoProp);
 
@@ -395,11 +409,13 @@ function appendOverlayContent(plugins, iconClass, player) {
     plugins.parents('.innerWrapper').find('.oo_promo div.oo_start_button').show();
 
     plugins.removeAttr('style');
+
+		plugins.trigger('remove-overlay');
   });
 
   /*send email*/
   plugins.parents('.innerWrapper').find('.sendbutton').on('click', function () {
-    validateForm(plugins, player.getTitle());
+    validateOOEmailForm(plugins, player.getTitle());
   });
 
 }
@@ -428,7 +444,7 @@ function disableHoverToggle(plugins) {
 }
 
 /*validate email form in overlay*/
-function validateForm(plugins, title) {
+function validateOOEmailForm(plugins, title) {
   var isValid = true, str = '', email = plugins.parents('.innerWrapper').find('.sendemail .emailfield'), emailBody = '';
 
   if (email.attr('type') != 'button') {

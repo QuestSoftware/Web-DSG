@@ -33,25 +33,79 @@ $(document).ready(function () {
 		$('.utility').find('> li').removeClass('open');
 	});
 
-	$('body').on('click', '.ga', function() {
+	//GA event tracking - naveen
+	//Class "ga" should only be applied on to anchor tag.
+	$('body').on('click', '.ga', function (e) {
+		//This will prevent the default action of the anchor tag.
+		e.preventDefault();
+
+		//Retrieving URL of the anchor tag to be used later after GA Event Tracking is successfully submitted
+		var URL = $(this).attr('href'), eLabel = $(this).data('gal'), eValue = $(this).data('gav');
+
+		//Object to send to GA Event Tracking.
 		var obj = {
 			hitType: 'event',
-			eventCategory: $(this).data('gacat'),
-			eventAction: $(this).data('gaaction'),
-			eventLabel: $(this).data('galabel') === undefined ? '':$(this).data('galabel'),
-			eventValue: $(this).data('gaval') === undefined ? 0:parseInt($(this).data('gaval'))
+			eventCategory: $(this).data('gac'),
+			eventAction: $(this).data('gaa'),
+			hitCallback: function () {
+				location.href = URL;
+			}
 		};
 
-		var targetURLHost = parseUri($(this).attr('href'))['host'].toLowerCase();
-
-		if(targetURLHost != '' && location.host != targetURLHost && targetURLHost != 'www.dellsoftware.com') {
-			obj.transport = 'beacon';
-			obj.eventCategory = 'Outbound Link';
-			obj.eventAction = 'click';
-			obj.eventLabel = $(this).attr('href');
+		if (eLabel !== undefined) {
+			obj.eventLabel = eLabel;
 		}
 
+		if (eValue !== undefined) {
+			obj.eventValue = parseInt(eValue);
+		}
+
+		/* To be implemented later */
+		/*var targetURLHost = parseUri($(this).attr('href'))['host'].toLowerCase();
+
+		 if (targetURLHost != '' && location.host != targetURLHost && targetURLHost != 'www.dellsoftware.com') {
+		 obj.transport = 'beacon';
+		 obj.eventCategory = 'Outbound Link';
+		 obj.eventAction = 'click';
+		 obj.eventLabel = $(this).attr('href');
+		 }*/
+
+		//Send event tracking to google.
 		ga('send', obj);
+	});
+
+	//Site Catalyst Custom Event Tracking for Buy Online
+	//TODO: Might want to generalize this so that this can be used for other custom events.
+	$('body').on('click', '.btn-buy', function (e) {
+		var URL = $(this).attr('href'), URLTarget = $(this).attr('target');
+
+		//Only track links pointing to shop.software.dell.com
+		if (typeof s != "undefined" && /^https\:\/\/shop\.software\.dell\.com/.test(URL)) {
+			e.preventDefault();
+
+			var newWin = null;
+
+			//Determine if destination URL needs to open in a new window/tab.
+			if (URLTarget !== undefined && URLTarget != '_self' && URLTarget != '') {
+				//Need to open immediately or else chrome/firefox popup block will block it.
+				newWin = window.open('', URLTarget);
+			}
+
+			s.linkTrackEvents = "event10";
+			s.events = "event10";
+			s.pageName = sc_GetPageName("");
+			sc_CookieSet("SCBuy", s.events, 20);
+
+			//Submit tracking link to site catalyst. Once done, redirect user to desired destination.
+			s.tl(this, 'o', $(this).text(), null, function () {
+				if (newWin) {
+					newWin.location = URL;
+				}
+				else {
+					location.href = URL;
+				}
+			});
+		}
 	});
 
 	//Prevent anchor tag from firing when href is set to # on mobile

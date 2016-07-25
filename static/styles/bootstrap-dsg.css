@@ -972,7 +972,7 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
   .bootstrap body {
     font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.42857;
     color: #444444;
     background-color: white; }
@@ -1016,8 +1016,8 @@
   .bootstrap .img-circle {
     border-radius: 50%; }
   .bootstrap hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 22px;
+    margin-bottom: 22px;
     border: 0;
     border-top: 1px solid #eeeeee; }
   .bootstrap .sr-only {
@@ -1062,7 +1062,8 @@
       line-height: 1;
       color: #777777; }
   .bootstrap h1, .bootstrap .h1, .bootstrap h2, .bootstrap .h2, .bootstrap h3, .bootstrap .h3 {
-    margin: 20px 0; }
+	  margin: 22px 0;
+  }
     .bootstrap h1 small,
     .bootstrap h1 .small, .bootstrap .h1 small,
     .bootstrap .h1 .small, .bootstrap h2 small,
@@ -1073,8 +1074,9 @@
       font-size: 65%; }
   .bootstrap h4, .bootstrap .h4, .bootstrap h5, .bootstrap .h5, .bootstrap h6, .bootstrap .h6 {
     font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif;
-    margin-top: 10px;
-    margin-bottom: 10px; }
+    margin-top: 11px;
+	  margin-bottom: 11px;
+  }
     .bootstrap h4 small,
     .bootstrap h4 .small, .bootstrap .h4 small,
     .bootstrap .h4 .small, .bootstrap h5 small,
@@ -1084,37 +1086,51 @@
     .bootstrap .h6 .small {
       font-size: 75%; }
   .bootstrap h1, .bootstrap .h1 {
-    font-size: 24px; }
+	  font-size: 27px;
+  }
   .bootstrap h2, .bootstrap .h2 {
-    font-size: 20px; }
+	  font-size: 22px;
+  }
   .bootstrap h3, .bootstrap .h3 {
-    font-size: 17px; }
+	  font-size: 20px;
+  }
     .bootstrap h3.feature, .bootstrap .h3.feature {
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1.222222; }
   .bootstrap h4, .bootstrap .h4 {
-    font-size: 18px; }
+	  font-size: 20px;
+  }
   .bootstrap h5, .bootstrap .h5 {
-    font-size: 14px; }
+	  font-size: 16px;
+  }
   .bootstrap h6, .bootstrap .h6 {
-    font-size: 12px; }
+	  font-size: 14px;
+  }
   @media (min-width: 768px) {
     .bootstrap h1, .bootstrap .h1, .bootstrap h2, .bootstrap .h2, .bootstrap h3, .bootstrap .h3 {
-      margin: 30px 0; }
+	    margin: 33px 0;
+    }
     .bootstrap h1, .bootstrap .h1 {
-      font-size: 30px;
+      font-size: 33.75px;
       line-height: 1.2; }
     .bootstrap h2, .bootstrap .h2 {
-      font-size: 26px; }
+	    font-size: 28.6px;
+    }
     .bootstrap h3, .bootstrap .h3 {
-      font-size: 20.0px; }
+	    font-size: 23.52941px;
+    }
       .bootstrap h3.feature, .bootstrap .h3.feature {
-        font-size: 23.99999px; } }
+	      font-size: 28.23528px;
+      }
+  }
   @media (min-width: 992px) {
     .bootstrap h1, .bootstrap .h1 {
-      font-size: 31.99999px; }
+	    font-size: 35.99999px;
+    }
     .bootstrap h2, .bootstrap .h2 {
-      font-size: 28px; } }
+	    font-size: 30.8px;
+    }
+  }
   .bootstrap .container h2:first-child, .bootstrap .container h3:first-child, .bootstrap .container h4:first-child, .bootstrap .container h5:first-child, .bootstrap .container h6:first-child, .bootstrap .container .h2:first-child, .bootstrap .container .h3:first-child, .bootstrap .container .h4:first-child, .bootstrap .container .h5:first-child, .bootstrap .container .h6:first-child {
     margin-top: 0; }
     .bootstrap .container h2:first-child.feature, .bootstrap .container h3:first-child.feature, .bootstrap .container h4:first-child.feature, .bootstrap .container h5:first-child.feature, .bootstrap .container h6:first-child.feature, .bootstrap .container .h2:first-child.feature, .bootstrap .container .h3:first-child.feature, .bootstrap .container .h4:first-child.feature, .bootstrap .container .h5:first-child.feature, .bootstrap .container .h6:first-child.feature {
@@ -1122,18 +1138,22 @@
   .bootstrap .container [class^="col-"] h1:first-child, .bootstrap .container [class^="col-"] h2:first-child, .bootstrap .container [class^="col-"] h3:first-child, .bootstrap .container [class^="col-"] h4:first-child, .bootstrap .container [class^="col-"] h5:first-child, .bootstrap .container [class^="col-"] h6:first-child, .bootstrap .container [class^="col-"] .h1:first-child, .bootstrap .container [class^="col-"] .h2:first-child, .bootstrap .container [class^="col-"] .h3:first-child, .bootstrap .container [class^="col-"] .h4:first-child, .bootstrap .container [class^="col-"] .h5:first-child, .bootstrap .container [class^="col-"] .h6:first-child {
     margin-top: 0; }
   .bootstrap p {
-    margin: 0 0 10px; }
+	  margin: 0 0 11px;
+  }
   .bootstrap .lead {
-    margin-bottom: 20px;
-    font-size: 16px;
+    margin-bottom: 22px;
+    font-size: 18px;
     font-weight: 300;
     line-height: 1.4; }
     @media (min-width: 768px) {
       .bootstrap .lead {
-        font-size: 21px; } }
+	      font-size: 24px;
+      }
+    }
   .bootstrap small,
   .bootstrap .small {
-    font-size: 85%; }
+	  font-size: 87%;
+  }
   .bootstrap mark,
   .bootstrap .mark {
     background-color: #fcf8e3;
@@ -1142,7 +1162,7 @@
     font-size: inherit;
     line-height: inherit; }
   .bootstrap .text-normal {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.42857; }
   .bootstrap .text-left {
     text-align: left !important; }
@@ -1205,13 +1225,14 @@
   .bootstrap a.bg-danger:hover {
     background-color: #ffff96; }
   .bootstrap .page-header {
-    padding-bottom: 9px;
-    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    margin: 44px 0 22px;
     border-bottom: 1px solid #eeeeee; }
   .bootstrap ul,
   .bootstrap ol {
     margin-top: 0;
-    margin-bottom: 10px; }
+	  margin-bottom: 11px;
+  }
     .bootstrap ul.slim,
     .bootstrap ol.slim {
       padding-left: 1em; }
@@ -1242,7 +1263,8 @@
         padding-right: 5px; } }
   .bootstrap dl {
     margin-top: 0;
-    margin-bottom: 20px; }
+	  margin-bottom: 22px;
+  }
   .bootstrap dt,
   .bootstrap dd {
     line-height: 1.42857; }
@@ -1273,9 +1295,9 @@
   .bootstrap .initialism {
     font-size: 90%; }
   .bootstrap blockquote {
-    padding: 10px 20px;
-    margin: 20px 0;
-    font-size: 20px;
+    padding: 11px 22px;
+    margin: 22px 0;
+    font-size: 22.85714px;
     line-height: 1.2em;
     position: relative; }
     .bootstrap blockquote::before {
@@ -1304,7 +1326,7 @@
     .bootstrap blockquote footer {
       margin-top: 10px;
       display: block;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 1.42857;
       color: #777777;
       /*&:before {
@@ -1312,14 +1334,17 @@
       }*/ }
   @media (min-width: 768px) {
     .bootstrap blockquote {
-      font-size: 28px;
-      margin: 0 0 20px; }
+      font-size: 32px;
+	    margin: 0 0 22px;
+    }
       .bootstrap blockquote::before {
         top: 10px; }
       .bootstrap blockquote p::after {
         padding-top: 0; }
       .bootstrap blockquote footer {
-        font-size: 14px; } }
+	      font-size: 16px;
+      }
+  }
   .bootstrap .blockquote-reverse,
   .bootstrap blockquote.pull-right {
     padding-right: 15px;
@@ -1342,7 +1367,7 @@
     .bootstrap blockquote.pull-right .small:after {
       content: '\00A0 \2014'; }
   .bootstrap address {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     font-style: normal;
     line-height: 1.42857; }
   .bootstrap code,
@@ -1370,9 +1395,9 @@
       box-shadow: none; }
   .bootstrap pre {
     display: block;
-    padding: 9.5px;
-    margin: 0 0 10px;
-    font-size: 13px;
+    padding: 10.5px;
+    margin: 0 0 11px;
+    font-size: 15px;
     line-height: 1.42857;
     word-break: break-all;
     word-wrap: break-word;
@@ -2178,7 +2203,8 @@
   .bootstrap .table {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 20px; }
+	  margin-bottom: 22px;
+  }
     .bootstrap .table > thead > tr > th,
     .bootstrap .table > thead > tr > td,
     .bootstrap .table > tbody > tr > th,
@@ -2311,7 +2337,7 @@
     @media screen and (max-width: 767px) {
       .bootstrap .table-responsive {
         width: 100%;
-        margin-bottom: 15px;
+        margin-bottom: 16.5px;
         overflow-y: hidden;
         -ms-overflow-style: -ms-autohiding-scrollbar;
         border: 1px solid #dddddd; }
@@ -2354,8 +2380,8 @@
     display: block;
     width: 100%;
     padding: 0;
-    margin-bottom: 20px;
-    font-size: 21px;
+    margin-bottom: 22px;
+    font-size: 24px;
     line-height: inherit;
     color: #444444;
     border: 0;
@@ -2389,15 +2415,15 @@
   .bootstrap output {
     display: block;
     padding-top: 7px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.42857;
     color: #555555; }
   .bootstrap .form-control {
     display: block;
     width: 100%;
-    height: 34px;
+    height: 36px;
     padding: 6px 12px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.42857;
     color: #555555;
     background-color: white;
@@ -2438,7 +2464,8 @@
     .bootstrap input[type="time"],
     .bootstrap input[type="datetime-local"],
     .bootstrap input[type="month"] {
-      line-height: 34px; }
+	    line-height: 36px;
+    }
       .bootstrap input[type="date"].input-sm, .bootstrap .input-group-sm > input[type="date"].form-control,
       .bootstrap .input-group-sm > input[type="date"].input-group-addon,
       .bootstrap .input-group-sm > .input-group-btn > input[type="date"].btn, .input-group-sm .bootstrap input[type="date"],
@@ -2457,7 +2484,8 @@
       .bootstrap .input-group-sm > input[type="month"].input-group-addon,
       .bootstrap .input-group-sm > .input-group-btn > input[type="month"].btn, .input-group-sm
       .bootstrap input[type="month"] {
-        line-height: 30px; }
+	      line-height: 33px;
+      }
       .bootstrap input[type="date"].input-lg, .bootstrap .input-group-lg > input[type="date"].form-control,
       .bootstrap .input-group-lg > input[type="date"].input-group-addon,
       .bootstrap .input-group-lg > .input-group-btn > input[type="date"].btn, .input-group-lg .bootstrap input[type="date"],
@@ -2476,7 +2504,9 @@
       .bootstrap .input-group-lg > input[type="month"].input-group-addon,
       .bootstrap .input-group-lg > .input-group-btn > input[type="month"].btn, .input-group-lg
       .bootstrap input[type="month"] {
-        line-height: 46px; } }
+	      line-height: 49px;
+      }
+  }
   .bootstrap .form-group {
     margin-bottom: 15px;
     position: relative; }
@@ -2488,7 +2518,7 @@
     margin-bottom: 10px; }
     .bootstrap .radio label,
     .bootstrap .checkbox label {
-      min-height: 20px;
+      min-height: 22px;
       padding-left: 20px;
       margin-bottom: 0;
       font-weight: normal;
@@ -2533,7 +2563,8 @@
     padding-top: 7px;
     padding-bottom: 7px;
     margin-bottom: 0;
-    min-height: 34px; }
+	  min-height: 38px;
+  }
     .bootstrap .form-control-static.input-lg, .bootstrap .input-group-lg > .form-control-static.form-control,
     .bootstrap .input-group-lg > .form-control-static.input-group-addon,
     .bootstrap .input-group-lg > .input-group-btn > .form-control-static.btn, .bootstrap .form-control-static.input-sm, .bootstrap .input-group-sm > .form-control-static.form-control,
@@ -2544,16 +2575,17 @@
   .bootstrap .input-sm, .bootstrap .input-group-sm > .form-control,
   .bootstrap .input-group-sm > .input-group-addon,
   .bootstrap .input-group-sm > .input-group-btn > .btn {
-    height: 30px;
+    height: 33px;
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.5;
     border-radius: 1px; }
   .bootstrap select.input-sm, .bootstrap .input-group-sm > select.form-control,
   .bootstrap .input-group-sm > select.input-group-addon,
   .bootstrap .input-group-sm > .input-group-btn > select.btn {
-    height: 30px;
-    line-height: 30px; }
+    height: 33px;
+	  line-height: 33px;
+  }
   .bootstrap textarea.input-sm, .bootstrap .input-group-sm > textarea.form-control,
   .bootstrap .input-group-sm > textarea.input-group-addon,
   .bootstrap .input-group-sm > .input-group-btn > textarea.btn,
@@ -2563,36 +2595,39 @@
   .bootstrap .input-group-sm > .input-group-btn > select[multiple].btn {
     height: auto; }
   .bootstrap .form-group-sm .form-control {
-    height: 30px;
+    height: 33px;
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.5;
     border-radius: 1px; }
   .bootstrap .form-group-sm select.form-control {
-    height: 30px;
-    line-height: 30px; }
+    height: 33px;
+	  line-height: 33px;
+  }
   .bootstrap .form-group-sm textarea.form-control,
   .bootstrap .form-group-sm select[multiple].form-control {
     height: auto; }
   .bootstrap .form-group-sm .form-control-static {
-    height: 30px;
+    height: 33px;
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.5;
-    min-height: 32px; }
+	  min-height: 36px;
+  }
   .bootstrap .input-lg, .bootstrap .input-group-lg > .form-control,
   .bootstrap .input-group-lg > .input-group-addon,
   .bootstrap .input-group-lg > .input-group-btn > .btn {
-    height: 46px;
+    height: 49px;
     padding: 10px 16px;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.33333;
     border-radius: 1px; }
   .bootstrap select.input-lg, .bootstrap .input-group-lg > select.form-control,
   .bootstrap .input-group-lg > select.input-group-addon,
   .bootstrap .input-group-lg > .input-group-btn > select.btn {
-    height: 46px;
-    line-height: 46px; }
+    height: 49px;
+	  line-height: 49px;
+  }
   .bootstrap textarea.input-lg, .bootstrap .input-group-lg > textarea.form-control,
   .bootstrap .input-group-lg > textarea.input-group-addon,
   .bootstrap .input-group-lg > .input-group-btn > textarea.btn,
@@ -2602,50 +2637,55 @@
   .bootstrap .input-group-lg > .input-group-btn > select[multiple].btn {
     height: auto; }
   .bootstrap .form-group-lg .form-control {
-    height: 46px;
+    height: 49px;
     padding: 10px 16px;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.33333;
     border-radius: 1px; }
   .bootstrap .form-group-lg select.form-control {
-    height: 46px;
-    line-height: 46px; }
+    height: 49px;
+	  line-height: 49px;
+  }
   .bootstrap .form-group-lg textarea.form-control,
   .bootstrap .form-group-lg select[multiple].form-control {
     height: auto; }
   .bootstrap .form-group-lg .form-control-static {
-    height: 46px;
+    height: 49px;
     padding: 10px 16px;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.33333;
-    min-height: 38px; }
+	  min-height: 42px;
+  }
   .bootstrap .has-feedback {
     position: relative; }
     .bootstrap .has-feedback .form-control {
-      padding-right: 42.5px; }
+	    padding-right: 45px;
+    }
   .bootstrap .form-control-feedback {
     position: absolute;
     top: 0;
     right: 0;
     z-index: 2;
     display: block;
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
     text-align: center;
     pointer-events: none; }
   .bootstrap .input-lg + .form-control-feedback, .bootstrap .input-group-lg > .form-control + .form-control-feedback,
   .bootstrap .input-group-lg > .input-group-addon + .form-control-feedback,
   .bootstrap .input-group-lg > .input-group-btn > .btn + .form-control-feedback {
-    width: 46px;
-    height: 46px;
-    line-height: 46px; }
+    width: 49px;
+    height: 49px;
+	  line-height: 49px;
+  }
   .bootstrap .input-sm + .form-control-feedback, .bootstrap .input-group-sm > .form-control + .form-control-feedback,
   .bootstrap .input-group-sm > .input-group-addon + .form-control-feedback,
   .bootstrap .input-group-sm > .input-group-btn > .btn + .form-control-feedback {
-    width: 30px;
-    height: 30px;
-    line-height: 30px; }
+    width: 33px;
+    height: 33px;
+	  line-height: 33px;
+  }
   .bootstrap .has-success .help-block,
   .bootstrap .has-success .control-label,
   .bootstrap .has-success .radio,
@@ -2722,7 +2762,8 @@
     .bootstrap .form-control.error:active, .bootstrap .form-control.error:focus {
       background-color: white; }
   .bootstrap .has-feedback label ~ .form-control-feedback {
-    top: 25px; }
+	  top: 27px;
+  }
   .bootstrap .has-feedback label.sr-only ~ .form-control-feedback {
     top: 0; }
   .bootstrap .help-block {
@@ -2777,7 +2818,8 @@
     padding-top: 7px; }
   .bootstrap .form-horizontal .radio,
   .bootstrap .form-horizontal .checkbox {
-    min-height: 27px; }
+	  min-height: 29px;
+  }
   .bootstrap .form-horizontal .form-group {
     margin-left: -15px;
     margin-right: -15px; }
@@ -2836,7 +2878,7 @@
     border: 1px solid transparent;
     white-space: nowrap;
     padding: 6px 12px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.42857;
     border-radius: 1px;
     -webkit-user-select: none;
@@ -3011,17 +3053,17 @@
           text-decoration: none; } }
   .bootstrap .btn-lg, .bootstrap .btn-group-lg > .btn {
     padding: 10px 16px;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.33333;
     border-radius: 1px; }
   .bootstrap .btn-sm, .bootstrap .btn-group-sm > .btn {
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.5;
     border-radius: 1px; }
   .bootstrap .btn-xs, .bootstrap .btn-group-xs > .btn {
     padding: 1px 5px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.5;
     border-radius: 1px; }
   .bootstrap .btn-block {
@@ -3103,7 +3145,7 @@
     padding: 5px 0;
     margin: 2px 0 0;
     list-style: none;
-    font-size: 14px;
+    font-size: 16px;
     text-align: left;
     background-color: white;
     border: 1px solid #cccccc;
@@ -3117,7 +3159,7 @@
       left: auto; }
     .bootstrap .dropdown-menu .divider {
       height: 2px;
-      margin: 9px 0;
+      margin: 10px 0;
       overflow: hidden;
       background-color: #e5e5e5; }
     .bootstrap .dropdown-menu > li > a {
@@ -3158,7 +3200,7 @@
   .bootstrap .dropdown-header {
     display: block;
     padding: 3px 20px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.42857;
     color: #777777;
     white-space: nowrap; }
@@ -3356,7 +3398,7 @@
     vertical-align: middle; }
   .bootstrap .input-group-addon {
     padding: 6px 12px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: normal;
     line-height: 1;
     color: #555555;
@@ -3368,13 +3410,13 @@
     .bootstrap .input-group-sm > .input-group-addon,
     .bootstrap .input-group-sm > .input-group-btn > .input-group-addon.btn {
       padding: 5px 10px;
-      font-size: 12px;
+      font-size: 14px;
       border-radius: 1px; }
     .bootstrap .input-group-addon.input-lg,
     .bootstrap .input-group-lg > .input-group-addon,
     .bootstrap .input-group-lg > .input-group-btn > .input-group-addon.btn {
       padding: 10px 16px;
-      font-size: 18px;
+      font-size: 20px;
       border-radius: 1px; }
     .bootstrap .input-group-addon input[type="radio"],
     .bootstrap .input-group-addon input[type="checkbox"] {
@@ -3448,7 +3490,7 @@
       border-color: #007db8; }
     .bootstrap .nav .nav-divider {
       height: 2px;
-      margin: 9px 0;
+      margin: 10px 0;
       overflow: hidden;
       background-color: #e5e5e5; }
     .bootstrap .nav > li > a > img {
@@ -3533,7 +3575,7 @@
   .bootstrap .navbar {
     position: relative;
     min-height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     border: 1px solid transparent; }
     .bootstrap .navbar:before, .bootstrap .navbar:after {
       content: " ";
@@ -3625,9 +3667,9 @@
     border-width: 1px 0 0; }
   .bootstrap .navbar-brand {
     float: left;
-    padding: auto-20px/2 15px;
-    font-size: 18px;
-    line-height: 20px;
+    padding: auto-22px/2 15px;
+    font-size: 20px;
+    line-height: 22px;
     height: auto; }
     .bootstrap .navbar-brand:hover, .bootstrap .navbar-brand:focus {
       text-decoration: none; }
@@ -3660,11 +3702,13 @@
       .bootstrap .navbar-toggle {
         display: none; } }
   .bootstrap .navbar-nav {
-    margin: auto-20px/2/2 -15px; }
+	  margin: auto-22px/2/2 -15px;
+  }
     .bootstrap .navbar-nav > li > a {
       padding-top: 10px;
       padding-bottom: 10px;
-      line-height: 20px; }
+	    line-height: 22px;
+    }
     @media (max-width: 767px) {
       .bootstrap .navbar-nav .open .dropdown-menu {
         position: static;
@@ -3678,7 +3722,8 @@
         .bootstrap .navbar-nav .open .dropdown-menu .dropdown-header {
           padding: 5px 15px 5px 25px; }
         .bootstrap .navbar-nav .open .dropdown-menu > li > a {
-          line-height: 20px; }
+	        line-height: 22px;
+        }
           .bootstrap .navbar-nav .open .dropdown-menu > li > a:hover, .bootstrap .navbar-nav .open .dropdown-menu > li > a:focus {
             background-image: none; } }
     @media (min-width: 768px) {
@@ -3688,8 +3733,10 @@
         .bootstrap .navbar-nav > li {
           float: left; }
           .bootstrap .navbar-nav > li > a {
-            padding-top: auto-20px/2;
-            padding-bottom: auto-20px/2; } }
+            padding-top: auto-22px/2;
+	          padding-bottom: auto-22px/2;
+          }
+    }
   .bootstrap .navbar-form {
     margin-left: -15px;
     margin-right: -15px;
@@ -3698,8 +3745,9 @@
     border-bottom: 1px solid transparent;
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-    margin-top: auto-34px/2;
-    margin-bottom: auto-34px/2; }
+    margin-top: auto-36px/2;
+	  margin-bottom: auto-36px/2;
+  }
     @media (min-width: 768px) {
       .bootstrap .navbar-form .form-group {
         display: inline-block;
@@ -3764,17 +3812,20 @@
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
   .bootstrap .navbar-btn {
-    margin-top: auto-34px/2;
-    margin-bottom: auto-34px/2; }
+    margin-top: auto-36px/2;
+	  margin-bottom: auto-36px/2;
+  }
     .bootstrap .navbar-btn.btn-sm, .bootstrap .btn-group-sm > .navbar-btn.btn {
-      margin-top: auto-30px/2;
-      margin-bottom: auto-30px/2; }
+      margin-top: auto-33px/2;
+	    margin-bottom: auto-33px/2;
+    }
     .bootstrap .navbar-btn.btn-xs, .bootstrap .btn-group-xs > .navbar-btn.btn {
       margin-top: auto-22/2;
       margin-bottom: auto-22/2; }
   .bootstrap .navbar-text {
-    margin-top: auto-20px/2;
-    margin-bottom: auto-20px/2; }
+    margin-top: auto-22px/2;
+	  margin-bottom: auto-22px/2;
+  }
     @media (min-width: 768px) {
       .bootstrap .navbar-text {
         float: left;
@@ -3942,7 +3993,7 @@
   .bootstrap .pagination {
     display: inline-block;
     padding-left: 0;
-    margin: 20px 0;
+    margin: 22px 0;
     border-radius: 1px; }
     .bootstrap .pagination > li {
       display: inline; }
@@ -3994,7 +4045,8 @@
   .bootstrap .pagination-lg > li > a,
   .bootstrap .pagination-lg > li > span {
     padding: 10px 16px;
-    font-size: 18px; }
+	  font-size: 20px;
+  }
   .bootstrap .pagination-lg > li:first-child > a,
   .bootstrap .pagination-lg > li:first-child > span {
     border-bottom-left-radius: 1px;
@@ -4006,7 +4058,8 @@
   .bootstrap .pagination-sm > li > a,
   .bootstrap .pagination-sm > li > span {
     padding: 5px 10px;
-    font-size: 12px; }
+	  font-size: 14px;
+  }
   .bootstrap .pagination-sm > li:first-child > a,
   .bootstrap .pagination-sm > li:first-child > span {
     border-bottom-left-radius: 1px;
@@ -4017,7 +4070,7 @@
     border-top-right-radius: 1px; }
   .bootstrap .pager {
     padding-left: 0;
-    margin: 20px 0;
+    margin: 22px 0;
     list-style: none;
     text-align: center; }
     .bootstrap .pager:before, .bootstrap .pager:after {
@@ -4099,7 +4152,7 @@
     display: inline-block;
     min-width: 10px;
     padding: 3px 7px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
     color: white;
     line-height: 1;
@@ -4132,7 +4185,7 @@
   .bootstrap .thumbnail {
     display: block;
     padding: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     line-height: 1.42857;
     background-color: white;
     border: 1px solid #dddddd;
@@ -4156,7 +4209,7 @@
     border-color: #007db8; }
   .bootstrap .alert {
     padding: 10px 35px 0 40px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     border: 1px solid transparent;
     border-radius: 1px; }
     .bootstrap .alert h4 {
@@ -4354,7 +4407,7 @@
     margin-bottom: 0;
     line-height: 1.3; }
   .bootstrap .panel {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 1px;
@@ -4377,7 +4430,7 @@
   .bootstrap .panel-title {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 16px;
+    font-size: 18px;
     color: inherit; }
     .bootstrap .panel-title > a,
     .bootstrap .panel-title > small,
@@ -4536,7 +4589,8 @@
     border: 0;
     margin-bottom: 0; }
   .bootstrap .panel-group {
-    margin-bottom: 20px; }
+	  margin-bottom: 22px;
+  }
     .bootstrap .panel-group .panel {
       margin-bottom: 0;
       border-radius: 1px; }
@@ -4653,7 +4707,7 @@
     padding-bottom: 75%; }
   .bootstrap .close {
     float: right;
-    font-size: 21px;
+    font-size: 24px;
     font-weight: bold;
     line-height: 1;
     color: black;
@@ -4838,6 +4892,10 @@
     display: inline-block; }
   .bootstrap .icon-large-computergeneric:before {
     content: "\e616"; }
+
+.bootstrap .icon-small-alertinfo:before {
+	content: "\e604";
+}
   .bootstrap .site-wrapper {
     overflow: hidden;
     position: relative;
@@ -5472,7 +5530,8 @@
       .bootstrap.is-responsive .masthead .search-container .btn {
         top: 2px;
         right: 2px;
-        padding: 2px 12px; }
+	      padding: 1px 12px 0;
+      }
     .bootstrap.is-responsive .masthead ul.tier1 li:hover {
       background: #fff;
       color: #007db8; }
@@ -5746,7 +5805,8 @@
     .bootstrap.not-responsive .masthead .search-container .btn {
       top: 2px;
       right: 2px;
-      padding: 2px 12px; }
+	    padding: 1px 12px 0;
+    }
   .bootstrap.not-responsive .masthead ul.tier1 li:hover {
     background: #fff;
     color: #007db8; }
@@ -6269,7 +6329,7 @@
     z-index: 1070;
     display: block;
     font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: normal;
     line-height: 1.4;
     background-color: white;
@@ -6966,6 +7026,19 @@
     height: 100%; }
   .bootstrap .pos-relative {
     position: relative; }
+
+.bootstrap .new {
+	background-color: #ee6411;
+	color: white;
+	font-size: .8em;
+	line-height: 1em;
+	padding: 0 5px 2px;
+	vertical-align: super;
+	margin-left: 5px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
   .bootstrap .border-b-0 {
     border-bottom: 0 !important; }
   .bootstrap iframe {

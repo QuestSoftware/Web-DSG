@@ -29,7 +29,7 @@ $(document).ready(function () {
       if ($(this).is(':visible') && !target.is(':visible')) {
         $(this).hide().data('hidden-class', 'hidden');
       }
-      $(this).prev().css('height', '');//reset height of parent container
+      $(this).prev().find('.container').css('height', '');//reset height of parent container
     });
 
     if (target.is(':visible')) {
@@ -72,10 +72,10 @@ $(document).ready(function () {
         }
 
         $(target)
-            .css({
-              'top': top
-            })
-            .find('.triangle-top').css('left', $(this).offset().left + $(this).width() / 2 + 8);
+          .css({
+            'top': top
+          })
+          .find('.triangle-top').css('left', $(this).offset().left + $(this).width() / 2 + 8);
       }
 
       var parentContainer = $(this).parents('.container');
@@ -151,7 +151,21 @@ $(document).ready(function () {
     }
     else {
       $('.fat-tabs').tabs({
+        create: function (event, ui) {
+          // Adjust hashes to not affect URL when clicked
+          var widget = $('.fat-tabs').data("uiTabs");
+          widget.panels.each(function (i) {
+            this.id = "uiTab_" + this.id; // Prepend a custom string to tab id
+            widget.anchors[i].hash = "#" + this.id;
+            $(widget.tabs[i]).attr("aria-controls", this.id);
+          });
+          //added this fix for FF
+          window.scrollTo(0, 0);
+        },
         activate: function (event, ui) {
+          // Add the original tab id to the URL hash
+          window.location.hash = ui.newPanel.attr("id").replace("uiTab_", "");
+
           ui.newPanel.trigger('tab.visible');
           ui.oldPanel.trigger('tab.hidden');
 
@@ -176,9 +190,9 @@ $(document).ready(function () {
     e.preventDefault();
 
     var width = 642,
-        title = '',
-        config = $.parseJSON($(this).data('config').replace(/'/g, '"')),
-        content = '';
+      title = '',
+      config = $.parseJSON($(this).data('config').replace(/'/g, '"')),
+      content = '';
 
     if (typeof config.title != 'undefined') {
       title = config.title;
@@ -204,18 +218,18 @@ $(document).ready(function () {
 
     if ($('body').data('modal-appended') == false || $('body').data('modal-appended') == undefined) {
       var modalContent =
-          '<div class="modal fade" id="oomodal" tabindex="-1" role="dialog">' +
-          '<div class="modal-dialog" role="document">' +
-          '<div class="modal-content">' +
-          '<div class="modal-header">' +
-          '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
-          '<div>' +
-          '<div class="modal-body">' +
-          content +
-          '</div>' +
-          '</div>' +
-          '</div>' +
-          '</div>';
+        '<div class="modal fade" id="oomodal" tabindex="-1" role="dialog">' +
+        '<div class="modal-dialog" role="document">' +
+        '<div class="modal-content">' +
+        '<div class="modal-header">' +
+        '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+        '<div>' +
+        '<div class="modal-body">' +
+        content +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
       $('body').append(modalContent);
       $('body').data('modal-appended', 'true');
     }
@@ -381,8 +395,8 @@ $(document).ready(function () {
     //check if clicked panel is below an open one
 
     var targetOpenElem = $(e.target).parent(),
-        containerElem = $(targetOpenElem).parents('.container'),
-        previousOpenElem = containerElem.find('a[aria-expanded="true"]');
+      containerElem = $(targetOpenElem).parents('.container'),
+      previousOpenElem = containerElem.find('a[aria-expanded="true"]');
 
     if (previousOpenElem.length && previousOpenElem.offset().top < targetOpenElem.offset().top) {
       window.scrollTo(0, containerElem.offset().top - 50);
@@ -390,6 +404,10 @@ $(document).ready(function () {
   });
 
   processEllipsis();
+
+  if ($('.comparison-table').data('xs-collapsibles')) {
+    addResize('processComparisonTable', true);
+  }
 });
 
 $(window).load(function () {
@@ -478,7 +496,6 @@ function slickPlugin(parentSelector) {
 
         return true;
       }
-
 
       if (pageType == 0) {
         cfg.slidesToShow = 1;
@@ -622,9 +639,9 @@ function slickPlugin(parentSelector) {
 
   function fixScreenshot(e, slick, currentSlide, nextSlide) {
     var elem = $(slick.$slides[nextSlide]),
-        slideWidth = elem.width(),
-        imgWidth = elem.find('img').width(),
-        innerDiv = elem.find('> div');
+      slideWidth = elem.width(),
+      imgWidth = elem.find('img').width(),
+      innerDiv = elem.find('> div');
 
     elem.css('opacity', 0);
 
@@ -902,9 +919,9 @@ function loadOoyala(parentSelector) {
     }
     else {
       $.getScript('//player.ooyala.com/v3/9eba220ad98c47cda9fdf6ba82ce607a?platform=html5&callback=receiveOoyalaP3Event',
-          function () {
-            init();
-          });
+        function () {
+          init();
+        });
     }
   }
 
@@ -912,7 +929,7 @@ function loadOoyala(parentSelector) {
     OO.ready(function () {
       $(parentSelector).find('.ooyalaplayer').each(function (indx) {
         var id = $(this).attr('id'),
-            videoId = $(this).data('videoid');
+          videoId = $(this).data('videoid');
 
         if (id === undefined) {
           id = 'op-' + getRandomString(8);
@@ -1016,7 +1033,7 @@ function resizeFourColumnFilmstripCarousel(parentSelector) {
     parentSelector = 'body';
   }
 
-  if ($(parentSelector).find('.screenshot-carousel').length && !$('html').hasClass('home')) {
+	if ($(parentSelector).find('.screenshot-carousel').length && location.pathname != '/') {
     if ($.fn.slidePagination2) {
       init();
     }
@@ -1115,7 +1132,7 @@ function socialMediaToolbar() {
   }
 
   //Retrieve bit.ly url
-  if (window.XMLHttpRequest && location.host == 'software.dell.com') {
+  if (window.XMLHttpRequest && location.host == 'software.dell.com' && !/\/emailcl\//.test(location.pathname)) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "/hidden/bitly.asmx/get?URI=" + encodeURIComponent(url));
     xhr.onreadystatechange = function () {
@@ -1164,7 +1181,10 @@ function socialMediaToolbar() {
       //_gaq.push(['_trackSocial', 'Twitter', 'Tweet']);
       //console.log(bitlyURL);
       //console.log(url);
-
+      //Override twitter title for security (adding #)
+      if (location.host == 'security.dell.com') {
+        title = 'Dell Security Solutions: Be the #DeptofYes';
+      }
       e.preventDefault();
       window.open('http://twitter.com/share?via=DellSoftware&url=' + encodeURIComponent(bitlyURL) + '&text=' + encodeURIComponent(title) + ',%20&counturl=' + encodeURIComponent(url), 'twitter', 'width=480,height=380,toolbar=0,status=0,resizable=1');
     }
@@ -1238,10 +1258,10 @@ function grayscaleImage() {
 
 function getRandomString(len) {
   var ranString = '',
-      alphaLower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
-      alphaUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
-      digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      r, n, ranString;
+    alphaLower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
+    alphaUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
+    digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+    r, n, ranString;
 
   for (i = 0; i < len; i++) {
     r = Math.random() * 8;
@@ -1265,9 +1285,9 @@ function getRandomString(len) {
 
 function resizeAffix() {
   var affixID = '#affix-nav',
-      affixElem = $(affixID),
-      siteWrapper = $('.site-wrapper'),
-      body = $('body').css('position', 'relative');
+    affixElem = $(affixID),
+    siteWrapper = $('.site-wrapper'),
+    body = $('body').css('position', 'relative');
 
   reset();
 
@@ -1306,12 +1326,12 @@ function resizeAffix() {
 
       //Prevent page jumpiness when using the scrollbar when passing the first bookmark area.
       affixElem
-          .on('affixed.bs.affix', function () {
-            $('<div class="affix-dummy">').css('height', $(this).outerHeight(true)).insertAfter(this);
-          })
-          .on('affixed-top.bs.affix', function () {
-            $(this).next().remove();
-          });
+        .on('affixed.bs.affix', function () {
+          $('<div class="affix-dummy">').css('height', $(this).outerHeight(true)).insertAfter(this);
+        })
+        .on('affixed-top.bs.affix', function () {
+          $(this).next().remove();
+        });
     }, 250);
   }
 
@@ -1374,5 +1394,48 @@ function replaceURL(text) {
   return text.replace(exp, "<a href='$1'>$1</a>");
 }
 
+function processComparisonTable() {
+  if (pageWidth < 768 && $('.comparison-table').data('xs-collapsibles') != undefined) {
+    var compTable = $('.comparison-table'),
+      index = 1,
+      htmlFragment = '';
 
+    $(compTable.find('tbody tr')).each(function () {
+      htmlFragment +=
+        '<div class="panel">' +
+        '<div class="panel-heading">' +
+        '<h4 class="panel-title">' +
+        '<a data-toggle="collapse" data-parent="#accordion" href="#panel' + index + '" aria-expanded="false" class="collapsed">'
+        + $(this).find('>td:first-child').text() +
+        '</a>' +
+        '</h4>' +
+        '</div>' +
+        '<div id="panel' + index + '" class="collapse table-responsive" aria-expanded="false">' +
+        '<div class="panel-body"> ' +
+        getBodyContent($(this)) +
+        '</div>' +
+        '</div>' +
+        '</div>';
+      index++;
+    });
 
+    function getBodyContent(row) {
+      var panelContentHtml = '';
+      row.find('td:gt(0)').each(function () {
+        panelContentHtml +=
+          '<div class="row">' +
+          '<div class="col-xs-10">' +
+          '<p>' + $('.comparison-table').find('th').eq($(this).index()).text() + '</p>' +
+          '</div>' +
+          '<div class="col-xs-2">' +
+          $(this).html() +
+          '</div>' +
+          '</div>';
+      });
+
+      return panelContentHtml;
+    }
+
+    $('.panel-group-collapsible').append(htmlFragment);
+  }
+}

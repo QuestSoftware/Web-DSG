@@ -1,251 +1,274 @@
 addResize(function () {
-	processComparison();
+  processComparison();
 }, true);
 
 function processComparison(parentSelector) {
-	if (typeof parentSelector == 'undefined') {
-		parentSelector = 'body';
-	}
+  if (typeof parentSelector == 'undefined') {
+    parentSelector = 'body';
+  }
 
-	var elem = $(parentSelector).find('.comparison');
+  var elem = $(parentSelector).find('.comparison');
 
-	if (elem.length) {
-		elem.each(function () {
-			//Only process if visible.
-			if (!$(this).is(':visible')) {
-				return true;
-			}
+  if (elem.length) {
+    elem.each(function () {
+      //Only process if visible.
+      if (!$(this).is(':visible')) {
+        return true;
+      }
 
-			var displayAmount = 2, //Define how many entries should be shown
-				rows = $(this).find('.row'), //All rows
-				columnsInFirstRow = $(rows.get(0)).find('> div'),
-				total = columnsInFirstRow.length, //Total entries
-				cols = $(this).find('[class^="col-"]'), //All columns
-				paginationElem = $(this).find('.comparison-pagination'); //Pagination element.
+      var displayAmount = 2, //Define how many entries should be shown
+        rows = $(this).find('.row'), //All rows
+        columnsInFirstRow = $(rows.get(0)).find('> div'),
+        total = columnsInFirstRow.length, //Total entries
+        cols = $(this).find('[class^="col-"]'), //All columns
+        paginationElem = $(this).find('.comparison-pagination'); //Pagination element.
 
-			//Reset
-			reset();
+      //Reset
+      reset();
 
-			var width = columnsInFirstRow.outerWidth();
+      var width = columnsInFirstRow.outerWidth();
 
-			//Define how many entries should be shown.
-			if (pageType == 3) { //Large Desktop
-				displayAmount = $(this).data('display-lg') == undefined ? 4 : $(this).data('display-lg');
-			}
-			else if (pageType == 2) { //Medium Desktop
-				displayAmount = $(this).data('display-md') == undefined ? 4 : $(this).data('display-md');
-			}
-			else if (pageType == 1) { //Tablet
-				displayAmount = $(this).data('display-sm') == undefined ? 3 : $(this).data('display-sm');
-			}
+      //Define how many entries should be shown.
+      if (pageType == 3) { //Large Desktop
+        displayAmount = $(this).data('display-lg') == undefined ? 4 : $(this).data('display-lg');
+      }
+      else if (pageType == 2) { //Medium Desktop
+        displayAmount = $(this).data('display-md') == undefined ? 4 : $(this).data('display-md');
+      }
+      else if (pageType == 1) { //Tablet
+        displayAmount = $(this).data('display-sm') == undefined ? 3 : $(this).data('display-sm');
+      }
+      else if (pageType == 0) { //mobile
+        displayAmount = $(this).data('display-xs') == undefined ? 2 : $(this).data('display-xs');
+      }
 
-			paginationElem.find('.end').text(displayAmount);
+      paginationElem.find('.end').text(displayAmount);
 
-			rows.find('.inactive').html('&nbsp;');
 
-			//Set all expanded collapsible columns the same height.
-			$(this).on('shown.bs.collapse', '.collapse', function () {
-				if (!$(this).data('comparison-processed')) {
-					$(this).find('.row').each(function () {
-						var rowHeight = $(this).height();
+      rows.find('.inactive').html('&nbsp;');
 
-						$(this).find('> div').css('height', rowHeight);
-					});
+      //Set all expanded collapsible columns the same height.
+      $(this).on('shown.bs.collapse', '.collapse', function () {
+        if (!$(this).data('comparison-processed')) {
+          $(this).find('.row').each(function () {
+            var rowHeight = $(this).height();
 
-					$(this).data('comparison-processed', true);
-				}
-			});
+            $(this).find('> div').css('height', rowHeight);
+          });
 
-			if (total > displayAmount) {
-				paginationElem.show();
+          $(this).data('comparison-processed', true);
+        }
+      });
 
-				cols.css('width', width);
-				rows.css('width', width * total);
+      /*comparison table http://software.dell.com/remotescan/comparison-review.aspx */
+      if ($('.comparison-table').data('xs-carousel')) {
+        var compTable =$('.comparison-table'),
+          offsetTop = compTable.find('.comparison .row > div:first-child').offset().top;
 
-				elem
-					.data('page', 0)
-					.data('width', width)
-					.data('display', displayAmount);
+        $(this).data('comparison-processed', true);
 
-				paginationElem
-					.on('click', '.prev', scroll)
-					.on('click', '.next', scroll);
+        /*move fixed column to the same position as carousel*/
+        compTable.find('.fixed-column').offset({top: offsetTop});
 
-				if ($.fn.touchSwipe) {
-					initSwipe();
-				}
-				else {
-					$.getScript('/static/library/jQuery/jquery.touchSwipe.js').done(initSwipe);
-				}
-			}
-			else {
-				paginationElem.hide();
-			}
+        /*match height of each fixed-column table cell with corresponding carousel table cell*/
+        compTable.find('.fixed-column tr').each(function () {
+          var elem = $(this);
+          compTable.find('.comparison table').each(function(){
+            $(this).find('tbody tr').eq(elem.index()).find('td').outerHeight(elem.find('td').outerHeight());
+          });
+        });
+      }
 
-			//Add background color on active column
-			var selectedColumn = 0;
+      if (total > displayAmount) {
+        paginationElem.show();
 
-			columnsInFirstRow.each(function(indx) {
-				if($(this).find('> div').find('> div:eq(0)').hasClass('active')) {
-					selectedColumn = indx;
+        cols.css('width', width);
+        rows.css('width', width * total);
 
-					if($(this).parents('.comparison-container').hasClass('col-striped')) {
-						rows.find('> div:eq(' + indx + ')').addClass('selected');
-					}
-					else {
-						rows.find('> div:eq(' + indx + ')').addClass('bg-grey selected');
-					}
-				}
-			});
+        elem
+          .data('page', 0)
+          .data('width', width)
+          .data('display', displayAmount);
 
-			//If there is only 1 panel group show panels
-			var panelGroup = $(this).find('.panel-group-collapsible');
+        paginationElem
+          .on('click', '.prev', scroll)
+          .on('click', '.next', scroll);
 
-			if(panelGroup.find('> div').length == 1) {
-				 panelGroup.find('.panel-heading').hide().next().removeClass('collapse');
-			}
+        if ($.fn.touchSwipe) {
+          initSwipe();
+        }
+        else {
+          $.getScript('/static/library/jQuery/jquery.touchSwipe.js').done(initSwipe);
+        }
+      }
+      else {
+        paginationElem.hide();
+      }
 
-			//Slide through to show selected column in view.
-			var tweenAmount = 0;
+      //Add background color on active column
+      var selectedColumn = 0;
 
-			if(displayAmount == 2) {
-				tweenAmount = selectedColumn;
-			}
-			else if(displayAmount == 3) {
-				tweenAmount = selectedColumn - 1;
-			}
-			else if(displayAmount == 4) {
-				if(total - selectedColumn <= 3) {
-					tweenAmount = 4 - (total - selectedColumn);
-				}
-			}
+      columnsInFirstRow.each(function (indx) {
+        if ($(this).find('> div').find('> div:eq(0)').hasClass('active')) {
+          selectedColumn = indx;
 
-			if(tweenAmount > (total - displayAmount)) {
-				tweenAmount = total - displayAmount;
-			}
+          if ($(this).parents('.comparison-container').hasClass('col-striped')) {
+            rows.find('> div:eq(' + indx + ')').addClass('selected');
+          }
+          else {
+            rows.find('> div:eq(' + indx + ')').addClass('bg-grey selected');
+          }
+        }
+      });
 
-			var elem2 = $(this);
+      //If there is only 1 panel group show panels
+      var panelGroup = $(this).find('.panel-group-collapsible');
 
-			for(var i = 0; i < tweenAmount; i++) {
-				setTimeout(function() {
-					console.log('next');
-					elem2.find('.next').trigger('click');
-				}, 10);
-			}
+      if (panelGroup.find('> div').length == 1) {
+        panelGroup.find('.panel-heading').hide().next().removeClass('collapse');
+      }
 
-			function reset() {
-				cols.css('width', '');
-				rows.css({left: '', width: ''});
-				paginationElem
-					.off('click', '**')
-					.find('.next').removeClass('inactive').end()
-					.find('.prev').addClass('inactive').end()
-					.find('.start').text(1).end()
-					.find('.total').text(total);
-				$(this).off('shown.bs.collapse', '**');
-				$(rows.get(0)).find('> div').css('height', '');
+      //Slide through to show selected column in view.
+      var tweenAmount = 0;
 
-				//Copy title for each collapsible row and place it in each column.
-				elem.find('.panel-body').find('> .row:even').each(function () {
-					$(this).find('> div').html($(this).find('> div:eq(0)').html());
-					$(this).find('> div:gt(0)').find('> div').css('visibility', 'hidden');
-				});
-			}
+      if (displayAmount == 2) {
+        tweenAmount = selectedColumn;
+      }
+      else if (displayAmount == 3) {
+        tweenAmount = selectedColumn - 1;
+      }
+      else if (displayAmount == 4) {
+        if (total - selectedColumn <= 3) {
+          tweenAmount = 4 - (total - selectedColumn);
+        }
+      }
 
-			function scroll() {
-				updateDisplay(elem.data('page') + ($(this).hasClass('prev') ? -1 : 1));
-			}
+      if (tweenAmount > (total - displayAmount)) {
+        tweenAmount = total - displayAmount;
+      }
 
-			function initSwipe() {
-				rows.touchSwipe({
-					swipeStatus: function (event, phase, direction, distance, duration, fingerCount) {
-						//Here we can check the:
-						//phase : 'start', 'move', 'end', 'cancel'
-						//direction : 'left', 'right', 'up', 'down'
-						//distance : Distance finger is from initial touch point in px
-						//duration : Length of swipe in MS
-						//fingerCount : the number of fingers used
+      var elem2 = $(this);
 
-						var dir = '';
+      for (var i = 0; i < tweenAmount; i++) {
+        setTimeout(function () {
+          console.log('next');
+          elem2.find('.next').trigger('click');
+        }, 10);
+      }
 
-						if (!$(this).data('direction')) {
-							if ($.inArray(direction, ['left', 'right']) > -1) {
-								dir = 'horizontal';
-							}
-							else {
-								dir = 'vertical';
-							}
+      function reset() {
+        cols.css('width', '');
+        rows.css({left: '', width: ''});
+        paginationElem
+          .off('click', '**')
+          .find('.next').removeClass('inactive').end()
+          .find('.prev').addClass('inactive').end()
+          .find('.start').text(1).end()
+          .find('.total').text(total);
+        $(this).off('shown.bs.collapse', '**');
+        $(rows.get(0)).find('> div').css('height', '');
 
-							$(this).data('direction', dir);
-						}
-						else {
-							dir = $(this).data('direction');
-						}
+        //Copy title for each collapsible row and place it in each column.
+        elem.find('.panel-body').find('> .row:even').each(function () {
+          $(this).find('> div').html($(this).find('> div:eq(0)').html());
+          $(this).find('> div:gt(0)').find('> div').css('visibility', 'hidden');
+        });
+      }
 
-						var page = elem.data('page');
+      function scroll() {
+        updateDisplay(elem.data('page') + ($(this).hasClass('prev') ? -1 : 1));
+      }
 
-						if (dir == 'horizontal') {
-							if (direction == 'left') {
-								rows.css('left', (-page * width) - distance);
-							}
-							else if (direction == 'right') {
-								rows.css('left', (-page * width) + distance);
-							}
-						}
-						else {
-							if (direction == 'up') {
-								window.scrollTo(0, window.scrollY + distance);
-							}
-							else if (direction == 'down') {
-								window.scrollTo(0, window.scrollY - distance);
-							}
-						}
+      function initSwipe() {
+        rows.touchSwipe({
+          swipeStatus: function (event, phase, direction, distance, duration, fingerCount) {
+            //Here we can check the:
+            //phase : 'start', 'move', 'end', 'cancel'
+            //direction : 'left', 'right', 'up', 'down'
+            //distance : Distance finger is from initial touch point in px
+            //duration : Length of swipe in MS
+            //fingerCount : the number of fingers used
 
-						if (phase == 'end') {
-							$(this).removeData('direction');
+            var dir = '';
 
-							if ($.inArray(direction, ['left', 'right']) > -1) {
-								var newPage = Math.ceil(parseInt(rows.css('left')) / width);
+            if (!$(this).data('direction')) {
+              if ($.inArray(direction, ['left', 'right']) > -1) {
+                dir = 'horizontal';
+              }
+              else {
+                dir = 'vertical';
+              }
 
-								if (newPage >= 0) {
-									newPage = 0;
-								}
-								else {
-									newPage = Math.abs(newPage);
-								}
+              $(this).data('direction', dir);
+            }
+            else {
+              dir = $(this).data('direction');
+            }
 
-								updateDisplay(newPage);
-							}
-						}
-					},
-					threshold: 10
-				});
-			}
+            var page = elem.data('page');
 
-			function updateDisplay(page) {
-				paginationElem.find('button').removeClass('inactive');
+            if (dir == 'horizontal') {
+              if (direction == 'left') {
+                rows.css('left', (-page * width) - distance);
+              }
+              else if (direction == 'right') {
+                rows.css('left', (-page * width) + distance);
+              }
+            }
+            else {
+              if (direction == 'up') {
+                window.scrollTo(0, window.scrollY + distance);
+              }
+              else if (direction == 'down') {
+                window.scrollTo(0, window.scrollY - distance);
+              }
+            }
 
-				if (page <= 0) {
-					paginationElem.find('.prev').addClass('inactive');
-					page = 0;
-				}
+            if (phase == 'end') {
+              $(this).removeData('direction');
 
-				if (page + displayAmount >= total) {
-					paginationElem.find('.next').addClass('inactive');
-					page = total - displayAmount;
-				}
+              if ($.inArray(direction, ['left', 'right']) > -1) {
+                var newPage = Math.ceil(parseInt(rows.css('left')) / width);
 
-				rows.animate({left: -page * width}, 500);
-				elem.data('page', page);
+                if (newPage >= 0) {
+                  newPage = 0;
+                }
+                else {
+                  newPage = Math.abs(newPage);
+                }
 
-				elem.find('.panel-body').find('> .row:even').each(function () {
-					$(this).find('> div').find('> div').css('visibility', 'hidden').end().filter(':eq(' + page + ')').find('> div').css('visibility', 'visible');
-				});
+                updateDisplay(newPage);
+              }
+            }
+          },
+          threshold: 10
+        });
+      }
 
-				paginationElem
-					.find('.start').text(page + 1).end()
-					.find('.end').text(page + displayAmount).end();
-			}
-		});
-	}
+      function updateDisplay(page) {
+        paginationElem.find('button').removeClass('inactive');
+
+        if (page <= 0) {
+          paginationElem.find('.prev').addClass('inactive');
+          page = 0;
+        }
+
+        if (page + displayAmount >= total) {
+          paginationElem.find('.next').addClass('inactive');
+          page = total - displayAmount;
+        }
+
+        rows.animate({left: -page * width}, 500);
+        elem.data('page', page);
+
+        elem.find('.panel-body').find('> .row:even').each(function () {
+          $(this).find('> div').find('> div').css('visibility', 'hidden').end().filter(':eq(' + page + ')').find('> div').css('visibility', 'visible');
+        });
+
+        paginationElem
+          .find('.start').text(page + 1).end()
+          .find('.end').text(page + displayAmount).end();
+      }
+    });
+  }
 }
