@@ -1,6 +1,8 @@
 <?php
 
-$url = 'http://software.dell.com/jsonreq/event/';
+//$url = 'http://software.dell.com/jsonreq/event/';
+$url = 'http://software-dell-com/jsonreq/event/';
+$fields_string = '';
 
 //url-ify the data for the POST
 foreach($_POST as $key=>$value) {

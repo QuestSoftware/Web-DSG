@@ -6,8 +6,7 @@
 
 
 // hide original form
-var contentContainer = document.getElementById('content-container');
-contentContainer.style.visibility = "hidden";
+$('head').append('<style type="text/css">#content-container { visibility: hidden; }</style>');
 
 $('head').append('<link rel="stylesheet" href="/static/library/jQueryUI/jquery-ui-1.11.4-structure.min.css">');
 $('head').append('<link rel="stylesheet" href="/static/library/jQueryUI/jquery-ui-1.11.4-theme.min.css">');
@@ -59,7 +58,6 @@ if (/^\/register\/98335/.test(location.pathname)) {
 		form.append('<div class="clearfix"></div><div class="form-group"><div class="col-md-6 col-md-offset-3"><input type="submit" class="btn btn-block btn-primary" value="Submit"></div></div>');
 
 		$.getScript('/static/library/jquery/jquery.validate-mod.min.js', function () {
-			contentContainer.style.visibility = "visible";
 			initFormValidate('#frmRegister', {
 				errorClass: 'error',
 				submitHandler: function () {
