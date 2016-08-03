@@ -1,8 +1,18 @@
+/*
+ Please use this form as starting point for "one-of" forms.
+ You may need to edit the form, please review and remove code not needed.
+ */
+
+
+
+// hide original form
+$('head').append('<style type="text/css">#content-container { visibility: hidden; }</style>');
+
 $('head').append('<link rel="stylesheet" href="/static/library/jQueryUI/jquery-ui-1.11.4-structure.min.css">');
 $('head').append('<link rel="stylesheet" href="/static/library/jQueryUI/jquery-ui-1.11.4-theme.min.css">');
 
-if(/^\/register\/97321/.test(location.pathname)) {
-	$(document).ready(function() {
+if (/^\/register\/98335/.test(location.pathname)) {
+	$(document).ready(function () {
 		$('#footer').css('marginTop', 0);
 		$('.breadcrumb').remove();
 		$('.round-corners').removeClass('round-corners');
@@ -13,8 +23,8 @@ if(/^\/register\/97321/.test(location.pathname)) {
 		$('h1').addClass('m-0').appendTo('#first-container');
 		$('article').appendTo('#left-content');
 
-		$('article').find('p').each(function() {
-			if($.trim($(this).text()) == '') {
+		$('article').find('p').each(function () {
+			if ($.trim($(this).text()) == '') {
 				$(this).remove();
 			}
 		});
@@ -24,14 +34,14 @@ if(/^\/register\/97321/.test(location.pathname)) {
 
 		var form = $('#frmRegister').css('marginTop', 20);
 
-		$('#frmRegister').find('table').find('tbody').find('td').each(function() {
+		$('#frmRegister').find('table').find('tbody').find('td').each(function () {
 			var inputElem = $(this).find(':input');
 
-			if(inputElem.is(':visible')) {
+			if (inputElem.is(':visible')) {
 				var label = $(this).find('span:eq(0)').text();
 
-				if($(this).find(':input').attr('id') == 'Email') {
-					label = 'Email Address (Work)';
+				if ($(this).find(':input').attr('id') == 'Email') {
+					label = 'Email Address';
 				}
 
 				var html = $('<div class="form-group col-md-6"><label class="control-label col-md-4">' + label + '</label><div class="col-md-8"></div></div>');
@@ -42,35 +52,16 @@ if(/^\/register\/97321/.test(location.pathname)) {
 			}
 		});
 
-		var DietaryNeedsOtherElem = $('#DietaryNeedsOther').attr('placeholder', 'Please enter your dietary needs.').hide(), DietaryNeedsOtherParent = DietaryNeedsOtherElem.parents('.form-group');
-
-		DietaryNeedsOtherElem.insertAfter('#DietaryNeeds');
-
-		DietaryNeedsOtherParent.remove();
-
-		$('body')
-			.on('change', '#DietaryNeeds', function () {
-				if ($(this).val() == 'Other') {
-					$(this).hide();
-					$('#DietaryNeedsOther').prop('required', false).removeClass('required').show().focus();
-				}
-			});
 
 		$('#frmRegister').find('table').remove();
 
 		form.append('<div class="clearfix"></div><div class="form-group"><div class="col-md-6 col-md-offset-3"><input type="submit" class="btn btn-block btn-primary" value="Submit"></div></div>');
 
 		$.getScript('/static/library/jquery/jquery.validate-mod.min.js', function () {
-			$.validator.addMethod("dsgemail", function(value, element) {
-				return this.optional( element ) || /^[a-zA-Z0-9\,\!\#\$%&amp;'\*\+/=\?\^_`\{\|}~-]+(\.[a-zA-Z0-9,!#\$%&amp;'\*\+/=\?\^_`\{\|}~-]+)*@(software\.)?dell\.com$/.test( value );
-			}, "Please enter a valid DSG email.");
-			$.validator.addMethod("positiveinteger", function(value, element) {
-				return this.optional(element) || /^\d+$/.test(value);
-			}, "A positive non-decimal number please");
-
+			contentContainer.style.visibility = "visible";
 			initFormValidate('#frmRegister', {
 				errorClass: 'error',
-				submitHandler: function() {
+				submitHandler: function () {
 					$('#Email').val($('#Email').val().toLowerCase());
 					$('#ManagerEmail').val($('#ManagerEmail').val().toLowerCase());
 
@@ -78,14 +69,9 @@ if(/^\/register\/97321/.test(location.pathname)) {
 				},
 				messages: validateGenerateErrorMessages2('#frmRegister'),
 				rules: {
-					EmployeeBadgeNumber: {
-						positiveinteger: true
-					},
 					Email: {
-						dsgemail: true
-					},
-					ManagerEmail: {
-						dsgemail: true
+						required: true,
+						email: true
 					}
 				},
 				showErrors: function (errorMap, errorList) {
@@ -114,7 +100,7 @@ if(/^\/register\/97321/.test(location.pathname)) {
 
 						//Mark all invalid fields
 						$.each(this.invalid, function (name, msg) {
-							if(msg === true) {
+							if (msg === true) {
 								msg = validateGenerateErrorMessages2('#frmRegister')[name];
 							}
 
@@ -171,9 +157,9 @@ if(/^\/register\/97321/.test(location.pathname)) {
 						}
 					}
 				},
-				invalidHandler: function (event, validator) {}
+				invalidHandler: function (event, validator) {
+				}
 			}, false);
-
 			function validateGenerateErrorMessages2(formID) {
 				var errorMessages = {};
 
@@ -185,8 +171,7 @@ if(/^\/register\/97321/.test(location.pathname)) {
 					}
 				});
 
-				errorMessages['Email'] += '. Enter a valid DSG email address.';
-				errorMessages['ManagerEmail'] += '. Enter a valid DSG email address.';
+				errorMessages['Email'] += '. Enter a valid email address.';
 
 				return errorMessages;
 			}
@@ -197,8 +182,8 @@ if(/^\/register\/97321/.test(location.pathname)) {
 		$('body').css('visibility', 'visible');
 	});
 }
-else if(/^\/registert\/97321/.test(location.pathname)) {
-	$(document).ready(function() {
+else if (/^\/registert\/98335/.test(location.pathname)) {
+	$(document).ready(function () {
 		$('#footer').css('marginTop', 0);
 		$('.breadcrumb').remove();
 
