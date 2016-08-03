@@ -1,5 +1,7 @@
 /* Used on Responsive New Header/Footer */
 
+/* test */
+
 var burl = location.href;
 
 $(document).ready(function () {
