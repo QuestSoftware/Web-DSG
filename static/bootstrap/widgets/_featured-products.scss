@@ -1,4 +1,6 @@
 //Only for home page at the moment.
+
+/*
 .featured-products {
   .slick {
     > div {
@@ -37,6 +39,7 @@
 }
 
 /*mobile*/
+/*
 @media (max-width: 767px) {
   .featured-products .slick {
     > div {
@@ -59,4 +62,21 @@
   .slick-arrows {
     margin-right: 40px;
   }
+}
+*/
+.featured-products {
+  .slick-prev:before, .slick-next:before {
+    font-size: 80px;
+    font-weight: bold;
+  }
+  .slick-next {
+    right: -50px;
+  }
+  .slick-prev {
+    left: -68px;
+  }
+  .slick-prev, .slick-next {
+    top: 290px;
+  }
+
 }
