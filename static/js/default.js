@@ -408,6 +408,24 @@ $(document).ready(function () {
 	if ($('.comparison-table').data('xs-collapsibles')) {
 		addResize('processComparisonTable', true);
 	}
+
+  /* We are applying the matchHeight plugin for the slick slider for Featured Products
+   I am using slick callback event: "init" which gets trigger after slick is initialized
+   then I use jquery to load the librabry afte is done I check to for the matchHeight function and
+   if exist then I call matchHeight on all elements data have the "data-mh" attribute. Note the "fp" is
+   a randowm string to identify all the elements that belong to this group. I also pass the settings object
+   with the only property byRow set to false as slick does not uses rows but rather columns.
+   */
+
+  $('.featured-products').find(' .slick').on('init', function (event, slick, currentSlide, nextSlide) {
+    $.getScript('/static/library/jQuery/jquery.matchheight.min.js').done(function () {
+        $('*[data-mh=fp]').matchHeight({
+          byRow: false
+        });
+    });
+  });
+
+
 });
 
 $(window).load(function () {
@@ -516,6 +534,18 @@ function slickPlugin(parentSelector) {
       if ($(this).hasClass('slick-initialized')) {
         $(this).slick('destroy');
       }
+
+      // If the featured-product widget exist will create a binding to the slick "init" event to download the matchheigt plugin and
+      // then it will be applied to the featured product items. Note: we need to wait for slick to finish initializing because it
+      // adds dynamic elements as wrappers.
+
+      $('.featured-products').find(' .slick').on('init', function (event, slick, currentSlide, nextSlide) {
+        $.getScript('/static/library/jQuery/jquery.matchheight.min.js').done(function () {
+          $('*[data-mh=fp]').matchHeight({
+            byRow: false
+          });
+        });
+      });
 
       if ($(this).hasClass('banner')) {
         cfg.dots = true;
@@ -676,14 +706,138 @@ function slickPlugin(parentSelector) {
     }
   }
 
+  // Module used to create and set cookies
+  // used by randomize function.
+  var cookieOperations = function () {
+    function saveCookieObj(Obj, cookieName) {
+      var json_str = JSON.stringify(Obj);
+      createCookie(cookieName, json_str); // createCookie is actually declared on commonv2.js (ln: ~750)
+    }
+
+    function retrieveCookie(cookieName) {
+      var json_str = getCookie(cookieName);
+      var arr = JSON.parse(json_str);
+      return arr;
+    }
+
+    function returnCookieArray(cookieName) {
+      var obj = this.retrieveCookie(cookieName);
+      var arr = [];
+      if (typeof obj === 'object') {
+        $.each(obj, function (key, val) {
+          arr.push(val);
+        })
+        return arr;
+      }
+      else {
+        return 'not an object';
+      }
+    }
+
+
+    return {
+      saveCookieObj: saveCookieObj,
+      retrieveCookie: retrieveCookie,
+      returnCookieArray: returnCookieArray
+    }
+  }();
+
+
+  /* Randomize is a function that was created originally by Elnaz,
+   it has been modified to meet the new requirement of a more strict random script
+   I have commented the function itself and it is divided in 3 sections:
+   1) setting variables
+   2) Action calls
+   3) process functions
+   */
+
   function randomize() {
-    var item = $(this).find('> div');
-    item.sort(function () {
-      var temp = parseInt(Math.random() * item.length),
-          isOddOrEven = temp % 2,
-          isPosOrNeg = temp > item.length / 2 ? 1 : -1;
-      return ( isOddOrEven * isPosOrNeg );
-    }).appendTo($(this));
+    /* triggerRandomize setting variables */
+    var item = $(this).find('> div'),
+      itemsArr = convertToArray(item),
+      totalItems = itemsArr.length,
+      $that = $(this),
+      showCaseNo = 6, // this will be a variable depending on the screen size
+      noOfShowCaseSets = Math.ceil(totalItems / showCaseNo),
+      NoOfVisits = cookieOperations.retrieveCookie('featuredProducts');
+    if (NoOfVisits === null) {
+      NoOfVisits = {total: 0};
+    }
+    else if (NoOfVisits.total == noOfShowCaseSets) {  // we will show only the variation sets available.
+      NoOfVisits = {total: 0};
+    }
+    var startInSet = NoOfVisits.total;
+    var cookieObj = {total: startInSet + 1};
+
+    /* Action calls */
+    triggerRandomize();
+    cookieOperations.saveCookieObj(cookieObj, 'featuredProducts');
+
+
+    /* TriggerRandomize process
+     *  The following functions are organized by process order and they are called/chain by each other.
+     *  their goal is to randomaize the items displayed in the slick slider
+     *  It is now being used on the home page (stage-software-dell-com)
+     *  the settings needed are above see "triggerRandomize settings" section
+     * */
+    function triggerRandomize() {
+      createSets(itemsArr, showCaseNo)
+
+      // initialize chain process
+      function createSets(array, itemsPerSet) {
+        var setOfArrays = [], tempArr = [], isLast = 0;
+        array.forEach(function (item) {
+          isLast++;
+          tempArr.push(item);
+          if (tempArr.length == itemsPerSet) {
+            setOfArrays.push(tempArr);
+            tempArr = [];
+          }
+          else if (isLast == array.length) {
+            setOfArrays.push(tempArr);
+            tempArr = [];
+          }
+        })
+        orderSets(startInSet, setOfArrays)
+        return setOfArrays;
+      } // creates sub arrays
+      function orderSets(start, arraySets) {
+        var tempSet = [];
+        if (start === 0) {
+          return arraySets;
+        }
+        else {
+          for (var i = 0; i < start; i++) {
+            tempSet = arraySets.shift();
+            arraySets.push(tempSet);
+          }
+          concatSets(arraySets)
+          return arraySets;
+        }
+      } // shuffle arrays (based on cookie "featuredProducts"
+      function concatSets(arraySets) {
+        var flattendArr = [], tempArr = [], holderArr = [];
+        arraySets.forEach(function (arr) {
+          flattendArr = flattendArr.concat(arr);
+        });
+        displayRandomized(flattendArr)
+        return flattendArr;
+      }  // concatenate the array sets previously created but now with new order
+      function displayRandomized(randomized) {
+        randomized.forEach(function (item) {
+          $that.append($(item));
+        })
+      } // it simply appends the items back to dom element as jquery object
+    }
+
+    /* utility functions */
+    function convertToArray(obj) {
+      var resultArr = [];
+      $.each(obj, function (key, val) {
+        resultArr.push(val);
+      })
+      return resultArr;
+    }
   }
 }
 
@@ -1384,8 +1538,7 @@ function matchHeight() {
       config.byRow = false;
     }
 
-    $('*[data-target="match-height"]').filter(':visible').matchHeight(config);
-    //}
+    $('*[data-target="match-height"]').filter(':visible').matchHeight(config);//}
   }
 }
 
