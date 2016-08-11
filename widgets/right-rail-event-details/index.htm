@@ -1,3 +1,37 @@
+<div class="visible-xs visible-sm text-md">
+	<img style="width: 100%;" alt="" src="/images/asset/event-online.jpg">
+	<div class="event-details-widget bg-light-grey">
+		<div class="container-fluid">
+			<div class="col-xs-12 event-detail">
+				<div>
+					<div class="date-widget text-center event-in-person">
+						<div class="header">Online</div>
+						<div class="date-body">
+							<h3 class="month p-0 m-0">Aug.</h3>
+							<h3 class="day p-0 m-0">2</h3>
+						</div>
+					</div>
+					<div class="details-list">
+						<ul class="list-unstyled m-0">
+							<li>
+								<span>
+								<strong>Date:</strong>
+								</span>
+								<span>Aug. 2, 2016</span>
+							</li>
+							<li>
+								<span>
+								<strong>Event:</strong>
+								</span>
+								<span>Online</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="container text-md">
 	<div class="row mt-20">
 		<div class="col-xs-12 col-sm-12 col-md-7">
@@ -29,40 +63,57 @@
 				</li>
 			</ul>
 		</div>
-		<div class="col-xs-12 col-md-5 signed-off col-md-offset-0">
-			<div class="event-details-widget bg-light-grey border-grey pad-20">
-				<div class="container-fluid pad-0">
-					<div class="row">
-						<div class="col-sm-12">
-							<h3 class="mb-15 mt-0">Event Details</h3>
-						</div>
-					</div><!-- */ end of events heading-->
-					<div class="row">
-					<div class="col-xs-12 event-detail-container">
-						<div class="event-detail">
-							<div class="date-widget text-center pad-0 event-in-person">
-								<div class="header">In Person</div>
-								<div class="date-body">
-									<h3 class="month p-0 m-0">June</h3>
-									<h3 class="day p-0 m-0">8</h3>
+		<div class="col-xs-12 col-md-5 p-0-xs p-0-sm">
+			<div class="visible-xs mt-20 ph-15">
+				<button class="btn btn-primary btn-block" data-target="#event-wrapper" data-toggle="offcanvas"> Attend Event</button>
+			</div>
+
+			<div id="event-wrapper" class="hidden-xs mt-20-sm" data-no-border="true">
+				<form id="frmRegister" class="form-horizontal-2 has-slide" style="visibility: visible;" novalidate="novalidate">
+					<div>
+						<div class="slide-page" style="width: 50%; display: block;">
+							<div class="event-details-widget border-grey bg-light-grey">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-xs-12">
+											<h3 class="mb-15 mt-0">Event Details</h3>
+										</div>
+									</div><!-- */ end of events heading-->
+									<div class="row">
+										<div class="event-detail-container col-xs-12">
+											<div class="event-detail">
+												<div>
+
+													<div class="date-widget text-center pad-0 event-in-person">
+														<div class="header">In Person</div>
+														<div class="date-body">
+															<h3 class="month p-0 m-0">June</h3>
+															<h3 class="day p-0 m-0">8</h3>
+														</div>
+													</div>
+													<div class="details-list">
+														<ul class="list-unstyled">
+															<li><span><strong>Date: </strong></span><span>June 8, 2015</span></li>
+															<li><span><strong>Time: </strong></span><span>8:00 AM &ndash; 5:00 PM CD</span></li>
+															<li><span><strong>Event: </strong></span><span>In Person</span></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- */ end event details content -->
+									<div class="row">
+										<div class="col-xs-12 mt-20">
+											<button class="btn btn-primary btn-block" type="button">Attend Event</button>
+										</div>
+									</div><!-- */ end of button-->
 								</div>
 							</div>
-							<div class="details-list">
-								<ul class="list-unstyled">
-									<li><span><strong>Date: </strong></span><span>June 8, 2015</span></li>
-									<li><span><strong>Time: </strong></span><span>8:00 AM &ndash; 5:00 PM CD</span></li>
-									<li><span><strong>Event: </strong></span><span>In Person</span></li>
-								</ul>
-							</div>
 						</div>
+
+
 					</div>
-				</div><!-- */ end event details content -->
-					<div class="row">
-							<div class="col-xs-12 mt-20">
-								<button class="btn btn-primary btn-block" type="button">Attend Event</button>
-							</div>
-					</div><!-- */ end of button-->
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
