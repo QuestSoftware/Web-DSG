@@ -29,7 +29,7 @@ $(document).ready(function () {
       if ($(this).is(':visible') && !target.is(':visible')) {
         $(this).hide().data('hidden-class', 'hidden');
       }
-      $(this).prev().find('.container').css('height', '');//reset height of parent container
+      $(this).prev().css('height', '');//reset height of parent container
     });
 
     if (target.is(':visible')) {
