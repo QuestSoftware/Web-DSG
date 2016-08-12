@@ -17,7 +17,8 @@ $(document).ready(function () {
   $('body').on('click', '[data-toggle=show],[data-toggle=show-offcanvas]', function (e) {
     e.preventDefault();
 
-    var target = $($(this).data('target'));
+	  var target = $($(this).data('target')), //target drop down element
+		  sourceElem = $(this); //the element this event is being triggered.
 
     //Do not proceed if on mobile.
     if (pageWidth < 768) {
@@ -28,8 +29,9 @@ $(document).ready(function () {
     $('.optional-dropdown').each(function () {
       if ($(this).is(':visible') && !target.is(':visible')) {
         $(this).hide().data('hidden-class', 'hidden');
+        $(this).data('parent-container').css('height', ''); // reseting the hright of the container
       }
-      $(this).prev().find('.container').css('height', '');//reset height of parent container
+
     });
 
     if (target.is(':visible')) {
@@ -87,6 +89,11 @@ $(document).ready(function () {
           if (parentContainer.height() < parentHeight) {
             parentContainer.css('height', parentHeight);
           }
+
+          $(target).data('parent-container', parentContainer);
+
+	        //Scroll to the drop down
+	        $('html, body').animate({scrollTop: sourceElem.offset().top - sourceElem.height() - 25});
         }
       });
 
