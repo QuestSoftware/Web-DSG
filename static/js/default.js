@@ -28,8 +28,9 @@ $(document).ready(function () {
     $('.optional-dropdown').each(function () {
       if ($(this).is(':visible') && !target.is(':visible')) {
         $(this).hide().data('hidden-class', 'hidden');
+        $(this).data('parent-container').css('height', ''); // reseting the hright of the container
       }
-      $(this).prev().find('.container').css('height', '');//reset height of parent container
+
     });
 
     if (target.is(':visible')) {
@@ -87,6 +88,8 @@ $(document).ready(function () {
           if (parentContainer.height() < parentHeight) {
             parentContainer.css('height', parentHeight);
           }
+
+          $(target).data('parent-container', parentContainer);
         }
       });
 
