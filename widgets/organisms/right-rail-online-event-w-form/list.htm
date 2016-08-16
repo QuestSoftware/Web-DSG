@@ -1,0 +1,177 @@
+<div class="container text-md">
+	<div class="row mt-20">
+		<div class="col-xs-12 col-sm-12 col-md-7">
+			<a href="#right-rail-form">
+				<img src="http://software.dell.com/images/samples/img-sample-750x232.jpg" class="img-responsive">
+			</a>
+
+			<p class="mt-20">Arm yourself with the tools to make intelligent, data-driven decisions for VM optimization.</p>
+
+			<p>Optimization for VMware can be tricky. But with the right tools, finding the balance for your environment can be much easier.</p>
+
+			<p>Optimize your VMware implementation to avoid under- or over-utilization &mdash; and boost performance and efficiency. Join this webcast to learn about Dell tools that can help you make intelligent, data-driven decisions for VM optimization throughout your entire virtual environment. Use intelligent analytics and expert advice to tune and optimize your environment using historical usage data and take corrective action immediately or via automation.</p>
+
+			<h4>What you will learn</h4>
+
+			<p>At the end of this webcast, you'll know how the right tools can help you:</p>
+
+			<ul>
+				<li>See all over- and under-utilized virtual machines.</li>
+				<li>Take corrective action or define automation.</li>
+				<li>Clean up waste to lower operating expenses.</li>
+			</ul>
+
+			<h4>Speakers</h4>
+
+			<p>Hassan Fahini</p>
+		</div>
+		<div class="col-xs-12 col-md-5">
+			<div class="visible-xs">
+				<button class="btn btn-primary btn-block" data-toggle="offcanvas" data-target="#event-wrapper">Attend Event</button>
+			</div>
+
+			<div id="event-wrapper" class="hidden-xs" data-no-border="true">
+				<form class="form-horizontal-2 has-slide">
+					<div>
+						<div id="event-container" class="border-grey bg-light-grey p-20 slide-page">
+							<h3 class="mt-0">Select Dates to Register</h3>
+
+							<table class="table table-striped">
+								<thead>
+								<tr>
+									<th>&nbsp;</th>
+									<th>Date</th>
+									<th>Time</th>
+									<th>Location</th>
+									<th class="hidden">Type</th>
+									<th class="hidden">Duration</th>
+								</tr>
+								</thead>
+
+								<tbody>
+								<tr data-event-type="on-demand">
+									<td><input type="checkbox" value="75709" name="events[]"></td>
+									<td>Jun. 23, 2015</td>
+									<td>9:00 AM EST</td>
+									<td>Online</td>
+									<td class="hidden">Online</td>
+									<td class="hidden">60 Minutes</td>
+								</tr>
+								<tr data-event-type="online">
+									<td><input type="checkbox" value="75710" name="events[]"></td>
+									<td>Jul. 2, 2015</td>
+									<td>3:00 PM EST</td>
+									<td>Online</td>
+									<td class="hidden">Online</td>
+									<td class="hidden">60 Minutes</td>
+								</tr>
+								<tr data-event-type="in-person">
+									<td><input type="checkbox" value="75715" name="events[]"></td>
+									<td>Jul. 7, 2015</td>
+									<td>9:00 AM EST</td>
+									<td>Online</td>
+									<td class="hidden">Online</td>
+									<td class="hidden">60 Minutes</td>
+								</tr>
+								</tbody>
+							</table>
+
+							<button id="event-next-button" class="btn btn-primary btn-block goto" data-page="1" disabled>Next</button>
+						</div>
+						<div class="slide-page">
+							<div class="event-details-widget border-grey bg-light-grey">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-xs-12">
+											<h3 class="mb-15 mt-0">Event Details</h3>
+										</div>
+									</div>
+									<!-- */ end of events heading-->
+									<div class="row">
+										<div class="event-detail-container col-xs-12"></div>
+									</div>
+									<!-- */ end event details content -->
+
+									<button class="btn btn-default btn-block goto mt-20" data-page="0">View More Dates</button>
+								</div>
+							</div>
+							<div class="event-details-form border-grey p-15 bg-light-grey">
+								<h3 class="mar-0">Attend Your Free Event</h3>
+								Register or <a href="#">Sign In</a>
+
+								<div class="form-horizontal-2 mt-20">
+									<div class="form-group">
+										<div><label class="control-label">First Name</label></div>
+										<div><input type="text" id="first-name" class="form-control" placeholder=""></div>
+									</div>
+									<div class="form-group">
+										<div><label class="">Last Name</label></div>
+										<div><input type="text" id="last-name" class="form-control" placeholder=""></div>
+									</div>
+									<div class="form-group">
+										<div><label class="">Business Email</label></div>
+										<div><input type="text" id="email" class="form-control" placeholder=""></div>
+									</div>
+									<div class="form-group">
+										<div><label class="">Company</label></div>
+										<div><input type="text" id="company" class="form-control" placeholder=""></div>
+									</div>
+									<div class="form-group">
+										<div></div>
+										<div>
+											<a href="thank-you.htm" class="btn btn-primary btn-block mt-20">Attend Event</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script id="date-widget-tpl" type="text/template">
+	<div class="event-detail">
+		<div>
+			<div class="date-widget text-center pad-0 [[headerclass]]">
+				<div class="header">[[type]]</div>
+				<div class="date-body">
+					<h3 class="month p-0 m-0">[[month]]</h3>
+					<h3 class="day p-0 m-0">[[day]]</h3>
+				</div>
+			</div>
+			<div class="details-list ml-10">
+				<ul class="list-unstyled m-0">
+					<li><strong>@Model.TagLabelDate: </strong>[[date]]</li>
+					<li><strong>@Model.TagLabelTime: </strong>[[time]]</li>
+					<li><strong>@Model.TagLabelDuration: </strong>[[duration]]</li>
+					<li><strong>@Model.TagLabelLocation: </strong>[[location]]</li>
+					<li><strong>@Model.TagLabelEvent: </strong>[[type]]</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</script>
+<script id="date-widget-on-demand-tpl" type="text/template">
+	<div class="event-detail">
+		<div>
+			<div class="date-widget text-center pad-0 event-on-demand">
+				<div class="header">[[type]]</div>
+				<div class="date-body">
+					<span class="glyphicon glyphicon-play"></span>
+				</div>
+			</div>
+			<div class="details-list ml-10">
+				<ul class="list-unstyled m-0">
+					<li><strong>@Model.TagLabelDate: </strong>[[date]]</li>
+					<li><strong>@Model.TagLabelTime: </strong>[[time]]</li>
+					<li><strong>@Model.TagLabelDuration: </strong>[[duration]]</li>
+					<li><strong>@Model.TagLabelLocation: </strong>[[location]]</li>
+					<li><strong>@Model.TagLabelEvent: </strong>[[type]]</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</script>

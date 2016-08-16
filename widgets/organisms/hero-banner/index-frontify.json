@@ -1,0 +1,11 @@
+{
+	"name": "Hero Banners",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Banner size : 1170 x 395",
+	"assets": {
+		"html": [
+			"../widgets/organisms/hero-banner/index.htm"
+		]
+	}
+}

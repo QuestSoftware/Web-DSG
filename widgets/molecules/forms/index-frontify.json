@@ -1,0 +1,11 @@
+{
+	"name": "Form",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Form with primary button",
+	"assets": {
+		"html": [
+			"../widgets/molecules/forms/index.htm"
+		]
+	}
+}

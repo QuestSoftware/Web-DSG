@@ -1,0 +1,11 @@
+{
+	"name": "Four-column filmstrip carousel - Next Step",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Four-column filmstrip carousel with different thumbnail types and sizes\nCollapsible on xs devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/4-column-filmstrip-carousel/next-steps.htm"
+		]
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Fat tabs",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Image size : 55 x 55",
+	"assets": {
+		"html": [
+			"../widgets/organisms/fat-tabs/buttons.htm"
+		]
+	}
+}

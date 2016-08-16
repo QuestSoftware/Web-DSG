@@ -1,0 +1,11 @@
+{
+	"name": "Link List",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "List of links with H4 title",
+	"assets": {
+		"html": [
+			"../widgets/molecules/link-list/index.htm"
+		]
+	}
+}

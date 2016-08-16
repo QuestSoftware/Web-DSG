@@ -1,0 +1,11 @@
+{
+	"name": "Affix - No x-small",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Affix sample for large, medium and small devices\nIt's disabled on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/affix/index.htm"
+		]
+	}
+}

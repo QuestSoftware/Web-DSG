@@ -1,0 +1,11 @@
+{
+	"name": "Social Media (Center)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Center position\nGrey Background",
+	"assets": {
+		"html": [
+			"../widgets/organisms/social-media/index.htm"
+		]
+	}
+}

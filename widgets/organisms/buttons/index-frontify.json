@@ -1,0 +1,11 @@
+{
+	"name": "Button (Link only on x-small)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Button will turn into a link only on mobile",
+	"assets": {
+		"html": [
+			"../widgets/organisms/buttons/index.htm"
+		]
+	}
+}

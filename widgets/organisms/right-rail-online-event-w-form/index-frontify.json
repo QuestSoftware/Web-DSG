@@ -1,0 +1,11 @@
+{
+	"name": "Event Details with form (Right)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Image size : 220 x 280\nSmaller detail box on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/right-rail-online-event-w-form/index.htm"
+		]
+	}
+}

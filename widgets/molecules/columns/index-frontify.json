@@ -1,0 +1,11 @@
+{
+	"name": "Column",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "column with links, Buy button and collapsible content on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/molecules/columns/index.htm"
+		]
+	}
+}

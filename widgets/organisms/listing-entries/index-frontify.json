@@ -1,0 +1,11 @@
+{
+	"name": "Four-column listing entries",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Image size : 328 x 204\nFour-column on large devices\nThree-column on medium and small devices\nOne-column on xs devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/listing-entries/index.htm"
+		]
+	}
+}
