@@ -1,0 +1,11 @@
+{
+	"name": "Simple Pagination",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Next and Previous buttons\nItems per page drop-down\nPage Number Access",
+	"assets": {
+		"html": [
+			"../widgets/organisms/simple-pagination/index.htm"
+		]
+	}
+}

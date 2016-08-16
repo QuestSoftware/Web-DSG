@@ -1,0 +1,11 @@
+{
+	"name": "Two-column with quote and thumbnail",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Quote paragraph\nThumbnail size: 220 x 280",
+	"assets": {
+		"html": [
+			"../widgets/organisms/2-column-with-quote/index.htm"
+		]
+	}
+}

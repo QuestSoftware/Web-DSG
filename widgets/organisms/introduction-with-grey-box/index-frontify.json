@@ -1,0 +1,11 @@
+{
+	"name": "Introduction with grey box(Collapsible on mobile)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Collapsible show more button on x-small",
+	"assets": {
+		"html": [
+			"../widgets/organisms/introduction-with-grey-box/index.htm"
+		]
+	}
+}

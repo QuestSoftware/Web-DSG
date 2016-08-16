@@ -1,0 +1,11 @@
+{
+	"name": "Main Title (x-small center)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "H1 title\nText will be centered on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/main-title/index.htm"
+		]
+	}
+}

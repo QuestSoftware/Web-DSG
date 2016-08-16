@@ -1,0 +1,11 @@
+{
+	"name": "Collapsible Content",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Primary Button",
+	"assets": {
+		"html": [
+			"../widgets/molecules/collapsible-content/index.htm"
+		]
+	}
+}

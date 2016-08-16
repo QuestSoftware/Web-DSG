@@ -1,0 +1,11 @@
+{
+	"name": "Breadcrumb",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Breadcrumb with home icon",
+	"assets": {
+		"html": [
+			"../widgets/organisms/breadcrumb/index.htm"
+		]
+	}
+}

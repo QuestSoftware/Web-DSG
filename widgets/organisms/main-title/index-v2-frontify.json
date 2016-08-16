@@ -1,0 +1,11 @@
+{
+	"name": "Main Title",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "H1 title",
+	"assets": {
+		"html": [
+			"../widgets/organisms/main-title/index-v2.htm"
+		]
+	}
+}

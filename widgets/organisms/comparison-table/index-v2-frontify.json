@@ -1,0 +1,11 @@
+{
+	"name": "Comparison table (Carousel on x-small)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Table turns to accordion on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/comparison-table/index-v2.htm"
+		]
+	}
+}

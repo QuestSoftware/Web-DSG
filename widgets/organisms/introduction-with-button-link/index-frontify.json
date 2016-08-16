@@ -1,0 +1,11 @@
+{
+	"name": "Introduction with button link",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Link turns into a button in x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/introduction-with-button-link/index.htm"
+		]
+	}
+}

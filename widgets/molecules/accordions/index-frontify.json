@@ -1,0 +1,11 @@
+{
+	"name": "Accordions",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Simple accordions",
+	"assets": {
+		"html": [
+			"../widgets/molecules/accordions/index.htm"
+		]
+	}
+}

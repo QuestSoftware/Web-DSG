@@ -1,9 +1,0 @@
-{
-	"css": ["/static/css/ooyala-v4-skin.min.css"],
-	"js": [
-		"/static/js/ooyala-v4.min.js",
-		"/static/js/ooyala-v4-plugin-main.min.js",
-		"/static/js/ooyala-v4-discovery-api.min.js",
-		"/static/js/ooyala-v4-skin.min.js"
-	]
-}

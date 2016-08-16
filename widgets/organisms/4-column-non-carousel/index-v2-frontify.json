@@ -1,0 +1,11 @@
+{
+	"name": "Four-column non-carousel",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "thumbnails are in different types and sizes\n4 columns on mediumand large devices\n2 columns on small devices\n1 column on xs devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/4-column-non-carousel/index-v2.htm"
+		]
+	}
+}

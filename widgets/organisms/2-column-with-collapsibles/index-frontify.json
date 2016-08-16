@@ -1,0 +1,11 @@
+{
+	"name": "Two-column with collapsible content",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Collapsible content on xs(mobile) devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/2-column-with-collapsibles/index.htm"
+		]
+	}
+}
