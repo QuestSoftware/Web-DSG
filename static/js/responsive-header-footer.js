@@ -48,7 +48,9 @@ $(document).ready(function () {
 			eventCategory: $(this).data('gac'),
 			eventAction: $(this).data('gaa'),
 			hitCallback: function () {
-				location.href = URL;
+				if (URL) {
+					location.href = URL;
+				}
 			}
 		};
 
