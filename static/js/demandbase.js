@@ -50,7 +50,7 @@ function DemandBaseInitialize(frm, btn, companyID, ltg, connectObj, callback) {
 			if ($(this).val().length >= 2) {
 				testAutocompleteWidget(frm, companyID);
 			}
-		};
+		}
 	});
 
 	/* Initialize demandbase */
@@ -66,6 +66,7 @@ function DemandBaseInitialize(frm, btn, companyID, ltg, connectObj, callback) {
 		}
 	};
 
+	//IS can control siteTags.DemandBaseUp value.
 	if (siteTags.DemandBaseUp != "false") {
 		//Disable submit button. Button should already be disabled. But this is just in case.
 		if ($('#chklicense').length) {
@@ -142,8 +143,10 @@ function DemandBaseInitialize(frm, btn, companyID, ltg, connectObj, callback) {
 		if (!isAfterParseInit) { // check if db_hooks get initialized onload
 			populateRegFrmDbFields(data); // if db_hooks are not initialized then function will help to populate reg form
 			PopulateDBFieldsWebFormConnector(data, frm, source, enableSubmitButton);
-      var hasTr = $('form').find('[id^="tr_"]');
-      if (hasTr.length) {
+
+			var hasTr = $(frm).find('[id^="tr_"]');
+
+			if (hasTr.length) {
         if (data.country == 'CA') {
           hasTr.show();
         } else {
@@ -153,8 +156,8 @@ function DemandBaseInitialize(frm, btn, companyID, ltg, connectObj, callback) {
             .show();
         }
       }
-			$('form').find("div[firstscreen=0]").show();
 
+			$(frm).find("div[firstscreen=0]").show();
     }
 	};
 
@@ -411,7 +414,6 @@ function startAjaxCallTracker(frm, id) {
 		}, 1800);
 	}
 }
-
 
 // for IE8  we need to use 'propertychange' to bind company field to test for Demandbase connection, this function is called right after
 // The full form is shown. to prevent unnecessary calls.
