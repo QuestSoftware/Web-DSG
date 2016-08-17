@@ -8,3 +8,7 @@
 out
 gen
 
+/static/js/**/*.min.js
+/static/scripts/**/*.min.js
+/static/css/**/*.css
+/static/styles/**/*.css
