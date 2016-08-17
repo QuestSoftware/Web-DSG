@@ -1,0 +1,11 @@
+{
+	"name": "Error - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Error and warning box",
+	"assets": {
+		"html": [
+			"../widgets/molecules/error/index.htm"
+		]
+	}
+}

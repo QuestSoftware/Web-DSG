@@ -1,0 +1,11 @@
+{
+	"name": "Feature product - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Image size : 370 x 250",
+	"assets": {
+		"html": [
+			"../widgets/molecules/featured-products/index.htm"
+		]
+	}
+}

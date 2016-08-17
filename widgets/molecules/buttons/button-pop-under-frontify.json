@@ -1,0 +1,11 @@
+{
+	"name": "Button pop under (Hidden on Mobile) - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Content pops under the button\nButton is hidden on Mobile",
+	"assets": {
+		"html": [
+			"../widgets/molecules/buttons/button-pop-under.htm"
+		]
+	}
+}

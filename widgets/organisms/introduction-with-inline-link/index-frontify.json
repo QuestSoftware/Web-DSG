@@ -1,0 +1,11 @@
+{
+	"name": "Introduction with inline link",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Title, paragraph and learn more link",
+	"assets": {
+		"html": [
+			"../widgets/organisms/introduction-with-inline-link/index.htm"
+		]
+	}
+}

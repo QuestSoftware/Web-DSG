@@ -1,0 +1,11 @@
+{
+	"name": "Primary purchase disabled block button - A",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "Use when the system is awaiting the user to take action before the primary purchase button is enabled. The reason for the button appearing disabled/inactive should be clear to the user.",
+	"assets": {
+		"html": [
+			"../widgets/atoms/buttons/primary-purchase-disable-block.htm"
+		]
+	}
+}

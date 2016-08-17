@@ -18,16 +18,16 @@
     position: relative;
 		&:last-of-type {
 			.selected {
-				border-bottom: 1px solid $dell-blue;
+				border-bottom: 1px solid $comparison-border-color;
 			}
 		}
 		.selected {
-			border-right: 1px solid $dell-blue;
-			border-left: 1px solid $dell-blue;
+			border-right: 1px solid $comparison-border-color;
+			border-left: 1px solid $comparison-border-color;
 		}
     .active {
-			background-color: $dell-blue;
-			color: $white;
+			background-color: $comparison-active-bg;
+			color: $comparison-active-color;
 			padding: 6px 15px;
 			margin: 0 -15px 15px;
     }
@@ -40,9 +40,9 @@
         margin: 20px 0 5px;
       }
 			.selected {
-				border-top: 1px solid $dell-blue;
-				border-right: 1px solid $dell-blue;
-				border-left: 1px solid $dell-blue;
+				border-top: 1px solid $comparison-border-color;
+				border-right: 1px solid $comparison-border-color;
+				border-left: 1px solid $comparison-border-color;
 			}
     }
     > div {
@@ -66,7 +66,7 @@
   }
   .btn {
     &.inactive {
-      color: $dell-gray;
+			color: $comparison-btn-inactive-color;
     }
   }
   .new {
@@ -84,7 +84,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .comparison {
     .comparison-pagination {
       text-align: right;
@@ -92,7 +92,7 @@
 	}
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
 	/*comparison table*/
 	.comparison-table {
 		&[data-xs-carousel ="true"] {
@@ -102,7 +102,7 @@
 				}
 			}
 			.fixed-column tr {
-				border-right: 1px solid #ccc;
+				border-right: 1px solid $comparison-fixed-col-border-color;
 				th {
 					vertical-align: top;
 				}
@@ -132,7 +132,7 @@
 			}
 		}
 		.panel:nth-child(odd) .panel-body {
-			background-color: #eeeeee;
+			background-color: $comparison-panel-old-bg;
 			padding: 15px;
 			.row:last-child p {
 				margin-bottom: 0;

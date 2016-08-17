@@ -1,0 +1,11 @@
+{
+	"name": "Lists Styled",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "",
+	"assets": {
+		"html": [
+			"../widgets/atoms/lists/list-styled.htm"
+		]
+	}
+}

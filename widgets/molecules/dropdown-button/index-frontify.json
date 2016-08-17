@@ -1,0 +1,11 @@
+{
+	"name": "Drop-down button - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Drop-down menu with icons",
+	"assets": {
+		"html": [
+			"../widgets/molecules/dropdown-button/index.htm"
+		]
+	}
+}

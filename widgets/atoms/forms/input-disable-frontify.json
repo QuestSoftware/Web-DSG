@@ -1,0 +1,11 @@
+{
+	"name": "Input Field Disabled - A",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "",
+	"assets": {
+		"html": [
+			"../widgets/atoms/forms/input-disable.htm"
+		]
+	}
+}

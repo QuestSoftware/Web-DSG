@@ -33,11 +33,11 @@
   padding-left: 20px !important;
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   #country-selector {
     > div {
       display: none;
-      border-top: 1px solid #aaa;
+      border-top: 1px solid $country-selector-border-top-color;
     }
     &.open {
       > div {
@@ -46,14 +46,14 @@
     }
   }
   #country-popup {
-    background-color: #fff;
+    background-color: $country-popup-bg-color;
     a {
-      color: $dell-blue !important;
+      color: $country-popup-link-color !important;
     }
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   #country-selector {
     position: relative;
   }
@@ -76,9 +76,9 @@
     bottom: 26px;
     padding: 0;
     overflow: visible;
-    -moz-box-shadow: 1px 1px 5px #000;
-    -webkit-box-shadow: 1px 1px 5px #000;
-    box-shadow: 1px 1px 5px #000;
+	  -moz-box-shadow: 1px 1px 5px $black;
+	  -webkit-box-shadow: 1px 1px 5px $black;
+	  box-shadow: 1px 1px 5px $black;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -94,15 +94,15 @@
       -ms-transform: rotate(45deg);
       width: 20px;
       height: 20px;
-      background: #fff;
+      background: $country-popup-bg-color;
       z-index: 1;
     }
     >div:after {
-      box-shadow: 1px 1px 5px #000;
+	    box-shadow: 1px 1px 5px $black;
     }
     >div>div {
       position: relative;
-      background: #fff;
+      background: $country-popup-bg-color;
       border-radius: 10px;
       -moz-border-radius: 10px;
       -webkit-border-radius: 10px;
@@ -113,15 +113,15 @@
       min-width: 100px;
     }
     a {
-      color: #0085c3 !important;
+      color: $country-popup-link-color !important;
       font-size: 13px;
       line-height: 16px;
       display: block;
       padding: 2px 5px !important;
       white-space: nowrap;
       &.active {
-        color: #fff !important;
-        background-color: #0085c3;
+        color: $country-popup-link-active-color !important;
+        background-color: $country-popup-link-active-bg-color;
       }
     }
   }

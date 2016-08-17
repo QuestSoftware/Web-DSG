@@ -1,0 +1,11 @@
+{
+	"name": "Two-column image with links and buttons (Large thumbnail - Left)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Highlight box\nFeatuure links\nButtons\nThumbnail Size: 460 x 290",
+	"assets": {
+		"html": [
+			"../widgets/organisms/2-column-video-image-with-description/text-claim-image-left.htm"
+		]
+	}
+}

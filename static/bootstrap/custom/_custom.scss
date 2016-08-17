@@ -1,32 +1,32 @@
 /* Background Color */
 .bg-white{
-  background-color: $white;
+  background-color: $bg-white;
 }
 
 .bg-black {
-  background-color: $black;
+  background-color: $bg-black;
 }
 
 .bg-light-grey {
-  background-color: #f9f9f9;
-  color: #444;
+  background-color: $bg-light-grey;
+  color: $bg-light-grey-text-color;
 }
 
 .bg-grey {
-  background-color: #f9f9f9;
+  background-color: $bg-grey;
 }
 
 .anchor-blue {
-  color: #007db8;
+	color: $link-color;
 }
 
-.bg-white{
+.bg-white {
   background-color: #fff;
 }
 
 a[class^="icon-"]:hover, a[class^="icon-"]:focus {
   text-decoration: none;
-  color: $dell-blue;
+  color: $icon-anchor-hover-color;
 }
 
 a.no-underline:hover {
@@ -34,7 +34,7 @@ a.no-underline:hover {
 }
 
 .polaris-divider {
-  border-top: 1px solid #eee;
+  border-top: 1px solid $polaris-divider-top-border-color;
   position: relative;
   overflow: hidden;
   min-height: 20px;
@@ -52,6 +52,10 @@ a.no-underline:hover {
 }
 
 /* TODO: Need to find where this is being used */
+// organisms/2-column-video-image-with-description/old/index4.htm
+// organisms/2-column-video-image-with-description/old/index2.htm
+// organisms/2-column-video-image-with-description/index3.htm
+// organisms/sample-widget/index.htm
 ul {
   &.bullet-check-mark {
     padding-left: 2em;
@@ -98,8 +102,8 @@ li {
 }
 
 .new {
-	background-color: $dell-orange;
-	color: $white;
+  background-color: $new-bg-color;
+  color: $new-text-color;
 	font-size: .8em;
 	line-height: 1em;
 	padding: 0 5px 2px;
@@ -119,6 +123,12 @@ li {
 
 iframe {
   border: 0;
+}
+
+body {
+	> iframe, > img {
+		display: none;
+	}
 }
 
 /* Vertical Alignment */
@@ -142,7 +152,7 @@ iframe {
 .col-striped {
 	.row {
 		> [class^="col-"]:nth-of-type(odd) {
-			background-color: #f9f9f9;
+      background-color: $col-striped-odd-bg;
 		}
 	}
 }
@@ -187,7 +197,7 @@ iframe {
   justify-content: center;
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   //Mobile - XS
   #right-rail-form {
     label {
@@ -204,11 +214,11 @@ iframe {
     text-align: center;
   }
   .bg-white-xs {
-    background-color: #fff;
+	  background-color: $white;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   //Tablet - SM
   .center-block-sm-only {
     display: block;
@@ -226,7 +236,7 @@ iframe {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   //Tablet - SM
   #right-rail-form {
     label {
@@ -259,7 +269,7 @@ iframe {
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
   //Desktop - MD
   .pull-left-md-only {
     float: left;
@@ -269,7 +279,7 @@ iframe {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $screen-md-min) {
   //Desktop - MD
   #right-rail-form {
     label {
@@ -286,7 +296,7 @@ iframe {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .pull-left-lg {
     float: left;
   }

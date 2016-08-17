@@ -89,7 +89,7 @@
 }
 
 .ph-0 {
-  padding-left: 0 !important;
+	padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
@@ -224,7 +224,7 @@
   margin-left: 30px !important;
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   //Mobile - XS
   //XS
   #right-rail-form {
@@ -347,7 +347,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   //Tablet - SM
   .mt-0-sm-only {
     margin-top: 0 !important;
@@ -361,9 +361,9 @@
   .mr-20-sm-only {
     margin-right: 20px !important;
   }
-  .mr-40-sm-only {
-    margin-right: 40px !important;
-  }
+	.mr-40-sm-only {
+		margin-right: 40px !important;
+	}
   .mb-20-sm-only {
     margin-bottom: 20px !important;
   }
@@ -405,7 +405,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   //Tablet - SM
   .mt-0-sm {
     margin-top: 0 !important;
@@ -482,7 +482,7 @@
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
   //Desktop - MD
   .mt-0-md-only {
     margin-top: 0 !important;
@@ -498,7 +498,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $screen-md-min) {
   //Desktop - MD
   .mt-0-md {
     margin-top: 0 !important;
@@ -509,18 +509,18 @@
   .mr-20-md {
     margin-right: 20px !important;
   }
-  .mr-40-md {
-    margin-right: 40px !important;
-  }
+	.mr-40-md {
+		margin-right: 40px !important;
+	}
   .pad-25-md {
     padding: 25px !important;
   }
-  .pr-0-md {
-    padding-right: 0;
+	.pr-0-md {
+		padding-right: 0;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .mr-20-lg {
     margin-right: 20px !important;
   }

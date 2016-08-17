@@ -1,0 +1,146 @@
+<header id="masthead" class="masthead">
+	<nav role="navigation" class="navbar navbar-inverse">
+		<div class="utility-section-wrapper blue">
+			<div class="utility-section">
+				<!-- Logo -->
+				<div class="navbar-brand">
+					<a href="/">
+						<img src="https://software.dell.com/images/shared/logo.png">
+					</a>
+				</div>
+
+				<div class="search-container" id="masthead-search">
+					<form id="search-form">
+						<input type="text" placeholder="What can we help you find?" class="search-query form-control" id="searchterm">
+						<button onclick="goAllSearch3()" class="btn" type="submit">
+							<span class="hidden-xs">Search</span>
+							<i class="icon-small-searchleft visible-xs"></i>
+						</button>
+						<div class="autocomplete"></div>
+					</form>
+				</div>
+
+				<!-- Links -->
+				<ul class="utility">
+					<li class="dropdown visible-xs mobile-search-button" id="mobile-search-button">
+						<a href="#">
+							<i class="icon-small-searchleft"></i>
+						</a>
+					</li>
+					<li class="dropdown" id="signin-container">
+						<a aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" data-target="#" id="signin-link">
+							<i class="icon-small-useraccount"></i>
+							<span id="sign-in" class="hidden-xs hidden-sm"><span id="signin-button">Sign In</span></span>
+						</a>
+
+						<div class="dropdown-menu" aria-labelledby="signin-link" role="menu">
+							<div class="col-xs-12">
+								<h5 class="text-gray-dark not-logged-in">Dell Software Sign In</h5>
+
+								<div class="row">
+									<div class="col-xs-12 not-logged-in">
+										<button class="btn btn-primary btn-block bottom-offset-mini top-offset-small lnk-sign-in" role="button">Sign In</button>
+									</div>
+									<div class="col-xs-12 is-logged-in">
+										<button class="btn btn-primary btn-block bottom-offset-mini top-offset-small" role="button" id="lnkMyAccount">My Account</button>
+									</div>
+									<div class="col-xs-12 is-logged-in">
+										<button class="btn btn-default btn-block bottom-offset-mini top-offset-small" role="button" id="lnkmainloggOut">Sign Out</button>
+									</div>
+									<div class="col-xs-12 not-logged-in">
+										<button class="btn btn-block btn-default lnk-create-account" role="button">Create an account</button>
+									</div>
+								</div>
+								<hr>
+								<h5 class="flyout-signin">
+									<a href="/partners/">PartnerDirect Sign In</a>
+								</h5>
+							</div>
+						</div>
+					</li>
+					<li class="visible-xs">
+						<a data-toggle="site-menu" class="navbar-toggle" href="#">
+							<i class="icon-ui-menucollapsed"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div>
+			<div class="masthead-shadow-section"></div>
+
+			<div class="main-nav-section">
+				<div class="shadow-overlay-left"></div>
+				<ul class="tier1">
+					<li class="subLinks">
+						<a href="#">
+							<span>Products</span>
+							<i class="menu-indicator pull-right"></i>
+						</a>
+						<ul class="tier2">
+							<li class="subLinks">
+								<a href="/solutions/cloud-management/">
+									<span>Cloud Management</span>
+									<i class="menu-indicator pull-right"></i>
+								</a>
+								<ul class="tier3">
+									<li>
+										<a target="_blank" href="http://www.dell.com/Learn/us/en/555/large-business/solution-converged-infrastructure-asim?c=us&amp;l=en&amp;s=biz">Active
+											System Manager</a>
+									</li>
+									<li>
+										<a href="/products/cloud-manager/">Cloud Manager</a>
+									</li>
+									<li>
+										<a href="/products/foglight-application-performance-monitoring-saas-edition/">Foglight
+											Application Performance Monitoring SaaS Edition</a>
+									</li>
+								</ul>
+							</li>
+							<li class="subLinks">
+								<a href="/solutions/data-protection/">
+									<span>Data Protection</span>
+									<i class="menu-indicator pull-right"></i>
+								</a>
+								<ul class="tier3">
+									<li class="subLinks">
+										<a href="#">
+											<span>Application-Specific Data Protection</span>
+											<i class="menu-indicator pull-right"></i>
+										</a>
+										<ul class="tier4">
+											<li><a href="/products/appassure/">AppAssure Backup and Recovery</a>
+											</li>
+											<li><a href="/products/archive-manager/">Archive Manager</a></li>
+											<li><a href="/products/change-auditor-for-active-directory/">Change
+												Auditor for Active Directory</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="/solutions/">Solutions</a>
+					</li>
+					<li>
+						<a href="/trials/">Trials</a>
+					</li>
+					<li>
+						<a href="/buy/">Buy</a>
+					</li>
+					<li>
+						<a href="http://support.software.dell.com">Support</a>
+					</li>
+					<li>
+						<a target="_blank" href="http://en.community.dell.com/techcenter/">Communities</a>
+					</li>
+					<li>
+						<a href="/partners/">Partners</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>

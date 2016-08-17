@@ -3,33 +3,33 @@
 // --------------------------------------------------
 
 .pager {
+  padding-left: 0;
   margin: 0;
+  list-style: none;
+  text-align: center;
+  @include clearfix;
 
   li {
+    display: inline;
     vertical-align: 0;
 
-    > a {
+    > a,
+    > span {
+      display: inline-block;
       padding: 6px 12px;
-      background-color: #eee;
-      border: 1px solid #ccc;
+      background-color: $pager-link-bg;
+      border: 1px solid $pager-border-color;
       border-radius: 1px;
     }
+    a:hover,
     a:active,
     a:focus {
-      -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-      box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
+      text-decoration: none;
+      background-color: $pager-hover-bg;
+      /*-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)*/
     }
-    .icon-ui-arrowleft:before,
-    .icon-ui-arrowright:before {
-      position: relative;
-      top: 2px !important;
-    }
-    .icon-ui-arrowleft:before {
-      content: "\e600";
-    }
-    .icon-ui-arrowright:before {
-      content: "\e601";
-    }
+	  /* Possibly use class name instead of defining selector by attributes. */
     input[type=text] {
       margin-left: 5px;
       margin-right: 5px;
@@ -45,6 +45,17 @@
       background: none;
       border: 0;
       border-radius: 0;
+    }
+  }
+	/* This class might not be used on our site. */
+  .disabled {
+    > a,
+    > a:hover,
+    > a:focus,
+    > span {
+      color: $pager-disabled-color;
+      background-color: $pager-bg;
+      cursor: $cursor-disabled;
     }
   }
 }

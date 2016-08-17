@@ -1,0 +1,185 @@
+<div class="container">
+	<div class="col-sm-6 col-xs-12 col-md-6 p-0-xs">
+		<form id="frmRegister" novalidate="novalidate">
+			<div class="border-grey p-15 bg-light-grey no-border-xs"><h3 class="mar-0"></h3><h4>Download Your Free Trial</h4>
+				<div class="form-horizontal-2 mt-20"><input type="hidden" id="dumbEmail" value="user@mail.com"><input
+					type="hidden"
+					id="DB_Latitude"
+					value="33.5858"><input
+					type="hidden" id="DB_Longitude" value="-117.724"><input type="hidden" id="DB_Industry"
+				                                                          value="Software &amp; Technology"><input
+					type="hidden" id="DB_SubIndustry" value="Software Applications"><input type="hidden" id="isdirty"
+				                                                                         name="isdirty" value="0">
+					<div class="form-group" id="tr_FirstName" style="" firstscreen="1">
+						<div><label class="">First Name</label></div>
+						<div><input type="text" title="First Name" name="FirstName" id="FirstName" maxlength="50"
+						            class="form-control"
+						            required="" aria-required="true"></div>
+						<div id="err_FirstName" style="display:none;"></div>
+					</div>
+					<div class="form-group" id="tr_LastName" style="" firstscreen="1">
+						<div><label class="">Last Name</label></div>
+						<div><input type="text" title="Last Name" name="LastName" id="LastName" maxlength="50" class="form-control"
+						            required="" aria-required="true"></div>
+						<div id="err_LastName" style="display:none;"></div>
+					</div>
+					<div class="form-group" id="tr_Email" style="" firstscreen="1">
+						<div><label class="">Business Email</label></div>
+						<div><input type="text" title="Business Email" name="Email" id="Email" maxlength="100" class="form-control"
+						            required="" aria-required="true"></div>
+						<div id="err_Email" style="display:none;"></div>
+					</div>
+					<div class="form-group" id="tr_Company" style="" firstscreen="1">
+						<div><label class="">Company</label></div>
+						<div><input type="text" title="Company" name="Company" id="Company" maxlength="100"
+						            class="form-control ui-autocomplete-input" required="" aria-required="true" placeholder=""
+						            autocomplete="false" role="textbox" aria-autocomplete="list" aria-haspopup="true"
+						            aria-invalid="false"></div>
+						<div id="err_Company" style="display:none;"></div>
+					</div>
+					<div class="form-group" id="tr_CountryCode" style="" firstscreen="0">
+						<div><label class="">Country</label></div>
+						<div><select name="CountryCode" title="Country" id="CountryCode" class="form-control"
+						             onchange="validother(this);" required="" aria-required="true">
+							<option value="">Country</option>
+							<option dbcountrycode="US" value="US">UNITED STATES</option>
+							<option dbcountrycode="IN" value="IN">INDIA</option>
+							<option dbcountrycode="GB" value="GB">UNITED KINGDOM</option>
+							<option dbcountrycode="DE" value="DE">GERMANY</option>
+							<option dbcountrycode="CA" value="CA">CANADA</option>
+						</select></div>
+						<div id="err_CountryCode" style="display:none;"></div>
+					</div>
+					<div class="form-group" id="tr_State_Province" style="" firstscreen="0">
+						<div><label class="">State</label></div>
+						<div><select name="State_Province" title="State" id="State_Province" class="form-control"
+						             onchange="validother(this);" required="" placeholder="State" aria-required="true">
+							<option value="" disabled="" selected="">State/Province</option>
+							<option value="AK">ALASKA</option>
+							<option value="AL">ALABAMA</option>
+							<option value="AR">ARKANSAS</option>
+							<option value="AZ">ARIZONA</option>
+							<option value="CA">CALIFORNIA</option>
+							<option value="CO">COLORADO</option>
+							<option value="CT">CONNECTICUT</option>
+							<option value="DC">DISTRICT OF COLUMBIA</option>
+							<option value="DE">DELAWARE</option>
+							<option value="FL">FLORIDA</option>
+							<option value="GA">GEORGIA</option>
+							<option value="HI">HAWAII</option>
+							<option value="IA">IOWA</option>
+							<option value="ID">IDAHO</option>
+							<option value="IL">ILLINOIS</option>
+							<option value="IN">INDIANA</option>
+							<option value="KS">KANSAS</option>
+							<option value="KY">KENTUCKY</option>
+							<option value="LA">LOUISIANA</option>
+							<option value="MA">MASSACHUSETTS</option>
+							<option value="MD">MARYLAND</option>
+							<option value="ME">MAINE</option>
+							<option value="MI">MICHIGAN</option>
+							<option value="MN">MINNESOTA</option>
+							<option value="MO">MISSOURI</option>
+							<option value="MS">MISSISSIPPI</option>
+							<option value="MT">MONTANA</option>
+							<option value="NC">NORTH CAROLINA</option>
+							<option value="ND">NORTH DAKOTA</option>
+							<option value="NE">NEBRASKA</option>
+							<option value="NH">NEW HAMPSHIRE</option>
+							<option value="NJ">NEW JERSEY</option>
+							<option value="NM">NEW MEXICO</option>
+							<option value="NV">NEVADA</option>
+							<option value="NY">NEW YORK</option>
+							<option value="OH">OHIO</option>
+							<option value="OK">OKLAHOMA</option>
+							<option value="OR">OREGON</option>
+							<option value="PA">PENNSYLVANIA</option>
+							<option value="PR">PUERTO RICO</option>
+							<option value="RI">RHODE ISLAND</option>
+							<option value="SC">SOUTH CAROLINA</option>
+							<option value="SD">SOUTH DAKOTA</option>
+							<option value="TN">TENNESSEE</option>
+							<option value="TX">TEXAS</option>
+							<option value="UT">UTAH</option>
+							<option value="VA">VIRGINIA</option>
+							<option value="VT">VERMONT</option>
+							<option value="WA">WASHINGTON</option>
+							<option value="WI">WISCONSIN</option>
+							<option value="WV">WEST VIRGINIA</option>
+							<option value="WY">WYOMING</option>
+						</select></div>
+						<div id="err_State_Province" style="display:none;"></div>
+					</div>
+					<div class="form-group" id="tr_PostalCode" style="" firstscreen="0">
+						<div><label class="">Postal Code</label></div>
+						<div><input type="text" title="Postal Code" name="PostalCode" id="PostalCode" maxlength="30"
+						            class="form-control" required="" aria-required="true"></div>
+						<div id="err_PostalCode" style="display:none;"></div>
+					</div>
+					<div class="form-group" id="tr_Phone" style="" firstscreen="0">
+						<div><label class="">Phone</label></div>
+						<div><input type="text" title="Phone" name="Phone" id="Phone" maxlength="50" class="form-control"
+						            required=""
+						            aria-required="true" aria-invalid="true"></div>
+						<div id="err_Phone" style="display:none;"></div>
+					</div>
+					<div class="form-group" id="tr_PublicSector" style="" firstscreen="0">
+						<div><label class="">Public Sector</label></div>
+						<div><select name="PublicSector" title="Public Sector" id="PublicSector" class="form-control"
+						             onchange="validother(this);">
+							<option value="Commercial" selected="selected">
+								Not Applicable
+							</option>
+							<option value="Federal/Central Government">
+								Government - Federal / Central
+							</option>
+							<option value="State/Local Government">
+								Government - State/Local
+							</option>
+							<option value="Government – Contractor">
+								Government – Contractor
+							</option>
+							<option value="College/University">
+								Government – Education
+							</option>
+						</select></div>
+						<div id="err_PublicSector" style="display:none;"></div>
+					</div>
+					<div class="form-group">
+						<div><label><input type="checkbox" name="chklicense" id="chklicense" title=" license agreement" class="left"
+						                   required="" aria-required="true"></label></div>
+						<div><label class="text-left">
+							I have read and accepted the
+							<a href="/sla" target="_blank"> license agreement</a><span class="required"
+							                                                           aria-required="true">*</span></label></div>
+					</div>
+					<div id="tr_OptInAccept" class="form-group" style="display:none">
+						<div></div>
+						<div>
+							<div class="mb-20"><input type="checkbox" name="chkOptIn" id="chkOptIn" class="left">
+								Yes, I agree to receive electronic messages from Dell Software including information about products,
+								services, solutions, offers and deals.
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div>&nbsp;</div>
+						<div><input type="submit" value="Download Trial" class="btn btn-primary btn-block mt-20"></div>
+					</div>
+					<div id="tr_OptInPrivacy" class="form-group" style="display:none">
+						<div></div>
+						<div>
+							<div class="mt-20">You may withdraw your consent at any time. Please visit our <a
+								href="/legal/privacy.aspx"
+								target="blank">Privacy
+								Statement</a> for additional information or <a href="/company/contact-us.aspx" target="blank">Contact
+								Us</a>
+								for further inquiries.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

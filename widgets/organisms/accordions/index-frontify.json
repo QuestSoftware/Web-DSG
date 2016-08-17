@@ -1,0 +1,11 @@
+{
+	"name": "Accordions",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Simple Accordions with different types of contents",
+	"assets": {
+		"html": [
+			"../widgets/organisms/accordions/index.htm"
+		]
+	}
+}

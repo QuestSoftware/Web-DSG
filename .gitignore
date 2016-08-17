@@ -8,3 +8,15 @@
 out
 gen
 
+.env
+
+/static/js/**/*.min.js
+/static/scripts/**/*.min.js
+
+/static/css/**/*.css
+/static/css/**/*.css.map
+/static/styles/**/*.css
+/static/styles/**/*.css.map
+
+/shop/**/*.css
+/shop/**/*.map

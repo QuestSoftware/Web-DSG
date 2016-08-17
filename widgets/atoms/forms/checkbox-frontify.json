@@ -1,0 +1,11 @@
+{
+	"name": "Checkbox - A",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "Enabled and disabled checkboxes",
+	"assets": {
+		"html": [
+			"../widgets/atoms/forms/checkbox.htm"
+		]
+	}
+}

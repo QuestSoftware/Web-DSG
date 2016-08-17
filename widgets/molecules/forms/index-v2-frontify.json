@@ -1,0 +1,11 @@
+{
+	"name": "Form (With privacy checkbox) - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Form with primary button and license agreement checkbox",
+	"assets": {
+		"html": [
+			"../widgets/molecules/forms/index-v2.htm"
+		]
+	}
+}

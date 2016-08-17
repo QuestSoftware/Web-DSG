@@ -1,0 +1,11 @@
+{
+	"name": "Event details with list - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Smaller detail box on Mobile",
+	"assets": {
+		"html": [
+			"../widgets/molecules/event-details/index-with-list.htm"
+		]
+	}
+}

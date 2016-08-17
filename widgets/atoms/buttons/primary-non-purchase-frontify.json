@@ -1,0 +1,11 @@
+{
+	"name": "Primary non-purchase button - A",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "Use for highest priority non-purchase actions.",
+	"assets": {
+		"html": [
+			"../widgets/atoms/buttons/primary-non-purchase.htm"
+		]
+	}
+}

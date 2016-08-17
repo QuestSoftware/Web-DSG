@@ -73,6 +73,54 @@
   }
 }
 
+@media (max-width: $screen-xs-max) {
+	.dropdown-menu-xs {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: $zindex-dropdown;
+		display: none; // none by default, but block on "open" of the menu
+		float: left;
+		min-width: 160px;
+		padding: 5px 0;
+		margin: 2px 0 0; // override default ul
+		list-style: none;
+		font-size: $font-size-base;
+		text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+		background-color: $dropdown-bg;
+		border: 1px solid $dropdown-fallback-border; // IE8 fallback
+		border: 1px solid $dropdown-border;
+		border-radius: $border-radius-base;
+		@include box-shadow(0 6px 12px rgba(0, 0, 0, .175));
+		background-clip: padding-box;
+
+		// Aligns the dropdown menu to right
+		//
+		// Deprecated as of 3.1.0 in favor of `.dropdown-menu-[dir]`
+		&.pull-right {
+			right: 0;
+			left: auto;
+		}
+
+		// Dividers (basically an hr) within the dropdown
+		.divider {
+			@include nav-divider($dropdown-divider-bg);
+			padding: 0;
+		}
+
+		// Links within the dropdown menu
+		> li > a {
+			display: block;
+			padding: 3px 20px;
+			clear: both;
+			font-weight: normal;
+			line-height: $line-height-base;
+			color: $dropdown-link-color;
+			white-space: nowrap; // prevent links from randomly breaking onto new lines
+		}
+	}
+}
+
 // Hover/Focus state
 .dropdown-menu > li > a {
   &:hover,
@@ -120,7 +168,7 @@
 // Open state for the dropdown
 .open {
   // Show the menu
-  > .dropdown-menu {
+	> .dropdown-menu, > .dropdown-menu-xs {
     display: block;
   }
 
@@ -239,5 +287,16 @@
     border-right: 6px solid transparent;
     border-left: 6px solid transparent;
   }
+}
+
+//On Quest and DSG - Changing dropdown arrows to down and up accordingly
+
+.open {
+	.dropdown-toggle {
+		.caret {
+			border-bottom: 6px solid;
+			border-top: none;
+		}
+	}
 }
 

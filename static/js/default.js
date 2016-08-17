@@ -17,7 +17,8 @@ $(document).ready(function () {
 	$('body').on('click', '[data-toggle=show],[data-toggle=show-offcanvas]', function (e) {
 		e.preventDefault();
 
-		var target = $($(this).data('target'));
+		var target = $($(this).data('target')), //target drop down element
+			sourceElem = $(this); //the element this event is being triggered.
 
 		//Do not proceed if on mobile.
 		if (pageWidth < 768) {
@@ -28,8 +29,9 @@ $(document).ready(function () {
 		$('.optional-dropdown').each(function () {
 			if ($(this).is(':visible') && !target.is(':visible')) {
 				$(this).hide().data('hidden-class', 'hidden');
+				$(this).data('parent-container').css('height', ''); // reseting the hright of the container
 			}
-			$(this).prev().find('.container').css('height', '');//reset height of parent container
+
 		});
 
 		if (target.is(':visible')) {
@@ -87,6 +89,11 @@ $(document).ready(function () {
 					if (parentContainer.height() < parentHeight) {
 						parentContainer.css('height', parentHeight);
 					}
+
+					$(target).data('parent-container', parentContainer);
+
+					//Scroll to the drop down
+					$('html, body').animate({scrollTop: sourceElem.offset().top - sourceElem.height() - 25});
 				}
 			});
 
@@ -408,7 +415,6 @@ $(document).ready(function () {
 	if ($('.comparison-table').data('xs-collapsibles')) {
 		addResize('processComparisonTable', true);
 	}
-
 });
 
 $(window).load(function () {
@@ -1246,7 +1252,9 @@ function resizeFourColumnFilmstripCarousel(parentSelector) {
 
 function socialMediaToolbar() {
 	//var bitlyURL = url = location.href;
-	var bitlyURL = url = location.protocol + '//' + location.hostname + location.pathname;
+	var host = location.host.replace(/\-/g, '.'),
+		bitlyURL = url = 'https://' + host + location.pathname,
+		approvedBitlyGeneration = ['software.dell.com', 'www.quest.com', 'eee.quest.com'];
 
 	//If protocol is https find previous page.
 	if (location.protocol == 'https:') {
@@ -1254,7 +1262,7 @@ function socialMediaToolbar() {
 
 		if (/^\?param=/.test(location.search)) {
 			pathnameArr[1] = pathnameArr[1].replace(/(.*)t$/, '$1');
-			bitlyURL = url = 'https://' + location.host + pathnameArr.join('/');
+			bitlyURL = url = 'https://' + host + pathnameArr.join('/');
 		}
 	}
 
@@ -1273,9 +1281,9 @@ function socialMediaToolbar() {
 	}
 
 	//Retrieve bit.ly url
-	if (window.XMLHttpRequest && location.host == 'software.dell.com' && !/\/emailcl\//.test(location.pathname)) {
+	if (window.XMLHttpRequest && $.inArray(location.host, approvedBitlyGeneration) > -1 && !/\/emailcl\//.test(location.pathname)) {
 		var xhr = new XMLHttpRequest();
-		xhr.open("GET", "/hidden/bitly.asmx/get?URI=" + encodeURIComponent(url));
+		xhr.open("GET", "/hidden/bitly.asmx/get?URI=" + encodeURIComponent(url.replace('eee', 'www')));
 		xhr.onreadystatechange = function () {
 			if (xhr.readyState == 4) {
 				if (xhr.status == 200) {
@@ -1293,7 +1301,7 @@ function socialMediaToolbar() {
 
 	//Interaction when clicking on facebook, twitter and linkedin
 	$('.social-media-toolbar').on('click', 'a', function (e) {
-		var parent = $(this).parent(), title = document.title;
+		var parent = $(this).parent(), title = document.title, via = 'DellSoftware';
 
 		if (parent.hasClass('facebook')) {
 			if (typeof s == 'object' && false) {
@@ -1326,8 +1334,14 @@ function socialMediaToolbar() {
 			if (location.host == 'security.dell.com') {
 				title = 'Dell Security Solutions: Be the #DeptofYes';
 			}
+
 			e.preventDefault();
-			window.open('http://twitter.com/share?via=DellSoftware&url=' + encodeURIComponent(bitlyURL) + '&text=' + encodeURIComponent(title) + ',%20&counturl=' + encodeURIComponent(url), 'twitter', 'width=480,height=380,toolbar=0,status=0,resizable=1');
+
+			if (url.includes("quest")) {
+				via = 'QuestSoftware';
+			}
+
+			window.open('http://twitter.com/share?via=' + via + '&url=' + encodeURIComponent(bitlyURL) + '&text=' + encodeURIComponent(title) + ',%20&counturl=' + encodeURIComponent(url), 'twitter', 'width=480,height=380,toolbar=0,status=0,resizable=1');
 		}
 		else if (parent.hasClass('linkedin')) {
 			if (typeof s == 'object' && false) {
@@ -1341,6 +1355,7 @@ function socialMediaToolbar() {
 			//_gaq.push(['_trackSocial', 'LinkedIn', 'Share']);
 
 			e.preventDefault();
+
 			window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title), 'linkedin', 'width=480,height=360,toolbar=0,status=0,resizable=1');
 		}
 		else if (parent.hasClass('googleshare')) {
@@ -1525,40 +1540,54 @@ function matchHeight() {
 			config.byRow = false;
 		}
 
-		$('*[data-target="match-height"]').filter(':visible').matchHeight(config);//}
+		$('*[data-target="match-height"]').filter(':visible').matchHeight(config);
+		//}
 	}
 }
 
 function replaceURL(text) {
 	var exp = /(\bhttps?:\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-	return text.replace(exp, '<a href="$1">$1</a>');
+	return text.replace(exp, "<a href=\"$1\">$1</a>");
 }
 
+/**
+ * Create collapsible rows for camparison tables on Mobile view
+ */
 function processComparisonTable() {
-	if (pageWidth < 768 && $('.comparison-table').data('xs-collapsibles') != undefined) {
-		var compTable = $('.comparison-table'),
-			index = 1,
-			htmlFragment = '';
 
-		$(compTable.find('tbody tr')).each(function () {
-			htmlFragment +=
-				'<div class="panel">' +
-				'<div class="panel-heading">' +
-				'<h4 class="panel-title">' +
-				'<a data-toggle="collapse" data-parent="#accordion" href="#panel' + index + '" aria-expanded="false" class="collapsed">'
-				+ $(this).find('>td:first-child').text() +
-				'</a>' +
-				'</h4>' +
-				'</div>' +
-				'<div id="panel' + index + '" class="collapse table-responsive" aria-expanded="false">' +
-				'<div class="panel-body"> ' +
-				getBodyContent($(this)) +
-				'</div>' +
-				'</div>' +
-				'</div>';
-			index++;
+	if (pageWidth < 768 && $('.comparison-table').data('xs-collapsibles')) {
+		$('.comparison-table').each(function () {
+			if ($(this).data('xs-collapsibles')) {
+				var htmlFragment = '';
+				/*Generating random string to use as id for collapse instead of #accordion to avoid id duplication issue*/
+				var accId = getRandomString(8);
+
+				$(this).find('tbody tr').each(function (index) {
+					htmlFragment +=
+						'<div class="panel">' +
+						'<div class="panel-heading">' +
+						'<h4 class="panel-title">' +
+						'<a data-toggle="collapse" data-parent="#' + accId + '" href="#panel' + accId + index + '" aria-expanded="false" class="collapsed">'
+						+ $(this).find('>td:first-child').text() +
+						'</a>' +
+						'</h4>' +
+						'</div>' +
+						'<div id="panel' + accId + index + '" class="collapse table-responsive" aria-expanded="false">' +
+						'<div class="panel-body"> ' +
+						getBodyContent($(this)) +
+						'</div>' +
+						'</div>' +
+						'</div>';
+				});
+
+				$(this).find('.panel-group-collapsible').attr('id', accId).append(htmlFragment);
+			}
 		});
 
+		/**
+		 *
+		 * Getting the comparison table content
+		 */
 		function getBodyContent(row) {
 			var panelContentHtml = '';
 			row.find('td:gt(0)').each(function () {
@@ -1575,8 +1604,6 @@ function processComparisonTable() {
 
 			return panelContentHtml;
 		}
-
-		$('.panel-group-collapsible').append(htmlFragment);
 	}
 }
 

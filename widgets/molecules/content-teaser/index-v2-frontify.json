@@ -1,0 +1,11 @@
+{
+	"name": "Overlay content (Smaller) - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Overlay content with different background sizes",
+	"assets": {
+		"html": [
+			"../widgets/molecules/content-teaser/index-small.htm"
+		]
+	}
+}

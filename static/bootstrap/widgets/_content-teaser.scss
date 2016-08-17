@@ -12,8 +12,8 @@ a:hover .has-overlay h4 {
   padding: 0;
   height: 206px;
   .overlay {
-    background: #fff;
-    background-color: rgba(255, 255, 255, 0.9);
+		background: $has-overlay-bg;
+		background-color: $has-overlay-bg-color;
     width: 100%;
     padding: 11px 15px;
     position: absolute;
@@ -58,7 +58,7 @@ a:hover .has-overlay h4 {
 }*/
 
 /*mobile*/
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .has-overlay {
     margin-bottom: 20px;
     .overlay {
@@ -67,7 +67,7 @@ a:hover .has-overlay h4 {
   }
 }
 /*tablet*/
-@media (max-width: 991px) and (min-width: 768px) {
+@media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
   .has-overlay {
     margin-bottom: 20px;
   }

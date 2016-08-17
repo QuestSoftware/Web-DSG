@@ -1,0 +1,11 @@
+{
+	"name": "Listing entry - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Image size : 328 x 204",
+	"assets": {
+		"html": [
+			"../widgets/molecules/listing-entries/index.htm"
+		]
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Download PDF - M",
+	"type": "Molecule",
+	"stability": "stable",
+	"description": "",
+	"assets": {
+		"html": [
+			"../widgets/molecules/download/download.htm"
+		]
+	}
+}

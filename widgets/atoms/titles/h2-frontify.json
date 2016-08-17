@@ -1,0 +1,11 @@
+{
+	"name": "H2 title",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "",
+	"assets": {
+		"html": [
+			"../widgets/atoms/titles/h2.htm"
+		]
+	}
+}

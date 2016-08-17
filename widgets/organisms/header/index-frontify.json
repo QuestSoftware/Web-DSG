@@ -1,0 +1,11 @@
+{
+	"name": "Header - O",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Logo\nSearch\nSign in\nNavigation",
+	"assets": {
+		"html": [
+			"../widgets/organisms/header/index.htm"
+		]
+	}
+}

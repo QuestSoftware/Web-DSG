@@ -10,10 +10,10 @@
   padding: $alert-padding;
   margin-bottom: $line-height-computed;
   border-radius: $alert-border-radius;
-  color: #444;
+	color: $alert-text-color;
   text-shadow: none;
-  background: #ffffc9;
-  border: 1px solid #eee;
+	background: $alert-bg-color;
+	border: 1px solid $alert-border-color;
   position: relative;
 
   // Headings for larger alerts
@@ -43,7 +43,7 @@
 
   .label-error-wrapper {
     label {
-      color: $dell-blue;
+			color: $alert-link-color;
       padding: 0 5px;
       cursor: pointer;
       font-size: $font-size-base;
@@ -51,7 +51,7 @@
       margin: 0;
 
       &::before {
-        color: #444;
+				color: $alert-link-color-before;
         content: "|";
         font-size: 16px;
         padding-right: 10px;
@@ -61,7 +61,7 @@
         padding: 0;
       }
       &:hover {
-        color: $dell-dark-blue;
+				color: $alert-link-hover-color;
       }
     }
   }
@@ -106,16 +106,16 @@
 .alert > {
   .alert-danger, .alert-error, .alert-info, .alert-success, .alert-warning {
     background: 0 0;
-    color: #444;
+		color: $alert-text-color;
     margin-bottom: 20px;
   }
 }
 
 .alert-danger:before, .alert-error:before {
   content: "\e603";
-  font-family: icon-small;
+	font-family: "icon-small";
   float: left;
-  color: #ce1126;
+	color: $color-danger;
   position: absolute;
   font-size: 20px;
   left: 0;
@@ -126,9 +126,9 @@
 
 .alert-info:before {
   content: "\e604";
-  font-family: icon-small;
+	font-family: "icon-small";
   float: left;
-  color: #007db8;
+	color: $color-info;
   position: absolute;
   font-size: 20px;
   left: 0;
@@ -139,9 +139,9 @@
 
 .alert-success:before {
   content: "\e611";
-  font-family: icon-small;
+	font-family: "icon-small";
   float: left;
-  color: #6ea204;
+	color: $color-success;
   position: absolute;
   font-size: 20px;
   left: 0;
@@ -152,9 +152,9 @@
 
 .alert-warning:before {
   content: "\e605";
-  font-family: icon-small;
+	font-family: "icon-small";
   float: left;
-  color: #d74324;
+	color: $color-warning;
   position: absolute;
   font-size: 20px;
   left: 0;
@@ -177,13 +177,13 @@
 }
 
 .alert-warning {
-  background-color: #ee6411;
-  border-color: #d6390f;
-  color: #ee6411;
+	background-color: $alert-warning-bg;
+	border-color: $alert-warning-border;
+	color: $alert-warning-text;
   hr {
-    border-top-color: #be330e;
+		border-top-color: $alert-warning-hr-top-border-color;
   }
   .alert-link {
-    color: #be500e;
+		color: $alert-warning-link-color;
   }
 }

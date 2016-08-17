@@ -1,0 +1,11 @@
+{
+	"name": "Banner - content teaser",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Image size : 275 x 175\nCall to action banner with thumbnail and button",
+	"assets": {
+		"html": [
+			"../widgets/organisms/banners/content-teaser.htm"
+		]
+	}
+}

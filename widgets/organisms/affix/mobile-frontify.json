@@ -1,0 +1,11 @@
+{
+	"name": "Affix on every devices",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Affix sample for large, medium, small and x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/affix/mobile.htm"
+		]
+	}
+}

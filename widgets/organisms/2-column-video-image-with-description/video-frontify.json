@@ -1,0 +1,11 @@
+{
+	"name": "Two-column video with description (Video Right)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Description\nLearn more link\nThumbnail Size: 460 x 290",
+	"assets": {
+		"html": [
+			"../widgets/organisms/2-column-video-image-with-description/video.htm"
+		]
+	}
+}

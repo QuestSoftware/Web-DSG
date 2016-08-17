@@ -1,0 +1,11 @@
+{
+	"name": "Search - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Top search box",
+	"assets": {
+		"html": [
+			"../widgets/molecules/search/index.htm"
+		]
+	}
+}

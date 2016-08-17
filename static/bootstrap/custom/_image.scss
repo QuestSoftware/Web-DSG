@@ -1,6 +1,10 @@
 .img-border {
-  border: 1px solid #737373;
+	border: 1px solid $color-image-border;
   position: relative;
+}
+
+.icon-ui-play-underlay {
+  background: $icon-ui-play-underlay-bg;
 }
 
 .img-overlay {
@@ -11,12 +15,11 @@
   height: 100%;
 
   .icon-ui-play {
-    color: $dell-gray-dark;
+    color: $img-overlay-icon-ui-play-color;
     font-size: 40px;
     position: relative;
   }
   .icon-ui-play-underlay {
-    background: #fff;
     height: 30px;
     margin: 5px;
     position: absolute;
@@ -32,12 +35,11 @@
 .media-player-container {
   overflow: hidden;
   .icon-ui-play {
-    color: $dell-gray-dark;
+    color: $media-player-container-icon-ui-play-color;
     font-size: 80px;
     position: relative;
   }
   .icon-ui-play-underlay {
-    background: #fff;
     height: 60px;
     margin: 10px;
     position: absolute;
@@ -45,26 +47,20 @@
   }
 }
 
-/* START: */
-/* Used by [i.e.]: http://software.dell.com/kace/ */
-.img-border-grey {
-  border: 1px solid #ddd;
-}
-/* END */
-
 /* Used by http://software.dell.com/events/ */
 .img-header-overlay {
-  color: #fff;
+  color: $img-header-overlay-color;
   padding: 0 0 0 10px;
   margin: 0;
   line-height: 30px;
   font-weight: 700;
   position: absolute;
-	top: 0;
+	top: 75%;
   width: 100%;
 	z-index: 2;
+	@include opacity(0.92);
 	+ img {
-		position: absolute;
+		position: relative;
 		bottom: 0;
 	}
 }
@@ -75,7 +71,7 @@ a:hover {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .col-xs-12 {
     .img-crop {
       height: 237px;
@@ -83,7 +79,7 @@ a:hover {
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   //Added to support search page.
   .col-sm-2, .col-md-2, .col-lg-2 {
     .img-crop {
@@ -102,7 +98,7 @@ a:hover {
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
   //Added to support search page.
   .col-sm-2, .col-md-2, .col-lg-2 {
     .img-crop {
@@ -116,7 +112,7 @@ a:hover {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   //Added to support search page.
   .col-sm-2, .col-md-2, .col-lg-2 {
     .img-crop {
@@ -128,4 +124,28 @@ a:hover {
       height: 194px;
     }
   }
+}
+
+.casestudy {
+	background-color: $doc-casestudy;
+	@if ($domain == "quest") {
+		@include opacity(0.90);
+	}
+
+}
+
+.ondemand {
+	background-color: $event-on-demand-header-bg;
+}
+
+.online-event {
+	background-color: $event-online-header-bg;
+}
+
+.in-person {
+	background-color: $event-in-person-header-bg;
+}
+
+.whitepaper, .ebook, .infograph, .datasheet, .techbrief {
+	background-color: $doc-header-bg;
 }

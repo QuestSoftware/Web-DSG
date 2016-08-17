@@ -9,7 +9,7 @@
   list-style: none;
   background-color: $breadcrumb-bg;
   border-radius: $border-radius-base;
-  color: $dell-gray-medium;
+	color: $breadcrumb-color;
 
   > li {
     display: inline-block;
@@ -20,6 +20,9 @@
         content: "\e62b";
         font-family: "icon-small";
       }
+	    span {
+		    display: none;
+	    }
     }
     +li:before {
       content: "#{$breadcrumb-separator}"; // Unicode space added since inline-block means non-collapsing white-space [\00a0]
@@ -29,41 +32,40 @@
       position: relative;
       top: -2px;
       padding-right: 4px;
-      padding-left: 4px;
     }
-
+	  &:last-child {
+		  color: $breadcrumb-active-color;
+	  }
     a {
-      color: $dell-gray-medium;
+			color: $breadcrumb-color;
       font-size: 12px;
     }
   }
-
-  > .active {
-    color: $breadcrumb-active-color;
-  }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .breadcrumb {
     > li {
       font-size: 15px;
-      &:first-child:before {
-        font-size: 15px;
+	    &:first-child {
+		    &:before {
+			    font-size: 15px;
+		    }
       }
+	    &:last-child {
+		    font-size: 15px;
+	    }
       a {
         font-size: 15px;
       }
     }
-    > .active {
-      font-size: 15px;
-    }
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $screen-md-min) {
 
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
 
 }

@@ -1,0 +1,11 @@
+{
+	"name": "Main Title with social media icons",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "H1 title\nHas social media to the right of H1\nIcons are hidden on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/main-title/index-v3.htm"
+		]
+	}
+}

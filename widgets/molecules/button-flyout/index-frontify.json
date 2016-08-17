@@ -1,0 +1,11 @@
+{
+	"name": "Button Flyout (Expandable) - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Expandable Button flyout with fix position\nPosition right on Tablets and PCs\nPosition bottom on Mobiles",
+	"assets": {
+		"html": [
+			"../widgets/molecules/button-flyout/index.htm"
+		]
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Filters",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Search filters with clear all and view more buttons",
+	"assets": {
+		"html": [
+			"../widgets/organisms/filters/index.htm"
+		]
+	}
+}

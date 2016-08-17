@@ -1,0 +1,11 @@
+{
+	"name": "Divider - A",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "",
+	"assets": {
+		"html": [
+			"../widgets/atoms/dividers/divider.htm"
+		]
+	}
+}

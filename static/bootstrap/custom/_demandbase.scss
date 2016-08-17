@@ -2,12 +2,12 @@
   box-sizing: border-box;
   line-height: 24px;
   position: absolute;
-  background: #c0c0c0;
+	background: $color-demandbase-dropdown-background;
   font-weight: 700;
   height: 24;
   display: none;
   z-index: 9999;
-  border: 1px solid #c0c0c0;
+	border: 1px solid $color-demandbase-dropdown-border;
 
   > div {
     position: relative;
@@ -19,7 +19,7 @@
       width: 100%;
       bottom: 0;
       left: 0;
-      background: #fff;
+      background: $color-demandbase-dropdown-div-bg-color;
       padding: 0 0 0 5px;
       box-sizing: border-box;
       font-weight: 400

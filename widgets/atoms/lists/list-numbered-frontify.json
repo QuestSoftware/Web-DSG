@@ -1,0 +1,11 @@
+{
+	"name": "Lists Numbered",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "",
+	"assets": {
+		"html": [
+			"../widgets/atoms/lists/list-numbered.htm"
+		]
+	}
+}

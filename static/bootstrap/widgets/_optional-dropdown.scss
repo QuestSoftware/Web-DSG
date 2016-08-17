@@ -7,7 +7,7 @@
   content: "";
   transform: rotate(225deg);
   -ms-transform: rotate(225deg);
-  background: $dell-gray-very-light;
+  background: $triangle-top-bg;
   height: 16px;
   position: absolute;
   top: -8px;
@@ -18,24 +18,24 @@
 
 .has-collapsibles {
   &:before {
-    font-family: 'Glyphicons Halflings';
+	  font-family: "Glyphicons Halflings";
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
     content: "\e114";
-    color: #007db8;
+    color: $has-collapsibles-color;
     position: relative;
     vertical-align: -2px;
     padding-right: 2px;
   }
   &.collapsed:before {
-    font-family: 'Glyphicons Halflings';
+	  font-family: "Glyphicons Halflings";
     content: "\e080";
     vertical-align: -2px;
   }
 }
 
 /*mobile*/
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .off-canvas-content .panel-wrapper {
     margin: 0 15px;
     border-bottom: 1px solid $dell-gray;

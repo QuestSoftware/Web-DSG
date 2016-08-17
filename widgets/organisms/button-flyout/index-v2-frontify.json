@@ -1,0 +1,11 @@
+{
+	"name": "Button Flyout (Open new window)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Button flyout with fix position\nPosition right on small, medium and large devices\nDisabled on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/button-flyout/index-v2.htm"
+		]
+	}
+}

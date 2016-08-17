@@ -1,0 +1,11 @@
+{
+	"name": "Fat tabs with links",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Image size : 55 x 55",
+	"assets": {
+		"html": [
+			"../widgets/organisms/fat-tabs/index.htm"
+		]
+	}
+}

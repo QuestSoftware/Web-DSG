@@ -1,0 +1,11 @@
+{
+	"name": "Quote",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "quote block",
+	"assets": {
+		"html": [
+			"../widgets/molecules/quote/index.htm"
+		]
+	}
+}

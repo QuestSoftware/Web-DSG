@@ -1,0 +1,11 @@
+{
+	"name": "Breadcrumb - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Breadcrumb with home icon",
+	"assets": {
+		"html": [
+			"../widgets/molecules/breadcrumb/index.htm"
+		]
+	}
+}

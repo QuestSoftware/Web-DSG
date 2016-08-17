@@ -1,0 +1,11 @@
+{
+	"name": "Select disabled - A",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "",
+	"assets": {
+		"html": [
+			"../widgets/atoms/forms/select-disable.htm"
+		]
+	}
+}

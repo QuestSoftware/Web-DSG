@@ -2,12 +2,13 @@
   display: block;
   position: fixed;
   z-index: 9999;
-  background-color: white;
+	background-color: $flyout-bg;
   width: 255px;
+
   @include transition(all .5s ease-out);
 
   > div {
-    border: 1px solid #a9a9a9;
+		border: 1px solid $flyout-border-color;
     padding: 25px 20px 20px 20px;
     > div {
       i { //Icon
@@ -23,7 +24,7 @@
         }
         &:hover, &:focus {
           text-decoration: none;
-          color: $dell-blue;
+					color: $flyout-link-hover-color;
           span {
             text-decoration: underline;
           }
@@ -34,7 +35,7 @@
         > a {
           &:hover, &:focus {
             text-decoration: none;
-            color: $dell-blue;
+						color: $flyout-link-hover-color;
             span {
               text-decoration: underline;
             }
@@ -52,16 +53,21 @@
   }
   .close {
     cursor: pointer;
-    color: $dell-gray-medium;
+		color: $flyout-close-color;
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 17px;
     opacity: 1;
   }
+  a {
+    > img {
+      margin-right: 10px;
+    }
+  }
 }
 
-@media (max-width: 767px) { //XS
+@media (max-width: $screen-xs-max) { //XS
   #button-flyout {
     left: -999px;
     z-index: 9999;
@@ -76,7 +82,7 @@
     }
     > a {
       display: block;
-      background: $dell-blue;
+			background: $flyout-btn-xs-bg;
       color: white;
       z-index: 1;
       left: 10px;
@@ -96,12 +102,12 @@
       }
     }
     > div {
-      border-top: 3px solid $dell-blue;
+			border-top: 3px solid $flyout-xs-border-color;
     }
   }
 }
 
-@media (min-width: 768px) { //MD
+@media (min-width: $screen-sm-min) { //MD
   #button-flyout {
     right: -999px;
     top: 225px;
@@ -112,8 +118,8 @@
       right: 0;
     }
     > a {
-      background: $dell-blue;
-      color: #fff;
+			background: $flyout-btn-bg;
+			color: $flyout-btn-color;
       padding: 4px 15px;
       position: absolute;
       -ms-transform: rotate(-90deg);
@@ -131,7 +137,7 @@
       }
     }
     > div {
-      border-left: 3px solid $dell-blue;
+			border-left: 3px solid $flyout-border-left-color;
     }
   }
   .ie8 {

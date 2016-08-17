@@ -1,0 +1,11 @@
+{
+	"name": "Video - A",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "",
+	"assets": {
+		"html": [
+			"../widgets/atoms/videos/video.htm"
+		]
+	}
+}

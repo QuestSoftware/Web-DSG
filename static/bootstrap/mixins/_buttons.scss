@@ -15,7 +15,7 @@
   &.active,
   .open > &.dropdown-toggle {
     color: $color;
-    background-color: darken($background, 10%);
+		background-color: darken($background, 10%);
         border-color: darken($border, 12%);
   }
   &:active,
@@ -49,4 +49,45 @@
   font-size: $font-size;
   line-height: $line-height;
   border-radius: $border-radius;
+}
+
+// Version 2 Button Variant to adjust hover colors manually
+@mixin button-variant-v2($color, $background, $border, $hover-color, $hover-background, $hover-border) {
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+
+	&:hover,
+	&:focus,
+	&.focus,
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		color: $color;
+		background-color: $hover-background;
+		border-color: $hover-border;
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		background-image: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			background-color: $background;
+			border-color: $border;
+		}
+	}
+
+	.badge {
+		color: $background;
+		background-color: $color;
+	}
 }

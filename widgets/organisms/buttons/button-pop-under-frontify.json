@@ -1,0 +1,11 @@
+{
+	"name": "Button pop under (Hidden on x-small)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Content pops under the button\nButton is hidden on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/buttons/button-pop-under.htm"
+		]
+	}
+}

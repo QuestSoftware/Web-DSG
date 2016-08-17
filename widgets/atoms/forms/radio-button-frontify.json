@@ -1,0 +1,11 @@
+{
+	"name": "Radio Buttons - A",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "Enabled and disabled Radio buttons",
+	"assets": {
+		"html": [
+			"../widgets/atoms/forms/radio-button.htm"
+		]
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Fat Tabs",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Tabs with small thumbnails\nThumbnail size : 55 x 55\nTabs turn to affix on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/molecules/fat-tab/index.htm"
+		]
+	}
+}

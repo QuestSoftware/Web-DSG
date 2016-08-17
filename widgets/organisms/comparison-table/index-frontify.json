@@ -1,0 +1,11 @@
+{
+	"name": "Comparison table (Accordions on x-small)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Table turns to carousel on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/comparison-table/index.htm"
+		]
+	}
+}

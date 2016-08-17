@@ -1,0 +1,11 @@
+{
+	"name": "Video - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Video Thumbnail",
+	"assets": {
+		"html": [
+			"../widgets/molecules/video/video.htm"
+		]
+	}
+}

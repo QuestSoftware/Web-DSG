@@ -1,0 +1,11 @@
+{
+	"name": "Event details with on demand - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Smaller detail box on Mobile",
+	"assets": {
+		"html": [
+			"../widgets/molecules/event-details/index-with-on-demand.htm"
+		]
+	}
+}

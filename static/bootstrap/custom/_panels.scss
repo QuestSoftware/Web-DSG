@@ -349,25 +349,25 @@
 //this panel follows Dell design library pattern
 //must not be mixed with other types of panels
 .panel-group-collapsible {
-  border-bottom: 1px solid $dell-gray;
+  border-bottom: 1px solid $panel-group-collapsible-border-color;
   > .panel {
     margin-bottom: 0;
     border: none;
-    border-top: 1px solid $dell-gray;
+    border-top: 1px solid $panel-group-collapsible-border-color;
     box-shadow: none;
     .panel-heading {
       padding: 10px;
-      color: $dell-blue;
+      color: $panel-group-heading-text-color;
     }
     //arrows
     .panel-title a {
       &.collapsed:before {
-        font-family: 'Glyphicons Halflings';
+	      font-family: "Glyphicons Halflings";
         content: "\e080";
         vertical-align: -2px;
       }
       &:before {
-        font-family: 'Glyphicons Halflings';
+	      font-family: "Glyphicons Halflings";
         font-size: 14px;
         -webkit-font-smoothing: antialiased;
         content: "\e114";
@@ -406,28 +406,28 @@ img ~ .panel > .panel-body:after {
 	clear: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .panel-group-collapsible-xs {
     //@extend .panel-group-collapsible;
-    border-bottom: 1px solid $dell-gray;
+    border-bottom: 1px solid $panel-group-collapsible-border-color;
     > .panel {
       margin-bottom: 0;
       border: none;
-      border-top: 1px solid $dell-gray;
+      border-top: 1px solid $panel-group-collapsible-border-color;
       box-shadow: none;
       .panel-heading {
         padding: 10px 0;
-        color: $dell-blue;
+        color: $panel-group-heading-text-color;
       }
       //arrows
       .panel-title a {
         &.collapsed:before {
-          font-family: 'Glyphicons Halflings';
+	        font-family: "Glyphicons Halflings";
           content: "\e080";
           vertical-align: -2px;
         }
         &:before {
-          font-family: 'Glyphicons Halflings';
+	        font-family: "Glyphicons Halflings";
           font-size: 14px;
           -webkit-font-smoothing: antialiased;
           content: "\e114";
@@ -453,7 +453,7 @@ img ~ .panel > .panel-body:after {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .panel-group-collapsible-xs {
     .panel-heading {
       padding: 10px 0;

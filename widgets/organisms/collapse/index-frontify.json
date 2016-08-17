@@ -1,0 +1,11 @@
+{
+	"name": "Collapse",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "View more button to collapse more content",
+	"assets": {
+		"html": [
+			"../widgets/organisms/collapse/index.htm"
+		]
+	}
+}

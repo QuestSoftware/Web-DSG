@@ -1,0 +1,11 @@
+{
+	"name": "Search results",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Banner size : 275 x 175\nProduct thumbnails : 131 x 141\nPDF thumbnails : 220 x 280\nBuy online and View Details buttons",
+	"assets": {
+		"html": [
+			"../widgets/organisms/search-results/index.htm"
+		]
+	}
+}

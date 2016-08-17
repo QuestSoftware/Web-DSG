@@ -1,0 +1,11 @@
+{
+	"name": "Footer - O",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Links, Languages, Partners and Copyrights",
+	"assets": {
+		"html": [
+			"../widgets/organisms/footer/index.htm"
+		]
+	}
+}

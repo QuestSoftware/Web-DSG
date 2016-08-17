@@ -1,0 +1,11 @@
+{
+	"name": "Video on demand - A",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "",
+	"assets": {
+		"html": [
+			"../widgets/atoms/videos/video-on-demand.htm"
+		]
+	}
+}

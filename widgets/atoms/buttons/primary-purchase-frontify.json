@@ -1,0 +1,11 @@
+{
+	"name": "Primary purchase button - A",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "Use for highest priority purchase actions or actions that lead users toward a purchase.",
+	"assets": {
+		"html": [
+			"../widgets/atoms/buttons/primary-purchase.htm"
+		]
+	}
+}

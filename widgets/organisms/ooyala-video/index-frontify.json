@@ -1,0 +1,11 @@
+{
+	"name": "Ooyala video",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Thumbnail size : 1920 x 1080",
+	"assets": {
+		"html": [
+			"../widgets/organisms/ooyala-video/index.htm"
+		]
+	}
+}

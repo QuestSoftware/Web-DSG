@@ -1,0 +1,11 @@
+{
+	"name": "Simple Pagination - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Next and Previous buttons\nItems per page drop-down\nPage Number Access",
+	"assets": {
+		"html": [
+			"../widgets/molecules/simple-pagination/index.htm"
+		]
+	}
+}

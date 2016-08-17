@@ -1,0 +1,11 @@
+{
+	"name": "Link - A",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "",
+	"assets": {
+		"html": [
+			"../widgets/atoms/links/link.htm"
+		]
+	}
+}

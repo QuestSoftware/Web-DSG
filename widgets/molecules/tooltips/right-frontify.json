@@ -1,0 +1,11 @@
+{
+	"name": "Tooltip (Right) - M",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "",
+	"assets": {
+		"html": [
+			"../widgets/molecules/tooltips/right.htm"
+		]
+	}
+}

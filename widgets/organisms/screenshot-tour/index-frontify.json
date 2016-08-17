@@ -1,0 +1,11 @@
+{
+	"name": "Screen shots showcase",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Image height : 736px",
+	"assets": {
+		"html": [
+			"../widgets/organisms/screenshot-tour/index.htm"
+		]
+	}
+}

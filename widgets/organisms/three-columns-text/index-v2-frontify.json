@@ -1,0 +1,11 @@
+{
+	"name": "Three-Column text (Collapsible on mobile)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Three-Column on large\nTwo-Column on medium and small devices\nOne-Column on x-small devices\nCollapsible content on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/three-columns-text/index-v2.htm"
+		]
+	}
+}

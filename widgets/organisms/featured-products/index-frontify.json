@@ -1,0 +1,11 @@
+{
+	"name": "Feature products with carousel",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Image size : 370 x 250\nThree columns and two rows with carousel on large devices\nTwo columns with no carousel on medium and small devices\nOne column with view more button on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/featured-products/index.htm"
+		]
+	}
+}

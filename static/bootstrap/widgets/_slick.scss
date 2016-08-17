@@ -2,7 +2,7 @@
 
 $slick-font-path: "./fonts/" !default;
 $slick-font-family: "icon-ui" !default;
-$slick-loader-path: "./" !default;
+$slick-loader-path: "/images/shared/" !default;
 //$slick-arrow-color: white !default;
 $slick-dot-color: black !default;
 $slick-dot-color-active: $slick-dot-color !default;
@@ -89,6 +89,7 @@ $slick-opacity-not-active: 0.25 !default;
   .slick-loading & {
     visibility: hidden;
   }
+
 }
 
 .slick-slide {
@@ -132,42 +133,6 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 
-.banner {
-  &.slick {
-    a {
-      &:hover {
-        text-decoration: none;
-      }
-    }
-    .slick-slide {
-      position: relative;
-    }
-    .content-teaser {
-      > * {
-        padding: 15px;
-        display: block;
-      }
-    }
-    .caption-wrapper {
-      padding: 15px;
-    }
-    > div {
-      display: none;
-      position: relative;
-      &:first-of-type {
-        display: inherit;
-      }
-      > a {
-        display: block;
-      }
-    }
-  }
-  &.slick-slider {
-    padding: 0 !important;
-    margin-bottom: 45px;
-  }
-}
-
 .slick-arrow.slick-hidden {
   display: none;
 }
@@ -192,7 +157,7 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-list {
   .slick-loading & {
-    background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+    background: $slick-list-loading-bg slick-image-url("ajax-loader.gif") center center no-repeat;
   }
 }
 
@@ -235,7 +200,7 @@ $slick-opacity-not-active: 0.25 !default;
     }
   }
   &.slick-disabled:before {
-    color: #444;
+    color: $slick-arrow-disabled-color;
     opacity: $slick-opacity-not-active;
   }
   &:before {
@@ -243,7 +208,7 @@ $slick-opacity-not-active: 0.25 !default;
     font-size: 28px;
     line-height: 1;
     //color: $slick-arrow-color;
-    color: $dell-blue;
+    color: $slick-arrow-color;
     opacity: $slick-opacity-default;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -278,7 +243,7 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .slick-prev, .slick-next {
     top: 55px;
     &:before {
@@ -293,7 +258,7 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .slick-prev, .slick-next {
     top: 69px;
     &:before {
@@ -331,7 +296,7 @@ $slick-opacity-not-active: 0.25 !default;
     padding: 0;
     cursor: pointer;
     button {
-      background-color: #ccc;
+      background-color: $slick-dots;
       border: 0;
       border-radius: 2px;
       cursor: pointer;
@@ -374,7 +339,7 @@ $slick-opacity-not-active: 0.25 !default;
     }*/
     &.slick-active {
       button {
-        background-color: #444;
+        background-color: $slick-dots-active;
       }
     }
   }
@@ -392,7 +357,7 @@ $slick-opacity-not-active: 0.25 !default;
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 1px solid #737373;
+	  border: 1px solid $color-image-border;
   }
   .img-crop {
     height: 216px;
@@ -400,7 +365,7 @@ $slick-opacity-not-active: 0.25 !default;
     overflow: hidden;
     position: relative;
     &.img-border {
-      border: 1px solid #737373;
+	    border: 1px solid $color-image-border;
     }
   }
   &.slick-initialized {
@@ -421,7 +386,7 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 }
 
-@media (max-width: 767px) { //XS
+@media (max-width: $screen-xs-max) { //XS
   .banner {
     &.container {
       padding: 0;
@@ -447,7 +412,7 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 
-@media (min-width: 768px) { //SM - LG
+@media (min-width: $screen-sm-min) { //SM - LG
 	//If there's only 1 asset for screenshot tour, set width and center it. Used when slick is not initialized.
 	.slick {
 		&.slick-screenshot {
@@ -461,7 +426,7 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 }
 
-@media (min-width: 768px) and (max-width: 991px) { //SM
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { //SM
   .slick {
     .img-crop {
       height: 170px;
@@ -496,16 +461,16 @@ $slick-opacity-not-active: 0.25 !default;
         left: 0;
         top: 0;
         border-radius: 0;
-        background: #f5f5f5;
+        background: $slick-1170-caption-bg;
         width: 100% !important;
         span {
-          color: #007db8;
+          color: $slick-1170-caption-color;
           background-color: transparent;
           border: none;
           padding: 0;
           &:hover {
             background-color: transparent;
-            color: #007db8;
+            color: $slick-1170-caption-hover-color;
           }
         }
       }
@@ -513,7 +478,7 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) { //MD
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) { //MD
   .slick {
     .img-crop {
       height: 146px;
@@ -550,16 +515,16 @@ $slick-opacity-not-active: 0.25 !default;
         left: 0;
         top: 0;
         border-radius: 0;
-        background: #f5f5f5;
+        background: $slick-770-caption-bg;
         width: 100% !important;
         span {
-          color: #007db8;
+          color: $slick-770-caption-color;
           background-color: transparent;
           border: none;
           padding: 0;
           &:hover {
             background-color: transparent;
-            color: #007db8;
+            color: $slick-770-caption-hover-color;
           }
         }
       }
@@ -577,7 +542,7 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 
-@media (min-width: 1200px) { //LG
+@media (min-width: $screen-lg-min) { //LG
   .slick {
     .img-crop {
       height: 178px;
@@ -616,9 +581,9 @@ $slick-opacity-not-active: 0.25 !default;
         }
       }
     }
-    &.arrows-top-bottom.slick-slider{
-      padding-left: 0 !important;
-      padding-right: 0 !important;
+	  &.arrows-top-bottom.slick-slider {
+		  padding-left: 0 !important;
+		  padding-right: 0 !important;
     }
   }
 }

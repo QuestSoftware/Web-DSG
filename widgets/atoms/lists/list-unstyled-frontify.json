@@ -1,0 +1,11 @@
+{
+	"name": "Lists Unstyled",
+	"type": "Atom",
+	"stability": "stable",
+	"description": "",
+	"assets": {
+		"html": [
+			"../widgets/atoms/lists/list-unstyled.htm"
+		]
+	}
+}
