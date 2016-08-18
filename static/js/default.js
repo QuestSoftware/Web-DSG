@@ -17,22 +17,22 @@ $(document).ready(function () {
 	$('body').on('click', '[data-toggle=show],[data-toggle=show-offcanvas]', function (e) {
 		e.preventDefault();
 
-	  var target = $($(this).data('target')), //target drop down element
-		  sourceElem = $(this); //the element this event is being triggered.
+		var target = $($(this).data('target')), //target drop down element
+			sourceElem = $(this); //the element this event is being triggered.
 
 		//Do not proceed if on mobile.
 		if (pageWidth < 768) {
 			return false;
 		}
 
-    //close all open dropdowns
-    $('.optional-dropdown').each(function () {
-      if ($(this).is(':visible') && !target.is(':visible')) {
-        $(this).hide().data('hidden-class', 'hidden');
-        $(this).data('parent-container').css('height', ''); // reseting the hright of the container
-      }
+		//close all open dropdowns
+		$('.optional-dropdown').each(function () {
+			if ($(this).is(':visible') && !target.is(':visible')) {
+				$(this).hide().data('hidden-class', 'hidden');
+				$(this).data('parent-container').css('height', ''); // reseting the hright of the container
+			}
 
-    });
+		});
 
 		if (target.is(':visible')) {
 			if (target.data('hidden-class')) {
@@ -86,16 +86,16 @@ $(document).ready(function () {
 				if (parentContainer.length) {
 					var parentHeight = $(target).offset().top + $(target).height() - parentContainer.offset().top;
 
-          if (parentContainer.height() < parentHeight) {
-            parentContainer.css('height', parentHeight);
-          }
+					if (parentContainer.height() < parentHeight) {
+						parentContainer.css('height', parentHeight);
+					}
 
-          $(target).data('parent-container', parentContainer);
+					$(target).data('parent-container', parentContainer);
 
-	        //Scroll to the drop down
-	        $('html, body').animate({scrollTop: sourceElem.offset().top - sourceElem.height() - 25});
-        }
-      });
+					//Scroll to the drop down
+					$('html, body').animate({scrollTop: sourceElem.offset().top - sourceElem.height() - 25});
+				}
+			});
 
 			setTimeout(function () {
 				processFlex(target);
@@ -746,24 +746,30 @@ function slickPlugin(parentSelector) {
 			itemsArr = convertToArray(item),
 			totalItems = itemsArr.length,
 			$that = $(this),
-			showCaseNo = 6, // this will be a variable depending on the screen size
+			showCaseNo = howManyPerSet(pageType), // this will be a variable depending on the screen size
 			NoOfShowCaseSets = Math.ceil(totalItems / showCaseNo),
-			NoOfVisits = cookieOperations.retrieveCookie('featuredProducts');
+			cookiedInfo = cookieOperations.retrieveCookie('featuredProducts');
+		if (!cookiedInfo) {
+			cookiedInfo = {};
+		} // prevents null (cookied erased or never existed)
+		var collectionArr = cookiedInfo.currentSet !== undefined ? cookiedInfo.currentSet : [];
 
-		if (NoOfVisits === null) {
+
+		if (cookiedInfo.NoOfVisits === undefined) {
 			// start at will set a random starting point
-			var startAt = getRandomInt(0, NoOfShowCaseSets)
-			NoOfVisits = {total: startAt};
+			// var startAt = getRandomInt(0, NoOfShowCaseSets)
+			cookiedInfo.NoOfVisits = 0;
 		}
-		else if (NoOfVisits.total == NoOfShowCaseSets) {  // we will show only the variation sets available.
-			NoOfVisits = {total: 0};
+		else if (cookiedInfo.NoOfVisits == NoOfShowCaseSets) {  // we will show only the variation sets available.
+			cookiedInfo.NoOfVisits = 0;
+			collectionArr = [];
 		}
-		var startInSet = NoOfVisits.total;
-		var cookieObj = {total: startInSet + 1};
+		var startInSet = cookiedInfo.NoOfVisits;
+		cookiedInfo.NoOfVisits = startInSet + 1;
 
 		/* Action calls */
-		triggerRandomize();
-		cookieOperations.saveCookieObj(cookieObj, 'featuredProducts');
+		triggerRandomize(collectionArr);
+		cookieOperations.saveCookieObj(cookiedInfo, 'featuredProducts');
 
 		/* TriggerRandomize process
 		 *  The following functions are organized by process order and they are called/chain by each other.
@@ -771,16 +777,22 @@ function slickPlugin(parentSelector) {
 		 *  It is now being used on the home page (stage-software-dell-com)
 		 *  the settings needed are above see "triggerRandomize settings" section
 		 * */
-		function triggerRandomize() {
-			createSets(itemsArr, showCaseNo);
+		function triggerRandomize(listPattern) {
+
+			// randomizeList will return object with updated list and and current set;
+			var randomizeResults = randomizeList(itemsArr, listPattern);
+			var list = randomizeResults.randomizedList; // sets the new randomize list
+			cookiedInfo.currentSet = randomizeResults.collectionArr || listPattern; // updates the current list set;
+			createSets(list, showCaseNo); // start process to display randomized items
+
 
 			// initialize chain process
 			// createSets function will create a multidimensional array:
 			// arrays sets within this array will be rotated based on the cookie information.
-			function createSets(array, itemsPerSet) {
+			function createSets(ListArray, itemsPerSet) {
 				var setOfArrays = [], tempArr = [], isLast = 0;
 
-				array.forEach(function (item) {
+				ListArray.forEach(function (item) {
 					isLast++;
 					tempArr.push(item);
 
@@ -788,7 +800,7 @@ function slickPlugin(parentSelector) {
 						setOfArrays.push(tempArr);
 						tempArr = [];
 					}
-					else if (isLast == array.length) {
+					else if (isLast == ListArray.length) {
 						setOfArrays.push(tempArr);
 						tempArr = [];
 					}
@@ -807,8 +819,8 @@ function slickPlugin(parentSelector) {
 						tempSet = arraySets.shift();
 						arraySets.push(tempSet);
 					}
-					concatSets(arraySets);
 				}
+				concatSets(arraySets);
 			}
 
 			// concatSets function has the only task of flattening the multidimensional array
@@ -832,9 +844,51 @@ function slickPlugin(parentSelector) {
 			} // it simply appends the items back to dom element as jquery object
 		}
 
+
+		/**
+		 * Utility function: Returns randomized html list and pattern array for reuse.
+		 */
+		function randomizeList(items, patternArr) {
+			var tempArr = [], randomizeObj = {};
+
+			// the collection Array is empty create one
+			if (patternArr.length === 0) {
+				items.sort(function () {
+					var temp = parseInt(Math.random() * items.length),
+						isOddOrEven = temp % 2,
+						isPosOrNeg = temp > items.length / 2 ? 1 : -1;
+					tempArr.push(isOddOrEven * isPosOrNeg);
+					return ( isOddOrEven * isPosOrNeg );
+				});
+
+			}
+			else {
+				// if the collection Array exist and have not expired
+				// then use it again. (Calling function will take care of clearing it when needed)
+				items.sort(function () {
+					var tempItem = patternArr.shift();
+					tempArr.push(tempItem);
+					return tempItem;
+				});
+			}
+			randomizeObj.collectionArr = tempArr;
+			randomizeObj.randomizedList = items;
+
+			return randomizeObj;
+		}
+
+		function howManyPerSet(pageSize) {
+			var showCaseNoMap = {3: 6, 2: 6, 1: 4}; // will show 6 items for lrg and md and 4 for sm
+			return showCaseNoMap[pageSize];
+		}
+
 	}
 }
 
+/**
+ *
+ * @param parentSelector
+ */
 function processFlex(parentSelector) {
 	if (typeof parentSelector == 'undefined') {
 		parentSelector = 'body';
