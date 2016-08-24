@@ -18,8 +18,24 @@ $(document).ready(function () {
 		$('#country-popup').css('display', '');
 	}, true);
 
+	var headerNavElem = $('.main-nav-section');
+
+	/*
+	 Get navigation via ajax. Should only be executed on non home page.
+
+	 Note: All non home page (responsive) will use the special tag V2LayoutHeaderAjax which has a data-ajax="true" attribute.
+	 V2LayoutHeaderAjaxNav contains the navigation html content.
+	 */
+	if (headerNavElem.data('ajax')) {
+		var specialTag = 'V2LayoutHeaderAjaxNav';
+
+		getLocalizedContent(specialTag).done(function (data) {
+			headerNavElem.append(data[specialTag]);
+		});
+	}
+
 	//Prevent anchor tag from firing when href is set to #
-	$('.main-nav-section').find('ul.tier2').on('click', 'a[href=#]', function (e) {
+	headerNavElem.on('click', 'ul.tier2 a[href=#]', function (e) {
 		if ($('html').width() >= 768) {
 			e.preventDefault();
 		}
