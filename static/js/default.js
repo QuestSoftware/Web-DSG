@@ -1335,31 +1335,44 @@ function replaceURL(text) {
   return text.replace(exp, "<a href='$1'>$1</a>");
 }
 
+/**
+ * Create collapsible rows for camparison tables on Mobile view
+ */
 function processComparisonTable() {
-  if (pageWidth < 768 && $('.comparison-table').data('xs-collapsibles') != undefined) {
-    var compTable = $('.comparison-table'),
-      index = 1,
-      htmlFragment = '';
 
-    $(compTable.find('tbody tr')).each(function () {
-      htmlFragment +=
-        '<div class="panel">' +
-        '<div class="panel-heading">' +
-        '<h4 class="panel-title">' +
-        '<a data-toggle="collapse" data-parent="#accordion" href="#panel' + index + '" aria-expanded="false" class="collapsed">'
-        + $(this).find('>td:first-child').text() +
-        '</a>' +
-        '</h4>' +
-        '</div>' +
-        '<div id="panel' + index + '" class="collapse table-responsive" aria-expanded="false">' +
-        '<div class="panel-body"> ' +
-        getBodyContent($(this)) +
-        '</div>' +
-        '</div>' +
-        '</div>';
-      index++;
+  if (pageWidth < 768 && $('.comparison-table').data('xs-collapsibles')) {
+    $('.comparison-table').each(function () {
+      if ($(this).data('xs-collapsibles')) {
+        var htmlFragment = '';
+        /*Generating random string to use as id for collapse instead of #accordion to avoid id duplication issue*/
+        var accId = getRandomString(8);
+
+        $(this).find('tbody tr').each(function (index) {
+          htmlFragment +=
+            '<div class="panel">' +
+            '<div class="panel-heading">' +
+            '<h4 class="panel-title">' +
+            '<a data-toggle="collapse" data-parent="#' + accId + '" href="#panel' + accId + index + '" aria-expanded="false" class="collapsed">'
+            + $(this).find('>td:first-child').text() +
+            '</a>' +
+            '</h4>' +
+            '</div>' +
+            '<div id="panel' + accId + index + '" class="collapse table-responsive" aria-expanded="false">' +
+            '<div class="panel-body"> ' +
+            getBodyContent($(this)) +
+            '</div>' +
+            '</div>' +
+            '</div>';
+        });
+
+        $(this).find('.panel-group-collapsible').attr('id', accId).append(htmlFragment);
+      }
     });
 
+    /**
+     *
+     * Getting the comparison table content
+     */
     function getBodyContent(row) {
       var panelContentHtml = '';
       row.find('td:gt(0)').each(function () {
@@ -1376,7 +1389,5 @@ function processComparisonTable() {
 
       return panelContentHtml;
     }
-
-    $('.panel-group-collapsible').append(htmlFragment);
   }
 }
