@@ -455,10 +455,10 @@ function populateListing(clear) {
 		$.each(dataopt.data, function (key, val) {
 			var htmlFragment = '<div class="col-md-3 col-sm-4 col-xs-12" style="display: none;"> ' +
 				'<a href="' + val.url + '" target="'+ val.target +'">' +
-				'  <div class="border-grey img-crop">' +
+				'  <div class="border-grey img-crop">' + ' <p class="img-header-overlay bg-blue">' + val.documenttype + '</p>' +
 				'    <img class="img-responsive center-block" src="' + val.imageurl + '" alt=""> ' +
 				'  </div> ' +
-				'  <h4 class="text-blue dotdotdot" data-max-line="3">' + val.documenttype + ': ' + val.title + ' </h4> ';
+				'  <h4 class="text-blue dotdotdot" data-max-line="3">' + val.title + ' </h4> ';
 
 			if (val.description != null) {
 				htmlFragment += '<p class="teaser dotdotdot" data-max-line="5"> ' + $('<div>' + val.description + '</div>').text() + ' </p>';
