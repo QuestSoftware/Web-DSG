@@ -1336,6 +1336,9 @@ function replaceURL(text) {
 }
 
 function processComparisonTable() {
+  /*Generating random string to use as id for collapse instead of #accordion to avoid id duplication issue*/
+  var accId = getRandomString(8);
+
   if (pageWidth < 768 && $('.comparison-table').data('xs-collapsibles') != undefined) {
     var compTable = $('.comparison-table'),
       index = 1,
@@ -1346,7 +1349,7 @@ function processComparisonTable() {
         '<div class="panel">' +
         '<div class="panel-heading">' +
         '<h4 class="panel-title">' +
-        '<a data-toggle="collapse" data-parent="#accordion" href="#panel' + index + '" aria-expanded="false" class="collapsed">'
+        '<a data-toggle="collapse" data-parent="#' + accId + '" href="#panel' + index + '" aria-expanded="false" class="collapsed">'
         + $(this).find('>td:first-child').text() +
         '</a>' +
         '</h4>' +
@@ -1377,6 +1380,6 @@ function processComparisonTable() {
       return panelContentHtml;
     }
 
-    $('.panel-group-collapsible').append(htmlFragment);
+    $('.panel-group-collapsible').attr('id', accId).append(htmlFragment);
   }
 }
