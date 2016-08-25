@@ -1,0 +1,11 @@
+{
+	"name": "Social Media",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Center position on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/social-media/index-v2.htm"
+		]
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Error and warning",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Error and warning box with links",
+	"assets": {
+		"html": [
+			"../widgets/organisms/error/index.htm"
+		]
+	}
+}

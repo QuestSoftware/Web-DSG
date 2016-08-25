@@ -1,0 +1,11 @@
+{
+	"name": "Slick Banners (Smaller size)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Banner size : 770 x 240",
+	"assets": {
+		"html": [
+			"../widgets/organisms/hero-banner/slick-v2.htm"
+		]
+	}
+}

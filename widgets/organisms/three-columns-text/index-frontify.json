@@ -1,0 +1,11 @@
+{
+	"name": "Three-Column text",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Three-Column on large, medium and small devices\nHidden on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/three-columns-text/index.htm"
+		]
+	}
+}

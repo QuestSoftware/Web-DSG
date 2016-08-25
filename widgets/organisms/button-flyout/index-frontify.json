@@ -1,0 +1,11 @@
+{
+	"name": "Button Flyout (Expandable)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Expandable Button flyout with fix position\nPosition right on small, medium and large devices\nPosition bottom on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/button-flyout/index.htm"
+		]
+	}
+}

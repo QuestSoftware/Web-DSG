@@ -1,0 +1,11 @@
+{
+	"name": "Two-column link-list non carousel",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Large device: 3 columns\nMedium device: 3 columns\nSmall device: 2 columns\nX-Small device: 1 column",
+	"assets": {
+		"html": [
+			"../widgets/organisms/3-column-non-carousel/link-list.htm"
+		]
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Models with no collapsible content",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Image size : 270 x 200\nFour-column on large and medium devices\nThree-column on small devices\nTwo-column on xs devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/models/index-v2.htm"
+		]
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Forms",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Form with Sign in or Register links",
+	"assets": {
+		"html": [
+			"../widgets/organisms/form/index.htm"
+		]
+	}
+}

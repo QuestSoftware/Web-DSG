@@ -1,0 +1,11 @@
+{
+	"name": "Button",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Primary Button",
+	"assets": {
+		"html": [
+			"../widgets/molecules/buttons/index.htm"
+		]
+	}
+}

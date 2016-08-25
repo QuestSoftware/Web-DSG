@@ -1,0 +1,11 @@
+{
+	"name": "Two-column with thank you message and thumbnail",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Social media icons\nThumbnail size: 220 x 280",
+	"assets": {
+		"html": [
+			"../widgets/organisms/2-column-with-quote/index-v2.htm"
+		]
+	}
+}

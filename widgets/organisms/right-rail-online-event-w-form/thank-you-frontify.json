@@ -1,0 +1,11 @@
+{
+	"name": "Thank you page (Event)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Image size : 750 x 232\nSmaller detail box on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/right-rail-online-event-w-form/thank-you.htm"
+		]
+	}
+}

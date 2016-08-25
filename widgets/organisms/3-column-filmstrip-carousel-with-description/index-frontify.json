@@ -1,0 +1,11 @@
+{
+	"name": "Three-column filmstrip carousel with description",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Three-column filmstrip carousel with different thumbnail types and sizes\nCollapsible on xs devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/3-column-filmstrip-carousel-with-description/index.htm"
+		]
+	}
+}

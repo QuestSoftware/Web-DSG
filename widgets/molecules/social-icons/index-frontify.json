@@ -1,0 +1,11 @@
+{
+	"name": "Social Icons",
+	"type": "Molecules",
+	"stability": "stable",
+	"description": "Social icons to share content on social networks",
+	"assets": {
+		"html": [
+			"../widgets/molecules/social-icons/index.htm"
+		]
+	}
+}

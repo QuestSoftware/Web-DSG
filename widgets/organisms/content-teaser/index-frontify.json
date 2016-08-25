@@ -1,0 +1,11 @@
+{
+	"name": "Overlay content",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Overlay content with different background sizes",
+	"assets": {
+		"html": [
+			"../widgets/organisms/content-teaser/index.htm"
+		]
+	}
+}

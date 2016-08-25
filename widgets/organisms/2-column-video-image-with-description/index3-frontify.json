@@ -1,0 +1,11 @@
+{
+	"name": "Two-column image with description (Small Thumbnail - Left)",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Download PDF(White Paper)\nThumbnail Size: 220 x 280",
+	"assets": {
+		"html": [
+			"../widgets/organisms/2-column-video-image-with-description/index3.htm"
+		]
+	}
+}

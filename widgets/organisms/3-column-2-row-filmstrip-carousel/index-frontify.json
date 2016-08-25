@@ -1,0 +1,11 @@
+{
+	"name": "Three-column two-row filmstrip carousel",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Carousel on xs (mobile) devices\n3 columns on Small, Medium and Large devices\nLogo height: 68px",
+	"assets": {
+		"html": [
+			"../widgets/organisms/3-column-2-row-filmstrip-carousel/index.htm"
+		]
+	}
+}

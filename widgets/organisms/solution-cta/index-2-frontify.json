@@ -1,0 +1,11 @@
+{
+	"name": "Link-list with smaller icons (3-Column) ",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "Icon size : 32 x 32\nThree-Column on large\nTwo-Column medium and small devices\nOne-Column on x-small devices",
+	"assets": {
+		"html": [
+			"../widgets/organisms/solution-cta/index-2.htm"
+		]
+	}
+}
