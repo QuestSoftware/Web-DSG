@@ -1,0 +1,8 @@
+Note:
+
+In order for the js and style changes work need to modify the "Featured Product" section at view _DSG_Responsive_Homepage_Template.cshtml
+You can find the view at: Views\PageHandlerHome folder.
+
+I have created already the html for it you just need to grab that section from _DSG_Responsive_Homepage_Template_slick.cshtml at the same directory.
+
+Note: Do not compy the entire file as other people may have added changes, only the code from the "Featured Product" section is needed.
