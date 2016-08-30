@@ -11,7 +11,16 @@
 						<img src="/images/shared/quest-logo-2.png">
 					</a>
 				</div>
-
+				<div id="masthead-search" class="search-container">
+					<form id="search-form">
+						<input id="searchterm" type="text" class="search-query form-control"
+						       placeholder="What can we help you find?" />
+						<button class="btn">
+							<i class="icon-small-searchleft"></i>
+						</button>
+						<div class="autocomplete"></div>
+					</form>
+				</div>
 				<div class="nav-container">
 					<div class="main-nav-section">
 						<div class="shadow-overlay-left"></div>
@@ -853,18 +862,11 @@
 				</div>
 
 				<ul class="utility">
-					<li id="mobile-search-button" class="dropdown hidden mobile-search-button">
+					<li id="mobile-search-button" class="dropdown mobile-search-button">
 						<a href="#">
 							<i class="icon-small-searchleft"></i>
 						</a>
 					</li>
-
-					<li class="main-search-button">
-						<a href="#">
-							<i class="glyphicon glyphicon-search"></i>
-						</a>
-					</li>
-
 					<li id="signin-container" class="dropdown">
 						<a id="signin-link" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<i class="icon-small-useraccount">
@@ -883,8 +885,7 @@
 										<button role="button"
 										        class="btn btn-primary btn-block bottom-offset-mini top-offset-small lnk-sign-in">Sign In
 										</button>
-										<button role="button" class="btn btn-block btn-default lnk-create-account">Create a Dell Software
-											Account
+										<button role="button" class="btn btn-block btn-default lnk-create-account">Create a Quest Account
 										</button>
 									</div>
 									<div class="col-xs-12 is-logged-in">
@@ -904,6 +905,5 @@
 				</ul>
 			</div>
 		</div>
-
 	</nav>
 </header>
