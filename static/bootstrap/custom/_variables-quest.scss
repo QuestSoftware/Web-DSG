@@ -3,18 +3,7 @@ $bootstrap-sass-asset-helper: false !default;
 // Variables
 // --------------------------------------------------
 
-//== Colors
-//
-//## Gray and brand colors for use across Bootstrap.
-
-$gray-base: #000 !default;
-$gray-darker: lighten($gray-base, 13.5%) !default; // #222
-$gray-dark: lighten($gray-base, 26.5%) !default; // #444
-$gray: lighten($gray-base, 33.5%) !default; // #555
-$gray-light: lighten($gray-base, 46.7%) !default; // #777
-$gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
-
-//Dell UI
+/*Dell Colors*/
 // Grays
 $dell-gray-dark: #444;
 $dell-gray: #aaa;
@@ -39,16 +28,63 @@ $dell-berry: #b7295a;
 $dell-purple: #6e2585;
 $dell-teal: #42aeaf;
 
+/*Quest Colors*/
+$text-blue: #003876;
+$text-orange: #FB4F14;
+$darker-gray: #333333;
+$dark-gray: #444444;
+$natural-gray: #aaaaaa;
+$light-gray: #eeeeee;
+$body-color: #333333;
+
+/*Header*/
+$nav-subLinks-hover: $text-orange;
+$nav-border-top: $text-orange;
+$top-link: $darker-gray;
+$top-link-hover: $text-orange;
+
 $color-heading-links-hover: #007db8;
 $color-image-border: #737373;
 $color-danger: #ce1126;
+
+$top-search-bg: $light-gray;
+$top-search-button-bg: $text-orange;
+$top-search-input-border-color: $natural-gray;
+
+$top-user-dropdown-bg: $light-gray;
+/*Carasel arrows*/
+$carasel-arrow: $text-blue;
+
+/*Footer*/
+$footer-link-color: $darker-gray;
+$footer-bg-color: $white;
+
+$slick-dots: $natural-gray;
+$slick-dots-active: $text-orange;
+
+/*Footer top links */
+$footer-top-link: $darker-gray;
+
+/*Footer copyright links */
+$footer-cpy-link: $darker-gray;
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base: #000 !default;
+$gray-darker: lighten($gray-base, 13.5%) !default; // #222
+$gray-dark: lighten($gray-base, 26.5%) !default; // #444
+$gray: lighten($gray-base, 33.5%) !default; // #555
+$gray-light: lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
 
 /* DemandBase Colors */
 
 $color-demandbase-dropdown-background: #c0c0c0;
 $color-demandbase-dropdown-border: #c0c0c0;
 
-$brand-primary: #007db8 !default; //darken(#428bca, 6.5%) !default; // #337ab7
+$brand-primary: #003876 !default; //darken(#428bca, 6.5%) !default; // #337ab7
 $brand-success: #408001 !default;
 $brand-info: #5bc0de !default;
 $brand-warning: #f0ad4e !default;
@@ -64,7 +100,7 @@ $color-header-link-hover: #cce7f3;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg: #fff !default;
+$body-bg: #f9f9f9 !default;
 //** Global text color on `<body>`.
 $text-color: #333 !default;
 
@@ -185,12 +221,12 @@ $table-border-color: #ddd !default;
 
 $btn-font-weight: normal !default;
 
-$btn-default-color: #007db8 !default; //#333 !default;
+$btn-default-color: #003876 !default; //#333 !default;
 $btn-default-bg: #eee !default; //#fff !default;
-$btn-default-border: #ccc !default;
+$btn-default-border: #003876 !default;
 
 $btn-primary-color: #fff !default;
-$btn-primary-bg: $brand-primary !default;
+$btn-primary-bg: $text-blue !default;
 $btn-primary-border: darken($btn-primary-bg, 5%) !default;
 
 $btn-success-color: #fff !default;
@@ -419,7 +455,7 @@ $navbar-default-toggle-border-color: #ddd !default;
 // Inverted navbar
 // Reset inverted navbar basics
 $navbar-inverse-color: lighten($gray-light, 15%) !default;
-$navbar-inverse-bg: #007db8 !default;
+$navbar-inverse-bg: #ffffff !default;
 $navbar-inverse-border: darken($navbar-inverse-bg, 10%) !default;
 
 // Inverted navbar links
@@ -876,3 +912,7 @@ $page-header-border-color: $gray-lighter !default;
 $dl-horizontal-offset: $component-offset-horizontal !default;
 //** Horizontal line color.
 $hr-border: $gray-lighter !default;
+
+
+
+
