@@ -331,7 +331,7 @@ $slick-opacity-not-active: 0.25 !default;
     padding: 0;
     cursor: pointer;
     button {
-      background-color: #ccc;
+      background-color: $slick-dots;
       border: 0;
       border-radius: 2px;
       cursor: pointer;
@@ -374,7 +374,7 @@ $slick-opacity-not-active: 0.25 !default;
     }*/
     &.slick-active {
       button {
-        background-color: #444;
+        background-color: $slick-dots-active;
       }
     }
   }
