@@ -61,7 +61,7 @@
 <script src="/static/library/jQuery/jquery.color-2.1.2.min.js"></script>
 <script src="/static/library/jQuery/jquery.slidepagination.js"></script>
 <script src="/static/library/bootstrap-3.3.4.min.js"></script>
-<script src="/static/js/responsive-header-footer.js"></script>
+<script src="/static/js/responsive-header-footer-quest.js"></script>
 <script src="/static/js/default.js"></script>
 
 <!--<script data-main="/static/js/config" src="/static/library/requireJS/requirejs.min.js"></script>-->
