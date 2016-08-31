@@ -37,20 +37,27 @@ $natural-gray: #aaaaaa;
 $light-gray: #eeeeee;
 $body-color: #333333;
 
-/*Header*/
-$nav-subLinks-hover: $text-orange;
-$nav-border-top: $text-orange;
-$top-link: $darker-gray;
-$top-link-hover: $text-orange;
+/* Start:Header */
+$nav-subLinks-hover: $text-orange; //Navigation sublink hover color
+$nav-border-top: $text-orange; //Navigation border top color
+$top-link: $darker-gray; //Navigation link color
+$top-link-hover: $text-orange; //Navigation link hover color
+/* End:Header */
 
 $color-heading-links-hover: #007db8;
 $color-image-border: #737373;
 
+/* Start:Top Search */
 $top-search-bg: $light-gray;
 $top-search-button-bg: $text-orange;
+$top-search-button-color: $white;
 $top-search-input-border-color: $natural-gray;
+$top-search-link-color: #007db8;
+/* End:Top Search */
 
 $top-user-dropdown-bg: $light-gray;
+$top-user-dropdown-color: #444;
+$top-user-create-acc-bg: $white;
 /*Carasel arrows*/
 $carasel-arrow: $text-blue;
 
@@ -75,11 +82,11 @@ $gray: lighten($gray-base, 33.5%) !default; // #555
 $gray-light: lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
 
-/* DemandBase Colors */
-
+/* Start:DemandBase */
 $color-demandbase-dropdown-background: #c0c0c0;
 $color-demandbase-dropdown-border: #c0c0c0;
 $color-demandbase-dropdown-div-bg-border: $white;
+/* End:DemandBase */
 
 $brand-primary: #003876 !default; //darken(#428bca, 6.5%) !default; // #337ab7
 $brand-success: #408001 !default;
@@ -102,9 +109,9 @@ $body-bg: #f9f9f9 !default;
 $text-color: #333 !default;
 
 //** Global textual link color.
-$link-color: #003876 !default;
+$link-color: #016a9c !default; //#003876
 //** Link hover color set via `darken()` function.
-$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-color: #597999 !default; // darken($link-color, 15%)
 //** Link hover decoration.
 $link-hover-decoration: underline !default;
 
@@ -158,7 +165,7 @@ $icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "/fonts/") !defa
 $icon-font-name: "glyphicons-halflings-regular" !default;
 //** Element ID within SVG icon file.
 $icon-font-svg-id: "glyphicons_halflingsregular" !default;
-
+$svg-icon-dell-color: $white;
 //_image.scss
 $icon-ui-play-underlay-bg: $white;
 $img-overlay-icon-ui-play-color: $dell-gray-dark;
@@ -253,8 +260,12 @@ $btn-default-bg: #eee !default; //#fff !default;
 $btn-default-border: #003876 !default;
 
 $btn-primary-color: #fff !default;
-$btn-primary-bg: $text-blue !default;
+$btn-primary-bg: #016a9c !default; // $text-blue
 $btn-primary-border: darken($btn-primary-bg, 5%) !default;
+
+$btn-primary-hover-color: #fff !default;
+$btn-primary-hover-bg: #597999 !default;
+$btn-primary-hover-border: darken($btn-primary-hover-bg, 5%) !default;
 
 $btn-success-color: #fff !default;
 $btn-success-bg: $brand-success !default;
@@ -492,6 +503,11 @@ $container-lg: $container-large-desktop !default;
 //##
 
 // Basics of a navbar
+// Added by Siamak
+$navbar-brand-link-color: $white;
+
+
+
 $navbar-height: auto !default; //50px !default
 $navbar-margin-bottom: $line-height-computed !default;
 $navbar-border-radius: $border-radius-base !default;
