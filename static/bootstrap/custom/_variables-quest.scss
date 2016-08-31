@@ -45,7 +45,6 @@ $top-link-hover: $text-orange;
 
 $color-heading-links-hover: #007db8;
 $color-image-border: #737373;
-$color-danger: #ce1126;
 
 $top-search-bg: $light-gray;
 $top-search-button-bg: $text-orange;
@@ -58,9 +57,6 @@ $carasel-arrow: $text-blue;
 /*Footer*/
 $footer-link-color: $darker-gray;
 $footer-bg-color: $white;
-
-$slick-dots: $natural-gray;
-$slick-dots-active: $text-orange;
 
 /*Footer top links */
 $footer-top-link: $darker-gray;
@@ -83,6 +79,7 @@ $gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
 
 $color-demandbase-dropdown-background: #c0c0c0;
 $color-demandbase-dropdown-border: #c0c0c0;
+$color-demandbase-dropdown-div-bg-border: $white;
 
 $brand-primary: #003876 !default; //darken(#428bca, 6.5%) !default; // #337ab7
 $brand-success: #408001 !default;
@@ -161,6 +158,36 @@ $icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "/fonts/") !defa
 $icon-font-name: "glyphicons-halflings-regular" !default;
 //** Element ID within SVG icon file.
 $icon-font-svg-id: "glyphicons_halflingsregular" !default;
+
+//_image.scss
+$icon-ui-play-underlay-bg: $white;
+$img-overlay-icon-ui-play-color: $dell-gray-dark;
+$media-player-container-icon-ui-play-color: $dell-gray-dark;
+$img-header-overlay-color: $white;
+
+$icon-anchor-hover-color: $dell-blue;
+$icon-anchor-active-color: $dell-blue;
+
+//== Affix Nav (Zombie Nav)
+$affix-border-color: #ccc;
+$affix-li-border-color: #ccc;
+$affix-li-active-border-color: $dell-blue;
+$affix-li-active-text-color: #444;
+$affix-li-a-focus-bg-color: transparent;
+$affix-li-a-hover-bg-color: #cce7f3;
+$affix-li-a-hover-text-color: $dell-blue;
+$affix-no-style-bg-color: $white;
+$affix-no-style-active-border-color: #ccc;
+$affix-no-style-disabled-border-color: $white;
+
+//Affix xs
+$affix-xs-ul-bg: $white;
+$affix-xs-ul-border-color: #ccc;
+$affix-xs-li-border-color: #ccc;
+$affix-xs-li-active-hover-border-color: $white;
+$affix-xs-a-hover-bg: $gray-lighter;
+
+
 
 //== Components
 //
@@ -246,6 +273,31 @@ $btn-danger-bg: $brand-danger !default;
 $btn-danger-border: darken($btn-danger-bg, 5%) !default;
 
 $btn-link-disabled-color: $gray-light !default;
+$btn-default-disable-color: $dell-gray;
+
+//== Countries
+
+$country-selector-border-top-color: #aaa;
+$country-popup-bg-color: $white;
+$country-popup-link-color: #0085c3;
+$country-popup-link-active-color: $white;
+$country-popup-link-active-bg-color: #0085c3;
+
+//== Custom colors
+
+$bg-white: $white;
+$bg-black: $black;
+$bg-light-grey: $dell-gray-very-light;
+$bg-light-grey-text-color: $dell-gray-dark;
+$bg-grey: $dell-gray-very-light;
+
+$new-bg-color: $dell-orange;
+$new-text-color: $white;
+
+$col-striped-odd-bg: $dell-gray-very-light;
+$row-striped-odd-bg: $table-bg-accent;
+
+
 
 //== Forms
 //
@@ -260,6 +312,10 @@ $input-bg-disabled: $gray-lighter !default;
 $input-color: $gray !default;
 //** `<input>` border color
 $input-border: #ccc !default;
+
+$form-error-bg-color: #ffffc9;
+$form-error-border-color: #ce1126;
+$form-error-active-bg-color: $white;
 
 // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
 //** Default `.form-control` border radius
@@ -297,6 +353,10 @@ $input-group-addon-border-color: $input-border !default;
 //** Disabled cursor for form controls and buttons.
 $cursor-disabled: not-allowed !default;
 
+//== Dividers
+
+$polaris-divider-top-border-color: #eee;
+
 //== Dropdowns
 //
 //## Dropdown menu container and contents.
@@ -309,6 +369,7 @@ $dropdown-border: rgba(0, 0, 0, .15) !default;
 $dropdown-fallback-border: #ccc !default;
 //** Divider color for between dropdown items.
 $dropdown-divider-bg: #e5e5e5 !default;
+
 
 //** Dropdown link text color.
 $dropdown-link-color: $gray-dark !default;
@@ -330,6 +391,15 @@ $dropdown-header-color: $gray-light !default;
 
 //** Deprecated `$dropdown-caret-color` as of v3.1.0
 $dropdown-caret-color: #000 !default;
+
+//-- Mark
+$mark-bg-color: #ff0;
+$mark-text-color: $black;
+
+//Fieldset
+$fieldset-border-color: #c0c0c0;
+
+
 
 //-- Z-index master list
 //
@@ -677,6 +747,12 @@ $modal-sm: 300px !default;
 //== Alerts
 //
 //## Define alert colors, border radius, and padding.
+$alert-text-color: $dell-gray-dark;
+$alert-bg-color: #ffffc9;
+$alert-border-color: #eee;
+$alert-link-color: $dell-blue;
+$alert-link-hover-color: $dell-dark-blue;
+$alert-link-color-before: $dell-gray-dark;
 
 $alert-padding: 10px 35px 0 40px !default; //15px !default;
 $alert-border-radius: $border-radius-base !default;
@@ -690,13 +766,26 @@ $alert-info-bg: $state-info-bg !default;
 $alert-info-text: $state-info-text !default;
 $alert-info-border: $state-info-border !default;
 
-$alert-warning-bg: $state-warning-bg !default;
-$alert-warning-text: $state-warning-text !default;
-$alert-warning-border: $state-warning-border !default;
+$alert-warning-bg: #ee6411;
+$alert-warning-text: #ee6411;
+$alert-warning-border: #d6390f;
+$alert-warning-hr-top-border-color: #be330e;
+$alert-warning-link-color: #be500e;
 
 $alert-danger-bg: $state-danger-bg !default;
 $alert-danger-text: $state-danger-text !default;
 $alert-danger-border: $state-danger-border !default;
+
+$color-danger: #ce1126;
+$color-info: #007db8;
+$color-success: #6ea204;
+$color-warning: #d74324;
+
+//== Borders
+//
+//## Define borders color, style and size.
+$border-grey-color: $dell-gray-stroke;
+
 
 //== Progress bars
 //
@@ -790,6 +879,10 @@ $panel-warning-heading-bg: $state-warning-bg !default;
 $panel-danger-text: $state-danger-text !default;
 $panel-danger-border: $state-danger-border !default;
 $panel-danger-heading-bg: $state-danger-bg !default;
+
+$panel-group-collapsible-border-color: $dell-gray;
+$panel-group-heading-text-color: $dell-blue;
+
 
 //== Thumbnails
 //
@@ -913,6 +1006,9 @@ $dl-horizontal-offset: $component-offset-horizontal !default;
 //** Horizontal line color.
 $hr-border: $gray-lighter !default;
 
+/*Slick banners*/
+$slick-dots: $natural-gray;
+$slick-dots-active: $text-orange;
 
-
-
+/*3 Play Media*/
+$play-3-media-border-color: $dell-gray;

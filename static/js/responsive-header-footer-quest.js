@@ -30,7 +30,8 @@ $(document).ready(function () {
 		e.preventDefault();
 		e.stopPropagation();
 		$('#masthead-search').toggleClass('open');
-		$('.utility').find('> li').removeClass('open');
+		$('#mobile-search-button').toggleClass('open');
+		$('.utility > li').find('> li').removeClass('open');
 	});
 
 	//GA event tracking - naveen

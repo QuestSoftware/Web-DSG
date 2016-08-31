@@ -1,6 +1,3 @@
-<!--
-	Added Support Navigation
-//-->
 <header class="masthead" id="masthead">
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="utility-section-wrapper blue">
@@ -8,10 +5,19 @@
 				<!-- Logo -->
 				<div class="navbar-brand">
 					<a href="/">
-						<img src="/images/shared/quest-logo-2.png">
+						<img src="/images/shared/quest-logo.png">
 					</a>
 				</div>
-
+				<div id="masthead-search" class="search-container">
+					<form id="search-form">
+						<input id="searchterm" type="text" class="search-query form-control"
+						       placeholder="What can we help you find?" />
+						<button class="btn">
+							<i class="icon-small-searchleft"></i>
+						</button>
+						<div class="autocomplete"></div>
+					</form>
+				</div>
 				<div class="nav-container">
 					<div class="main-nav-section">
 						<div class="shadow-overlay-left"></div>
@@ -22,508 +28,80 @@
 									<i class="glyphicon glyphicon-menu-down pull-right"></i>
 								</a>
 								<ul class="tier2">
-									<li class="subLinks">
-										<a href="#">
-											<span>Cloud Management</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+									<li>
+										<a href="/products/active-roles">
+											<span>ActiveRoles</span>
 										</a>
-										<ul class="tier3">
-											<li>
-												<a
-													href="http://www.dell.com/Learn/us/en/555/large-business/solution-converged-infrastructure-asim?c=us&l=en&s=biz"
-													target="_blank">Active System Manager</a>
-											</li>
-											<li>
-												<a href="/products/cloud-manager/">Cloud Manager</a>
-											</li>
-											<li>
-												<a href="/products/foglight-application-performance-monitoring-saas-edition/">Foglight
-													Application Performance Monitoring SaaS Edition</a>
-											</li>
-										</ul>
 									</li>
-									<li class="subLinks">
-										<a href="#">
-											<span>Data Protection</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+									<li>
+										<a href="http://www.boomi.com" target="_blank">
+											<span>Boomi</span>
 										</a>
-										<ul class="tier3">
-											<li class="subLinks">
-												<a href="#">
-													<span>Application-Specific Data Protection</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/appassure/">AppAssure Backup and Recovery</a>
-													</li>
-													<li><a href="/products/archive-manager/">Archive Manager</a></li>
-													<li><a href="/products/change-auditor-for-active-directory/">Change
-														Auditor for Active Directory</a></li>
-													<li><a href="/products/change-auditor-for-exchange/">Change Auditor for
-														Exchange</a></li>
-													<li><a href="/products/change-auditor-for-sharepoint/">Change Auditor
-														for SharePoint</a></li>
-													<li><a href="/products/change-auditor-for-sql-server/">Change Auditor
-														for SQL Server</a></li>
-													<li><a href="/products/litespeed-for-sql-server/">LiteSpeed for SQL
-														Server</a></li>
-													<li><a href="/products/migration-manager-for-active-directory/">Migration
-														Manager for Active Directory</a></li>
-													<li><a href="/products/migration-manager-for-exchange/">Migration
-														Manager for Exchange</a></li>
-													<li><a href="/products/migration-manager-for-sharepoint/">Migration
-														Manager for SharePoint</a></li>
-													<li><a href="/products/netvault-backup/">Netvault Backup</a></li>
-													<li><a href="/products/recovery-manager-for-active-directory/">Recovery
-														Manager for Active Directory</a></li>
-													<li><a href="/products/recovery-manager-for-exchange/">Recovery Manager
-														for Exchange</a></li>
-													<li><a href="/products/recovery-manager-for-sharepoint/">Recovery
-														Manager for SharePoint</a></li>
-													<li><a href="/products/shareplex/">SharePlex</a></li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Backup &amp; Recovery</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/appassure/">AppAssure Backup and Recovery</a>
-													</li>
-													<li><a href="/products/appassure-dl1000-1tb-backup-recovery-appliance/">Dell DL1000 1TB Backup and
-														Recovery Appliance </a>
-													</li>
-													<li><a href="/products/appassure-dl1000-backup-and-recovery-appliance/">DL1000
-														Backup and Recovery Appliance</a></li>
-													<li><a href="/products/dl4300-backup-and-recovery-appliance/">DL4300 Backup and Recovery
-														Appliance</a></li>
-													<li><a href="/products/netvault-backup/">Netvault Backup</a></li>
-													<li><a href="/products/vranger/">vRanger</a></li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Deduplication Appliances</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/dr2000v-virtual-backup-appliance/">DR2000v Backup
-														Disk Virtual Appliance</a></li>
-													<li><a href="/products/dr4100-disk-backup-appliance/">DR4100 Disk Backup
-														Appliance</a></li>
-													<li><a href="/products/dr6000-disk-backup-appliance/">DR6000 Disk Backup
-														Appliance</a></li>
-												</ul>
-											</li>
-										</ul>
 									</li>
-									<li class="subLinks">
-										<a href="#">
-											<span>Endpoint Management</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+									<li>
+										<a href="/change-auditor/">
+											<span>Change Auditor</span>
 										</a>
-										<ul class="tier3">
-											<li>
-												<a href="/products/changebase/" target="_blank">ChangeBASE</a>
-											</li>
-											<li>
-												<a href="/products/desktop-authority-management-suite/">Desktop
-													Authority Management Suite</a>
-											</li>
-											<li>
-												<a href="/kace/">KACE Product Line</a>
-											</li>
-											<li>
-												<a href="/products/remotescan-enterprise/">RemoteScan Enterprise</a>
-											</li>
-										</ul>
 									</li>
-									<li class="subLinks">
-										<a href="#">
-											<span>Information Management</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+									<li>
+										<a href="/solutions/performance-monitoring/">
+											<span>Foglight</span>
 										</a>
-										<ul class="tier3">
-											<li class="subLinks">
-												<a href="#">
-													<span>Application and Data Integration</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/boomi-atomsphere/">Boomi AtomSphere</a></li>
-													<li><a href="/products/boomi-mdm/">Boomi MDM</a></li>
-													<li><a href="/products/shareplex/">SharePlex</a></li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Big Data Analytics</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/boomi-atomsphere/">Boomi AtomSphere</a></li>
-													<li><a href="/products/statistica/">Statistica</a></li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Business Intelligence</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/boomi-atomsphere/">Boomi AtomSphere</a></li>
-													<li><a href="/products/statistica/">Statistica</a></li>
-													<li><a href="/products/toad-data-point/">Toad Data Point</a></li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Database Development &amp; Management</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/stat-oracle-e-business-suite//">Stat for Oracle
-														E-Business Suite</a></li>
-													<li><a href="/products/toad/">Toad</a></li>
-
-													<li><a href="/products/foglight-for-cross-platform-databases/">Foglight
-														for Cross-Platform Databases</a></li>
-													<li><a href="/products/spotlight-on-sql-server-enterprise/">Spotlight on
-														SQL Server Enterprise</a></li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Database Replication &amp; Backup</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/litespeed-for-sql-server/">LiteSpeed for SQL
-														Server</a></li>
-													<li><a href="/products/shareplex/">SharePlex</a></li>
-													<li><a href="/products/shareplex-connector-for-hadoop/">SharePlex
-														Connector for Hadoop</a></li>
-												</ul>
-											</li>
-										</ul>
 									</li>
-									<li class="subLinks">
-										<a href="#">
-											<span>Mobile Workforce Management</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+									<li>
+										<a href="/products/identity-manager/">
+											<span>Identity Manager</span>
 										</a>
-										<ul class="tier3">
-											<li class="subLinks">
-												<a href="#">
-													<span>Desktop Virtualization</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/remotescan-enterprise/">RemoteScan</a></li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Endpoint Security</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/sonicwall-enforced-anti-virus/">Enforced
-														Anti-Virus and Anti-Spyware</a></li>
-													<li>
-														<a href="/kace/">KACE Product Line</a>
-													</li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Enterprise Mobility Management</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/desktop-workspace/">Desktop Workspace</a></li>
-													<li><a href="/products/K1000-as-a-service/">K1000 as a Service</a></li>
-													<li><a href="/products/mobile-workspace/">Mobile Workspace</a></li>
-													<li><a href="/products/mobile-management/">Mobile Management</a></li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Network Security</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/sonicwall-analyzer/">Analyzer</a></li>
-													<li><a href="/products/sonicpoint-wireless-access-point-series/">Wireless
-														Access Point Series</a></li>
-													<li><a href="/products/sonicwall-e-class-nsa/">E-Class NSA Series</a>
-													</li>
-													<li><a href="/products/sonicwall-gms/">Global Management System</a></li>
-													<li><a href="/products/sonicwall-nsa/">NSA Series</a></li>
-													<li><a href="/products/sonicwall-scrutinizer/">Scrutinizer</a></li>
-													<li><a href="/products/sonicwall-supermassive-e10000/">SuperMassive
-														E10000</a></li>
-													<li><a href="/products/sonicwall-supermassive-9000/">SuperMassive
-														9000</a></li>
-													<li><a href="/products/sonicwall-tz/">TZ Series</a></li>
-													<li><a href="/products/sonicwall-wxa/">WXA Series</a></li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Secure Remote Access</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/sonicwall-e-class-sra/">Aventail E-Class SRA
-														Series</a></li>
-													<li><a href="/products/defender/">Defender</a></li>
-													<li><a href="/products/sonicwall-mobile-connect/">Mobile Connect</a>
-													</li>
-													<li><a href="/products/sonicwall-sra-appliance/">SRA Appliance
-														Series</a></li>
-												</ul>
-											</li>
-										</ul>
 									</li>
-									<li class="subLinks">
-										<a href="#">
-											<span>Performance Monitoring</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+									<li>
+										<a href="/kace/">
+											<span>KACE</span>
 										</a>
-										<ul class="tier3">
-											<li>
-												<a href="/products/foglight-application-performance-monitoring/">Foglight
-													Application Performance Monitoring</a>
-											</li>
-											<li>
-												<a href="/products/foglight-application-performance-monitoring-saas-edition/">Foglight
-													Application Performance Monitoring SaaS Edition</a>
-											</li>
-											<li>
-												<a href="/products/foglight-for-cross-platform-databases/">Foglight
-													for Cross-Platform Databases</a>
-											</li>
-											<li>
-												<a href="/products/foglight-for-virtualization-enterprise-edition/">Foglight
-													for Virtualization, Enterprise Edition</a>
-											</li>
-											<li>
-												<a href="/products/foglight-for-virtualization-standard-edition/">Foglight
-													for Virtualization, Standard Edition</a>
-											</li>
-										</ul>
 									</li>
-									<li class="subLinks">
-										<a href="#">
-											<span>Security</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+									<li>
+										<a href="/migration-manager/">
+											<span>Migration Manager</span>
 										</a>
-										<ul class="tier3">
-											<li class="subLinks">
-												<a href="#">
-													<span>Email Security</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/archive-manager/">Archive Manager</a></li>
-													<li><a href="/products/sonicwall-comprehensive-anti-spam/">Comprehensive
-														Anti-Spam Service</a></li>
-													<li><a href="/products/sonicwall-email-security-appliances/">Email
-														Security Appliances and Software</a></li>
-													<li><a href="/products/sonicwall-hosted-email-security/">Hosted Email
-														Security</a></li>
-													<li><a href="/products/recovery-manager-for-exchange/">Recovery Manager
-														for Exchange</a></li>
-													<li><a href="/products/security-explorer/">Security Explorer</a></li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Endpoint Management</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/changebase/">ChangeBASE</a></li>
-													<li><a href="/products/desktop-authority-management-suite/">Desktop
-														Authority Management Suite</a></li>
-													<li>
-														<a href="/kace/">KACE Product Line</a>
-													</li>
-													<li><a href="/products/remotescan-enterprise/">RemoteScan Enterprise</a>
-													</li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Endpoint Security</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/sonicwall-enforced-anti-virus/">Enforced
-														Anti-Virus and Anti-Spyware</a></li>
-													<li>
-														<a href="/kace/">KACE Product Line</a>
-													</li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Identity &amp; Access Management</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/activeroles-server/">Active Roles</a></li>
-													<li><a href="/products/defender/">Defender</a></li>
-													<li><a href="/products/cloud-access-manager/">Dell One Identity Cloud
-														Access Manager</a></li>
-													<li><a href="/products/identity-manager/">Identity Manager</a></li>
-													<li><a href="/products/identity-manager-data-governance/">Identity
-														Manager-Data Governance Edition</a></li>
-													<li><a href="/products/password-manager/">Password Manager</a></li>
-													<li><a href="/products/privileged-password-manager/">Privileged Password
-														Manager</a></li>
-													<li><a href="/products/privileged-access-suite-for-unix/">Privileged
-														Access Suite for Unix</a></li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Network Security</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/sonicwall-analyzer/">Analyzer</a></li>
-													<li><a href="/products/sonicpoint-wireless-access-point-series/">Wireless
-														Access Point Series</a></li>
-													<li><a href="/products/sonicwall-e-class-nsa/">E-Class NSA Series</a>
-													</li>
-													<li><a href="/products/sonicwall-gms/">Global Management System</a></li>
-													<li><a href="/products/sonicwall-nsa/">NSA Series</a></li>
-													<li><a href="/products/sonicwall-scrutinizer/">Scrutinizer</a></li>
-													<li><a href="/products/sonicwall-supermassive-e10000/">SuperMassive
-														E10000</a></li>
-													<li><a href="/products/sonicwall-supermassive-9000/">SuperMassive
-														9000</a></li>
-													<li><a href="/products/sonicwall-tz/">TZ Series</a></li>
-													<li><a href="/products/sonicwall-wxa/">WXA Series</a></li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Secure Remote Access</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/products/sonicwall-e-class-sra/">Aventail E-Class SRA
-														Series</a></li>
-													<li><a href="/products/defender/">Defender</a></li>
-													<li><a href="/products/sonicwall-mobile-connect/">Mobile Connect</a>
-													</li>
-													<li><a href="/products/sonicwall-sra-appliance/">SRA Appliance
-														Series</a></li>
-												</ul>
-											</li>
-										</ul>
 									</li>
-									<li class="subLinks">
-										<a href="#">
-											<span>Virtualization Management</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+									<li>
+										<a href="/products/rapid-recovery/">
+											<span>Rapid Recovery</span>
 										</a>
-										<ul class="tier3">
-											<li>
-												<a href="/products/foglight-for-storage-management/">Foglight for
-													Storage Management</a>
-											</li>
-											<li>
-												<a href="/products/foglight-for-virtualization-enterprise-edition/">Foglight
-													for Virtualization, Enterprise Edition</a>
-											</li>
-											<li>
-												<a href="/products/foglight-for-virtualization-standard-edition/">Foglight
-													for Virtualization, Standard Edition</a>
-											</li>
-										</ul>
 									</li>
-									<li class="subLinks">
-										<a href="#">
-											<span>Windows Server Management</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+									<li>
+										<a href="/recovery-manager">
+											<span>Recovery Manager</span>
 										</a>
-										<ul class="tier3">
-
-											<li>
-												<a href="/products/archive-manager/">Archive Manager </a>
-											</li>
-											<li>
-												<a href="/products/change-auditor/">Change Auditor</a>
-											</li>
-											<li>
-												<a href="/products/enterprise-reporter/">Enterprise Reporter</a>
-											</li>
-											<li>
-												<a href="/products/migration-manager-for-active-directory/">Migration Manager for Active
-													Directory</a>
-											</li>
-											<li>
-												<a href="/products/migration-manager-for-exchange/">Migration Manager for Exchange</a>
-											</li>
-
-											<li>
-												<a href="/products/migration-suite-for-sharepoint/">Migration Suite for SharePoint</a>
-											</li>
-											<li>
-												<a href="/products/migrator-for-notes-to-exchange/">Migrator for Notes to Exchange</a>
-											</li>
-											<li>
-												<a href="/products/recovery-manager-for-active-directory-forest-edition/">Recovery Manager for
-													Active
-													Directory Forest Edition </a>
-											</li>
-											<li>
-												<a href="/products/recovery-manager-for-exchange/">Recovery Manager for Exchange</a>
-											</li>
-
-											<li>
-												<a href="/products/unified-communications-command-suite/">Unified Communications Command Suite</a>
-											</li>
-
-										</ul>
 									</li>
-
-									<li class="subLinks">
-										<a href="#">
-											<span>By Product Line</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+									<li>
+										<a href="/remotescan/">
+											<span>RemoteScan</span>
 										</a>
-										<ul class="tier3">
-											<li>
-												<a href="/products/boomi-atomsphere/">Boomi</a>
-											</li>
-											<li>
-												<a href="/products/change-auditor/">Change Auditor</a>
-											</li>
-											<li>
-												<a href="/kace/">KACE</a>
-											</li>
-											<li>
-												<a href="/products/remotescan/">RemoteScan</a>
-											</li>
-											<li>
-												<a href="/sonicwall/">SonicWALL</a>
-											</li>
-											<li>
-												<a href="/products/statistica/">Statistica</a>
-											</li>
-											<li>
-												<a href="/products/toad/">Toad</a>
-											</li>
-											<li>
-												<a href="/products/unified-communications-command-suite-analytics/">UCCS</a>
-											</li>
-										</ul>
+									</li>
+									<li>
+										<a href="/products/shareplex/">
+											<span>SharePlex</span>
+										</a>
+									</li>
+									<li>
+										<a href="http://www.sonicwall.com" target="_blank">
+											<span>SonicWALL</span>
+										</a>
+									</li>
+									<li>
+										<a href="/products/spotlight-on-sql-server-enterprise/">
+											<span>Spotlight</span>
+										</a>
+									</li>
+									<li>
+										<a href="/products/statistica/">
+											<span>Statistica</span>
+										</a>
+									</li>
+									<li>
+										<a href="/toad/">
+											<span>Toad</span>
+										</a>
 									</li>
 									<li>
 										<a href="/products/">
@@ -538,180 +116,210 @@
 									<i class="glyphicon glyphicon-menu-down pull-right"></i>
 								</a>
 								<ul class="tier2">
+									<li>
+										<a href="/solutions/advanced-analytics/">Advanced Analytics</a>
+									</li>
+									<li>
+										<a href="http://www.boomi.com/" target="_blank">Application &amp; Data Integration</a>
+									</li>
+									<li>
+										<a href="/solutions/cloud-management/">Cloud Management</a>
+									</li>
 									<li class="subLinks">
-										<a href="#">
-											<span>For IT &amp; Security Management</span>
+										<a href="/solutions/data-protection/">
+											<span>Data Protection</span>
+											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+										</a>
+										<ul class="tier4">
+											<li>
+												<a href="/solutions/data-protection/">Overview</a>
+											</li>
+											<li>
+												<a href="/solutions/backup-and-recovery/">Backup and Recovery</a>
+											</li>
+											<li>
+												<a href="/products/dr-series-disk-backup-appliances/">Deduplication and Compression</a>
+											</li>
+										</ul>
+									</li>
+									<li class="subLinks">
+										<a href="/database-management/">
+											Database Management
 											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
 										</a>
 										<ul class="tier3">
+											<li><a href="/database-management/">Overview</a></li>
+											<li><a href="/solutions/administration/">Administration</a></li>
+											<li><a href="/solutions/data-preparation-and-analysis/">Data Preparation and Analysis</a></li>
+											<li><a href="/solutions/database-development/">Development</a></li>
+											<li><a href="/solutions/database-performance-monitoring/">Performance Monitoring</a></li>
+											<li><a href="/solutions/replication/">Replication</a></li>
 											<li class="subLinks">
-												<a href="/solutions/data-center-and-cloud-management/">
-													<span>Data Center &amp; Cloud Management</span>
+												<a href="#">
+													<span>Supported Platforms</span>
 													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
 												</a>
 												<ul class="tier4">
-													<li>
-														<a href="/solutions/cloud-management/">Cloud Management</a>
-													</li>
-													<li>
-														<a href="/solutions/endpoint-management/">Endpoint Management</a>
-													</li>
-													<li>
-														<a href="/solutions/performance-monitoring/">Performance
-															Monitoring</a>
-													</li>
-													<li>
-														<a href="/solutions/virtualization-management/">Virtualization
-															Management</a>
-													</li>
-													<li>
-														<a href="/solutions/windows-server-management/">Windows Server Management</a>
-													</li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="/solutions/data-protection/">
-													<span>Data Protection</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li>
-														<a href="/solutions/application-protection/">Application-Specific
-															Data Protection</a>
-													</li>
-													<li>
-														<a href="/solutions/backup-and-recovery/">Backup &amp; Recovery</a>
-													</li>
-													<li>
-														<a href="/solutions/deduplication-appliances/">Deduplication
-															Appliances</a>
-													</li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="/solutions/information-management/">
-													<span>Information Management</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li>
-														<a href="/solutions/application-and-data-integration/">Application
-															&amp; Data Integration</a>
-													</li>
-													<li>
-														<a href="/solutions/business-intelligence/">Business
-															Intelligence</a>
-													</li>
-													<li>
-														<a href="/solutions/big-data-analytics/">Big Data Analytics</a>
-													</li>
-													<li>
-														<a href="/solutions/database-development-and-management/">Database
-															Development &amp; Management</a>
-													</li>
-													<li>
-														<a href="/solutions/database-replication-and-backup/">Database
-															Replication &amp; Backup</a>
-													</li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="/solutions/mobile-workforce-management/">
-													<span>Mobile Workforce Management</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li>
-														<a href="/solutions/desktop-virtualization/">Desktop
-															Virtualization</a>
-													</li>
-													<li>
-														<a href="/solutions/enterprise-mobility-management/">Enterprise
-															Mobility Management</a>
-													</li>
-													<li>
-														<a href="/solutions/endpoint-security/">Endpoint Security</a>
-													</li>
-													<li>
-														<a href="/solutions/network-security/">Network Security</a>
-													</li>
-													<li>
-														<a href="/solutions/secure-remote-access/">Secure Remote Access</a>
-													</li>
-												</ul>
-											</li>
-											<li class="subLinks">
-												<a href="/solutions/security/">
-													<span>Security</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li>
-														<a href="/solutions/email-security/">Email Security</a>
-													</li>
-													<li>
-														<a href="/solutions/endpoint-security/">Endpoint Security</a>
-													</li>
-													<li>
-														<a href="/solutions/identity-and-access-management/">Identity &amp;
-															Access Management</a>
-													</li>
-													<li>
-														<a href="/solutions/network-security/">Network Security</a>
-													</li>
-													<li>
-														<a href="/solutions/secure-remote-access/">Secure Remote Access</a>
-													</li>
+													<li><a href="/platforms/hadoop/">Hadoop</a></li>
+													<li><a href="/solutions/oracle/">Oracle</a></li>
+													<li><a href="/solutions/sql-server/">SQL Server</a></li>
 												</ul>
 											</li>
 										</ul>
 									</li>
 									<li class="subLinks">
-										<a href="#">
-											<span>By Platform</span>
+										<a href="/solutions/endpoint-systems-management/"><span>Endpoint Systems Management
+              </span>
 											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
 										</a>
 										<ul class="tier3">
 											<li>
-												<a href="/platforms/active-directory/">Active
-													Directory</a>
+												<a href="/solutions/endpoint-systems-management/">Overview</a>
 											</li>
 											<li>
-												<a href="/platforms/exchange/">Exchange</a>
+												<a href="/solutions/endpoint-security/">Endpoint Security</a>
 											</li>
 											<li>
-												<a href="/platforms/google">Google</a>
+												<a href="/solutions/it-asset-management/">IT Asset Management</a>
 											</li>
 											<li>
-												<a href="/platforms/groupwise-nds">GroupWise &amp;
-													NDS</a>
+												<a href="/solutions/operating-systems-imaging-and-deployments/">Operating Systems Imaging and Deployments</a>
 											</li>
 											<li>
-												<a href="/platforms/hadoop/">Hadoop</a>
+												<a href="/solutions/service-desk/">Service Desk</a>
 											</li>
 											<li>
-												<a href="/platforms/hyper-v/">Hyper-V</a>
+												<a href="/solutions/software-distribution-and-maintenance/">Software Distribution and Maintenance</a>
+											</li>
+											<li class="subLinks">
+												<a href="#">
+													<span>Supported Platforms</span>
+													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+												</a>
+												<ul class="tier4">
+													<li><a href="/solutions/endpoint-systems-management/#platforms">Internet of things</a></li>
+													<li><a href="/solutions/endpoint-systems-management/#platforms">Microsoft® Windows</a></li>
+													<li><a href="/solutions/endpoint-systems-management/#platforms">MAC</a></li>
+													<li><a href="/solutions/endpoint-systems-management/#platforms">UNIX/LinuX</a></li>
+
+
+												</ul>
+											</li>
+										</ul>
+									</li>
+
+									<li class="subLinks">
+										<a href="/solutions/performance-monitoring/"><span>Performance Monitoring
+              </span>
+											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+										</a>
+										<ul class="tier3">
+											<li>
+												<a href="/solutions/performance-monitoring/">Overview</a>
 											</li>
 											<li>
-												<a href="/platforms/lotus-notes/">Lotus Notes</a>
+												<a href="/solutions/performance-monitoring/">Application Performance Monitoring</a>
 											</li>
 											<li>
-												<a href="/platforms/skype-for-business-and-lync-server/">Skype for Business/Lync</a>
+												<a href="/database-management/performance-monitoring/">Database Performance Monitoring</a>
 											</li>
 											<li>
-												<a href="/platforms/office-365/">Office 365</a>
+												<a href="/solutions/performance-monitoring/#capabilities">Operating System Monitoring</a>
 											</li>
 											<li>
-												<a href="/platforms/oracle/">Oracle</a>
+												<a href="/solutions/performance-monitoring/#capabilities">Storage Performance and Utilization Management</a>
 											</li>
 											<li>
-												<a href="/platforms/sharepoint/">SharePoint</a>
+												<a href="/solutions/virtualization-management/">Virtualization Management</a>
+											</li>
+											<li class="subLinks">
+												<a href="#">
+													<span>Supported Platforms</span>
+													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+												</a>
+												<ul class="tier4">
+													<li><a href="/solutions/active-directory/">Active Directory</a></li>
+													<li><a href="/solutions/performance-monitoring/#platforms">DB2</a></li>
+													<li><a href="/solutions/exchange/">Exchange</a></li>
+													<li><a href="/solutions/performance-monitoring/#platforms">Java</a></li>
+													<li><a href="/solutions/hyper-v/">Hyper-V</a></li>
+													<li><a href="/solutions/performance-monitoring/#platforms">.NET</a></li>
+													<li><a href="/solutions/oracle/">Oracle</a></li>
+													<li><a href="/solutions/performance-monitoring/#platforms">SAP/Sybase</a></li>
+													<li><a href="/solutions/performance-monitoring/#platforms">Storage</a></li>
+													<li><a href="/solutions/performance-monitoring/#platforms">SQL Sever</a></li>
+													<li><a href="/solutions/vmware/">VMware</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+
+
+
+
+
+
+									<li class="subLinks">
+										<a href="/solutions/security/">
+											<span>Security</span>
+											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+										</a>
+										<ul class="tier4">
+											<li>
+												<a href="/solutions/security/">Overview</a>
 											</li>
 											<li>
-												<a href="/platforms/sql-server/">SQL Server</a>
+												<a href="/solutions/email-security/">Email Security</a>
 											</li>
 											<li>
-												<a href="/platforms/vmware/">VMware</a>
+												<a href="/solutions/endpoint-security/">Endpoint Security</a>
+											</li>
+											<li>
+												<a href="/solutions/identity-and-access-management/">Identity &amp;
+													Access Management</a>
+											</li>
+											<li>
+												<a href="/solutions/network-security/">Network Security</a>
+											</li>
+											<li>
+												<a href="/products/sonicwall-secure-mobile-access-series/">Secure Remote Access</a>
+											</li>
+										</ul>
+									</li>
+									<li class="subLinks">
+										<a href="/solutions/microsoft-platform-management/">
+											<span>Microsoft Platform Management</span>
+											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+										</a>
+										<ul class="tier3">
+											<li><a href="/solutions/microsoft-platform-management/">Overview</a>
+											</li>
+											<li><a href="/solutions/group-policy-and-permissions/">Group Policy and Permissions</a></li>
+											<li><a href="/solutions/migration-and-consolidation/">Migration and Consolidation</a></li>
+											<li><a href="/solutions/server-performance-and-availability/">Performance and Availability</a></li>
+											<li><a href="/solutions/reporting/">Reporting</a></li>
+											<li><a href="/solutions/security-and-compliance/">Security and Compliance</a></li>
+											<li><a href="/solutions/windows-backup-and-recovery/">Windows Backup and Recovery</a></li>
+											<li class="subLinks">
+												<a href="#">
+													<span>Supported Platforms</span>
+													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+												</a>
+												<ul class="tier4">
+													<li><a href="/solutions/active-directory/">Active Directory</a></li>
+													<li><a href="/products/unified-communications-command-suite/">Cisco</a></li>
+													<li><a href="/solutions/exchange/">Exchange</a></li>
+													<li><a href="/solutions/google/">Google</a></li>
+													<li><a href="/solutions/groupwise-nds/">Groupwise and NDS</a></li>
+													<li><a href="/solutions/lotus-notes/">Lotus Notes</a></li>
+													<li><a href="/solutions/office-365/">O365</a></li>
+													<li><a href="/solutions/sharepoint/">OneDrive for Business</a></li>
+													<li><a href="/solutions/sharepoint/">SharePoint</a></li>
+													<li><a href="/solutions/skype-for-business-and-lync-server/">Skype for Business/Lync</a></li>
+													<li><a href="/solutions/sql-server/">SQL Server</a></li>
+													<li><a href="/products/intrust/">Unix/Linux</a></li>
+													<li><a href="/solutions/windows-server/">Windows Server</a></li>
+												</ul>
 											</li>
 										</ul>
 									</li>
@@ -720,7 +328,14 @@
 											<span>View all Solutions</span>
 										</a>
 									</li>
+
 								</ul>
+							</li>
+							<li>
+								<a href="/trials/">Trials</a>
+							</li>
+							<li>
+								<a href="/buy/">Buy</a>
 							</li>
 							<li class="subLinks">
 								<a href="#">
@@ -738,7 +353,7 @@
 												<a href="https://support.software.dell.com/productline/enterprise-reporter">Enterprise Reporter</a>
 											</li>
 											<li>
-												<a href="https://support.software.dell.com/productline/all-foglight">Foglight</a>
+												<a href="https://support.software.dell.com/productline/foglight">Foglight</a>
 											</li>
 											<li>
 												<a href="https://support.software.dell.com/productline/kace">KACE</a>
@@ -753,7 +368,8 @@
 												<a href="https://support.software.dell.com/productline/netvault">NetVault</a>
 											</li>
 											<li>
-												<a href="https://support.software.dell.com/productline/one-identity-quick-connect">One Identity Quick Connect</a>
+												<a href="https://support.software.dell.com/productline/one-identity-quick-connect">One Identity Quick
+													Connect</a>
 											</li>
 											<li>
 												<a href="https://support.software.dell.com/productline/performance-analysis">Performance Analysis</a>
@@ -762,7 +378,7 @@
 												<a href="https://support.software.dell.com/productline/recovery-manager">Recovery Manager</a>
 											</li>
 											<li>
-												<a href="https://support.software.dell.com/productline/shareplex">Shareplex</a>
+												<a href="https://support.software.dell.com/productline/shareplex">SharePlex</a>
 											</li>
 											<li>
 												<a href="https://support.software.dell.com/productline/sonicwall">SonicWALL</a>
@@ -782,13 +398,10 @@
 										</ul>
 									</li>
 									<li>
-										<a href="https://support.software.dell.com/manage-service-request">Contact Us</a>
+										<a href="https://support.software.dell.com/manage-service-request">Contact Support</a>
 									</li>
 									<li>
-										<a href="https://support.software.dell.com/product-support-forums">Community Forums</a>
-									</li>
-									<li>
-										<a href="https://support.software.dell.com/download-product-select">Download New Release</a>
+										<a href="https://support.software.dell.com/download-product-select">Download Software</a>
 									</li>
 									<li>
 										<a href="https://support.software.dell.com/kb-product-select">Knowledge Base</a>
@@ -800,16 +413,19 @@
 										</a>
 										<ul class="tier3">
 											<li>
-												<a href="https://support.software.dell.com/my-support">My Support</a>
+												<a href="https://support.software.dell.com/my-account">My Products</a>
 											</li>
 											<li>
-												<a href="https://support.software.dell.com/manage-service-request">My Service request</a>
+												<a href="https://support.software.dell.com/search-service-request">My Service Requests</a>
 											</li>
 											<li>
-												<a href="https://support.software.dell.com/licensing-assistance">Licensing Assistance</a>
+												<a href="https://support.software.dell.com/my-account/licensing">My Licenses</a>
 											</li>
 											<li>
-												<a href="https://support.software.dell.com/essentials/benefits-of-renewing-support">Renew Support</a>
+												<a href="https://support.software.dell.com/my-account/group">My Groups</a>
+											</li>
+											<li>
+												<a href="https://support.software.dell.com/manageprofile">My Profile</a>
 											</li>
 										</ul>
 									</li>
@@ -821,10 +437,13 @@
 											Services</a>
 									</li>
 									<li>
-										<a href="https://support.software.dell.com/release-notes-product-select">Release Notes &amp; Guides</a>
+										<a href="https://support.software.dell.com/release-notes-product-select">Technical Documentation</a>
 									</li>
 									<li>
 										<a href="https://support.software.dell.com/training-product-select">Training &amp; Certification</a>
+									</li>
+									<li>
+										<a href="https://support.software.dell.com/product-support-forums">User Forums</a>
 									</li>
 									<li>
 										<a href="https://support.software.dell.com/videos-product-select">Video Tutorials</a>
@@ -835,41 +454,28 @@
 								</ul>
 							</li>
 							<li>
-								<a href="/trials/">Trials</a>
+								<a href="https://software.dell.com/community/">Communities</a>
 							</li>
-							<li>
-								<a href="/buy/">Buy</a>
-							</li>
-
-
 							<li>
 								<a href="/partners/">Partners</a>
-							</li>
-							<li>
-								<a href="http://en.community.dell.com/techcenter/" target="_blank">Community</a>
 							</li>
 						</ul>
 					</div>
 				</div>
 
 				<ul class="utility">
-					<li id="mobile-search-button" class="dropdown hidden mobile-search-button">
+					<li id="mobile-search-button" class="dropdown mobile-search-button search-button">
 						<a href="#">
-							<i class="icon-small-searchleft"></i>
+							<!--<i class="icon-small-searchleft"></i>-->
+							<span class="top-search-icon"><i class="glyphicon glyphicon-remove"></i></span>
 						</a>
 					</li>
-
-					<li class="main-search-button">
-						<a href="#">
-							<i class="glyphicon glyphicon-search"></i>
-						</a>
-					</li>
-
 					<li id="signin-container" class="dropdown">
 						<a id="signin-link" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="icon-small-useraccount">
+							<!--<i class="icon-small-useraccount">
 								<span class="badge is-logged-in"><i class="icon-small-checkmark"></i></span>
-							</i>
+							</i>-->
+							<span class="top-user-icon"><i class="glyphicon glyphicon-remove"></i></span>
 						</a>
 
 						<div role="menu" aria-labelledby="signin-link" class="dropdown-menu">
@@ -883,8 +489,7 @@
 										<button role="button"
 										        class="btn btn-primary btn-block bottom-offset-mini top-offset-small lnk-sign-in">Sign In
 										</button>
-										<button role="button" class="btn btn-block btn-default lnk-create-account">Create a Dell Software
-											Account
+										<button role="button" class="btn btn-block btn-default lnk-create-account">Create a Quest Account
 										</button>
 									</div>
 									<div class="col-xs-12 is-logged-in">
@@ -904,6 +509,5 @@
 				</ul>
 			</div>
 		</div>
-
 	</nav>
 </header>

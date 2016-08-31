@@ -51,7 +51,7 @@
     @include opacity(.65);
     @include box-shadow(none);
 
-    @include button-variant($dell-gray, $btn-default-bg, $btn-default-border);
+		@include button-variant($btn-default-disable-color, $btn-default-bg, $btn-default-border);
   }
 }
 
