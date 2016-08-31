@@ -3,7 +3,7 @@
   top: 0;
   z-index: 99999;
   display: block;
-  border: 1px solid $pre-border-color;
+	border: 1px solid $affix-border-color;
   font-size: 14px;
   ul {
     background: linear-gradient(white, #efefef) repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -25,16 +25,17 @@
       padding: 0;
       float: left;
       border-top: none;
-      border-left: $pre-border-color solid 1px;
+			border-left: $affix-li-border-color solid 1px;
+
       &:first-child {
         border-left: none;
       }
       &.active {
         background: none repeat scroll 0 0 white;
-        border-color: $dell-blue;
+				border-color: $affix-li-active-border-color;
         border-width: 4px 0 0;
         border-style: solid;
-        color: $tooltip-color;
+				color: $affix-li-active-text-color;
         a {
           padding: 6px 5px 10px;
         }
@@ -45,28 +46,28 @@
         padding: 10px 5px;
 	      height: 100%;
         &:focus {
-          background-color: transparent;
+					background-color: $affix-li-a-focus-bg-color;
         }
         &:hover {
-          background-color: #cce7f3;
-          color: $dell-blue;
+					background-color: $affix-li-a-hover-bg-color;
+					color: $affix-li-a-hover-text-color;
         }
       }
     }
   }
 	&.no-style {
 		ul {
-			background: $white;
+			background: $affix-no-style-bg-color;
 			li {
 				&.active {
-					border-left: 1px solid #ccc;
+					border-left: 1px solid $affix-no-style-active-border-color;
 					&:first-of-type {
 						border-left: 0;
 					}
 				}
 				&.disabled {
 					&.active {
-						border-color: $white;
+						border-color: $affix-no-style-disabled-border-color;
 					}
 				}
 			}
@@ -82,16 +83,16 @@
       content: "\e601";
     }
     ul{
-      background: none repeat scroll 0 0 white;
-	    border-bottom: 1px solid #ccc;
+			background: none repeat scroll 0 0 $affix-xs-ul-bg;
+			border-bottom: 1px solid $affix-xs-ul-border-color;
       li {
-        border-top: 1px solid $pre-border-color;
+				border-top: 1px solid $affix-xs-li-border-color;
 	      border-left: 0;
         padding: 0;
         width:100%;
         &.active{
           a:hover,a:focus{
-            background: none repeat scroll 0 0 white;
+						background: none repeat scroll 0 0 $affix-xs-li-active-hover-border-color;
           }
         }
         a{
@@ -99,7 +100,7 @@
           font-weight: normal;
           padding: 10px 15px;
           &:hover {
-            background-color: $gray-lighter;
+						background-color: $affix-xs-a-hover-bg;
           }
         }
       }
