@@ -4,6 +4,38 @@
 	width: 100%;
 }
 
+.top-search-icon .glyphicon, .top-user-icon .glyphicon {
+	display: none;
+}
+
+.masthead .utility span.top-search-icon, .masthead .utility span.top-user-icon {
+	background-image: url("/images/shared/top-utility-sprites.png");
+	display: inline-block;
+	height: 22px;
+	width: 22px;
+}
+
+.masthead .utility span.top-user-icon {
+	background-position: 27px 0;
+}
+
+.masthead .utility li:hover span.top-search-icon {
+	background-position: 59px 23px;
+}
+
+.masthead .utility li.open span.top-search-icon, .masthead .utility li.open span.top-user-icon {
+	background: none;
+}
+
+.masthead .utility li.open span.top-search-icon .glyphicon, .masthead .utility li.open span.top-user-icon .glyphicon {
+	display: inline-block;
+	font-size: 23px;
+}
+
+.masthead .utility li:hover span.top-user-icon {
+	background-position: 27px 23px;
+}
+
 .masthead-shadow-section {
 	content: "";
 	width: 80%;
@@ -59,6 +91,28 @@
 		padding-left: 0;
 		height: 65px;
 		float: right;
+		.search-button {
+			span {
+
+				&.top-search-icon {
+					/*background-image: url("/images/shared/top-utility-sprites.png");*/
+					display: inline-block;
+					height: 22px;
+					width: 21px;
+				}
+				&.top-search-icon {
+				}
+			}
+			> a:hover {
+				&.top-search-icon {
+					/*background-image: url("/images/shared/top-utility-sprites.png");*/
+					display: inline-block;
+					height: 22px;
+					width: 21px;
+				}
+			}
+
+		}
 		li {
 			display: inline-block;
 			float: left;
@@ -73,18 +127,18 @@
 		}
 		a {
 			margin: 0;
-			padding: 21px 10px;
+			padding: 19px 10px;
 			color: $top-link;
 			display: block;
 			cursor: pointer;
 			position: relative;
 			&:link, &:visited {
 				margin: 0;
-				padding: 21px 10px;
+				padding: 19px 10px;
 				color: $top-link;
 				display: block;
 			}
-			&:hover, &:focus {
+			&:hover {
 				text-decoration: none;
 				color: $top-link-hover;
 				background: $top-search-bg;
@@ -152,7 +206,7 @@
 		display: none;
 		position: absolute;
 		left: 0;
-		margin-top: 66px;
+		margin-top: 65px;
 		z-index: 99;
 		width: 100%;
 		padding: 18px 15px;
@@ -840,7 +894,7 @@ i.menu-indicator {
 						background-color: $nav-subLinks-hover;
 						color: #fff;
 					}
-					li.subLinks a:hover {
+					li.subLinks > a:hover {
 						color: #ffffff;
 					}
 					li.open ul.tier2 li.open ul.tier3 {
@@ -872,6 +926,10 @@ i.menu-indicator {
 					width: 280px;
 					background: #fff;
 					box-shadow: 1px 3px 8px #999999;
+					li > a:hover {
+						color: #333;
+						/*background: #999;*/
+					}
 					i.menu-indicator {
 						display: block;
 						&:before {
@@ -967,6 +1025,7 @@ i.menu-indicator {
 					min-height: 100%;
 					width: auto;
 					box-shadow: 1px 3px 8px #999999;
+
 				}
 				li {
 					cursor: pointer;
@@ -1156,9 +1215,9 @@ i.menu-indicator {
 		.utility {
 			float: right;
 			a {
-				padding: 21px 10px;
+				padding: 19px 10px;
 				&:link, &:visited {
-					padding: 21px 10px;
+					padding: 19px 10px;
 				}
 			}
 			[class^=icon] {

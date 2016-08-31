@@ -349,15 +349,15 @@
 //this panel follows Dell design library pattern
 //must not be mixed with other types of panels
 .panel-group-collapsible {
-  border-bottom: 1px solid $dell-gray;
+  border-bottom: 1px solid $panel-group-collapsible-border-color;
   > .panel {
     margin-bottom: 0;
     border: none;
-    border-top: 1px solid $dell-gray;
+    border-top: 1px solid $panel-group-collapsible-border-color;
     box-shadow: none;
     .panel-heading {
       padding: 10px;
-      color: $dell-blue;
+      color: $panel-group-heading-text-color;
     }
     //arrows
     .panel-title a {
@@ -409,15 +409,15 @@ img ~ .panel > .panel-body:after {
 @media (max-width: 767px) {
   .panel-group-collapsible-xs {
     //@extend .panel-group-collapsible;
-    border-bottom: 1px solid $dell-gray;
+    border-bottom: 1px solid $panel-group-collapsible-border-color;
     > .panel {
       margin-bottom: 0;
       border: none;
-      border-top: 1px solid $dell-gray;
+      border-top: 1px solid $panel-group-collapsible-border-color;
       box-shadow: none;
       .panel-heading {
         padding: 10px 0;
-        color: $dell-blue;
+        color: $panel-group-heading-text-color;
       }
       //arrows
       .panel-title a {
