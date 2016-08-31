@@ -5,24 +5,24 @@
 }
 
 .border-grey {
-  border: 1px solid $dell-gray-stroke;
+	border: 1px solid $border-grey-color;
 }
 
 .border-t-grey {
-  border-top: 1px solid $dell-gray-stroke;
+	border-top: 1px solid $border-grey-color;
 }
 
 .border-b-grey {
-  border-bottom: 1px solid $dell-gray-stroke;
+	border-bottom: 1px solid $border-grey-color;
 }
 
 .border-tb-grey {
-  border-top: 1px solid $dell-gray-stroke;
-  border-bottom: 1px solid $dell-gray-stroke;
+	border-top: 1px solid $border-grey-color;
+	border-bottom: 1px solid $border-grey-color;
 }
 
 .border-l-grey {
-  border-left: 1px solid $dell-gray-stroke;
+	border-left: 1px solid $border-grey-color;
 }
 
 @media (max-width: 767px) {
@@ -31,24 +31,24 @@
     border: none !important;
   }
   .border-t-grey-xs {
-    border-top: 1px solid $dell-gray-stroke;
+		border-top: 1px solid $border-grey-color;
   }
   .border-b-grey-xs {
-    border-bottom: 1px solid $dell-gray-stroke;
+		border-bottom: 1px solid $border-grey-color;
   }
 }
 
 @media (min-width: 768px) {
   .border-l-grey-sm {
-    border-left: 1px solid $dell-gray-stroke;
+		border-left: 1px solid $border-grey-color;
   }
 	.border-r-grey-sm {
-		border-right: 1px solid $dell-gray-stroke;
+		border-right: 1px solid $border-grey-color;
 	}
 }
 
 @media (min-width: 992px) {
 	.border-r-grey-md {
-		border-right: 1px solid $dell-gray-stroke;
+		border-right: 1px solid $border-grey-color;
 	}
 }

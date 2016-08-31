@@ -4,7 +4,7 @@
 }
 
 .icon-ui-play-underlay {
-	background: $white;
+  background: $icon-ui-play-underlay-bg;
 }
 
 .img-overlay {
@@ -15,7 +15,7 @@
   height: 100%;
 
   .icon-ui-play {
-    color: $dell-gray-dark;
+    color: $img-overlay-icon-ui-play-color;
     font-size: 40px;
     position: relative;
   }
@@ -35,7 +35,7 @@
 .media-player-container {
   overflow: hidden;
   .icon-ui-play {
-    color: $dell-gray-dark;
+    color: $media-player-container-icon-ui-play-color;
     font-size: 80px;
     position: relative;
   }
@@ -49,7 +49,7 @@
 
 /* Used by http://software.dell.com/events/ */
 .img-header-overlay {
-	color: $white;
+  color: $img-header-overlay-color;
   padding: 0 0 0 10px;
   margin: 0;
   line-height: 30px;

@@ -1,32 +1,29 @@
 /* Background Color */
 .bg-white{
-  background-color: $white;
+  background-color: $bg-white;
 }
 
 .bg-black {
-  background-color: $black;
+  background-color: $bg-black;
 }
 
 .bg-light-grey {
-	background-color: $dell-gray-very-light;
-	color: $dell-gray-dark;
+  background-color: $bg-light-grey;
+  color: $bg-light-grey-text-color;
 }
 
 .bg-grey {
-	background-color: $dell-gray-very-light;
+  background-color: $bg-grey;
 }
 
 .anchor-blue {
 	color: $link-color;
 }
 
-.bg-white{
-	background-color: $white;
-}
 
 a[class^="icon-"]:hover, a[class^="icon-"]:focus {
   text-decoration: none;
-  color: $dell-blue;
+  color: $icon-anchor-hover-color;
 }
 
 a.no-underline:hover {
@@ -34,7 +31,7 @@ a.no-underline:hover {
 }
 
 .polaris-divider {
-  border-top: 1px solid #eee;
+  border-top: 1px solid $polaris-divider-top-border-color;
   position: relative;
   overflow: hidden;
   min-height: 20px;
@@ -52,6 +49,10 @@ a.no-underline:hover {
 }
 
 /* TODO: Need to find where this is being used */
+// organisms/2-column-video-image-with-description/old/index4.htm
+// organisms/2-column-video-image-with-description/old/index2.htm
+// organisms/2-column-video-image-with-description/index3.htm
+// organisms/sample-widget/index.htm
 ul {
   &.bullet-check-mark {
     padding-left: 2em;
@@ -98,8 +99,8 @@ li {
 }
 
 .new {
-	background-color: $dell-orange;
-	color: $white;
+  background-color: $new-bg-color;
+  color: $new-text-color;
 	font-size: .8em;
 	line-height: 1em;
 	padding: 0 5px 2px;
@@ -142,7 +143,7 @@ iframe {
 .col-striped {
 	.row {
 		> [class^="col-"]:nth-of-type(odd) {
-			background-color: $dell-gray-very-light;
+      background-color: $col-striped-odd-bg;
 		}
 	}
 }
