@@ -175,7 +175,6 @@ $img-header-overlay-color: $white;
 $icon-anchor-hover-color: $dell-blue;
 $icon-anchor-active-color: $dell-blue;
 
-//== Affix Nav (Zombie Nav)
 /* Start:Zombie Nav */
 $affix-border-color: #ccc;
 $affix-li-border-color: #ccc;
@@ -188,8 +187,7 @@ $affix-no-style-bg-color: $white;
 $affix-no-style-active-border-color: #ccc;
 $affix-no-style-disabled-border-color: $white;
 
-//Affix xs
-$affix-xs-ul-bg: $white;
+$affix-xs-ul-bg: $white; //Background color (mobile)
 $affix-xs-ul-border-color: #ccc;
 $affix-xs-li-border-color: #ccc;
 $affix-xs-li-active-hover-border-color: $white;
