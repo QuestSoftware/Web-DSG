@@ -30,7 +30,7 @@
 	.navbar-brand {
 		padding: 0;
 		margin-top: 8px;
-		margin-right: 20px;
+		margin-right: 44px;
 		margin-left: 8px;
 		a {
 			color: $navbar-brand-link-color;
@@ -52,7 +52,7 @@
 	.utility {
 		margin: 0;
 		padding-left: 0;
-		height: 65px;
+		height: 68px;
 		float: right;
 		i {
 			font-size: 22px;
@@ -188,9 +188,9 @@
 			display: block;
 			+ ul .mobile-search-button {
 				background-color: $top-search-bg;
-				a {
+				/*a {
 					color: $top-search-link-color;
-				}
+				}*/
 			}
 		}
 		.search-query {
@@ -876,7 +876,7 @@ i.menu-indicator {
 						font-weight: 600;
 						padding: 0;
 						> a {
-							padding: 22px 14px 9px 14px;
+							padding: 22px 15px 9px;
 						}
 					}
 					i.menu-indicator {
@@ -1014,14 +1014,14 @@ i.menu-indicator {
 				margin: 0;
 			}
 			ul.tier1 li {
-				height: 65px;
+				height: 68px;
 			}
 			ul.tier2 li {
 				height: auto;
 			}
 			i.glyphicon {
 				font-size: 11px;
-				margin: 5px 3px;
+				margin: 5px 0 0 5px;
 			}
 		}
 		ul {
@@ -1186,9 +1186,9 @@ i.menu-indicator {
 		.utility {
 			float: right;
 			a {
-				padding: 19px 10px 18px;
+				padding: 22px 15px 18px;
 				&:link, &:visited {
-					padding: 19px 10px 18px;
+					padding: 22px 15px 18px;
 				}
 			}
 			[class^=icon] {
