@@ -26,13 +26,17 @@ $(document).ready(function () {
 	});
 
 	//only shown in mobile
-	$('#mobile-search-button').on('click', function (e) {
+	//Siamak: changed #mobile-search-button to #mobile-search-button
+	$('#search-button').on('click', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 		$('#masthead-search').toggleClass('open');
-		$('#mobile-search-button').toggleClass('open');
-		$('.utility > li').find('> li').removeClass('open');
+		$('#search-button').toggleClass('open');
+
+		$('#signin-container').removeClass('open');
+		/*$('.utility > li').find('> li').removeClass('open');*/
 	});
+
 
 	//GA event tracking - naveen
 	//Class "ga" should only be applied on to anchor tag.

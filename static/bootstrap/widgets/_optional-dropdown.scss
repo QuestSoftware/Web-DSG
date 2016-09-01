@@ -7,7 +7,7 @@
   content: "";
   transform: rotate(225deg);
   -ms-transform: rotate(225deg);
-  background: $dell-gray-very-light;
+  background: $triangle-top-bg;
   height: 16px;
   position: absolute;
   top: -8px;
@@ -22,7 +22,7 @@
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
     content: "\e114";
-    color: #007db8;
+    color: $has-collapsibles-color;
     position: relative;
     vertical-align: -2px;
     padding-right: 2px;
