@@ -19,7 +19,7 @@
 
     &>div {
       &>div {
-        border-top: 1px solid #ccc;
+				border-top: 1px solid $event-detail-border-color;
         padding-top: 10px;
       }
     }
@@ -28,7 +28,7 @@
   .event-detail-container {
     .event-detail + .event-detail {
       &>div {
-        border-top: 1px solid #ccc;
+				border-top: 1px solid $event-detail-border-color;
         padding-top: 10px;
 
         &>div {
@@ -48,18 +48,18 @@
 .date-widget {
   width: 88px;
   box-sizing: border-box;
-  border: 1px solid #d9d9d9;
+	border: 1px solid $date-widget-border-color;
   //float: left;
   position: absolute;
 
   .header {
-    color: $white;
+		color: $date-widget-header-color;
     font-size: $font-size-base;
   }
 
   &.event-on-demand {
     .header {
-      background-color: $dell-orange;
+			background-color: $event-on-demand-header-bg;
     }
     .date-body {
       padding-top: 10px;
@@ -70,17 +70,17 @@
   }
   &.event-in-person {
     .header {
-      background-color: $dell-purple;
+			background-color: $event-in-person-header-bg;
     }
   }
   &.event-online {
     .header {
-      background-color: $dell-green;
+			background-color: $event-online-header-bg;
     }
   }
 
   .date-body {
-	  background-color: $white;
+		background-color: $date-body-bg-color;
     height: 58px;
     padding-top: 6px;
   }
@@ -125,7 +125,7 @@
 
 .signed-off {
   .event-details-widget {
-    border-bottom: 1px solid #cbcbcb;
+		border-bottom: 1px solid $event-detail-signed-off-border-color;
   }
   .container-fluid {
     border-bottom: none;
