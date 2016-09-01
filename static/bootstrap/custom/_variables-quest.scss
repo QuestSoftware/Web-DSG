@@ -42,34 +42,33 @@ $nav-subLinks-hover: $text-orange; //Navigation sublink hover color
 $nav-border-top: $text-orange; //Navigation border top color
 $top-link: $darker-gray; //Navigation link color
 $top-link-hover: $text-orange; //Navigation link hover color
-/* End:Header */
 
 $color-heading-links-hover: #007db8;
 $color-image-border: #737373;
 
-/* Start:Top Search */
 $top-search-bg: $light-gray;
 $top-search-button-bg: $text-orange;
 $top-search-button-color: $white;
 $top-search-input-border-color: $natural-gray;
 $top-search-link-color: #007db8;
-/* End:Top Search */
 
 $top-user-dropdown-bg: $light-gray;
 $top-user-dropdown-color: #444;
 $top-user-create-acc-bg: $white;
-/*Carasel arrows*/
-$carasel-arrow: $text-blue;
+/* End:Header */
 
-/*Footer*/
+/* Start:Carousel */
+$carasel-arrow: $text-blue;
+/* End:Carousel */
+
+/* Start:Footer */
 $footer-link-color: $darker-gray;
 $footer-bg-color: $white;
 
-/*Footer top links */
 $footer-top-link: $darker-gray;
 
-/*Footer copyright links */
-$footer-cpy-link: $darker-gray;
+$footer-cpy-link: $darker-gray; //Copyright Link Color
+/* End:Footer */
 
 //== Colors
 //
@@ -256,6 +255,7 @@ $table-border-color: #ddd !default;
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
+/* Start:Buttons */
 $btn-font-weight: normal !default;
 
 $btn-default-color: #003876 !default; //#333 !default;
@@ -292,9 +292,9 @@ $btn-danger-border: darken($btn-danger-bg, 5%) !default;
 
 $btn-link-disabled-color: $gray-light !default;
 $btn-default-disable-color: $dell-gray;
+/* End:Buttons */
 
-//Flyout Button
-
+/* Start:Flyout */
 $flyout-bg: $white;
 $flyout-btn-bg: $dell-blue;
 $flyout-btn-color: $white;
@@ -305,13 +305,15 @@ $flyout-close-color: $dell-gray-medium;
 
 $flyout-btn-xs-bg: $dell-blue;
 $flyout-xs-border-color: $dell-blue;
-//== Countries
+/* End:Flyout */
 
+/* Start:Country Dropdown */
 $country-selector-border-top-color: #aaa;
 $country-popup-bg-color: $white;
 $country-popup-link-color: #0085c3;
 $country-popup-link-active-color: $white;
 $country-popup-link-active-bg-color: #0085c3;
+/* End:Country Dropdown */
 
 //== Custom colors
 
@@ -327,18 +329,20 @@ $new-text-color: $white;
 $col-striped-odd-bg: $dell-gray-very-light;
 $row-striped-odd-bg: $table-bg-accent;
 
-//== Comparison
+/* Start:Comparison Table */
 $comparison-border-color: $dell-blue;
 $comparison-active-bg: $dell-blue;
 $comparison-active-color: $white;
 $comparison-btn-inactive-color: $dell-gray;
 $comparison-fixed-col-border-color: #ccc;
 $comparison-panel-old-bg: #eeeeee;
+/* End:Comparison Table */
 
 //== Forms
 //
 //##
 
+/* Start:Forms */
 //** `<input>` background color
 $input-bg: #fff !default;
 //** `<input disabled>` background color
@@ -377,12 +381,14 @@ $input-height-small: (floor($font-size-small * $line-height-small) + ($padding-s
 
 //** `.form-group` margin
 $form-group-margin-bottom: 15px !default;
+/* Start:Forms */
 
 $legend-color: $gray-dark !default;
 $legend-border-color: #e5e5e5 !default;
 
 //** Multiple Select
 
+/* Start:Multiple Select */
 $ms-choice-color: #444;
 $ms-choice-border-color: #ccc;
 $ms-choice-bg-color: $white;
@@ -403,6 +409,7 @@ $ms-drop-label-color: #007db8;
 
 $ms-search-input-bg-color: #aaa;
 $ms-search-input-border-color: #aaa;
+/* End:Multiple Select */
 
 //** Background color for textual input addons
 $input-group-addon-bg: $gray-lighter !default;
