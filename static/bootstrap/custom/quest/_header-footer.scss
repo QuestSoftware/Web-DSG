@@ -4,38 +4,6 @@
 	width: 100%;
 }
 
-.top-search-icon .glyphicon, .top-user-icon .glyphicon {
-	display: none;
-}
-
-.masthead .utility span.top-search-icon, .masthead .utility span.top-user-icon {
-	background-image: url("/images/shared/top-utility-sprites.png");
-	display: inline-block;
-	height: 22px;
-	width: 22px;
-}
-
-.masthead .utility span.top-user-icon {
-	background-position: 27px 0;
-}
-
-.masthead .utility li:hover span.top-search-icon {
-	background-position: 59px 23px;
-}
-
-.masthead .utility li.open span.top-search-icon, .masthead .utility li.open span.top-user-icon {
-	background: none;
-}
-
-.masthead .utility li.open span.top-search-icon .glyphicon, .masthead .utility li.open span.top-user-icon .glyphicon {
-	display: inline-block;
-	font-size: 23px;
-}
-
-.masthead .utility li:hover span.top-user-icon {
-	background-position: 27px 23px;
-}
-
 .masthead-shadow-section {
 	content: "";
 	width: 80%;
@@ -55,11 +23,7 @@
 		z-index: 1000;
 	}
 	.navbar-inverse, .navbar-toggle {
-		/*border-color: transparent;*/
 		text-shadow: none;
-		/*background-color: transparent;*/
-		/*background-images: none;*/
-		/*background-repeat: no-repeat;*/
 		border: none;
 		border-radius: 0;
 	}
@@ -69,7 +33,7 @@
 		margin-right: 20px;
 		margin-left: 8px;
 		a {
-			color: $white;
+			color: $navbar-brand-link-color;
 			&:hover {
 				text-decoration: none;
 			}
@@ -77,12 +41,11 @@
 	}
 	.form-control {
 		display: inline;
-		/*border-radius: 0;*/
 	}
 	.svg-icon-dell {
 		margin-left: 10px;
 		font-size: 40px;
-		color: $white;
+		color: $svg-icon-dell-color;
 		display: inline-block;
 		vertical-align: middle;
 	}
@@ -91,21 +54,19 @@
 		padding-left: 0;
 		height: 65px;
 		float: right;
+		i {
+			font-size: 22px;
+		}
 		.search-button {
 			span {
-
 				&.top-search-icon {
-					/*background-image: url("/images/shared/top-utility-sprites.png");*/
 					display: inline-block;
 					height: 22px;
 					width: 21px;
 				}
-				&.top-search-icon {
-				}
 			}
 			> a:hover {
 				&.top-search-icon {
-					/*background-image: url("/images/shared/top-utility-sprites.png");*/
 					display: inline-block;
 					height: 22px;
 					width: 21px;
@@ -141,7 +102,7 @@
 			&:hover {
 				text-decoration: none;
 				color: $top-link-hover;
-				background: $top-search-bg;
+				/*background: $top-search-bg;*/
 			}
 		}
 		[class^=icon] {
@@ -149,7 +110,7 @@
 		}
 		.badge [class^=icon] {
 			font-size: 6px;
-			color: $white;
+			color: $badge-color;
 		}
 		.icon-ui-menucollapsed {
 			font-size: 16px;
@@ -165,7 +126,7 @@
 			padding: 4px 4px 4px 3px;
 			font-size: 6px;
 			font-weight: 700;
-			color: $white;
+			color: $badge-color;
 			line-height: 0;
 			white-space: nowrap;
 			text-align: left;
@@ -206,11 +167,16 @@
 		display: none;
 		position: absolute;
 		left: 0;
-		margin-top: 65px;
+		margin-top: 64px;
 		z-index: 99;
 		width: 100%;
 		padding: 18px 15px;
 		background-color: $top-search-bg;
+		-webkit-box-shadow: 0 6px 12px #666666;
+		-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+		-ms-box-shadow: 0 6px 12px #666666;
+		box-shadow: 0 6px 12px #666666;
+		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
 
 		input[type=text] {
 			width: 40%;
@@ -223,7 +189,7 @@
 			+ ul .mobile-search-button {
 				background-color: $top-search-bg;
 				a {
-					color: #007db8;
+					color: $top-search-link-color;
 				}
 			}
 		}
@@ -235,9 +201,7 @@
 			padding-left: 4px \9
 		;
 			margin-bottom: 0;
-			/*-webkit-border-radius: 15px;
-			-moz-border-radius: 15px;*/
-			height: 30px;
+			height: 31px;
 		}
 		.btn {
 			position: absolute;
@@ -245,11 +209,14 @@
 			margin-left: -1px;
 			padding: 4px 5px 2px;
 			background: $top-search-button-bg;
-			color: $white;
+			color: $top-search-button-color;
 			&:hover, &:focus, &.focus {
 				color: inherit;
 			}
 		}
+
+		/*TODO : Where we use this*/
+
 		.autocomplete {
 			position: relative;
 			z-index: 9999;
@@ -280,28 +247,30 @@
 		.autocomplete-selected {
 			background: #F0F0F0;
 		}
+
+		/*End of TODO*/
 	}
-	.utility-section-wrapper {
-		position: relative;
-		width: 100%;
-		height: 65px;
-		padding-left: 0;
-		padding-right: 0;
-		margin: 0 -1px;
-		background-color: #ffffff;
-	}
+	/*	.utility-section-wrapper {
+			position: relative;
+			width: 100%;
+			height: 65px;
+			padding-left: 0;
+			padding-right: 0;
+			margin: 0 -1px;
+			background-color: #ffffff;
+		}*/
 	ul {
 		&.tier1 {
 			padding-left: 0;
 			margin: 0;
 
 			> li a {
-				border-bottom: 1px solid #aaa;
+				/*border-bottom: 1px solid #aaa;*/
 			}
 			li {
 				display: block;
 				padding: 0;
-				color: #007db8;
+				/*color: #007db8;*/
 			}
 			ul {
 				display: none;
@@ -313,7 +282,7 @@
 				padding: 0;
 
 				li {
-					background-color: $white;
+					/*background-color: $white;*/
 					border-bottom: none;
 					overflow: hidden;
 				}
@@ -323,15 +292,15 @@
 			}
 		}
 		&.tier2 {
-			> li i.menu-indicator {
+			/*> li i.menu-indicator {
 				color: #aaa;
-			}
+			}*/
 			li.open {
 				overflow: visible;
 
-				ul.tier3 {
-					border-bottom: 1px solid #aaa;
-				}
+				/*ul.tier3 {
+					!*border-bottom: 1px solid #aaa;*!
+				}*/
 			}
 		}
 		&.tier3 {
@@ -339,12 +308,12 @@
 
 			> li {
 				a {
-					border-bottom: 1px dotted #aaa;
+					/*border-bottom: 1px dotted #aaa;*/
 					padding-left: 15px;
 				}
-				&:first-child a {
+				/*&:first-child a {
 					border-top: none;
-				}
+				}*/
 			}
 		}
 		&.tier4 {
@@ -354,16 +323,16 @@
 }
 
 li {
-	> a > i.menu-indicator:before, > span > i.menu-indicator:before {
+	/*> a > i.menu-indicator:before, > span > i.menu-indicator:before {
 		content: "\e60e";
-	}
+	}*/
 	&.open {
 		> ul {
 			display: block !important;
 		}
-		> a > i.menu-indicator:before, > span > i.menu-indicator:before {
+		/*> a > i.menu-indicator:before, > span > i.menu-indicator:before {
 			content: "\e611";
-		}
+		}*/
 	}
 	&.dropdown {
 		.dropdown-menu {
@@ -373,10 +342,10 @@ li {
 			left: auto;
 			width: 250px;
 			border: 0;
-			color: #444;
+			color: $top-user-dropdown-color;
 			padding: 0;
 			.lnk-create-account {
-				background: $white;
+				background: $top-user-create-acc-bg;
 			}
 		}
 	}
@@ -1215,9 +1184,9 @@ i.menu-indicator {
 		.utility {
 			float: right;
 			a {
-				padding: 19px 10px;
+				padding: 19px 10px 18px;
 				&:link, &:visited {
-					padding: 19px 10px;
+					padding: 19px 10px 18px;
 				}
 			}
 			[class^=icon] {

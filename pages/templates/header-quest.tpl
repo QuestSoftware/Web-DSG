@@ -84,11 +84,6 @@
 										</a>
 									</li>
 									<li>
-										<a href="http://www.sonicwall.com" target="_blank">
-											<span>SonicWALL</span>
-										</a>
-									</li>
-									<li>
 										<a href="/products/spotlight-on-sql-server-enterprise/">
 											<span>Spotlight</span>
 										</a>
@@ -105,7 +100,7 @@
 									</li>
 									<li>
 										<a href="/products/">
-											<span>View all Products</span>
+											<strong>View all Products</strong>
 										</a>
 									</li>
 								</ul>
@@ -119,9 +114,9 @@
 									<li>
 										<a href="/solutions/advanced-analytics/">Advanced Analytics</a>
 									</li>
-									<li>
+									<!--<li>
 										<a href="http://www.boomi.com/" target="_blank">Application &amp; Data Integration</a>
-									</li>
+									</li>-->
 									<li>
 										<a href="/solutions/cloud-management/">Cloud Management</a>
 									</li>
@@ -207,7 +202,47 @@
 											</li>
 										</ul>
 									</li>
-
+									<li>
+										<a href="/solutions/identity-and-access-management/">Identity &amp;
+											Access Management</a>
+									</li>
+									<li class="subLinks">
+										<a href="/solutions/microsoft-platform-management/">
+											<span>Microsoft Platform Management</span>
+											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+										</a>
+										<ul class="tier3">
+											<li><a href="/solutions/microsoft-platform-management/">Overview</a>
+											</li>
+											<li><a href="/solutions/group-policy-and-permissions/">Group Policy and Permissions</a></li>
+											<li><a href="/solutions/migration-and-consolidation/">Migration and Consolidation</a></li>
+											<li><a href="/solutions/server-performance-and-availability/">Performance and Availability</a></li>
+											<li><a href="/solutions/reporting/">Reporting</a></li>
+											<li><a href="/solutions/security-and-compliance/">Security and Compliance</a></li>
+											<li><a href="/solutions/windows-backup-and-recovery/">Windows Backup and Recovery</a></li>
+											<li class="subLinks">
+												<a href="#">
+													<span>Supported Platforms</span>
+													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+												</a>
+												<ul class="tier4">
+													<li><a href="/solutions/active-directory/">Active Directory</a></li>
+													<li><a href="/products/unified-communications-command-suite/">Cisco</a></li>
+													<li><a href="/solutions/exchange/">Exchange</a></li>
+													<li><a href="/solutions/google/">Google</a></li>
+													<li><a href="/solutions/groupwise-nds/">Groupwise and NDS</a></li>
+													<li><a href="/solutions/lotus-notes/">Lotus Notes</a></li>
+													<li><a href="/solutions/office-365/">O365</a></li>
+													<li><a href="/solutions/sharepoint/">OneDrive for Business</a></li>
+													<li><a href="/solutions/sharepoint/">SharePoint</a></li>
+													<li><a href="/solutions/skype-for-business-and-lync-server/">Skype for Business/Lync</a></li>
+													<li><a href="/solutions/sql-server/">SQL Server</a></li>
+													<li><a href="/products/intrust/">Unix/Linux</a></li>
+													<li><a href="/solutions/windows-server/">Windows Server</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
 									<li class="subLinks">
 										<a href="/solutions/performance-monitoring/"><span>Performance Monitoring
               </span>
@@ -253,89 +288,13 @@
 											</li>
 										</ul>
 									</li>
-
-
-
-
-
-
-									<li class="subLinks">
-										<a href="/solutions/security/">
-											<span>Security</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-										</a>
-										<ul class="tier4">
-											<li>
-												<a href="/solutions/security/">Overview</a>
-											</li>
-											<li>
-												<a href="/solutions/email-security/">Email Security</a>
-											</li>
-											<li>
-												<a href="/solutions/endpoint-security/">Endpoint Security</a>
-											</li>
-											<li>
-												<a href="/solutions/identity-and-access-management/">Identity &amp;
-													Access Management</a>
-											</li>
-											<li>
-												<a href="/solutions/network-security/">Network Security</a>
-											</li>
-											<li>
-												<a href="/products/sonicwall-secure-mobile-access-series/">Secure Remote Access</a>
-											</li>
-										</ul>
-									</li>
-									<li class="subLinks">
-										<a href="/solutions/microsoft-platform-management/">
-											<span>Microsoft Platform Management</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-										</a>
-										<ul class="tier3">
-											<li><a href="/solutions/microsoft-platform-management/">Overview</a>
-											</li>
-											<li><a href="/solutions/group-policy-and-permissions/">Group Policy and Permissions</a></li>
-											<li><a href="/solutions/migration-and-consolidation/">Migration and Consolidation</a></li>
-											<li><a href="/solutions/server-performance-and-availability/">Performance and Availability</a></li>
-											<li><a href="/solutions/reporting/">Reporting</a></li>
-											<li><a href="/solutions/security-and-compliance/">Security and Compliance</a></li>
-											<li><a href="/solutions/windows-backup-and-recovery/">Windows Backup and Recovery</a></li>
-											<li class="subLinks">
-												<a href="#">
-													<span>Supported Platforms</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-												</a>
-												<ul class="tier4">
-													<li><a href="/solutions/active-directory/">Active Directory</a></li>
-													<li><a href="/products/unified-communications-command-suite/">Cisco</a></li>
-													<li><a href="/solutions/exchange/">Exchange</a></li>
-													<li><a href="/solutions/google/">Google</a></li>
-													<li><a href="/solutions/groupwise-nds/">Groupwise and NDS</a></li>
-													<li><a href="/solutions/lotus-notes/">Lotus Notes</a></li>
-													<li><a href="/solutions/office-365/">O365</a></li>
-													<li><a href="/solutions/sharepoint/">OneDrive for Business</a></li>
-													<li><a href="/solutions/sharepoint/">SharePoint</a></li>
-													<li><a href="/solutions/skype-for-business-and-lync-server/">Skype for Business/Lync</a></li>
-													<li><a href="/solutions/sql-server/">SQL Server</a></li>
-													<li><a href="/products/intrust/">Unix/Linux</a></li>
-													<li><a href="/solutions/windows-server/">Windows Server</a></li>
-												</ul>
-											</li>
-										</ul>
-									</li>
 									<li>
 										<a href="/solutions/">
-											<span>View all Solutions</span>
+											<strong>View all Solutions</strong>
 										</a>
 									</li>
 
 								</ul>
-							</li>
-							<li>
-								<a href="/trials/">Trials</a>
-							</li>
-							<li>
-								<a href="/buy/">Buy</a>
 							</li>
 							<li class="subLinks">
 								<a href="#">
@@ -454,28 +413,30 @@
 								</ul>
 							</li>
 							<li>
-								<a href="https://software.dell.com/community/">Communities</a>
+								<a href="/trials/">Trials</a>
+							</li>
+							<li>
+								<a href="/buy/">Buy</a>
 							</li>
 							<li>
 								<a href="/partners/">Partners</a>
+							</li>
+							<li>
+								<a href="https://software.dell.com/community/">Communities</a>
 							</li>
 						</ul>
 					</div>
 				</div>
 
 				<ul class="utility">
-					<li id="mobile-search-button" class="dropdown mobile-search-button search-button">
+					<li id="search-button" class="dropdown mobile-search-button search-button">
 						<a href="#">
-							<!--<i class="icon-small-searchleft"></i>-->
-							<span class="top-search-icon"><i class="glyphicon glyphicon-remove"></i></span>
+							<span class="top-search-icon"><i class="glyphicon glyphicon-search"></i></span>
 						</a>
 					</li>
 					<li id="signin-container" class="dropdown">
 						<a id="signin-link" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<!--<i class="icon-small-useraccount">
-								<span class="badge is-logged-in"><i class="icon-small-checkmark"></i></span>
-							</i>-->
-							<span class="top-user-icon"><i class="glyphicon glyphicon-remove"></i></span>
+							<span class="top-user-icon"><i class="glyphicon glyphicon-user"></i></span>
 						</a>
 
 						<div role="menu" aria-labelledby="signin-link" class="dropdown-menu">
