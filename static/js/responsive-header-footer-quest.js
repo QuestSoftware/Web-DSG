@@ -18,8 +18,45 @@ $(document).ready(function () {
 		$('#country-popup').css('display', '');
 	}, true);
 
+	var headerNavElem = $('.main-nav-section');
+
+	/*
+	 Get navigation via ajax. Should only be executed on non home page.
+
+	 Note: All non home page (responsive) will use the special tag V2LayoutHeaderAjax which has a data-ajax="true" attribute.
+	 V2LayoutHeaderAjaxNav contains the navigation html content.
+	 */
+	(function () {
+		var specialTag = 'V2LayoutHeaderAjaxNav';
+
+		if (headerNavElem.data('ajax')) {
+			//If session storage is available, populate navigation. Note: if navigation has been updated when nav is already stored, it'll be one page view behind.
+			if (sessionStorage.nav) {
+				headerNavElem.append(sessionStorage.nav);
+			}
+
+			//Get navigation and store
+			getLocalizedContent(specialTag).done(function (data) {
+				//Populate navigation only if sessionStorage.nav is not present because if it is present, it would have already been populated on line 32.
+				if (!sessionStorage.nav) {
+					headerNavElem.append(data[specialTag]);
+				}
+
+				//Store latest navigation.
+				sessionStorage.nav = data[specialTag];
+			});
+		}
+		else {
+			//Get navigation and store
+			getLocalizedContent(specialTag).done(function (data) {
+				//Store latest navigation.
+				sessionStorage.nav = data[specialTag];
+			});
+		}
+	})();
+
 	//Prevent anchor tag from firing when href is set to #
-	$('.main-nav-section').find('ul.tier2').on('click', 'a[href=#]', function (e) {
+	headerNavElem.find('ul.tier2').on('click', 'a[href=#]', function (e) {
 		if ($('html').width() >= 768) {
 			e.preventDefault();
 		}
