@@ -514,7 +514,6 @@ $container-lg: $container-large-desktop !default;
 //##
 
 // Basics of a navbar
-// Added by Siamak
 $navbar-brand-link-color: $white;
 
 
@@ -1067,6 +1066,15 @@ $hr-border: $gray-lighter !default;
 /*Slick banners*/
 $slick-dots: #ccc;
 $slick-dots-active: #444;
+$slick-list-loading-bg: #fff;
+$slick-arrow-color: $dell-blue;
+$slick-arrow-disabled-color: #444;
+$slick-1170-caption-bg: #f55f5;
+$slick-1170-caption-color: #007db8;
+$slick-1170-caption-hover-color: #007db8;
+$slick-770-caption-bg: #f55f5;
+$slick-770-caption-color: #007db8;
+$slick-770-caption-hover-color: #007db8;
 
 /*3 Play Media*/
 $play-3-media-border-color: $dell-gray;
