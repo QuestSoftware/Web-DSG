@@ -258,12 +258,12 @@ $table-border-color: #ddd !default;
 /* Start:Buttons */
 $btn-font-weight: normal !default;
 
-$btn-default-color: #003876 !default; //#333 !default;
-$btn-default-bg: #eee !default; //#fff !default;
-$btn-default-border: #737373 !default; //#003876
+$btn-default-color: #003876 !default;
+$btn-default-bg: #eee !default;
+$btn-default-border: #737373 !default;
 
 $btn-primary-color: #fff !default;
-$btn-primary-bg: #016a9c !default; // $text-blue
+$btn-primary-bg: #016a9c !default;
 $btn-primary-border: darken($btn-primary-bg, 5%) !default;
 
 $btn-primary-hover-color: #fff !default;
