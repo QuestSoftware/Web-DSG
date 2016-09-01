@@ -195,11 +195,11 @@
     > a {
       &:hover, &:focus {
         text-decoration: none;
-        color: #007db8;
+				color: $carousel-link-hover-color;
       }
     }
     h4 {
-      color: #444;
+			color: $carousel-h4-color;
       margin-bottom: 14px;
     }
 
