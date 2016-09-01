@@ -38,17 +38,25 @@ $light-gray: #eeeeee;
 $body-color: #333333;
 
 /* Start:Header */
-$nav-subLinks-hover: $text-orange; //Navigation sublink hover color
+$nav-subLinks-hover-bg: $text-orange; //Navigation sublink hover color
+$nav-subLinks-hover-color: $white;
 $nav-border-top: $text-orange; //Navigation border top color
 $top-link: $darker-gray; //Navigation link color
 $top-link-hover: $text-orange; //Navigation link hover color
+$top-link-hover-t2: #333;
+
+$nav-subLinks-hover-bg-t2: #e3e3e3;
+$nav-subLinks-hover-color-t2: #333333;
 
 $color-heading-links-hover: #007db8;
 $color-image-border: #737373;
 
 $top-search-bg: $light-gray;
-$top-search-button-bg: $text-orange;
-$top-search-button-color: $white;
+$top-search-btn-bg: $text-orange;
+$top-search-btn-hover-bg: #ff692e;
+$top-search-btn-color: $white;
+$top-search-btn-hover-color: $white;
+
 $top-search-input-border-color: $natural-gray;
 $top-search-link-color: #007db8;
 
@@ -63,11 +71,19 @@ $carasel-arrow: $text-blue;
 
 /* Start:Footer */
 $footer-link-color: $darker-gray;
+$footer-link-hover-color: #00447c;
 $footer-bg-color: $white;
+$footer-top-border-color: #aaa;
 
 $footer-top-link: $darker-gray;
 
+$footer-disclaimer-color: #cce7f3;
+
 $footer-cpy-link: $darker-gray; //Copyright Link Color
+$footer-cpy-border-color: #eee;
+
+$footer-xs-border-top-color: #666666;
+$footer-li-xs-border-bottom-color: #eeeeee;
 /* End:Footer */
 
 //== Colors
@@ -313,6 +329,7 @@ $country-popup-bg-color: $white;
 $country-popup-link-color: #0085c3;
 $country-popup-link-active-color: $white;
 $country-popup-link-active-bg-color: #0085c3;
+
 /* End:Country Dropdown */
 
 //== Custom colors
@@ -322,6 +339,8 @@ $bg-black: $black;
 $bg-light-grey: $dell-gray-very-light;
 $bg-light-grey-text-color: $dell-gray-dark;
 $bg-grey: $dell-gray-very-light;
+
+$bg-light-grey-link-color: #007db8;
 
 $new-bg-color: $dell-orange;
 $new-text-color: $white;
@@ -414,6 +433,10 @@ $input-group-addon-bg: $gray-lighter !default;
 //** Border color for textual input addons
 $input-group-addon-border-color: $input-border !default;
 
+// Input Group //
+$input-group-xs-btn-bg: #007db8;
+$input-group-xs-border-color: #007db8;
+$input-group-xs-icon-color: $white;
 //** Disabled cursor for form controls and buttons.
 $cursor-disabled: not-allowed !default;
 
@@ -563,7 +586,6 @@ $container-lg: $container-large-desktop !default;
 //##
 
 // Basics of a navbar
-// Added by Siamak
 $navbar-brand-link-color: $white;
 
 
@@ -1118,6 +1140,15 @@ $hr-border: $gray-lighter !default;
 /*Slick banners*/
 $slick-dots: $natural-gray;
 $slick-dots-active: $text-orange;
+$slick-list-loading-bg: #fff;
+$slick-arrow-color: $dell-blue;
+$slick-arrow-disabled-color: #444;
+$slick-1170-caption-bg: #f55f5;
+$slick-1170-caption-color: #007db8;
+$slick-1170-caption-hover-color: #007db8;
+$slick-770-caption-bg: #f55f5;
+$slick-770-caption-color: #007db8;
+$slick-770-caption-hover-color: #007db8;
 
 /*3 Play Media*/
 $play-3-media-border-color: $dell-gray;
