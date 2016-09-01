@@ -29,6 +29,11 @@
 								</a>
 								<ul class="tier2">
 									<li>
+										<a href="/products/">
+											<span>View all Products</span>
+										</a>
+									</li>
+									<li>
 										<a href="/products/active-roles">
 											<span>ActiveRoles</span>
 										</a>
@@ -98,11 +103,6 @@
 											<span>Toad</span>
 										</a>
 									</li>
-									<li>
-										<a href="/products/">
-											<strong>View all Products</strong>
-										</a>
-									</li>
 								</ul>
 							</li>
 							<li class="subLinks">
@@ -111,6 +111,11 @@
 									<i class="glyphicon glyphicon-menu-down pull-right"></i>
 								</a>
 								<ul class="tier2">
+									<li>
+										<a href="/solutions/">
+											<span>View all Solutions</span>
+										</a>
+									</li>
 									<li>
 										<a href="/solutions/advanced-analytics/">Advanced Analytics</a>
 									</li>
@@ -288,11 +293,7 @@
 											</li>
 										</ul>
 									</li>
-									<li>
-										<a href="/solutions/">
-											<strong>View all Solutions</strong>
-										</a>
-									</li>
+
 
 								</ul>
 							</li>
@@ -302,6 +303,9 @@
 									<i class="glyphicon glyphicon-menu-down pull-right"></i>
 								</a>
 								<ul class="tier2">
+									<li>
+										<a href="https://support.software.dell.com">View All Support</a>
+									</li>
 									<li class="subLinks">
 										<a href="#">
 											<span>By Product Line</span>
@@ -407,9 +411,7 @@
 									<li>
 										<a href="https://support.software.dell.com/videos-product-select">Video Tutorials</a>
 									</li>
-									<li>
-										<a href="https://support.software.dell.com">Support Home</a>
-									</li>
+
 								</ul>
 							</li>
 							<li>
