@@ -5,19 +5,161 @@ var pageType = pageTypeLabel = '', pageWidth = getPageProperties(), resizeFn = [
 
 $(document).ready(function () {
 	addResize(function () {
-		/*var w = (pageWidth >= 768) ? '300':'auto';
-
-		 //Increase width of UL if its child doesn't have sublinks
-		 $('.main-nav-section').find('ul:gt(0)').each(function() {
-		 if(!$(this).find('> li.subLinks').length) {
-		 $(this).css('width', w);
-		 }
-		 });*/
-
 		$('.open').removeClass('open');
 		$('#country-popup').css('display', '');
 	}, true);
 
+	processHeaderFooter();
+
+	$('body')
+		.on('click', '.ga', function (e) {
+			//GA event tracking - naveen
+			//Class "ga" should only be applied on to anchor tag.
+
+			//This will prevent the default action of the anchor tag.
+			e.preventDefault();
+
+			//Retrieving URL of the anchor tag to be used later after GA Event Tracking is successfully submitted
+			var URL = $(this).attr('href'), eLabel = $(this).data('gal'), eValue = $(this).data('gav');
+
+			//Object to send to GA Event Tracking.
+			var obj = {
+				hitType: 'event',
+				eventCategory: $(this).data('gac'),
+				eventAction: $(this).data('gaa'),
+				hitCallback: function () {
+					location.href = URL;
+				}
+			};
+
+			if (eLabel !== undefined) {
+				obj.eventLabel = eLabel;
+			}
+
+			if (eValue !== undefined) {
+				obj.eventValue = parseInt(eValue);
+			}
+
+			/* To be implemented later */
+			/*var targetURLHost = parseUri($(this).attr('href'))['host'].toLowerCase();
+
+			 if (targetURLHost != '' && location.host != targetURLHost && targetURLHost != 'www.dellsoftware.com') {
+			 obj.transport = 'beacon';
+			 obj.eventCategory = 'Outbound Link';
+			 obj.eventAction = 'click';
+			 obj.eventLabel = $(this).attr('href');
+			 }*/
+
+			//Send event tracking to google.
+			ga('send', obj);
+		})
+		.on('click', '.btn-buy', function (e) {
+			//Site Catalyst Custom Event Tracking for Buy Online
+			//TODO: Might want to generalize this so that this can be used for other custom events.
+
+			var URL = $(this).attr('href'), URLTarget = $(this).attr('target');
+
+			//Only track links pointing to shop.software.dell.com
+			if (typeof s != "undefined" && /^https\:\/\/shop\.software\.dell\.com/.test(URL)) {
+				e.preventDefault();
+
+				var newWin = null;
+
+				//Determine if destination URL needs to open in a new window/tab.
+				if (URLTarget !== undefined && URLTarget != '_self' && URLTarget != '') {
+					//Need to open immediately or else chrome/firefox popup block will block it.
+					newWin = window.open('', URLTarget);
+				}
+
+				s.linkTrackEvents = "event10";
+				s.events = "event10";
+				s.pageName = sc_GetPageName("");
+				sc_CookieSet("SCBuy", s.events, 20);
+
+				//Submit tracking link to site catalyst. Once done, redirect user to desired destination.
+				s.tl(this, 'o', $(this).text(), null, function () {
+					if (newWin) {
+						newWin.location = URL;
+					}
+					else {
+						location.href = URL;
+					}
+				});
+			}
+		})
+		.on('click', '.dropdown', function (e) {
+			//Prevent dropdown from hiding when clicking on a non-link area.
+			if ($(e.target).parents('.dropdown-menu').length) {
+				e.stopPropagation();
+			}
+			else {
+				//Dropdown class is being used in the utility toolbar.
+				//Close all dropdown that is a sibling to the clicked element.
+
+				$(this).siblings().removeClass('open');
+				$('#masthead-search').removeClass('open');
+				//$(this).toggleClass('open');
+			}
+		});
+});
+
+$(window).load(function () {
+	//This is only used on the new header/footer not responsive.
+	$('.bootstrap').each(function () {
+		//copy modernizr classes from html tag to be copied over to where .bootstrap class is defined.
+		$(this).get(0).className = $.trim($(this).get(0).className) + ' ' + $.trim($('html').get(0).className);
+	});
+
+	/*$('footer').find('a').each(function() {
+	 $(this).removeAttr('onclick');
+	 });*/
+
+	if ($('html').hasClass('touch')) {
+		$.getScript('/static/library/jQueryMobile/jquery.mobile.custom.min.js');
+	}
+
+	if (pageWidth < 992) {
+		$.getScript('/static/library/jQuery/jquery.color-2.1.2.min.js');
+	}
+});
+
+$(window).resize(function () {
+	//Prevent resizing from firing when modifying dom structure.
+
+	var prevPageType = pageType;
+
+	pageWidth = getPageProperties();
+
+	//Execute only when page type has changed.
+	if (prevPageType != pageType) {
+		if (resizeInterval !== null) {
+			clearInterval(resizeInterval);
+		}
+
+		resizeInterval = setInterval(function () {
+			clearInterval(resizeInterval);
+			resizeInterval = null;
+
+			$.each(resizeFn, function (i, obj) {
+				if (typeof obj.fn == 'function') {
+					if (obj.type === undefined || obj.type == pageType) {
+						obj.fn.call();
+					}
+				}
+				else if (typeof window[obj.fn] == 'function') {
+					if (obj.type === undefined || obj.type == pageType) {
+						window[obj.fn].call();
+					}
+				}
+			});
+		}, 100);
+	}
+});
+
+/**
+ * TODO: Siamak to add description for this function
+ */
+function processHeaderFooter() {
 	var headerNavElem = $('.main-nav-section');
 
 	/*
@@ -74,82 +216,6 @@ $(document).ready(function () {
 		/*$('.utility > li').find('> li').removeClass('open');*/
 	});
 
-
-	//GA event tracking - naveen
-	//Class "ga" should only be applied on to anchor tag.
-	$('body').on('click', '.ga', function (e) {
-		//This will prevent the default action of the anchor tag.
-		e.preventDefault();
-
-		//Retrieving URL of the anchor tag to be used later after GA Event Tracking is successfully submitted
-		var URL = $(this).attr('href'), eLabel = $(this).data('gal'), eValue = $(this).data('gav');
-
-		//Object to send to GA Event Tracking.
-		var obj = {
-			hitType: 'event',
-			eventCategory: $(this).data('gac'),
-			eventAction: $(this).data('gaa'),
-			hitCallback: function () {
-				location.href = URL;
-			}
-		};
-
-		if (eLabel !== undefined) {
-			obj.eventLabel = eLabel;
-		}
-
-		if (eValue !== undefined) {
-			obj.eventValue = parseInt(eValue);
-		}
-
-		/* To be implemented later */
-		/*var targetURLHost = parseUri($(this).attr('href'))['host'].toLowerCase();
-
-		 if (targetURLHost != '' && location.host != targetURLHost && targetURLHost != 'www.dellsoftware.com') {
-		 obj.transport = 'beacon';
-		 obj.eventCategory = 'Outbound Link';
-		 obj.eventAction = 'click';
-		 obj.eventLabel = $(this).attr('href');
-		 }*/
-
-		//Send event tracking to google.
-		ga('send', obj);
-	});
-
-	//Site Catalyst Custom Event Tracking for Buy Online
-	//TODO: Might want to generalize this so that this can be used for other custom events.
-	$('body').on('click', '.btn-buy', function (e) {
-		var URL = $(this).attr('href'), URLTarget = $(this).attr('target');
-
-		//Only track links pointing to shop.software.dell.com
-		if (typeof s != "undefined" && /^https\:\/\/shop\.software\.dell\.com/.test(URL)) {
-			e.preventDefault();
-
-			var newWin = null;
-
-			//Determine if destination URL needs to open in a new window/tab.
-			if (URLTarget !== undefined && URLTarget != '_self' && URLTarget != '') {
-				//Need to open immediately or else chrome/firefox popup block will block it.
-				newWin = window.open('', URLTarget);
-			}
-
-			s.linkTrackEvents = "event10";
-			s.events = "event10";
-			s.pageName = sc_GetPageName("");
-			sc_CookieSet("SCBuy", s.events, 20);
-
-			//Submit tracking link to site catalyst. Once done, redirect user to desired destination.
-			s.tl(this, 'o', $(this).text(), null, function () {
-				if (newWin) {
-					newWin.location = URL;
-				}
-				else {
-					location.href = URL;
-				}
-			});
-		}
-	});
-
 	//Prevent anchor tag from firing when href is set to # on mobile
 	$('.footer-top-section').on('click', 'a[href=#]', function (e) {
 		if ($('html').width() < 768) {
@@ -158,15 +224,22 @@ $(document).ready(function () {
 	});
 
 	$('body')
-	/*.on('click', '.site-canvas', function() {
-	 if($('html').hasClass('openNav')) {
-	 $('.navbar-toggle').trigger('click');
-	 }
-	 })*/
-		.on('click', '.subLinks > a, .subLinks > span', function (e) {
+		.on('click', function () {
+			//TODO: Siamak to add comment
+			if (pageType > 2) { //Medium to Large desktop
+				$('.tier1').find('.open').removeClass('open');
+			}
+
+			//Close country popup when user clicks any where on the page.
+			if (pageType >= 2) { //Tablet and larger devices
+				$('#country-popup').css('display', '');
+			}
+		})
+		//TODO: Siamak to look into this code because footer does not work on mobile
+		.on('click', '.dummyclass .subLinks > a', function (e) {
 			//Add functionality for when user uses touch on navigation/footer.
 
-			if ($(this).parents('#footer').length && pageWidth >= 768) {
+			if ($(this).parents('#footer').length && pageType >= 2) {
 				return false;
 			}
 
@@ -205,26 +278,6 @@ $(document).ready(function () {
 				}
 			}
 		})
-		.on('click', '.dropdown', function (e) {
-			//Prevent dropdown from hiding when clicking on a non-link area.
-			if ($(e.target).parents('.dropdown-menu').length) {
-				e.stopPropagation();
-			}
-			else {
-				//Dropdown class is being used in the utility toolbar.
-				//Close all dropdown that is a sibling to the clicked element.
-
-				$(this).siblings().removeClass('open');
-				$('#masthead-search').removeClass('open');
-				//$(this).toggleClass('open');
-			}
-		})
-		.on('click', function () {
-			//Close country popup when user clicks any where on the page.
-			if (pageWidth > 767) {
-				$('#country-popup').css('display', '');
-			}
-		})
 		.on('click', '.navbar-toggle', function (e) {
 			e.stopPropagation();
 
@@ -238,8 +291,18 @@ $(document).ready(function () {
 			}
 		});
 
-	/* Country Dropdown */
+	//TODO: Siamak to add comment
+	headerNavElem.on('click', '.tier1 > .subLinks > a', function (e) {
+		e.stopPropagation();
 
+		//Closing all other opened navigation
+		headerNavElem.find('.open').removeClass('open').stop();
+
+		//Adding .open to target LI
+		$(this).parent().addClass('open');
+	});
+
+	/* Country Dropdown */
 	$('#current-country').on('click', function (e) {
 		if (pageWidth > 767) {
 			e.stopPropagation();
@@ -261,60 +324,7 @@ $(document).ready(function () {
 			location.href = $(this).attr('href');
 		}
 	});
-});
-
-$(window).load(function () {
-	//This is only used on the new header/footer not responsive.
-	$('.bootstrap').each(function () {
-		//copy modernizr classes from html tag to be copied over to where .bootstrap class is defined.
-		$(this).get(0).className = $.trim($(this).get(0).className) + ' ' + $.trim($('html').get(0).className);
-	});
-
-	/*$('footer').find('a').each(function() {
-	 $(this).removeAttr('onclick');
-	 });*/
-
-	if ($('html').hasClass('touch')) {
-		$.getScript('/static/library/jQueryMobile/jquery.mobile.custom.min.js');
-	}
-
-	if (pageWidth < 992) {
-		$.getScript('/static/library/jQuery/jquery.color-2.1.2.min.js');
-	}
-});
-
-$(window).resize(function () {
-	//Prevent resizing from firing when modifying dom structure.
-
-	var prevPageType = pageType;
-
-	pageWidth = getPageProperties();
-
-	//Execute only when page type has changed.
-	if (prevPageType != pageType) {
-		if (resizeInterval !== null) {
-			clearInterval(resizeInterval);
-		}
-
-		resizeInterval = setInterval(function () {
-			clearInterval(resizeInterval);
-			resizeInterval = null;
-
-			$.each(resizeFn, function (i, obj) {
-				if (typeof obj.fn == 'function') {
-					if (obj.type === undefined || obj.type == pageType) {
-						obj.fn.call();
-					}
-				}
-				else if (typeof window[obj.fn] == 'function') {
-					if (obj.type === undefined || obj.type == pageType) {
-						window[obj.fn].call();
-					}
-				}
-			});
-		}, 100);
-	}
-});
+}
 
 function getPageProperties() {
 	//Workaround for Google Chrome. The vertical scrollbar is not included in determining the width of the device.
