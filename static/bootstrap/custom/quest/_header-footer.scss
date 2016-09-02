@@ -30,7 +30,7 @@
 	.navbar-brand {
 		padding: 0;
 		margin-top: 8px;
-		margin-right: 44px;
+		margin-right: 14px;
 		margin-left: 8px;
 		a {
 			color: $navbar-brand-link-color;
@@ -327,14 +327,16 @@ li {
 	/*> a > i.menu-indicator:before, > span > i.menu-indicator:before {
 		content: "\e60e";
 	}*/
+	/*
+	Siamak : removed displaying block every open element
 	&.open {
 		> ul {
 			display: block !important;
 		}
-		/*> a > i.menu-indicator:before, > span > i.menu-indicator:before {
+		!*> a > i.menu-indicator:before, > span > i.menu-indicator:before {
 			content: "\e611";
-		}*/
-	}
+		}*!
+	}*/
 	&.dropdown {
 		.dropdown-menu {
 			background: $top-user-dropdown-bg;
@@ -724,7 +726,14 @@ i.menu-indicator {
 }
 
 @media (min-width: 768px) {
+
 	//Tablet mode to both desktop mode
+	.tier1 li.open > ul.tier2 {
+		display: block;
+	}
+	.tier1 li.open > ul.tier2 li.subLinks:hover > ul.tier4, .tier1 li.open > ul.tier2 li.subLinks:hover > ul.tier3 {
+		display: block;
+	}
 
 	#country-selector {
 		position: relative;
@@ -799,6 +808,9 @@ i.menu-indicator {
 	}
 
 	.masthead {
+		.navbar-brand {
+			margin-right: 44px;
+		}
 		.navbar {
 			box-shadow: 0px 1px 7px #999999;
 		}
@@ -844,16 +856,16 @@ i.menu-indicator {
 			background-color: transparent;
 			ul {
 				&.tier1 {
-					li {
+					> li {
 						border-bottom: none;
 						a {
 							border-bottom: none;
 						}
 						&.open {
-							background: #fff;
-							color: #007db8;
+							background: #fb4f14;
+							color: #ffffff;
 							> a {
-								color: #007db8;
+								color: #ffffff;
 							}
 						}
 					}
@@ -861,11 +873,20 @@ i.menu-indicator {
 						color: $top-link-hover;
 					}
 					li.subLinks:hover {
+						/*
+						Siamak : Should call variable for colors
 						background-color: $nav-subLinks-hover-bg;
-						color: $nav-subLinks-hover-color;
+						color: $nav-subLinks-hover-color;*/
+						color: #fb4f14;
 					}
 					li.subLinks > a:hover {
-						color: $nav-subLinks-hover-color;
+						/*
+						Siamak : Variable
+						color: $nav-subLinks-hover-color;*/
+						color: #fb4f14;
+					}
+					li.open > a:hover {
+						color: #ffffff;
 					}
 					li.open ul.tier2 li.open ul.tier3 {
 						color: $nav-subLinks-hover-color;
@@ -1030,9 +1051,11 @@ i.menu-indicator {
 					&:hover {
 						background: #fff;
 					}
-					&:hover > ul {
-						display: block;
-					}
+					/*&:hover > ul {
+						!*
+						Siamak 4
+						display: block;*!
+					}*/
 				}
 			}
 		}
