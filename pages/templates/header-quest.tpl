@@ -25,7 +25,7 @@
 							<li class="subLinks">
 								<a href="#">
 									<span>Products</span>
-									<i class="glyphicon glyphicon-menu-down pull-right"></i>
+									<i class="glyphicon nav-arrow pull-right"></i>
 								</a>
 								<ul class="tier2">
 									<li>
@@ -108,7 +108,7 @@
 							<li class="subLinks">
 								<a href="#">
 									<span>Solutions</span>
-									<i class="glyphicon glyphicon-menu-down pull-right"></i>
+									<i class="glyphicon nav-arrow pull-right"></i>
 								</a>
 								<ul class="tier2">
 									<li>
@@ -128,7 +128,7 @@
 									<li class="subLinks">
 										<a href="/solutions/data-protection/">
 											<span>Data Protection</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+											<i class="glyphicon nav-arrow pull-right"></i>
 										</a>
 										<ul class="tier4">
 											<li>
@@ -145,7 +145,7 @@
 									<li class="subLinks">
 										<a href="/database-management/">
 											Database Management
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+											<i class="glyphicon nav-arrow pull-right"></i>
 										</a>
 										<ul class="tier3">
 											<li><a href="/database-management/">Overview</a></li>
@@ -157,7 +157,7 @@
 											<li class="subLinks">
 												<a href="#">
 													<span>Supported Platforms</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+													<i class="glyphicon nav-arrow pull-right"></i>
 												</a>
 												<ul class="tier4">
 													<li><a href="/platforms/hadoop/">Hadoop</a></li>
@@ -170,7 +170,7 @@
 									<li class="subLinks">
 										<a href="/solutions/endpoint-systems-management/"><span>Endpoint Systems Management
               </span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+											<i class="glyphicon nav-arrow pull-right"></i>
 										</a>
 										<ul class="tier3">
 											<li>
@@ -194,7 +194,7 @@
 											<li class="subLinks">
 												<a href="#">
 													<span>Supported Platforms</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+													<i class="glyphicon nav-arrow pull-right"></i>
 												</a>
 												<ul class="tier4">
 													<li><a href="/solutions/endpoint-systems-management/#platforms">Internet of things</a></li>
@@ -214,7 +214,7 @@
 									<li class="subLinks">
 										<a href="/solutions/microsoft-platform-management/">
 											<span>Microsoft Platform Management</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+											<i class="glyphicon nav-arrow pull-right"></i>
 										</a>
 										<ul class="tier3">
 											<li><a href="/solutions/microsoft-platform-management/">Overview</a>
@@ -228,7 +228,7 @@
 											<li class="subLinks">
 												<a href="#">
 													<span>Supported Platforms</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+													<i class="glyphicon nav-arrow pull-right"></i>
 												</a>
 												<ul class="tier4">
 													<li><a href="/solutions/active-directory/">Active Directory</a></li>
@@ -251,7 +251,7 @@
 									<li class="subLinks">
 										<a href="/solutions/performance-monitoring/"><span>Performance Monitoring
               </span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+											<i class="glyphicon nav-arrow pull-right"></i>
 										</a>
 										<ul class="tier3">
 											<li>
@@ -275,7 +275,7 @@
 											<li class="subLinks">
 												<a href="#">
 													<span>Supported Platforms</span>
-													<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+													<i class="glyphicon nav-arrow pull-right"></i>
 												</a>
 												<ul class="tier4">
 													<li><a href="/solutions/active-directory/">Active Directory</a></li>
@@ -300,7 +300,7 @@
 							<li class="subLinks">
 								<a href="#">
 									<span>Support</span>
-									<i class="glyphicon glyphicon-menu-down pull-right"></i>
+									<i class="glyphicon nav-arrow pull-right"></i>
 								</a>
 								<ul class="tier2">
 									<li>
@@ -309,7 +309,7 @@
 									<li class="subLinks">
 										<a href="#">
 											<span>By Product Line</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+											<i class="glyphicon nav-arrow pull-right"></i>
 										</a>
 										<ul class="tier3">
 											<li>
@@ -372,7 +372,7 @@
 									<li class="subLinks">
 										<a href="#">
 											<span>My Account</span>
-											<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+											<i class="glyphicon nav-arrow pull-right"></i>
 										</a>
 										<ul class="tier3">
 											<li>
@@ -464,7 +464,7 @@
 							</div>
 						</div>
 					</li>
-					<li class="visible-xs">
+					<li class="visible-xs visible-sm visible-md">
 						<a href="#" class="navbar-toggle" data-toggle="site-menu">
 							<i class="icon-ui-menucollapsed"></i>
 						</a>

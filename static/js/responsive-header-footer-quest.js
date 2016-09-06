@@ -213,6 +213,8 @@ function processHeaderFooter() {
 		$('#search-button').toggleClass('open');
 
 		$('#signin-container').removeClass('open');
+		headerNavElem.find('.open').removeClass('open');
+
 		/*$('.utility > li').find('> li').removeClass('open');*/
 	});
 
@@ -226,7 +228,7 @@ function processHeaderFooter() {
 	$('body')
 		.on('click', function () {
 			//TODO: Siamak to add comment
-			if (pageType > 2) { //Medium to Large desktop
+			if (pageType > 2 && pageType != 5) { //Medium to Large desktop
 				$('.tier1').find('.open').removeClass('open');
 			}
 
@@ -235,11 +237,16 @@ function processHeaderFooter() {
 				$('#country-popup').css('display', '');
 			}
 		})
+
+
+
 		//TODO: Siamak to look into this code because footer does not work on mobile
-		.on('click', '.dummyclass .subLinks > a', function (e) {
+		//To open and close footer on Mobile
+
+		.on('click', '.menu-links > .subLinks > span', function (e) {
 			//Add functionality for when user uses touch on navigation/footer.
 
-			if ($(this).parents('#footer').length && pageType >= 2) {
+			if ($(this).parents('#footer').length && pageWidth >= 768) {
 				return false;
 			}
 
@@ -266,12 +273,10 @@ function processHeaderFooter() {
 				if (pageType == 0) { //Mobile
 					//Animate background color to notify user that they have touched that element.
 					//Require: jQuery Color v2.1.2 plugin
-					var originalBG = $(this).css('background-color');
-
-					elem.css({backgroundColor: '#007db8'});
-
+					elem.css({backgroundColor: '#fb4f14', color: '#ffffff'});
 					$('html, body').animate({scrollTop: $(this).offset().top}, function () {
-						elem.animate({backgroundColor: originalBG}, 500, function () {
+						elem.css('color', '#333333');
+						elem.animate({backgroundColor: "#eee"}, 500, function () {
 							elem.css('backgroundColor', '');
 						});
 					});
@@ -283,23 +288,63 @@ function processHeaderFooter() {
 
 			//Hamburger - Mobile
 			//Open & Close slide out navigation.
-			if ($('html').width() < 768) {
+			if (pageType < 2 || pageType == 5) {
+				console.log('pageType1: ', pageType);
 				e.preventDefault();
 				$('html').toggleClass('openNav');
 				$('.utility').find('> li').removeClass('open');
 				$('#masthead-search').removeClass('open');
+
 			}
 		});
 
-	//TODO: Siamak to add comment
+	//Siamak: Open tier 3 and 4 on click
+	headerNavElem.on('click', '.tier2 > li.subLinks > a, .tier3 > li.subLinks > a', function (e) {
+
+		if (pageType > 2 && pageType != 5) {
+			console.log('Siamak inja');
+			return false;
+		}
+		var elem = $(this);
+		//TODO: Siamak please check and fix
+		var originalBG = $(this).css('background-color');
+
+		elem.css({backgroundColor: '#fb4f14'});
+
+		$('html, body').animate({scrollTop: $(this).offset().top}, function () {
+			elem.animate({backgroundColor: originalBG}, 500, function () {
+				elem.css('backgroundColor', '');
+			});
+		});
+
+		e.preventDefault();
+		$(this).parent().toggleClass('open');
+	});
+
+
+	//Siamak: Open tier 2 on click
+	//Change bg color on Mobile and Tablet
 	headerNavElem.on('click', '.tier1 > .subLinks > a', function (e) {
 		e.stopPropagation();
-
+		$('#masthead-search').removeClass('open');
+		$('#search-button').removeClass('open');
+		$('#signin-container').removeClass('open');
+		var isOpen = $(this).parent().hasClass('open');
 		//Closing all other opened navigation
-		headerNavElem.find('.open').removeClass('open').stop();
+		headerNavElem.find('.open').removeClass('open');
+		if (!isOpen) {
+			//Adding .open to target LI
+			$(this).parent().toggleClass('open');
+		}
+		//Siamak: Change tier 1 background when click
+		if (pageType < 2 || pageType == 5) {
+			var originalBG = $(this).css('background-color');
+			$(this).css({backgroundColor: '#fb4f14'});
+			$(this).animate({backgroundColor: originalBG}, 500, function () {
+				$(this).css('backgroundColor', '');
+			});
+		}
 
-		//Adding .open to target LI
-		$(this).parent().addClass('open');
 	});
 
 	/* Country Dropdown */
@@ -338,6 +383,11 @@ function getPageProperties() {
 		pageType = 3;
 		pageTypeLabel = 'lg';
 	}
+	//Define by Siamak
+	else if (w >= 992 && w <= 1024) {
+		pageType = 5;
+	}
+
 	else if (w >= 992) {
 		pageType = 2;
 		pageTypeLabel = 'md';
