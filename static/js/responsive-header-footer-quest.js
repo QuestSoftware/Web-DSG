@@ -4,6 +4,9 @@
 var pageType = pageTypeLabel = '', pageWidth = getPageProperties(), resizeFn = [], localizedContent = [], resizeInterval = null;
 
 $(document).ready(function () {
+
+	console.log('Here 1');
+
 	addResize(function () {
 		$('.open').removeClass('open');
 		$('#country-popup').css('display', '');

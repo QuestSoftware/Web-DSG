@@ -39,7 +39,7 @@ $body-color: #333333;
 
 //== Scaffolding
 /* Start:Global */
-$body-bg: #f9f9f9 !default; //Body bg
+$body-bg: #ffffff !default; //Body bg
 $text-color: #333 !default; //Body text color
 $link-color: #016a9c !default; //Link color
 $link-hover-color: darken($link-color, 20%) !default; //Link hover color
@@ -78,7 +78,7 @@ $color-image-border: #737373;
 /* Start:Footer */
 $footer-bg-color: $white; //Footer bg
 $footer-link-color: $darker-gray; //Footer link color
-$footer-link-hover-color: #00447c; //Footer link hover color
+$footer-link-hover-color: $footer-link-color; //Footer link hover color
 $footer-top-border-color: #aaa; //Footer top border color
 
 $footer-top-link: $darker-gray; //Footer top link color
@@ -316,9 +316,9 @@ $flyout-xs-border-color: $dell-blue;
 /* Start:Country Dropdown */
 $country-selector-border-top-color: #aaa;
 $country-popup-bg-color: $white;
-$country-popup-link-color: #0085c3;
+$country-popup-link-color: $link-color;
 $country-popup-link-active-color: $white;
-$country-popup-link-active-bg-color: #0085c3;
+$country-popup-link-active-bg-color: $link-color;
 
 /* End:Country Dropdown */
 
