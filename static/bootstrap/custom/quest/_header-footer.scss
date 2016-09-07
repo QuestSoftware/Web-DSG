@@ -38,9 +38,7 @@ i.nav-arrow:before {
 	}
 	.navbar-brand {
 		padding: 0;
-		margin-top: 8px;
-		margin-right: 14px;
-		margin-left: 8px;
+		margin: 15px 44px 15px 0;
 		a {
 			color: $navbar-brand-link-color;
 			&:hover {
@@ -61,7 +59,7 @@ i.nav-arrow:before {
 	.utility {
 		margin: 0;
 		padding-left: 0;
-		height: 68px;
+		height: 72px;
 		float: right;
 		i {
 			font-size: 22px;
@@ -97,14 +95,13 @@ i.nav-arrow:before {
 		}
 		a {
 			margin: 0;
-			padding: 19px 10px;
+			padding: 22px 10px;
 			color: $top-link;
 			display: block;
 			cursor: pointer;
 			position: relative;
 			&:link, &:visited {
 				margin: 0;
-				padding: 19px 10px;
 				color: $top-link;
 				display: block;
 			}
@@ -185,7 +182,7 @@ i.nav-arrow:before {
 			width: 40%;
 			border: 1px solid $top-search-input-border-color;
 			font-size: 15px;
-			padding: 3px 20px 2px;
+			padding: 4px 20px;
 		}
 		&.open {
 			display: block;
@@ -202,7 +199,7 @@ i.nav-arrow:before {
 			padding-left: 14px;
 			padding-left: 4px;
 			margin-bottom: 0;
-			height: 31px;
+			height: auto;
 		}
 		.btn {
 			position: absolute;
@@ -339,25 +336,21 @@ li {
 			content: "\e611";
 		}
 	}
-	&.dropdown {
-		.dropdown-menu {
-			background: $top-user-dropdown-bg;
-			margin-top: 0;
-			right: 0;
-			left: auto;
-			width: 250px;
-			border: 0;
-			color: $top-user-dropdown-color;
-			padding: 0;
-			.lnk-create-account {
-				background: $top-user-create-acc-bg;
-			}
-		}
-	}
 }
 
 #signin-container { //LI
 	.dropdown-menu {
+		background: $top-user-dropdown-bg;
+		margin-top: 0;
+		right: 0;
+		left: auto;
+		width: 250px;
+		border: 0;
+		color: $top-user-dropdown-color;
+		padding: 0;
+		.lnk-create-account {
+			background: $top-user-create-acc-bg;
+		}
 		h5 {
 			margin: 10px 0;
 			a {
@@ -597,7 +590,6 @@ i.menu-indicator {
 	//Mobile only
 
 	//Header area
-
 	.masthead {
 		margin-bottom: 0;
 		.navbar {
@@ -1043,6 +1035,9 @@ i.menu-indicator {
 					color: $footer-top-link;
 					padding: 0 0 5px 0;
 				}
+				a:hover {
+					color: $footer-top-link;
+				}
 			}
 			a {
 				color: $footer-top-link;
@@ -1201,16 +1196,11 @@ i.menu-indicator {
 	}
 
 	.masthead {
-		.navbar-brand {
-			margin-right: 44px;
-		}
 		.utility {
+			float: right;
 			width: auto;
 			a {
-				padding: 20px 15px 20px 15px;
-				&:link, &:visited {
-					padding: 20px 15px 20px 15px;
-				}
+				padding: 22px 15px;
 			}
 			li {
 				.hidden-xs, .hidden-sm {
@@ -1223,12 +1213,6 @@ i.menu-indicator {
 			.icon-small-useraccount {
 				margin-right: 5px;
 			}
-		}
-		.container {
-			margin-left: auto;
-			margin-right: auto;
-			padding-left: 15px;
-			padding-right: 15px;
 		}
 		.utility-section {
 			margin-left: auto;
@@ -1284,7 +1268,7 @@ i.menu-indicator {
 						font-weight: 600;
 						padding: 0;
 						> a {
-							padding: 24px 15px 22px;
+							padding: 25px 15px 25px;
 						}
 					}
 					i.menu-indicator {
@@ -1423,7 +1407,7 @@ i.menu-indicator {
 				margin: 0;
 			}
 			ul.tier1 li {
-				height: 68px;
+				height: 72px;
 			}
 			ul.tier2 li {
 				height: auto;
@@ -1448,21 +1432,6 @@ i.menu-indicator {
 				}
 			}
 		}
-	}
-	.openNav {
-		.site-canvas {
-			-webkit-transform: translate3d(0, 0, 0);
-			-moz-transform: translate3d(0, 0, 0);
-			-ms-transform: translate3d(0, 0, 0);
-			-o-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
-			-webkit-transition: -webkit-transform 500ms ease;
-			-moz-transition: -moz-transform 500ms ease;
-			-o-transition: -o-transform 500ms ease;
-			transition: transform 500ms ease;
-		}
-	}
-	.masthead {
 		a {
 			color: #333333;
 		}
@@ -1495,36 +1464,21 @@ i.menu-indicator {
 			color: $top-link-hover;
 		}
 	}
+	.openNav {
+		.site-canvas {
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			-ms-transform: translate3d(0, 0, 0);
+			-o-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			-webkit-transition: -webkit-transform 500ms ease;
+			-moz-transition: -moz-transform 500ms ease;
+			-o-transition: -o-transform 500ms ease;
+			transition: transform 500ms ease;
+		}
+	}
 	.shadow-overlay-left {
 		display: none;
-	}
-
-	.masthead {
-		.navbar-brand {
-			margin-left: 0;
-		}
-		.container {
-			margin-left: auto;
-			margin-right: auto;
-			padding-left: 15px;
-			padding-right: 15px;
-			width: 970px;
-		}
-		.utility-section {
-			width: 970px;
-		}
-		.utility {
-			float: right;
-			a {
-				padding: 22px 15px 18px;
-				&:link, &:visited {
-					padding: 22px 15px 18px;
-				}
-			}
-			[class^=icon] {
-				font-size: 20px;
-			}
-		}
 	}
 	#footer {
 		.footer-top-section {
