@@ -25,7 +25,7 @@
 							<li class="subLinks">
 								<a href="#">
 									<span>Products</span>
-									<i class="glyphicon nav-arrow pull-right"></i>
+									<i class="glyphicon nav-arrow"></i>
 								</a>
 								<ul class="tier2">
 									<li>
@@ -108,7 +108,7 @@
 							<li class="subLinks">
 								<a href="#">
 									<span>Solutions</span>
-									<i class="glyphicon nav-arrow pull-right"></i>
+									<i class="glyphicon nav-arrow"></i>
 								</a>
 								<ul class="tier2">
 									<li>
@@ -300,7 +300,7 @@
 							<li class="subLinks">
 								<a href="#">
 									<span>Support</span>
-									<i class="glyphicon nav-arrow pull-right"></i>
+									<i class="glyphicon nav-arrow"></i>
 								</a>
 								<ul class="tier2">
 									<li>
