@@ -4,9 +4,6 @@
 var pageType = pageTypeLabel = '', pageWidth = getPageProperties(), resizeFn = [], localizedContent = [], resizeInterval = null;
 
 $(document).ready(function () {
-
-	console.log('Here 1');
-
 	addResize(function () {
 		$('.open').removeClass('open');
 		$('#country-popup').css('display', '');
@@ -212,6 +209,8 @@ function processHeaderFooter() {
 	$('#search-button').on('click', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
+
+
 		$('#masthead-search').toggleClass('open');
 		$('#search-button').toggleClass('open');
 
@@ -229,7 +228,7 @@ function processHeaderFooter() {
 	});
 
 	$('body')
-		.on('click', function () {
+		.on('click', function (e) {
 			//TODO: Siamak to add comment
 			if (pageType > 2 && pageType != 5) { //Medium to Large desktop
 				$('.tier1').find('.open').removeClass('open');
@@ -292,7 +291,7 @@ function processHeaderFooter() {
 			//Hamburger - Mobile
 			//Open & Close slide out navigation.
 			if (pageType < 2 || pageType == 5) {
-				console.log('pageType1: ', pageType);
+
 				e.preventDefault();
 				$('html').toggleClass('openNav');
 				$('.utility').find('> li').removeClass('open');
@@ -305,19 +304,19 @@ function processHeaderFooter() {
 	headerNavElem.on('click', '.tier2 > li.subLinks > a, .tier3 > li.subLinks > a', function (e) {
 
 		if (pageType > 2 && pageType != 5) {
-			console.log('Siamak inja');
 			return false;
 		}
-		var elem = $(this);
-		//TODO: Siamak please check and fix
-		var originalBG = $(this).css('background-color');
 
-		elem.css({backgroundColor: '#fb4f14'});
+		console.log('here 1');
 
-		$('html, body').animate({scrollTop: $(this).offset().top}, function () {
-			elem.animate({backgroundColor: originalBG}, 500, function () {
-				elem.css('backgroundColor', '');
-			});
+		console.log($(this).parent().siblings());
+		var isOpen = $(this).parent().siblings().hasClass('open');
+		if (isOpen) {
+			$(this).parent().siblings().removeClass('open');
+		}
+		$(this).css({backgroundColor: '#fb4f14'});
+		$(this).animate({backgroundColor: '#eeeeee'}, 500, function () {
+			$(this).css('backgroundColor', '');
 		});
 
 		e.preventDefault();
@@ -341,6 +340,7 @@ function processHeaderFooter() {
 		}
 		//Siamak: Change tier 1 background when click
 		if (pageType < 2 || pageType == 5) {
+			console.log('Here 2');
 			var originalBG = $(this).css('background-color');
 			$(this).css({backgroundColor: '#fb4f14'});
 			$(this).animate({backgroundColor: originalBG}, 500, function () {
