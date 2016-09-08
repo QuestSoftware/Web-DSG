@@ -109,6 +109,11 @@ $(document).ready(function () {
 
 		//Send event tracking to google.
 		ga('send', obj);
+
+		// adds Event10 for siteCatalyst bug# 22253
+		if ($(this).attr('data-gaa') == 'Buy Online') {
+			sc_LinkTrackSetBuy();
+		}
 	});
 
 	//Site Catalyst Custom Event Tracking for Buy Online
