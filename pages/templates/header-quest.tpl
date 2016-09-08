@@ -119,9 +119,6 @@
 									<li>
 										<a href="/solutions/advanced-analytics/">Advanced Analytics</a>
 									</li>
-									<!--<li>
-										<a href="http://www.boomi.com/" target="_blank">Application &amp; Data Integration</a>
-									</li>-->
 									<li>
 										<a href="/solutions/cloud-management/">Cloud Management</a>
 									</li>
@@ -130,7 +127,7 @@
 											<span>Data Protection</span>
 											<i class="glyphicon nav-arrow pull-right"></i>
 										</a>
-										<ul class="tier4">
+										<ul class="tier3">
 											<li>
 												<a href="/solutions/data-protection/">Overview</a>
 											</li>
@@ -144,7 +141,7 @@
 									</li>
 									<li class="subLinks">
 										<a href="/database-management/">
-											Database Management
+											<span>Database Management</span>
 											<i class="glyphicon nav-arrow pull-right"></i>
 										</a>
 										<ul class="tier3">
@@ -169,7 +166,7 @@
 									</li>
 									<li class="subLinks">
 										<a href="/solutions/endpoint-systems-management/"><span>Endpoint Systems Management
-              </span>
+                      </span>
 											<i class="glyphicon nav-arrow pull-right"></i>
 										</a>
 										<ul class="tier3">
@@ -201,8 +198,6 @@
 													<li><a href="/solutions/endpoint-systems-management/#platforms">Microsoft® Windows</a></li>
 													<li><a href="/solutions/endpoint-systems-management/#platforms">MAC</a></li>
 													<li><a href="/solutions/endpoint-systems-management/#platforms">UNIX/LinuX</a></li>
-
-
 												</ul>
 											</li>
 										</ul>
@@ -250,7 +245,7 @@
 									</li>
 									<li class="subLinks">
 										<a href="/solutions/performance-monitoring/"><span>Performance Monitoring
-              </span>
+                      </span>
 											<i class="glyphicon nav-arrow pull-right"></i>
 										</a>
 										<ul class="tier3">
@@ -293,8 +288,6 @@
 											</li>
 										</ul>
 									</li>
-
-
 								</ul>
 							</li>
 							<li class="subLinks">
@@ -396,8 +389,7 @@
 										<a href="https://support.software.dell.com/essentials/support-guide">Policies &amp; Procedures</a>
 									</li>
 									<li>
-										<a href="https://support.software.dell.com/professional-services-product-select">Professional
-											Services</a>
+										<a href="https://support.software.dell.com/professional-services-product-select">Professional Services</a>
 									</li>
 									<li>
 										<a href="https://support.software.dell.com/release-notes-product-select">Technical Documentation</a>
@@ -411,7 +403,6 @@
 									<li>
 										<a href="https://support.software.dell.com/videos-product-select">Video Tutorials</a>
 									</li>
-
 								</ul>
 							</li>
 							<li>
