@@ -229,9 +229,20 @@ function processHeaderFooter() {
 
 	$('body')
 		.on('click', function (e) {
-			//TODO: Siamak to add comment
-			if (pageType > 2 && pageType != 5) { //Medium to Large desktop
+			//Siamak : Closing all navigation when click on body (Medium to Large desktop)
+			if (pageType > 2 && pageType != 5) {
 				$('.tier1').find('.open').removeClass('open');
+				//Siamak : Closing top search when click on body
+				if (($('.search-container').hasClass('open'))) {
+					if ($(e.target).is('#masthead-search *, #masthead-search')) {
+						return false;
+					}
+					else {
+						$('.search-container').removeClass('open');
+						$('.search-button').removeClass('open');
+					}
+				}
+				console.log("Here 3");
 			}
 
 			//Close country popup when user clicks any where on the page.
@@ -307,9 +318,6 @@ function processHeaderFooter() {
 			return false;
 		}
 
-		console.log('here 1');
-
-		console.log($(this).parent().siblings());
 		var isOpen = $(this).parent().siblings().hasClass('open');
 		if (isOpen) {
 			$(this).parent().siblings().removeClass('open');
@@ -340,7 +348,6 @@ function processHeaderFooter() {
 		}
 		//Siamak: Change tier 1 background when click
 		if (pageType < 2 || pageType == 5) {
-			console.log('Here 2');
 			var originalBG = $(this).css('background-color');
 			$(this).css({backgroundColor: '#fb4f14'});
 			$(this).animate({backgroundColor: originalBG}, 500, function () {

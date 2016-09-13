@@ -37,7 +37,7 @@ i.nav-arrow:before {
 	}
 	.navbar-brand {
 		padding: 0;
-		margin: 15px 15px 15px 0;
+		margin: 15px 15px 15px 8px;
 		a {
 			color: $navbar-brand-link-color;
 			&:hover {
@@ -661,9 +661,9 @@ i.menu-indicator {
 		position: absolute;
 		z-index: 5;
 		pointer-events: none;
-		-webkit-box-shadow: inset 2px -2px 5px 0 rgba(50, 50, 50, 0.1);
-		-moz-box-shadow: inset 2px -2px 5px 0 rgba(50, 50, 50, 0.1);
-		box-shadow: inset 2px -2px 5px 0 rgba(50, 50, 50, 0.1);
+		-webkit-box-shadow: inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5);
+		-moz-box-shadow: inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5);
+		box-shadow: inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5); //inset 2px -2px 5px 0 rgba(50, 50, 50, 0.1);
 	}
 	.masthead {
 		.utility {
@@ -1029,9 +1029,9 @@ i.menu-indicator {
 		position: absolute;
 		z-index: 5;
 		pointer-events: none;
-		-webkit-box-shadow: inset 2px -2px 5px 0 rgba(50, 50, 50, 0.1);
-		-moz-box-shadow: inset 2px -2px 5px 0 rgba(50, 50, 50, 0.1);
-		box-shadow: inset 2px -2px 5px 0 rgba(50, 50, 50, 0.1);
+		-webkit-box-shadow: inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5);
+		-moz-box-shadow: inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5);
+		box-shadow: inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5); //inset 2px -2px 5px 0 rgba(50, 50, 50, 0.1);
 	}
 	.masthead {
 		.utility {
@@ -1152,6 +1152,9 @@ i.menu-indicator {
 				.hidden-xs, .hidden-sm {
 					display: inline !important;
 				}
+				&.hamburger {
+					display: none;
+				}
 				h5 {
 					font-size: 14px;
 				}
@@ -1166,6 +1169,7 @@ i.menu-indicator {
 			width: auto;
 			.navbar-brand {
 				margin-right: 44px;
+				margin-left: 0px;
 			}
 		}
 		.main-nav-section {
