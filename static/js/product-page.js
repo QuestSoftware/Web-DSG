@@ -14,25 +14,7 @@ $(document).ready(function () {
 			"data-gaa": "Choose Model",
 			"data-gal": model
 		};
-
 		$(this).addClass("ga").attr(dataga);
 		$(this).closest("div").find('.btn').addClass("ga").attr(dataga);
-	});
-
-	//append name of the testers from URL param to ga-cat
-	$.urlParam = function (name) {
-		var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-		if (results == '') {
-			return results;
-		}
-		else {
-			return results[1] || 0;
-		}
-	};
-	var first = $.urlParam('name');
-	$('.ga').each(function () {
-		$(this).attr("data-gac", $(this).attr("data-gac") + "-" + first);
-		$(this).attr("data-gaa", $(this).attr("data-gaa") + "-" + first);
-		$(this).attr("data-gal", $(this).attr("data-gal") + "-" + first);
 	});
 });
