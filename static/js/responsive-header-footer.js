@@ -1,5 +1,7 @@
 /* Used on Responsive/Non-Responsive New Header/Footer (push to /static/js only) */
 
+var RootPath = RootPath || '/';
+
 //Initially store the width of the page.
 var pageType = pageTypeLabel = '', pageWidth = getPageProperties(), resizeFn = [], localizedContent = [], resizeInterval = null;
 
