@@ -491,9 +491,9 @@ function populateListing(clear) {
 
 			var htmlFragment = '<div class="col-md-3 col-sm-4 col-xs-12" style="display: none;"> ' +
 				'<a href="' + val.url + '">' +
-				'  <div class="border-grey">' +
-				'    <p class="listing-header ' + event_bg + ' "> ' + val.eventtype + ' </p>' +
-				'    <img class="img-responsive" src="/images/shared/listing-entries/' + event_img + '" alt=""> ' +
+				'  <div class="border-grey img-crop">' +
+				'    <p class="img-header-overlay ' + event_bg + ' "> ' + val.eventtype + ' </p>' +
+				'    <img class="img-responsive center-block" src="/images/shared/listing-entries/' + event_img + '" alt=""> ' +
 				'  </div> ' +
 				'  <h4 class="text-blue dotdotdot" data-max-line="3">' + val.title + ' </h4> ' +
 				'  <p class="teaser dotdotdot" data-max-line="5"> ' + $('<div>' + val.description + '</div>').text() + ' </p>';
