@@ -85,16 +85,30 @@ i.nav-arrow:before {
 			float: left;
 			position: relative;
 			padding: 0;
+			border-left: 3px solid transparent;
+			border-right: 3px solid transparent;
 			&.open {
 				background: $top-search-bg;
+				z-index: 9999;
+				border-right: 3px solid $top-search-border-color;
+				border-left: 3px solid $top-search-border-color;
+				height: 68px;
 				i, a {
 					color: $top-link-hover;
+					background: $top-search-bg;
+					z-index: 99999;
+				}
+				i.glyphicon-ok {
+					color: $top-user-check-color;
+				}
+				#lnkMyAccount {
+					color: $link-color;
 				}
 			}
 		}
 		a {
 			margin: 0;
-			padding: 22px 10px;
+			padding: 22px 7px;
 			color: $top-link;
 			display: block;
 			cursor: pointer;
@@ -110,14 +124,11 @@ i.nav-arrow:before {
 				/*background: $top-search-bg;*/
 			}
 		}
-		.badge [class^=icon] {
-			font-size: 6px;
-			color: $badge-color;
-		}
+
 		.badge {
 			position: absolute;
 			top: 14px;
-			left: 24px;
+			left: 15px;
 			width: 14px;
 			height: 14px;
 			display: inline-block;
@@ -129,8 +140,14 @@ i.nav-arrow:before {
 			line-height: 0;
 			white-space: nowrap;
 			text-align: left;
-			background-color: #6ea204;
+			background-color: $top-badge-bg-color;
 			border-radius: 10px;
+			i {
+				font-size: 7px;
+				line-height: 4px;
+				margin-left: 0px;
+				color: $badge-color;
+			}
 		}
 	}
 	.navbar-toggle:hover {
@@ -177,7 +194,7 @@ i.nav-arrow:before {
 		-webkit-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
 		-moz-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
 		box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
-
+		border-top: 3px solid #eeeeee;
 		input[type=text] {
 			border: 1px solid $top-search-input-border-color;
 			font-size: 15px;
@@ -324,9 +341,11 @@ i.menu-indicator {
 
 #signin-container { //LI
 	.dropdown-menu {
+		border: 3px solid #eeeeee !important;
+		border-bottom: none !important;
 		background: $top-user-dropdown-bg;
 		margin-top: 0;
-		right: 0;
+		right: -3px;
 		left: auto;
 		width: 250px;
 		border: 0;
@@ -537,10 +556,8 @@ i.menu-indicator {
 
 /* End: Countries */
 
+//Mobile only
 @media (max-width: 767px) {
-	//Mobile only
-
-	//Header area
 	.masthead {
 		margin-bottom: 0;
 		.navbar {
@@ -562,28 +579,17 @@ i.menu-indicator {
 		.form-control {
 			display: table-cell;
 			padding: 6px 5px;
-			/*border-radius: 0;*/
-		}
-		/*		.input-group form {
-					div {
-						padding: 0;
-					}
-					button {
-						padding: 5px 11px;
-						background-color: $input-group-xs-btn-bg;
-						border-color: $input-group-xs-border-color;
-						background-image: none;
-						i {
-							color: $input-group-xs-icon-color !important;
-						}
-					}
-				}*/
-		.search-container {
-
 		}
 	}
-
-	//Footer area
+	#signin-container {
+		.dropdown-menu {
+			width: 100%;
+			top: 66px;
+			right: 0;
+			border-left: none !important;
+			border-right: none !important;
+		}
+	}
 	#country-selector {
 		> div {
 			display: none;
@@ -653,8 +659,8 @@ i.menu-indicator {
 	}
 }
 
+//Mobile and Tablet - landscape
 @media (max-width: 991px) {
-	//Mobile and Tablet - landscape
 	.shadow-overlay-left {
 		width: 10px;
 		height: 100%;
@@ -767,8 +773,9 @@ i.menu-indicator {
 	}
 }
 
+//Tablet only - Not using
 @media (min-width: 768px) and (max-width: 991px) {
-	//Tablet only
+
 
 	/*.masthead {
 		.container {
@@ -862,8 +869,8 @@ i.menu-indicator {
 	}*/
 }
 
+//Tablet portrait mode only
 @media (min-width: 768px) and (orientation: portrait) {
-	//Tablet portrait mode only
 	.masthead {
 		.utility-section {
 			width: auto;
@@ -874,8 +881,8 @@ i.menu-indicator {
 	}
 }
 
+//tablet and desktop mode
 @media (min-width: 768px) {
-	//tablet and desktop mode
 	#country-selector {
 		position: relative;
 	}
@@ -1021,8 +1028,8 @@ i.menu-indicator {
 	}
 }
 
+//Tablet Landscape
 @media (min-width: 991px) and (max-width: 1024px) {
-	//Tablet Landscape
 	.shadow-overlay-left {
 		width: 10px;
 		height: 100%;
@@ -1036,9 +1043,6 @@ i.menu-indicator {
 	.masthead {
 		.utility {
 			width: auto;
-			li {
-				position: inherit;
-			}
 			a.navbar-toggle {
 				&:hover {
 					color: #333333;
@@ -1136,8 +1140,8 @@ i.menu-indicator {
 }
 
 //Siamak change this 1200px from 992px
+//Large desktop mode
 @media (min-width: 1200px) {
-	//Medium and large desktop mode
 	.tier1 li.open > ul.tier2 {
 		display: block;
 	}
@@ -1393,7 +1397,7 @@ i.menu-indicator {
 			}
 			li.subLinks {
 				i.nav-arrow:before {
-					content: "\e080";
+					content: "\e258";
 				}
 			}
 		}
