@@ -95,10 +95,8 @@ $(document).ready(function () {
 			else {
 				//Dropdown class is being used in the utility toolbar.
 				//Close all dropdown that is a sibling to the clicked element.
-
 				$(this).siblings().removeClass('open');
 				$('#masthead-search').removeClass('open');
-				//$(this).toggleClass('open');
 			}
 		});
 });
@@ -204,7 +202,6 @@ function processHeaderFooter() {
 		}
 	});
 
-	//only shown in mobile
 	//Siamak: changed #mobile-search-button to #mobile-search-button
 	$('#search-button').on('click', function (e) {
 		e.preventDefault();
@@ -216,8 +213,6 @@ function processHeaderFooter() {
 
 		$('#signin-container').removeClass('open');
 		headerNavElem.find('.open').removeClass('open');
-
-		/*$('.utility > li').find('> li').removeClass('open');*/
 	});
 
 	//Prevent anchor tag from firing when href is set to # on mobile
@@ -230,7 +225,7 @@ function processHeaderFooter() {
 	$('body')
 		.on('click', function (e) {
 			//Siamak : Closing all navigation when click on body (Medium to Large desktop)
-			if (pageType > 2 && pageType != 5) {
+			if (pageType >= 3) {
 				$('.tier1').find('.open').removeClass('open');
 				//Siamak : Closing top search when click on body
 				if (($('.search-container').hasClass('open'))) {
@@ -242,7 +237,6 @@ function processHeaderFooter() {
 						$('.search-button').removeClass('open');
 					}
 				}
-				console.log("Here 3");
 			}
 
 			//Close country popup when user clicks any where on the page.
@@ -253,7 +247,6 @@ function processHeaderFooter() {
 
 
 
-		//TODO: Siamak to look into this code because footer does not work on mobile
 		//To open and close footer on Mobile
 
 		.on('click', '.menu-links > .subLinks > span', function (e) {
@@ -301,7 +294,7 @@ function processHeaderFooter() {
 
 			//Hamburger - Mobile
 			//Open & Close slide out navigation.
-			if (pageType < 2 || pageType == 5) {
+			if (pageType < 3) {
 
 				e.preventDefault();
 				$('html').toggleClass('openNav');
@@ -314,7 +307,7 @@ function processHeaderFooter() {
 	//Siamak: Open tier 3 and 4 on click
 	headerNavElem.on('click', '.tier2 > li.subLinks > a, .tier3 > li.subLinks > a', function (e) {
 
-		if (pageType > 2 && pageType != 5) {
+		if (pageType >= 3) {
 			return false;
 		}
 
@@ -347,7 +340,7 @@ function processHeaderFooter() {
 			$(this).parent().toggleClass('open');
 		}
 		//Siamak: Change tier 1 background when click
-		if (pageType < 2 || pageType == 5) {
+		if (pageType < 3) {
 			var originalBG = $(this).css('background-color');
 			$(this).css({backgroundColor: '#fb4f14'});
 			$(this).animate({backgroundColor: originalBG}, 500, function () {
@@ -393,11 +386,6 @@ function getPageProperties() {
 		pageType = 3;
 		pageTypeLabel = 'lg';
 	}
-	//Define by Siamak
-	else if (w >= 992 && w <= 1024) {
-		pageType = 5;
-	}
-
 	else if (w >= 992) {
 		pageType = 2;
 		pageTypeLabel = 'md';

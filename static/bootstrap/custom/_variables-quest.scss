@@ -59,17 +59,20 @@ $top-link-hover-t2: #333; //Navigation link hover color tier 2
 $nav-subLinks-hover-bg-t2: #e3e3e3; //Navigation sublink hover bg tier 2
 $nav-subLinks-hover-color-t2: #333333; //Navigation sublink hover color tier 2
 
-$top-search-bg: $light-gray; //Top search bg
+$top-search-bg: #f9f9f9; //Top search bg
 $top-search-btn-bg: $text-orange; //Top search button bg
 $top-search-btn-hover-bg: #ff692e; //Top search button hover bg
 $top-search-btn-color: $white; //Top search button color
 $top-search-btn-hover-color: $white; //Top search button hover color
+$top-search-border-color: #eeeeee; //Top search border color
 
 $top-search-input-border-color: $natural-gray; //Top search input border color
 
-$top-user-dropdown-bg: $light-gray; //User dropdown bg
+$top-user-dropdown-bg: #f9f9f9; //User dropdown bg
 $top-user-dropdown-color: #444; //User dropdown color
 $top-user-create-acc-bg: $white; //Create account button bg
+$top-user-check-color: $white; //Top user check color
+$top-badge-bg-color: #6ea204; //Top badge background color
 /* End:Header */
 $top-search-link-color: #007db8;
 $color-heading-links-hover: #007db8;
@@ -264,7 +267,7 @@ $table-border-color: #ddd !default;
 /* Start:Buttons */
 $btn-font-weight: normal !default;
 
-$btn-default-color: #003876 !default;
+$btn-default-color: $link-color !default;
 $btn-default-bg: #eee !default;
 $btn-default-border: #737373 !default;
 
