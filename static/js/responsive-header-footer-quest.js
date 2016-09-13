@@ -87,6 +87,7 @@ $(document).ready(function () {
 				});
 			}
 		})
+		//TODO: Siamak to check if this should be moved into processHeaderFooter fn.
 		.on('click', '.dropdown', function (e) {
 			//Prevent dropdown from hiding when clicking on a non-link area.
 			if ($(e.target).parents('.dropdown-menu').length) {
@@ -303,6 +304,15 @@ function processHeaderFooter() {
 
 			}
 		});
+
+	//TODO: Siamak to add comments.
+	$('#signin-container').on('shown.bs.dropdown', function (e, obj) {
+		var target = $(obj.relatedTarget);
+
+		if (target.next().hasClass('dropdown-backdrop')) {
+			target.next().remove();
+		}
+	});
 
 	//Siamak: Open tier 3 and 4 on click
 	headerNavElem.on('click', '.tier2 > li.subLinks > a, .tier3 > li.subLinks > a', function (e) {
