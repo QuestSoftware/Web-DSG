@@ -85,13 +85,13 @@ i.nav-arrow:before {
 			float: left;
 			position: relative;
 			padding: 0;
-			border-left: 3px solid transparent;
-			border-right: 3px solid transparent;
+			border-left: 1px solid transparent;
+			border-right: 1px solid transparent;
 			&.open {
 				background: $top-search-bg;
 				z-index: 9999;
-				border-right: 3px solid $top-search-border-color;
-				border-left: 3px solid $top-search-border-color;
+				border-right: 1px solid $top-search-border-color;
+				border-left: 1px solid $top-search-border-color;
 				height: 68px;
 				i, a {
 					color: $top-link-hover;
@@ -108,7 +108,7 @@ i.nav-arrow:before {
 		}
 		a {
 			margin: 0;
-			padding: 22px 7px;
+			padding: 22px 14px;
 			color: $top-link;
 			display: block;
 			cursor: pointer;
@@ -194,7 +194,7 @@ i.nav-arrow:before {
 		-webkit-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
 		-moz-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
 		box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
-		border-top: 3px solid #eeeeee;
+		border-top: 1px solid #eeeeee;
 		input[type=text] {
 			border: 1px solid $top-search-input-border-color;
 			font-size: 15px;
@@ -341,11 +341,11 @@ i.menu-indicator {
 
 #signin-container { //LI
 	.dropdown-menu {
-		border: 3px solid #eeeeee !important;
+		border: 1px solid #eeeeee !important;
 		border-bottom: none !important;
 		background: $top-user-dropdown-bg;
 		margin-top: 0;
-		right: -3px;
+		right: -1px;
 		left: auto;
 		width: 250px;
 		border: 0;
@@ -579,6 +579,11 @@ i.menu-indicator {
 		.form-control {
 			display: table-cell;
 			padding: 6px 5px;
+		}
+		.utility {
+			a {
+				padding: 22px 9px;
+			}
 		}
 	}
 	#signin-container {
@@ -955,6 +960,8 @@ i.menu-indicator {
 		}
 	}
 	#footer {
+		padding-top: 20px;
+		border-top: 1px solid #aaa;
 		.menu-container {
 			margin: 0 auto;
 		}
@@ -962,12 +969,13 @@ i.menu-indicator {
 			margin: -14px auto 0;
 		}
 		.footer-top-section {
-			border-top: 1px solid #aaa;
+			margin-bottom: 10px;
 			background-color: #ffffff;
-			padding: 20px 0;
-
+			> ul {
+				border-bottom: 1px solid #eee;
+			}
 			ul.menu-links {
-				padding: 0 15px;
+				padding: 0 15px 20px;
 				color: #333;
 
 				li {
@@ -1018,7 +1026,9 @@ i.menu-indicator {
 			display: none;
 		}
 		.footer-copyright-section {
-			border-top: 1px solid #eee;
+			a, span {
+				padding-top: 0;
+			}
 			text-align: center;
 			li {
 				border: 0;
@@ -1437,7 +1447,6 @@ i.menu-indicator {
 	#footer {
 		.footer-top-section {
 			ul.menu-links {
-				padding: 0;
 				> li {
 					padding-left: 15px;
 					padding-right: 9%;
