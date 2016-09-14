@@ -27,7 +27,7 @@
 }
 
 /*mobile*/
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .grey-box {
     padding: 17px 15px;
     margin-bottom: 20px;
@@ -35,7 +35,7 @@
 }
 
 /*large*/
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   /*home page - to make End-to-End IT solution in one line using responsive template*/
   .title-description h1 {
     width: 86%;

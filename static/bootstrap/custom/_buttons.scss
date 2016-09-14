@@ -138,7 +138,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   /* Only on mobile button will turn into a link */
   .btn-link-xs {
     padding: 0;
@@ -216,7 +216,7 @@ input[type="button"] {
 }
 
 // Added functionality for responsiveness
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .btn-default-xs {
     @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
   }

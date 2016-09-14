@@ -406,7 +406,7 @@ img ~ .panel > .panel-body:after {
 	clear: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .panel-group-collapsible-xs {
     //@extend .panel-group-collapsible;
     border-bottom: 1px solid $dell-gray;
@@ -453,7 +453,7 @@ img ~ .panel > .panel-body:after {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .panel-group-collapsible-xs {
     .panel-heading {
       padding: 10px 0;

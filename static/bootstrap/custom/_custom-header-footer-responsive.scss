@@ -1,4 +1,4 @@
-@media (max-width: 767px) { //XS
+@media (max-width: $screen-xs-max) { //XS
   .shadow-overlay-left {
     width: 10px;
     height: 100%;
@@ -116,7 +116,7 @@
 
 @import 'custom-header-footer-sm';
 
-@media (min-width: 768px) and (orientation: portrait) {
+@media (min-width: $screen-sm-min) and (orientation: portrait) {
   .masthead {
     .utility-section {
       width: auto;
@@ -127,7 +127,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $screen-md-min) {
   .masthead {
     .navbar-brand {
       margin-left: 0;
@@ -168,7 +168,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .masthead {
     .utility-section, .main-nav-section {
       width: 1170px;
@@ -194,7 +194,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   .masthead {
     .container {
       margin-left: 5px;

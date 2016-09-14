@@ -37,7 +37,7 @@ tbody.collapse.in { display: table-row-group; }
 }
 
 //Added by Edward Chong
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .visible-sm, .visible-md, .visible-lg {
     &.collapsing {
       display: block !important;
