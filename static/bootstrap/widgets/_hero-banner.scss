@@ -235,7 +235,7 @@
       }
     }
 
-    @media (min-width: 768px) {
+	  @media (min-width: $screen-sm-min) {
       &.carousel-style-1 {
         > a {
           display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
@@ -473,7 +473,7 @@
 //Adding DSG style
 /*mobile*/
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
 	.caption-wrapper {
 		position: relative;
 		left: 0;
@@ -503,7 +503,7 @@
 	}
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
 	.width-32 {
 		width: 41% !important;
 	}

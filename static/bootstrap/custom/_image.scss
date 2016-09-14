@@ -70,7 +70,7 @@ a:hover {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .col-xs-12 {
     .img-crop {
       height: 237px;
@@ -78,7 +78,7 @@ a:hover {
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   //Added to support search page.
   .col-sm-2, .col-md-2, .col-lg-2 {
     .img-crop {
@@ -97,7 +97,7 @@ a:hover {
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
   //Added to support search page.
   .col-sm-2, .col-md-2, .col-lg-2 {
     .img-crop {
@@ -111,7 +111,7 @@ a:hover {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   //Added to support search page.
   .col-sm-2, .col-md-2, .col-lg-2 {
     .img-crop {

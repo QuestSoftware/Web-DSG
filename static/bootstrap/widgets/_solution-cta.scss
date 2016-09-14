@@ -58,7 +58,7 @@
   }
 }
 /*mobile*/
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .icon-headline > div > div {
     margin-bottom: 13px;
   }
@@ -75,7 +75,7 @@
           <div>
             <p>
               Easily secure and manage networks, applications, systems, endpoints, devices and data by leveraging
-              scalable, integrated business and enterprise software. Rely on us to help you unlock the power of IT – and
+              scalable, integrated business and enterprise software. Rely on us to help you unlock the power of IT ï¿½ and
               take control of your workday.
             </p>
             <a href="/solutions/">Learn More</a>

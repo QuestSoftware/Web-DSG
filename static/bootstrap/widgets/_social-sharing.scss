@@ -114,7 +114,7 @@
 
 /*mobile*/
 /*
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .social-media-toolbar{
     background-color: $white;
   }
