@@ -152,7 +152,7 @@
 }
 
 /*mobile*/
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .br-0-xs {
     border-right: 0 !important;
   }
@@ -257,7 +257,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .fat-tabs, .fat-buttons {
     > ul > li {
       width: 134px;
@@ -277,7 +277,7 @@
 }
 
 /*tablet*/
-@media (max-width: 991px) and (min-width: 768px) {
+@media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
   .fat-tabs, .fat-buttons {
     .container {
       padding-left: 0;
@@ -295,7 +295,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .fat-tabs, .fat-buttons {
     > ul > li {
       width: 167px;

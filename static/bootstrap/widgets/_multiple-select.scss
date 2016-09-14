@@ -205,7 +205,7 @@
 }
 
 /*mobile*/
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .filters {
     .ms-drop {
       position: relative;
@@ -231,7 +231,7 @@
 }
 
 /*tablet*/
-@media (max-width: 991px) and (min-width: 768px) {
+@media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
   .ms-drop {
     width: auto;
   }

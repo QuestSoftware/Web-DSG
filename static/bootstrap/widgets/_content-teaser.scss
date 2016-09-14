@@ -58,7 +58,7 @@ a:hover .has-overlay h4 {
 }*/
 
 /*mobile*/
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .has-overlay {
     margin-bottom: 20px;
     .overlay {
@@ -67,7 +67,7 @@ a:hover .has-overlay h4 {
   }
 }
 /*tablet*/
-@media (max-width: 991px) and (min-width: 768px) {
+@media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
   .has-overlay {
     margin-bottom: 20px;
   }

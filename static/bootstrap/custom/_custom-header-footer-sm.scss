@@ -1,5 +1,5 @@
 //Tablet Mode
-@media (min-width: 768px) { //SM
+@media (min-width: $screen-sm-min) { //SM
 	.masthead {
 		.container {
 			margin-left: 0;

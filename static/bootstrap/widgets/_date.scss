@@ -104,7 +104,7 @@
     margin: 15px 0 10px;
   }
 
-  @media (max-width: 767px) {
+	@media (max-width: $screen-xs-max) {
     font-size: 13px;
   }
 }
@@ -142,7 +142,7 @@
   }
 }
 
-@media (max-width: 991px) { //Mobile & Tablet
+@media (max-width: $screen-sm-max) { //Mobile & Tablet
   //Single event on mobile/tablet
   .event-details-widget {
     padding: 15px 0;

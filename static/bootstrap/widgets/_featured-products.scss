@@ -60,7 +60,7 @@
 }
 
 /*mobile*/
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
 	.featured-products {
 		//New implementation not yet on production
 		.slick {
@@ -92,7 +92,7 @@
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
 	.featured-products {
 		.pagination-container {
 			margin: 0 -15px;
