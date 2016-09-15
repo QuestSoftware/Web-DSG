@@ -85,10 +85,7 @@ $(document).ready(function () {
 		var obj = {
 			hitType: 'event',
 			eventCategory: $(this).data('gac'),
-			eventAction: $(this).data('gaa'),
-			hitCallback: function () {
-				location.href = URL;
-			}
+			eventAction: $(this).data('gaa')
 		};
 
 		if (eLabel !== undefined) {
@@ -97,6 +94,13 @@ $(document).ready(function () {
 
 		if (eValue !== undefined) {
 			obj.eventValue = parseInt(eValue);
+		}
+
+		//Redirect after event tracking is successfully sent to GA if URL is not undefined.
+		if (URL !== undefined) {
+			obj.hitCallback = function () {
+				location.href = URL;
+			};
 		}
 
 		/* To be implemented later */
