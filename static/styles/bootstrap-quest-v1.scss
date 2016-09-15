@@ -7,6 +7,17 @@
 	width: device-width;
 }
 
+body {
+	background-color: #eee;
+}
+
+#main-content {
+	min-width: 1200px;
+}
+
+#footer {
+	min-width: 1200px;
+}
 .bootstrap {
 	color: #444444;
 	font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif;
@@ -74,9 +85,13 @@
 	@import "../bootstrap/custom/_custom-affix-scroll-nav-top";
 
 	&.not-responsive {
+
+		div#wrapper {
+			width: 1200px;
+		}
 		.wrapper {
-			width: 967px;
-			min-width: 970px;
+			width: 1200px;
+			min-width: 1200px;
 			margin: 0 auto;
 		}
 		.container {
@@ -167,6 +182,16 @@
 			-moz-transition: -moz-transform 500ms ease;
 			-o-transition: -o-transform 500ms ease;
 			transition: transform 500ms ease;
+		}
+	}
+}
+
+.simplified-header {
+	.masthead {
+		padding: 15px 0;
+		.wrapper {
+			min-width: 970px;
+			width: 970px;
 		}
 	}
 }

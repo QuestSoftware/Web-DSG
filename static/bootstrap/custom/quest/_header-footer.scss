@@ -143,10 +143,11 @@ i.nav-arrow:before {
 			background-color: $top-badge-bg-color;
 			border-radius: 10px;
 			i {
-				font-size: 7px;
+				font-size: 8px;
 				line-height: 4px;
 				margin-left: 0px;
 				color: $badge-color;
+				background: $top-badge-bg-color !important;
 			}
 		}
 	}
@@ -198,7 +199,7 @@ i.nav-arrow:before {
 		input[type=text] {
 			border: 1px solid $top-search-input-border-color;
 			font-size: 15px;
-			padding: 4px 20px;
+			padding: 5px 20px;
 			width: 92%;
 		}
 		&.open {
@@ -216,14 +217,16 @@ i.nav-arrow:before {
 			height: auto;
 		}
 		.btn {
+			font-size: 22px;
 			position: absolute;
 			top: 18px;
 			margin-left: -28px;
-			padding: 5px 5px 2px;
+			padding: 2px 5px 0px;
 			background: $top-search-btn-bg;
 			color: $top-search-btn-color;
 			border-top-right-radius: 1px;
 			border-bottom-right-radius: 1px;
+			height: 33px;
 			&:hover, &:focus, &.focus {
 				color: $top-search-btn-hover-color;
 				background: $top-search-btn-hover-bg;
@@ -350,7 +353,7 @@ i.menu-indicator {
 		width: 250px;
 		border: 0;
 		color: $top-user-dropdown-color;
-		padding: 5px 0;
+		padding: 10px 3px 5px;
 		.lnk-create-account {
 			background: $top-user-create-acc-bg;
 		}
@@ -362,7 +365,7 @@ i.menu-indicator {
 		}
 		.btn {
 			padding: 5px 0;
-			margin: 10px 0;
+			margin: 10px 0 15px;
 		}
 		hr {
 			margin: 10px 0 5px;
@@ -443,7 +446,7 @@ i.menu-indicator {
 			}
 		}
 		i.glyphicon-triangle-bottom {
-			font-size: 11px;
+			font-size: 12px;
 			margin-left: 4px;
 		}
 	}
@@ -1153,9 +1156,10 @@ i.menu-indicator {
 //Large desktop mode
 @media (min-width: 1200px) {
 	ul.tier3:before, ul.tier4:before {
-		-webkit-box-shadow: 3px 0px 5px 0 rgba(97, 95, 95, 0.49);
-		-moz-box-shadow: 3px 0px 5px 0 rgba(97, 95, 95, 0.49);
-		box-shadow: 3px 0px 5px 0 rgba(97, 95, 95, 0.49);
+		//3px 0px 5px 0 rgba(97, 95, 95, 0.49); changed to lighter
+		-webkit-box-shadow: 2px 0 4px 0 rgba(97, 95, 95, 0.2);
+		-moz-box-shadow: 2px 0 4px 0 rgba(97, 95, 95, 0.2);
+		box-shadow: 2px 0 4px 0 rgba(97, 95, 95, 0.2);
 		display: block;
 		content: '';
 		position: absolute;
@@ -1379,7 +1383,7 @@ i.menu-indicator {
 				height: auto;
 			}
 			i.glyphicon {
-				font-size: 11px;
+				font-size: 12px;
 				line-height: 19px;
 			}
 		}
@@ -1412,7 +1416,7 @@ i.menu-indicator {
 		ul.tier2 {
 			li:hover {
 				> a {
-					background-color: #e3e3e3;
+					background-color: #eeeeee;
 				}
 				> a i {
 					color: $top-link-hover;
