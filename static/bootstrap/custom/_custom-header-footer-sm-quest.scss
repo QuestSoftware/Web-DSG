@@ -2,7 +2,23 @@
 @media (min-width: 768px) { //SM
 
 	.masthead {
-
+		box-shadow: 0 3px 5px 0 rgba(170, 170, 170, 0.5);
+		margin-bottom: 10px;
+		min-width: 1200px;
+		ul.tier3:before, ul.tier4:before {
+			//3px 0px 5px 0 rgba(97, 95, 95, 0.49); changed to lighter
+			-webkit-box-shadow: 2px 0 4px 0 rgba(97, 95, 95, 0.2);
+			-moz-box-shadow: 2px 0 4px 0 rgba(97, 95, 95, 0.2);
+			box-shadow: 2px 0 4px 0 rgba(97, 95, 95, 0.2);
+			display: block;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -5px;
+			height: 100%;
+			width: 5px;
+			z-index: 1;
+		}
 		ul.tier1 {
 			> li:hover {
 				> a {
@@ -13,7 +29,7 @@
 		ul.tier2 {
 			li:hover {
 				> a {
-					background-color: #e3e3e3;
+					background-color: #eeeeee;
 				}
 				> a i {
 					color: $top-link-hover;
@@ -21,7 +37,7 @@
 			}
 			li.subLinks {
 				i.nav-arrow:before {
-					content: "\e080";
+					content: "\e258";
 				}
 			}
 		}
@@ -43,13 +59,6 @@
 			display: block;
 		}
 
-		.container {
-			margin-left: 0;
-			margin-right: 0;
-			padding-left: 0;
-			padding-right: 0;
-			width: 100%;
-		}
 		.utility {
 			width: auto;
 			a {
@@ -79,11 +88,12 @@
 			margin-right: auto;
 			padding-left: 15px;
 			padding-right: 15px;
+			width: 100%;
 		}
 		.utility-section {
 			margin-left: auto;
 			margin-right: auto;
-			width: auto;
+			width: 1200px !important;
 		}
 		.main-nav-section {
 			position: static;
@@ -135,6 +145,8 @@
 						padding: 0;
 						> a {
 							padding: 25px 15px 25px;
+							font-size: 17px;
+							margin-bottom: -4px;
 						}
 					}
 					i.menu-indicator {
@@ -153,7 +165,7 @@
 					z-index: 999;
 					width: 280px;
 					background: #fff;
-					box-shadow: 1px 3px 8px #999999;
+					box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
 					li > a:hover {
 						color: $top-link-hover-t2;
 						/*background: #999;*/
@@ -166,7 +178,7 @@
 					}
 					a {
 						text-decoration: none;
-						padding: 7px 10px;
+						padding: 7px 15px;
 						position: relative;
 					}
 					li.subLinks a:hover {
@@ -185,10 +197,6 @@
 							position: initial;
 							border-top: 1px solid transparent;
 							border-bottom: 1px solid transparent;
-
-							&:hover, &:active {
-								border-right: 1px solid transparent;
-							}
 							&:hover {
 								background: #fff;
 
@@ -214,7 +222,7 @@
 						}
 					}
 					span {
-						width: 90%;
+						width: 92%;
 					}
 					li:hover > ul {
 						position: absolute;
@@ -251,7 +259,7 @@
 					border-top: 3px solid $nav-border-top;
 					display: none;
 					float: right;
-					min-height: 100%;
+					min-height: 101%;
 					width: auto;
 					box-shadow: 1px 3px 8px #999999;
 
@@ -279,6 +287,9 @@
 		display: none;
 	}
 	#footer {
+		background-color: $footer-bg-color;
+		padding-top: 20px;
+		border-top: 1px solid #aaa;
 		.menu-container {
 			margin: 0 auto;
 		}
@@ -286,14 +297,14 @@
 			margin: -14px auto 0;
 		}
 		.footer-top-section {
-			border-top: 1px solid #aaa;
+
 			background-color: $footer-bg-color;
-			padding: 20px 0;
+			margin-bottom: 10px;
 
 			ul.menu-links {
-				padding: 0 15px;
+				padding: 0 15px 20px;
 				color: $footer-link-color;
-
+				border-bottom: 1px solid #eee;
 				li {
 					border-bottom: 0;
 
@@ -342,7 +353,6 @@
 		}
 		.footer-copyright-section {
 			text-align: center;
-			border-top: 1px solid #eee;
 			font-size: 12px;
 			a {
 				color: #333;

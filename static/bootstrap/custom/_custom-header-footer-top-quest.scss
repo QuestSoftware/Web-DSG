@@ -1,3 +1,4 @@
+
 .site-wrapper {
 	overflow: hidden;
 	position: relative;
@@ -26,12 +27,17 @@
 	font-size: 16px;
 	color: $top-link;
 	background-color: $white;
+	.utility-section {
+		width: 1200px;
+		margin: 0 auto;
+	}
 	.main-nav-section {
 		a {
 			color: $top-link;
 		}
 		i {
-			font-size: 11px;
+			font-size: 12px;
+			line-height: 19px;
 		}
 	}
 	.navbar {
@@ -51,7 +57,7 @@
 	}
 	.navbar-brand {
 		padding: 0;
-		margin: 15px 20px 15px 0;
+		margin: 15px 44px 15px 5px;
 		a {
 			color: $top-link;
 			&:hover {
@@ -94,8 +100,16 @@
 			position: relative;
 			padding: 0;
 			&.open {
-				background: $top-search-bg;
-				i, a {
+				z-index: 9999;
+				border-right: 1px solid #eee;
+				border-left: 1px solid #eee;
+				height: 68px;
+				a {
+					color: #fb4f14;
+					background: #f9f9f9;
+					z-index: 99999;
+				}
+				i {
 					color: $top-link-hover;
 				}
 			}
@@ -178,12 +192,17 @@
 		z-index: 99;
 		width: 100%;
 		padding: 18px 15px;
-		background-color: #eee;
-		-webkit-box-shadow: 0 6px 12px #666;
-		-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
-		-ms-box-shadow: 0 6px 12px #666;
-		box-shadow: 0 6px 12px #666;
-		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+		background-color: $top-search-bg;
+		-webkit-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
+		-moz-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
+		box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
+		border-top: 1px solid #eeeeee;
+		input[type=text] {
+			border: 1px solid $top-search-input-border-color;
+			font-size: 15px;
+			padding: 5px 20px;
+			width: 40%;
+		}
 		&.open {
 			display: block;
 			+ ul .mobile-search-button {
@@ -193,21 +212,17 @@
 				}
 			}
 		}
-		input[type=text] {
-			width: 90%;
-			border: 1px solid #aaa;
-			font-size: 15px;
-			padding: 4px 20px;
-		}
 		.btn {
+			font-size: 22px;
 			position: absolute;
 			top: 18px;
 			margin-left: -28px;
-			padding: 5px 5px 2px;
+			padding: 2px 5px 0;
 			background: #fb4f14;
 			color: #fff;
 			border-top-right-radius: 1px;
 			border-bottom-right-radius: 1px;
+			height: 33px;
 		}
 		.search-query {
 			padding-right: 14px;
@@ -395,8 +410,6 @@ li {
 }
 
 #footer {
-	background-color: #0085c3;
-	color: $white;
 	margin-top: 20px;
 	font-size: 11px;
 	a {
@@ -435,7 +448,7 @@ li {
 	.footer-top-section {
 		position: relative;
 		z-index: 0;
-		background-color: #eee;
+		background-color: #fff;
 		color: $dell-gray-dark;
 		font-size: 14px;
 		a {
@@ -465,6 +478,10 @@ li {
 				padding: 0;
 				font-size: 12px;
 			}
+		}
+		i.glyphicon-triangle-bottom {
+			font-size: 12px;
+			margin-left: 4px;
 		}
 	}
 	.footer-bottom-section {
@@ -528,7 +545,7 @@ li {
 		color: $dell-gray-dark;
 
 		a, span {
-			padding: 10px 10px 10px 15px;
+			padding: 0px 10px 20px 15px;
 		}
 		a {
 			color: #0085c3;
