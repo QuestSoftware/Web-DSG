@@ -13,7 +13,7 @@
 						<input id="searchterm" type="text" class="search-query form-control"
 						       placeholder="What can we help you find?" />
 						<button class="btn">
-							<i class="glyphicon-searchglyphicon-search"></i>
+							<i class="glyphicon glyphicon-search"></i>
 						</button>
 						<div class="autocomplete"></div>
 					</form>

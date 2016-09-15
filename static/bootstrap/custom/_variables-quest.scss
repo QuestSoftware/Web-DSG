@@ -49,9 +49,20 @@ $link-hover-decoration: underline !default;
 
 
 /* Start:Header */
-$nav-subLinks-hover-bg: $text-orange; //Navigation sublink hover bg
-$nav-subLinks-hover-color: $white; //Navigation sublink hover color
+$nav-subLinks-hover-bg: $text-orange; //Navigation tier 1 hover bg
+$nav-subLinks-hover-color: $white; //Navigation tier 1 hover color
 $nav-border-top: $text-orange; //Navigation border top color
+$nav-bg-t2: $white; //Navigation tier 2 bg
+
+$nav-xs-border-bottom-color-t1: #aaa; //Navigation tier 1 border bottom (Mobile)
+$nav-xs-bg-open-t1: #eeeeee; //Navigation tier 1 bg when open (Mobile)
+$nav-xs-color-open-t1: #333333; //Navigation tier 1 color when open (Mobile)
+$nav-xs-arrow-color-open-t1: #fb4f14; //Navigation tier 1 arrow color when open (Mobile)
+$nav-xs-border-bottom-color-t2: #eeeeee; //Navigation tier 2 border bottom (Mobile)
+$nav-xs-border-bottom-color-t3: #eeeeee; //Navigation tier 3 border bottom (Mobile)
+$nav-xs-border-bottom-color-t4: #eeeeee; //Navigation tier 4 border bottom (Mobile)
+$nav-xs-border-left-color-t4: #fb4f14; //Navigation tier 4 border-left color when open (Mobile)
+
 $top-link: $darker-gray; //Navigation link color
 $top-link-hover: $text-orange; //Navigation link hover color
 $top-link-hover-t2: #333; //Navigation link hover color tier 2
@@ -60,6 +71,7 @@ $nav-subLinks-hover-bg-t2: #eeeeee; //Navigation sublink hover bg tier 2
 $nav-subLinks-hover-color-t2: #333333; //Navigation sublink hover color tier 2
 
 $top-search-bg: #f9f9f9; //Top search bg
+$top-search-top-border-color: #eeeeee; //Top search top border color
 $top-search-btn-bg: $text-orange; //Top search button bg
 $top-search-btn-hover-bg: #ff692e; //Top search button hover bg
 $top-search-btn-color: $white; //Top search button color
@@ -68,8 +80,11 @@ $top-search-border-color: #eeeeee; //Top search border color
 
 $top-search-input-border-color: #ccc; //Top search input border color
 
+$autocomplete-selected-bg: #F0F0F0; //Auto complete selected bg
+
 $top-user-dropdown-bg: #f9f9f9; //User dropdown bg
 $top-user-dropdown-color: #444; //User dropdown color
+$top-user-dropdown-border-color: #eeeeee; //User dropdown top border color
 $top-user-create-acc-bg: $white; //Create account button bg
 $top-user-check-color: $white; //Top user check color
 $top-badge-bg-color: #6ea204; //Top badge background color
@@ -93,6 +108,7 @@ $footer-cpy-border-color: #eee; //Copyright top border color
 
 $footer-xs-border-top-color: #aaa; //Footer top border color (Mobile)
 $footer-li-xs-border-bottom-color: #eeeeee; //Footer links top border color (Mobile)
+$footer-li-xs-open-bg: #eeeeee; //Footer links bg when open (Mobile)
 /* End:Footer */
 
 //== Colors
