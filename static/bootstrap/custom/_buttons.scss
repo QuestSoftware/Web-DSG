@@ -51,7 +51,7 @@
     @include opacity(.65);
     @include box-shadow(none);
 
-		@include button-variant($btn-default-disable-color, $btn-default-bg, $btn-default-border);
+	  @include button-variant($btn-default-disable-color, $btn-default-bg, $btn-default-border);
   }
 }
 
@@ -59,6 +59,22 @@
 	//If 2 or more buttons are side by side, add left margin
 	+ .btn, + .btn-group {
 		margin-left: 10px;
+	}
+
+	&.btn-block {
+		+ .btn, + .btn-group {
+			margin-left: 0;
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.btn, .btn-group {
+		&.btn-block-xs {
+			+ .btn, + .btn-group {
+				margin-left: 0;
+			}
+		}
 	}
 }
 
