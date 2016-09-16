@@ -84,7 +84,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .comparison {
     .comparison-pagination {
       text-align: right;
@@ -92,7 +92,7 @@
 	}
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
 	/*comparison table*/
 	.comparison-table {
 		&[data-xs-carousel ="true"] {

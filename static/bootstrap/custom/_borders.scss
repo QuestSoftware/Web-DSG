@@ -25,7 +25,7 @@
 	border-left: 1px solid $border-grey-color;
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   //Mobile - XS
   .no-border-xs {
     border: none !important;
@@ -38,7 +38,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .border-l-grey-sm {
 		border-left: 1px solid $border-grey-color;
   }
@@ -47,7 +47,7 @@
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: $screen-md-min) {
 	.border-r-grey-md {
 		border-right: 1px solid $border-grey-color;
 	}

@@ -191,7 +191,7 @@ iframe {
   justify-content: center;
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   //Mobile - XS
   #right-rail-form {
     label {
@@ -212,7 +212,7 @@ iframe {
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   //Tablet - SM
   .center-block-sm-only {
     display: block;
@@ -230,7 +230,7 @@ iframe {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   //Tablet - SM
   #right-rail-form {
     label {
@@ -263,7 +263,7 @@ iframe {
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
   //Desktop - MD
   .pull-left-md-only {
     float: left;
@@ -273,7 +273,7 @@ iframe {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $screen-md-min) {
   //Desktop - MD
   #right-rail-form {
     label {
@@ -290,7 +290,7 @@ iframe {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .pull-left-lg {
     float: left;
   }

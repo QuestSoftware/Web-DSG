@@ -11,7 +11,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .banner {
     .headline {
       font-size: 26px;
@@ -24,7 +24,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $screen-md-min) {
   .banner {
     .headline {
       font-size: 28px;

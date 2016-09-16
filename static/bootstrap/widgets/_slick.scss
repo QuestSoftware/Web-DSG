@@ -278,7 +278,7 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .slick-prev, .slick-next {
     top: 55px;
     &:before {
@@ -293,7 +293,7 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .slick-prev, .slick-next {
     top: 69px;
     &:before {
@@ -421,7 +421,7 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 }
 
-@media (max-width: 767px) { //XS
+@media (max-width: $screen-xs-max) { //XS
   .banner {
     &.container {
       padding: 0;
@@ -447,7 +447,7 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 
-@media (min-width: 768px) { //SM - LG
+@media (min-width: $screen-sm-min) { //SM - LG
 	//If there's only 1 asset for screenshot tour, set width and center it. Used when slick is not initialized.
 	.slick {
 		&.slick-screenshot {
@@ -461,7 +461,7 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 }
 
-@media (min-width: 768px) and (max-width: 991px) { //SM
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { //SM
   .slick {
     .img-crop {
       height: 170px;
@@ -513,7 +513,7 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) { //MD
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) { //MD
   .slick {
     .img-crop {
       height: 146px;
@@ -577,7 +577,7 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 
-@media (min-width: 1200px) { //LG
+@media (min-width: $screen-lg-min) { //LG
   .slick {
     .img-crop {
       height: 178px;
