@@ -91,7 +91,11 @@
 // --------------------------------------------------
 
 .btn-default {
-	@include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+  @if ($domain == "quest") {
+    @include button-variant-v2($btn-default-color, $btn-default-bg, $btn-default-border, $btn-default-hover-color, $btn-default-hover-bg, $btn-default-hover-border);
+  } @else {
+    @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+  }
 }
 
 .btn-primary {

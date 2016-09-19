@@ -19,6 +19,14 @@ i.nav-arrow:before {
 	margin: -10px auto 0;
 }*/
 
+.openNav {
+	a {
+		.navbar-toggle {
+			color: $top-link-hover !important;
+		}
+	}
+}
+
 .masthead {
 	margin-bottom: 10px;
 	.navbar {
@@ -351,9 +359,6 @@ i.menu-indicator {
 		border: 0;
 		color: $top-user-dropdown-color;
 		padding: 10px 3px 5px;
-		.lnk-create-account {
-			background: $top-user-create-acc-bg;
-		}
 		h5 {
 			margin: 10px 0;
 			a {
