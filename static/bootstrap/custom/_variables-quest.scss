@@ -36,12 +36,12 @@ $darker-gray: #333333;
 $dark-gray: #444444;
 $natural-gray: #aaaaaa;
 $light-gray: #eeeeee;
-$body-color: #333333;
+$body-color: $darker-gray;
 
 //== Scaffolding
 /* Start:Global */
 $body-bg: #ffffff !default; //Body bg
-$text-color: #333 !default; //Body text color
+$text-color: $darker-gray !default; //Body text color
 $link-color: #016a9c !default; //Link color
 $link-hover-color: darken($link-color, 20%) !default; //Link hover color
 /* End:Global */
@@ -56,28 +56,28 @@ $nav-border-top: $text-orange; //Navigation border top color
 $nav-bg-t2: $white; //Navigation tier 2 bg
 
 $nav-xs-border-bottom-color-t1: #aaa; //Navigation tier 1 border bottom (Mobile)
-$nav-xs-bg-open-t1: #eeeeee; //Navigation tier 1 bg when open (Mobile)
-$nav-xs-color-open-t1: #333333; //Navigation tier 1 color when open (Mobile)
+$nav-xs-bg-open-t1: $light-gray; //Navigation tier 1 bg when open (Mobile)
+$nav-xs-color-open-t1: $darker-gray; //Navigation tier 1 color when open (Mobile)
 $nav-xs-arrow-color-open-t1: #fb4f14; //Navigation tier 1 arrow color when open (Mobile)
-$nav-xs-border-bottom-color-t2: #eeeeee; //Navigation tier 2 border bottom (Mobile)
-$nav-xs-border-bottom-color-t3: #eeeeee; //Navigation tier 3 border bottom (Mobile)
-$nav-xs-border-bottom-color-t4: #eeeeee; //Navigation tier 4 border bottom (Mobile)
+$nav-xs-border-bottom-color-t2: $light-gray; //Navigation tier 2 border bottom (Mobile)
+$nav-xs-border-bottom-color-t3: $light-gray; //Navigation tier 3 border bottom (Mobile)
+$nav-xs-border-bottom-color-t4: $light-gray; //Navigation tier 4 border bottom (Mobile)
 $nav-xs-border-left-color-t4: #fb4f14; //Navigation tier 4 border-left color when open (Mobile)
 
 $top-link: $darker-gray; //Navigation link color
 $top-link-hover: $text-orange; //Navigation link hover color
-$top-link-hover-t2: #333; //Navigation link hover color tier 2
+$top-link-hover-t2: $darker-gray; //Navigation link hover color tier 2
 
-$nav-subLinks-hover-bg-t2: #eeeeee; //Navigation sublink hover bg tier 2
-$nav-subLinks-hover-color-t2: #333333; //Navigation sublink hover color tier 2
+$nav-subLinks-hover-bg-t2: $light-gray; //Navigation sublink hover bg tier 2
+$nav-subLinks-hover-color-t2: $darker-gray; //Navigation sublink hover color tier 2
 
 $top-search-bg: #f9f9f9; //Top search bg
-$top-search-top-border-color: #eeeeee; //Top search top border color
+$top-search-top-border-color: $light-gray; //Top search top border color
 $top-search-btn-bg: $text-orange; //Top search button bg
 $top-search-btn-hover-bg: #ff692e; //Top search button hover bg
 $top-search-btn-color: $white; //Top search button color
 $top-search-btn-hover-color: $white; //Top search button hover color
-$top-search-border-color: #eeeeee; //Top search border color
+$top-search-border-color: $light-gray; //Top search border color
 
 $top-search-input-border-color: #ccc; //Top search input border color
 
@@ -85,7 +85,7 @@ $autocomplete-selected-bg: #F0F0F0; //Auto complete selected bg
 
 $top-user-dropdown-bg: #f9f9f9; //User dropdown bg
 $top-user-dropdown-color: #444; //User dropdown color
-$top-user-dropdown-border-color: #eeeeee; //User dropdown top border color
+$top-user-dropdown-border-color: $light-gray; //User dropdown top border color
 $top-user-create-acc-bg: $white; //Create account button bg
 $top-user-check-color: $white; //Top user check color
 $top-badge-bg-color: #6ea204; //Top badge background color
@@ -105,11 +105,11 @@ $footer-top-link: $darker-gray; //Footer top link color
 $footer-disclaimer-color: #cce7f3; //Footer disclaimer color
 
 $footer-cpy-link: $darker-gray; //Copyright link color
-$footer-cpy-border-color: #eee; //Copyright top border color
+$footer-cpy-border-color: $light-gray; //Copyright top border color
 
 $footer-xs-border-top-color: #aaa; //Footer top border color (Mobile)
-$footer-li-xs-border-bottom-color: #eeeeee; //Footer links top border color (Mobile)
-$footer-li-xs-open-bg: #eeeeee; //Footer links bg when open (Mobile)
+$footer-li-xs-border-bottom-color: $light-gray; //Footer links top border color (Mobile)
+$footer-li-xs-open-bg: $light-gray; //Footer links bg when open (Mobile)
 /* End:Footer */
 
 //== Colors
@@ -223,7 +223,7 @@ $affix-xs-a-hover-bg: $gray-lighter;
 //Overlay
 $has-overlay-bg: $white;
 $has-overlay-bg-color: rgba(255, 255, 255, 0.9);
-$has-overlay-hover-text-color: #333;
+$has-overlay-hover-text-color: $darker-gray;
 
 //== Components
 //
@@ -286,7 +286,7 @@ $table-border-color: #ddd !default;
 $btn-font-weight: normal !default;
 
 $btn-default-color: $link-color !default;
-$btn-default-bg: #eee !default;
+$btn-default-bg: $light-gray !default;
 $btn-default-border: #aaaaaa !default;
 
 $btn-default-hover-color: $link-color !default;
@@ -369,7 +369,7 @@ $comparison-active-bg: $dell-blue;
 $comparison-active-color: $white;
 $comparison-btn-inactive-color: $dell-gray;
 $comparison-fixed-col-border-color: #ccc;
-$comparison-panel-old-bg: #eeeeee;
+$comparison-panel-old-bg: $light-gray;
 /* End:Comparison Table */
 
 //== Forms
@@ -429,7 +429,7 @@ $ms-choice-focus-shadow-color: rgba(1, 106, 156, 0.6);
 $ms-choice-disabled-bg-color: #f4f4f4;
 $ms-choice-disabled-border-color: #ddd;
 $ms-choice-span-color: #555;
-$ms-choice-placeholder-color: #333333;
+$ms-choice-placeholder-color: $darker-gray;
 $ms-choice-xs-span-color: #007db8;
 $ms-choice-xs-placeholder-color: #007db8;
 $ms-choice-xs-placeholder-hover-color: #00496c;
@@ -437,7 +437,7 @@ $ms-choice-xs-placeholder-hover-color: #00496c;
 $ms-drop-bg-color: $white;
 $ms-drop-text-color: #000;
 $ms-drop-border-color: #ccc;
-$ms-drop-hover-bg: #eeeeee;
+$ms-drop-hover-bg: $light-gray;
 $ms-drop-label-color: $link-color;
 
 $ms-search-input-bg-color: #aaa;
@@ -458,7 +458,7 @@ $cursor-disabled: not-allowed !default;
 
 //== Dividers
 
-$polaris-divider-top-border-color: #eee;
+$polaris-divider-top-border-color: $light-gray;
 
 //== Dropdowns
 //
@@ -475,11 +475,11 @@ $dropdown-divider-bg: #e5e5e5 !default;
 
 
 //** Dropdown link text color.
-$dropdown-link-color: $gray-dark !default;
+$dropdown-link-color: $darker-gray !default;
 //** Hover color for dropdown links.
 $dropdown-link-hover-color: darken($gray-dark, 5%) !default;
 //** Hover background for dropdown links.
-$dropdown-link-hover-bg: #cce5f1 !default; //#f5f5f5 !default;
+$dropdown-link-hover-bg: $light-gray !default; //#f5f5f5 !default;
 
 //** Active dropdown menu item text color.
 $dropdown-link-active-color: $component-active-color !default;
@@ -562,7 +562,7 @@ $screen-sm-max: ($screen-md-min - 1) !default;
 $screen-md-max: ($screen-lg-min - 1) !default;
 
 //  Feature Products
-$featured-products-slick-border-color: #eee;
+$featured-products-slick-border-color: $light-gray;
 
 //== Grid system
 //
@@ -619,7 +619,7 @@ $navbar-default-border: darken($navbar-default-bg, 6.5%) !default;
 
 // Navbar links
 $navbar-default-link-color: #777 !default;
-$navbar-default-link-hover-color: #333 !default;
+$navbar-default-link-hover-color: $darker-gray !default;
 $navbar-default-link-hover-bg: transparent !default;
 $navbar-default-link-active-color: #555 !default;
 $navbar-default-link-active-bg: darken($navbar-default-bg, 6.5%) !default;
@@ -659,7 +659,7 @@ $navbar-inverse-brand-hover-bg: transparent !default;
 // Inverted navbar toggle
 $navbar-inverse-toggle-hover-bg: transparent !default; //#333 !default;
 $navbar-inverse-toggle-icon-bar-bg: #fff !default;
-$navbar-inverse-toggle-border-color: #333 !default;
+$navbar-inverse-toggle-border-color: $darker-gray !default;
 
 //== Navs
 //
@@ -709,7 +709,7 @@ $pagination-disabled-color: $gray-light !default;
 $pagination-disabled-bg: #fff !default;
 $pagination-disabled-border: #ddd !default;
 
-$pager-link-bg: #eee;
+$pager-link-bg: $light-gray;
 $pager-border-color: #ccc;
 
 
@@ -867,7 +867,7 @@ $modal-sm: 300px !default;
 //## Define alert colors, border radius, and padding.
 $alert-text-color: $dell-gray-dark;
 $alert-bg-color: #ffffc9;
-$alert-border-color: #eee;
+$alert-border-color: $light-gray;
 $alert-link-color: $dell-blue;
 $alert-link-hover-color: $dell-dark-blue;
 $alert-link-color-before: $dell-gray-dark;
@@ -958,7 +958,7 @@ $list-group-disabled-text-color: $list-group-disabled-color !default;
 
 $list-group-link-color: #555 !default;
 $list-group-link-hover-color: $list-group-link-color !default;
-$list-group-link-heading-color: #333 !default;
+$list-group-link-heading-color: $darker-gray !default;
 
 //== Panels
 //
@@ -1016,7 +1016,7 @@ $date-body-bg-color: $white;
 
 // Introduction
 
-$grey-box-bg-color: #eee;
+$grey-box-bg-color: $light-gray;
 
 // Listing Entries
 
@@ -1121,7 +1121,7 @@ $code-color: #c7254e !default;
 $code-bg: #f9f2f4 !default;
 
 $kbd-color: #fff !default;
-$kbd-bg: #333 !default;
+$kbd-bg: $darker-gray !default;
 
 $pre-bg: #f5f5f5 !default;
 $pre-color: $gray-dark !default;
