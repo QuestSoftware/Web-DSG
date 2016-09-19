@@ -201,13 +201,14 @@ $icon-anchor-hover-color: $dell-blue;
 $icon-anchor-active-color: $dell-blue;
 
 /* Start:Zombie Nav */
+$affix-bg-color: #f7f7f7;
 $affix-border-color: #ccc; //Zombie border color
 $affix-li-border-color: #ccc; //Zombie border color
-$affix-li-active-border-color: $dell-blue;
+$affix-li-active-border-color: $link-color;
 $affix-li-active-text-color: #444;
 $affix-li-a-focus-bg-color: transparent;
 $affix-li-a-hover-bg-color: #cce7f3;
-$affix-li-a-hover-text-color: $dell-blue;
+$affix-li-a-hover-text-color: $link-color;
 $affix-no-style-bg-color: $white;
 $affix-no-style-active-border-color: #ccc;
 $affix-no-style-disabled-border-color: $white;
