@@ -8,21 +8,12 @@ i.nav-arrow:before {
 	content: "\e259";
 }
 
-/*
-.masthead-shadow-section {
-	content: "";
-	width: 80%;
-	height: 10px;
-	left: 10%;
-	border-radius: 50%;
-	box-shadow: 0 0 18px rgba(0, 0, 0, 0.5);
-	margin: -10px auto 0;
-}*/
-
 .openNav {
-	a {
-		.navbar-toggle {
-			color: $top-link-hover !important;
+	.hamburger {
+		a {
+			&.navbar-toggle {
+				color: $top-link-hover !important;
+			}
 		}
 	}
 }
