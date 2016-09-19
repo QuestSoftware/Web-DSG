@@ -347,6 +347,7 @@ $ms-choice-color: #444;
 $ms-choice-border-color: #ccc;
 $ms-choice-bg-color: $white;
 $ms-choice-focus-border-color: #007db8;
+$ms-choice-focus-shadow-color: rgba(0, 125, 184, 0.6);
 $ms-choice-disabled-bg-color: #f4f4f4;
 $ms-choice-disabled-border-color: #ddd;
 $ms-choice-span-color: #555;
@@ -358,7 +359,7 @@ $ms-choice-xs-placeholder-hover-color: #00496c;
 $ms-drop-bg-color: $white;
 $ms-drop-text-color: #000;
 $ms-drop-border-color: #ccc;
-$ms-drop--hover-bg: #cce5f1;
+$ms-drop-hover-bg: #cce5f1;
 $ms-drop-label-color: #007db8;
 
 $ms-search-input-bg-color: #fff;
