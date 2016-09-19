@@ -33,8 +33,7 @@
   &:focus {
 		border-color: $ms-choice-focus-border-color;
     outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 125, 184, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 125, 184, 0.6);
+    @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px $ms-choice-focus-shadow-color);
   }
   &.disabled {
 		background-color: $ms-choice-disabled-bg-color;
@@ -158,7 +157,7 @@
       padding-bottom: 0;
       margin-bottom: 2px;
       &:hover {
-				background: $ms-drop--hover-bg;
+        background: $ms-drop-hover-bg;
       }
       .disabled {
         opacity: .35;
