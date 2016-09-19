@@ -19,6 +19,14 @@ i.nav-arrow:before {
 	margin: -10px auto 0;
 }*/
 
+.openNav {
+	a {
+		.navbar-toggle {
+			color: $top-link-hover !important;
+		}
+	}
+}
+
 .masthead {
 	margin-bottom: 10px;
 	.navbar {
@@ -351,9 +359,6 @@ i.menu-indicator {
 		border: 0;
 		color: $top-user-dropdown-color;
 		padding: 10px 3px 5px;
-		.lnk-create-account {
-			background: $top-user-create-acc-bg;
-		}
 		h5 {
 			margin: 10px 0;
 			a {
@@ -557,7 +562,7 @@ i.menu-indicator {
 /* End: Countries */
 
 //Mobile only
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
 	.masthead {
 		margin-bottom: 0;
 		.navbar {
@@ -665,7 +670,7 @@ i.menu-indicator {
 }
 
 //Mobile and Tablet - landscape
-@media (max-width: 991px) {
+@media (max-width: $screen-sm-max) {
 	.shadow-overlay-left {
 		width: 10px;
 		height: 100%;
@@ -779,7 +784,7 @@ i.menu-indicator {
 }
 
 //Tablet only - Not using
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
 
 
 	/*.masthead {
@@ -875,7 +880,7 @@ i.menu-indicator {
 }
 
 //Tablet portrait mode only
-@media (min-width: 768px) and (orientation: portrait) {
+@media (min-width: $screen-sm-min) and (orientation: portrait) {
 	.masthead {
 		.utility-section {
 			width: auto;
@@ -887,7 +892,7 @@ i.menu-indicator {
 }
 
 //tablet and desktop mode
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
 	#country-selector {
 		position: relative;
 	}
@@ -1039,7 +1044,7 @@ i.menu-indicator {
 }
 
 //Tablet Landscape
-@media (min-width: 991px) and (max-width: 1024px) {
+@media (min-width: $screen-sm-max) and (max-width: 1024px) {
 	.shadow-overlay-left {
 		width: 10px;
 		height: 100%;
@@ -1151,7 +1156,7 @@ i.menu-indicator {
 
 //Siamak change this 1200px from 992px
 //Large desktop mode
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
 	ul.tier3:before, ul.tier4:before {
 		//3px 0px 5px 0 rgba(97, 95, 95, 0.49); changed to lighter
 		-webkit-box-shadow: 2px 0 4px 0 rgba(97, 95, 95, 0.2);

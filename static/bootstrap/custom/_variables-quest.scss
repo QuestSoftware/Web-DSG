@@ -286,7 +286,11 @@ $btn-font-weight: normal !default;
 
 $btn-default-color: $link-color !default;
 $btn-default-bg: #eee !default;
-$btn-default-border: #737373 !default;
+$btn-default-border: #aaaaaa !default;
+
+$btn-default-hover-color: $link-color !default;
+$btn-default-hover-bg: #d5d5d5 !default;
+$btn-default-hover-border: #aaaaaa !default;
 
 $btn-primary-color: #fff !default;
 $btn-primary-bg: #016a9c !default;
