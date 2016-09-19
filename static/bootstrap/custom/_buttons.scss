@@ -94,13 +94,28 @@
 .btn-default {
   @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
 }
-.btn-primary {
-  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+
+@if ($domain == "quest") {
+	.btn-primary {
+		@include button-variant-v2($btn-primary-color, $btn-primary-bg, $btn-primary-border, $btn-primary-hover-color, $btn-primary-hover-bg, $btn-primary-hover-border);
+	}
+} @else {
+	.btn-primary {
+		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	}
 }
-// Success appears as green
-.btn-success {
-  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+
+@if ($domain == "quest") {
+	.btn-success {
+		@include button-variant-v2($btn-success-color, $btn-success-bg, $btn-success-border, $btn-success-hover-color, $btn-success-hover-bg, $btn-success-hover-border);
+	}
+} @else {
+	// Success appears as green
+	.btn-success {
+		@include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+	}
 }
+
 // Info appears as blue-green
 .btn-info {
   @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
