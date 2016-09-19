@@ -113,7 +113,7 @@
 
 .alert-danger:before, .alert-error:before {
   content: "\e603";
-  font-family: icon-small;
+	font-family: "icon-small";
   float: left;
 	color: $color-danger;
   position: absolute;
@@ -126,7 +126,7 @@
 
 .alert-info:before {
   content: "\e604";
-  font-family: icon-small;
+	font-family: "icon-small";
   float: left;
 	color: $color-info;
   position: absolute;
@@ -139,7 +139,7 @@
 
 .alert-success:before {
   content: "\e611";
-  font-family: icon-small;
+	font-family: "icon-small";
   float: left;
 	color: $color-success;
   position: absolute;
@@ -152,7 +152,7 @@
 
 .alert-warning:before {
   content: "\e605";
-  font-family: icon-small;
+	font-family: "icon-small";
   float: left;
 	color: $color-warning;
   position: absolute;

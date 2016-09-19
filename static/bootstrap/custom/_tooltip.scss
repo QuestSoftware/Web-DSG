@@ -49,7 +49,7 @@
 
     &::before {
       content: "\e605";
-      font-family: icon-small;
+	    font-family: "icon-small";
 	    color: $tooltip-alert-icon-color;
       position: absolute;
       font-size: 16px;
