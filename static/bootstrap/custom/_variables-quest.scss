@@ -294,7 +294,7 @@ $btn-default-hover-bg: #d5d5d5 !default;
 $btn-default-hover-border: #aaaaaa !default;
 
 $btn-primary-color: #fff !default;
-$btn-primary-bg: #016a9c !default;
+$btn-primary-bg: $link-color !default;
 $btn-primary-border: darken($btn-primary-bg, 5%) !default;
 
 $btn-primary-hover-color: #fff !default;
@@ -401,7 +401,7 @@ $input-border-radius-large: $border-radius-large !default;
 $input-border-radius-small: $border-radius-small !default;
 
 //** Border color for inputs on focus
-$input-border-focus: #66afe9 !default;
+$input-border-focus: $link-color !default;
 
 //** Placeholder text color
 $input-color-placeholder: #999 !default;
@@ -424,7 +424,7 @@ $legend-border-color: #e5e5e5 !default;
 $ms-choice-color: #444;
 $ms-choice-border-color: #ccc;
 $ms-choice-bg-color: $white;
-$ms-choice-focus-border-color: #016A9C;
+$ms-choice-focus-border-color: $link-color;
 $ms-choice-focus-shadow-color: rgba(1, 106, 156, 0.6);
 $ms-choice-disabled-bg-color: #f4f4f4;
 $ms-choice-disabled-border-color: #ddd;
