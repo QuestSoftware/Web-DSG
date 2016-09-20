@@ -132,42 +132,6 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 
-.banner {
-  &.slick {
-    a {
-      &:hover {
-        text-decoration: none;
-      }
-    }
-    .slick-slide {
-      position: relative;
-    }
-    .content-teaser {
-      > * {
-        padding: 15px;
-        display: block;
-      }
-    }
-    .caption-wrapper {
-      padding: 15px;
-    }
-    > div {
-      display: none;
-      position: relative;
-      &:first-of-type {
-        display: inherit;
-      }
-      > a {
-        display: block;
-      }
-    }
-  }
-  &.slick-slider {
-    padding: 0 !important;
-    margin-bottom: 45px;
-  }
-}
-
 .slick-arrow.slick-hidden {
   display: none;
 }
