@@ -2,7 +2,7 @@
 @import 'custom-header-footer-top-quest';
 
 &.is-responsive {
-	@import 'custom-header-footer-responsive';
+	@import '../dsg/custom-header-footer-responsive';
 }
 
 &.not-responsive {
