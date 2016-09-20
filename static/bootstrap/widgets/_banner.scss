@@ -9,6 +9,44 @@
     line-height: 16px;
     margin: 10px 0 14px;
   }
+  &.slick {
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .slick-slide {
+      position: relative;
+    }
+    .content-teaser {
+      > * {
+        padding: 15px;
+        display: block;
+      }
+    }
+    .caption-wrapper {
+      padding: 15px;
+    }
+    > div {
+      display: none;
+      position: relative;
+      &:first-of-type {
+        display: inherit;
+      }
+      > a {
+        display: block;
+      }
+    }
+  }
+  &.slick-slider {
+    padding: 0 !important;
+    margin-bottom: 45px;
+  }
+  @if ($domain == "quest") {
+    .text-blue {
+      color: $link-color;
+    }
+  }
 }
 
 @media (min-width: $screen-sm-min) {
