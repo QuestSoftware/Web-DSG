@@ -57,7 +57,6 @@ i.nav-arrow:before {
 	.utility {
 		margin: 0;
 		padding-left: 0;
-		height: 72px;
 		float: right;
 		i {
 			font-size: 22px;
@@ -107,7 +106,7 @@ i.nav-arrow:before {
 		}
 		a {
 			margin: 0;
-			padding: 22px 14px;
+			padding: 22px 9px;
 			color: $top-link;
 			display: block;
 			cursor: pointer;
@@ -191,10 +190,10 @@ i.nav-arrow:before {
 		width: 100%;
 		padding: 18px 15px;
 		background-color: $top-search-bg;
-		-webkit-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
-		-moz-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
-		box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
-		border-top: 1px solid $top-search-top-border-color;
+		-webkit-box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
+		-moz-box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
+		box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
+		border-top: 3px solid $top-search-top-border-color;
 		input[type=text] {
 			border: 1px solid $top-search-input-border-color;
 			font-size: 15px;
@@ -216,7 +215,7 @@ i.nav-arrow:before {
 			height: auto;
 		}
 		.btn {
-			font-size: 22px;
+			font-size: 20px;
 			position: absolute;
 			top: 18px;
 			margin-left: -28px;
@@ -347,9 +346,10 @@ i.menu-indicator {
 		right: -1px;
 		left: auto;
 		width: 250px;
-		border: 0;
+		border-top: 3px solid $top-user-dropdown-border-color !important;
 		color: $top-user-dropdown-color;
 		padding: 10px 3px 5px;
+		box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
 		h5 {
 			margin: 10px 0;
 			a {
@@ -584,7 +584,6 @@ i.menu-indicator {
 	}
 	#signin-container {
 		.dropdown-menu {
-			width: 100%;
 			top: 66px;
 			right: 0;
 			border-left: none !important;
@@ -594,7 +593,6 @@ i.menu-indicator {
 	#country-selector {
 		> div {
 			display: none;
-			border-top: 1px solid $country-selector-border-top-color;
 		}
 		&.open {
 			> div {
@@ -617,9 +615,13 @@ i.menu-indicator {
 			li {
 				padding: 0;
 				border-bottom: 1px solid $footer-li-xs-border-bottom-color;
+				span {
+					padding-left: 15px;
+				}
 				&.open {
 					border-bottom: none;
 					background: $footer-li-xs-open-bg;
+					border-top: 1px solid #aaa;
 					> ul {
 						border-bottom: 1px solid $footer-xs-border-top-color;
 					}
@@ -650,6 +652,9 @@ i.menu-indicator {
 		}
 		.footer-copyright-section {
 			font-size: 11px;
+			span {
+				padding-left: 10px;
+			}
 			&:last-child {
 				border: none;
 			}
@@ -675,9 +680,6 @@ i.menu-indicator {
 	.masthead {
 		.utility {
 			width: auto;
-			li {
-				position: inherit;
-			}
 			a.navbar-toggle {
 				&:hover {
 					color: $top-link;
@@ -1340,9 +1342,9 @@ i.menu-indicator {
 					float: right;
 					min-height: 101%;
 					width: auto;
-					-webkit-box-shadow: 2px 4px 5px 0px rgba(97, 95, 95, 0.49);
-					-moz-box-shadow: 2px 4px 5px 0px rgba(97, 95, 95, 0.49);
-					box-shadow: 2px 4px 5px 0px rgba(97, 95, 95, 0.49);
+					-webkit-box-shadow: 4px 4px 5px 0px rgba(97, 95, 95, 0.49);
+					-moz-box-shadow: 4px 4px 5px 0px rgba(97, 95, 95, 0.49);
+					box-shadow: 4px 4px 5px 0px rgba(97, 95, 95, 0.49);
 
 				}
 				li {
@@ -1363,9 +1365,6 @@ i.menu-indicator {
 			border: none;
 			ul {
 				margin: 0;
-			}
-			ul.tier1 li {
-				height: 72px;
 			}
 			ul.tier2 li {
 				height: auto;
