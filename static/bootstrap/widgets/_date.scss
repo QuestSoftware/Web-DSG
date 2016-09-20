@@ -54,7 +54,12 @@
 
   .header {
 		color: $date-widget-header-color;
-    font-size: $font-size-base;
+
+    @if ($domain == "quest") {
+      font-size: 14px;
+    } @else {
+      font-size: $font-size-base;
+    }
   }
 
   &.event-on-demand {
