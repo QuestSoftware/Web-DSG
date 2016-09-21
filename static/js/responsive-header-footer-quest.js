@@ -1,5 +1,10 @@
 /* Used on Responsive/Non-Responsive New Header/Footer (push to /static/js only) */
 
+var RootPath = RootPath || '/';
+
+//Adding language path as a class to the html tag for stylesheet reference.
+$('html').addClass(RootPath.replace(/\//g, ''));
+
 //Initially store the width of the page.
 var pageType = pageTypeLabel = '', pageWidth = getPageProperties(), resizeFn = [], localizedContent = [], resizeInterval = null;
 
@@ -26,10 +31,7 @@ $(document).ready(function () {
 			var obj = {
 				hitType: 'event',
 				eventCategory: $(this).data('gac'),
-				eventAction: $(this).data('gaa'),
-				hitCallback: function () {
-					location.href = URL;
-				}
+				eventAction: $(this).data('gaa')
 			};
 
 			if (eLabel !== undefined) {
@@ -38,6 +40,13 @@ $(document).ready(function () {
 
 			if (eValue !== undefined) {
 				obj.eventValue = parseInt(eValue);
+			}
+
+			//Redirect after event tracking is successfully sent to GA if URL is not undefined.
+			if (URL !== undefined) {
+				obj.hitCallback = function () {
+					location.href = URL;
+				};
 			}
 
 			/* To be implemented later */
@@ -50,8 +59,19 @@ $(document).ready(function () {
 			 obj.eventLabel = $(this).attr('href');
 			 }*/
 
-			//Send event tracking to google.
-			ga('send', obj);
+			// adds Event10 for siteCatalyst bug# 22253
+			if ($(this).attr('data-gaa') == 'Buy Online') {
+				sc_LinkTrackSetBuy();
+			}
+
+			//Make sure that GA is loaded
+			if (ga.hasOwnProperty('loaded') && ga.loaded === true) {
+				//Send event tracking to google.
+				ga('send', obj);
+			}
+			else if (URL !== undefined) {
+				location.href = URL;
+			}
 		})
 		.on('click', '.btn-buy', function (e) {
 			//Site Catalyst Custom Event Tracking for Buy Online
