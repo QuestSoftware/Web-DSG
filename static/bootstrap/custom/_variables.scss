@@ -1,3 +1,4 @@
+$domain: "dsg";
 $bootstrap-sass-asset-helper: false !default;
 //
 // Variables
@@ -42,6 +43,9 @@ $dell-teal: #42aeaf;
 $color-heading-links-hover: #007db8;
 $color-image-border: #737373;
 
+$text-blue: $dell-blue;
+$text-dark-blue: $dell-dark-blue;
+
 /* DemandBase Colors */
 
 $color-demandbase-dropdown-background: #c0c0c0;
@@ -79,7 +83,7 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family: 'Trebuchet MS', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Meiryo UI Reg', 'メイリオ Reg', 'MS UI Gothic Reg', 'Hiragino Kaku Gothic Reg', 'ヒラギノ角ゴ Pro W3 Reg', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'Microsoft JhengHei', '微軟正黑體', 'Malgun Gothic', Gulim, Tahoma, 'Arial Unicode', sans-serif !default;
+$font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif !default;
 
 $font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
@@ -105,8 +109,8 @@ $line-height-computed: floor(($font-size-base * $line-height-base)) !default; //
 
 //** By default, this inherits from the `<body>`.
 /*$headings-font-family:    inherit !default;*/
-$headings-font-family: 'museo-sans-for-dell-300', 'Trebuchet MS', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Meiryo UI Reg', 'メイリオ Reg', 'MS UI Gothic Reg', 'Hiragino Kaku Gothic Reg', 'ヒラギノ角ゴ Pro W3 Reg', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'Microsoft JhengHei', '微軟正黑體', 'Malgun Gothic', Gulim, Tahoma, 'Arial Unicode', sans-serif !default;
-$headings2-font-family: 'Trebuchet MS', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Meiryo UI Reg', 'メイリオ Reg', 'MS UI Gothic Reg', 'Hiragino Kaku Gothic Reg', 'ヒラギノ角ゴ Pro W3 Reg', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'Microsoft JhengHei', '微軟正黑體', 'Malgun Gothic', Gulim, Tahoma, 'Arial Unicode', sans-serif !default;
+$headings-font-family: "museo-sans-for-dell-300", "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif !default;
+$headings2-font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif !default;
 $headings-font-weight: 500 !default;
 $headings-line-height: 1.166667 !default;
 $headings-color: inherit !default;
@@ -346,6 +350,7 @@ $ms-choice-color: #444;
 $ms-choice-border-color: #ccc;
 $ms-choice-bg-color: $white;
 $ms-choice-focus-border-color: #007db8;
+$ms-choice-focus-shadow-color: rgba(0, 125, 184, 0.6);
 $ms-choice-disabled-bg-color: #f4f4f4;
 $ms-choice-disabled-border-color: #ddd;
 $ms-choice-span-color: #555;
@@ -357,7 +362,7 @@ $ms-choice-xs-placeholder-hover-color: #00496c;
 $ms-drop-bg-color: $white;
 $ms-drop-text-color: #000;
 $ms-drop-border-color: #ccc;
-$ms-drop--hover-bg: #cce5f1;
+$ms-drop-hover-bg: #cce5f1;
 $ms-drop-label-color: #007db8;
 
 $ms-search-input-bg-color: #fff;
@@ -1050,6 +1055,8 @@ $text-muted: $gray-light !default;
 $abbr-border-color: $gray-light !default;
 //** Headings small color
 $headings-small-color: $gray-light !default;
+//** Blockquote color
+$blockquote-color: $dell-berry !default;
 //** Blockquote small color
 $blockquote-small-color: $gray-light !default;
 //** Blockquote font size

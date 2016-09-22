@@ -18,7 +18,7 @@
 
 .has-collapsibles {
   &:before {
-    font-family: 'Glyphicons Halflings';
+	  font-family: "Glyphicons Halflings";
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
     content: "\e114";
@@ -28,7 +28,7 @@
     padding-right: 2px;
   }
   &.collapsed:before {
-    font-family: 'Glyphicons Halflings';
+	  font-family: "Glyphicons Halflings";
     content: "\e080";
     vertical-align: -2px;
   }

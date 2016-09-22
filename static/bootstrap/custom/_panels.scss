@@ -362,12 +362,12 @@
     //arrows
     .panel-title a {
       &.collapsed:before {
-        font-family: 'Glyphicons Halflings';
+	      font-family: "Glyphicons Halflings";
         content: "\e080";
         vertical-align: -2px;
       }
       &:before {
-        font-family: 'Glyphicons Halflings';
+	      font-family: "Glyphicons Halflings";
         font-size: 14px;
         -webkit-font-smoothing: antialiased;
         content: "\e114";
@@ -422,12 +422,12 @@ img ~ .panel > .panel-body:after {
       //arrows
       .panel-title a {
         &.collapsed:before {
-          font-family: 'Glyphicons Halflings';
+	        font-family: "Glyphicons Halflings";
           content: "\e080";
           vertical-align: -2px;
         }
         &:before {
-          font-family: 'Glyphicons Halflings';
+	        font-family: "Glyphicons Halflings";
           font-size: 14px;
           -webkit-font-smoothing: antialiased;
           content: "\e114";
