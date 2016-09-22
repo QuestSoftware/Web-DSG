@@ -3,7 +3,7 @@
  * Fonts from Dell for Museo and Museo Sans
  *
  */
-
+@import "../bootstrap/custom/_variables-quest";
 @font-face {
 	font-family: 'Museo Sans 300';
 	src: url('fonts/museosansfordell-300-webfont.eot');
@@ -398,35 +398,35 @@ fieldset[disabled] .btn-default.active {
 
 .lrg-cta a.btn, .button.blue, .btn-primary {
 	color: #ffffff !important;
-	background-color: #007db8 !important;
-	border-color: #007db8;
+	background-color: $btn-primary-bg !important;
+	border-color: $btn-primary-border;
 }
 
 .lrg-cta a.btn:hover, .button.blue:hover, .btn-primary:hover, .button.blue:focus {
 	color: #fff;
-	background-color: #005a85 !important;
-	border-color: #00537b;
+	background-color: $btn-primary-hover-bg !important;
+	border-color: $btn-primary-hover-border;
 }
 
 .btn-primary {
 	&:focus, &.focus {
 		color: #fff;
-		background-color: #005a85 !important;
-		border-color: #00537b;
+		background-color: $btn-primary-hover-bg !important;
+		border-color: $btn-primary-hover-border;
 	}
 }
 
 .button.blue:active {
 	color: #fff;
-	background-color: #005a85 !important;
-	border-color: #00537b;
+	background-color: $btn-primary-hover-bg !important;
+	border-color: $btn-primary-hover-border;
 }
 
 .btn-primary {
 	&:active, &.active {
 		color: #fff;
-		background-color: #005a85 !important;
-		border-color: #00537b;
+		background-color: $btn-primary-hover-bg !important;
+		border-color: $btn-primary-hover-border;
 	}
 }
 
@@ -539,13 +539,13 @@ fieldset[disabled] .btn-primary.active {
 
 .button.green {
 	color: #ffffff;
-	background-color: #408001;
-	border-color: #408001;
+	background-color: $btn-success-bg;
+	border-color: $btn-success-border;
 }
 
 .btn-success {
 	color: #ffffff;
-	background-color: #408001;
+	background-color: $btn-success-bg;
 	border-color: #408001;
 	&:hover {
 		color: #ffffff;
@@ -557,20 +557,20 @@ fieldset[disabled] .btn-primary.active {
 .button.green:hover, .btn-success:focus, .button.green:focus {
 	color: #ffffff;
 	background-color: #274d01;
-	border-color: #224301;
+	border-color: $btn-success-border;
 }
 
 .btn-success {
 	&.focus, &:active {
 		color: #ffffff;
-		background-color: #274d01;
+		background-color: $btn-success-bg;
 		border-color: #224301;
 	}
 }
 
 .button.green:active, .btn-success.active, .open > .dropdown-toggle.btn-success {
 	color: #ffffff;
-	background-color: #274d01;
+	background-color: $btn-success-hover-bg;
 	border-color: #224301;
 }
 
@@ -579,68 +579,68 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .btn-success.disabled, .button.green.disabled, .btn-success[disabled], .button.green[disabled] {
-	background-color: #408001;
-	border-color: #408001;
+	background-color: $btn-success-bg;
+	border-color: $btn-success-border;
 }
 
 fieldset[disabled] {
 	.btn-success, .button.green {
-		background-color: #408001;
+		background-color: $btn-success-bg;
 		border-color: #408001;
 	}
 }
 
 .btn-success.disabled:hover, .button.green.disabled:hover, .btn-success[disabled]:hover, .button.green[disabled]:hover {
-	background-color: #408001;
-	border-color: #408001;
+	background-color: $btn-success-bg;
+	border-color: $btn-success-border;
 }
 
 fieldset[disabled] {
 	.button.green:hover, .btn-success:hover {
-		background-color: #408001;
-		border-color: #408001;
+		background-color: $btn-success-bg;
+		border-color: $btn-success-border;
 	}
 }
 
 .btn-success.disabled:focus, .button.green.disabled:focus, .btn-success[disabled]:focus, .button.green[disabled]:focus {
-	background-color: #408001;
-	border-color: #408001;
+	background-color: $btn-success-bg;
+	border-color: $btn-success-border;
 }
 
 fieldset[disabled] {
 	.btn-success:focus, .button.green:focus {
-		background-color: #408001;
-		border-color: #408001;
+		background-color: $btn-success-bg;
+		border-color: $btn-success-border;
 	}
 }
 
 .btn-success.disabled.focus, .button.green.disabled.focus, .btn-success[disabled].focus, .button.green[disabled].focus {
-	background-color: #408001;
-	border-color: #408001;
+	background-color: $btn-success-bg;
+	border-color: $btn-success-border;
 }
 
 fieldset[disabled] {
 	.btn-success.focus, .button.green.focus {
-		background-color: #408001;
-		border-color: #408001;
+		background-color: $btn-success-bg;
+		border-color: $btn-success-border;
 	}
 }
 
 .btn-success.disabled:active, .button.green.disabled:active, .btn-success[disabled]:active, .button.green[disabled]:active {
-	background-color: #408001;
-	border-color: #408001;
+	background-color: $btn-success-bg;
+	border-color: $btn-success-border;
 }
 
 fieldset[disabled] {
 	.btn-success:active, .button.greens:active {
-		background-color: #408001;
-		border-color: #408001;
+		background-color: $btn-success-bg;
+		border-color: $btn-success-border;
 	}
 }
 
 .btn-success.disabled.active, .button.green.disabled.active, .btn-success[disabled].active, .button.green[disabled].active, fieldset[disabled] .btn-success.active {
-	background-color: #408001;
-	border-color: #408001;
+	background-color: $btn-success-bg;
+	border-color: $btn-success-border;
 }
 
 .btn-success {
@@ -654,12 +654,12 @@ fieldset[disabled] {
 }
 
 .button.green:hover, .btn-success:focus .btn-success:active {
-	background: #285709;
+	background: $btn-success-hover-bg;
 }
 
 .button.green {
 	&:focus .button.green:active, &.active .btn-success.active {
-		background: #285709;
+		background: $btn-success-hover-bg;
 	}
 }
 
