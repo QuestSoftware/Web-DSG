@@ -4,6 +4,7 @@
   z-index: 9999;
 	background-color: $flyout-bg;
   width: 255px;
+
   @include transition(all .5s ease-out);
 
   > div {
@@ -58,6 +59,11 @@
     right: 10px;
     font-size: 17px;
     opacity: 1;
+  }
+  a {
+    > img {
+      margin-right: 10px;
+    }
   }
 }
 
