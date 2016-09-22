@@ -55,12 +55,11 @@
   line-height: 30px;
   font-weight: 700;
   position: absolute;
-	top: 75%;
+	top: 0;
   width: 100%;
 	z-index: 2;
-	@include opacity(0.92);
 	+ img {
-		position: relative;
+		position: absolute;
 		bottom: 0;
 	}
 }
@@ -124,21 +123,4 @@ a:hover {
       height: 194px;
     }
   }
-}
-
-.casestudy {
-	background-color: #003876;
-	@include opacity(0.90);
-}
-
-.ondemand {
-	background-color: #C44E26;
-}
-
-.online-event {
-	background-color: #3E831C;
-}
-
-.in-person {
-	background-color: #C44E26;
 }
