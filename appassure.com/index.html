@@ -91,6 +91,7 @@
 		.menu {
 			float: left;
 			top: 5%;
+			width: 200px;
 		}
 
 		/* Overlays */
@@ -121,7 +122,7 @@
 		}
 
 		.ui-menu li::before {
-			background: rgb(238, 238, 238);
+
 			width: 100%;
 			height: 1px;
 			display: block;
@@ -147,9 +148,10 @@
 			text-decoration: none;
 			display: block;
 			padding: 2px .4em;
-			line-height: 1.5;
+			line-height: 2;
 			min-height: 0; /* support: IE7 */
 			font-weight: bold;
+			padding-left: 40px;
 		}
 
 		.ui-menu .ui-menu-item a.ui-state-focus,
@@ -194,8 +196,9 @@
 		/* Component containers
 		----------------------------------*/
 		.ui-widget {
-			font-family: Museo, "Trebuchet MS", "Helvetica CY", sans-serif;
-			font-size: 13px;
+			font-family: 'Trebuchet MS';
+			font-size: 15px;
+			font-weight: normal;
 		}
 
 		.ui-widget .ui-widget {
@@ -211,13 +214,11 @@
 		}
 
 		.ui-widget-content {
-			border: 1px solid #aaaaaa;
-			background: #6ea204 url("http://software.dell.com/landing//images/ui-bg_flat_100_6ea204_40x100.png") 50% 50% repeat-x;
-			color: #ffffff;
+
 		}
 
 		.ui-widget-content a {
-			color: #ffffff;
+			color: #000;
 		}
 
 		.ui-widget-header {
@@ -255,10 +256,9 @@
 		.ui-state-focus,
 		.ui-widget-content .ui-state-focus,
 		.ui-widget-header .ui-state-focus {
-			border: 1px solid #999999;
-			background: #f2af00 url("http://software.dell.com/landing//images/ui-bg_flat_100_f2af00_40x100.png") 50% 50% repeat-x;
+			background-color: #fb4f14;
 			font-weight: bold;
-			color: #b7295a;
+			color: #FFFFFF;
 		}
 
 		.ui-state-hover a,
@@ -269,17 +269,17 @@
 		.ui-state-focus a:hover,
 		.ui-state-focus a:link,
 		.ui-state-focus a:visited {
-			color: #b7295a;
+			color: #FFFFFF;
 			text-decoration: none;
 		}
 
 		.ui-state-active,
 		.ui-widget-content .ui-state-active,
 		.ui-widget-header .ui-state-active {
-			border: 1px solid #aaaaaa;
-			background: #f2af00 url("http://software.dell.com/landing//images/ui-bg_flat_100_f2af00_40x100.png") 50% 50% repeat-x;
+
+			background: #fb4f14;
 			font-weight: bold;
-			color: #b7295a;
+			color: #FFFFFF;
 		}
 
 		.ui-state-active a,
@@ -295,7 +295,7 @@
 		.ui-widget-content .ui-state-highlight,
 		.ui-widget-header .ui-state-highlight {
 			border: 1px solid #aaaaaa;
-			background: #f2af00 url("http://software.dell.com/landing//images/ui-bg_flat_100_f2af00_40x100.png") 50% 50% repeat-x;
+			background: #fb4f14;
 			color: #444444;
 		}
 
@@ -308,9 +308,7 @@
 		.ui-state-error,
 		.ui-widget-content .ui-state-error,
 		.ui-widget-header .ui-state-error {
-			border: 1px solid #cd0a0a;
-			background: #fef1ec url("http://software.dell.com/landing//images/ui-bg_flat_95_fef1ec_40x100.png") 50% 50% repeat-x;
-			color: #cd0a0a;
+
 		}
 
 		.ui-state-error a,
@@ -358,28 +356,28 @@
 		.ui-corner-top,
 		.ui-corner-left,
 		.ui-corner-tl {
-			border-top-left-radius: 5px;
+			border-top-left-radius: 0px;
 		}
 
 		.ui-corner-all,
 		.ui-corner-top,
 		.ui-corner-right,
 		.ui-corner-tr {
-			border-top-right-radius: 5px;
+			border-top-right-radius: 0px;
 		}
 
 		.ui-corner-all,
 		.ui-corner-bottom,
 		.ui-corner-left,
 		.ui-corner-bl {
-			border-bottom-left-radius: 5px;
+			border-bottom-left-radius: 0px;
 		}
 
 		.ui-corner-all,
 		.ui-corner-bottom,
 		.ui-corner-right,
 		.ui-corner-br {
-			border-bottom-right-radius: 5px;
+			border-bottom-right-radius: 0px;
 		}
 
 		/* Overlays */
@@ -419,12 +417,12 @@
 			z-index: 1099;
 		}
 
-		.bg_wifi {
-			top: 0%;
+		.bg_quest {
+			top: 80px;
 			width: 147px;
-			height: 106px;
-			right: 20%;
-			background-image: url("http://software.dell.com/landing/images/bg_wifi.png");
+			height: 42px;
+			right: 81%;
+			background-image: url("http://www-quest-com/images/quest-logo/orange-156x42.png");
 			background-attachment: scroll;
 			backgroun-repeat: no-repeat;
 			background-postion-x: 0%;
@@ -489,16 +487,54 @@
 
 		#footer {
 			position: relative;
-			bottom: 1px;
-			height: 20px;
+			box-shadow: none;
+			font-size: 12px;
 			padding: 12px;
-			color: rgb(68, 68, 68);
+			border: 0 none;
+			border-radius: 0;
 			text-align: center;
-			border: 0px;
-			border-top-left-radius: 0px;
-			border-top-right-radius: 0px;
-			background-color: rgb(210, 210, 210);
+			background-color: #eee;
+			background-image: none;
 			z-index: 1199;
+		}
+
+		#footer p {
+			padding-left: 0px;
+			margin-left: -82px;
+		}
+
+		a, a:visited {
+			color: #003769;
+		}
+
+		h2 {
+			font-size: 25px;
+			font-weight: normal;
+			padding-bottom: 25px;
+		}
+
+		article {
+			font-size: 15px;
+		}
+
+		#body-container ul li {
+			font-size: 15px;
+		}
+
+		.round-corners {
+			padding: 150px 110px 150px 0px;
+			border: 0px currentColor;
+			border-radius: 0px;
+			border-bottom-left-radius: 0px;
+			background-image: url('/images/shared/bg-legacy.jpg');
+		}
+
+		#body-container {
+			width: 680px !important;
+			font-family: 'Trebuchet MS';
+			margin-top: 15px;
+			float: right;
+			margin-right: -65px;
 		}
 	</style>
 </head>
@@ -506,72 +542,70 @@
 <div id="wrapper">
 	<div id="main-content">
 		<div id="main-content">
-			<div class="wrapper" style="padding-top: 15px;">
-				<div class="round-corners"
-				     style="padding: 120px 110px 150px 0px; border: 0px currentColor; color: rgb(255, 255, 255); border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; background-color: rgb(0, 133, 195);">
-					<div class="bg_logo bg">&nbsp;</div>
-					<div class="bg_wifi bg">&nbsp;</div>
-					<div class="bg_lock bg">&nbsp;</div>
-					<div class="bg_cloud bg">&nbsp;</div>
-					<div class="bg_scheme bg">&nbsp;</div>
+			<div class="wrapper" style="margin-top: 100px;">
+				<div class="round-corners">
+					<div class="bg_quest bg"></div>
 					<div class="menu">
 						<ul aria-activedescendant="ui-id-6" class="ui-menu ui-widget ui-widget-content ui-corner-all"
 						    id="menu" role="menu" tabindex="0">
-							<li class="ui-menu-item" role="presentation"><a aria-haspopup="true" class="ui-corner-all"
-							                                                href="http://software.dell.com/products/rapid-recovery/" id="ui-id-1"
-							                                                role="menuitem" tabindex="-1">Products</a>
+							<li class="ui-menu-item" role="presentation">
+								<a aria-haspopup="true" class="ui-corner-all" href="https://quest.com/products/rapid-recovery/"
+								   id="ui-id-1" role="menuitem" tabindex="-1">Products</a>
 							</li>
-							<li class="ui-menu-item" role="presentation"><a class="ui-corner-all"
-							                                                href="http://software.dell.com/solutions/data-protection/"
-							                                                id="ui-id-2" role="menuitem" tabindex="-1">Solutions</a>
+							<li class="ui-menu-item" role="presentation">
+								<a class="ui-corner-all" href="http://quest.com/solutions/data-protection/"
+								   id="ui-id-2" role="menuitem" tabindex="-1">Solutions</a>
 							</li>
-							<li class="ui-menu-item" role="presentation"><a class="ui-corner-all" href="http://software.dell.com/partners/"
-							                                                id="ui-id-3" role="menuitem" tabindex="-1">Partners</a>
+							<li class="ui-menu-item" role="presentation">
+								<a class="ui-corner-all" href="http://quest.com/partners/" id="ui-id-3" role="menuitem" tabindex="-1">Partners</a>
 							</li>
-							<li class="ui-menu-item" role="presentation"><a class="ui-corner-all"
-							                                                href="https://support.software.dell.com/rapid-recovery/6.0.2"
-							                                                id="ui-id-4" role="menuitem" tabindex="-1">Support</a>
+							<li class="ui-menu-item" role="presentation">
+								<a class="ui-corner-all" href="https://support.quest.com/rapid-recovery/6.0.2" id="ui-id-4"
+								   role="menuitem" tabindex="-1">Support</a>
 							</li>
-							<li class="ui-menu-item" role="presentation"><a class="ui-corner-all"
-							                                                href="http://software.dell.com/acquisitions/appassure.aspx"
-							                                                id="ui-id-5" role="menuitem" tabindex="-1">About
-								AppAssure</a></li>
-							<li class="ui-menu-item" role="presentation"><a class="ui-corner-all"
-							                                                href="http://software.dell.com/company/contact-us.aspx" id="ui-id-6"
-							                                                role="menuitem" tabindex="-1">Contact</a>
+							<li class="ui-menu-item" role="presentation">
+								<a class="ui-corner-all" href="http://quest.com/acquisitions/appassure.aspx" id="ui-id-5"
+								   role="menuitem" tabindex="-1">About
+									AppAssure</a></li>
+							<li class="ui-menu-item" role="presentation">
+								<a class="ui-corner-all" href="http://quest.com/company/contact-us.aspx" id="ui-id-6" role="menuitem"
+								   tabindex="-1">Contact</a>
 							</li>
 						</ul>
 						<script type="text/javascript">
 							$("#menu").menu();
 						</script>
 					</div>
-					<div id="body-container" sans-serif=""
-					     style="width: 680px !important; font-family: Museo, &quot;Trebuchet MS&quot;, Helvetica, Arial, sans-serif; margin-top: 10px; float: right;">
+					<div id="body-container">
 						<h2>AppAssure is now Rapid Recovery!</h2>
 						<article>
-							<p>There's a new release of AppAssure backup, replication and recovery software - renamed Data Protection | Rapid Recovery, with expanded capabilities. With
-								Rapid Recovery, you can:</p>
-
+							<p>There's a new release of AppAssure backup, replication and recovery software - renamed Data Protection
+								| Rapid Recovery, with expanded capabilities. With Rapid Recovery, you can:</p>
 							<ul>
-								<li>Ensure zero impact on your users by presenting them with the data they request instantly, during restores, as if the outage never happened</li>
+								<li>Ensure zero impact on your users by presenting them with the data they request instantly,
+									during restores, as if the outage never happened
+								</li>
 								<li>Assure system, application and data availability everywhere: physical, virtual and cloud</li>
 								<li>Protect growing virtual environments automatically</li>
 								<li>Connect to all the leading public clouds simply and easily</li>
 								<li>Lower costs – all capabilities included in one solution</li>
 							</ul>
-
 							<p><strong>And, it’s a free and easy upgrade for existing AppAssure 5.4.3 license holders!</strong></p>
 
-							<p><a href="http://software.dell.com/products/rapid-recovery/" style="color: #fff; text-decoration: underline;">Learn more</a> – download a Rapid Recovery
-								<a href="https://software.dell.com/register/94236/" style="color: #fff; text-decoration: underline;">trial today</a>.</p>
+							<p><a href="http://software.dell.com/products/rapid-recovery/" style="text-decoration: underline;">Learn
+								more</a> – download a Rapid Recovery
+								<a href="https://software.dell.com/register/94236/" style="text-decoration: underline;">trial today</a>.
+							</p>
 						</article>
 					</div>
 				</div>
-				<div class="round-corners" id="footer">&copy;2016 Dell Inc. ALL RIGHTS RESERVED. | <a href="http://software.dell.com/legal/">Terms
-					of Use</a> | <a href="http://software.dell.com/legal/privacy.aspx">Privacy</a></div>
+				<div class="round-corners" id="footer">
+					<p>&copy;2016 Quest Software Inc. ALL RIGHTS RESERVED. | <a href="http://quest.com/legal/">Terms
+						of Use</a> | <a href="http://quest.com/legal/privacy.aspx">Privacy</a>
+					</p></div>
 			</div>
 		</div>
-	</div>
-</div>
+			</div>
+		</div>
 </body>
 </html>
