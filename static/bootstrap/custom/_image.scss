@@ -127,18 +127,25 @@ a:hover {
 }
 
 .casestudy {
-	background-color: #003876;
-	@include opacity(0.90);
+	background-color: $doc-casestudy;
+	@if ($domain == "quest") {
+		@include opacity(0.90);
+	}
+
 }
 
 .ondemand {
-	background-color: #C44E26;
+	background-color: $event-on-demand-header-bg;
 }
 
 .online-event {
-	background-color: #3E831C;
+	background-color: $event-online-header-bg;
 }
 
 .in-person {
-	background-color: #C44E26;
+	background-color: $event-in-person-header-bg;
+}
+
+.whitepaper, .ebook, .inforgraph, .datasheet, .techbrief {
+	background-color: $doc-header-bg;
 }
