@@ -165,7 +165,7 @@ i.nav-arrow:before {
 		padding-right: 0;
 		a {
 			display: block;
-			padding: 10px 0 9px 20px;
+			padding: 10px 0 9px 15px;
 			text-decoration: none;
 			color: $top-link;
 			&:hover {
@@ -297,12 +297,6 @@ i.nav-arrow:before {
 		}
 		&.tier3 {
 			padding: 0 0 0 15px;
-
-			> li {
-				a {
-					padding-left: 15px;
-				}
-			}
 		}
 		&.tier4 {
 			padding: 0 0 0 15px;

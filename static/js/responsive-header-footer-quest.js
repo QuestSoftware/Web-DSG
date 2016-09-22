@@ -345,10 +345,8 @@ function processHeaderFooter() {
 		if (isOpen) {
 			$(this).parent().siblings().removeClass('open');
 		}
-		$(this).css({backgroundColor: '#fb4f14'});
-		$(this).animate({backgroundColor: '#eeeeee'}, 500, function () {
-			$(this).css('backgroundColor', '');
-		});
+		var elem = $(this);
+		bgAnimate(elem);
 
 		e.preventDefault();
 		$(this).parent().toggleClass('open');
@@ -371,11 +369,8 @@ function processHeaderFooter() {
 		}
 		//Siamak: Change tier 1 background when click
 		if (pageType < 3) {
-			var originalBG = $(this).css('background-color');
-			$(this).css({backgroundColor: '#fb4f14'});
-			$(this).animate({backgroundColor: originalBG}, 500, function () {
-				$(this).css('backgroundColor', '');
-			});
+			var elem = $(this);
+			bgAnimate(elem);
 		}
 
 	});
@@ -402,7 +397,15 @@ function processHeaderFooter() {
 			location.href = $(this).attr('href');
 		}
 	});
+	function bgAnimate(elm) {
+		console.log(elm);
+		elm.css({backgroundColor: '#fb4f14', color: '#ffffff'});
+		elm.animate({backgroundColor: '#eeeeee', color: '#333333'}, 500, function () {
+			elm.css('backgroundColor', '');
+		});
+	}
 }
+
 
 function getPageProperties() {
 	//Workaround for Google Chrome. The vertical scrollbar is not included in determining the width of the device.
