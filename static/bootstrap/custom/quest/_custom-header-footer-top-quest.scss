@@ -99,10 +99,11 @@
 			float: left;
 			position: relative;
 			padding: 0;
+			border-right: 1px solid transparent;
+			border-left: 1px solid transparent;
 			&.open {
 				z-index: 9999;
-				border-right: 1px solid #eee;
-				border-left: 1px solid #eee;
+				border-color: #eeeeee;
 				height: 68px;
 				a {
 					color: #fb4f14;
@@ -193,10 +194,10 @@
 		width: 100%;
 		padding: 18px 15px;
 		background-color: $top-search-bg;
-		-webkit-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
-		-moz-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
-		box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
-		border-top: 1px solid #eeeeee;
+		-webkit-box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
+		-moz-box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
+		box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
+		border-top: 3px solid #eeeeee;
 		input[type=text] {
 			border: 1px solid $top-search-input-border-color;
 			font-size: 15px;
@@ -213,7 +214,7 @@
 			}
 		}
 		.btn {
-			font-size: 22px;
+			font-size: 20px;
 			position: absolute;
 			top: 18px;
 			margin-left: -28px;
@@ -372,17 +373,18 @@ li {
 #signin-container { //LI
 
 	.dropdown-menu {
-		background: $top-user-dropdown-bg;
+		border: 1px solid #eee !important;
+		border-bottom: none !important;
+		background: #f9f9f9;
 		margin-top: 0;
-		right: 0;
+		right: -1px;
 		left: auto;
 		width: 250px;
-		border: 0;
-		color: $top-user-dropdown-color;
-		padding: 0;
-		.lnk-create-account {
-			background: $top-user-create-acc-bg;
-		}
+		border-top: 3px solid #eee !important;
+		color: #444;
+		padding: 10px 3px 5px;
+		-webkit-box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
+		box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
 		h5 {
 			margin: 10px 0;
 			a {

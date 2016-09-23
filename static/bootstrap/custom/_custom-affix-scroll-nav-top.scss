@@ -43,7 +43,11 @@
 				color: $affix-li-active-text-color;
         a {
           padding: 6px 5px 10px;
+					border-left: 1px solid #ccc;
         }
+				&:first-child {
+					border-left: none;
+				}
       }
       a {
         text-align: center;

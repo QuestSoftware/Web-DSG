@@ -577,7 +577,9 @@ i.menu-indicator {
 		}
 	}
 	#signin-container {
+		position: inherit;
 		.dropdown-menu {
+			width: 100%;
 			top: 66px;
 			right: 0;
 			border-left: none !important;
