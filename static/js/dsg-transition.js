@@ -14,8 +14,12 @@
 
 var DSGTransition = function () {
 	var config = {
+		url: 'https://www.quest.com',
 		containerID: 'DSG-Transition',
-		description: '<span class="main-blurb">Dell Software is now Quest</span><br>Visit our new site at <span class="text-underline">Quest.com</span>',
+		description: [
+			'<span class="main-blurb">Dell Software is now Quest</span>',
+			'Visit our new site at <span class="text-underline">Quest.com</span>'
+		],
 		cookieParams: {
 			expire: 999, //In days
 			path: '/'
@@ -51,7 +55,8 @@ var DSGTransition = function () {
 		containerElem = null,
 		containerHeight = 0,
 		cookies = document.cookie.split(';'),
-		template = '';
+		template = '',
+		scrollPos = scrollPosition();
 
 	/**
 	 * Initializing ePrivacy module.
@@ -60,21 +65,23 @@ var DSGTransition = function () {
 	function init(obj) {
 		$.extend(config, obj);
 
-		template = '<a href="https://www.quest.com" target="_blank" id="' + config.containerID + '">' +
-			' <p>' + config.description + '</p> ' +
+		template = '<a href="' + config.url + '" target="_blank" id="' + config.containerID + '">' +
+			' <p><span class="main-blurb">' + config.description[0] + '</span><br>' + config.description[1] + '</p> ' +
 			'</a>';
 
-		config.cookieParams.expire *= 1000; //24*60*60*1000
+		config.cookieParams.expire *= 24 * 60 * 60 * 1000;
 
 		if (displayNotice() || location.search == '?DSGTransition=true') {
 			$('head').append('<style>' + config.css + '</style>');
-			$('body').append(template);
 
-			containerElem = $('#' + config.containerID);
-			containerHeight = containerElem.outerHeight(true);
-
-			containerElem.css('top', -1 * containerHeight).animate({'top': 0}, 500);
-			$('body').animate({'paddingTop': containerHeight}, 500);
+			if (scrollPos[1] > 0) {
+				$('html, body').animate({'scrollTop': 0}, 500, function () {
+					showNotice();
+				});
+			}
+			else {
+				showNotice();
+			}
 
 			bindEvent();
 
@@ -98,6 +105,18 @@ var DSGTransition = function () {
 		})
 	}
 
+	function scrollPosition() {
+		if (window.pageYOffset != undefined) {
+			return [pageXOffset, pageYOffset];
+		}
+		else {
+			var sx, sy, d = document, r = d.documentElement, b = d.body;
+			sx = r.scrollLeft || b.scrollLeft || 0;
+			sy = r.scrollTop || b.scrollTop || 0;
+			return [sx, sy];
+		}
+	}
+
 	/**
 	 * Detect if ePrivacy module should be displayed or not.
 	 * @returns {boolean}
@@ -112,6 +131,18 @@ var DSGTransition = function () {
 		}
 
 		return true;
+	}
+
+	function showNotice() {
+		var bodyElem = $('body');
+
+		bodyElem.append(template);
+
+		containerElem = $('#' + config.containerID);
+		containerHeight = containerElem.outerHeight(true);
+
+		containerElem.css('top', -1 * containerHeight).animate({'top': 0}, 500);
+		bodyElem.animate({'paddingTop': containerHeight}, 500);
 	}
 
 	/**
@@ -140,6 +171,26 @@ var DSGTransition = function () {
 	}
 }();
 
-$(function () {
-	DSGTransition.init({});
-})();
+/*$.getScript('/static/js/dsg-transition.js').done(function() {
+ DSGTransition.init({
+ url: 'https://www.quest.com',
+ description: [
+ 'Dell Software is now Quest',
+ 'Visit our new site at <span class="text-underline">Quest.com</span>'
+ ]
+ });
+ });*/
+
+/*
+ <script src="/static/js/dsg-transition.min.js"></script>
+ <script>
+ $(function () {
+ DSGTransition.init({
+ url: 'https://www.quest.com',
+ description: [
+ 'Dell Software is now Quest',
+ 'Visit our new site at <span class="text-underline">Quest.com</span>'
+ ]
+ });
+ })();
+ </script>*/
