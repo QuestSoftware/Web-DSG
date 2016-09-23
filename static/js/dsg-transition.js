@@ -51,7 +51,8 @@ var DSGTransition = function () {
 		containerElem = null,
 		containerHeight = 0,
 		cookies = document.cookie.split(';'),
-		template = '';
+		template = '',
+		scrollPos = scrollPosition();
 
 	/**
 	 * Initializing ePrivacy module.
@@ -64,17 +65,19 @@ var DSGTransition = function () {
 			' <p>' + config.description + '</p> ' +
 			'</a>';
 
-		config.cookieParams.expire *= 1000; //24*60*60*1000
+		config.cookieParams.expire *= 24 * 60 * 60 * 1000;
 
 		if (displayNotice() || location.search == '?DSGTransition=true') {
 			$('head').append('<style>' + config.css + '</style>');
-			$('body').append(template);
 
-			containerElem = $('#' + config.containerID);
-			containerHeight = containerElem.outerHeight(true);
-
-			containerElem.css('top', -1 * containerHeight).animate({'top': 0}, 500);
-			$('body').animate({'paddingTop': containerHeight}, 500);
+			if (scrollPos[1] > 0) {
+				$('html, body').animate({'scrollTop': 0}, 500, function () {
+					showNotice();
+				});
+			}
+			else {
+				showNotice();
+			}
 
 			bindEvent();
 
@@ -98,6 +101,18 @@ var DSGTransition = function () {
 		})
 	}
 
+	function scrollPosition() {
+		if (window.pageYOffset != undefined) {
+			return [pageXOffset, pageYOffset];
+		}
+		else {
+			var sx, sy, d = document, r = d.documentElement, b = d.body;
+			sx = r.scrollLeft || b.scrollLeft || 0;
+			sy = r.scrollTop || b.scrollTop || 0;
+			return [sx, sy];
+		}
+	}
+
 	/**
 	 * Detect if ePrivacy module should be displayed or not.
 	 * @returns {boolean}
@@ -112,6 +127,18 @@ var DSGTransition = function () {
 		}
 
 		return true;
+	}
+
+	function showNotice() {
+		var bodyElem = $('body');
+
+		bodyElem.append(template);
+
+		containerElem = $('#' + config.containerID);
+		containerHeight = containerElem.outerHeight(true);
+
+		containerElem.css('top', -1 * containerHeight).animate({'top': 0}, 500);
+		bodyElem.animate({'paddingTop': containerHeight}, 500);
 	}
 
 	/**

@@ -9,7 +9,7 @@
  })();
  </script>
 
- $.getScript('/static/js/ePrivacy.min.js').done(function() {
+ $.getScript('/static/js/ePrivacy.js').done(function() {
  $(function () {
  ePrivacy.init({
  description: 'By using this site, you agree to the <a href="/legal/privacy.aspx">Privacy Policy</a> and <a href="/legal/">Terms of Use</a>.',
@@ -66,7 +66,7 @@ var ePrivacy = function () {
 	function init(obj) {
 		$.extend(config, obj);
 
-		template = '<div id="' + config.containerID + '">' +
+		template = '<div id="' + config.containerID + '" class="bootstrap">' +
 			'<div class="container">' +
 			' <div class="row">' +
 			'   <div class="col-sm-12">' +
