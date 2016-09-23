@@ -319,12 +319,17 @@ $btn-warning-color: #fff !default;
 $btn-warning-bg: $brand-warning !default;
 $btn-warning-border: darken($btn-warning-bg, 5%) !default;
 
+$btn-warning-hover-color: #fff;
+$btn-warning-hover-bg: #be500e;
+$btn-warning-hover-border: #9d420b;
+
 $btn-danger-color: #fff !default;
 $btn-danger-bg: $brand-danger !default;
 $btn-danger-border: darken($btn-danger-bg, 5%) !default;
 
 $btn-link-disabled-color: $gray-light !default;
 $btn-default-disable-color: $dell-gray;
+$btn-default-disable-border-color: #aaaaaa;
 /* End:Buttons */
 
 /* Start:Flyout */
