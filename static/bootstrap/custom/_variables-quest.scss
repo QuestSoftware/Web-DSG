@@ -37,6 +37,7 @@ $darker-gray: #333333;
 $dark-gray: #444444;
 $natural-gray: #aaaaaa;
 $light-gray: #eeeeee;
+$text-green: #3E831C;
 $body-color: $darker-gray;
 
 //== Scaffolding
@@ -1009,6 +1010,10 @@ $event-in-person-header-bg: #614F83;
 $event-online-header-bg: #3E831C;
 $event-detail-signed-off-border-color: #cbcbcb;
 $event-container-off-canvas-bg-color: $white;
+
+/*Documents*/
+$doc-casestudy: #003876;
+$doc-header-bg: $link-color;
 
 //Date
 $date-widget-border-color: #d9d9d9;
