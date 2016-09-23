@@ -16,13 +16,19 @@ else {
 }
 
 $(document).ready(function () {
-	if ($path.indexOf("99026") > -1) {
+	/*http://software-dell-com/register/99026/ (http://o2/v2/registrations/Edit/44/99026/0/)*/
+	if ($('#custom-layout-video-right').length) {
+		$('h1').hide();
+
+		if ($('.move-form-in-here').length) {
+			$('#right-form-partialreg').appendTo('.move-form-in-here');
+		}
+	}
+
+	if ($('.ooyalaplayer')) {
 		loadOoyala();
 	}
-	else {
-		$("#content-container").find("h1").css("display", "block");
-		$("#right-form-partialreg").css("display", "block");
-	}
+
 	(function () {
 		var l = $(".breadcrumb").find("li:last");
 		l.html("<span>" + l.text() + "</span>").hide();
