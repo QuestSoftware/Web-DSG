@@ -145,6 +145,18 @@ var DSGTransition = function () {
 		bodyElem.animate({'paddingTop': containerHeight}, 500);
 	}
 
+	function showNotice() {
+		var bodyElem = $('body');
+
+		bodyElem.append(template);
+
+		containerElem = $('#' + config.containerID);
+		containerHeight = containerElem.outerHeight(true);
+
+		containerElem.css('top', -1 * containerHeight).animate({'top': 0}, 500);
+		bodyElem.animate({'paddingTop': containerHeight}, 500);
+	}
+
 	/**
 	 * Get cookie value by name.
 	 * @param cname
