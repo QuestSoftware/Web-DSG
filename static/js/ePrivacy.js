@@ -79,7 +79,7 @@ var ePrivacy = function () {
 
 		config.cookieParams.expire *= 1000; //24*60*60*1000
 
-		if (displayNotice() || true) {
+		if (displayNotice() || location.search == '?ePrivacy=true') {
 			$('head').append('<style>' + config.css + '</style>');
 			$('body').append(template);
 
