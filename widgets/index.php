@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Quest.com</title>
 
-    <link rel="stylesheet" href="/static/css/bootstrap-quest.css">
+    <link rel="stylesheet" href="/static/css/account.min.css">
     <link rel="stylesheet" href="/static/library/jQueryUI/jquery-ui-1.11.4-structure.css">
     <link rel="stylesheet" href="/static/library/jQueryUI/jquery-ui-1.11.4-theme.css">
 
@@ -48,7 +48,7 @@
 				Added Support Navigation
 			//-->
 				<?php
-          include("../pages/templates/header-quest.tpl");
+          include("../pages/templates/header-simple-quest.tpl");
         ?>
         <!-- header ends here -->
 
@@ -58,7 +58,7 @@
 
         <!-- footer starts here -->
         <?php
-        include("../pages/templates/footer-quest.tpl");
+        include("../pages/templates/footer-simple-quest.tpl");
         ?>
 
         <!-- footer ends here -->
