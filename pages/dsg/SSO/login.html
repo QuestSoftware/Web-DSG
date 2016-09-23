@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Edit Account Information</title>
+  <title>Sign In</title>
 
   <link rel="stylesheet" href="/static/css/bootstrap.css">
     <link rel="stylesheet" href="/static/css/sso.min.css">
 
   <!--[if IE]>
-  <link rel="stylesheet" href="/static/css/bootstrap-ie.css">
-  <![endif]-->
+	<link rel="stylesheet" href="/static/css/bootstrap-ie.css">
+	<![endif]-->
 </head>
 <body>
 
@@ -883,409 +883,41 @@
       </nav>
     </header>
     <!-- header ends here -->
-      <div class="container sso edit-account" >
+      <div class="container login" >
           <div class="row">
-              <h1>Edit Account Information</h1>
-              <form id="frmManageAccount" class="label-inline">
+              <h1>Dell Software Sign In</h1>
+              <form id="sso" class="label-top">
                   <div class="form-group">
-                      <label for="FirstName">First Name</label>
-                      <input type="text" class="form-control" name="FirstName" id="FirstName" value="Diana">
-                  </div>
-                  <div class="form-group">
-                      <label for="LastName">Last Name</label>
-                      <input type="text" class="form-control" name="LastName" id="LastName" value="Spencer">
+                      <label for="txtuseremail"> Email Address</label>
+                      <input type="email" class="form-control" name="txtuseremail" id="txtuseremail" placeholder="">
                   </div>
                   <div class="form-group">
-                      <label>Business Email</label>
-                      <input type="text" title="Email" name="Email" id="Email" class="form-control disabled" readonly="true" value="diana.spencer@software.dell.com">
+                      <label for="txtpassword">Password</label>
+                      <input type="password" class="form-control" name="txtpassword" id="txtpassword" placeholder="">
                   </div>
                   <div class="form-group">
-                      <label for="Title">Job Title</label>
-                      <select name="Title" title="Job Title" id="Title" class="fieldrequired form-control">
-                          <option value="">Select</option>
-                          <option value="1" selected="selected">Application Developer</option>
-                          <option value="29">Backup Administrator</option>
-                          <option value="2">C-Level (CEO,CFO,CIO,CMO,CSO,CTO)</option>
-                          <option value="31">Data Analyst</option>
-                          <option value="3">Database Administrator</option>
-                          <option value="4">DBA Manager</option>
-                          <option value="5">Developer</option>
-                          <option value="6">eCommerce/eBusiness Manager</option>
-                          <option value="7">Exchange/Mail Administrator</option>
-                          <option value="8">Help Desk Staff/Manager</option>
-                          <option value="9">Infrastructure Architect/Manager</option>
-                          <option value="10">IT Applications Manager</option>
-                          <option value="11">IT Architect</option>
-                          <option value="12">IT Consultant</option>
-                          <option value="13">IT Director/VP</option>
-                          <option value="14">IT Manager</option>
-                          <option value="15">IT Security Director</option>
-                          <option value="16">Java Developer/Administrator</option>
-                          <option value="17">Network Administrator</option>
-                          <option value="18">Network Manager</option>
-                          <option value="19">Non IT Director/VP</option>
-                          <option value="27">Partner</option>
-                          <option value="20">Project Manager</option>
-                          <option value="26">Security Officer</option>
-                          <option value="21">Software Engineer</option>
-                          <option value="22">Student</option>
-                          <option value="23">Systems Administrator</option>
-                          <option value="24">Systems Analyst/Architect</option>
-                          <option value="25">Systems Engineer</option>
-                          <option value="28">Virtualization Administrator</option>
-                      </select>
-                  </div>
-                  <div class="form-group">
-                      <label for="Companydb">Company</label>
-                      <input type="text" class="form-control" name="Companydb" id="Companydb" value="Dell">
-                  </div>
-                  <div class="form-group">
-                      <label for="CountryCode">Country</label>
-                      <select name="CountryCode" title="Country" id="CountryCode" class="fieldrequired form-control">
-                          <option value="">Select</option>
-                          <option dbcountrycode="IN" value="IN">INDIA</option>
-                          <option dbcountrycode="GB" value="GB">UNITED KINGDOM</option>
-                          <option dbcountrycode="DE" value="DE">GERMANY</option>
-                          <option dbcountrycode="CA" value="CA">CANADA</option>
-                          <optgroup label="-------------------------"></optgroup>
-                          <option dbcountrycode="AF" value="AF">AFGHANISTAN</option>
-                          <option dbcountrycode="AL" value="AL">ALBANIA</option>
-                          <option dbcountrycode="DZ" value="DZ">ALGERIA</option>
-                          <option dbcountrycode="AS" value="AS">AMERICAN SAMOA</option>
-                          <option dbcountrycode="AD" value="AD">ANDORRA</option>
-                          <option dbcountrycode="AO" value="AO">ANGOLA</option>
-                          <option dbcountrycode="AI" value="AI">ANGUILLA</option>
-                          <option dbcountrycode="AQ" value="AQ">ANTARTICA</option>
-                          <option dbcountrycode="AG" value="AG">ANTIGUA AND BARBUDA</option>
-                          <option dbcountrycode="AR" value="AR">ARGENTINA</option>
-                          <option dbcountrycode="AM" value="AM">ARMENIA</option>
-                          <option dbcountrycode="AW" value="AW">ARUBA</option>
-                          <option dbcountrycode="AU" value="AU">AUSTRALIA</option>
-                          <option dbcountrycode="AT" value="AT">AUSTRIA</option>
-                          <option dbcountrycode="AZ" value="AZ">AZERBAIJAN</option>
-                          <option dbcountrycode="BH" value="BH">BAHRAIN</option>
-                          <option dbcountrycode="BD" value="BD">BANGLADESH</option>
-                          <option dbcountrycode="BB" value="BB">BARBADOS</option>
-                          <option dbcountrycode="BY" value="BY">BELARUS</option>
-                          <option dbcountrycode="BE" value="BE">BELGIUM</option>
-                          <option dbcountrycode="BZ" value="BZ">BELIZE</option>
-                          <option dbcountrycode="BJ" value="BJ">BENIN</option>
-                          <option dbcountrycode="BM" value="BM">BERMUDA</option>
-                          <option dbcountrycode="BT" value="BT">BHUTAN</option>
-                          <option dbcountrycode="BO" value="BO">BOLIVIA</option>
-                          <option dbcountrycode="BA" value="BA">BOSNIA AND HERZOGOVINA</option>
-                          <option dbcountrycode="BW" value="BW">BOTSWANA</option>
-                          <option dbcountrycode="BV" value="BV">BOUVET ISLAND</option>
-                          <option dbcountrycode="BR" value="BR">BRAZIL</option>
-                          <option dbcountrycode="IO" value="IO">BRITISH OCEAN TERRITORY</option>
-                          <option dbcountrycode="BN" value="BN">BRUNEI</option>
-                          <option dbcountrycode="BG" value="BG">BULGARIA</option>
-                          <option dbcountrycode="BF" value="BF">BURKINO</option>
-                          <option dbcountrycode="BI" value="BI">BURUNDI</option>
-                          <option dbcountrycode="KH" value="KH">CAMBODIA</option>
-                          <option dbcountrycode="CM" value="CM">CAMEROON</option>
-                          <option dbcountrycode="CV" value="CV">CAPE-VERDE</option>
-                          <option dbcountrycode="KY" value="KY">CAYMAN ISLANDS</option>
-                          <option dbcountrycode="CF" value="CF">CENTRAL AFRICAN REP.</option>
-                          <option dbcountrycode="TD" value="TD">CHAD</option>
-                          <option dbcountrycode="CL" value="CL">CHILE</option>
-                          <option dbcountrycode="CN" value="CN">CHINA</option>
-                          <option dbcountrycode="CX" value="CX">CHRISTMAS ISLAND</option>
-                          <option dbcountrycode="CC" value="CC">COCOS (KEELING) ISLANDS</option>
-                          <option dbcountrycode="CO" value="CO">COLOMBIA</option>
-                          <option dbcountrycode="KM" value="KM">COMOROS</option>
-                          <option dbcountrycode="CG" value="CG">CONGO</option>
-                          <option dbcountrycode="CK" value="CK">COOK ISLANDS</option>
-                          <option dbcountrycode="CR" value="CR">COSTA RICA</option>
-                          <option dbcountrycode="HR" value="HR">CROATIA</option>
-                          <option dbcountrycode="CW" value="CW">CURACAO</option>
-                          <option dbcountrycode="CY" value="CY">CYPRUS</option>
-                          <option dbcountrycode="CZ" value="CZ">CZECH REPUBLIC</option>
-                          <option dbcountrycode="CD" value="CD">DEMOCRATIC REPUBLIC OF CONGO</option>
-                          <option dbcountrycode="DK" value="DK">DENMARK</option>
-                          <option dbcountrycode="DJ" value="DJ">DJIBOUTI</option>
-                          <option dbcountrycode="DM" value="DM">DOMINICA</option>
-                          <option dbcountrycode="DO" value="DO">DOMINICAN REPUBLIC</option>
-                          <option dbcountrycode="TP" value="TP">EAST TIMOR</option>
-                          <option dbcountrycode="EC" value="EC">ECUADOR</option>
-                          <option dbcountrycode="EG" value="EG">EGYPT</option>
-                          <option dbcountrycode="SV" value="SV">EL SALVADOR</option>
-                          <option dbcountrycode="GQ" value="GQ">EQUATORIAL GUINEA</option>
-                          <option dbcountrycode="ER" value="ER">ERITREA</option>
-                          <option dbcountrycode="EE" value="EE">ESTONIA</option>
-                          <option dbcountrycode="ET" value="ET">ETHIOPIA</option>
-                          <option dbcountrycode="FK" value="FK">FALKLAND ISLANDS (MALVINAS)</option>
-                          <option dbcountrycode="FO" value="FO">FAROE ISLANDS</option>
-                          <option dbcountrycode="FJ" value="FJ">FIJI</option>
-                          <option dbcountrycode="FI" value="FI">FINLAND</option>
-                          <option dbcountrycode="FR" value="FR">FRANCE</option>
-                          <option dbcountrycode="PF" value="PF">FRENCH POLYNESIA</option>
-                          <option dbcountrycode="GA" value="GA">GABON</option>
-                          <option dbcountrycode="GE" value="GE">GEORGIA</option>
-                          <option dbcountrycode="GH" value="GH">GHANA</option>
-                          <option dbcountrycode="GI" value="GI">GIBRALTAR</option>
-                          <option dbcountrycode="GR" value="GR">GREECE</option>
-                          <option dbcountrycode="GL" value="GL">GREENLAND</option>
-                          <option dbcountrycode="GD" value="GD">GRENADA</option>
-                          <option dbcountrycode="GU" value="GU">GUAM</option>
-                          <option dbcountrycode="GT" value="GT">GUATEMALA</option>
-                          <option dbcountrycode="GN" value="GN">GUINEA</option>
-                          <option dbcountrycode="GW" value="GW">GUINEA-BISSAU</option>
-                          <option dbcountrycode="GY" value="GY">GUYANA</option>
-                          <option dbcountrycode="HT" value="HT">HAITI</option>
-                          <option dbcountrycode="HM" value="HM">HEARD AND McDONALD ISLANDS</option>
-                          <option dbcountrycode="VA" value="VA">HOLY SEE (VATICAN)</option>
-                          <option dbcountrycode="HN" value="HN">HONDURAS</option>
-                          <option dbcountrycode="HK" value="HK">HONG KONG</option>
-                          <option dbcountrycode="HU" value="HU">HUNGARY</option>
-                          <option dbcountrycode="IS" value="IS">ICELAND</option>
-                          <option dbcountrycode="ID" value="ID">INDONESIA</option>
-                          <option dbcountrycode="IQ" value="IQ">IRAQ</option>
-                          <option dbcountrycode="IE" value="IE">IRELAND</option>
-                          <option dbcountrycode="IL" value="IL">ISRAEL</option>
-                          <option dbcountrycode="IT" value="IT">ITALY</option>
-                          <option dbcountrycode="CI" value="CI">IVORY COAST</option>
-                          <option dbcountrycode="JM" value="JM">JAMAICA</option>
-                          <option dbcountrycode="JP" value="JP">JAPAN</option>
-                          <option dbcountrycode="JE" value="JE">JERSEY</option>
-                          <option dbcountrycode="JO" value="JO">JORDAN</option>
-                          <option dbcountrycode="KZ" value="KZ">KAZAKHSTAN</option>
-                          <option dbcountrycode="KE" value="KE">KENYA</option>
-                          <option dbcountrycode="KI" value="KI">KIRIBATI</option>
-                          <option dbcountrycode="KR" value="KR">KOREA, SOUTH</option>
-                          <option dbcountrycode="KW" value="KW">KUWAIT</option>
-                          <option dbcountrycode="KG" value="KG">KYRGYZSTAN</option>
-                          <option dbcountrycode="LA" value="LA">LAOS</option>
-                          <option dbcountrycode="LV" value="LV">LATVIA</option>
-                          <option dbcountrycode="LB" value="LB">LEBANON</option>
-                          <option dbcountrycode="LS" value="LS">LESOTHO</option>
-                          <option dbcountrycode="LR" value="LR">LIBERIA</option>
-                          <option dbcountrycode="LY" value="LY">LIBYA</option>
-                          <option dbcountrycode="LI" value="LI">LIECHTENSTEIN</option>
-                          <option dbcountrycode="LX" value="LX">LITHUANIA</option>
-                          <option dbcountrycode="LU" value="LU">LUXEMBOURG</option>
-                          <option dbcountrycode="MO" value="MO">MACAU</option>
-                          <option dbcountrycode="MK" value="MK">MACEDONIA</option>
-                          <option dbcountrycode="MG" value="MG">MADAGASCAR</option>
-                          <option dbcountrycode="MW" value="MW">MALAWI</option>
-                          <option dbcountrycode="MY" value="MY">MALAYSIA</option>
-                          <option dbcountrycode="MV" value="MV">MALDIVES</option>
-                          <option dbcountrycode="ML" value="ML">MALI</option>
-                          <option dbcountrycode="MT" value="MT">MALTA</option>
-                          <option dbcountrycode="MH" value="MH">MARSHALL ISLANDS</option>
-                          <option dbcountrycode="MR" value="MR">MAURITANIA</option>
-                          <option dbcountrycode="MU" value="MU">MAURITIUS</option>
-                          <option dbcountrycode="YT" value="YT">MAYOTTE</option>
-                          <option dbcountrycode="MX" value="MX">MEXICO</option>
-                          <option dbcountrycode="FM" value="FM">MICRONESIA</option>
-                          <option dbcountrycode="MD" value="MD">MOLDOVA</option>
-                          <option dbcountrycode="MC" value="MC">MONACO</option>
-                          <option dbcountrycode="MN" value="MN">MONGOLIA</option>
-                          <option dbcountrycode="ME" value="ME">MONTENEGRO</option>
-                          <option dbcountrycode="MS" value="MS">MONTSERRAT</option>
-                          <option dbcountrycode="MA" value="MA">MOROCCO</option>
-                          <option dbcountrycode="MZ" value="MZ">MOZAMBIQUE</option>
-                          <option dbcountrycode="BU" value="BU">MYANMAR</option>
-                          <option dbcountrycode="NA" value="NA">NAMIBIA</option>
-                          <option dbcountrycode="NR" value="NR">NAURU</option>
-                          <option dbcountrycode="NP" value="NP">NEPAL</option>
-                          <option dbcountrycode="NL" value="NL">NETHERLANDS</option>
-                          <option dbcountrycode="AN" value="AN">NETHERLANDS ANTILLES</option>
-                          <option dbcountrycode="NZ" value="NZ">NEW ZEALAND</option>
-                          <option dbcountrycode="NI" value="NI">NICARAGUA</option>
-                          <option dbcountrycode="NE" value="NE">NIGER</option>
-                          <option dbcountrycode="NG" value="NG">NIGERIA</option>
-                          <option dbcountrycode="NU" value="NU">NIUE</option>
-                          <option dbcountrycode="NF" value="NF">NORFOLK ISLAND</option>
-                          <option dbcountrycode="MP" value="MP">NORTHERN MARIANA ISLANDS</option>
-                          <option dbcountrycode="NO" value="NO">NORWAY</option>
-                          <option dbcountrycode="OM" value="OM">OMAN</option>
-                          <option dbcountrycode="PK" value="PK">PAKISTAN</option>
-                          <option dbcountrycode="PW" value="PW">PALAU</option>
-                          <option dbcountrycode="PS" value="PS">PALESTINE</option>
-                          <option dbcountrycode="PA" value="PA">PANAMA</option>
-                          <option dbcountrycode="PG" value="PG">PAPUA NEW GUINEA</option>
-                          <option dbcountrycode="PY" value="PY">PARAGUAY</option>
-                          <option dbcountrycode="PE" value="PE">PERU</option>
-                          <option dbcountrycode="PH" value="PH">PHILIPPINES</option>
-                          <option dbcountrycode="PN" value="PN">PITCAIRN</option>
-                          <option dbcountrycode="PL" value="PL">POLAND</option>
-                          <option dbcountrycode="PT" value="PT">PORTUGAL</option>
-                          <option dbcountrycode="PR" value="PR">PUERTO RICO</option>
-                          <option dbcountrycode="QA" value="QA">QATAR</option>
-                          <option dbcountrycode="RE" value="RE">REUNION</option>
-                          <option dbcountrycode="RO" value="RO">ROMANIA</option>
-                          <option dbcountrycode="RU" value="RU">RUSSIA</option>
-                          <option dbcountrycode="RW" value="RW">RWANDA</option>
-                          <option dbcountrycode="GS" value="GS">S. GEORGIA AND S. SANDWICH ISLANDS</option>
-                          <option dbcountrycode="SH" value="SH">SAINT HELENA</option>
-                          <option dbcountrycode="KN" value="KN">SAINT KITTS AND NEVIS</option>
-                          <option dbcountrycode="LC" value="LC">SAINT LUCIA</option>
-                          <option dbcountrycode="PM" value="PM">SAINT PIERRE AND MIQUELON</option>
-                          <option dbcountrycode="VC" value="VC">SAINT VINCENT AND GRENADINES</option>
-                          <option dbcountrycode="SM" value="SM">SAN MARINO</option>
-                          <option dbcountrycode="ST" value="ST">SAO TOME AND PRINCIPE</option>
-                          <option dbcountrycode="SA" value="SA">SAUDI ARABIA</option>
-                          <option dbcountrycode="SN" value="SN">SENEGAL</option>
-                          <option dbcountrycode="YU" value="YU">SERBIA</option>
-                          <option dbcountrycode="SC" value="SC">SEYCHELLES</option>
-                          <option dbcountrycode="SL" value="SL">SIERRA LEONE</option>
-                          <option dbcountrycode="SG" value="SG">SINGAPORE</option>
-                          <option dbcountrycode="SK" value="SK">SLOVAKIA</option>
-                          <option dbcountrycode="SI" value="SI">SLOVENIA</option>
-                          <option dbcountrycode="SB" value="SB">SOLOMAN ISLANDS</option>
-                          <option dbcountrycode="SO" value="SO">SOMALIA</option>
-                          <option dbcountrycode="ZA" value="ZA">SOUTH AFRICA</option>
-                          <option dbcountrycode="ES" value="ES">SPAIN</option>
-                          <option dbcountrycode="LK" value="LK">SRI LANKA</option>
-                          <option dbcountrycode="SR" value="SR">SURINAME</option>
-                          <option dbcountrycode="SJ" value="SJ">SVALBARD AND JAN MAYEN</option>
-                          <option dbcountrycode="WZ" value="WZ">SWAZILAND</option>
-                          <option dbcountrycode="SE" value="SE">SWEDEN</option>
-                          <option dbcountrycode="CH" value="SZ">SWITZERLAND</option>
-                          <option dbcountrycode="TW" value="TW">TAIWAN</option>
-                          <option dbcountrycode="TJ" value="TJ">TAJIKSTAN</option>
-                          <option dbcountrycode="TZ" value="TZ">TANZANIA</option>
-                          <option dbcountrycode="TH" value="TH">THAILAND</option>
-                          <option dbcountrycode="BS" value="BS">THE BAHAMAS</option>
-                          <option dbcountrycode="GM" value="GM">THE GAMBIA</option>
-                          <option dbcountrycode="TG" value="TG">TOGO</option>
-                          <option dbcountrycode="TK" value="TK">TOKELAU</option>
-                          <option dbcountrycode="TO" value="TO">TONGA</option>
-                          <option dbcountrycode="TT" value="TT">TRINIDAD AND TOBAGO</option>
-                          <option dbcountrycode="TN" value="TN">TUNISIA</option>
-                          <option dbcountrycode="TR" value="TR">TURKEY</option>
-                          <option dbcountrycode="TM" value="TM">TURKMENISTAN</option>
-                          <option dbcountrycode="TC" value="TC">TURKS AND CAICOS ISLANDS</option>
-                          <option dbcountrycode="TV" value="TV">TUVALU</option>
-                          <option dbcountrycode="UG" value="UG">UGANDA</option>
-                          <option dbcountrycode="UA" value="UA">UKRAINE</option>
-                          <option dbcountrycode="AE" value="AE">UNITED ARAB EMIRATES</option>
-                          <option dbcountrycode="US" value="US" selected="selected">UNITED STATES</option>
-                          <option dbcountrycode="UY" value="UY">URUGUAY</option>
-                          <option dbcountrycode="UZ" value="UZ">UZBEKISTAN</option>
-                          <option dbcountrycode="VU" value="VU">VANUATU</option>
-                          <option dbcountrycode="VE" value="VE">VENEZUELA</option>
-                          <option dbcountrycode="VN" value="VN">VIETNAM</option>
-                          <option dbcountrycode="VG" value="VG">VIRGIN ISLANDS, BRITISH</option>
-                          <option dbcountrycode="VI" value="VI">VIRGIN ISLANDS, US</option>
-                          <option dbcountrycode="WF" value="WF">WALLIS AND FUTUNA ISLANDS</option>
-                          <option dbcountrycode="EH" value="EH">WESTERN SAHARA</option>
-                          <option dbcountrycode="WS" value="WS">WESTERN SAMOA</option>
-                          <option dbcountrycode="YE" value="YE">YEMEN</option>
-                          <option dbcountrycode="ZR" value="ZR">ZAIRE</option>
-                          <option dbcountrycode="ZM" value="ZM">ZAMBIA</option>
-                          <option dbcountrycode="ZW" value="ZW">ZIMBABWE</option>
-                      </select>
-                  </div>
-                  <div class="form-group">
-                      <label for="Address1">Address</label>
-                      <input type="text" class="form-control" name="Address1" id="Address1" value="1 Dell Way">
-                  </div>
-                  <div class="form-group">
-                      <label for="Address2">Address 2</label>
-                      <input type="text" class="form-control" name="Address2" id="Address2" placeholder="">
-                  </div>
-                  <div class="form-group">
-                      <label for="City">City</label>
-                      <input type="text" class="form-control" name="City" id="City" value="Round Rock">
-                  </div>
-                  <div class="form-group">
-                      <label for="State_Province">State</label>
-                      <select name="State_Province" title="State" id="State_Province" class="fieldrequired form-control">
-                          <option value="">Select</option>
-                          <option value="AK">ALASKA</option>
-                          <option value="AL">ALABAMA</option>
-                          <option value="AR">ARKANSAS</option>
-                          <option value="AZ">ARIZONA</option>
-                          <option value="CA">CALIFORNIA</option>
-                          <option value="CO">COLORADO</option>
-                          <option value="CT">CONNECTICUT</option>
-                          <option value="DC">DISTRICT OF COLUMBIA</option>
-                          <option value="DE">DELAWARE</option>
-                          <option value="FL">FLORIDA</option>
-                          <option value="GA">GEORGIA</option>
-                          <option value="HI">HAWAII</option>
-                          <option value="IA">IOWA</option>
-                          <option value="ID">IDAHO</option>
-                          <option value="IL">ILLINOIS</option>
-                          <option value="IN">INDIANA</option>
-                          <option value="KS">KANSAS</option>
-                          <option value="KY">KENTUCKY</option>
-                          <option value="LA">LOUISIANA</option>
-                          <option value="MA">MASSACHUSETTS</option>
-                          <option value="MD">MARYLAND</option>
-                          <option value="ME">MAINE</option>
-                          <option value="MI">MICHIGAN</option>
-                          <option value="MN">MINNESOTA</option>
-                          <option value="MO">MISSOURI</option>
-                          <option value="MS">MISSISSIPPI</option>
-                          <option value="MT">MONTANA</option>
-                          <option value="NC">NORTH CAROLINA</option>
-                          <option value="ND">NORTH DAKOTA</option>
-                          <option value="NE">NEBRASKA</option>
-                          <option value="NH">NEW HAMPSHIRE</option>
-                          <option value="NJ">NEW JERSEY</option>
-                          <option value="NM">NEW MEXICO</option>
-                          <option value="NV">NEVADA</option>
-                          <option value="NY">NEW YORK</option>
-                          <option value="OH">OHIO</option>
-                          <option value="OK">OKLAHOMA</option>
-                          <option value="OR">OREGON</option>
-                          <option value="PA">PENNSYLVANIA</option>
-                          <option value="PR">PUERTO RICO</option>
-                          <option value="RI">RHODE ISLAND</option>
-                          <option value="SC">SOUTH CAROLINA</option>
-                          <option value="SD">SOUTH DAKOTA</option>
-                          <option value="TN">TENNESSEE</option>
-                          <option value="TX" selected="selected">TEXAS</option>
-                          <option value="UT">UTAH</option>
-                          <option value="VA">VIRGINIA</option>
-                          <option value="VT">VERMONT</option>
-                          <option value="WA">WASHINGTON</option>
-                          <option value="WI">WISCONSIN</option>
-                          <option value="WV">WEST VIRGINIA</option>
-                          <option value="WY">WYOMING</option>
-                      </select>
-                  </div>
-                  <div class="form-group">
-                      <label for="PostalCode">Postal Code</label>
-                      <input type="text" class="form-control" name="PostalCode" id="PostalCode" value="78682">
-                  </div>
-                  <div class="form-group">
-                      <label for="Phone">Phone</label>
-                      <input type="tel" class="form-control" name="Phone" id="Phone" value="(949)754-8463">
-                  </div>
-                  <div class="form-group" style="display: none;">
-                      <label for="EmployeeCount">Employee Count</label>
-                      <select name="EmployeeCount" title="Company Size" id="EmployeeCount" class="fieldrequired form-control">
-                          <option value="" selected="selected">Select</option>
-                          <option value="5,001-15,000">5,001-15,000</option>
-                          <option value="1-1,000">1-1,000</option>
-                          <option value="1,001-2,000">1,001-2,000</option>
-                          <option value="2,001-5,000">2,001-5,000</option>
-                          <option value="5,001-15,000" selected="selected">5,001-15,000</option>
-                          <option value="15,001 or more">15,001 and more</option>
-                      </select>
-                  </div>
-                  <div class="form-group">
-                      <label for="CountryCode">Public Sector</label>
-                      <select name="PublicSector" title="Public Sector" id="PublicSector" class="form-control">
-                          <option value="">Select</option>
-                          <option value="Commercial" selected="selected">Not Applicable</option>
-                          <option value="Federal/Central Government">Government - Federal / Central</option>
-                          <option value="State/Local Government">Government - State/Local</option>
-                          <option value="Government – Contractor"> Government – Contractor</option>
-                          <option value="College/University">Government – Education</option>
-                      </select>
-                  </div>
-                  <div class="form-footer">
                       <div></div>
-                      <div>
-                          <button type="submit" class="btn btn-primary btn-block">Update Account</button>
+                      <div class="checkbox pad-0">
+                          <a href="#" id="lnkForgotPwd">Forgot your password?</a>
+                          <label>
+                              <input type="checkbox" id="RememberMe" name="RememberMe">Remember me
+                          </label>
                       </div>
                   </div>
-
+                  <div class="form-group">
+                      <div></div>
+                      <div>
+                          <button type="submit" class="btn btn-primary btn-block" id="btnContinueUpdatePwd">Sign In</button>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div></div>
+                      <div>
+                          <a href="/account/createaccount/" class="flyout-btn">
+                          <button type="submit" class="btn btn-default btn-block" id="btnContinueUpdatePwd">Creat Account</button>
+                          </a>
+                      </div>
+                  </div>
               </form>
           </div>
       </div>

@@ -1,16 +1,20 @@
 RewriteEngine On
 
+#Quest
 RewriteCond %{SCRIPT_FILENAME} -f
 RewriteCond %{SCRIPT_FILENAME} (.*?).html?$
 RewriteCond %{SCRIPT_FILENAME} !index.php
 RewriteRule ^quest\/(.*?)$ /pages/quest.php?page=quest/$1 [QSA,NC,L]
 
+#SonicWALL
 RewriteCond %{SCRIPT_FILENAME} -f
 RewriteCond %{SCRIPT_FILENAME} (.*?).html?$
 RewriteCond %{SCRIPT_FILENAME} !index.php
 RewriteRule ^sonicwall\/(.*?)$ /pages/sonicwall.php?page=sonicwall/$1 [QSA,NC,L]
 
+#DSG
 RewriteCond %{SCRIPT_FILENAME} -f
 RewriteCond %{SCRIPT_FILENAME} (.*?).html?$
 RewriteCond %{SCRIPT_FILENAME} !index.php
-RewriteRule (.*)$ /pages/index.php?page=$1 [QSA,NC,L]
+RewriteCond %{REQUEST_URI} ^\/pages\/dsg
+RewriteRule ^(.*)$ /pages/index.php?page=$1 [QSA,NC,L]
