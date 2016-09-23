@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import "../bootstrap/custom/_variables-quest";
 /* Begin CSS Reset */
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -1058,7 +1059,7 @@ body .ui-tooltip {
 }
 
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
-	color: #39c;
+	color: $link-color;
 }
 
 .ui-widget-header {
@@ -1535,7 +1536,7 @@ sup {
 
 a, a:visited {
 	text-decoration: none;
-	color: #3399cc;
+	color: $link-color;
 	cursor: pointer;
 }
 
@@ -1548,7 +1549,7 @@ a:hover {
 }
 
 a.no-visited:visited {
-	color: #3399cc;
+	color: $link-color;
 }
 
 input, select, textarea {
@@ -3011,7 +3012,7 @@ tbody.collapsible.collapse tr td {
 }
 
 #banner-nav a:visited {
-	color: #39c;
+	color: $link-color;
 }
 
 #banner-nav a:hover {
@@ -3091,7 +3092,7 @@ li.caret {
 }
 
 #page-tools a:visited {
-	color: #3399cc;
+	color: $link-color;
 }
 
 #page-tools span {
@@ -3105,7 +3106,7 @@ li.caret {
 }
 
 #fancybox-content a:visited {
-	color: #39c;
+	color: $link-color;
 }
 
 #fancybox-content .button:visited {
@@ -3618,7 +3619,7 @@ fieldset legend {
 }
 
 #atoz li a:visited {
-	color: #3399cc;
+	color: $link-color;
 }
 
 #atoz li.inactive, #atoz li.inactive:hover {
@@ -3872,7 +3873,7 @@ ul.has-image li > img {
 }
 
 .pagination a:visited {
-	color: #3399CC;
+	color: $link-color;
 }
 
 .pagination li:last-child {
@@ -4951,7 +4952,7 @@ div > div.half-width:first-child {
 }
 
 .event-list label > h2 {
-	color: #39c;
+	color: $link-color;
 }
 
 .event-list .teasers {
