@@ -266,10 +266,7 @@ function processHeaderFooter() {
 			}
 		})
 
-
-
 		//To open and close footer on Mobile
-
 		.on('click', '.menu-links > .subLinks > span', function (e) {
 			//Add functionality for when user uses touch on navigation/footer.
 
@@ -345,10 +342,8 @@ function processHeaderFooter() {
 		if (isOpen) {
 			$(this).parent().siblings().removeClass('open');
 		}
-		$(this).css({backgroundColor: '#fb4f14'});
-		$(this).animate({backgroundColor: '#eeeeee'}, 500, function () {
-			$(this).css('backgroundColor', '');
-		});
+
+		bgAnimate($(this));
 
 		e.preventDefault();
 		$(this).parent().toggleClass('open');
@@ -371,13 +366,8 @@ function processHeaderFooter() {
 		}
 		//Siamak: Change tier 1 background when click
 		if (pageType < 3) {
-			var originalBG = $(this).css('background-color');
-			$(this).css({backgroundColor: '#fb4f14'});
-			$(this).animate({backgroundColor: originalBG}, 500, function () {
-				$(this).css('backgroundColor', '');
-			});
+			bgAnimate($(this));
 		}
-
 	});
 
 	/* Country Dropdown */
@@ -402,6 +392,13 @@ function processHeaderFooter() {
 			location.href = $(this).attr('href');
 		}
 	});
+
+	function bgAnimate(elm) {
+		elm.css({backgroundColor: '#fb4f14', color: '#ffffff'});
+		elm.animate({backgroundColor: '#eeeeee', color: '#333333'}, 500, function () {
+			elm.css('backgroundColor', '');
+		});
+	}
 }
 
 function getPageProperties() {
