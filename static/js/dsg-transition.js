@@ -1,6 +1,6 @@
 /*
  Usage:
- <script src="/static/js/ePrivacy.min.js"></script>
+ <script src="/static/js/dsg-transition.min.js"></script>
  <script>
  $(function () {
  ePrivacy.init({
