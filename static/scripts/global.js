@@ -25,6 +25,11 @@ $(document).ready(function () {
 		}
 	}
 
+	/*http://software-dell-com/register/100372/ (http://o2/v2/registrations/Edit/44/100372/0/)*/
+	if ($('#custom-form-on-right').length) {
+		$('head').append('<style type="text/css">#body-container { width: 600px !important; float: left; padding-right: 15px; } #right-form-partialreg { margin-top: 60px; }</style>');
+	}
+
 	if ($('.ooyalaplayer')) {
 		loadOoyala();
 	}
