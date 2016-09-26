@@ -1,6 +1,4 @@
-if (typeof RootPath == 'undefined') {
-	RootPath = '/';
-}
+var RootPath = RootPath || '/';
 
 var populateListingPending = false, //prevent populate listing to load more than 1 at a time.
 	entriesPerType = { //xs,sm - need to consult with cindy chan.
@@ -22,7 +20,8 @@ var populateListingPending = false, //prevent populate listing to load more than
 
 if ($.fn.multipleSelect) {
 	init();
-} else {
+}
+else {
 	// load multiple select stylesheet
 	if ($('html').hasClass('ie8')) {
 		$('<link/>', {rel: 'stylesheet', href: '/static/library/css/multiple-select.css'}).appendTo('head');
@@ -446,7 +445,6 @@ function populateListing(clear) {
 	buildAHashTag();
 
 	var dataset = getDataSet(!clear), viewMoreButton = $('#view-more');
-	;
 
 	if (dataset === false) {
 		rowContainer.empty();
@@ -475,24 +473,26 @@ function populateListing(clear) {
 			rowContainer.empty();
 		}
 
+		var eventTypeClassName = '';
+
 		$.each(dataopt.data, function (key, val) {
 			if (val.typeid == 1) {
-				event_bg = 'bg-green';
+				eventTypeClassName = 'online-event';
 				event_img = 'online-event.jpg';
 			}
 			else if (val.typeid == 2) {
-				event_bg = 'bg-purple';
+				eventTypeClassName = 'in-person';
 				event_img = 'in-person-event.jpg';
 			}
 			else if (val.typeid == 3) {
-				event_bg = 'bg-orange';
+				eventTypeClassName = 'ondemand';
 				event_img = 'webcast.jpg';
 			}
 
 			var htmlFragment = '<div class="col-md-3 col-sm-4 col-xs-12" style="display: none;"> ' +
 				'<a href="' + val.url + '">' +
-				'  <div class="border-grey">' +
-				'    <p class="listing-header ' + event_bg + ' "> ' + val.eventtype + ' </p>' +
+				'  <div class="img-border">' +
+				'    <p class="img-header-overlay ' + eventTypeClassName + '"> ' + val.eventtype + ' </p>' +
 				'    <img class="img-responsive" src="/images/shared/listing-entries/' + event_img + '" alt=""> ' +
 				'  </div> ' +
 				'  <h4 class="text-blue dotdotdot" data-max-line="3">' + val.title + ' </h4> ' +
