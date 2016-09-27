@@ -328,7 +328,7 @@
 	<link type="text/css" rel="stylesheet" href="/static/css/communities.css">
 </head>
 <body style="padding-top: 65px;" spellcheck="true">
-<form novalidate="novalidate" name="ctl01" method="post" action="./" id="ctl01">
+<form novalidate="novalidate" name="ctl01" method="post" action="../pages/communities" id="ctl01">
 	<div>
 		<input name="__VIEWSTATE" id="__VIEWSTATE" value="BmAIRaTxy8vMrtzsZ5rwgoNNdE/KVVv9apDNTmRl/DbbS0WCR+9YHotRrKqkyLfpkyM+vpfW1RY021zuXN2Qaw==" type="hidden">
 	</div>
@@ -701,7 +701,7 @@
 									                                                                                                                                    href="http://software.dell.com/legal/privacy.aspx"
 									                                                                                                                                    target="_blank">Privacy</a>&nbsp;
 										&nbsp; &nbsp;<a title="SIM Community Guidelines" href="https://stage.software.dell.com/community/about/f/feedback-and-support/9/faq--getting-started">SIM
-											Community Guidelines</a>&nbsp; &nbsp; &nbsp;<a title="Contact Us" href="mailto:QDL.Marketing.SocialMedia@software.dell.com">Contact Us</a></p>
+											Community Guidelines</a>&nbsp; &nbsp; &nbsp;<a title="Contact Us" href="../pages/index.php">Contact Us</a></p>
 								</div>
 							</div>
 							<div class="content-fragment-footer"></div>
@@ -807,13 +807,13 @@
 	<script type="text/html" id="site-banner-user-template">
 		<div class="user">
 			<div class="avatar">
-				<a href="$core_v2_encoding.HtmlAttributeEncode($user.ProfileUrl)">
+				<a href="../pages/index.php">
 					<img
 						src="https://stage.software.dell.com/community/cfs-filesystemfile/__key/communityserver-components-imagefileviewer/system-images/anonymous.gif_2D00_40x40x2.png" />
 				</a>
 			</div>
 			<span class="user-name">
-				<a href="$core_v2_encoding.HtmlAttributeEncode($user.ProfileUrl)">Anonymous</a>
+				<a href="../pages/index.php">Anonymous</a>
 			</span>
 
 		</div>
