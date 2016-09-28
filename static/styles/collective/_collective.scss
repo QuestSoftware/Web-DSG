@@ -190,55 +190,55 @@ body .ui-tooltip {
 }
 
 .ui-widget-content {
-	border: 1px solid #dadada;
+	border: 1px solid $ui-widget-content-border;
 	background: #fff url(/images/shared/jqueryui/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
-	color: #222;
+	color: $ui-widget-content-color;
 }
 
 .ui-widget-header {
-	border: 1px solid #dadada;
+	border: 1px solid $ui-widget-header-border;
 	background: #ccc url(/images/shared/jqueryui/ui-bg_flat_100_cccccc_40x100.png) 50% 50% repeat-x;
-	color: #222;
+	color: $ui-widget-header-color;
 	font-weight: bold;
 }
 
 .ui-widget-header a {
-	color: #222;
+	color: $ui-widget-header-link;
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-	border: 1px solid #d3d3d3;
+	border: 1px solid $ui-state-border;
 	background: #e6e6e6 url(/images/shared/jqueryui/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
 	font-weight: normal;
-	color: #555;
+	color: $ui-state-color;
 }
 
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
-	color: #555;
+	color: $ui-state-link;
 	text-decoration: none;
 }
 
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-	border: 1px solid #999;
+	border: 1px solid $ui-state-hover-border;
 	background: #dadada url(/images/shared/jqueryui/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x;
 	font-weight: normal;
-	color: #212121;
+	color: $ui-state-hover-color;
 }
 
 .ui-state-hover a, .ui-state-hover a:hover, .ui-state-hover a:link, .ui-state-hover a:visited {
-	color: #212121;
+	color: $ui-state-hover-link;
 	text-decoration: none;
 }
 
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
-	border: 1px solid #aaa;
+	border: 1px solid $ui-state-active-border;
 	background: #fff url(/images/shared/jqueryui/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
 	font-weight: normal;
-	color: #212121;
+	color: $ui-state-active-color;
 }
 
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
-	color: #212121;
+	color: $ui-state-active-link;
 	text-decoration: none;
 }
 
@@ -1607,6 +1607,9 @@ article > h2 {
 	width: 925px;
 }
 
+#wrapper {
+	background: #eee;
+}
 #main-content {
 	background-color: #eee;
 	padding-bottom: 30px;
@@ -5907,7 +5910,8 @@ ul#oo-toolbar span {
 	left: 0;
 	cursor: default;
 	z-index: 1000;
-	padding: 10px 0;
+	border: 1px solid #ccc;
+	padding: 10px 0 !important;
 }
 
 .ui-autocomplete.ui-widget-content {
@@ -5915,9 +5919,9 @@ ul#oo-toolbar span {
 	background: #ffffff;
 	/*border: 1px solid #a6c9e2;*/
 	color: #222222;
-	padding: 10px 0;
-	border: 1px solid #ccc;
-	border-bottom: 3px solid #007DB8;
+	/*	padding: 10px 0;
+		border: 1px solid #ccc;
+		border-bottom: 3px solid #007DB8;*/
 }
 
 .ui-widget {
@@ -5939,6 +5943,9 @@ ul#oo-toolbar span {
 	margin: 0;
 	min-height: 0;
 	position: relative;
+	line-height: 30px;
+	padding: 0 10px 0 15px;
+	color: $link-color;
 }
 
 .ui-menu .ui-menu-item > a {
