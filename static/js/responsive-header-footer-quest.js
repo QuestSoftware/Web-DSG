@@ -25,7 +25,7 @@ $(document).ready(function () {
 			e.preventDefault();
 
 			//Retrieving URL of the anchor tag to be used later after GA Event Tracking is successfully submitted
-			var URL = $(this).attr('href'), eLabel = $(this).data('gal'), eValue = $(this).data('gav');
+			var URL = $(this).attr('href'), eLabel = $(this).data('gal'), eValue = $(this).data('gav'), redirect = false;
 
 			//Object to send to GA Event Tracking.
 			var obj = {
@@ -44,9 +44,7 @@ $(document).ready(function () {
 
 			//Redirect after event tracking is successfully sent to GA if URL is not undefined.
 			if (URL !== undefined) {
-				obj.hitCallback = function () {
-					location.href = URL;
-				};
+				obj.hitCallback = redirectURL;
 			}
 
 			/* To be implemented later */
@@ -66,11 +64,24 @@ $(document).ready(function () {
 
 			//Make sure that GA is loaded
 			if (ga.hasOwnProperty('loaded') && ga.loaded === true) {
+				//Fallback if hitCallback does not execute in time.
+				setTimeout(redirectURL, 1000);
+
 				//Send event tracking to google.
 				ga('send', obj);
 			}
 			else if (URL !== undefined) {
-				location.href = URL;
+				redirectURL();
+			}
+
+			/**
+			 * Redirect function.
+			 */
+			function redirectURL() {
+				if (!redirect) {
+					redirect = true;
+					location.href = URL;
+				}
 			}
 		})
 		.on('click', '.btn-buy', function (e) {
