@@ -257,18 +257,19 @@ function processHeaderFooter() {
 	$('body')
 		.on('click', function (e) {
 			//Siamak : Closing all navigation when click on body (Medium to Large desktop)
-
-			$('.tier1').find('.open').removeClass('open');
-				//Siamak : Closing top search when click on body
-				if (($('.search-container').hasClass('open'))) {
-					if ($(e.target).is('#masthead-search *, #masthead-search')) {
-						return false;
-					}
-					else {
-						$('.search-container').removeClass('open');
-						$('.search-button').removeClass('open');
-					}
+			if (pageType >= 3) {
+				$('.tier1').find('.open').removeClass('open');
+			}
+			//Siamak : Closing top search when click on body
+			if (($('.search-container').hasClass('open'))) {
+				if ($(e.target).is('#masthead-search *, #masthead-search')) {
+					return false;
 				}
+				else {
+					$('.search-container').removeClass('open');
+					$('.search-button').removeClass('open');
+				}
+			}
 
 			//Close country popup when user clicks any where on the page.
 			if (pageType >= 2) { //Tablet and larger devices
