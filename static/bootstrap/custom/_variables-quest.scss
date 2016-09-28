@@ -90,7 +90,7 @@ $top-user-dropdown-color: #444; //User dropdown color
 $top-user-dropdown-border-color: $light-gray; //User dropdown top border color
 $top-user-create-acc-bg: $white; //Create account button bg
 $top-user-check-color: $white; //Top user check color
-$top-badge-bg-color: #6ea204; //Top badge background color
+$top-badge-bg-color: #3E831C; //Top badge background color
 /* End:Header */
 $top-search-link-color: #007db8;
 $color-heading-links-hover: #007db8;
@@ -1025,6 +1025,26 @@ $doc-header-bg: $link-color;
 $date-widget-border-color: #d9d9d9;
 $date-widget-header-color: $white;
 $date-body-bg-color: $white;
+
+//UI Widget
+$ui-widget-content-color: #222;
+$ui-widget-content-border: #dadada;
+$ui-widget-header-color: #222;
+$ui-widget-header-border: #dadada;
+$ui-widget-header-link: #222;
+
+//UI State
+$ui-state-border: #d3d3d3;
+$ui-state-color: #555;
+$ui-state-link: #555;
+
+$ui-state-hover-color: #212121;
+$ui-state-hover-border: #999;
+$ui-state-hover-link: #212121;
+
+$ui-state-active-color: #212121;
+$ui-state-active-border: #fff;
+$ui-state-active-link: #212121;
 
 // Introduction
 
