@@ -18,6 +18,15 @@ i.nav-arrow:before {
 	}
 }
 
+.ui-autocomplete {
+	border-top: none !important;
+}
+
+.ui-menu {
+	.ui-menu-item {
+		color: $link-color !important;
+	}
+}
 .masthead {
 	margin-bottom: 10px;
 	.navbar {
@@ -101,6 +110,7 @@ i.nav-arrow:before {
 				}
 				#lnkMyAccount {
 					color: $link-color;
+					font-size: 16px;
 				}
 			}
 		}
@@ -197,8 +207,14 @@ i.nav-arrow:before {
 		input[type=text] {
 			border: 1px solid $top-search-input-border-color;
 			font-size: 15px;
-			padding: 5px 20px;
-			width: 92%;
+			padding: 5px 50px 5px 20px;
+			width: 80%;
+		}
+		input:focus {
+			border-color: $link-color;
+			outline: 0;
+			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(1, 106, 156, 0.6);
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(1, 106, 156, 0.6);
 		}
 		&.open {
 			display: block;
@@ -218,7 +234,7 @@ i.nav-arrow:before {
 			font-size: 20px;
 			position: absolute;
 			top: 18px;
-			margin-left: -28px;
+			margin-left: -32px;
 			padding: 2px 5px 0px;
 			background: $top-search-btn-bg;
 			color: $top-search-btn-color;
@@ -263,6 +279,7 @@ i.nav-arrow:before {
 
 		/*End of TODO*/
 	}
+
 
 	ul {
 		&.tier1 {
@@ -557,6 +574,11 @@ i.menu-indicator {
 			border-color: transparent;
 			background-color: transparent;
 		}
+		.search-container {
+			input[type=text] {
+				width: 92%;
+			}
+		}
 		.input-group {
 			width: 100%;
 			form {
@@ -610,7 +632,13 @@ i.menu-indicator {
 			font-size: 14px;
 			li {
 				padding: 0;
-				border-bottom: 1px solid $footer-li-xs-border-bottom-color;
+				border-top: 1px solid $footer-li-xs-border-bottom-color;
+				&:first-child {
+					border-top: none;
+					&.open {
+						border-top: none !important;
+					}
+				}
 				span {
 					padding-left: 15px;
 				}
@@ -638,7 +666,6 @@ i.menu-indicator {
 			}
 			a {
 				font-size: 14px;
-				padding: 15px;
 			}
 			i.glyphicon-triangle-bottom {
 				float: right;
@@ -717,6 +744,9 @@ i.menu-indicator {
 				}
 				> li {
 					border-bottom: 1px solid $nav-xs-border-bottom-color-t2 !important;
+					&:last-child {
+						border-bottom: none !important;
+					}
 				}
 				> li.open {
 					border-bottom: none !important;
@@ -735,12 +765,18 @@ i.menu-indicator {
 				height: auto !important;
 				> li {
 					border-bottom: 1px solid $nav-xs-border-bottom-color-t3 !important;
+					&:last-child {
+						border-bottom: none !important;
+					}
 				}
 			}
 			&.tier4 {
 				border-left: 3px solid $nav-xs-border-left-color-t4;
 				> li {
 					border-bottom: 1px solid $nav-xs-border-bottom-color-t4 !important;
+					&:last-child {
+						border-bottom: none !important;
+					}
 				}
 			}
 		}
@@ -1258,9 +1294,9 @@ i.menu-indicator {
 					z-index: 999;
 					width: 280px;
 					background: $nav-bg-t2;
-					-webkit-box-shadow: 0px 4px 5px 0px rgba(97, 95, 95, 0.49);
-					-moz-box-shadow: 0px 4px 5px 0px rgba(97, 95, 95, 0.49);
-					box-shadow: 0px 4px 5px 0px rgba(97, 95, 95, 0.49);
+					-webkit-box-shadow: 2px 4px 5px 0px rgba(97, 95, 95, 0.49);
+					-moz-box-shadow: 2px 4px 5px 0px rgba(97, 95, 95, 0.49);
+					box-shadow: 2px 4px 5px 0px rgba(97, 95, 95, 0.49);
 					li > a:hover {
 						color: $top-link-hover-t2;
 					}
@@ -1338,9 +1374,9 @@ i.menu-indicator {
 					float: right;
 					min-height: 101%;
 					width: auto;
-					-webkit-box-shadow: 4px 4px 5px 0px rgba(97, 95, 95, 0.49);
-					-moz-box-shadow: 4px 4px 5px 0px rgba(97, 95, 95, 0.49);
-					box-shadow: 4px 4px 5px 0px rgba(97, 95, 95, 0.49);
+					-webkit-box-shadow: 2px 4px 5px 0px rgba(97, 95, 95, 0.49);
+					-moz-box-shadow: 2px 4px 5px 0px rgba(97, 95, 95, 0.49);
+					box-shadow: 2px 4px 5px 0px rgba(97, 95, 95, 0.49);
 
 				}
 				li {
