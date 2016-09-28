@@ -18,6 +18,16 @@ i.nav-arrow:before {
 	}
 }
 
+.ui-autocomplete {
+	border-top: none !important;
+	z-index: 9999 !important;
+}
+
+.ui-menu {
+	.ui-menu-item {
+		color: $link-color !important;
+	}
+}
 .masthead {
 	margin-bottom: 10px;
 	.navbar {
@@ -25,9 +35,7 @@ i.nav-arrow:before {
 		border-bottom: none;
 		border-radius: 0;
 		z-index: 1000;
-		-webkit-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
-		-moz-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
-		box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
+		@include box-shadow(0px 3px 5px 0px rgba(170, 170, 170, 0.5));
 	}
 	.navbar-inverse, .navbar-toggle {
 		text-shadow: none;
@@ -101,6 +109,7 @@ i.nav-arrow:before {
 				}
 				#lnkMyAccount {
 					color: $link-color;
+					font-size: 16px;
 				}
 			}
 		}
@@ -190,15 +199,18 @@ i.nav-arrow:before {
 		width: 100%;
 		padding: 18px 15px;
 		background-color: $top-search-bg;
-		-webkit-box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
-		-moz-box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
-		box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
+		@include box-shadow(0 4px 5px 0 rgba(97, 95, 95, 0.49));
 		border-top: 3px solid $top-search-top-border-color;
 		input[type=text] {
 			border: 1px solid $top-search-input-border-color;
 			font-size: 15px;
-			padding: 5px 20px;
-			width: 92%;
+			padding: 5px 50px 5px 20px;
+			width: 80%;
+		}
+		input:focus {
+			border-color: $link-color;
+			outline: 0;
+			@include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(1, 106, 156, 0.6));
 		}
 		&.open {
 			display: block;
@@ -218,7 +230,7 @@ i.nav-arrow:before {
 			font-size: 20px;
 			position: absolute;
 			top: 18px;
-			margin-left: -28px;
+			margin-left: -32px;
 			padding: 2px 5px 0px;
 			background: $top-search-btn-bg;
 			color: $top-search-btn-color;
@@ -241,9 +253,7 @@ i.nav-arrow:before {
 		.autocomplete-suggestions {
 			width: 100%;
 			background-color: $white;
-			-webkit-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
-			-moz-box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
-			box-shadow: 0px 3px 5px 0px rgba(170, 170, 170, 0.5);
+			@include box-shadow(0px 3px 5px 0px rgba(170, 170, 170, 0.5));
 			margin: 0;
 			color: green;
 			padding: 10px 0 10px 0;
@@ -263,6 +273,7 @@ i.nav-arrow:before {
 
 		/*End of TODO*/
 	}
+
 
 	ul {
 		&.tier1 {
@@ -557,6 +568,11 @@ i.menu-indicator {
 			border-color: transparent;
 			background-color: transparent;
 		}
+		.search-container {
+			input[type=text] {
+				width: 92%;
+			}
+		}
 		.input-group {
 			width: 100%;
 			form {
@@ -610,7 +626,13 @@ i.menu-indicator {
 			font-size: 14px;
 			li {
 				padding: 0;
-				border-bottom: 1px solid $footer-li-xs-border-bottom-color;
+				border-top: 1px solid $footer-li-xs-border-bottom-color;
+				&:first-child {
+					border-top: none;
+					&.open {
+						border-top: none !important;
+					}
+				}
 				span {
 					padding-left: 15px;
 				}
@@ -638,7 +660,6 @@ i.menu-indicator {
 			}
 			a {
 				font-size: 14px;
-				padding: 15px;
 			}
 			i.glyphicon-triangle-bottom {
 				float: right;
@@ -669,9 +690,7 @@ i.menu-indicator {
 		position: absolute;
 		z-index: 5;
 		pointer-events: none;
-		-webkit-box-shadow: inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5);
-		-moz-box-shadow: inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5);
-		box-shadow: inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5); //inset 2px -2px 5px 0 rgba(50, 50, 50, 0.1);
+		@include box-shadow(inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5));
 	}
 	.masthead {
 		.utility {
@@ -717,6 +736,9 @@ i.menu-indicator {
 				}
 				> li {
 					border-bottom: 1px solid $nav-xs-border-bottom-color-t2 !important;
+					&:last-child {
+						border-bottom: none !important;
+					}
 				}
 				> li.open {
 					border-bottom: none !important;
@@ -735,12 +757,18 @@ i.menu-indicator {
 				height: auto !important;
 				> li {
 					border-bottom: 1px solid $nav-xs-border-bottom-color-t3 !important;
+					&:last-child {
+						border-bottom: none !important;
+					}
 				}
 			}
 			&.tier4 {
 				border-left: 3px solid $nav-xs-border-left-color-t4;
 				> li {
 					border-bottom: 1px solid $nav-xs-border-bottom-color-t4 !important;
+					&:last-child {
+						border-bottom: none !important;
+					}
 				}
 			}
 		}
@@ -904,9 +932,7 @@ i.menu-indicator {
 		bottom: 26px;
 		padding: 0;
 		overflow: visible;
-		-moz-box-shadow: 1px 1px 5px #000;
-		-webkit-box-shadow: 1px 1px 5px #000;
-		box-shadow: 1px 1px 5px #000;
+		@include box-shadow(1px 1px 5px #000);
 		border-radius: 10px;
 		-moz-border-radius: 10px;
 		-webkit-border-radius: 10px;
@@ -926,7 +952,7 @@ i.menu-indicator {
 			z-index: 1;
 		}
 		> div:after {
-			box-shadow: 1px 1px 5px #000;
+			@include box-shadow(1px 1px 5px #000);
 		}
 		> div > div {
 			position: relative;
@@ -1040,9 +1066,7 @@ i.menu-indicator {
 		position: absolute;
 		z-index: 5;
 		pointer-events: none;
-		-webkit-box-shadow: inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5);
-		-moz-box-shadow: inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5);
-		box-shadow: inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5); //inset 2px -2px 5px 0 rgba(50, 50, 50, 0.1);
+		@include box-shadow(inset 2px -4px 3px 0 rgba(170, 170, 170, 0.5));
 	}
 	.masthead {
 		.utility {
@@ -1148,9 +1172,7 @@ i.menu-indicator {
 @media (min-width: $screen-lg-min) {
 	ul.tier3:before, ul.tier4:before {
 		//3px 0px 5px 0 rgba(97, 95, 95, 0.49); changed to lighter
-		-webkit-box-shadow: 2px 0 4px 0 rgba(97, 95, 95, 0.2);
-		-moz-box-shadow: 2px 0 4px 0 rgba(97, 95, 95, 0.2);
-		box-shadow: 2px 0 4px 0 rgba(97, 95, 95, 0.2);
+		@include box-shadow(3px 0 3px 0 rgba(97, 95, 95, 0.2));
 		display: block;
 		content: '';
 		position: absolute;
@@ -1258,9 +1280,7 @@ i.menu-indicator {
 					z-index: 999;
 					width: 280px;
 					background: $nav-bg-t2;
-					-webkit-box-shadow: 0px 4px 5px 0px rgba(97, 95, 95, 0.49);
-					-moz-box-shadow: 0px 4px 5px 0px rgba(97, 95, 95, 0.49);
-					box-shadow: 0px 4px 5px 0px rgba(97, 95, 95, 0.49);
+					@include box-shadow(2px 4px 5px 0px rgba(97, 95, 95, 0.49));
 					li > a:hover {
 						color: $top-link-hover-t2;
 					}
@@ -1338,10 +1358,7 @@ i.menu-indicator {
 					float: right;
 					min-height: 101%;
 					width: auto;
-					-webkit-box-shadow: 4px 4px 5px 0px rgba(97, 95, 95, 0.49);
-					-moz-box-shadow: 4px 4px 5px 0px rgba(97, 95, 95, 0.49);
-					box-shadow: 4px 4px 5px 0px rgba(97, 95, 95, 0.49);
-
+					@include box-shadow(2px 4px 5px 0px rgba(97, 95, 95, 0.49));
 				}
 				li {
 					cursor: pointer;
