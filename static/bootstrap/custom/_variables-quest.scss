@@ -1182,3 +1182,25 @@ $slick-770-caption-hover-color: #007db8;
 
 /*3 Play Media*/
 $play-3-media-border-color: $dell-gray;
+
+/* Variables below this line is only used on non-responsive stylesheet */
+
+//UI Widget
+$ui-widget-content-color: #222;
+$ui-widget-content-border: #dadada;
+$ui-widget-header-color: #222;
+$ui-widget-header-border: #dadada;
+$ui-widget-header-link: #222;
+
+//UI State
+$ui-state-border: #d3d3d3;
+$ui-state-color: #555;
+$ui-state-link: #555;
+
+$ui-state-hover-color: #212121;
+$ui-state-hover-border: #999;
+$ui-state-hover-link: #212121;
+
+$ui-state-active-color: #212121;
+$ui-state-active-border: #fff;
+$ui-state-active-link: #212121;
