@@ -113,6 +113,10 @@
 				i {
 					color: $top-link-hover;
 				}
+				#lnkMyAccount {
+					color: $link-color;
+					font-size: 16px;
+				}
 			}
 		}
 		a {
@@ -140,7 +144,7 @@
 		.badge {
 			position: absolute;
 			top: 14px;
-			left: 24px;
+			left: 15px;
 			width: 14px;
 			height: 14px;
 			display: inline-block;
@@ -152,8 +156,18 @@
 			line-height: 0;
 			white-space: nowrap;
 			text-align: left;
-			background-color: #6ea204;
+			background-color: $top-badge-bg-color;
 			border-radius: 10px;
+			i {
+				font-size: 8px;
+				line-height: 4px;
+				margin-left: 0px;
+				color: $badge-color;
+				background: $top-badge-bg-color !important;
+			}
+			i.glyphicon-ok {
+				color: $top-user-check-color;
+			}
 		}
 	}
 	.navbar-toggle:hover {
@@ -198,11 +212,11 @@
 		-moz-box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
 		box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
 		border-top: 3px solid #eeeeee;
-		input[type=text] {
-			border: 1px solid $top-search-input-border-color;
-			font-size: 15px;
-			padding: 5px 20px;
-			width: 40%;
+		input:focus {
+			border-color: $link-color;
+			outline: 0;
+			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(1, 106, 156, 0.6);
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(1, 106, 156, 0.6);
 		}
 		&.open {
 			display: block;
@@ -217,7 +231,7 @@
 			font-size: 20px;
 			position: absolute;
 			top: 18px;
-			margin-left: -28px;
+			margin-left: -32px;
 			padding: 2px 5px 0;
 			background: #fb4f14;
 			color: #fff;
@@ -226,6 +240,11 @@
 			height: 33px;
 		}
 		.search-query {
+			border: 1px solid $top-search-input-border-color;
+			font-size: 15px;
+			padding: 5px 50px 5px 20px;
+			width: 40%;
+			height: 33px;
 			padding-right: 14px;
 			padding-right: 4px \9
 		;
@@ -233,9 +252,6 @@
 			padding-left: 4px \9
 		;
 			margin-bottom: 0;
-			/*-webkit-border-radius: 15px;
-			-moz-border-radius: 15px;*/
-			height: auto;
 		}
 
 		.autocomplete {
@@ -287,7 +303,7 @@
 			li {
 				display: block;
 				padding: 0;
-				color: $link-color;
+				/*color: $link-color;*/
 			}
 			ul {
 				display: none;

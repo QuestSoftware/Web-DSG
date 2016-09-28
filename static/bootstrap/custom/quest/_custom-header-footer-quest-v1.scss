@@ -22,7 +22,7 @@
 			}
 		}
 	}
-	&.no-touch { //&.no-touch is needed for dsg header/footer non-responsive
+	/*&.no-touch { //&.no-touch is needed for dsg header/footer non-responsive
 		ul {
 			&.tier1 {
 				li {
@@ -33,13 +33,13 @@
 							color: $link-color;
 						}
 					}
-					&:hover > ul {
+					!*&:hover > ul {
 						display: block;
-					}
+					}*!
 				}
 			}
 		}
-	}
+	}*/
 }
 
 
