@@ -240,9 +240,17 @@ $btn-success-color: #fff !default;
 $btn-success-bg: $brand-success !default;
 $btn-success-border: darken($btn-success-bg, 5%) !default;
 
+$btn-success-hover-color: #fff;
+$btn-success-hover-bg: #0B5000;
+$btn-success-hover-border: darken($btn-success-hover-bg, 5%) !default;
+
 $btn-info-color: #fff !default;
 $btn-info-bg: $brand-info !default;
 $btn-info-border: darken($btn-info-bg, 5%) !default;
+
+$btn-warning-hover-color: #fff;
+$btn-warning-hover-bg: #be500e;
+$btn-warning-hover-border: #9d420b;
 
 $btn-warning-hover-color: #fff;
 $btn-warning-hover-bg: #be500e;
@@ -254,6 +262,7 @@ $btn-danger-border: darken($btn-danger-bg, 5%) !default;
 
 $btn-link-disabled-color: $gray-light !default;
 $btn-default-disable-color: $dell-gray;
+$btn-default-disable-border-color: #aaaaaa;
 
 //Flyout Button
 
@@ -934,6 +943,26 @@ $doc-header-bg: $dell-blue;
 $date-widget-border-color: #d9d9d9;
 $date-widget-header-color: $white;
 $date-body-bg-color: $white;
+
+//UI Widget
+$ui-widget-content-color: #222;
+$ui-widget-content-border: #dadada;
+$ui-widget-header-color: #222;
+$ui-widget-header-border: #dadada;
+$ui-widget-header-link: #222;
+
+//UI State
+$ui-state-border: #d3d3d3;
+$ui-state-color: #555;
+$ui-state-link: #555;
+
+$ui-state-hover-color: #212121;
+$ui-state-hover-border: #999;
+$ui-state-hover-link: #212121;
+
+$ui-state-active-color: #212121;
+$ui-state-active-border: #fff;
+$ui-state-active-link: #212121;
 
 // Introduction
 

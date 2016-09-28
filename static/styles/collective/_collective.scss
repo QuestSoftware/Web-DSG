@@ -1607,6 +1607,9 @@ article > h2 {
 	width: 925px;
 }
 
+#wrapper {
+	background: #eee;
+}
 #main-content {
 	background-color: #eee;
 	padding-bottom: 30px;
@@ -5907,7 +5910,8 @@ ul#oo-toolbar span {
 	left: 0;
 	cursor: default;
 	z-index: 1000;
-	padding: 10px 0;
+	border: 1px solid #ccc;
+	padding: 10px 0 !important;
 }
 
 .ui-autocomplete.ui-widget-content {
@@ -5915,9 +5919,9 @@ ul#oo-toolbar span {
 	background: #ffffff;
 	/*border: 1px solid #a6c9e2;*/
 	color: #222222;
-	padding: 10px 0;
-	border: 1px solid #ccc;
-	border-bottom: 3px solid #007DB8;
+	/*	padding: 10px 0;
+		border: 1px solid #ccc;
+		border-bottom: 3px solid #007DB8;*/
 }
 
 .ui-widget {
@@ -5939,6 +5943,9 @@ ul#oo-toolbar span {
 	margin: 0;
 	min-height: 0;
 	position: relative;
+	line-height: 30px;
+	padding: 0 10px 0 15px;
+	color: $link-color;
 }
 
 .ui-menu .ui-menu-item > a {

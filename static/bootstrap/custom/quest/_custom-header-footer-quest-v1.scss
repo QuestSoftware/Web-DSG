@@ -23,7 +23,7 @@
 		}
 	}
 	&.no-touch { //&.no-touch is needed for dsg header/footer non-responsive
-		ul {
+		/*ul {
 			&.tier1 {
 				li {
 					&:hover {
@@ -33,12 +33,12 @@
 							color: $link-color;
 						}
 					}
-					&:hover > ul {
+					!*&:hover > ul {
 						display: block;
-					}
+					}*!
 				}
 			}
-		}
+		}*/
 	}
 }
 
