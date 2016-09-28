@@ -342,7 +342,7 @@ function processHeaderFooter() {
 		}
 	});
 
-	//Siamak: Open tier 3 and 4 on click
+	//Siamak: Open tier 3 and 4 on click`
 	headerNavElem.on('click', '.tier2 > li.subLinks > a, .tier3 > li.subLinks > a', function (e) {
 
 		if (pageType >= 3) {
