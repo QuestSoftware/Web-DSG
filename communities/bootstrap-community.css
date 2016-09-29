@@ -29,12 +29,6 @@
 /*Slick banners*/
 /*3 Play Media*/
 /* Variables below this line is only used on non-responsive stylesheet */
-@font-face {
-	font-family: "Glyphicons Halflings";
-	src: url("/fonts/glyphicons-halflings-regular.eot");
-	src: url("/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("/fonts/glyphicons-halflings-regular.woff") format("woff"), url("/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
-}
-
 .glyphicon, .menu-indicator {
 	position: relative;
 	top: 1px;
@@ -91,11 +85,9 @@
 #footer {
 	background-color: #fff;
 	font-size: 14px;
-	margin-top: 30px;
+	margin-top: 10px;
 	border-top: 1px solid #aaa;
 	color: #333;
-	font-family: "Trebuchet MS", sans-serif;
-	line-height: 1.42857;
 }
 
 #footer a {
@@ -133,7 +125,6 @@
 
 #footer .footer-top-section {
 	position: relative;
-	z-index: 0;
 }
 
 #footer .footer-top-section a {
@@ -230,10 +221,6 @@
 
 	body > form {
 		position: relative;
-	}
-
-	.banner.site {
-		/*left: 0;*/
 	}
 
 	.banner.site .avatar img {
@@ -352,18 +339,17 @@
 		padding: 0 0 0 15px;
 	}
 }
-
 @media (min-width: 768px) {
+	#mobile-nav-container {
+		display: none;
+	}
+
 	.header-fragments .layout .layout-content .layout-region.header .layout-region-inner {
 		max-width: 1200px;
 	}
 
 	.header-fragments:hover .banner.site .navigation-list ul a {
 		color: #333;
-	}
-
-	.custom-main-navigation {
-		font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "Microsoft YaHei", "Hiragino Sans GB", "Microsoft JhengHei", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif;
 	}
 
 	.custom-main-navigation li {
@@ -383,20 +369,80 @@
 		color: #FB4F14;
 	}
 
+	.navigation-list.user-links li:hover a {
+		color: #FB4F14 !important;
+	}
+
+	.navigation-list .logout {
+		margin-top: 10px;
+	}
+
+	.navigation-list .logout a {
+		display: block;
+		margin-bottom: 0;
+		font-weight: normal;
+		text-align: center;
+		vertical-align: middle;
+		touch-action: manipulation;
+		cursor: pointer;
+		background-image: none;
+		border: 1px solid transparent;
+		white-space: nowrap;
+		padding: 6px 12px;
+		font-size: 16px;
+		line-height: 1.42857;
+		border-radius: 1px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		color: #016a9c;
+		background-color: #eeeeee;
+		border-color: #aaaaaa;
+	}
+
+	.navigation-list .logout a:focus, .navigation-list .logout a.focus, .navigation-list .logout a:active:focus, .navigation-list .logout a:active.focus, .navigation-list .logout a.active:focus, .navigation-list .logout a.active.focus {
+		outline: none;
+	}
+
+	.navigation-list .logout a:hover, .navigation-list .logout a:focus, .navigation-list .logout a.focus {
+		color: #016a9c;
+		text-decoration: none;
+	}
+
+	.navigation-list .logout a:active, .navigation-list .logout a.active {
+		outline: 0;
+		background-image: none;
+		-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+		box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	}
+
+	.navigation-list .logout a:hover, .navigation-list .logout a:focus, .navigation-list .logout a.focus, .navigation-list .logout a:active, .navigation-list .logout a.active, .open > .navigation-list .logout a.dropdown-toggle {
+		color: #016a9c;
+		background-color: #d5d5d5;
+		border-color: #aaaaaa;
+	}
+
+	.navigation-list .logout a:active, .navigation-list .logout a.active, .open > .navigation-list .logout a.dropdown-toggle {
+		background-image: none;
+	}
+
+	.navigation-list .logout a.disabled, .navigation-list .logout a.disabled:hover, .navigation-list .logout a.disabled:focus, .navigation-list .logout a.disabled.focus, .navigation-list .logout a.disabled:active, .navigation-list .logout a.disabled.active, .navigation-list .logout a[disabled], .navigation-list .logout a[disabled]:hover, .navigation-list .logout a[disabled]:focus, .navigation-list .logout a[disabled].focus, .navigation-list .logout a[disabled]:active, .navigation-list .logout a[disabled].active, fieldset[disabled] .navigation-list .logout a, fieldset[disabled] .navigation-list .logout a:hover, fieldset[disabled] .navigation-list .logout a:focus, fieldset[disabled] .navigation-list .logout a.focus, fieldset[disabled] .navigation-list .logout a:active, fieldset[disabled] .navigation-list .logout a.active {
+		background-color: #eeeeee;
+		border-color: #aaaaaa;
+	}
+
+	.navigation-list .logout a .badge {
+		color: #eeeeee;
+		background-color: #016a9c;
+	}
+
 	.navigation-list .glyphicon, .navigation-list .menu-indicator {
 		font-size: 22px;
 	}
 
-	.banner.site .avatar {
-		width: 169px !important;
-	}
-
-	.banner.site .navigation-list.user-links a {
+	.banner.site .navigation-list.user-links a.search-icon {
 		margin: 4px;
-	}
-
-	.banner.site .navigation-list ul {
-		width: 150px !important;
 	}
 
 	.banner.site .navigation-list ul a {
@@ -418,6 +464,14 @@
 
 	.banner.site .navigation-list ul .conversations {
 		margin-top: 7px;
+	}
+
+	.banner.site .navigation-list ul .user.with-icon {
+		text-indent: 0;
+	}
+
+	.banner.site .navigation-list ul .user.with-icon:before {
+		display: none;
 	}
 
 	#masthead-search {
@@ -456,12 +510,22 @@
 		font-size: 20px;
 	}
 
-	.footer-fragments {
-		border-top: 1px solid #aaa;
+	.header .content-fragment.with-spacing {
+		padding: 4px 0;
+	}
+
+	.popup-list.user {
+		font-size: 16px;
+	}
+
+	.popup-list .multiple-column-list {
+		border: 1px solid #eee;
+		background-color: #f9f9f9;
 	}
 
 	.footer-fragments .layout {
-		max-width: 100%;
+		max-width: 100% !important;
+		margin: 0;
 	}
 
 	#footer {
@@ -477,13 +541,8 @@
 		display: none;
 	}
 
-	#footer .footer-top-section .menu-links {
-		display: inline-block;
-		margin: 0 auto;
-	}
-
 	#footer .footer-top-section .menu-links > li {
-		padding: 0 9% 0 15px;
+		padding: 0 8%;
 		display: inline-block;
 		vertical-align: top;
 	}
@@ -491,6 +550,10 @@
 	#footer .footer-top-section .menu-links > li > div {
 		padding: 0 0 5px;
 		font-weight: 700;
+	}
+
+	#footer .footer-top-section .menu-links ul li {
+		font-size: 12px;
 	}
 
 	#footer .footer-top-section a {
@@ -504,6 +567,16 @@
 	#footer .footer-top-section ul li {
 		display: block;
 		border-top: 0;
+	}
+
+	#footer .footer-copyright-section {
+		max-width: 100%;
+		border-top: 1px solid #eee;
+		font-size: 12px;
+	}
+
+	#footer .footer-copyright-section ul {
+		text-align: center;
 	}
 
 	#footer .footer-copyright-section li {
