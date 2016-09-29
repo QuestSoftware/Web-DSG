@@ -46,7 +46,7 @@
 }
 
 .date-widget {
-  width: 88px;
+  width: 90px;
   box-sizing: border-box;
 	border: 1px solid $date-widget-border-color;
   //float: left;
@@ -54,12 +54,7 @@
 
   .header {
 		color: $date-widget-header-color;
-
-    @if ($domain == "quest") {
-      font-size: 14px;
-    } @else {
-      font-size: $font-size-base;
-    }
+    font-size: 14px;
   }
 
   &.event-on-demand {
@@ -92,7 +87,7 @@
 }
 
 .details-list {
-  margin-left: 98px;
+  margin-left: 100px;
   li {
     padding-bottom: 0;
     line-height: 1.37em;
