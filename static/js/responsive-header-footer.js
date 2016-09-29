@@ -64,8 +64,10 @@ $(document).ready(function () {
 
 			//Make sure that GA is loaded
 			if (ga.hasOwnProperty('loaded') && ga.loaded === true) {
-				//Fallback if hitCallback does not execute in time.
-				setTimeout(redirectURL, 1000);
+				if (URL !== undefined) {
+					//Fallback if hitCallback does not execute in time.
+					setTimeout(redirectURL, 1000);
+				}
 
 				//Send event tracking to google.
 				ga('send', obj);
