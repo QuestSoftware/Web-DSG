@@ -7,9 +7,7 @@
 		min-width: 1200px;
 		ul.tier3:before, ul.tier4:before {
 			//3px 0px 5px 0 rgba(97, 95, 95, 0.49); changed to lighter
-			-webkit-box-shadow: 2px 0 4px 0 rgba(97, 95, 95, 0.2);
-			-moz-box-shadow: 2px 0 4px 0 rgba(97, 95, 95, 0.2);
-			box-shadow: 2px 0 4px 0 rgba(97, 95, 95, 0.2);
+			@include box-shadow(3px 0 3px 0 rgba(97, 95, 95, 0.2));
 			display: block;
 			content: '';
 			position: absolute;
@@ -62,7 +60,7 @@
 		.utility {
 			width: auto;
 			a {
-				padding: 22px 10px;
+				padding: 22px 15px;
 			}
 			[class^=icon] {
 				font-size: 18px;
@@ -165,7 +163,7 @@
 					z-index: 999;
 					width: 280px;
 					background: #fff;
-					box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
+					@include box-shadow(2px 4px 5px 0px rgba(97, 95, 95, 0.49));
 					li > a:hover {
 						color: $top-link-hover-t2;
 						/*background: #999;*/
@@ -195,8 +193,6 @@
 						}
 						&.subLinks {
 							position: initial;
-							border-top: 1px solid transparent;
-							border-bottom: 1px solid transparent;
 							&:hover {
 								background: #fff;
 
@@ -248,7 +244,7 @@
 					}
 					&:hover > ul {
 						position: absolute;
-						left: 280px;
+						left: 279px;
 						top: 0;
 						background: #fff;
 						padding: 0;
@@ -261,8 +257,11 @@
 					float: right;
 					min-height: 101%;
 					width: auto;
-					box-shadow: 1px 3px 8px #999999;
+					@include box-shadow(2px 4px 5px 0px rgba(97, 95, 95, 0.49));
 
+				}
+				&.tier4 {
+					min-height: 100.7%;
 				}
 				li {
 					cursor: pointer;

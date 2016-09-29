@@ -57,7 +57,7 @@
 	}
 	.navbar-brand {
 		padding: 0;
-		margin: 15px 44px 15px 5px;
+		margin: 15px 44px 15px 0;
 		a {
 			color: $top-link;
 			&:hover {
@@ -144,7 +144,7 @@
 		.badge {
 			position: absolute;
 			top: 14px;
-			left: 15px;
+			left: 13px;
 			width: 14px;
 			height: 14px;
 			display: inline-block;
@@ -208,9 +208,7 @@
 		width: 100%;
 		padding: 18px 15px;
 		background-color: $top-search-bg;
-		-webkit-box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
-		-moz-box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
-		box-shadow: 0 4px 5px 0 rgba(97, 95, 95, 0.49);
+		@include box-shadow(0 4px 5px 0 rgba(97, 95, 95, 0.49));
 		border-top: 3px solid #eeeeee;
 		input:focus {
 			border-color: $link-color;
@@ -238,11 +236,15 @@
 			border-top-right-radius: 1px;
 			border-bottom-right-radius: 1px;
 			height: 33px;
+			&:hover, &:focus, &.focus {
+				color: $top-search-btn-hover-color;
+				background: $top-search-btn-hover-bg;
+			}
 		}
 		.search-query {
 			border: 1px solid $top-search-input-border-color;
 			font-size: 15px;
-			padding: 5px 50px 5px 20px;
+
 			width: 40%;
 			height: 33px;
 			padding-right: 14px;
@@ -252,6 +254,7 @@
 			padding-left: 4px \9
 		;
 			margin-bottom: 0;
+			padding: 5px 50px 5px 20px;
 		}
 
 		.autocomplete {
@@ -563,7 +566,7 @@ li {
 		color: $dell-gray-dark;
 
 		a, span {
-			padding: 0px 10px 20px 15px;
+			padding: 0px 10px 10px 15px;
 		}
 		a {
 			color: #0085c3;

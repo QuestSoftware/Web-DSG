@@ -331,6 +331,8 @@ function processHeaderFooter() {
 			location.href = $(this).attr('href');
 		}
 	});
+
+	initSearch();
 }
 
 function getPageProperties() {
@@ -507,3 +509,116 @@ function objectEquals(x, y) {
 			return objectEquals(x[i], y[i]);
 		});
 }
+
+function initSearch() {
+	var searchFieldElem = $('#searchterm');
+	var searchFormElem = $('#search-form');
+
+	$(document).ready(function () {
+		searchFieldElem.unbind("keypress");
+
+		//TODO: Figure out what this does.
+		var b = {};
+		(function () {
+			var j, l = /\+/g, k = /([^&=]+)=?([^&]*)/g, n = function (o) {
+				return decodeURIComponent(o.replace(l, " "))
+			}, m = window.location.search.substring(1);
+			while (j = k.exec(m)) {
+				b[n(j[1])] = n(j[2])
+			}
+		})();
+
+		searchFieldElem.attr('autocomplete', 'off');
+		searchFieldElem.val(Encoder.htmlDecode(b.q)).keypress(function (j) {
+			if (j.which == 13) {
+				j.preventDefault();
+				goSearch($('#searchterm').val());
+			}
+		});
+
+		searchFormElem.on('click', '.btn', function () {
+			goSearch($('#searchterm').val());
+		});
+
+		if (searchFormElem.length) {
+			$('#search-form').on('submit', function (e) {
+				e.preventDefault();
+				goSearch($('#searchterm').val());
+				return false;
+			});
+		}
+
+		if (!$.fn.autocomplete) {
+			$.getScript('/Static/Scripts/jquery.autocomplete.min.js', function () {
+				initAdobeSearch();
+			});
+		}
+		else {
+			initAdobeSearch();
+		}
+	});
+
+	function initAdobeSearch() {
+		var config = {
+			account: "sp10050c33",
+			//searchDomain: "http://sp10050c33.guided.ss-omtrdc.net",
+			searchDomain: siteTags.SiteSearchDomainUnified,
+			inputElement: "#searchterm",
+			inputFormElement: "#search-form",
+			delay: 300,
+			minLength: 2,
+			maxResults: 10,
+			browserAutocomplete: false,
+			queryCaseSensitive: false,
+			startsWith: false,
+			searchOnSelect: true,
+			submitOnSelect: true,
+			highlightWords: false,
+			highlightWordsBegin: false
+		};
+
+		if ($.fn.AdobeAutocomplete) {
+			$('#searchterm').AdobeAutocomplete(config);
+
+			if ($('#q3').length) {
+				$('#q3').AdobeAutocomplete($.extend({}, config, {inputElement: '#q3', inputFormElement: '#q3form'}));
+			}
+		}
+		else {
+			//$.getScript('//content.atomz.com/content/pb00003799/publish/build/search/jquery/autocomplete/1.4/jquery.adobe.autocomplete.min.js', function () {
+			$.getScript('/viewScripts/jquery.adobe.autocomplete.js', function () {
+				$('#searchterm').AdobeAutocomplete(config);
+				if ($('#q3').length) {
+					$('#q3').AdobeAutocomplete($.extend({}, config, {inputElement: '#q3', inputFormElement: '#q3form'}));
+				}
+			});
+		}
+	}
+
+	function goSearch(searchterm) {
+		window.VWO = window.VWO || [];
+
+		VWO.push(['nls.formAnalysis.markSuccess', document.getElementById('search-form'), true]);
+
+		if (isDoubleByte(searchterm)) {
+			searchterm = encodeURIComponent(searchterm);
+		}
+		else {
+			searchterm = encodeURIComponent(Encoder.htmlEncode(searchterm));
+		}
+
+		document.location.href = RootPath + "search/results/?q=" + searchterm;
+
+		return false;
+	}
+
+	function isDoubleByte(str) {
+		for (var i = 0, n = str.length; i < n; i++) {
+			if (str.charCodeAt(i) > 255) {
+				return true;
+			}
+		}
+		return false;
+	}
+}
+
