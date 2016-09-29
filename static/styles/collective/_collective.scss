@@ -5912,6 +5912,7 @@ ul#oo-toolbar span {
 	z-index: 1000;
 	border: 1px solid #ccc;
 	padding: 10px 0 !important;
+	border-top: none;
 }
 
 .ui-autocomplete.ui-widget-content {
@@ -5946,6 +5947,9 @@ ul#oo-toolbar span {
 	line-height: 30px;
 	padding: 0 10px 0 15px;
 	color: $link-color;
+	&:hover {
+		color: $link-color;
+	}
 }
 
 .ui-menu .ui-menu-item > a {
