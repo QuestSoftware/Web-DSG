@@ -49,8 +49,6 @@ $link-hover-color: darken($link-color, 20%) !default; //Link hover color
 /* End:Global */
 $link-hover-decoration: underline !default;
 
-
-
 /* Start:Header */
 $nav-subLinks-hover-bg: $text-orange; //Navigation tier 1 hover bg
 $nav-subLinks-hover-color: $white; //Navigation tier 1 hover color
@@ -60,11 +58,11 @@ $nav-bg-t2: $white; //Navigation tier 2 bg
 $nav-xs-border-bottom-color-t1: #aaa; //Navigation tier 1 border bottom (Mobile)
 $nav-xs-bg-open-t1: $light-gray; //Navigation tier 1 bg when open (Mobile)
 $nav-xs-color-open-t1: $darker-gray; //Navigation tier 1 color when open (Mobile)
-$nav-xs-arrow-color-open-t1: #fb4f14; //Navigation tier 1 arrow color when open (Mobile)
+$nav-xs-arrow-color-open-t1: $text-orange; //Navigation tier 1 arrow color when open (Mobile)
 $nav-xs-border-bottom-color-t2: $light-gray; //Navigation tier 2 border bottom (Mobile)
 $nav-xs-border-bottom-color-t3: $light-gray; //Navigation tier 3 border bottom (Mobile)
 $nav-xs-border-bottom-color-t4: $light-gray; //Navigation tier 4 border bottom (Mobile)
-$nav-xs-border-left-color-t4: #fb4f14; //Navigation tier 4 border-left color when open (Mobile)
+$nav-xs-border-left-color-t4: $text-orange; //Navigation tier 4 border-left color when open (Mobile)
 
 $top-link: $darker-gray; //Navigation link color
 $top-link-hover: $text-orange; //Navigation link hover color
