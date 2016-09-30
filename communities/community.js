@@ -298,9 +298,16 @@ var Arrive = function (window, $, undefined) {
 		mainNavContentElem = $('.custom-main-navigation');
 		userLinks = headerElem.find('.user-links');
 
-		$('body').css('overflow', 'hidden');
+		var bodyElem = $('body');
+
+		bodyElem.css('overflow', 'hidden');
 		var w = $('html').width();
-		$('body').css('overflow', '');
+		bodyElem.css('overflow', '');
+
+		processNavigation();
+
+		//Bookmarks
+		$('.bookmarks').html('<span class="glyphicon glyphicon-bookmark"></span>');
 
 		if (w <= 570) {
 			processMobile();
@@ -310,14 +317,21 @@ var Arrive = function (window, $, undefined) {
 		}
 	});
 
+	function processNavigation() {
+		//Mobile
+		$('body').append('<div id="mobile-nav-container"><div class="main-nav-section"><div class="shadow-overlay-left"></div></div></div></div>');
+
+		mainNavContentElem.clone().appendTo('#mobile-nav-container .main-nav-section');
+
+		//Desktop
+		searchElem = headerElem.find('.search');
+		mainNavContentElem.clone().insertBefore(searchElem);
+	}
+
 	function processMobile() {
 		var handheldElem = $('.navigation-list').filter('.handheld');
 
 		handheldElem.find('li:first').find('a').html('<i class="glyphicon glyphicon-menu-hamburger"></i>');
-
-		$('body').append('<div id="mobile-nav-container"><div class="main-nav-section"><div class="shadow-overlay-left"></div></div></div></div>');
-
-		mainNavContentElem.clone().appendTo('#mobile-nav-container .main-nav-section');
 
 		handheldElem.find('.site').on('click', function (e) {
 			e.preventDefault();
@@ -343,10 +357,19 @@ var Arrive = function (window, $, undefined) {
 	}
 
 	function processDesktop() {
-		searchElem = headerElem.find('.search');
-		mainNavContentElem.clone().insertBefore(searchElem);
+		//if (!userLinks.find('.user').find('img').length) {
+		//	userLinks.find('.user').html('<i class="glyphicon glyphicon-user"><span class="badge is-logged-in"><i class="glyphicon glyphicon-ok"></i></span></i>');
+		//}
 
-		userLinks.find('.user').html('<i class="glyphicon glyphicon-user"><span class="badge is-logged-in"><i class="glyphicon glyphicon-ok"></i></span></i>');
+		if (userLinks.find('.user').find('img').length) {
+			if (userLinks.find('.user').find('img').attr('src').indexOf('anonymous.gif') > -1) {
+				userLinks.find('.user').html('<i class="glyphicon glyphicon-user"><span class="badge is-logged-in"><i class="glyphicon glyphicon-ok"></i></span></i>');
+			}
+		}
+		else {
+			userLinks.find('.user').html('<i class="glyphicon glyphicon-user"><span class="badge is-logged-in"><i class="glyphicon glyphicon-ok"></i></span></i>');
+		}
+
 		userLinks.find('> ul').append('<li class="navigation-list-item"><a href="#" class="search-icon"><span class="glyphicon glyphicon-search"></span></a></li>');
 
 		headerElem.find('.banner.site').find('>fieldset.search').wrap('<div id="masthead-search">');
@@ -357,10 +380,10 @@ var Arrive = function (window, $, undefined) {
 			var elem = $('#masthead-search');
 
 			if ($('#masthead-search').is(':visible')) {
-				elem.hide();
+				elem.hide().removeClass('active');
 			}
 			else {
-				elem.show();
+				elem.show().addClass('active');
 			}
 		});
 
