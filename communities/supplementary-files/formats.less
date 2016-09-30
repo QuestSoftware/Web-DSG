@@ -423,7 +423,7 @@
     height: 44px;
     .avatar {
       display: table-cell;
-      width: 125px;
+      width: 169px;
       margin: 0 0 0 0;
       overflow: hidden;
       border-spacing: 0px;
@@ -488,7 +488,7 @@
     }
     .navigation-list {
       display: table-cell;
-      width: 20%;
+      width: 23%;
       vertical-align: middle;
       .navigation-list-item > span {
         display: block;
@@ -496,13 +496,13 @@
         position: relative;
       }
       ul {
-        width: 115px;
+        /*width: 250px;*/
         float: right;
         overflow: hidden;
         a {
           margin-right: 4px;
           float: right;
-          color: @color-site-baner-foreground;
+          color: @color-foreground;
           &.active {
             color: @color-accent;
           }
@@ -514,7 +514,7 @@
           .replace_with_icon(@comment, 20px);
         }
         .bookmarks {
-          .replace_with_icon(@bookmark, 20px);
+          /*.replace_with_icon(@bookmark, 20px);*/
           &.bookmarked {
             color: @color-attention !important;
           }
@@ -536,9 +536,8 @@
         .conversations,
         .bookmarks,
         .user {
-          margin: 4px 4px 4px 4px;
-          &:before {
-          }
+          /*margin: 4px 4px 4px 4px;*/
+          margin: 0;
         }
       }
       &.site-links {
