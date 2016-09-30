@@ -63,7 +63,7 @@ $(document).ready(function () {
 			}
 
 			//Make sure that GA is loaded
-			if (ga.hasOwnProperty('loaded') && ga.loaded === true) {
+			if (typeof ga != 'undefined' && ga.hasOwnProperty('loaded') && ga.loaded === true) {
 				if (URL !== undefined) {
 					//Fallback if hitCallback does not execute in time.
 					setTimeout(redirectURL, 1000);
