@@ -29,6 +29,7 @@
       /*-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
       box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)*/
     }
+	  /* Possibly use class name instead of defining selector by attributes. */
     input[type=text] {
       margin-left: 5px;
       margin-right: 5px;
@@ -46,6 +47,7 @@
       border-radius: 0;
     }
   }
+	/* This class might not be used on our site. */
   .disabled {
     > a,
     > a:hover,
