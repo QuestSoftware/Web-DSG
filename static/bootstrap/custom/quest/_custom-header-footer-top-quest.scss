@@ -38,6 +38,7 @@
 		i {
 			font-size: 12px;
 			line-height: 19px;
+			margin-left: 5px; //add space b/w down-arrow and tier1 links
 		}
 	}
 	.navbar {
@@ -121,7 +122,7 @@
 		}
 		a {
 			margin: 0;
-			padding: 22px 10px;
+			padding: 22px 9px;
 			color: $top-link;
 			display: block;
 			cursor: pointer;

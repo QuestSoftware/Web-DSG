@@ -1,66 +1,79 @@
 //Tablet Mode
 @media (min-width: 768px) { //SM
-
 	.masthead {
 		box-shadow: 0 3px 5px 0 rgba(170, 170, 170, 0.5);
 		margin-bottom: 10px;
 		min-width: 1200px;
-		ul.tier3:before, ul.tier4:before {
-			//3px 0px 5px 0 rgba(97, 95, 95, 0.49); changed to lighter
-			@include box-shadow(3px 0 3px 0 rgba(97, 95, 95, 0.2));
-			display: block;
-			content: '';
-			position: absolute;
-			top: 0;
-			left: -5px;
-			height: 100%;
-			width: 5px;
-			z-index: 1;
-		}
-		ul.tier1 {
-			> li:hover {
-				> a {
-					color: #ffffff;
+		ul {
+			&.tier3, &.tier4 {
+				&:before {
+					//3px 0px 5px 0 rgba(97, 95, 95, 0.49); changed to lighter
+					@include box-shadow(3px 0 3px 0 rgba(97, 95, 95, 0.2));
+					display: block;
+					content: '';
+					position: absolute;
+					top: 0;
+					left: -5px;
+					height: 100%;
+					width: 5px;
+					z-index: 1;
 				}
 			}
-		}
-		ul.tier2 {
-			li:hover {
-				> a {
-					background-color: #eeeeee;
-				}
-				> a i {
-					color: $top-link-hover;
+			&.tier1 {
+				> li:hover {
+					> a {
+						color: #ffffff;
+					}
 				}
 			}
-			li.subLinks {
-				i.nav-arrow:before {
-					content: "\e258";
+			&.tier2 {
+				li:hover {
+					> a {
+						background-color: #eeeeee;
+					}
+					> a i {
+						color: $top-link-hover;
+					}
+				}
+				li.subLinks {
+					i.nav-arrow:before {
+						content: "\e258";
+					}
 				}
 			}
-		}
-		ul.tier3 li i {
-			color: #333333;
-		}
-		ul.tier3li:hover i {
-			color: $top-link-hover;
+			&.tier3 li {
+				&:hover {
+					i {
+						color: $top-link-hover;
+					}
+				}
+				i {
+					color: #333333;
+				}
+			}
 		}
 
 		i.nav-arrow:before {
 			content: "\e259";
 		}
 
-		.tier1 li.open > ul.tier2 {
-			display: block;
-		}
-		.tier1 li.open > ul.tier2 li.subLinks:hover > ul.tier4, .tier1 li.open > ul.tier2 li.subLinks:hover > ul.tier3 {
-			display: block;
+		.tier1 {
+			li.open {
+				> ul.tier2 {
+					display: block;
+					li.subLinks:hover {
+						> ul.tier3, > ul.tier4 {
+							display: block;
+						}
+					}
+				}
+			}
 		}
 
 		.utility {
 			width: auto;
 			a {
-				padding: 22px 15px;
+				padding: 22px 9px;
 			}
 			[class^=icon] {
 				font-size: 18px;
@@ -179,40 +192,25 @@
 						padding: 7px 15px;
 						position: relative;
 					}
-					li.subLinks a:hover {
-						background: $nav-subLinks-hover-bg-t2;
-						color: $nav-subLinks-hover-color-t2;
-					}
 					li {
 						height: auto;
 						font-weight: normal;
 						overflow: visible;
-						&:hover {
-							/*background: #999999;
-							color: #333333;*/
-						}
 						&.subLinks {
 							position: initial;
 							&:hover {
 								background: #fff;
-
-								/*border-top: 1px solid #cce7f3;
-								border-bottom: 1px solid #cce7f3;
-								background: -moz-linear-gradient(left, #f9f9f9 0%, #fff 100%);
-								background: -webkit-gradient(linear, left top, right top, color-stop(0%, #f9f9f9), color-stop(100%, #fff));
-								background: -webkit-linear-gradient(left, #f9f9f9 0%, #fff 100%);
-								background: -o-linear-gradient(left, #f9f9f9 0%, #fff 100%);
-								background: -ms-linear-gradient(left, #f9f9f9 0%, #fff 100%);
-								background: linear-gradient(to right, #f9f9f9 0%, #fff 100%);
-								&:first-child {
-									border-top: 1px solid transparent;
-								}*/
+							}
+							a:hover {
+								background: $nav-subLinks-hover-bg-t2;
+								color: $nav-subLinks-hover-color-t2;
 							}
 						}
 					}
 					> li {
 						display: block;
 						background: #fff;
+						border-left: 1px solid #eee;
 						i.menu-indicator {
 							color: #007db8;
 						}
@@ -221,12 +219,6 @@
 						width: 92%;
 					}
 					li:hover > ul {
-						position: absolute;
-						left: 280px;
-						top: 0;
-						width: 280px;
-						background: #fff;
-						padding: 0;
 						li {
 							display: block;
 							a {
@@ -235,33 +227,21 @@
 						}
 					}
 				}
-
-				&.tier3 li {
-					&.subLinks {
-						border-top: 1px solid transparent;
-						border-bottom: 1px solid transparent;
-						border-right: 1px solid transparent;
-					}
-					&:hover > ul {
-						position: absolute;
-						left: 280px;
-						top: 0;
-						background: #fff;
-						padding: 0;
-					}
-				}
 				&.tier3, &.tier4 {
-					margin-top: -3px;
+					position: absolute;
+					left: 280px;
+					top: -3px;
+					margin-top: 0;
+					box-sizing: content-box;
 					border-top: 3px solid $nav-border-top;
 					display: none;
 					float: right;
-					min-height: 101%;
-					width: auto;
+					min-height: 100%;
+					width: 280px;
+					background: #fff;
+					padding: 0;
 					@include box-shadow(2px 4px 5px 0px rgba(97, 95, 95, 0.49));
 
-				}
-				&.tier4 {
-					min-height: 100.7%;
 				}
 				li {
 					cursor: pointer;
@@ -360,5 +340,4 @@
 			}
 		}
 	}
-
 }
