@@ -222,8 +222,8 @@ function init() {
 			.on('click', '.resetfilter', function (e) {
 				e.preventDefault();
 
+				$('#solution + .ms-parent .ms-drop > ul').remove();
 				filterElem.data('continue', false);
-
 				// multiselect uncheckall
 				filterElem.find('select').each(function () {
 					if ($(this).next().is(':visible')) {
