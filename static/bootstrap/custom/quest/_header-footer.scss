@@ -115,7 +115,7 @@ i.nav-arrow:before {
 		}
 		a {
 			margin: 0;
-			padding: 22px 15px;
+			padding: 22px 9px;
 			color: $top-link;
 			display: block;
 			cursor: pointer;
@@ -1249,10 +1249,6 @@ i.menu-indicator {
 					li.open > a:hover {
 						color: $nav-subLinks-hover-color;
 					}
-					//Siamak comment this
-					/*li.open ul.tier2 li.open ul.tier3 {
-						color: $nav-subLinks-hover-color;
-					}*/
 					> li {
 						display: inline-block;
 						float: left;
@@ -1266,6 +1262,7 @@ i.menu-indicator {
 					}
 					i.nav-arrow {
 						float: none;
+						margin-left: 5px; //add space b/w down-arrow and tier1 links
 					}
 				}
 				&.tier1 span, &.tier2 span {
@@ -1313,8 +1310,7 @@ i.menu-indicator {
 					}
 					> li {
 						display: block;
-						//Siamak
-						//background: #fff;
+						border-left: 1px solid #eee;
 					}
 					span {
 						width: 92%;
@@ -1324,7 +1320,6 @@ i.menu-indicator {
 						left: 280px;
 						top: -3px;
 						width: 280px;
-						//Siamak
 						background: #fff;
 						padding: 0;
 						li {

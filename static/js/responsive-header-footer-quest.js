@@ -247,6 +247,8 @@ function processHeaderFooter() {
 
 		$('#signin-container').removeClass('open');
 		headerNavElem.find('.open').removeClass('open');
+
+		$('html').removeClass('openNav');
 	});
 
 	//Prevent anchor tag from firing when href is set to # on mobile
@@ -278,7 +280,6 @@ function processHeaderFooter() {
 				$('#country-popup').css('display', '');
 			}
 		})
-
 		//To open and close footer on Mobile
 		.on('click', '.menu-links > .subLinks > span', function (e) {
 			//Add functionality for when user uses touch on navigation/footer.
@@ -335,13 +336,14 @@ function processHeaderFooter() {
 			}
 		});
 
-	//TODO: Siamak to add comments.
+	//Removing dropdown-backdrop class to open other items when they have been clicked
 	$('#signin-container').on('shown.bs.dropdown', function (e, obj) {
 		var target = $(obj.relatedTarget);
 
 		if (target.next().hasClass('dropdown-backdrop')) {
 			target.next().remove();
 		}
+		$('html').removeClass('openNav');
 	});
 
 	//Siamak: Open tier 3 and 4 on click
