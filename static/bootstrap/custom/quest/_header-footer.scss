@@ -915,6 +915,12 @@ i.menu-indicator {
 	}
 	#current-country {
 		cursor: pointer;
+		i {
+			&.glyphicon-triangle-bottom {
+				top: 3px;
+				margin-left: 5px;
+			}
+		}
 		> span {
 			background: url("/images/shared/sprites.png") -104px -128px no-repeat;
 			display: inline-block;
