@@ -401,8 +401,8 @@
   &.site {
     .popup-list-count {
       position: absolute;
-      top: 0px;
-      left: -2px;
+      top: 15px;
+      left: 8px;
       background-color: @color-attention;
       color: @color-accent-foreground !important;
       font-family: @font-family-body;
@@ -423,7 +423,7 @@
     height: 44px;
     .avatar {
       display: table-cell;
-      width: 125px;
+      width: 169px;
       margin: 0 0 0 0;
       overflow: hidden;
       border-spacing: 0px;
@@ -488,33 +488,45 @@
     }
     .navigation-list {
       display: table-cell;
-      width: 20%;
+      width: 23%;
       vertical-align: middle;
       .navigation-list-item > span {
         display: block;
         float: right;
         position: relative;
+        //padding: 19px 11px 20px;
       }
       ul {
-        width: 115px;
+        /*width: 250px;*/
         float: right;
         overflow: hidden;
         a {
-          margin-right: 4px;
           float: right;
-          color: @color-site-baner-foreground;
+          color: @color-foreground;
           &.active {
-            color: @color-accent;
+            color: @text-orange;
           }
         }
         .notifications {
-          .replace_with_icon(@flash, 20px);
+          .replace_with_icon(@flash, 28px);
+          width: 46px;
+          height: 66px;
+          &:before {
+            top: 18px;
+            left: 7px;
+          }
         }
         .conversations {
-          .replace_with_icon(@comment, 20px);
+          .replace_with_icon(@comment, 28px);
+          width: 46px;
+          height: 66px;
+          &:before {
+            top: 18px;
+            left: 7px;
+          }
         }
         .bookmarks {
-          .replace_with_icon(@bookmark, 20px);
+          /*.replace_with_icon(@bookmark, 20px);*/
           &.bookmarked {
             color: @color-attention !important;
           }
@@ -526,7 +538,7 @@
           &.with-icon {
             top: 0px;
             .round(0px);
-            .replace_with_icon(@user, 20px);
+            //.replace_with_icon(@user, 20px);
           }
           img {
             .round;
@@ -536,9 +548,10 @@
         .conversations,
         .bookmarks,
         .user {
-          margin: 4px 4px 4px 4px;
-          &:before {
-          }
+          /*margin: 4px 4px 4px 4px;*/
+          margin: 0;
+          border-left: 2px solid transparent;
+          border-right: 2px solid transparent;
         }
       }
       &.site-links {
@@ -3327,18 +3340,24 @@ h1.title {
   &.no-author {
     padding-left: 7px;
   }
-  &.unread,
-  &:hover, &.selected {
-    background-color: @color-accent;
-    color: fade(@color-accent-foreground, 90%);
+  &.unread, &:hover, &.selected {
+    //background-color: @color-accent;
+    //color: fade(@color-accent-foreground, 90%);
+    background-color: #f9f9f9;
+    color: @color-foreground;
     .description,
     .post-date,
     .post-like {
-      color: fade(@color-accent-foreground, 50%);
+      //color: fade(@color-accent-foreground, 50%);
+      color: fade(@color-foreground, 50%);
     }
     a {
-      color: @color-accent-foreground !important;
+      //color: @color-accent-foreground !important;
+      color: @link-color !important;
     }
+  }
+  &:hover {
+    background-color: #eee;
   }
   .user-name {
     display: none;
@@ -3371,7 +3390,7 @@ h1.title {
   font-size: @font-size * 0.9;
   border: 0px;
   background-color: transparent;
-  padding: (@spacing / 2) 0 0 0;
+  //padding: (@spacing / 2) 0 0 0;
   -ms-touch-action: none;
   touch-action: none;
   .multiple-column-list {
@@ -3491,17 +3510,19 @@ h1.title {
     .mark,
     .preference {
       position: absolute;
-      top: 3px;
-      right: 5px;
+      bottom: 3px;
+      right: 35px;
       display: none;
       a {
-        .replace_with_icon(@cancel-squared);
+        //.replace_with_icon(@cancel-squared);
+        .replace_with_bs_icon(@bs-close);
       }
     }
     .mark {
-      top: 23px;
+      right: 10px;
       a {
-        .replace_with_icon(@check);
+        //.replace_with_icon(@check);
+        .replace_with_bs_icon(@bs-check);
       }
     }
     .content-item:hover {
@@ -3647,6 +3668,47 @@ h1.title {
         min-height: 0px;
       }
     }
+  }
+
+  a.logout {
+    margin-top: 10px;
+
+    display: block;
+    margin-bottom: 0; // For input.btn
+    font-weight: @btn-font-weight;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid transparent;
+    white-space: nowrap;
+    .button-size(@padding-base-vertical, @padding-base-horizontal, @font-size-base, @line-height-base, @border-radius-base);
+    .user-select(none);
+
+    &,
+    &:active,
+    &.active {
+      &:focus,
+      &.focus {
+      @include tab-focus;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @btn-default-color;
+      text-decoration: none;
+    }
+
+    &:active,
+    &.active {
+      outline: 0;
+      background-image: none;
+      .box-shadow(inset 0 3px 5px rgba(0, 0, 0, .125));
+    }
+    .button-variant-v2(@btn-default-color, @btn-default-bg, @btn-default-border, @btn-default-hover-color, @btn-default-hover-bg, @btn-default-hover-border);
   }
 }
 
