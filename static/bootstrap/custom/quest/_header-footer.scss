@@ -757,9 +757,9 @@ i.menu-indicator {
 				height: auto !important;
 				> li {
 					border-bottom: 1px solid $nav-xs-border-bottom-color-t3 !important;
-					&:last-child {
+					/*&:last-child {
 						border-bottom: none !important;
-					}
+					}*/
 				}
 			}
 			&.tier4 {
