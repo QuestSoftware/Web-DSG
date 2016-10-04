@@ -125,6 +125,12 @@ iframe {
   border: 0;
 }
 
+body {
+	> iframe, > img {
+		display: none;
+	}
+}
+
 /* Vertical Alignment */
 
 .valign-top {
