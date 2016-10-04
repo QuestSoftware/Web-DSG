@@ -139,17 +139,24 @@ function init() {
 	}
 
 	function solutionCallback(title, prevValue) {
-		$(this).parent().removeClass('hidden').end().multipleSelect({
-			placeholder: title,
-			multiple: false,
-			selectAll: false,
-			single: true,
-			onClick: function (view) {
-				if (view.value != '') {
-					$('#product').multipleSelect('setSelects', []);
+		if (typeof $(this).data('multipleSelect') == 'object') {
+			$(this).next().find('ul').remove();
+			$(this).multipleSelect('refresh');
+			$(this).multipleSelect('setSelects', [prevValue]);
+		}
+		else {
+			$(this).parent().removeClass('hidden').end().multipleSelect({
+				placeholder: title,
+				multiple: false,
+				selectAll: false,
+				single: true,
+				onClick: function (view) {
+					if (view.value != '') {
+						$('#product').multipleSelect('setSelects', []);
+					}
 				}
-			}
-		}).multipleSelect("uncheckAll");
+			}).multipleSelect("uncheckAll");
+		}
 	}
 
 	$(document).ready(function () {
