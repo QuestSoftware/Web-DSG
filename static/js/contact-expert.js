@@ -402,23 +402,22 @@ function populateListing() {
 
 		var template = $('#listing-template').html(), offsetTotal = 0;
 
-		$.each(dataopt.data, function (key, val) {
+		var ptr = 0;
+
+		for (ptr; ptr < dataopt.data.length; ptr++) {
+			var obj = dataopt.data[ptr];
+
 			//Assuming dataopt.data titles are already in alphabetical order.
-			if (range[rangeIndex].range.test(val.title)) {
+			if (range[rangeIndex].range.test(obj.title)) {
 				range[rangeIndex].total++;
-				range[rangeIndex].html += populateTemplate(val, template);
+				range[rangeIndex].html += populateTemplate(obj, template);
 			}
 			else {
 				finalizeRangeDisplay(rangeIndex);
-
 				rangeIndex++;
-
-				if (range[rangeIndex].range.test(val.title)) {
-					range[rangeIndex].total++;
-					range[rangeIndex].html += populateTemplate(val, template);
-				}
+				ptr--;
 			}
-		});
+		}
 
 		finalizeRangeDisplay(rangeIndex);
 
