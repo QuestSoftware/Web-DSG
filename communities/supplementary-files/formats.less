@@ -55,10 +55,10 @@
 
 // ui-webpreview
 .shared_link {
-  border: 0px;
+  border: 0;
   padding: (@spacing / 2) !important;
   background-color: transparent !important;
-  margin: 0px;
+  margin: 0;
   a {
     font-family: @font-family-body;
   }
@@ -121,7 +121,7 @@
 // rate
 .ui-rate {
   overflow: hidden;
-  padding: 0px;
+  padding: 0;
   a {
     float: left;
     margin: 0 !important;
@@ -154,7 +154,7 @@
 }
 
 .navigation-list[data-direction="horizontal"] a.ui-forumvotes {
-  padding-right: 0px;
+  padding-right: 0;
   &:before {
     margin-left: @spacing * 2/3;
   }
@@ -195,7 +195,7 @@
     text-indent: 0;
     width: 100%;
     height: auto;
-    padding: 0px;
+    padding: 0;
     &:hover {
       background-color: transparent;
     }
@@ -257,7 +257,7 @@
   }
   .content-list .content-item {
     .avatar {
-      top: 0px;
+      top: 0;
     }
     img {
       .round;
@@ -276,7 +276,7 @@
 
 .theater-content {
   .post-attachment-viewer {
-    border: 0px;
+    border: 0;
     background-color: darken(@color-background, 5%);
     overflow: hidden;
     > a {
@@ -315,7 +315,7 @@
   }
   .content-list .content-item.activity-story,
   .activity-story {
-    border: 0px;
+    border: 0;
     padding-left: 80px;
     padding-bottom: @spacing * 2;
     .navigation-list {
@@ -362,7 +362,7 @@
 }
 
 .theater-content-container {
-  padding: 0px;
+  padding: 0;
   box-shadow: none;
   a.theater-close:link,
   a.theater-close:visited,
@@ -374,13 +374,13 @@
     width: ((@spacing * 2) + (@font-size * 1.2))px !important;
     height: ((@spacing * 2) + (@font-size * 1.2))px !important;
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     .transition(.15s);
     :before {
       position: absolute;
-      top: 0px;
-      right: 0px;
+      top: 0;
+      right: 0;
     }
     &:hover {
       background-color: @color-accent;
@@ -401,8 +401,8 @@
   &.site {
     .popup-list-count {
       position: absolute;
-      top: 0px;
-      left: -2px;
+      top: 15px;
+      left: 8px;
       background-color: @color-attention;
       color: @color-accent-foreground !important;
       font-family: @font-family-body;
@@ -413,29 +413,26 @@
       line-height: @font-size * 1;
       text-align: center;
       z-index: 100;
-      -webkit-text-stroke-width: 0px !important;
+      -webkit-text-stroke-width: 0 !important;
       .round;
     }
     width: 100%;
-    display: table;
-    padding: 0px;
-    overflow: hidden;
-    height: 44px;
+    padding: 0;
+    height: 67px;
     .avatar {
-      display: table-cell;
-      width: 125px;
-      margin: 0 0 0 0;
+      display: inline-block;
+      width: 169px;
+      margin: 0;
       overflow: hidden;
-      border-spacing: 0px;
-      vertical-align: middle;
+      border-spacing: 0;
+      vertical-align: top;
       background-color: @color-logo;
-      padding-left: 0;
+      padding: 17px 0;
       a {
         display: block;
       }
     }
     fieldset {
-      display: table-cell;
       padding-left: 35px;
       ul {
         display: block;
@@ -443,14 +440,14 @@
         li {
           display: block;
           width: 100%;
-          margin: ((@spacing / 2) + 1) 0px 0px 0px;
+          margin: ((@spacing / 2) + 1) 0 0 0;
           label {
             display: none;
           }
           .field-item-input {
             display: block;
             width: 100%;
-            margin: 5px 5px 0px 5px;
+            margin: 5px 5px 0 5px;
             position: relative;
             input {
               width: 100%;
@@ -487,46 +484,65 @@
       }
     }
     .navigation-list {
-      display: table-cell;
-      width: 20%;
+      /*display: table-cell;*/
+      width: 250px;
       vertical-align: middle;
+      float: right;
+      height: 67px;
       .navigation-list-item > span {
         display: block;
         float: right;
         position: relative;
+        //padding: 19px 11px 20px;
       }
       ul {
-        width: 115px;
-        float: right;
-        overflow: hidden;
+        /*width: 250px;*/
+        /*float: right;*/
+        /*overflow: hidden;*/
         a {
-          margin-right: 4px;
           float: right;
-          color: @color-site-baner-foreground;
+          color: @color-foreground;
           &.active {
-            color: @color-accent;
+            color: @text-orange !important;
           }
         }
         .notifications {
-          .replace_with_icon(@flash, 20px);
+          .replace_with_icon(@flash, 28px);
+          width: 46px;
+          height: 66px;
+          &:before {
+            top: 18px;
+            left: 7px;
+          }
         }
         .conversations {
-          .replace_with_icon(@comment, 20px);
+          .replace_with_icon(@comment, 28px);
+          width: 46px;
+          height: 66px;
+          &:before {
+            top: 18px;
+            left: 7px;
+          }
         }
         .bookmarks {
-          .replace_with_icon(@bookmark, 20px);
+          /*.replace_with_icon(@bookmark, 20px);*/
+          .replace_with_bs_icon(@bs-bookmark, 20px);
           &.bookmarked {
             color: @color-attention !important;
           }
+          &:before {
+            top: 21px;
+            left: 10px;
+          }
         }
         .user {
-          overflow: hidden;
+          /*overflow: hidden;*/
           position: relative;
-          top: 1px;
+          /*top: 1px;*/
           &.with-icon {
-            top: 0px;
+            top: 0;
             .round(0px);
-            .replace_with_icon(@user, 20px);
+            //.replace_with_icon(@user, 20px);
           }
           img {
             .round;
@@ -535,10 +551,12 @@
         .notifications,
         .conversations,
         .bookmarks,
-        .user {
-          margin: 4px 4px 4px 4px;
-          &:before {
-          }
+        .user,
+        .search-icon {
+          /*margin: 4px 4px 4px 4px;*/
+          margin: 0;
+          border-left: 2px solid transparent;
+          border-right: 2px solid transparent;
         }
       }
       &.site-links {
@@ -548,8 +566,8 @@
           .site-navigation {
             .replace_with_icon(@menu, @spacing * 2.2);
             float: right;
-            top: 0px;
-            margin-right: 0px;
+            top: 0;
+            margin-right: 0;
             margin-left: 10px;
           }
         }
@@ -563,7 +581,7 @@
         width: 125px;
       }
       fieldset {
-        padding-left: 0px;
+        padding-left: 0;
       }
     }
   }
@@ -590,13 +608,13 @@
     .avatar {
       position: absolute;
       top: (@spacing / 1);
-      left: 0px;
+      left: 0;
       overflow: hidden;
       .round;
       .caption {
         display: none;
       }
-      border: 0px;
+      border: 0;
       img {
         .round;
         .transition(.15s);
@@ -624,7 +642,7 @@
     }
     .description {
       a {
-        .prepend_icon(@right-open, 15px, 0px);
+        .prepend_icon(@right-open, 15px, 0);
         &:before {
           top: -2px;
           color: @color-chrome;
@@ -674,7 +692,7 @@
       width: 115px;
       position: absolute;
       top: 27px;
-      right: 0px;
+      right: 0;
       .transition(100ms);
       ul {
         li {
@@ -693,7 +711,7 @@
           line-height: 34px;
           .transition(300ms);
           .prepend_icon(@plus, @font-size, 10px);
-          margin-top: 0px;
+          margin-top: 0;
           &:hover {
             background-color: lighten(@color-accent, 5%);
           }
@@ -720,7 +738,7 @@
         font-size: @font-size * .9;
         .transition(.15s);
         background-color: lighten(@color-chrome, 15%);
-        border: 0px;
+        border: 0;
         &:hover {
           background-color: @color-accent;
           color: @color-background !important;
@@ -769,8 +787,8 @@
             overflow: hidden;
           }
           a {
-            padding: 0px (@spacing * 2) 0 0;
-            border: 0px;
+            padding: 0 (@spacing * 2) 0 0;
+            border: 0;
             line-height: 16px;
             margin: 0 0 0 0;
             color: lighten(@color-foreground, 35%);
@@ -800,7 +818,7 @@
             &.more {
               top: 1px;
               &:before {
-                top: 0px;
+                top: 0;
               }
             }
           }
@@ -881,7 +899,7 @@
         .navigation-list.applications {
           ul {
             a {
-              border: 0px;
+              border: 0;
               color: lighten(@color-foreground, 35%);
               &:hover {
                 color: @color-accent;
@@ -953,7 +971,7 @@
   background-image: none !important;
   border: 1px solid lighten(@color-chrome, 5%) !important;
   background-color: @color-background !important;
-  padding: 0px !important;
+  padding: 0 !important;
   padding-right: 17px !important;
   overflow: hidden !important;
   position: relative !important;
@@ -962,10 +980,10 @@
   .round(3px);
   > span {
     height: auto !important;
-    padding: 0px @spacing 0px @spacing !important;
+    padding: 0 @spacing 0 @spacing !important;
     display: inline-block !important;
-    border: 0px !important;
-    margin: 0px !important;
+    border: 0 !important;
+    margin: 0 !important;
     line-height: @font-size * 2 !important;
     height: @font-size * 2 !important;
     color: @color-foreground !important;
@@ -998,15 +1016,15 @@
     }
   }
   &.options {
-    border: 0px !important;
+    border: 0 !important;
     padding: (@spacing / 2) 0 (@spacing / 2) 0 !important;
-    margin: 0px !important;
+    margin: 0 !important;
     background-color: transparent !important;
     > div {
       background-color: @color-background !important;
-      padding: 0px !important;
-      margin: 0px !important;
-      padding: 0px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
       background-image: none !important;
       border: 1px solid @color-accent !important;
       overflow: hidden !important;
@@ -1014,8 +1032,8 @@
       > div {
         color: @color-accent !important;
         font-size: @font-size * .8 !important;
-        padding: 0px @spacing 0px @spacing !important;
-        border: 0px !important;
+        padding: 0 @spacing 0 @spacing !important;
+        border: 0 !important;
         line-height: @font-size * 2 !important;
         height: @font-size * 2 !important;
         .transition(background-color .15s);
@@ -1052,12 +1070,12 @@
     img {
       width: 32px !important;
       height: auto !important;
-      padding: 0px !important;
+      padding: 0 !important;
     }
   }
   .name, .description {
     font-size: 1.0 * @font-size;
-    top: 0px;
+    top: 0;
     line-height: 44px;
     color: @font-color-display;
     a {
@@ -1070,7 +1088,7 @@
   .description {
     a {
       &:before {
-        top: 0px;
+        top: 0;
       }
     }
     &.currentcontent {
@@ -1129,16 +1147,16 @@
   border: 1px solid lighten(@color-chrome, 5%) !important;
   float: right;
   overflow: hidden;
-  padding: 0px !important;
+  padding: 0 !important;
   margin: 0 0 @spacing @spacing;
   .round(4px);
   .by, .order {
     float: left;
-    padding: 0px !important;
-    margin: 0px !important;
+    padding: 0 !important;
+    margin: 0 !important;
     .uiselect {
       float: left;
-      border: 0px !important;
+      border: 0 !important;
       .round(0px);
       > span {
         color: @color-chrome !important;
@@ -1184,7 +1202,7 @@
       padding: (@spacing / 2) 0 (@spacing / 3) 0;
       border-bottom: 2px solid lighten(@color-chrome, 10%);
       text-align: center;
-      border-right: 0px;
+      border-right: 0;
       color: @color-chrome;
       font-size: @font-size;
       &:active {
@@ -1274,11 +1292,11 @@
   &[data-direction='horizontal'] {
     a {
       margin-right: 6px;
-      margin-bottom: 0px;
+      margin-bottom: 0;
       padding-left: @spacing;
       padding-right: @spacing;
     }
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
   &.actions {
     display: none;
@@ -1378,7 +1396,7 @@
     width: 100%;
     text-align: center;
     vertical-align: top;
-    top: 0px;
+    top: 0;
     div {
       .first {
         .replace_with_icon(@fast-backward, 20px);
@@ -1402,7 +1420,7 @@
   .pager {
     .previous, .next {
       min-width: 44px;
-      padding: 0px;
+      padding: 0;
     }
     .previous {
       .replace_with_icon(@left-open-big, 20px);
@@ -1438,7 +1456,7 @@
   .pager {
     .previous, .next {
       min-width: 44px;
-      padding: 0px;
+      padding: 0;
     }
     .previous {
       background-color: transparent;
@@ -1450,7 +1468,7 @@
         color: lighten(@color-chrome, 20%);
       }
       &:before {
-        left: 0px;
+        left: 0;
       }
     }
     .next {
@@ -1463,7 +1481,7 @@
         color: lighten(@color-chrome, 20%);
       }
       &:before {
-        right: 0px;
+        right: 0;
         left: auto;
       }
     }
@@ -1484,7 +1502,7 @@
     .ends {
       div {
         .first, .last {
-          left: 0px;
+          left: 0;
           color: lighten(@color-chrome, 15%);
           &:hover {
             color: lighten(@color-accent, 5%);
@@ -1508,8 +1526,8 @@
     border-radius: 3px;
     background-color: @color-background;
     list-style: none;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     overflow: hidden;
     border: 1px solid @color-accent;
     > li > span {
@@ -1612,8 +1630,8 @@
   -webkit-overflow-scrolling: touch;
   ul {
     list-style: none;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     li:last-child {
       margin-bottom: 70px;
     }
@@ -1632,7 +1650,7 @@
           font-weight: normal;
           display: block;
           text-align: center;
-          margin-bottom: 0px;
+          margin-bottom: 0;
           color: @color-foreground;
           &:active {
             background-color: @color-accent;
@@ -1656,7 +1674,7 @@
         display: block;
         padding: @spacing 0 @spacing 0;
         text-align: center;
-        margin-bottom: 0px;
+        margin-bottom: 0;
         border-bottom: 1px solid darken(@color-background, 15%);
         color: @color-foreground;
         &:active {
@@ -1679,7 +1697,7 @@
   line-height: 44px;
   height: 44px;
   padding: 0 (@spacing * 3) 0 (@spacing * 3);
-  border: 0px;
+  border: 0;
   border-radius: 3px;
   display: inline-block;
   background-color: @color-accent;
@@ -1704,9 +1722,9 @@
 
 // forms
 fieldset {
-  border: 0px;
-  margin: 0px;
-  padding: 0px;
+  border: 0;
+  margin: 0;
+  padding: 0;
   font-size: (1 * @font-size);
   h1, h2, h3 {
     font-family: @font-family-display;
@@ -1994,15 +2012,15 @@ fieldset {
     background-color: darken(@color-chrome, 10%);
   }
   &.inline {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     .field-list {
       .field-item {
-        margin: 0px;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
         .field-item-input {
-          margin: 0px;
-          padding: 0px;
+          margin: 0;
+          padding: 0;
         }
       }
     }
@@ -2084,7 +2102,7 @@ fieldset {
       .transition(background-color .1s);
       &:before {
         margin: 0 @spacing 0 @spacing;
-        left: 0px;
+        left: 0;
         top: -1px;
       }
       &:hover, &:active {
@@ -2125,7 +2143,7 @@ fieldset {
           display: block;
           margin-left: auto;
           margin-right: auto;
-          margin-bottom: 0px;
+          margin-bottom: 0;
         }
       }
       &.like {
@@ -2136,7 +2154,7 @@ fieldset {
           &:before {
             color: @color-chrome;
             margin: 0 (@spacing / 2) 0 (@spacing / 2);
-            left: 0px;
+            left: 0;
           }
           .like-count {
             color: @color-chrome !important;
@@ -2213,15 +2231,15 @@ fieldset {
         border-bottom: 1px solid lighten(@color-chrome, 20%);
         padding: 5px 0 5px 0;
         &:last-child {
-          border-bottom: 0px;
+          border-bottom: 0;
         }
         .attribute-name {
           display: none;
         }
         .attribute-value {
-          margin: 0px;
-          border: 0px;
-          padding: 0px;
+          margin: 0;
+          border: 0;
+          padding: 0;
           display: block;
           text-align: left;
           line-height: @line-height;
@@ -2296,7 +2314,7 @@ fieldset {
         border-bottom: 1px solid lighten(@color-chrome, 20%);
         .content {
           .content:not(:empty) {
-            padding-top: 0px;
+            padding-top: 0;
           }
         }
       }
@@ -2382,6 +2400,7 @@ fieldset {
     font-family: @font-family-display;
     font-weight: @font-weight-display;
     color: @font-color-display;
+    margin: 0.3em 0;
   }
   h1 {
     font-size: @font-size * 2.5;
@@ -2411,7 +2430,7 @@ fieldset {
     line-height: @line-height;
     font-style: italic;
     border-left: @spacing solid darken(@color-background, 5%);
-    margin: 0px;
+    margin: 0;
     padding: 0 0 0 2em;
 
     &.quote {
@@ -2450,8 +2469,8 @@ fieldset {
     list-style: disc;
   }
   table {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     width: 100%;
     th, td {
       word-wrap: normal;
@@ -2490,7 +2509,8 @@ h1.title {
     border-bottom: none;
   }
   .name a {
-    color: @font-color-display;
+    /*color: @font-color-display;*/
+    color: @link-color;
     &:hover {
       color: @color-accent;
     }
@@ -2634,8 +2654,8 @@ h1.title {
       .avatar {
         .round;
         position: absolute;
-        left: 0px;
-        top: 0px;
+        left: 0;
+        top: 0;
         overflow: hidden;
         img {
           .round;
@@ -2799,7 +2819,7 @@ h1.title {
             .transition(background-color .15s);
             &:before {
               margin: 0 @spacing 0 @spacing;
-              left: 0px;
+              left: 0;
               top: -1px;
             }
             &:hover, &:active {
@@ -2873,8 +2893,8 @@ h1.title {
     .author {
       .avatar {
         position: absolute;
-        left: 0px;
-        top: 0px;
+        left: 0;
+        top: 0;
         .round;
         img {
           .round;
@@ -2919,7 +2939,7 @@ h1.title {
       a {
         color: darken(@color-chrome, 10%);
         padding: 0 @spacing 0 @spacing;
-        border: 0px;
+        border: 0;
         font-size: @font-size * .85;
         &:hover {
           color: @color-accent;
@@ -2927,7 +2947,7 @@ h1.title {
       }
       li:first-child {
         a {
-          padding-left: 0px;
+          padding-left: 0;
         }
       }
     }
@@ -2956,7 +2976,7 @@ h1.title {
     position: relative;
     overflow: hidden;
     width: 140px;
-    border: 0px;
+    border: 0;
     background-color: @color-accent-chrome;
     text-align: left;
     .round(3px);
@@ -2988,8 +3008,8 @@ h1.title {
       &:after {
         display: block;
         position: absolute;
-        top: 0px;
-        left: 0px;
+        top: 0;
+        left: 0;
         width: 140px;
         height: 300px;
         background-color: rgba(0, 0, 0, 0);
@@ -3006,7 +3026,7 @@ h1.title {
       a {
         color: darken(@color-chrome, 10%);
         padding: 0;
-        border: 0px;
+        border: 0;
         font-size: @font-size * .8;
         &:hover {
           color: @color-background;
@@ -3055,11 +3075,11 @@ h1.title {
   .content-fragment {
     .content-list.content {
       font-size: @font-size * .95;
-      border-bottom: 0px;
+      border-bottom: 0;
       > .content-item {
-        border-bottom: 0px;
-        padding: 0px;
-        margin: 0px;
+        border-bottom: 0;
+        padding: 0;
+        margin: 0;
       }
       .content {
         &.abbreviated {
@@ -3100,7 +3120,7 @@ h1.title {
           clear: none;
           float: none;
           width: 100%;
-          padding-left: 0px;
+          padding-left: 0;
           color: @color-chrome;
           overflow: hidden;
           .attribute-item {
@@ -3179,12 +3199,12 @@ h1.title {
     }
     .icon {
       width: @spacing;
-      padding-right: 0px;
-      padding-bottom: 0px;
+      padding-right: 0;
+      padding-bottom: 0;
     }
     .avatar {
       width: 45px;
-      padding-right: 0px;
+      padding-right: 0;
       img {
         .round;
       }
@@ -3219,13 +3239,13 @@ h1.title {
     }
     &.previewing {
       .cell {
-        border-bottom: 0px;
+        border-bottom: 0;
       }
     }
     &.preview {
       .cell {
-        border-bottom: 0px;
-        padding: 0px;
+        border-bottom: 0;
+        padding: 0;
       }
       &.previewing {
         .cell {
@@ -3251,7 +3271,7 @@ h1.title {
     .content-item {
       &:first-child {
         .cell {
-          border-top: 0px;
+          border-top: 0;
         }
       }
     }
@@ -3315,30 +3335,36 @@ h1.title {
 /* read list */
 .popup-list-content-item {
   padding: (@spacing / 2) @spacing @spacing 50px;
-  border-top: 0px;
+  border-top: 0;
   border-bottom: 1px solid lighten(@color-chrome, 15%);
   cursor: pointer;
   position: relative;
   min-height: 51px;
   overflow: hidden;
   &:last-child {
-    border-bottom: 0px;
+    border-bottom: 0;
   }
   &.no-author {
     padding-left: 7px;
   }
-  &.unread,
-  &:hover, &.selected {
-    background-color: @color-accent;
-    color: fade(@color-accent-foreground, 90%);
+  &.unread, &:hover, &.selected {
+    //background-color: @color-accent;
+    //color: fade(@color-accent-foreground, 90%);
+    background-color: #f9f9f9;
+    color: @color-foreground;
     .description,
     .post-date,
     .post-like {
-      color: fade(@color-accent-foreground, 50%);
+      //color: fade(@color-accent-foreground, 50%);
+      color: fade(@color-foreground, 50%);
     }
     a {
-      color: @color-accent-foreground !important;
+      //color: @color-accent-foreground !important;
+      color: @link-color !important;
     }
+  }
+  &:hover {
+    background-color: #eee;
   }
   .user-name {
     display: none;
@@ -3356,8 +3382,8 @@ h1.title {
   .description,
   .post-date,
   .post-like {
-    padding: 0px;
-    margin: 0px 10px 0px 0px;
+    padding: 0;
+    margin: 0 10px 0 0;
     float: left;
     line-height: 1.3em;
     font-size: @font-size * .8;
@@ -3369,14 +3395,15 @@ h1.title {
   font-family: @font-family-body;
   font-weight: @font-weight-body;
   font-size: @font-size * 0.9;
-  border: 0px;
+  border: 0;
   background-color: transparent;
-  padding: (@spacing / 2) 0 0 0;
+  //padding: (@spacing / 2) 0 0 0;
   -ms-touch-action: none;
   touch-action: none;
   .multiple-column-list {
-    border: 1px solid @color-accent;
-    background-color: @color-accent-foreground;
+    border: 1px solid #eee;
+    border-top: 1px solid transparent;
+    background-color: #f9f9f9;
   }
   .content-list {
     width: 280px;
@@ -3419,8 +3446,8 @@ h1.title {
     }
 
     .content-list .content-item .content-group a {
-      padding: 0px;
-      margin: 0px 10px 0px 0px;
+      padding: 0;
+      margin: 0 10px 0 0;
       float: left;
       line-height: 1.3em;
       font-size: .9em;
@@ -3491,17 +3518,19 @@ h1.title {
     .mark,
     .preference {
       position: absolute;
-      top: 3px;
-      right: 5px;
+      bottom: 3px;
+      right: 35px;
       display: none;
       a {
-        .replace_with_icon(@cancel-squared);
+        //.replace_with_icon(@cancel-squared);
+        .replace_with_bs_icon(@bs-close);
       }
     }
     .mark {
-      top: 23px;
+      right: 10px;
       a {
-        .replace_with_icon(@check);
+        //.replace_with_icon(@check);
+        .replace_with_bs_icon(@bs-check);
       }
     }
     .content-item:hover {
@@ -3518,10 +3547,13 @@ h1.title {
     font-style: italic;
     background-color: darken(@color-background, 3%);
     color: lighten(@color-foreground, 30%);
-    border: 0px;
+    border: 0;
     position: absolute;
     bottom: 1px;
     width: 280px;
+    + .content-list-footer {
+      border-top: 1px solid transparent;
+    }
   }
   &.composer-suggestion-selector {
     .loading {
@@ -3543,20 +3575,21 @@ h1.title {
     }
   }
   .message.norecords {
-    border: 0px;
+    border: 0;
     padding: @spacing;
-    margin: 0px;
+    margin: 0;
     font-size: @font-size * .9;
   }
 
   &.search {
-    padding-top: 0px;
+    padding-top: 0;
     .loading {
       width: 100%;
     }
     .multiple-column-list {
       position: relative;
-      top: 0px;
+      top: 0;
+      border-top: 1px solid #eee;
       .content-list.content {
         .content-item {
           overflow: hidden;
@@ -3572,7 +3605,7 @@ h1.title {
           }
           .abbreviated {
             .author {
-              padding-top: 0px;
+              padding-top: 0;
               a {
                 color: @color-foreground;
               }
@@ -3583,7 +3616,7 @@ h1.title {
               font-size: .9 * @font-size;
             }
             .content:not(:empty) {
-              padding-top: 0px;
+              padding-top: 0;
               max-width: 70%;
             }
           }
@@ -3604,7 +3637,7 @@ h1.title {
                 &:before {
                   color: @color-chrome;
                   width: 10px;
-                  margin-right: 0px;
+                  margin-right: 0;
                 }
               }
             }
@@ -3616,23 +3649,24 @@ h1.title {
           padding: @spacing;
           cursor: pointer;
           &:hover, &.selected {
-            background-color: @color-accent;
-            color: @color-accent-foreground;
+            background-color: #eee;
+            color: @color-foreground;
             a {
-              color: @color-accent-foreground;
+              color: @link-color;
             }
             .abbreviated {
               .author {
-                padding-top: 0px;
+                padding-top: 0;
                 a {
-                  color: @color-background;
+                  color: @color-foreground;
                 }
               }
             }
             .attributes {
-              color: darken(@color-accent-foreground, 20%);
+              /*color: darken(@color-accent-foreground, 20%);*/
+              /*color: @color-foreground;*/
               a {
-                color: @color-background;
+                color: @color-foreground;
               }
             }
           }
@@ -3644,9 +3678,50 @@ h1.title {
     .content-list {
       .content-item {
         padding: @spacing;
-        min-height: 0px;
+        min-height: 0;
       }
     }
+  }
+
+  a.logout {
+    margin-top: 10px;
+
+    display: block;
+    margin-bottom: 0; // For input.btn
+    font-weight: @btn-font-weight;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid transparent;
+    white-space: nowrap;
+    .button-size(@padding-base-vertical, @padding-base-horizontal, @font-size-base, @line-height-base, @border-radius-base);
+    .user-select(none);
+
+    &,
+    &:active,
+    &.active {
+      &:focus,
+      &.focus {
+      @include tab-focus;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @btn-default-color;
+      text-decoration: none;
+    }
+
+    &:active,
+    &.active {
+      outline: 0;
+      background-image: none;
+      .box-shadow(inset 0 3px 5px rgba(0, 0, 0, .125));
+    }
+    .button-variant-v2(@btn-default-color, @btn-default-bg, @btn-default-border, @btn-default-hover-color, @btn-default-hover-bg, @btn-default-hover-border);
   }
 }
 
@@ -3733,7 +3808,7 @@ div.modal {
   .round(3px);
   border: 10px solid red;
   padding: @spacing * 2;
-  border: 0px;
+  border: 0;
   .modal-footer,
   .modal-resize {
     display: none;

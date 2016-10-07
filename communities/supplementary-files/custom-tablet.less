@@ -1,0 +1,50 @@
+/* Applies to:
+    only screen and (min-device-width: 571px) and (max-device-width: 1024px) and (orientation: landscape),
+    only screen and (min-device-width: 571px) and (max-device-width: 1024px) and (orientation: portrait)
+*/
+
+.touch {
+  .layout-content.content-left-sidebar-right,
+  .layout-content.sidebar-left-content-right,
+  .layout-content.sidebar-left-content-center-sidebar-right,
+  .layout-content.header-top-content-left-sidebar-right,
+  .layout-content.header-top-sidebar-left-content-right {
+    .layout-region.left-sidebar,
+    .layout-region.right-sidebar {
+      width: @sidebar-width-tablet - @spacing;
+    }
+  }
+
+  // page editing off in tablet
+  .admin-bar,
+  .page-editing,
+  .page-editing *,
+  .page-management-edit-link,
+  .page-management-edit-link *,
+  .content-fragment-management,
+  .content-fragment-management-header,
+  .content-fragment-management-header-inner,
+  .page-editing,
+  .page-management-edit-link {
+    display: none;
+  }
+
+  .tourtip {
+    .tourtip-actions {
+      a {
+      }
+    }
+  }
+
+  .links-popup-panel {
+    ul {
+      > li > span > a,
+      a {
+      }
+    }
+  }
+
+  .banner.site {
+    position: static !important;
+  }
+}
