@@ -291,81 +291,291 @@ var Arrive = function (window, $, undefined) {
 }(window, typeof jQuery === "undefined" ? null : jQuery, undefined);
 
 (function ($) {
-	var mainNavContentElem = searchElem = userLinks = headerElem = null;
+	var bannerSite = mainNavContentElem = searchElem = userLinks = null, isNewsroom = /^\/community\/newsroom/.test(location.pathname);
 
 	$(document).ready(function () {
-		headerElem = $('#ctl02_ctl01_header');
+		bannerSite = $('.banner').filter('.site');
 		mainNavContentElem = $('.custom-main-navigation');
-		userLinks = headerElem.find('.user-links');
+		userLinks = bannerSite.find('.user-links');
 
-		$('body').css('overflow', 'hidden');
-		var w = $('html').width();
-		$('body').css('overflow', '');
-
-		if (w <= 570) {
-			processMobile();
+		if (isNewsroom) {
+			$('body').addClass('isNewsroom');
 		}
-		else {
-			processDesktop();
+
+		/*var bodyElem = $('body');
+
+		 bodyElem.css('overflow', 'hidden');
+		 var w = $('html').width();
+		 bodyElem.css('overflow', '');*/
+
+		//Reroute logo link to https://www.quest.com
+		bannerSite.find('.avatar').find('a').attr('href', '/');
+
+		mobile.init();
+		desktop.init();
+
+		if ($('.social-media-toolbar').length) {
+			socialMediaToolbar();
 		}
 	});
 
-	function processMobile() {
-		var handheldElem = $('.navigation-list').filter('.handheld');
+	function socialMediaToolbar() {
+		var bitlyURL = location.href;
 
-		handheldElem.find('li:first').find('a').html('<i class="glyphicon glyphicon-menu-hamburger"></i>');
+		if ($('.g-plusone').length) {
+			$('.g-plusone').attr('data-href', bitlyURL);
 
-		$('body').append('<div id="mobile-nav-container"><div class="main-nav-section"><div class="shadow-overlay-left"></div></div></div></div>');
+			//Google+
+			(function () {
+				var po = document.createElement('script');
+				po.type = 'text/javascript';
+				po.async = true;
+				po.src = '//apis.google.com/js/plusone.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(po, s);
+			})();
+		}
 
-		mainNavContentElem.clone().appendTo('#mobile-nav-container .main-nav-section');
+		//Retrieve bit.ly url.
+		if (window.XMLHttpRequest && location.host == 'software.dell.com' && !/\/emailcl\//.test(location.pathname)) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/hidden/bitly.asmx/get?URI=" + encodeURIComponent(url));
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
+						xml = $($.parseXML(xhr.responseText));
+						var obj = jQuery.parseJSON(xml.find("string").text());
 
-		handheldElem.find('.site').on('click', function (e) {
-			e.preventDefault();
+						if (typeof obj.data != 'undefined') {
+							bitlyURL = obj.data.url;
+						}
+					}
+				}
+			};
+			xhr.send();
+		}
 
-			if ($('body').hasClass('open')) {
-				$('body').removeClass('open');
+		$('.social-media-toolbar').on('click', 'a', function (e) {
+			var parent = $(this).parent(), title = document.title;
+
+			if (parent.hasClass('facebook')) {
+				e.preventDefault();
+				window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(bitlyURL) + '&t=' + encodeURIComponent(title), 'facebook', 'width=480,height=240,toolbar=0,status=0,resizable=1');
+			}
+			else if (parent.hasClass('twitter')) {
+				e.preventDefault();
+				window.open('http://twitter.com/share?via=DellSoftware&url=' + encodeURIComponent(bitlyURL) + '&text=' + encodeURIComponent(title) + ',%20&counturl=' + encodeURIComponent(url), 'twitter', 'width=480,height=380,toolbar=0,status=0,resizable=1');
+			}
+			else if (parent.hasClass('linkedin')) {
+				e.preventDefault();
+				window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(bitlyURL) + '&title=' + encodeURIComponent(title), 'linkedin', 'width=480,height=360,toolbar=0,status=0,resizable=1');
+			}
+			else if (parent.hasClass('googleshare')) {
+				e.preventDefault();
+				window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
+			}
+		});
+	}
+
+	var mobile = function () {
+		function init() {
+			processNavigation();
+			processNavigationFlyout();
+		}
+
+		function processNavigation() {
+			$('body').find('> form').append('<div id="mobile-nav-container"><div class="main-nav-section"></div></div></div>');
+
+			mainNavContentElem.clone().removeClass('hidden').appendTo('#mobile-nav-container .main-nav-section');
+		}
+
+		function processNavigationFlyout() {
+			var handheldElem = bannerSite.find('.navigation-list').filter('.handheld');
+
+			//handheldElem.find('li:first').find('a').html('<i class="glyphicon glyphicon-menu-hamburger"></i>');
+
+			handheldElem.find('.site').on('click', function (e) {
+				e.preventDefault();
+
+				var that = this, bodyElem = $('body');
+
+				if (bodyElem.hasClass('open')) {
+					bodyElem.removeClass('open');
+
+					setTimeout(function () {
+						$(that).removeClass('active');
+					});
+				}
+				else {
+					bodyElem.addClass('open');
+				}
+			});
+
+			if (isNewsroom) {
+				handheldElem.find('li:last').remove();
+			}
+
+			$('#footer').on('click', '.subLinks', function (e) {
+				e.preventDefault();
+
+				$(this).toggleClass('open');
+			});
+
+			bannerSite.find('.container').find('[type=search]').attr('placeholder', 'What can we help you find?');
+
+			$(document).arrive('.popup-list.notifications', repositionPopup);
+			$(document).arrive('.popup-list.conversations', repositionPopup);
+			$(document).arrive('.popup-list.bookmarks', repositionPopup);
+			$(document).arrive('.popup-list.user', repositionPopup);
+
+			function repositionPopup() {
+				var that = this;
+
+				if ($('html').width() < 768) {
+					setTimeout(function () {
+						$(that).parent().css({
+							marginTop: 53
+						});
+					});
+				}
+			}
+		}
+
+		return {
+			init: init
+		}
+	}();
+
+	var desktop = function () {
+		function init() {
+			processNavigation();
+			replaceUserIcon();
+			processSearchBar();
+			processLoggedInUser();
+		}
+
+		function processNavigation() {
+			mainNavContentElem.clone().removeClass('hidden').insertBefore(bannerSite.find('> .search'));
+
+			mainNavContentElem.parents('.content-fragment').hide();
+		}
+
+		function replaceUserIcon() {
+			if (userLinks.find('.user').find('img').length) {
+				if (userLinks.find('.user').find('img').attr('src').indexOf('anonymous.gif') > -1) {
+					userLinks.find('.user').html('<span class="glyphicon glyphicon-user"><span class="badge is-logged-in"><i class="glyphicon glyphicon-ok"></i></span></span>');
+				}
+			}
+			else {
+				userLinks.find('.user').html('<i class="glyphicon glyphicon-user"><span class="badge is-logged-in"><i class="glyphicon glyphicon-ok"></i></span></i>');
+			}
+		}
+
+		function processSearchBar() {
+			bannerSite.find('>fieldset.search').wrap('<div id="masthead-search">');
+
+			var mastheadSearch = $('#masthead-search');
+			var searchInputElem = mastheadSearch.find('[type=search]');
+
+			if (!bannerSite.find('> .user-links').length) {
+				$('<div class="navigation-list user-links"><ul></ul></div>').insertAfter(mastheadSearch);
+				bannerSite.find('> .user-links').find('> ul').append('<li class="navigation-list-item"><a href="#" class="search-icon"><span class="glyphicon glyphicon-search"></span></a></li>');
+			}
+			else {
+				userLinks.find('> ul').append('<li class="navigation-list-item"><a href="#" class="search-icon"><span class="glyphicon glyphicon-search"></span></a></li>');
+			}
+
+			searchInputElem.attr('placeholder', 'What can we help you find?')
+				.parent().append('<button class="btn"><i class="glyphicon glyphicon-search"></i></button>');
+
+			searchInputElem.on('input', function () {
+				var width = $(this).outerWidth(true);
 
 				setTimeout(function () {
-					$(this).removeClass('active');
+					realignPopup();
+
+					setTimeout(function () {
+						realignPopup();
+					}, 250);
 				}, 100);
+
+				function realignPopup() {
+					var popup = $('.popup-list').filter('.search');
+
+					if (popup.length) {
+						var popupParent = popup.parent();
+
+						popupParent.css({
+							marginTop: 56,
+							zIndex: 2000,
+							width: width,
+							marginLeft: searchInputElem.offset().left - parseInt(popupParent.css('left')) - 1
+						});
+
+						popup.find('.content-list').css({
+							width: width
+						});
+					}
+				}
+			});
+
+			bannerSite.on('mousedown', 'a', function (e) {
+				var that = this;
+
+				//If search icon is not clicked then proceed to find if search icon is active. If so, deactivate it.
+				if (!$(this).hasClass('search-icon')) {
+					if (userLinks.find('.search-icon').hasClass('active')) {
+						userLinks.find('.search-icon').removeClass('active');
+						mastheadSearch.hide();
+					}
+				}
+			});
+
+			bannerSite.on('click', '.search-icon', function (e) {
+				e.preventDefault();
+
+				if (mastheadSearch.is(':visible')) {
+					mastheadSearch.hide();
+					$(this).removeClass('active');
+				}
+				else {
+					mastheadSearch.show();
+					$(this).addClass('active');
+
+					if (isNewsroom && !$(this).data('init')) {
+						$(this).data('init', true);
+
+						$('[type=search]')
+							.off('keydown input focus blur click propertychange')
+							.on('keydown', function (e) {
+								if (e.which === 13) {
+									location.href = '/search/results/?q=' + searchInputElem.val();
+								}
+							});
+					}
+				}
+			});
+
+			mastheadSearch.on('click', '.btn', function (e) {
+				e.preventDefault();
+
+				if (isNewsroom) {
+					location.href = '/search/results/?q=' + searchInputElem.val();
+				}
+				else {
+					location.href = '/community/search?q=' + searchInputElem.val();
+				}
+			});
+		}
+
+		function processLoggedInUser() {
+			if ($('.logged-in').length) {
+				$('.is-logged-in').show();
 			}
-			else {
-				$('body').addClass('open');
-				//$(this).addClass('active');
-			}
-		});
+		}
 
-		$('#footer').on('click', '.subLinks', function (e) {
-			e.preventDefault();
-
-			$(this).toggleClass('open');
-		});
-	}
-
-	function processDesktop() {
-		searchElem = headerElem.find('.search');
-		mainNavContentElem.clone().insertBefore(searchElem);
-
-		userLinks.find('.user').html('<i class="glyphicon glyphicon-user"><span class="badge is-logged-in"><i class="glyphicon glyphicon-ok"></i></span></i>');
-		userLinks.find('> ul').append('<li class="navigation-list-item"><a href="#" class="search-icon"><span class="glyphicon glyphicon-search"></span></a></li>');
-
-		headerElem.find('.banner.site').find('>fieldset.search').wrap('<div id="masthead-search">');
-
-		headerElem.on('click', '.search-icon', function (e) {
-			e.preventDefault();
-
-			var elem = $('#masthead-search');
-
-			if ($('#masthead-search').is(':visible')) {
-				elem.hide();
-			}
-			else {
-				elem.show();
-			}
-		});
-
-		$(document).arrive('.popup-list.search', function () {
-			$(this).parent().css({marginTop: 63});
-		});
-	}
+		return {
+			init: init
+		};
+	}();
 })(jQuery);

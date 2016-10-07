@@ -401,8 +401,8 @@
   &.site {
     .popup-list-count {
       position: absolute;
-      top: 0px;
-      left: -2px;
+      top: 15px;
+      left: 8px;
       background-color: @color-attention;
       color: @color-accent-foreground !important;
       font-family: @font-family-body;
@@ -417,25 +417,27 @@
       .round;
     }
     width: 100%;
-    display: table;
-    padding: 0px;
-    overflow: hidden;
-    height: 44px;
+    /*display: table;*/
+    padding: 0;
+    /*overflow: hidden;*/
+    /*height: 44px;*/
+    height: 67px;
     .avatar {
-      display: table-cell;
-      width: 125px;
+      //display: table-cell;
+      display: inline-block;
+      width: 169px;
       margin: 0 0 0 0;
       overflow: hidden;
       border-spacing: 0px;
-      vertical-align: middle;
+      //vertical-align: middle;
       background-color: @color-logo;
-      padding-left: 0;
+      padding: 17px 0;
       a {
         display: block;
       }
     }
     fieldset {
-      display: table-cell;
+      /*display: table-cell;*/
       padding-left: 35px;
       ul {
         display: block;
@@ -487,46 +489,65 @@
       }
     }
     .navigation-list {
-      display: table-cell;
-      width: 20%;
+      /*display: table-cell;*/
+      width: 250px;
       vertical-align: middle;
+      float: right;
+      height: 67px;
       .navigation-list-item > span {
         display: block;
         float: right;
         position: relative;
+        //padding: 19px 11px 20px;
       }
       ul {
-        width: 115px;
-        float: right;
-        overflow: hidden;
+        /*width: 250px;*/
+        /*float: right;*/
+        /*overflow: hidden;*/
         a {
-          margin-right: 4px;
           float: right;
-          color: @color-site-baner-foreground;
+          color: @color-foreground;
           &.active {
-            color: @color-accent;
+            color: @text-orange !important;
           }
         }
         .notifications {
-          .replace_with_icon(@flash, 20px);
+          .replace_with_icon(@flash, 28px);
+          width: 46px;
+          height: 66px;
+          &:before {
+            top: 18px;
+            left: 7px;
+          }
         }
         .conversations {
-          .replace_with_icon(@comment, 20px);
+          .replace_with_icon(@comment, 28px);
+          width: 46px;
+          height: 66px;
+          &:before {
+            top: 18px;
+            left: 7px;
+          }
         }
         .bookmarks {
-          .replace_with_icon(@bookmark, 20px);
+          /*.replace_with_icon(@bookmark, 20px);*/
+          .replace_with_bs_icon(@bs-bookmark, 20px);
           &.bookmarked {
             color: @color-attention !important;
           }
+          &:before {
+            top: 21px;
+            left: 10px;
+          }
         }
         .user {
-          overflow: hidden;
+          /*overflow: hidden;*/
           position: relative;
-          top: 1px;
+          /*top: 1px;*/
           &.with-icon {
             top: 0px;
             .round(0px);
-            .replace_with_icon(@user, 20px);
+            //.replace_with_icon(@user, 20px);
           }
           img {
             .round;
@@ -535,10 +556,12 @@
         .notifications,
         .conversations,
         .bookmarks,
-        .user {
-          margin: 4px 4px 4px 4px;
-          &:before {
-          }
+        .user,
+        .search-icon {
+          /*margin: 4px 4px 4px 4px;*/
+          margin: 0;
+          border-left: 2px solid transparent;
+          border-right: 2px solid transparent;
         }
       }
       &.site-links {
@@ -2382,6 +2405,7 @@ fieldset {
     font-family: @font-family-display;
     font-weight: @font-weight-display;
     color: @font-color-display;
+    margin: 0.3em 0;
   }
   h1 {
     font-size: @font-size * 2.5;
@@ -2490,7 +2514,8 @@ h1.title {
     border-bottom: none;
   }
   .name a {
-    color: @font-color-display;
+    /*color: @font-color-display;*/
+    color: @link-color;
     &:hover {
       color: @color-accent;
     }
@@ -3327,18 +3352,24 @@ h1.title {
   &.no-author {
     padding-left: 7px;
   }
-  &.unread,
-  &:hover, &.selected {
-    background-color: @color-accent;
-    color: fade(@color-accent-foreground, 90%);
+  &.unread, &:hover, &.selected {
+    //background-color: @color-accent;
+    //color: fade(@color-accent-foreground, 90%);
+    background-color: #f9f9f9;
+    color: @color-foreground;
     .description,
     .post-date,
     .post-like {
-      color: fade(@color-accent-foreground, 50%);
+      //color: fade(@color-accent-foreground, 50%);
+      color: fade(@color-foreground, 50%);
     }
     a {
-      color: @color-accent-foreground !important;
+      //color: @color-accent-foreground !important;
+      color: @link-color !important;
     }
+  }
+  &:hover {
+    background-color: #eee;
   }
   .user-name {
     display: none;
@@ -3371,12 +3402,13 @@ h1.title {
   font-size: @font-size * 0.9;
   border: 0px;
   background-color: transparent;
-  padding: (@spacing / 2) 0 0 0;
+  //padding: (@spacing / 2) 0 0 0;
   -ms-touch-action: none;
   touch-action: none;
   .multiple-column-list {
-    border: 1px solid @color-accent;
-    background-color: @color-accent-foreground;
+    border: 1px solid #eee;
+    border-top: 1px solid transparent;
+    background-color: #f9f9f9;
   }
   .content-list {
     width: 280px;
@@ -3491,17 +3523,19 @@ h1.title {
     .mark,
     .preference {
       position: absolute;
-      top: 3px;
-      right: 5px;
+      bottom: 3px;
+      right: 35px;
       display: none;
       a {
-        .replace_with_icon(@cancel-squared);
+        //.replace_with_icon(@cancel-squared);
+        .replace_with_bs_icon(@bs-close);
       }
     }
     .mark {
-      top: 23px;
+      right: 10px;
       a {
-        .replace_with_icon(@check);
+        //.replace_with_icon(@check);
+        .replace_with_bs_icon(@bs-check);
       }
     }
     .content-item:hover {
@@ -3522,6 +3556,9 @@ h1.title {
     position: absolute;
     bottom: 1px;
     width: 280px;
+    + .content-list-footer {
+      border-top: 1px solid transparent;
+    }
   }
   &.composer-suggestion-selector {
     .loading {
@@ -3557,6 +3594,7 @@ h1.title {
     .multiple-column-list {
       position: relative;
       top: 0px;
+      border-top: 1px solid #eee;
       .content-list.content {
         .content-item {
           overflow: hidden;
@@ -3616,23 +3654,24 @@ h1.title {
           padding: @spacing;
           cursor: pointer;
           &:hover, &.selected {
-            background-color: @color-accent;
-            color: @color-accent-foreground;
+            background-color: #eee;
+            color: @color-foreground;
             a {
-              color: @color-accent-foreground;
+              color: @link-color;
             }
             .abbreviated {
               .author {
                 padding-top: 0px;
                 a {
-                  color: @color-background;
+                  color: @color-foreground;
                 }
               }
             }
             .attributes {
-              color: darken(@color-accent-foreground, 20%);
+              /*color: darken(@color-accent-foreground, 20%);*/
+              /*color: @color-foreground;*/
               a {
-                color: @color-background;
+                color: @color-foreground;
               }
             }
           }
@@ -3647,6 +3686,47 @@ h1.title {
         min-height: 0px;
       }
     }
+  }
+
+  a.logout {
+    margin-top: 10px;
+
+    display: block;
+    margin-bottom: 0; // For input.btn
+    font-weight: @btn-font-weight;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid transparent;
+    white-space: nowrap;
+    .button-size(@padding-base-vertical, @padding-base-horizontal, @font-size-base, @line-height-base, @border-radius-base);
+    .user-select(none);
+
+    &,
+    &:active,
+    &.active {
+      &:focus,
+      &.focus {
+      @include tab-focus;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @btn-default-color;
+      text-decoration: none;
+    }
+
+    &:active,
+    &.active {
+      outline: 0;
+      background-image: none;
+      .box-shadow(inset 0 3px 5px rgba(0, 0, 0, .125));
+    }
+    .button-variant-v2(@btn-default-color, @btn-default-bg, @btn-default-border, @btn-default-hover-color, @btn-default-hover-bg, @btn-default-hover-border);
   }
 }
 

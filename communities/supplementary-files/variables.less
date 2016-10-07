@@ -1,19 +1,21 @@
+@local: true;
+
 // font
 @font-size: 15px;
-@font-family-body: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+@font-family-body: 'Trebuchet MS', 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
 @font-weight-body: 400;
-@font-family-display: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+@font-family-display: 'Trebuchet MS', 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
 @font-weight-display: 500;
-@font-color-display: #444;
-@line-height: 1.5em;
+@font-color-display: #333;
+@line-height: 1.42857em;
 
 // colors
 @color-background: #fff;
-@color-foreground: #111;
+@color-foreground: #333;
 @color-chrome: #bdc3c7;
 @color-logo: transparent;
 @color-attention: #f15922;
-@color-accent: lighten(#3498db, 5%);
+@color-accent: #016a9c;
 @color-accent-chrome: #f1f1f1;
 @color-accent-foreground: #fff;
 @color-positive: #95D178;
@@ -25,9 +27,41 @@
 @color-composer-accent: #CCE7F3;
 
 // width
-@min-width: 570px;
-@max-width: 1060px;
+@min-width: 768px;
+@max-width: 1200px;
 @width-percent: 100%;
 @spacing: 10px;
 @sidebar-width: 240px;
 @sidebar-width-tablet: 200px;
+
+// custom
+@link-color: #016a9c;
+
+@footer-bg-color: #fff;
+@footer-xs-border-top-color: #aaa;
+@footer-link-color: #333;
+@footer-cpy-link: #333;
+@footer-li-xs-border-bottom-color: #eee;
+@footer-cpy-border-color: #eee;
+
+@screen-sm-min: 768px;
+@screen-xs-max: (@screen-sm-min - 1);
+
+@text-orange: #FB4F14;
+@darker-gray: #333;
+@btn-font-weight: normal;
+
+@padding-base-vertical: 6px;
+@padding-base-horizontal: 12px;
+
+@font-size-base: 16px;
+@line-height-base: 1.428571429;
+@border-radius-base: 1px;
+
+@btn-default-color: @link-color;
+@btn-default-bg: #eee;
+
+@btn-default-border: #aaa;
+@btn-default-hover-color: @link-color;
+@btn-default-hover-bg: #d5d5d5;
+@btn-default-hover-border: #aaa;

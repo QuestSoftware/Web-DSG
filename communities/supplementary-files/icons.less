@@ -287,12 +287,12 @@
   &.book:before {
     content: @book
   }
-  &.bookmark:before {
+  /*&.bookmark:before {
     content: @bookmark
-  }
-  &.bookmarks:before {
+  }*/
+  /*&.bookmarks:before {
     content: @bookmarks
-  }
+  }*/
   &.box:before {
     content: @box
   }
@@ -960,5 +960,80 @@
     position: relative;
     top: 1px;
     *zoom: ~"expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '@{icon}')";
+  }
+}
+
+@bs-close: "\e014";
+@bs-check: "\e013";
+@bs-menu: "\e236";
+@bs-bookmark: "\e044";
+@bs-user: "\e008";
+
+.replace_with_bs_icon(@icon, @size: @font-size, @padding: 0px) {
+  display: inline-block;
+  width: @size + (@padding * 2);
+  height: @size + (@padding * 2);
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  top: 1px;
+  *zoom: ~"expression( this.runtimeStyle['zoom'] = '1', (this.childNodes.length > 0 ? this.insertBefore(document.createElement('span'),this.childNodes[0]).className='ie7_before' : this.appendChild(document.createElement('span')).className='ie7_before'))";
+  &:before, .ie7_before {
+    text-indent: 0;
+    position: absolute;
+    text-align: center;
+    width: @size + (@padding * 2);
+    height: @size + (@padding * 2);
+    top: @padding;
+    left: 0;
+    display: block;
+    content: @icon;
+    font-family: "Glyphicons Halflings";
+    font-size: @size;
+    line-height: @size;
+    *zoom: ~"expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '@{icon}')";
+  }
+}
+
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: "Glyphicons Halflings";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-user {
+  &:before {
+    content: "\e008";
+  }
+}
+
+.glyphicon-search {
+  &:before {
+    content: "\e003";
+  }
+}
+
+.glyphicon-menu-hamburger {
+  &:before {
+    content: "\e236";
+  }
+}
+
+.glyphicon-bookmark {
+  &:before {
+    content: "\e044";
+  }
+}
+
+.glyphicon-ok {
+  &:before {
+    content: "\e013";
   }
 }

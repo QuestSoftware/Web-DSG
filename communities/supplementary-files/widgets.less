@@ -1293,7 +1293,7 @@
   .content-fragment-content {
     left: 0px;
     width: 100%;
-    border-bottom: 1px solid darken(@color-background, 10%);
+    /*border-bottom: 1px solid darken(@color-background, 10%);*/
     .featured-content-slider {
       max-width: @max-width;
       margin-left: auto;
@@ -1369,6 +1369,8 @@
           padding: 0;
           height: 100%;
           position: relative;
+          background-color: #fff !important;
+          border-bottom: 0 solid transparent;
           > .avatar-container {
             width: 100%;
             overflow: hidden;
@@ -2019,7 +2021,7 @@ li.activity-story.content-type-293f75d1-2a3e-43ed-9173-af885c593139 {
           padding: 0px;
           border: 0px;
           font-size: .9 * @font-size;
-          color: lighten(@color-foreground, 35%);
+          color: @color-foreground;
           margin-right: 2 * @spacing;
           background-color: transparent;
           &:hover {
