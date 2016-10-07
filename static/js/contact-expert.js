@@ -404,6 +404,8 @@ function populateListing() {
 
 		var ptr = 0;
 
+		// using for loop instead of each to avoiding loosing any result which didn't meet second condition requirement
+		// The loop will continue for next range if the if-statement returns false
 		for (ptr; ptr < dataopt.data.length; ptr++) {
 			var obj = dataopt.data[ptr];
 
