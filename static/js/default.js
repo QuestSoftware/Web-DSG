@@ -1127,7 +1127,12 @@ function socialMediaToolbar() {
         title = 'Dell Security Solutions: Be the #DeptofYes';
       }
       e.preventDefault();
-      window.open('http://twitter.com/share?via=DellSoftware&url=' + encodeURIComponent(bitlyURL) + '&text=' + encodeURIComponent(title) + ',%20&counturl=' + encodeURIComponent(url), 'twitter', 'width=480,height=380,toolbar=0,status=0,resizable=1');
+	    if (url.includes("quest")) {
+		    window.open('http://twitter.com/share?via=QuestSoftware&url=' + encodeURIComponent(bitlyURL) + '&text=' + encodeURIComponent(title) + ',%20&counturl=' + encodeURIComponent(url), 'twitter', 'width=480,height=380,toolbar=0,status=0,resizable=1');
+	    }
+	    else {
+		    window.open('http://twitter.com/share?via=DellSoftware&url=' + encodeURIComponent(bitlyURL) + '&text=' + encodeURIComponent(title) + ',%20&counturl=' + encodeURIComponent(url), 'twitter', 'width=480,height=380,toolbar=0,status=0,resizable=1');
+	    }
     }
     else if (parent.hasClass('linkedin')) {
       if (typeof s == 'object' && false) {
@@ -1141,7 +1146,8 @@ function socialMediaToolbar() {
       //_gaq.push(['_trackSocial', 'LinkedIn', 'Share']);
 
       e.preventDefault();
-      window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title), 'linkedin', 'width=480,height=360,toolbar=0,status=0,resizable=1');
+
+	    window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title), 'linkedin', 'width=480,height=360,toolbar=0,status=0,resizable=1');
     }
     else if (parent.hasClass('googleshare')) {
       e.preventDefault();
