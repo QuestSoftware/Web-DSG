@@ -1047,8 +1047,8 @@ function resizeFourColumnFilmstripCarousel(parentSelector) {
 function socialMediaToolbar() {
 	//var bitlyURL = url = location.href;
 	var host = location.host.replace(/\-/g, '.'),
-		bitlyURL = url = location.protocol + '//' + host + location.pathname,
-		approvedBitlyGeneration = ['software.dell.com', 'www.quest.com', 'www-quest-com'];
+		bitlyURL = url = 'https://' + host + location.pathname,
+		approvedBitlyGeneration = ['software.dell.com', 'www.quest.com', 'eee.quest.com'];
 
 	//If protocol is https find previous page.
 	if (location.protocol == 'https:') {
@@ -1077,7 +1077,7 @@ function socialMediaToolbar() {
 	//Retrieve bit.ly url
 	if (window.XMLHttpRequest && $.inArray(location.host, approvedBitlyGeneration) > -1 && !/\/emailcl\//.test(location.pathname)) {
 		var xhr = new XMLHttpRequest();
-		xhr.open("GET", "/hidden/bitly.asmx/get?URI=" + encodeURIComponent(url));
+		xhr.open("GET", "/hidden/bitly.asmx/get?URI=" + encodeURIComponent(url.replace('eee', 'www')));
 		xhr.onreadystatechange = function () {
 			if (xhr.readyState == 4) {
 				if (xhr.status == 200) {
