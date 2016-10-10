@@ -1341,11 +1341,7 @@ function matchHeight() {
 
 function replaceURL(text) {
 	var exp = /(\bhttps?:\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-	return text.replace(exp, "<a href="
-	$1
-	">$1</a>"
-)
-	;
+	return text.replace(exp, "<a href=\"$1\">$1</a>");
 }
 
 /**
