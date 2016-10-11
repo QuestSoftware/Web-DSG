@@ -154,12 +154,14 @@
 }
 
 /*align all h4s*/
-.IM img {
-  margin-top: 7px;
-}
+@if ($domain == "dsg") {
+  .IM img {
+    margin-top: 7px;
+  }
 
-.PM img {
-  margin-bottom: 39px;
+  .PM img {
+    margin-bottom: 39px;
+  }
 }
 
 /*mobile*/
@@ -280,8 +282,10 @@
           margin-top: 0;
         }
       }
-      &.PM img {
-        margin-bottom: 28px;
+      @if ($domain == "dsg") {
+      	&.PM img {
+          margin-bottom: 28px;
+      	}
       }
     }
   }
