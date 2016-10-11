@@ -1135,7 +1135,7 @@ function socialMediaToolbar() {
 				via = 'QuestSoftware';
 			}
 
-			window.open('http://twitter.com/share?via=DellSoftware&url=' + encodeURIComponent(bitlyURL) + '&text=' + encodeURIComponent(title) + ',%20&counturl=' + encodeURIComponent(url), 'twitter', 'width=480,height=380,toolbar=0,status=0,resizable=1');
+			window.open('http://twitter.com/share?via=' + via + '&url=' + encodeURIComponent(bitlyURL) + '&text=' + encodeURIComponent(title) + ',%20&counturl=' + encodeURIComponent(url), 'twitter', 'width=480,height=380,toolbar=0,status=0,resizable=1');
 		}
 		else if (parent.hasClass('linkedin')) {
 			if (typeof s == 'object' && false) {
