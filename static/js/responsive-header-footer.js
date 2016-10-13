@@ -203,14 +203,14 @@ function processHeaderFooter() {
 
 		if (headerNavElem.data('ajax')) {
 			//If session storage is available, populate navigation. Note: if navigation has been updated when nav is already stored, it'll be one page view behind.
-			if (sessionStorage.nav) {
-				headerNavElem.append(sessionStorage.nav);
+			if (sessionStorage[sessionName]) {
+				headerNavElem.append(sessionStorage[sessionName]);
 			}
 
 			//Get navigation and store
 			getLocalizedContent(specialTag).done(function (data) {
 				//Populate navigation only if sessionStorage.nav is not present because if it is present, it would have already been populated on line 32.
-				if (!sessionStorage.nav) {
+				if (!sessionStorage[sessionName]) {
 					headerNavElem.append(data[specialTag]);
 				}
 
