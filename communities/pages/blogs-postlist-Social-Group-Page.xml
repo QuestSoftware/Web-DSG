@@ -1,0 +1,56 @@
+<theme name="3fc3f82483d14ec485ef92e206116d49" version="9.2.0.1667">
+  <contentFragmentHeaders>
+    <contentFragmentHeader layout="HeaderTopContent" themeType="c6108064-af65-11dd-b074-de1a56d89593">
+      <regions>
+        <region regionName="Header">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::b8476577f75348f294c9a2e161119e5d" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="True" sourceConfiguredContentFragmentId="553" configuration="fragmentHeader=%24%7Bresource%3ASiteBanner%7D&amp;siteBrand=quest&amp;siteSearch=Default&amp;useQuestFooter=True&amp;links=Link%3DNotifications%26Link%3DInbox%26Link%3DBookmarks%26Link%3DUser%26Link%3DInvite%26Link%3DUserInformation%26Link%3DSettings%26Link%3DSignOut&amp;siteNavigation=custom&amp;navHTML=%3Cul%20class%3D%22tier1%22%3E%0D%0A%3Cli%3E%3Ca%20href%3D%22~%2F%22%3EHome%3C%2Fa%3E%3C%2Fli%3E%0D%0A%3Cli%3E%3Ca%20href%3D%22~%2Fb%2Fen%22%3EBlog%3C%2Fa%3E%3C%2Fli%3E%0D%0A%3Cli%3E%3Ca%20href%3D%22~%2Fproducts%2F%22%3EForums%3C%2Fa%3E%3C%2Fli%3E%0D%0A%3Cli%3E%3Ca%20href%3D%22~%2Fbeta%2F%22%3EBeta%3C%2Fa%3E%3C%2Fli%3E%0D%0A%3Cli%3E%3Ca%20href%3D%22~%2Fabout%2F%22%3EAbout%3C%2Fa%3E%3C%2Fli%3E%0D%0A%3C%2Ful%3E" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments />
+        </region>
+      </regions>
+    </contentFragmentHeader>
+  </contentFragmentHeaders>
+  <contentFragmentFooters>
+    <contentFragmentFooter layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::212f71d69e37457887f33f32918f6ae2" showHeader="False" cssClassAddition="no-wrapper" isLocked="True" sourceConfiguredContentFragmentId="2" configuration="profileFields=" />
+            <contentFragment type="Telligent.Evolution.Controls.ContentFragments.FreeAttribution, Telligent.Evolution.Controls" showHeader="False" cssClassAddition="no-wrapper with-spacing" isLocked="True" sourceConfiguredContentFragmentId="1291327019" configuration="" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::064087c399074d4dba630192735509ef" showHeader="False" cssClassAddition="no-wrapper" isLocked="True" sourceConfiguredContentFragmentId="3" configuration="duration=10&amp;native=True" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::22e271b19ea14e54a503441c1f4f167e" showHeader="False" cssClassAddition="no-wrapper" isLocked="True" sourceConfiguredContentFragmentId="1291327022" configuration="Title=%24%7Bresource%3ATourTips_Name%7D&amp;SuppressDuration=86400" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::fe757b55a68043478a5014bd2d91f8db" showHeader="False" cssClassAddition="no-wrapper" isLocked="True" sourceConfiguredContentFragmentId="1291327023" configuration="" />
+          </contentFragments>
+        </region>
+      </regions>
+    </contentFragmentFooter>
+  </contentFragmentFooters>
+  <contentFragmentPages>
+    <contentFragmentPage pageName="blogs-postlist" isCustom="false" layout="HeaderTopContentLeftSidebarRight" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Blogs Home">
+      <regions>
+        <region regionName="Header">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::ab83412b2d074c4ca17fc451ae3ec7f8" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1104633155" configuration="fragmentHeader=%24%7Bresource%3ABlogs_BlogTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::50c816b46c7647d5a7cea85b3f47d4d6" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="title=%24%7Bresource%3ACF_GenericContent%7D&amp;html=%3Cp%3E%3Ca%20title%3D%22SIM%20Blog%22%20href%3D%22~%2Fabout%2Fb%2Fcommunity-updates%2Fposts%2Fabout-our-communities%22%3E%3Cimg%20src%3D%22~%2Fresized-%0D%0A%0D%0Aimage%2F__size%2F2080x630%2F__key%2Fwidgetcontainerfiles%2F3fc3f82483d14ec485ef92e206116d49-b-sJ17BPAoK0uVLCETx3Krdg-page-%0D%0A%0D%0A0cloud%2Fits_2D00_time_2D00_to_2D00_innovate.jpg%22%20alt%3D%22%20%22%20%2F%3E%3C%2Fa%3E%3C%2Fp%3E&amp;backgroundColor=&amp;backgroundImage=&amp;height=" />
+          </contentFragments>
+        </region>
+        <region regionName="RightSidebar">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::f975d8bccd8f4609844b4e93e770f9fd" showHeader="False" cssClassAddition="no-wrapper responsive-hidden" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ALeaderboard_Name%7D&amp;viewType=simple&amp;pageSize=10&amp;showValue=True&amp;showCurrentUser=True&amp;selectedLeaderboard=2" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::8c838436a4184f83a6f70318e8cc031a" showHeader="True" cssClassAddition="top-border with-spacing with-header responsive-hidden" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ATagCloud_Title%7D&amp;applicationType=Unknown&amp;ignoreFilterTags=False&amp;maximumTags=25&amp;minimumPostsPerTag=1&amp;filterTags=&amp;showTagCounts=False&amp;enableNoTagsMessage=False&amp;noTagsText=%24%7Bresource%3ATagCloud_NoTagsDefined%7D&amp;linkTo=ContextualTagBrowser" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::14cf475b5faa466eac0bfab2127e177f" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1104633156" configuration="fragmentHeader=%24%7Bresource%3ABlogs_BrowseBlogs_Title_BrowseBlogsIn%7D&amp;showTitleColumn=True&amp;showGroupColumn=False&amp;showPostsColumn=True&amp;showLastPostColumn=True&amp;group=Group%3D-1%26GroupPath%3D&amp;groupAndSubGroups=False&amp;itemsBeforeScroll=20&amp;defaultSortOrder=ApplicationName&amp;includeGroupName=True" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::dd895400883f4f43beca9fd9376a55b1" showHeader="True" cssClassAddition="top-border with-spacing with-header responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ABlogs_BlogPostList_Name%7D&amp;viewDetail=list&amp;postSortBy=MostRecent&amp;userQueryType=all&amp;selectedBlogOrGroup=&amp;tagsToFilter=&amp;excerptSize=420&amp;pageSize=25&amp;displayPostImage=True" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+  </contentFragmentPages>
+</theme>
