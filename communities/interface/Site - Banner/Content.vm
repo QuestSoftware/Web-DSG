@@ -1,0 +1,626 @@
+#set ($links = $core_v2_page.ParseQueryString($core_v2_widget.GetCustomValue('links','Link=Notifications&amp;Link=Inbox&amp;Link=Bookmarks&amp;Link=User')))
+#set ($hasLinks = false)
+
+#set ($user = $core_v2_user.Accessing)
+#set ($isRegistered = $core_v2_user.IsRegistered($user.Id))
+#set ($isImpersonated = $core_v2_authentication.IsImpersonated())
+#set ($impersonator = $core_v2_authentication.Impersonator())
+
+#set ($listTemplate = 'site-banner-list-template')
+#set ($notificationPreferenceTemplate = 'site-banner-notification-preferences-template')
+#set ($bookmarkFilterTemplate = 'site-banner-bookmark-filter-template')
+#set ($notificationFilterTemplate = 'site-banner-notification-filter-template')
+#set ($userTemplate = 'site-banner-user-template')
+#set ($searchFilterTemplate = 'site-banner-search-filter-template')
+#set ($notificationsUnread = 0)
+#set ($conversationsUnread = 0)
+#set ($includeJavascript = false)
+#set ($isBookmarked = false)
+#set ($currentContentId = '')
+
+#set ($currentContent = false)
+#set ($currentContent = $core_v2_content.Current)
+#set ($currentApplication = false)
+#set ($currentApplication = $core_v2_application.Current)
+#set ($currentGroup = false)
+#set ($currentGroup = $core_v2_group.Current)
+#set ($rootGroup = false)
+#set ($rootGroup = $core_v2_group.Root)
+#if ($rootGroup.Id == $currentGroup.Id)
+	#set ($currentGroup = false)
+#end
+
+#set($siteSearch = $core_v2_widget.GetCustomValue('siteSearch', ''))
+
+## mark any unread notifications for the current piece of content as read
+#if ($currentContent && $isRegistered)
+
+	## detect if current content is actually an application
+	#set ($isApplication = false)
+	#set ($application = $currentContent.Application)
+	#if (!$application || $application.ApplicationId == $currentContent.ContentId)
+		#set ($isApplication = true)
+	#end
+
+	#if (!$isApplication)
+		## load and mark as read any unread notifications for this content
+		#set ($unreadContentNotifications = $core_v2_notification.List("%{ ContentId = $currentContent.ContentId, ContentTypeId = $currentContent.ContentTypeId, IsRead = 'false' }"))
+		#foreach ($unreadNotification in $unreadContentNotifications)
+			#set ($updatedNotification = $core_v2_notification.Update($unreadNotification.NotificationId, "%{ MarkAsRead = 'true' }"))
+		#end
+
+		## Forum Reply Notifications are generally made against Forum Threads, not Replies. So also, mark any notifications for their parent threads, explicitly.
+		#if ($currentContent.ContentTypeId == $core_v2_forumReply.ContentTypeId)
+			#set ($forumReply = $core_v2_forumReply.Get($currentContent.ContentId))
+			#if ($forumReply)
+				#set ($forumThread = $core_v2_forumThread.Get($forumReply.ThreadId))
+				#if ($forumThread)
+					## load and mark as read any unread notifications for this forum thread
+					#set ($unreadContentNotifications = $core_v2_notification.List("%{ ContentId = $forumThread.ContentId, ContentTypeId = $forumThread.forumThreadContentTypeId, IsRead = 'false' }"))
+					#foreach ($unreadNotification in $unreadContentNotifications)
+						#set ($updatedNotification = $core_v2_notification.Update($unreadNotification.NotificationId, "%{ MarkAsRead = 'true' }"))
+					#end
+				#end
+			#end
+		#end
+	#end
+
+#end
+
+## site navigation
+#set ($hasSiteNavigation = false)
+#set ($siteNavigationUrl = '')
+#set ($siteNavigationType = $core_v2_widget.GetStringValue('siteNavigation', 'exclude'))
+
+#if ($siteNavigationType == 'group' || $siteNavigationType == 'my_groups')
+	#set ($hasSiteNavigation = true)
+	#set ($siteNavigationUrl = $core_v2_widget.GetExecutedFileUrl('groups.vm'))
+
+	#set ($groupListOptions = "%{ PageIndex = $pageIndex, PageSize = 10, SortOrder = 'Ascending' }")
+	#if ($siteNavigationType == 'my_groups')
+		#set ($includePendingMemberships = true)
+		$groupListOptions.Add('UserId', $user.Id)
+		$groupListOptions.Add('IncludePendingMemberships', $includePendingMemberships)
+		$groupListOptions.Add('SortBy', 'Name')
+	#else
+
+    #set($groupSelection = false)
+  	#set($groupSelection = $core_v2_widget.GetCustomValue('groupSelectionCustom', ''))
+
+    #if ($groupSelection && $groupSelection.Length > 0)
+      #set($groupSelection = $core_v2_utility.Join(',', $core_v2_page.ParseQueryString($groupSelection).Values('group')))
+      $groupListOptions.Add('ContainerIds', $groupSelection)
+      $groupListOptions.Add('SortBy', 'ContainerIdsOrder')
+    #else
+      $groupListOptions.Add('SortBy', 'SortOrder')
+    #end
+
+    $groupListOptions.Add('ParentGroupId', $core_v2_group.Root.Id)
+	#end
+
+	#set ($groups = $core_v2_group.List($groupListOptions))
+	#if (!$groups || $groups.TotalCount == 0)
+		#set ($hasSiteNavigation = false)
+	#end
+#elseif ($siteNavigationType == 'custom')
+	#set ($hasSiteNavigation = true)
+	#set ($siteNavigationUrl = $core_v2_widget.GetExecutedFileUrl('custom.vm'))
+	## don't show custom navigation if no links are defined by configuration
+	#set ($customSiteNavigationItems = $core_v2_customNavigation.Deserialize($core_v2_widget.GetCustomValue('navigation', '')))
+	#if (!$customSiteNavigationItems || $customSiteNavigationItems.Count == 0)
+		#set ($hasSiteNavigation = false)
+	#end
+#end
+
+
+#set ($searchId = $core_v2_widget.UniqueId('Search'))
+#set ($bannerId = $core_v2_widget.UniqueId('banner'))
+#set ($searchFieldsId = $core_v2_widget.UniqueId('searchFields'))
+#set ($bannerSiteLinksId = $core_v2_widget.UniqueId('bannerSiteLinks'))
+#set ($bannerUserLinksId = $core_v2_widget.UniqueId('bannerLinks'))
+#set ($handheldSearchFieldsId = $core_v2_widget.UniqueId('handheldSearchFields'))
+#set ($handheldBannerUserLinksId = $core_v2_widget.UniqueId('handheldBannerLinks'))
+#set ($handheldSearchFieldsLinkId = $core_v2_widget.UniqueId('handheldSearchFieldsLink'))
+#set ($handheldSiteNavigationLinkId = $core_v2_widget.UniqueId('handheldSiteNavigationLink'))
+#set ($handheldBannerUserLinksLinkId = $core_v2_widget.UniqueId('handheldBannerLinksLink'))
+#set ($handheldBannerUserLinksCountId = $core_v2_widget.UniqueId('handheldBannerLinksCount'))
+#set ($handheldSiteLinksLinkId = $core_v2_widget.UniqueId('handheldSiteLinksLink'))
+#set ($handheldSiteLinksId = $core_v2_widget.UniqueId('handheldSiteLinks'))
+#set ($utilityDropdown = $core_v2_widget.UniqueId('utilityDropdown'))
+
+#set ($currentSeachQuery = '')
+#set ($currentSeachQuery = $core_v2_encoding.HtmlEncode($core_v2_page.GetQueryStringValue('q')))
+
+<header class="masthead" id="$core_v2_encoding.HtmlAttributeEncode($bannerId)">
+	<nav class="navbar" role="navigation">
+		<div class="utility-section-wrapper">
+			<div class="utility-section">
+				<div class="navbar-brand">
+					<a href="/">
+						<img src="/images/shared/quest-logo.png">
+					</a>
+				</div>
+
+				<div id="$core_v2_encoding.HtmlAttributeEncode($searchFieldsId)" class="search-container">
+					<form id="search-form">
+						<input class="search-query form-control" autocomplete="off" type="search" placeholder="$core_v2_encoding.HtmlAttributeEncode($core_v2_language.GetResource('Search'))" id="$core_v2_encoding.HtmlAttributeEncode($searchId)" value="$!currentSeachQuery" />
+						<button class="btn">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+						<div class="autocomplete"></div>
+					</form>
+				</div>
+
+				<div class="nav-container">
+			    #if ($siteNavigationType == "quest")
+			    <div class="main-nav-section" data-ajax="true">
+			        <div class="shadow-overlay-left"></div>
+			    </div>
+			    #else
+			    <div class="main-nav-section">
+					<div class="shadow-overlay-left"></div>
+						<ul class="tier1">
+							<li><a href="/community/">Home</a></li>
+							<li><a href="/community/b/en">Blog</a></li>
+							<li><a href="/community/products/">Forums</a></li>
+							<li><a href="/community/beta/">Beta</a></li>
+							<li><a href="/community/about/">About</a></li>
+						</ul>
+					</div>
+				  #end
+				</div>
+
+				<ul class="utility hidden-xs" id="$core_v2_encoding.HtmlAttributeEncode($bannerUserLinksId)">
+					<li class="dropdown mobile-search-button search-button">
+						<a href="#">
+							<span class="top-search-icon"><i class="glyphicon glyphicon-search"></i></span>
+						</a>
+					</li>
+            #set ($bannerLinks = $links.Values('Link'))
+            #foreach($link in $bannerLinks)
+            #beforeall
+            #each
+              #set($url = false)
+              #if($link == 'Bookmarks' && $isRegistered)
+                <li class="hidden-xs">
+                  <a href="#" class="bookmarks" id="$core_v2_widget.UniqueId('bookmarks')" title="$core_v2_encoding.HtmlAttributeEncode($core_v2_language.GetResource('Bookmarks'))">$core_v2_language.GetResource('Bookmarks')</a>
+                </li>
+                #set ($hasLinks = true)
+
+                ## build dynamic lists of all content types, application types, and container types for filtering
+                #set ($allContentTypes = $core_v2_contentType.List())
+                #set ($contentTypes = "")
+                #set ($applicationContentTypes = "")
+                #set ($containerContentTypes = "")
+                #foreach ($type in $allContentTypes)
+                  #if ($core_v2_bookmark.SupportsBookmarks($type.Id))
+                    #set ($containerType = false)
+                    #set ($containerType = $core_v2_containerType.Get($type.Id))
+                    #if ($containerType && $containerType.Id)
+                      #set ($containerContentTypes = "${containerContentTypes}${type.Id}:${type.Name},")
+                    #else
+                      #set ($applicationType = false)
+                      #set ($applicationType = $core_v2_applicationType.Get($type.Id))
+                      #if ($applicationType && $applicationType.Id)
+                        #set ($applicationContentTypes = "${applicationContentTypes}${type.Id},")
+                      #else
+                        #set ($contentTypes = "${contentTypes}${type.Id},")
+                      #end
+                    #end
+                  #end
+                #end
+
+              #elseif($link == 'Notifications' && $isRegistered)
+                <li class="hidden-xs">
+                  <a href="#" class="notifications" id="$core_v2_widget.UniqueId('notifications')">$core_v2_language.GetResource('Notifications')</a>
+                </li>
+                #set ($hasLinks = true)
+                #set ($options = "%{ IsRead = 'False', PageSize = 1 }")
+                #set ($conversationMessageNotificationFilterName = "_Filters_${core_v2_conversationMessage.NotificationTypeId}")
+                $options.Add($conversationMessageNotificationFilterName, 'Exclude')
+                #set ($notificationsUnread = $core_v2_notification.List($options).TotalCount)
+
+              #elseif($link == 'User')
+                #set ( $avatarAnonymousCheck = '/anonymous\.gif/')
+                #set ( $avatarAnonymousCheck = $avatarAnonymousCheck.matches($user.AvatarUrl))
+                #if ($isRegistered)
+                  <li class="hidden-xs">
+                    <a href="#" class="internal-link user" id="$core_v2_encoding.HtmlAttributeEncode($core_v2_widget.UniqueId('user'))" title="$core_v2_encoding.HtmlAttributeEncode($core_v2_user.Accessing.DisplayName)">
+                    #if($avatarAnonymousCheck)
+                      <span class="glyphicon glyphicon-user"><span class="badge"><i class="glyphicon glyphicon-ok"></i></span></span>
+                    #else
+	                    $core_v2_ui.GetResizedImageHtml($user.AvatarUrl, 20, 20, "%{ ResizeMethod = 'ZoomAndCrop' }")
+                    #end
+                    </a>
+                  </li>
+                  #set($hasLinks = true)
+                #else
+                  #set($url = $core_v2_urls.Login())
+                  #if ($url)
+                    <li class="hidden-xs">
+                      <a href="$core_v2_encoding.HtmlAttributeEncode($url)" class="internal-link user with-icon" title="$core_v2_encoding.HtmlAttributeEncode($core_v2_language.GetResource('JoinSignIn'))">
+                          <span class="glyphicon glyphicon-user"></span>
+                      </a>
+                    </li>
+                    #set($hasLinks = true)
+                  #end
+                #end
+              #elseif($link == 'Inbox' && $isRegistered)
+                #set($url = $core_v2_urls.Conversations())
+                #if ($url)
+                  #set($conversationsUnread = $core_v2_conversation.UnreadCount())
+                  <li class="hidden-xs">
+                    <a href="#" class="conversations" id="$core_v2_widget.UniqueId('conversations')">$core_v2_language.GetResource('Conversations_Inbox')</a>
+                  </li>
+                  #set($hasLinks = true)
+                #end
+              #end
+            #afterall
+            #end
+				</ul>
+
+				<ul class="utility visible-xs">
+					<li class="dropdown mobile-search-button search-button">
+            <a href="#">
+              <span class="top-search-icon"><i class="glyphicon glyphicon-search"></i></span>
+            </a>
+          </li>
+          #if ($isRegistered)
+            <li>
+              <a href="#" class="user logged-in" id="$core_v2_encoding.HtmlAttributeEncode($handheldBannerUserLinksLinkId)">
+                  $core_v2_language.GetResource('user')
+              </a>
+              <a href="#" class="popup-list-count" id="$core_v2_encoding.HtmlAttributeEncode($handheldBannerUserLinksCountId)"></a>
+            </li>
+          #else
+            #set($url = $core_v2_urls.Login())
+            #if ($url)
+            <li>
+              <a href="$core_v2_encoding.HtmlAttributeEncode($url)" class="user">
+                <span class="glyphicon glyphicon-user"></span>
+              </a>
+            </li>
+            #end
+          #end
+					<li class="hamburger">
+            <a href="#" class="navbar-toggle" data-toggle="site-menu">
+              <span class="glyphicon glyphicon-menu-hamburger"></span>
+            </a>
+          </li>
+				</ul>
+
+				<div class="utility-dropdown visible-xs" id="$core_v2_encoding.HtmlAttributeEncode($utilityDropdown)">
+          <div class="user-links" style="display:none" id="$core_v2_encoding.HtmlAttributeEncode($handheldBannerUserLinksId)">
+						<ul class="utility"></ul>
+          </div>
+        </div>
+
+			</div>
+		</div>
+	</nav>
+</header>
+
+#registerEndOfPageHtml('telligent.evolution.widgets.siteBanner')
+
+
+	<script type="text/html" id="$core_v2_encoding.HtmlAttributeEncode($notificationPreferenceTemplate)">
+		<div class="notification-preference">
+			<span class="description">$core_v2_language.GetResource('TurnOffQuestion') <strong><%: notificationTypeName %></strong>$core_v2_language.GetResource('TurnOffQuestionSuffix')</span>
+			<a href="#" class="confirm internal-link button submit-button" data-notificationtypeid="<%: notificationTypeId %>">$core_v2_language.GetResource('TurnOff')</a>
+			<a href="#" class="cancel internal-link button submit-button">$core_v2_language.GetResource('Cancel')</a>
+		</div>
+	</script>
+
+
+	<script type="text/html" id="$core_v2_encoding.HtmlAttributeEncode($listTemplate)">
+		<div>
+			<div class="multiple-column-list columns-1">
+				<div class="multiple-column-item column-1">
+					<ul class="content-list content">
+					</ul>
+					<div class="loading">$core_v2_language.GetResource('loading')</div>
+					<% if(footerContent) { %>
+						<div class="content-list-footer">
+							<%= footerContent %>
+						</div>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</script>
+
+
+	<script type="text/html" id="$core_v2_encoding.HtmlAttributeEncode($bookmarkFilterTemplate)">
+		<ul class="navigation-list filter">
+			<% if(contentTypeIds && contentTypeIds.length > 0) { %>
+				<li class="navigation-item conversations">
+					<a class="internal-link" href="#" data-contenttypeids="<%: contentTypeIds %>">$core_v2_language.GetResource('Bookmark_Filter_Content')</a>
+				</li>
+			<% } %>
+			<% if(applicationContentTypeIds && applicationContentTypeIds.length > 0) { %>
+				<li class="navigation-item conversations">
+					<a class="internal-link" href="#" data-contenttypeids="<%: applicationContentTypeIds %>">$core_v2_language.GetResource('Bookmark_Filter_Application')</a>
+				</li>
+			<% } %>
+			<% if(containerTypes && containerTypes.length > 0) { %>
+				<% foreach(containerTypes, function(containerType) {  %>
+					<li class="navigation-item conversations">
+						<a class="internal-link" href="#" data-contenttypeids="<%: containerType.id %>"><%: containerType.name %></a>
+					</li>
+				<% }); %>
+			<% } %>
+		</ul>
+	</script>
+
+	<script type="text/html" id="$core_v2_encoding.HtmlAttributeEncode($notificationFilterTemplate)">
+		<ul class="navigation-list filter">
+			<li class="navigation-item all">
+				<a class="internal-link" href="#" data-filter="all">$core_v2_language.GetResource('Notification_Filter_All')</a>
+			</li>
+			<li class="navigation-item unread">
+				<a class="internal-link" href="#" data-filter="unread">$core_v2_language.GetResource('Notification_Filter_Unread')</a>
+			</li>
+		</ul>
+	</script>
+
+	<script type="text/html" id="$core_v2_encoding.HtmlAttributeEncode($searchFilterTemplate)">
+		<% if(places && places.length > 0) { %>
+			<ul class="navigation-list filter">
+				<% foreach(places, function(place) { %>
+					<li class="navigation-item">
+						<a class="place internal-link" href="#" data-key="<%: place.key %>" data-value="<%: place.value %>" data-searchparam="<%: place.searchParameter %>" data-searchvalue="<%: place.searchValue %>"><%= place.name %></a>
+				<% }); %>
+			</ul>
+		<% } %>
+
+		<% if(filters && filters.length > 0) { %>
+			<ul class="navigation-list filter">
+			<% foreach(filters, function(filter) {  %>
+				<li class="navigation-item">
+					<a class="type internal-link" href="#" data-key="<%: filter.key %>"><%= filter.name %></a>
+				</li>
+			<% }); %>
+			</ul>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="$core_v2_encoding.HtmlAttributeEncode($userTemplate)">
+		<div class="user">
+			<div class="avatar">
+				<a href="$core_v2_encoding.HtmlAttributeEncode($user.ProfileUrl)">
+					$core_v2_ui.GetResizedImageHtml($user.AvatarUrl, 40, 40, "%{ ResizeMethod = 'ZoomAndCrop' }")
+				</a>
+			</div>
+			<span class="user-name">
+				<a href="$core_v2_encoding.HtmlAttributeEncode($user.ProfileUrl)">$core_v2_encoding.JavascriptEncode($user.DisplayName)</a>
+			</span>
+
+			#set($authType = false)
+			#set($authType = $core_v2_authentication.GetLastLoginType())
+			#if ($authType && $authType != '')
+				#set($oathProvider = false)
+				#set($oathProvider = $core_v2_authentication.GetOAuthProvider($authType))
+				#if ($oathProvider)
+					<span class="oauth-provider">
+						$core_v2_ui.GetResizedImageHtml($oathProvider.IconUrl, 18, 18, "%{ border='0', alt = $oathProvider.ClientName, class = 'ui-tip', ResizeMethod = 'ZoomAndCrop' }")
+					</span>
+				#end
+			#end
+		</div>
+
+		#set($hasUserLinks = true)
+		#set ($userLinks = $links.Values('Link'))
+		#foreach($link in $userLinks)
+		#beforeall
+			<ul class="navigation-list user">
+		#each
+			#if($link == 'UserInformation')
+				#set($url = false)
+				#set($url = $user.ProfileUrl)
+				#if ($url)
+					<li class="navigation-list-item">
+						<a href="$core_v2_encoding.HtmlAttributeEncode($user.ProfileUrl)">$core_v2_language.GetResource('Links_User_Profile')</a>
+					</li>
+					#set($hasUserLinks = true)
+				#end
+			#elseif($link == 'Settings')
+				#set($url = false)
+				#set($url = $core_v2_urls.Settings())
+				#if ($url)
+					<li class="navigation-list-item">
+						<a href="$core_v2_encoding.HtmlAttributeEncode($url)">$core_v2_language.GetResource('Links_User_Settings')</a>
+					</li>
+					#set($hasUserLinks = true)
+				#end
+			#elseif($link == 'Invite')
+				#set($url = false)
+				#set($url = $core_v2_urls.Invite())
+				#if ($url)
+					<li class="navigation-list-item">
+						<a href="$core_v2_encoding.HtmlAttributeEncode($url)">$core_v2_language.GetResource('Links_User_Invite')</a>
+					</li>
+					#set($hasUserLinks = true)
+				#end
+			#elseif($link == 'SignOut')
+				#set($url = false)
+				#set($url = $core_v2_urls.LogOut())
+				#if ($url)
+					<li class="navigation-list-item logout">
+						<a href="$core_v2_encoding.HtmlAttributeEncode($url)" class="internal-link logout">
+							#if($isImpersonated)$core_v2_language.GetResource('StopImpersonating')#else$core_v2_language.GetResource('Links_User_Logout')#end
+						</a>
+					</li>
+					#set($hasUserLinks = true)
+				#end
+			#end
+		#afterall
+			</ul>
+		#end
+	</script>
+
+
+	<script type="text/javascript" src="$core_v2_encoding.HtmlAttributeEncode($core_v2_widget.GetFileUrl('ui.js'))"></script>
+#end
+#registerEndOfPageHtml()
+	<script type="text/javascript">
+		#set($DQ = '"')
+
+		#set($conversationListFooterContent = "<a href=${DQ}${core_v2_urls.Conversations()}${DQ} class=${DQ}left${DQ}>$core_v2_language.GetResource('Conversations_More')</a><a href=${DQ}#${DQ} data-messagename=${DQ}widget.${core_v2_widget.WrapperElementId}.startconversation${DQ} class=${DQ}right${DQ}>$core_v2_language.GetResource('Conversation_Send')</a>")
+
+
+		#set($notificationSettingsUrl = $core_v2_urls.Settings())
+		#set($notificationListFooterContent = "<a href=${DQ}#${DQ} class=${DQ}mark-read left${DQ} #if ($notificationsUnread == 0) style=${DQ}display:none${DQ} #end>$core_v2_language.GetResource('Notifications_Mark')</a><a class=${DQ}right${DQ} href=${DQ}${notificationSettingsUrl}${DQ}>$core_v2_language.GetResource('Links_User_Settings')</a>")
+
+		#set($bookmarksUrl = $core_v2_urls.Favorites($core_v2_user.Accessing.Id))
+		#set($bookmarksListFooterContent = "<a class=${DQ}left${DQ} href=${DQ}${bookmarksUrl}${DQ}>$core_v2_language.GetResource('Bookmarks_More')</a>")
+		## possibly show bookmark/unbookmark link
+		#if ($isRegistered && $currentContent && $user && $currentContent.ContentId != $user.ContentId)
+			#set ($currentContentBookmark = $core_v2_bookmark.Get($currentContent.ContentId))
+			#if ($currentContentBookmark)
+				#set ($isBookmarked = true)
+			#end
+			#set ($currentContentId = $currentContent.ContentId)
+			#set ($bookmarkComponent = $core_v2_ui.Bookmark($currentContent.ContentId, $currentContent.ContentTypeId, "%{ CssClass = 'right' }"))
+			#set ($bookmarksListFooterContent = "${bookmarksListFooterContent}${bookmarkComponent}")
+		#end
+
+		#set($searchListFooterContent = "<a data-messagename=${DQ}widget.${core_v2_widget.WrapperElementId}.advancedsearch${DQ} id=${DQ}$core_v2_widget.UniqueId('advancedsearch')${DQ} href=${DQ}#${DQ}>$core_v2_language.GetResource('Advanced_Search')</a>")
+
+		jQuery(function(){
+			jQuery.telligent.evolution.widgets.siteBanner.register({
+				wrapper: '#$core_v2_widget.WrapperElementId',
+
+				messagePrefix: 'widget.${core_v2_widget.WrapperElementId}.',
+				banner: jQuery('#$core_v2_encoding.JavascriptEncode($bannerId)'),
+
+				//handheldSearchFieldsLink: jQuery('#$core_v2_encoding.JavascriptEncode($handheldSearchFieldsLinkId)'),
+				//handheldSearchFields: jQuery('#$core_v2_encoding.JavascriptEncode($searchFieldsId)'),
+				handheldBannerLinksLink: jQuery('#$core_v2_encoding.JavascriptEncode($handheldBannerUserLinksLinkId)'),
+				handheldBannerLinks: jQuery('#$core_v2_encoding.JavascriptEncode($handheldBannerUserLinksId)'),
+				searchFields: jQuery('#$core_v2_encoding.JavascriptEncode($searchFieldsId)'),
+
+				utilityDropdown: jQuery('#$core_v2_encoding.JavascriptEncode($utilityDropdown)'),
+
+				bannerLinks: jQuery('#$core_v2_encoding.JavascriptEncode($bannerUserLinksId)'),
+				handheldBannerLinksCount: jQuery('#$core_v2_encoding.JavascriptEncode($handheldBannerUserLinksCountId)'),
+				bannerSiteLinks: jQuery('#$core_v2_encoding.JavascriptEncode($bannerSiteLinksId)'),
+				handheldSiteLinksLink: jQuery('#$core_v2_encoding.JavascriptEncode($handheldSiteLinksLinkId)'),
+				handheldSiteLinks: jQuery('#$core_v2_encoding.JavascriptEncode($handheldSiteLinksId)'),
+
+				notificationsTemplate: '$core_v2_encoding.JavascriptEncode($listTemplate)',
+				notificationsUrl: '$core_v2_encoding.JavascriptEncode($core_v2_widget.GetExecutedFileUrl('notifications.vm'))',
+				notificationsLink: jQuery('#$core_v2_widget.UniqueId('notifications')'),
+				notificationsUnread: $notificationsUnread,
+				notificationListFooterContent: '$core_v2_encoding.JavascriptEncode($notificationListFooterContent)',
+				notificationPreferenceTemplate: '$core_v2_encoding.JavascriptEncode($notificationPreferenceTemplate)',
+				notificationssUnreadCountMessageSingular: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Notifications_UnreadCountMessageSingular'))',
+				notificationssUnreadCountMessagePlural: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Notifications_UnreadCountMessagePlural'))',
+				notificationsFilterTemplate: '$core_v2_encoding.JavascriptEncode($notificationFilterTemplate)',
+
+				conversationsTemplate: '$core_v2_encoding.JavascriptEncode($listTemplate)',
+				conversationsUrl: '$core_v2_encoding.JavascriptEncode($core_v2_widget.GetExecutedFileUrl('conversations.vm'))',
+				conversationsLink: jQuery('#$core_v2_widget.UniqueId('conversations')'),
+				conversationsUnread: $conversationsUnread,
+				conversationNotificationTypeId: '$core_v2_conversationMessage.NotificationTypeId',
+				conversationListFooterContent: '$core_v2_encoding.JavascriptEncode($conversationListFooterContent)',
+				conversationsUnreadCountMessageSingular: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Conversations_UnreadCountMessageSingular'))',
+				conversationsUnreadCountMessagePlural: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Conversations_UnreadCountMessagePlural'))',
+				conversationNewConversationModalUrl: '$core_v2_encoding.JavascriptEncode($core_v2_urls.AddConversation())',
+
+				bookmarksTemplate: '$core_v2_encoding.JavascriptEncode($listTemplate)',
+				bookmarksUrl: '$core_v2_encoding.JavascriptEncode($core_v2_widget.GetExecutedFileUrl('bookmarks.vm'))',
+				bookmarksLink: jQuery('#$core_v2_widget.UniqueId('bookmarks')'),
+				bookmarksListFooterContent: '$core_v2_encoding.JavascriptEncode($bookmarksListFooterContent)',
+				bookmarksContentTypes: '$core_v2_encoding.JavascriptEncode($contentTypes)',
+				bookmarksApplicationContentTypes: '$core_v2_encoding.JavascriptEncode($applicationContentTypes)',
+				bookmarksContainerContentTypes: '$core_v2_encoding.JavascriptEncode($containerContentTypes)',
+				bookmarksFilterTemplate: '$core_v2_encoding.JavascriptEncode($bookmarkFilterTemplate)',
+				bookmarksIsBookmarked: #if($isBookmarked) true #else false #end,
+				bookmarksCurrentContentId: '$currentContentId',
+				bookmarksBookmarks: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Bookmarks'))',
+				bookmarkAdded: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Bookmark_Added'))',
+				bookmarkRemoved: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Bookmark_Removed'))',
+
+				userPopupTemplate: '$core_v2_encoding.JavascriptEncode($listTemplate)',
+				userContentTemplate: '$core_v2_encoding.JavascriptEncode($userTemplate)',
+				userLink: jQuery('#$core_v2_widget.UniqueId('user')'),
+
+				searchType: '$siteSearch',
+				#if ($siteSearch == "Default")
+				searchTemplate: '$core_v2_encoding.JavascriptEncode($listTemplate)',
+				searchUrl: '$core_v2_encoding.JavascriptEncode($core_v2_widget.GetExecutedFileUrl('search.vm'))',
+				searchInput: jQuery('#$core_v2_encoding.JavascriptEncode($searchId)'),
+				searchFooterContent: '$core_v2_encoding.JavascriptEncode($searchListFooterContent)',
+				searchFilterTemplate: '$core_v2_encoding.JavascriptEncode($searchFilterTemplate)',
+				searchAdvancedUrl: '$core_v2_encoding.JavascriptEncode($core_v2_urls.Search("%{ QueryString = '{0}' }"))',
+				searchAdvancedUserUrl: '$core_v2_encoding.JavascriptEncode($core_v2_urls.UserList("%{ QueryString = '{0}' }"))',
+				searchFilterContentName: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Search_Filter_Content'))',
+				searchFilterGroupsName: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Search_Filter_Groups'))',
+				searchFilterPeopleName: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Search_Filter_People'))',
+				searchPlaceApplicationId: #if ($currentApplication) '$currentApplication.ApplicationId' #else null #end,
+				searchPlaceApplicationName: #if ($currentApplication) '$core_v2_encoding.JavascriptEncode($core_v2_language.FormatString($core_v2_language.GetResource('Search_Filter_In'), $currentApplication.HtmlName('')))' #else null #end,
+				searchPlaceGroupId: #if ($currentGroup) '$currentGroup.ContainerId' #else null #end,
+        searchPlaceGroupLocalId: #if ($currentGroup) '$currentGroup.Id' #else null #end,
+				searchPlaceGroupName: #if ($currentGroup) '$core_v2_encoding.JavascriptEncode($core_v2_language.FormatString($core_v2_language.GetResource('Search_Filter_In'), $currentGroup.Name))' #else null #end,
+				searchPlaceAnywhereName: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Search_Filter_Anywhere'))',
+				advancedSearchId: '$core_v2_widget.UniqueId('advancedsearch')',
+				searchShowPeople: #if($core_v2_nodePermission.Get('Site_ReadProfiles').IsAllowed) true#else false#end,
+				#else
+				searchInput: jQuery('#$core_v2_encoding.JavascriptEncode($searchId)'),
+				#end
+
+				siteNavigationType: '$core_v2_encoding.JavascriptEncode($siteNavigationType)'
+
+				#if ($hasSiteNavigation)
+					,siteNavigationUrl: '$core_v2_encoding.JavascriptEncode($siteNavigationUrl)'
+					,siteNavigationTemplate: '$core_v2_encoding.JavascriptEncode($listTemplate)'
+					,siteNavigationLink: jQuery('#$core_v2_widget.UniqueId('site')')
+					,siteNavigationTitle:  #if ($siteNavigationType == 'group')
+						'$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('navigation_groups'))'
+					#elseif ($siteNavigationType == 'my_groups')
+						'$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('navigation_my_groups'))'
+					#else
+						'$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('navigation_custom'))'
+					#end
+					#if($siteNavigationType == 'custom')
+						,siteNavigationCustomItems:
+						#foreach($customSiteNavigationItem in $customSiteNavigationItems)
+						#beforeall
+							[
+						#between
+							,
+						#each
+							{
+								label: '$core_v2_encoding.JavascriptEncode($customSiteNavigationItem.Label)',
+								url: '$core_v2_encoding.JavascriptEncode($customSiteNavigationItem.Url)'
+							}
+						#afterall
+							]
+						#end
+					#else
+						,siteNavigationCustomItems:
+						#foreach($group in $groups)
+						#beforeall
+							[
+						#between
+							,
+						#each
+							{
+								label: '$core_v2_encoding.JavascriptEncode($group.Name)',
+								url: '$core_v2_encoding.JavascriptEncode($group.Url)'
+							}
+						#afterall
+							#if(true) #*$groups.Length < $groups.TotalLength)*#
+								,{
+									label: '$core_v2_encoding.JavascriptEncode($core_v2_language.GetResource('Site_Navigation_Groups_More'))',
+									url: '$core_v2_encoding.JavascriptEncode($core_v2_groupUrls.Home())'
+								}
+							#end
+							]
+						#end
+					#end
+				#end
+			});
+		});
+	</script>
+#end

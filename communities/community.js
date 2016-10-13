@@ -291,81 +291,692 @@ var Arrive = function (window, $, undefined) {
 }(window, typeof jQuery === "undefined" ? null : jQuery, undefined);
 
 (function ($) {
-	var mainNavContentElem = searchElem = userLinks = headerElem = null;
+	var bannerSite = mainNavContentElem = searchElem = userLinks = null, isNewsroom = /^\/community\/news/.test(location.pathname), pageWidth = 0;
+	var pageType = pageTypeLabel = '', localizedContent = [];
 
 	$(document).ready(function () {
-		headerElem = $('#ctl02_ctl01_header');
+		bannerSite = $('.banner').filter('.site');
 		mainNavContentElem = $('.custom-main-navigation');
-		userLinks = headerElem.find('.user-links');
+		userLinks = bannerSite.find('.user-links');
 
-		$('body').css('overflow', 'hidden');
-		var w = $('html').width();
-		$('body').css('overflow', '');
+		pageWidth = getPageProperties();
 
-		if (w <= 570) {
-			processMobile();
+		if (isNewsroom) {
+			$('body').addClass('isNewsroom');
+			$.getScript('/Static/Scripts/jquery.autocomplete.min.js', function () {
+				$.getScript('/viewScripts/jquery.adobe.autocomplete.js', function () {
+					initQuestSearch();
+				});
+			});
 		}
-		else {
-			processDesktop();
+
+		//Reroute logo link to https://www.quest.com
+		bannerSite.find('.avatar').find('a').attr('href', '/');
+
+		mobile.init();
+		desktop.init();
+
+		processHeaderFooter();
+
+		if ($('.social-media-toolbar').length) {
+			socialMediaToolbar();
 		}
 	});
 
-	function processMobile() {
-		var handheldElem = $('.navigation-list').filter('.handheld');
+	$(window).resize(function () {
+		pageWidth = getPageProperties();
+	});
 
-		handheldElem.find('li:first').find('a').html('<i class="glyphicon glyphicon-menu-hamburger"></i>');
+	function getPageProperties() {
+		//Workaround for Google Chrome. The vertical scrollbar is not included in determining the width of the device.
+		$('body').css('overflow', 'hidden');
+		var w = $('html').width();
 
-		$('body').append('<div id="mobile-nav-container"><div class="main-nav-section"><div class="shadow-overlay-left"></div></div></div></div>');
+		$('body').css('overflow', '');
 
-		mainNavContentElem.clone().appendTo('#mobile-nav-container .main-nav-section');
+		//Define pageType
+		if (w >= 1200) {
+			pageType = 3;
+			pageTypeLabel = 'lg';
+		}
+		else if (w >= 992) {
+			pageType = 2;
+			pageTypeLabel = 'md';
+		}
+		else if (w >= 768) {
+			pageType = 1;
+			pageTypeLabel = 'sm';
+		}
+		else {
+			pageType = 0;
+			pageTypeLabel = 'xs';
+		}
 
-		handheldElem.find('.site').on('click', function (e) {
-			e.preventDefault();
+		return w;
+	}
 
-			if ($('body').hasClass('open')) {
-				$('body').removeClass('open');
+	function socialMediaToolbar() {
+		var bitlyURL = location.href;
 
-				setTimeout(function () {
-					$(this).removeClass('active');
-				}, 100);
+		if ($('.g-plusone').length) {
+			$('.g-plusone').attr('data-href', bitlyURL);
+
+			//Google+
+			(function () {
+				var po = document.createElement('script');
+				po.type = 'text/javascript';
+				po.async = true;
+				po.src = '//apis.google.com/js/plusone.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(po, s);
+			})();
+		}
+
+		//Retrieve bit.ly url.
+		if (window.XMLHttpRequest && location.host == 'software.dell.com' && !/\/emailcl\//.test(location.pathname)) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/hidden/bitly.asmx/get?URI=" + encodeURIComponent(url));
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
+						xml = $($.parseXML(xhr.responseText));
+						var obj = jQuery.parseJSON(xml.find("string").text());
+
+						if (typeof obj.data != 'undefined') {
+							bitlyURL = obj.data.url;
+						}
+					}
+				}
+			};
+			xhr.send();
+		}
+
+		$('.social-media-toolbar').on('click', 'a', function (e) {
+			var parent = $(this).parent(), title = document.title;
+
+			if (parent.hasClass('facebook')) {
+				e.preventDefault();
+				window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(bitlyURL) + '&t=' + encodeURIComponent(title), 'facebook', 'width=480,height=240,toolbar=0,status=0,resizable=1');
 			}
-			else {
-				$('body').addClass('open');
-				//$(this).addClass('active');
+			else if (parent.hasClass('twitter')) {
+				e.preventDefault();
+				window.open('http://twitter.com/share?via=DellSoftware&url=' + encodeURIComponent(bitlyURL) + '&text=' + encodeURIComponent(title) + ',%20&counturl=' + encodeURIComponent(url), 'twitter', 'width=480,height=380,toolbar=0,status=0,resizable=1');
 			}
-		});
-
-		$('#footer').on('click', '.subLinks', function (e) {
-			e.preventDefault();
-
-			$(this).toggleClass('open');
+			else if (parent.hasClass('linkedin')) {
+				e.preventDefault();
+				window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(bitlyURL) + '&title=' + encodeURIComponent(title), 'linkedin', 'width=480,height=360,toolbar=0,status=0,resizable=1');
+			}
+			else if (parent.hasClass('googleshare')) {
+				e.preventDefault();
+				window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
+			}
 		});
 	}
 
-	function processDesktop() {
-		searchElem = headerElem.find('.search');
-		mainNavContentElem.clone().insertBefore(searchElem);
+	function initQuestSearch() {
+		var searchFieldElem = $('[type=search]');
 
-		userLinks.find('.user').html('<i class="glyphicon glyphicon-user"><span class="badge is-logged-in"><i class="glyphicon glyphicon-ok"></i></span></i>');
-		userLinks.find('> ul').append('<li class="navigation-list-item"><a href="#" class="search-icon"><span class="glyphicon glyphicon-search"></span></a></li>');
+		searchFieldElem.off('keydown input focus blur click propertychange');
 
-		headerElem.find('.banner.site').find('>fieldset.search').wrap('<div id="masthead-search">');
+		//TODO: Figure out what this does.
+		var b = {};
+		(function () {
+			var j, l = /\+/g, k = /([^&=]+)=?([^&]*)/g, n = function (o) {
+				return decodeURIComponent(o.replace(l, " "))
+			}, m = window.location.search.substring(1);
+			while (j = k.exec(m)) {
+				b[n(j[1])] = n(j[2])
+			}
+		})();
 
-		headerElem.on('click', '.search-icon', function (e) {
-			e.preventDefault();
+		// searchFieldElem.attr('autocomplete', 'off');
+		searchFieldElem.on('keypress', function (e) {
+			if (e.which == 13) {
+				e.preventDefault();
+				goSearch($(this).val());
+			}
+		});
 
-			var elem = $('#masthead-search');
+		initAdobeSearch();
 
-			if ($('#masthead-search').is(':visible')) {
-				elem.hide();
+		function initAdobeSearch() {
+			var config = {
+				account: "sp10050c33",
+				searchDomain: 'http://stage.sp10050ecd.guided.ss-omtrdc.net/',
+				inputElement: "[type=search]",
+				//inputFormElement: "#search-form",
+				delay: 300,
+				minLength: 2,
+				maxResults: 10,
+				browserAutocomplete: false,
+				queryCaseSensitive: false,
+				startsWith: false,
+				searchOnSelect: true,
+				submitOnSelect: true,
+				highlightWords: false,
+				highlightWordsBegin: false
+			};
+
+			searchFieldElem.on("autocompleteopen", function (event, ui) {
+				$('.ui-autocomplete').css({
+					width: $(this).outerWidth(true)
+				})
+			});
+
+			searchFieldElem.on("autocompleteselect", function (event, ui) {
+				goSearch(searchFieldElem.val());
+			});
+
+			searchFieldElem.AdobeAutocomplete(config);
+		}
+
+		function goSearch(searchterm) {
+			if (isDoubleByte(searchterm)) {
+				searchterm = encodeURIComponent(searchterm);
 			}
 			else {
-				elem.show();
+				//searchterm = encodeURIComponent(Encoder.htmlEncode(searchterm));
+				searchterm = encodeURIComponent(searchterm);
+			}
+
+			location.href = "/search/results/?q=" + searchterm;
+
+			return false;
+		}
+
+		function isDoubleByte(str) {
+			for (var i = 0, n = str.length; i < n; i++) {
+				if (str.charCodeAt(i) > 255) {
+					return true;
+				}
+			}
+			return false;
+		}
+	}
+
+	var mobile = function () {
+		function init() {
+			processNavigation();
+			processNavigationFlyout();
+		}
+
+		function processNavigation() {
+			$('body').find('> form')
+				.append('<div id="mobile-nav-container"><div class="main-nav-section"></div></div></div>');
+
+			mainNavContentElem
+				.clone().removeClass('hidden')
+				.appendTo('#mobile-nav-container .main-nav-section');
+		}
+
+		function processNavigationFlyout() {
+			var handheldElem = bannerSite.find('.navigation-list').filter('.handheld');
+
+			handheldElem.find('.site').on('click', function (e) {
+				e.preventDefault();
+
+				var that = this, bodyElem = $('body');
+
+				if (bodyElem.hasClass('open')) {
+					bodyElem.removeClass('open');
+
+					setTimeout(function () {
+						$(that).removeClass('active');
+					});
+				}
+				else {
+					bodyElem.addClass('open');
+				}
+			});
+
+			if (isNewsroom) {
+				handheldElem.find('li:last').remove();
+			}
+
+			$('#footer').on('click', '.subLinks', function (e) {
+				e.preventDefault();
+
+				$(this).toggleClass('open');
+			});
+
+			bannerSite.find('.container').find('[type=search]').attr('placeholder', 'What can we help you find?');
+
+			$(document).arrive('.popup-list.notifications', repositionPopup);
+			$(document).arrive('.popup-list.conversations', repositionPopup);
+			$(document).arrive('.popup-list.bookmarks', repositionPopup);
+			$(document).arrive('.popup-list.user', repositionPopup);
+
+			function repositionPopup() {
+				var that = this;
+
+				if ($('html').width() < 768) {
+					setTimeout(function () {
+						$(that).parent().css({
+							marginTop: 53
+						});
+					});
+				}
+			}
+		}
+
+		return {
+			init: init
+		}
+	}();
+
+	var desktop = function () {
+		function init() {
+			processNavigation();
+			// replaceUserIcon();
+			processSearchBar();
+			processLoggedInUser();
+		}
+
+		function processNavigation() {
+			mainNavContentElem.clone().removeClass('hidden').insertBefore(bannerSite.find('> .search'));
+
+			//mainNavContentElem.parents('.content-fragment').hide();
+		}
+
+		function replaceUserIcon() {
+			if (userLinks.find('.user').find('img').length) {
+				if (userLinks.find('.user').find('img').attr('src').indexOf('anonymous.gif') > -1) {
+					userLinks.find('.user').html('<span class="glyphicon glyphicon-user"><span class="badge is-logged-in"><i class="glyphicon glyphicon-ok"></i></span></span>');
+				}
+			}
+			else {
+				userLinks.find('.user').html('<i class="glyphicon glyphicon-user"><span class="badge is-logged-in"><i class="glyphicon glyphicon-ok"></i></span></i>');
+			}
+		}
+
+		function processSearchBar() {
+			var mastheadSearch = bannerSite.find('> fieldset.search');
+			var searchInputElem = mastheadSearch.find('[type=search]');
+			var searchIconElem = bannerSite.find('.search-icon');
+
+			searchInputElem.on('input focus', function () {
+				var that = this,
+					width = $(this).outerWidth(true),
+					timeout = null,
+					popup = $('.popup-list').filter('.search');
+
+				popup.hide();
+
+				timeout = setInterval(function() {
+					popup = $('.popup-list').filter('.search');
+
+					popup.hide();
+
+					if(popup.length) {
+						clearTimeout(timeout);
+
+						realignPopup.call(that, popup);
+					}
+				}, 10);
+
+				function realignPopup(popup) {
+					if (popup.length) {
+						var popupParent = popup.parent();
+
+						if ($(this).parents('.handheld').length) {
+							popupParent.css({
+								marginTop: 56,
+								zIndex: 2000,
+								width: pageWidth
+							});
+
+							popup.find('.content-list').css({
+								width: pageWidth
+							});
+						}
+						else {
+							var parentLeft = parseInt(popupParent.css('left'));
+							var inputLeft = $(this).offset().left;
+							var marginLeft = parentLeft - inputLeft;
+
+							if (parentLeft < inputLeft) {
+								marginLeft = inputLeft - parentLeft;
+							}
+
+							popupParent.css({
+								marginTop: $(this).offset().top + $(this).outerHeight(true) - parseInt(popupParent.css('top')),
+								zIndex: 2000,
+								width: width,
+								marginLeft: marginLeft
+							});
+
+							popup.find('.content-list').css({
+								width: width
+							});
+						}
+
+						popupParent.css({
+							border: '1px solid #ccc'
+						});
+
+						popup.show();
+					}
+				}
+			});
+
+			/*bannerSite.on('mousedown', 'a', function (e) {
+				e.stopImmediatePropagation();
+
+				var that = this;
+
+				//If search icon is not clicked then proceed to find if search icon is active. If so, deactivate it.
+				if (!$(this).hasClass('search-icon')) {
+					if (searchIconElem.hasClass('active')) {
+						searchIconElem.removeClass('active');
+						mastheadSearch.hide();
+					}
+				}
+			});*/
+
+			//Also affects mobile
+			bannerSite.on('click', '.search-icon', function (e) {
+				e.preventDefault();
+
+				if (mastheadSearch.is(':visible')) {
+					mastheadSearch.hide();
+					$(this).removeClass('active');
+				}
+				else {
+					mastheadSearch.show();
+					$(this).addClass('active');
+
+					/*if (isNewsroom && !$(this).data('init')) {
+					 $(this).data('init', true);
+
+					 initQuestSearch();
+					 }*/
+				}
+			});
+
+			mastheadSearch.on('click', '.btn', function (e) {
+				e.preventDefault();
+
+				if (isNewsroom) {
+					location.href = '/search/results/?q=' + searchInputElem.val();
+				}
+				else {
+					location.href = '/community/search?q=' + searchInputElem.val();
+				}
+			});
+
+			$('body').on('click', function(e) {
+				if(!$(e.target).hasClass('glyphicon-search') && !$(e.target).parent().hasClass('search-icon') && !$(e.target).parents('.search').length) {
+					console.log('body click', searchIconElem, searchIconElem.hasClass('active'));
+					console.log(e);
+					if(searchIconElem.hasClass('active')) {
+						searchIconElem.removeClass('active');
+						mastheadSearch.hide();
+					}
+				}
+			});
+		}
+
+		function processLoggedInUser() {
+			if ($('.logged-in').length) {
+				$('.is-logged-in').show();
+			}
+		}
+
+		return {
+			init: init
+		};
+	}();
+
+	function getLocalizedContent(tags) {
+		//How to call: getLocalizedContent('RegWarningMessageEmailRequired').done(function(data) { console.log(data); });
+		var returnValue = {}, newTags = [], deferred = $.Deferred();
+
+		if (typeof tags == 'string') {
+			if (localizedContent[tags]) {
+				return localizedContent[tags];
+			}
+			else {
+				newTags.push(tags);
+			}
+		}
+		else {
+			$.each(tags, function (i, tag) {
+				if (localizedContent[tag]) {
+					returnValue[tag] = localizedContent[tag];
+				}
+				else {
+					newTags.push(tag);
+				}
+			});
+		}
+
+		if (newTags.length) {
+			$.ajax({
+				url: (((typeof RootPath == 'undefined' || RootPath == '/') ? '' : RootPath) + '/jsonreq/event/').replace('//', '/'),
+				type: 'POST',
+				dataType: 'JSON',
+				data: {
+					type: 'localized tags',
+					tags: newTags.join(',')
+				}
+			}).done(function (data) {
+				$.each(data.data, function (i, obj) {
+					returnValue[obj.id] = obj.value;
+					localizedContent[obj.id] = obj.value;
+				});
+
+				deferred.resolve(returnValue);
+			});
+		}
+		else {
+			deferred.resolve(returnValue);
+		}
+
+		return deferred;
+	}
+
+	function processHeaderFooter() {
+		var headerNavElem = $('.main-nav-section');
+
+		/*
+		 Get navigation via ajax. Should only be executed on non home page.
+
+		 Note: All non home page (responsive) will use the special tag V2LayoutHeaderAjax which has a data-ajax="true" attribute.
+		 V2LayoutHeaderAjaxNav contains the navigation html content.
+		 */
+		(function () {
+			var specialTag = 'V2LayoutHeaderAjaxNav';
+
+			if (headerNavElem.data('ajax')) {
+				//If session storage is available, populate navigation. Note: if navigation has been updated when nav is already stored, it'll be one page view behind.
+				if (sessionStorage.nav) {
+					headerNavElem.append(sessionStorage.nav);
+				}
+
+				//Get navigation and store
+				getLocalizedContent(specialTag).done(function (data) {
+					//Populate navigation only if sessionStorage.nav is not present because if it is present, it would have already been populated on line 32.
+					if (!sessionStorage.nav) {
+						headerNavElem.append(data[specialTag]);
+					}
+
+					//Store latest navigation.
+					sessionStorage.nav = data[specialTag];
+				});
+			}
+			else {
+				//Get navigation and store
+				getLocalizedContent(specialTag).done(function (data) {
+					//Store latest navigation.
+					sessionStorage.nav = data[specialTag];
+				});
+			}
+		})();
+
+		//Prevent anchor tag from firing when href is set to #
+		headerNavElem.find('ul.tier2').on('click', 'a[href=#]', function (e) {
+			if ($('html').width() >= 768) {
+				e.preventDefault();
 			}
 		});
 
-		$(document).arrive('.popup-list.search', function () {
-			$(this).parent().css({marginTop: 63});
+		//Siamak: changed #mobile-search-button to #mobile-search-button
+		$('#search-button').on('click', function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+
+
+			$('#masthead-search').toggleClass('open');
+			$('#search-button').toggleClass('open');
+
+			$('#signin-container').removeClass('open');
+			headerNavElem.find('.open').removeClass('open');
+
+			$('html').removeClass('openNav');
 		});
+
+		//Prevent anchor tag from firing when href is set to # on mobile
+		$('.footer-top-section').on('click', 'a[href=#]', function (e) {
+			if ($('html').width() < 768) {
+				e.preventDefault();
+			}
+		});
+
+		$('body')
+			.on('click', function (e) {
+				//Siamak : Closing all navigation when click on body (Medium to Large desktop)
+				if (pageType >= 3) {
+					$('.tier1').find('.open').removeClass('open');
+				}
+				//Siamak : Closing top search when click on body
+				if (($('.search-container').hasClass('open'))) {
+					if ($(e.target).is('#masthead-search *, #masthead-search')) {
+						return false;
+					}
+					else {
+						$('.search-container').removeClass('open');
+						$('.search-button').removeClass('open');
+					}
+				}
+
+				//Close country popup when user clicks any where on the page.
+				if (pageType >= 2) { //Tablet and larger devices
+					$('#country-popup').css('display', '');
+				}
+			})
+			//To open and close footer on Mobile
+			.on('click', '.menu-links > .subLinks > span', function (e) {
+				//Add functionality for when user uses touch on navigation/footer.
+
+				if ($(this).parents('#footer').length && pageWidth >= 768) {
+					return false;
+				}
+
+				e.preventDefault();
+				e.stopPropagation();
+
+				var elem = $(this).parent();
+
+				//Remove all "open" class that is a sibling to the currently touched element.
+				elem.siblings()
+					.find('.open').removeClass('open').end()
+					.removeClass('open');
+
+				if (elem.hasClass('open')) {
+					//Remove all "open" class inside of the currently touched element.
+					elem.find('.open').removeClass('open').end().removeClass('open');
+				}
+				else {
+					elem.addClass('open');
+
+					//fix for sonicwall height
+					$('body').trigger('subnav.visible');
+
+					if (pageType == 0) { //Mobile
+						//Animate background color to notify user that they have touched that element.
+						//Require: jQuery Color v2.1.2 plugin
+						elem.css({backgroundColor: '#fb4f14', color: '#ffffff'});
+						$('html, body').animate({scrollTop: $(this).offset().top}, function () {
+							elem.css('color', '#333333');
+							elem.animate({backgroundColor: "#eee"}, 500, function () {
+								elem.css('backgroundColor', '');
+							});
+						});
+					}
+				}
+			})
+			.on('click', '.navbar-toggle', function (e) {
+				e.stopPropagation();
+
+				//Hamburger - Mobile
+				//Open & Close slide out navigation.
+				if (pageType < 3) {
+					e.preventDefault();
+					$('html').toggleClass('openNav');
+					$('.utility').find('> li').removeClass('open');
+					$('#masthead-search').removeClass('open');
+				}
+			});
+
+		//Siamak: Open tier 3 and 4 on click
+		headerNavElem.on('click', '.tier2 > li.subLinks > a, .tier3 > li.subLinks > a', function (e) {
+
+			if (pageType >= 3) {
+				return false;
+			}
+
+			var isOpen = $(this).parent().siblings().hasClass('open');
+			if (isOpen) {
+				$(this).parent().siblings().removeClass('open');
+			}
+
+			bgAnimate(this);
+
+			e.preventDefault();
+			$(this).parent().toggleClass('open');
+		});
+
+		//Siamak: Open tier 2 on click
+		//Change bg color on Mobile and Tablet
+		headerNavElem.on('click', '.tier1 > .subLinks > a', function (e) {
+			e.stopPropagation();
+			$('#masthead-search').removeClass('open');
+			$('#search-button').removeClass('open');
+			$('#signin-container').removeClass('open');
+			var isOpen = $(this).parent().hasClass('open');
+			//Closing all other opened navigation
+			headerNavElem.find('.open').removeClass('open');
+			if (!isOpen) {
+				//Adding .open to target LI
+				$(this).parent().toggleClass('open');
+			}
+			//Siamak: Change tier 1 background when click
+			if (pageType < 3) {
+				bgAnimate(this);
+			}
+		});
+
+		//Issue with iPad Chrome where links couldn't be clicked.
+		//Reason was for SiteCatalyst injecting onclick attribute to all anchor tag.
+		$('footer').on('click', 'a', function (e) {
+			e.preventDefault();
+			e.stopImmediatePropagation();
+			//added this condition to open links in a new tab when needed
+			if ($(this).attr('target') != undefined && $(this).attr('target') == '_blank') {
+				window.open($(this).attr('href'));
+			}
+			else {
+				location.href = $(this).attr('href');
+			}
+		});
+
+		function bgAnimate(target) {
+			var elm = $(target);
+
+			elm.css({backgroundColor: '#fb4f14', color: '#ffffff'});
+			elm.animate({backgroundColor: '#eeeeee', color: '#333333'}, 500, function () {
+				elm.css('backgroundColor', '');
+			});
+		}
 	}
 })(jQuery);
