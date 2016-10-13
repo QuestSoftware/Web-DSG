@@ -4,8 +4,10 @@
 	width: 100%;
 }
 
-i.nav-arrow:before {
-	content: "\e259";
+i.nav-arrow {
+	&:before {
+		content: "\e259";
+	}
 }
 
 .openNav {
@@ -54,13 +56,6 @@ i.nav-arrow:before {
 	}
 	.form-control {
 		display: inline;
-	}
-	.svg-icon-dell {
-		margin-left: 10px;
-		font-size: 40px;
-		color: $svg-icon-dell-color;
-		display: inline-block;
-		vertical-align: middle;
 	}
 	.utility {
 		margin: 0;
@@ -272,7 +267,6 @@ i.nav-arrow:before {
 		/*End of TODO*/
 	}
 
-
 	ul {
 		&.tier1 {
 			padding-left: 0;
@@ -374,8 +368,14 @@ i.menu-indicator {
 }
 
 //This is needed as .masthead .utility .badge display parameter overwrote .is-logged-in
-.masthead .utility .badge.is-logged-in {
-	display: none;
+.masthead {
+	.utility {
+		.badge {
+			&.is-logged-in {
+				display: none;
+			}
+		}
+	}
 }
 
 #footer {
@@ -508,39 +508,30 @@ i.menu-indicator {
 }
 
 /* Start: Countries */
+[class^=flag-] {
+	padding-left: 20px !important;
+}
+
 .flag-us {
 	background: url("/images/shared/us.gif") 0 3px no-repeat;
-	padding-left: 20px !important;
 }
-
 .flag-br {
 	background: url("/images/shared/flags/br.gif") 0 3px no-repeat;
-	padding-left: 20px !important;
 }
-
 .flag-de {
 	background: url("/images/shared/flags/de.gif") 0 3px no-repeat;
-	padding-left: 20px !important;
 }
-
 .flag-cn {
 	background: url("/images/shared/flags/cn.gif") 0 3px no-repeat;
-	padding-left: 20px !important;
 }
-
 .flag-fr {
 	background: url("/images/shared/flags/fr.gif") 0 3px no-repeat;
-	padding-left: 20px !important;
 }
-
 .flag-jp {
 	background: url("/images/shared/flags/jp.gif") 0 3px no-repeat;
-	padding-left: 20px !important;
 }
-
 .flag-mx {
 	background: url("/images/shared/flags/mx.gif") 0 3px no-repeat;
-	padding-left: 20px !important;
 }
 
 /* End: Countries */
