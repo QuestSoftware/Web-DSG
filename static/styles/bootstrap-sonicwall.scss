@@ -1,0 +1,180 @@
+// Core variables and mixins
+@import "../bootstrap/custom/_variables";
+@import "../bootstrap/partials/_mixins";
+@import "../bootstrap/custom/_font-face";
+
+@import "bootstrap/collective";
+@import "bootstrap/widgets";
+
+@-ms-viewport {
+  width: device-width;
+}
+
+.bootstrap {
+  color: #444444;
+  font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+
+  // Reset and dependencies
+  @import "../bootstrap/custom/_normalize";
+  @import "../bootstrap/partials/_print";
+  @import "../bootstrap/custom/_glyphicons";
+
+  // Core CSS
+  @import "../bootstrap/partials/_scaffolding";
+  @import "../bootstrap/custom/_type";
+  @import "../bootstrap/partials/_code";
+  @import "../bootstrap/custom/_grid-dsg";
+  //@import "bootstrap/grid";
+  @import "../bootstrap/custom/_custom-grid-ext";
+  @import "../bootstrap/partials/_tables";
+  @import "../bootstrap/custom/_forms";
+  @import "../bootstrap/custom/_buttons";
+
+  // Components
+  @import "../bootstrap/partials/_component-animations";
+  @import "../bootstrap/partials/_dropdowns";
+  @import "../bootstrap/partials/_button-groups";
+  @import "../bootstrap/partials/_input-groups";
+  @import "../bootstrap/partials/_navs";
+  @import "../bootstrap/partials/_navbar";
+  @import "../bootstrap/custom/_breadcrumbs";
+  @import "../bootstrap/partials/_pagination";
+  @import "../bootstrap/partials/_pager";
+  @import "../bootstrap/partials/_labels";
+  @import "../bootstrap/partials/_badges";
+  /*@import "bootstrap/jumbotron";*/
+  @import "../bootstrap/partials/_thumbnails";
+  @import "../bootstrap/custom/alerts";
+  /*@import "bootstrap/progress-bars";*/
+  @import "../bootstrap/partials/_media";
+  @import "../bootstrap/partials/_list-group";
+  @import "../bootstrap/partials/_panels";
+  @import "../bootstrap/partials/_responsive-embed";
+  /*@import "bootstrap/wells";*/
+  @import "../bootstrap/partials/_close";
+  @import "../bootstrap/custom/text";
+
+	@import "../bootstrap/custom/dsg/_dell-icons";
+	@import "../bootstrap/custom/dsg/_custom-header-footer-dsg-v2";
+  @import "../bootstrap/custom/image";
+  @import "../bootstrap/widgets/banner";
+  @import "../bootstrap/widgets/slick";
+
+  // Components w/ JavaScript
+  /*@import "bootstrap/modals";*/
+  @import "../bootstrap/custom/tooltip";
+  /*@import "bootstrap/popovers";*/
+  @import "../bootstrap/widgets/_hero-banner";
+
+  // Utility classes
+  @import "../bootstrap/partials/_utilities";
+  @import "../bootstrap/custom/_responsive-utilities-dsg";
+
+  @import "../bootstrap/custom/_custom";
+  @import "../bootstrap/custom/margin-padding";
+  @import "../bootstrap/custom/_custom-affix-scroll-nav-top";
+
+  &.not-responsive {
+    .wrapper {
+      width: 967px;
+      min-width: 970px;
+      margin: 0 auto;
+    }
+    .container {
+      width: 970px;
+    }
+    footer {
+      margin-top: 0;
+      >div {
+        background-color: #0085c3;
+        min-width: 970px;
+      }
+    }
+
+    /*.hidden-xs, .hidden-sm, .hidden-md, .visible-xs, .visible-sm {
+      display: none !important;
+    }*/
+  }
+
+  &.is-responsive {
+    .wrapper {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .masthead {
+    margin-bottom: 0;
+  }
+
+  .btn {
+    line-height: 1.42857 !important;
+  }
+
+  .icon-small-checkmark::before {
+    font-size: 7px;
+    left: 4px;
+    position: absolute;
+    top: 3px;
+  }
+
+  .breadcrumb-container {
+    margin-top: 0;
+    padding-top: 10px;
+  }
+}
+
+@import "bootstrap/partial-reg";
+@import "../bootstrap/custom/_fancybox";
+@import "../bootstrap/custom/_image";
+@import "../bootstrap/custom/countries";
+
+@media (max-width: 767px) {
+  //XS
+  .site-canvas {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 500ms ease;
+    -moz-transition: -moz-transform 500ms ease;
+    -o-transition: -o-transform 500ms ease;
+    transition: transform 500ms ease;
+  }
+  .openNav {
+    .site-canvas {
+      -webkit-transform: translate3d(-276px, 0, 0);
+      -moz-transform: translate3d(-276px, 0, 0);
+      -ms-transform: translate3d(-276px, 0, 0);
+      -o-transform: translate3d(-276px, 0, 0);
+      transform: translate3d(-276px, 0, 0);
+      -webkit-transition: -webkit-transform 500ms ease;
+      -moz-transition: -moz-transform 500ms ease;
+      -o-transition: -o-transform 500ms ease;
+      transition: transform 500ms ease;
+    }
+    .main-nav-section {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  //SM
+  .openNav {
+    .site-canvas {
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      -o-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      -webkit-transition: -webkit-transform 500ms ease;
+      -moz-transition: -moz-transform 500ms ease;
+      -o-transition: -o-transform 500ms ease;
+      transition: transform 500ms ease;
+    }
+  }
+}
