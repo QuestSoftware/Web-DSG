@@ -1,3 +1,4 @@
+$domain: "dsg";
 $bootstrap-sass-asset-helper: false !default;
 //
 // Variables
@@ -41,12 +42,15 @@ $dell-teal: #42aeaf;
 
 $color-heading-links-hover: #007db8;
 $color-image-border: #737373;
-$color-danger: #ce1126;
+
+$text-blue: $dell-blue;
+$text-dark-blue: $dell-dark-blue;
 
 /* DemandBase Colors */
 
 $color-demandbase-dropdown-background: #c0c0c0;
 $color-demandbase-dropdown-border: #c0c0c0;
+$color-demandbase-dropdown-div-bg-color: $white;
 
 $brand-primary: #007db8 !default; //darken(#428bca, 6.5%) !default; // #337ab7
 $brand-success: #408001 !default;
@@ -79,7 +83,8 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family: 'Trebuchet MS', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Meiryo UI Reg', 'メイリオ Reg', 'MS UI Gothic Reg', 'Hiragino Kaku Gothic Reg', 'ヒラギノ角ゴ Pro W3 Reg', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'Microsoft JhengHei', '微軟正黑體', 'Malgun Gothic', Gulim, Tahoma, 'Arial Unicode', sans-serif !default;
+//$font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif !default;
+$font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "Microsoft YaHei", "Hiragino Sans GB", "Microsoft JhengHei", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif !default;
 
 $font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
@@ -105,8 +110,7 @@ $line-height-computed: floor(($font-size-base * $line-height-base)) !default; //
 
 //** By default, this inherits from the `<body>`.
 /*$headings-font-family:    inherit !default;*/
-$headings-font-family: 'museo-sans-for-dell-300', 'Trebuchet MS', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Meiryo UI Reg', 'メイリオ Reg', 'MS UI Gothic Reg', 'Hiragino Kaku Gothic Reg', 'ヒラギノ角ゴ Pro W3 Reg', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'Microsoft JhengHei', '微軟正黑體', 'Malgun Gothic', Gulim, Tahoma, 'Arial Unicode', sans-serif !default;
-$headings2-font-family: 'Trebuchet MS', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Meiryo UI Reg', 'メイリオ Reg', 'MS UI Gothic Reg', 'Hiragino Kaku Gothic Reg', 'ヒラギノ角ゴ Pro W3 Reg', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'Microsoft JhengHei', '微軟正黑體', 'Malgun Gothic', Gulim, Tahoma, 'Arial Unicode', sans-serif !default;
+$headings-font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif !default;
 $headings-font-weight: 500 !default;
 $headings-line-height: 1.166667 !default;
 $headings-color: inherit !default;
@@ -125,6 +129,40 @@ $icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "/fonts/") !defa
 $icon-font-name: "glyphicons-halflings-regular" !default;
 //** Element ID within SVG icon file.
 $icon-font-svg-id: "glyphicons_halflingsregular" !default;
+//_image.scss
+$icon-ui-play-underlay-bg: $white;
+$img-overlay-icon-ui-play-color: $dell-gray-dark;
+$media-player-container-icon-ui-play-color: $dell-gray-dark;
+$img-header-overlay-color: $white;
+
+$icon-anchor-hover-color: $dell-blue;
+$icon-anchor-active-color: $dell-blue;
+
+//== Affix Nav (Zombie Nav)
+$affix-border-color: #ccc;
+;
+$affix-li-border-color: #ccc;
+;
+$affix-li-active-border-color: $dell-blue;
+$affix-li-active-text-color: #444;
+$affix-li-a-focus-bg-color: transparent;
+$affix-li-a-hover-bg-color: #cce7f3;
+$affix-li-a-hover-text-color: $dell-blue;
+$affix-no-style-bg-color: $white;
+$affix-no-style-active-border-color: #ccc;
+$affix-no-style-disabled-border-color: $white;
+
+//Affix xs
+$affix-xs-ul-bg: $white;
+$affix-xs-ul-border-color: #ccc;
+$affix-xs-li-border-color: #ccc;
+$affix-xs-li-active-hover-border-color: $white;
+$affix-xs-a-hover-bg: $gray-lighter;
+
+//Overlay
+$has-overlay-bg: $white;
+$has-overlay-bg-color: rgba(255, 255, 255, 0.9);
+$has-overlay-hover-text-color: #333;
 
 //== Components
 //
@@ -193,6 +231,10 @@ $btn-primary-color: #fff !default;
 $btn-primary-bg: $brand-primary !default;
 $btn-primary-border: darken($btn-primary-bg, 5%) !default;
 
+$btn-primary-hover-color: #fff !default;
+$btn-primary-hover-bg: #016a9c !default;
+$btn-primary-hover-border: darken($btn-primary-hover-bg, 5%) !default;
+
 $btn-success-color: #fff !default;
 $btn-success-bg: $brand-success !default;
 $btn-success-border: darken($btn-success-bg, 5%) !default;
@@ -201,15 +243,59 @@ $btn-info-color: #fff !default;
 $btn-info-bg: $brand-info !default;
 $btn-info-border: darken($btn-info-bg, 5%) !default;
 
-$btn-warning-color: #fff !default;
-$btn-warning-bg: $brand-warning !default;
-$btn-warning-border: darken($btn-warning-bg, 5%) !default;
+$btn-warning-hover-color: #fff;
+$btn-warning-hover-bg: #be500e;
+$btn-warning-hover-border: #9d420b;
 
 $btn-danger-color: #fff !default;
 $btn-danger-bg: $brand-danger !default;
 $btn-danger-border: darken($btn-danger-bg, 5%) !default;
 
 $btn-link-disabled-color: $gray-light !default;
+$btn-default-disable-color: $dell-gray;
+
+//Flyout Button
+
+$flyout-bg: $white;
+$flyout-btn-bg: $dell-blue;
+$flyout-btn-color: $white;
+$flyout-border-color: #a9a9a9;
+$flyout-border-left-color: $dell-blue;
+$flyout-link-hover-color: $dell-blue;
+$flyout-close-color: $dell-gray-medium;
+
+$flyout-btn-xs-bg: $dell-blue;
+$flyout-xs-border-color: $dell-blue;
+
+//== Countries
+
+$country-selector-border-top-color: #aaa;
+$country-popup-bg-color: $white;
+$country-popup-link-color: $link-color;
+$country-popup-link-active-color: $white;
+$country-popup-link-active-bg-color: $dell-blue;
+
+//== Custom background colors
+
+$bg-white: $white;
+$bg-black: $black;
+$bg-light-grey: $dell-gray-very-light;
+$bg-light-grey-text-color: $dell-gray-dark;
+$bg-grey: $dell-gray-very-light;
+
+$new-bg-color: $dell-orange;
+$new-text-color: $white;
+
+$col-striped-odd-bg: $dell-gray-very-light;
+$row-striped-odd-bg: $table-bg-accent;
+
+//== Comparison
+$comparison-border-color: $dell-blue;
+$comparison-active-bg: $dell-blue;
+$comparison-active-color: $white;
+$comparison-btn-inactive-color: $dell-gray;
+$comparison-fixed-col-border-color: #ccc;
+$comparison-panel-old-bg: #eeeeee;
 
 //== Forms
 //
@@ -224,6 +310,10 @@ $input-bg-disabled: $gray-lighter !default;
 $input-color: $gray !default;
 //** `<input>` border color
 $input-border: #ccc !default;
+
+$form-error-bg-color: #ffffc9;
+$form-error-border-color: #ce1126;
+$form-error-active-bg-color: $white;
 
 // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
 //** Default `.form-control` border radius
@@ -253,6 +343,30 @@ $form-group-margin-bottom: 15px !default;
 $legend-color: $gray-dark !default;
 $legend-border-color: #e5e5e5 !default;
 
+//** Multiple Select
+
+$ms-choice-color: #444;
+$ms-choice-border-color: #ccc;
+$ms-choice-bg-color: $white;
+$ms-choice-focus-border-color: #007db8;
+$ms-choice-focus-shadow-color: rgba(0, 125, 184, 0.6);
+$ms-choice-disabled-bg-color: #f4f4f4;
+$ms-choice-disabled-border-color: #ddd;
+$ms-choice-span-color: #555;
+$ms-choice-placeholder-color: #555;
+$ms-choice-xs-span-color: #007db8;
+$ms-choice-xs-placeholder-color: #007db8;
+$ms-choice-xs-placeholder-hover-color: #00496c;
+
+$ms-drop-bg-color: $white;
+$ms-drop-text-color: #000;
+$ms-drop-border-color: #ccc;
+$ms-drop-hover-bg: #cce5f1;
+$ms-drop-label-color: #007db8;
+
+$ms-search-input-bg-color: #fff;
+$ms-search-input-border-color: #aaa;
+
 //** Background color for textual input addons
 $input-group-addon-bg: $gray-lighter !default;
 //** Border color for textual input addons
@@ -260,6 +374,10 @@ $input-group-addon-border-color: $input-border !default;
 
 //** Disabled cursor for form controls and buttons.
 $cursor-disabled: not-allowed !default;
+
+//== Dividers
+
+$polaris-divider-top-border-color: #eee;
 
 //== Dropdowns
 //
@@ -294,6 +412,17 @@ $dropdown-header-color: $gray-light !default;
 
 //** Deprecated `$dropdown-caret-color` as of v3.1.0
 $dropdown-caret-color: #000 !default;
+
+// Optional Dropdown
+$triangle-top-bg: $dell-gray-very-light;
+$has-collapsibles-color: #007db8;
+
+//-- Mark
+$mark-bg-color: #ff0;
+$mark-text-color: $black;
+
+//Fieldset
+$fieldset-border-color: #c0c0c0;
 
 //-- Z-index master list
 //
@@ -348,6 +477,9 @@ $screen-xs-max: ($screen-sm-min - 1) !default;
 $screen-sm-max: ($screen-md-min - 1) !default;
 $screen-md-max: ($screen-lg-min - 1) !default;
 
+//  Feature Products
+$featured-products-slick-border-color: #eee;
+
 //== Grid system
 //
 //## Define your custom responsive grid.
@@ -386,6 +518,10 @@ $container-lg: $container-large-desktop !default;
 //##
 
 // Basics of a navbar
+$navbar-brand-link-color: $white;
+
+
+
 $navbar-height: auto !default; //50px !default
 $navbar-margin-bottom: $line-height-computed !default;
 $navbar-border-radius: $border-radius-base !default;
@@ -488,6 +624,9 @@ $pagination-active-border: $brand-primary !default;
 $pagination-disabled-color: $gray-light !default;
 $pagination-disabled-bg: #fff !default;
 $pagination-disabled-border: #ddd !default;
+
+$pager-link-bg: #eee;
+$pager-border-color: #ccc;
 
 //== Pager
 //
@@ -641,6 +780,12 @@ $modal-sm: 300px !default;
 //== Alerts
 //
 //## Define alert colors, border radius, and padding.
+$alert-text-color: $dell-gray-dark;
+$alert-bg-color: #ffffc9;
+$alert-border-color: #eee;
+$alert-link-color: $dell-blue;
+$alert-link-hover-color: $dell-dark-blue;
+$alert-link-color-before: $dell-gray-dark;
 
 $alert-padding: 10px 35px 0 40px !default; //15px !default;
 $alert-border-radius: $border-radius-base !default;
@@ -654,13 +799,27 @@ $alert-info-bg: $state-info-bg !default;
 $alert-info-text: $state-info-text !default;
 $alert-info-border: $state-info-border !default;
 
-$alert-warning-bg: $state-warning-bg !default;
-$alert-warning-text: $state-warning-text !default;
-$alert-warning-border: $state-warning-border !default;
+$alert-warning-bg: #ee6411;
+$alert-warning-text: #ee6411;
+$alert-warning-border: #d6390f;
+$alert-warning-hr-top-border-color: #be330e;
+$alert-warning-link-color: #be500e;
 
 $alert-danger-bg: $state-danger-bg !default;
 $alert-danger-text: $state-danger-text !default;
 $alert-danger-border: $state-danger-border !default;
+
+$color-danger: #ce1126;
+$color-info: #007db8;
+$color-success: #6ea204;
+$color-warning: #d74324;
+
+//== Borders
+//
+//## Define borders color, style and size.
+$border-grey-color: $dell-gray-stroke;
+
+
 
 //== Progress bars
 //
@@ -755,6 +914,36 @@ $panel-danger-text: $state-danger-text !default;
 $panel-danger-border: $state-danger-border !default;
 $panel-danger-heading-bg: $state-danger-bg !default;
 
+$panel-group-collapsible-border-color: $dell-gray;
+$panel-group-heading-text-color: $dell-blue;
+
+// Events
+$event-detail-border-color: #ccc;
+$event-on-demand-header-bg: $dell-orange;
+$event-in-person-header-bg: $dell-purple;
+$event-online-header-bg: $dell-green;
+$event-detail-signed-off-border-color: #cbcbcb;
+$event-container-off-canvas-bg-color: $white;
+
+/*Documents*/
+$doc-casestudy: $dell-blue;
+$doc-header-bg: $dell-blue;
+
+//Date
+$date-widget-border-color: #d9d9d9;
+$date-widget-header-color: $white;
+$date-body-bg-color: $white;
+
+// Introduction
+
+$grey-box-bg-color: #eee;
+
+// Listing Entries
+
+$listing-header-color: $white;
+$listing-entries-color: #444;
+$listing-entries-link-color: #444;
+
 //== Thumbnails
 //
 //##
@@ -829,6 +1018,11 @@ $carousel-indicator-border-color: #fff !default;
 
 $carousel-caption-color: #fff !default;
 
+$carousel-link-hover-color: #007db8;
+$carousel-h4-color: #444;
+$carousel-indicators-li-bg: #ccc;
+$carousel-indicators-active-bg: #444;
+
 //== Close
 //
 //##
@@ -864,6 +1058,8 @@ $text-muted: $gray-light !default;
 $abbr-border-color: $gray-light !default;
 //** Headings small color
 $headings-small-color: $gray-light !default;
+//** Blockquote color
+$blockquote-color: $dell-berry !default;
 //** Blockquote small color
 $blockquote-small-color: $gray-light !default;
 //** Blockquote font size
@@ -876,3 +1072,51 @@ $page-header-border-color: $gray-lighter !default;
 $dl-horizontal-offset: $component-offset-horizontal !default;
 //** Horizontal line color.
 $hr-border: $gray-lighter !default;
+
+/*Slick banners*/
+$slick-dots: #ccc;
+$slick-dots-active: #444;
+$slick-list-loading-bg: #fff;
+$slick-arrow-color: $dell-blue;
+$slick-arrow-disabled-color: #444;
+$slick-1170-caption-bg: #f5f5f5;
+$slick-1170-caption-color: #007db8;
+$slick-1170-caption-hover-color: #007db8;
+$slick-770-caption-bg: #f5f5f5;
+$slick-770-caption-color: #007db8;
+$slick-770-caption-hover-color: #007db8;
+
+/*3 Play Media*/
+$play-3-media-border-color: $dell-gray;
+
+/* Variables below this line is only used on non-responsive stylesheet */
+
+//UI Widget
+$ui-widget-content-color: #222;
+$ui-widget-content-border: #dadada;
+$ui-widget-header-color: #222;
+$ui-widget-header-border: #dadada;
+$ui-widget-header-link: #222;
+
+//UI State
+$ui-state-border: #d3d3d3;
+$ui-state-color: #555;
+$ui-state-link: #555;
+
+$ui-state-hover-color: #212121;
+$ui-state-hover-border: #999;
+$ui-state-hover-link: #212121;
+
+$ui-state-active-color: #212121;
+$ui-state-active-border: #fff;
+$ui-state-active-link: #212121;
+
+$btn-success-hover-color: #fff;
+$btn-success-hover-bg: #0B5000;
+$btn-success-hover-border: darken($btn-success-hover-bg, 5%) !default;
+
+$btn-warning-color: #fff !default;
+$btn-warning-bg: $brand-warning !default;
+$btn-warning-border: darken($btn-warning-bg, 5%) !default;
+
+$btn-default-disable-border-color: #aaaaaa;
