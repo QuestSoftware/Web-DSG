@@ -1,0 +1,120 @@
+.quest-logo, .search-container {
+	float: left;
+}
+
+.search-container {
+	width: 55%;
+	margin-top: 20px;
+	margin-left: 50px;
+	input[type=text] {
+		width: 98%;
+		padding-right: 4px;
+		padding-left: 4px;
+		margin-bottom: 0;
+		height: 33px;
+		border: 1px solid #ccc;
+		font-size: 15px;
+		padding: 5px 50px 5px 20px;
+		line-height: 1.42857;
+		color: #555;
+		background-color: #fff;
+		background-image: none;
+		border-radius: 1px;
+		float: left;
+		&:focus {
+			border-color: #016a9c;
+		}
+	}
+	button {
+		font-size: 20px;
+		position: static;
+		top: 4px;
+		margin-left: -28px;
+		padding: 2px 5px 0;
+		background: #fb4f14;
+		color: #fff;
+		border-top-right-radius: 1px;
+		border-bottom-right-radius: 1px;
+		height: 33px;
+		right: 0;
+
+		&:hover {
+			color: #fff;
+			background: #ff692e;
+		}
+	}
+	i.glyphicon {
+		top: -2px;
+	}
+}
+
+.quest-hd-cart {
+	margin-top: 28px;
+	margin-left: 80px;
+	display: inline-block;
+}
+
+/*Make header's language selector move all the way to right*/
+.chosen-container a {
+	float: right;
+}
+
+#cleverGlobalizerLanguage {
+	margin-top: 6px;
+	padding-left: 0;
+	div {
+		&.chosen-drop {
+			top: 90%;
+		}
+	}
+	a {
+		&.chosen-single {
+			span {
+				padding-left: 20px;
+			}
+		}
+	}
+}
+
+/*Adding border around language selector on hover*/
+.chosen-with-drop, .chosen-container-active {
+	a.chosen-single {
+		border: 1px solid #c4c4c4;
+		border-bottom: none;
+		padding: 13px 4px 15px 9px !important;
+		span {
+			color: #333 !important;
+		}
+		&:hover, &:active {
+			text-decoration: none;
+			color: #333;
+		}
+	}
+}
+
+/*Disappearing the search box on mobile devices*/
+@media (max-width: 649px) {
+	.search-container {
+		display: none;
+	}
+	.quest-hd-cart {
+		margin-top: 33px;
+		right: 60px;
+		position: absolute;
+	}
+}
+
+@media (min-width: 650px) and (max-width: 988px) {
+	.search-container {
+		margin-left: 15px;
+		width: 40%;
+
+	}
+	.quest-hd-cart {
+		right: 140px;
+		position: absolute;
+	}
+	#cleverGlobalizer {
+		width: 25%;
+	}
+}
