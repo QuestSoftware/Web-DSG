@@ -1,0 +1,216 @@
+  /* Do not remove @charset encoding*/
+@charset "UTF-8";
+
+  /* Trending Cards Styles*/
+  .card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  }
+  .card:hover {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.25);
+  }
+  .card {
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-clip: padding-box;
+    transition: box-shadow 0.5s ease;
+    background-color: #FFFFFF
+  }
+  .card span.card-title {
+    font-size: 18px;
+    font-weight: 300;
+    display: block;
+    height: 50px;
+    font-family:"avenir-book","calibri","Segoe UI","Helvetica Neue","Meiryo UI Reg","πâíπéñπâ¬πé¬ Reg","MS UI Gothic Reg","Hiragino Kaku Gothic Reg","πâÆπâ⌐πé«πâÄΦºÆπé┤ Pro W3 Reg","Microsoft YaHei","σ╛«Φ╜»Θ¢àΘ╗æ","Hiragino Sans GB","Microsoft JhengHei","σ╛«Φ╗ƒµ¡úΘ╗æΘ½ö","Malgun Gothic",Gulim,Tahoma,"Arial Unicode",sans-serif;
+  }
+  .card .card-image {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    z-index: 999;
+  }
+  .card .card-content {
+    padding: 20px;
+    border-radius: 0 0 2px 2px;
+    background-clip: padding-box;
+    box-sizing: border-box;
+  }
+  .card .card-text {
+    margin-top: 8px;
+    height: 135px;
+  }
+  .card .card-content p {
+    margin: 0;
+    padding: 0;
+  }
+  .card .card-action {
+    margin-top: 15px;
+  }
+  @media (min-width: 1920px){
+    .card .card-image {
+      height: 280px !important;
+    }
+    .card span.card-title {
+      height: 25px;
+    }
+    .card-text > p {
+      height: 75px !important;
+    }
+  }
+  @media (min-width: 1366px){
+    .card .card-image {
+      height: 220px;
+    }
+  }
+  @media (min-width: 1200px){
+    .card .card-text {
+      height: 95px !important;
+    }
+  }
+  @media (max-height: 1199px) and (min-width: 1024px){
+    .card .card-text {
+      height: 110px;
+    }
+    .card .card-action {
+      margin-top: 20px;
+    }
+  }
+  /* Weird breaking point
+  @media (max-height: 1023px) and (min-width: 992px){
+  .card .card-text {
+  height: 135px;
+    }
+  }
+  */
+  @media (max-width: 991px) and (min-width: 768px){
+    .card .card-text {
+      height: 110px;
+    }
+    .card .card-action {
+      margin-top: 0px;
+    }
+  }
+
+  /* Trending Cards Images - ONLY CHANGE URL*/
+  .trend-card-1{
+    background: url(/images/banner/seahawk/Multiple-exposure-with-business-and-night-cityscape-000080696529_XXXLarge.jpg) no-repeat center center;
+    background-size: cover;
+    background-position: right top;
+  }
+  .trend-card-2{
+    background: url(/images/banner/seahawk/HPG-NetSec_Capture.jpg) no-repeat center center;
+    background-size: cover;
+    background-position: right top;
+  }
+  .trend-card-3{
+    background: url(/images/banner/seahawk/IT-engineer-000102344647_XXXLarge.jpg) no-repeat center center;
+    background-size: cover;
+    background-position: right top;
+  }
+
+  /* Hero Area / Jumbtron */
+  .jumbotron{
+    background: url("/images/banner/seahawk/snwl-hero-6f1e.jpg") no-repeat center center;
+    height: 400px;
+    background-size: cover;
+    background-position: right top;
+  }
+  .valign-outer {
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+  .valign-outer .valign-inner {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  @media (min-width: 992px) {
+    .jumbotron {
+      height: 530px;
+    }
+  }
+  @media (min-width: 1440px) {
+    .jumbotron {
+      height: 600px !important;
+    }
+  }
+  @media (max-width: 600px) {
+    .valign-outer .valign-inner {
+      vertical-align: bottom;
+    }
+    .xs-jumbotron-header{
+      background-color:rgba(99, 102, 106, 0.5);
+      padding: 20px;
+    }
+    .xs-jumbotron-header h1{
+      font-size: 24px;
+    }
+  }
+
+  /* Zig Zag / Editorial Section */
+  @media (min-width: 992px) {
+    #zz-1-text{
+      margin-left: 30px;
+      padding-right: 0px;
+    }
+    #zz-2-text{
+      padding-right: 0px;
+    }
+    #zz-3-text{
+      margin-left: 30px;
+      padding-right: 0px;
+    }
+    /*
+    #zz-1-img{
+  }
+    #zz-2-img{
+  }
+    #zz-3-img{
+  }
+    */
+  }
+  
+  /* Misc Styles */
+  .grey-bg-sw {
+    background-color: #f7f7f7;
+  }
+  .fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  @media (max-width: 991px){
+    .btn-block-sm {
+      display: block;
+      width: 100%;
+    }
+  }
+  .img-border-grey{
+    border: 1px solid #63666a;
+  }
+  .new-blockquote{
+    color:#4197B4 !important;
+    font-size: 18px !important;
+    line-height: 32px !important;
+  }
+  .btn-secondary{
+    color: #FFFFFF;
+    background-color: #63666a;
+    border: 1px solid #4a4a4a;
+  }
+  .h-50{
+    height: 50px;
+  }
+  .customer-stories{
+    font-weight: bold;
+    font-size: 17px;
+  }
+  /* HD Screen Sizes */
+  @media (min-width: 1920px){
+    #trending-cards {
+      background-color: #63666a !important;
+    }
+    #editorials {
+      line-height: 28px;
+    }
+  }
