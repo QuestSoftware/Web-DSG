@@ -1,0 +1,181 @@
+@charset "UTF-8";
+.masthead {
+margin: 0;
+background-color: #fff;
+}
+.top-header {
+display: none;
+}
+.masthead .main-nav-section {
+background-color: #63666a;
+height: 42px;
+}
+.masthead-shadow-section{
+display:none;
+}
+.btn-primary {
+background-color: #e2642c;
+border-color: #e2642c;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .btn-primary.dropdown-toggle {
+background-color:#e2642c;
+border-color:#e2642c;
+}
+.navbar-inverse {
+background-color: #fff;
+}
+.navbar-inverse > div:nth-child(2){
+background-color: #63666a;
+}
+.masthead .utility-section-wrapper {
+border-bottom: 1px solid #fff;
+}
+.masthead .utility-section-wrapper {
+background-color: #FFF;
+}
+.masthead .main-nav-section ul.tier1 li.open > a {
+color: #e2642c;
+background-color: #dbdbdb;
+}
+.masthead .main-nav-section ul div.tier2 {
+/**background-color: #d4d4d4;**/
+}
+.masthead a {
+color: #005D84;
+}
+.masthead  > .tier2  a:hover{
+/**color: #e2642c;**/
+}
+.masthead .main-nav-section ul div.tier2 > .container > div > a {
+color: #4a4a4a;
+}
+.masthead .main-nav-section ul div.tier2>.container>div>a:hover {
+/**color: #e2642c;**/
+}
+.masthead .main-nav-section ul div.tier3 a:hover {
+/**color: #e2642c;**/
+}
+.masthead .main-nav-section ul div.tier2 .tier3 .container .row > div aside {
+background-color: #fff;
+border: 1px solid #eee;
+}
+#footer .footer-top-section {
+background-color: #4a4a4a;
+}
+*::before, *::after {
+box-sizing: border-box;
+}
+*::before, *::after {
+box-sizing: border-box;
+}
+#footer .footer-copyright-section {
+font-size: 1.3em;
+text-align: center;
+}
+#footer .footer-copyright-section {
+background-color: #63666a;
+color: #EEEEEE;
+}
+#footer .footer-copyright-section a {
+color: #ffffff;
+}
+a.text-primary:hover {
+color: #e2642c
+}
+a.bg-primary:hover {
+background-color: #e2642c
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open>.btn-primary.dropdown-toggle {
+background-color: #e2642c;
+}
+.navbar-inverse {
+border-color: #005D84
+}
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.active>a:focus {
+background-color: #e2642c
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu>.dropdown-header {
+border-color: #005D84
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+background-color: #005D84
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a,
+.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:hover,
+.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:focus {
+background-color: #e2642c
+}
+.label-primary[href]:hover,
+.label-primary[href]:focus {
+background-color: #005D84
+}
+#svg_fallback   {
+background:url("/images/logos/new_brand_sonicwall.png");
+}
+.masthead .utility a:link, .masthead .utility a:visited { 
+color:#4a4a4a
+}
+.masthead .utility a:hover, .masthead .utility a:focus {
+color: #005D84
+}
+.masthead a {
+color: #005D84;
+}
+.tier3 a{
+color:#005D84;
+}
+.masthead .main-nav-section ul.tier1 li.open > a {
+color: #FFFFFF;
+}
+#footer {
+margin-top: 0px
+}
+.masthead .main-nav-section ul.tier1 li.open > a {
+color: #e2642c;
+background-color: #fff;
+}
+.btn-success {
+background-color: #005d84;
+border-color: #4197B4;
+}
+.btn-success:hover, 
+.btn-success:focus, 
+.btn-success.focus, 
+.btn-success:active, 
+.btn-success.active, 
+.open>.btn-success.dropdown-toggle {
+background-color: #4a4a4a;
+}
+.masthead .main-nav-section ul.tier2 {
+border-bottom: 4px solid #E2642C;
+}
+body {
+font-family:"calibri","avenir-book","Segoe UI","Helvetica Neue","Meiryo UI Reg","MS UI Gothic Reg","Hiragino Kaku Gothic Reg","Microsoft YaHei","Hiragino Sans GB","Microsoft JhengHei","Malgun Gothic",Gulim,Tahoma,"Arial Unicode",sans-serif;
+}
+h1,h2,h3,h4,h5,h6   {
+font-family:"avenir-book","calibri","Segoe UI","Helvetica Neue","Meiryo UI Reg","πâíπéñπâ¬πé¬ Reg","MS UI Gothic Reg","Hiragino Kaku Gothic Reg","πâÆπâ⌐πé«πâÄΦºÆπé┤ Pro W3 Reg","Microsoft YaHei","σ╛«Φ╜»Θ¢àΘ╗æ","Hiragino Sans GB","Microsoft JhengHei","σ╛«Φ╗ƒµ¡úΘ╗æΘ½ö","Malgun Gothic",Gulim,Tahoma,"Arial Unicode",sans-serif;
+}
+.btn{
+padding:7px 12px 6px 11px;
+}
+.masthead .navbar-brand {
+margin-top: 21px;
+}
+.masthead .search-container {
+border-bottom: 4px solid #E2642C;
+}
+.btn-link-xs {
+padding: 3px 6px; color: #fff;
+}
