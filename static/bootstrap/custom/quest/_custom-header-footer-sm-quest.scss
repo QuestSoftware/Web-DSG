@@ -1,0 +1,343 @@
+//Tablet Mode
+@media (min-width: 768px) { //SM
+	.masthead {
+		box-shadow: 0 3px 5px 0 rgba(170, 170, 170, 0.5);
+		margin-bottom: 10px;
+		min-width: 1200px;
+		ul {
+			&.tier3, &.tier4 {
+				&:before {
+					//3px 0px 5px 0 rgba(97, 95, 95, 0.49); changed to lighter
+					@include box-shadow(3px 0 3px 0 rgba(97, 95, 95, 0.2));
+					display: block;
+					content: '';
+					position: absolute;
+					top: 0;
+					left: -5px;
+					height: 100%;
+					width: 5px;
+					z-index: 1;
+				}
+			}
+			&.tier1 {
+				> li:hover {
+					> a {
+						color: #ffffff;
+					}
+				}
+			}
+			&.tier2 {
+				li:hover {
+					> a {
+						background-color: #eeeeee;
+					}
+					> a i {
+						color: $top-link-hover;
+					}
+				}
+				li.subLinks {
+					i.nav-arrow:before {
+						content: "\e258";
+					}
+				}
+			}
+			&.tier3 li {
+				&:hover {
+					i {
+						color: $top-link-hover;
+					}
+				}
+				i {
+					color: #333333;
+				}
+			}
+		}
+
+		i.nav-arrow:before {
+			content: "\e259";
+		}
+
+		.tier1 {
+			li.open {
+				> ul.tier2 {
+					display: block;
+					li.subLinks:hover {
+						> ul.tier3, > ul.tier4 {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+
+		.utility {
+			width: auto;
+			a {
+				padding: 22px 9px;
+			}
+			[class^=icon] {
+				font-size: 18px;
+			}
+			li {
+				line-height: 22px;
+				.hidden-xs, .hidden-sm {
+					display: inline !important;
+				}
+				h5 {
+					font-size: 14px;
+				}
+			}
+			.icon-small-useraccount {
+				margin-right: 5px;
+			}
+			.navbar-toggle {
+				display: none;
+			}
+		}
+		.container {
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: 15px;
+			padding-right: 15px;
+			width: 100%;
+		}
+		.utility-section {
+			margin-left: auto;
+			margin-right: auto;
+			width: 1200px !important;
+		}
+		.main-nav-section {
+			position: static;
+			margin: 0 auto 0 auto;
+			width: 100%;
+			height: auto;
+			background-color: transparent;
+			ul {
+				&.tier1 {
+					> li {
+						border-bottom: none;
+						a {
+							border-bottom: none;
+						}
+						&.open {
+							background: #fb4f14;
+							color: #ffffff;
+							> a {
+								color: #ffffff;
+							}
+						}
+					}
+					li a:hover {
+						color: $top-link-hover;
+					}
+					li.subLinks:hover {
+						/*
+						Siamak : Should call variable for colors
+						background-color: $nav-subLinks-hover-bg;
+						color: $nav-subLinks-hover-color;*/
+						color: #fb4f14;
+					}
+					li.subLinks > a:hover {
+						/*
+						Siamak : Variable
+						color: $nav-subLinks-hover-color;*/
+						color: #fb4f14;
+					}
+					li.open > a:hover {
+						color: #ffffff;
+					}
+					li.open ul.tier2 li.open ul.tier3 {
+						color: $nav-subLinks-hover-color;
+					}
+					> li {
+						display: inline-block;
+						float: left;
+						font-weight: 600;
+						padding: 0;
+						> a {
+							padding: 25px 15px 25px;
+							font-size: 17px;
+							margin-bottom: -4px;
+						}
+					}
+					i.menu-indicator {
+						display: none;
+					}
+				}
+				&.tier1 span, &.tier2 span {
+					width: auto;
+				}
+				&.tier2 {
+					border-top: 3px solid $nav-border-top;
+					display: none;
+					position: absolute;
+					margin: 0;
+					padding: 0;
+					z-index: 999;
+					width: 280px;
+					background: #fff;
+					@include box-shadow(2px 4px 5px 0px rgba(97, 95, 95, 0.49));
+					li > a:hover {
+						color: $top-link-hover-t2;
+						/*background: #999;*/
+					}
+					i.menu-indicator {
+						display: block;
+						&:before {
+							content: "\e601";
+						}
+					}
+					a {
+						text-decoration: none;
+						padding: 7px 15px;
+						position: relative;
+					}
+					li {
+						height: auto;
+						font-weight: normal;
+						overflow: visible;
+						&.subLinks {
+							position: initial;
+							&:hover {
+								background: #fff;
+							}
+							a:hover {
+								background: $nav-subLinks-hover-bg-t2;
+								color: $nav-subLinks-hover-color-t2;
+							}
+						}
+					}
+					> li {
+						display: block;
+						background: #fff;
+						border-left: 1px solid #eee;
+						i.menu-indicator {
+							color: #007db8;
+						}
+					}
+					span {
+						width: 92%;
+					}
+					li:hover > ul {
+						li {
+							display: block;
+							a {
+								display: block;
+							}
+						}
+					}
+				}
+				&.tier3, &.tier4 {
+					position: absolute;
+					left: 280px;
+					top: -3px;
+					margin-top: 0;
+					box-sizing: content-box;
+					border-top: 3px solid $nav-border-top;
+					display: none;
+					float: right;
+					min-height: 100%;
+					width: 280px;
+					background: #fff;
+					padding: 0;
+					@include box-shadow(2px 4px 5px 0px rgba(97, 95, 95, 0.49));
+
+				}
+				li {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	.openNav {
+		.site-canvas {
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			-ms-transform: translate3d(0, 0, 0);
+			-o-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			-webkit-transition: -webkit-transform 500ms ease;
+			-moz-transition: -moz-transform 500ms ease;
+			-o-transition: -o-transform 500ms ease;
+			transition: transform 500ms ease;
+		}
+	}
+	.shadow-overlay-left {
+		display: none;
+	}
+	#footer {
+		background-color: $footer-bg-color;
+		padding-top: 20px;
+		border-top: 1px solid #aaa;
+		.menu-container {
+			margin: 0 auto;
+		}
+		.footer-shadow-section {
+			margin: -14px auto 0;
+		}
+		.footer-top-section {
+			background-color: $footer-bg-color;
+			margin-bottom: 10px;
+
+			ul.menu-links {
+				padding: 0 15px 20px;
+				color: $footer-link-color;
+				border-bottom: 1px solid #eee;
+				li {
+					border-bottom: 0;
+
+					> ul {
+						display: block;
+					}
+				}
+				> li {
+					padding-right: 11%;
+					display: inline-block;
+					vertical-align: top;
+					float: left;
+
+					> a, > span {
+						/*color: $white;*/
+						font-weight: 700;
+						/*padding: 0 0 5px 0;*/
+					}
+				}
+				> li:last-child {
+					padding-right: 0;
+				}
+				a, span {
+					color: $footer-link-color;
+					padding: 0 0 5px 0;
+				}
+			}
+			a {
+				color: $footer-link-color;
+				padding: 0 0 5px 0;
+				&:hover {
+					color: $footer-link-color;
+					text-decoration: underline;
+				}
+			}
+		}
+		.footer-bottom-section {
+			text-align: center;
+			.menu-links {
+				margin: 10px 0;
+			}
+		}
+		.menu-indicator {
+			display: none;
+		}
+		.footer-copyright-section {
+			text-align: center;
+			font-size: 12px;
+			a {
+				color: #333;
+			}
+			li {
+				border: 0;
+				display: inline-block;
+			}
+		}
+	}
+}

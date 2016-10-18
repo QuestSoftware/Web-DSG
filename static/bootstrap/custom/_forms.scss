@@ -423,15 +423,15 @@ input[type="checkbox"] {
 
 .form-control {
   &.error {
-    background-color: $state-danger-bg;
-	  border: 1px solid $color-danger;
+		background-color: $form-error-bg-color;
+		border: 1px solid $form-error-border-color;
 
     //background-image: url("/images/shared/formError.png");
     //background-position: 100% 50%;
     //background-repeat: no-repeat;
 
     &:active, &:focus {
-      background-color: $white;
+			background-color: $form-error-active-bg-color;
     }
   }
 }
@@ -636,7 +636,7 @@ select {
     font-size: 14px;
   }
 
-  @media (min-width: 768px) {
+	@media (min-width: $screen-sm-min) {
     display: table;
     width: 100%;
 

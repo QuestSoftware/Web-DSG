@@ -50,7 +50,7 @@
   margin-right: 0%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
   .col-sm-offset-right-12 {
     margin-right: 100%;
   }
@@ -92,7 +92,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $screen-md-min) {
   .col-md-offset-right-12 {
     margin-right: 100%;
   }
@@ -134,7 +134,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   .col-lg-offset-right-12 {
     margin-right: 100%;
   }

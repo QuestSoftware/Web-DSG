@@ -6,13 +6,13 @@
 
 // Reset and dependencies
 @import "../bootstrap/custom/normalize";
-@import "../bootstrap/partials/print";
+//@import "../bootstrap/partials/print";
 @import "../bootstrap/partials/glyphicons";
 
 // Core CSS
 @import "../bootstrap/custom/scaffolding";
 @import "../bootstrap/custom/type";
-@import "../bootstrap/partials/code";
+//@import "../bootstrap/partials/code";
 @import "../bootstrap/partials/grid";
 @import "../bootstrap/custom/custom-grid-ext";
 @import "../bootstrap/partials/tables";
@@ -28,14 +28,14 @@
 @import "../bootstrap/partials/navbar";
 @import "../bootstrap/custom/breadcrumbs";
 @import "../bootstrap/partials/pagination";
-@import "../bootstrap/partials/pager";
+/*@import "../bootstrap/partials/pager";*/
 @import "../bootstrap/partials/labels";
 @import "../bootstrap/partials/badges";
 /*@import "bootstrap/jumbotron";*/
-@import "../bootstrap/partials/thumbnails";
+/*@import "../bootstrap/partials/thumbnails";*/
 @import "../bootstrap/custom/alerts";
 /*@import "bootstrap/progress-bars";*/
-@import "../bootstrap/partials/media";
+/*@import "../bootstrap/partials/media";*/
 @import "../bootstrap/partials/list-group";
 @import "../bootstrap/partials/responsive-embed";
 /*@import "bootstrap/wells";*/
@@ -43,8 +43,8 @@
 
 @import "../bootstrap/custom/custom";
 @import "../bootstrap/custom/margin-padding";
-@import "../bootstrap/custom/dell-icons";
-@import "../bootstrap/custom/custom-header-footer";
+@import "../bootstrap/custom/dsg/_dell-icons";
+@import "../bootstrap/custom/dsg/_custom-header-footer";
 @import "../bootstrap/custom/demandbase";
 @import "../bootstrap/custom/right-rail-form";
 @import "../bootstrap/custom/image";
@@ -76,6 +76,7 @@
 @import "../bootstrap/widgets/banner";
 @import "../bootstrap/widgets/comparison";
 @import "../bootstrap/widgets/slick";
+@import "../bootstrap/widgets/mosaic";
 
 @import "../bootstrap/custom/collapsed";
 @import "../bootstrap/custom/3playmedia";

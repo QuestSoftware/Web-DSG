@@ -139,17 +139,24 @@ function init() {
 	}
 
 	function solutionCallback(title, prevValue) {
-		$(this).parent().removeClass('hidden').end().multipleSelect({
-			placeholder: title,
-			multiple: false,
-			selectAll: false,
-			single: true,
-			onClick: function (view) {
-				if (view.value != '') {
-					$('#product').multipleSelect('setSelects', []);
+		if (typeof $(this).data('multipleSelect') == 'object') {
+			$(this).next().find('ul').remove();
+			$(this).multipleSelect('refresh');
+			$(this).multipleSelect('setSelects', [prevValue]);
+		}
+		else {
+			$(this).parent().removeClass('hidden').end().multipleSelect({
+				placeholder: title,
+				multiple: false,
+				selectAll: false,
+				single: true,
+				onClick: function (view) {
+					if (view.value != '') {
+						$('#product').multipleSelect('setSelects', []);
+					}
 				}
-			}
-		}).multipleSelect("uncheckAll");
+			}).multipleSelect("uncheckAll");
+		}
 	}
 
 	$(document).ready(function () {
@@ -395,23 +402,24 @@ function populateListing() {
 
 		var template = $('#listing-template').html(), offsetTotal = 0;
 
-		$.each(dataopt.data, function (key, val) {
+		var ptr = 0;
+
+		// using for loop instead of each to avoiding loosing any result which didn't meet second condition requirement
+		// The loop will continue for next range if the if-statement returns false
+		for (ptr; ptr < dataopt.data.length; ptr++) {
+			var obj = dataopt.data[ptr];
+
 			//Assuming dataopt.data titles are already in alphabetical order.
-			if (range[rangeIndex].range.test(val.title)) {
+			if (range[rangeIndex].range.test(obj.title)) {
 				range[rangeIndex].total++;
-				range[rangeIndex].html += populateTemplate(val, template);
+				range[rangeIndex].html += populateTemplate(obj, template);
 			}
 			else {
 				finalizeRangeDisplay(rangeIndex);
-
 				rangeIndex++;
-
-				if (range[rangeIndex].range.test(val.title)) {
-					range[rangeIndex].total++;
-					range[rangeIndex].html += populateTemplate(val, template);
-				}
+				ptr--;
 			}
-		});
+		}
 
 		finalizeRangeDisplay(rangeIndex);
 

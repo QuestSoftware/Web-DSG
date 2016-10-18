@@ -1,20 +1,10 @@
+$domain: "quest";
 $bootstrap-sass-asset-helper: false !default;
 //
 // Variables
 // --------------------------------------------------
 
-//== Colors
-//
-//## Gray and brand colors for use across Bootstrap.
-
-$gray-base: #000 !default;
-$gray-darker: lighten($gray-base, 13.5%) !default; // #222
-$gray-dark: lighten($gray-base, 26.5%) !default; // #444
-$gray: lighten($gray-base, 33.5%) !default; // #555
-$gray-light: lighten($gray-base, 46.7%) !default; // #777
-$gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
-
-//Dell UI
+/*Dell Colors*/
 // Grays
 $dell-gray-dark: #444;
 $dell-gray: #aaa;
@@ -39,17 +29,108 @@ $dell-berry: #b7295a;
 $dell-purple: #6e2585;
 $dell-teal: #42aeaf;
 
+/*Quest Colors*/
+$text-blue: #003876;
+$text-dark-blue: $text-blue; //same as text-blue, we don't have dark blue for Quest
+$text-orange: #FB4F14;
+$darker-gray: #333333;
+$dark-gray: #444444;
+$natural-gray: #aaaaaa;
+$light-gray: #eeeeee;
+$text-green: #3E831C;
+$body-color: $darker-gray;
+
+//== Scaffolding
+/* Start:Global */
+$body-bg: #ffffff !default; //Body bg
+$text-color: $darker-gray !default; //Body text color
+$link-color: #016a9c !default; //Link color
+$link-hover-color: darken($link-color, 20%) !default; //Link hover color
+/* End:Global */
+$link-hover-decoration: underline !default;
+
+/* Start:Header */
+$nav-subLinks-hover-bg: $text-orange; //Navigation tier 1 hover bg
+$nav-subLinks-hover-color: $white; //Navigation tier 1 hover color
+$nav-border-top: $text-orange; //Navigation border top color
+$nav-bg-t2: $white; //Navigation tier 2 bg
+
+$nav-xs-border-bottom-color-t1: #aaa; //Navigation tier 1 border bottom (Mobile)
+$nav-xs-bg-open-t1: $light-gray; //Navigation tier 1 bg when open (Mobile)
+$nav-xs-color-open-t1: $darker-gray; //Navigation tier 1 color when open (Mobile)
+$nav-xs-arrow-color-open-t1: $text-orange; //Navigation tier 1 arrow color when open (Mobile)
+$nav-xs-border-bottom-color-t2: $light-gray; //Navigation tier 2 border bottom (Mobile)
+$nav-xs-border-bottom-color-t3: $light-gray; //Navigation tier 3 border bottom (Mobile)
+$nav-xs-border-bottom-color-t4: $light-gray; //Navigation tier 4 border bottom (Mobile)
+$nav-xs-border-left-color-t4: $text-orange; //Navigation tier 4 border-left color when open (Mobile)
+
+$top-link: $darker-gray; //Navigation link color
+$top-link-hover: $text-orange; //Navigation link hover color
+$top-link-hover-t2: $darker-gray; //Navigation link hover color tier 2
+
+$nav-subLinks-hover-bg-t2: $light-gray; //Navigation sublink hover bg tier 2
+$nav-subLinks-hover-color-t2: $darker-gray; //Navigation sublink hover color tier 2
+
+$top-search-bg: #f9f9f9; //Top search bg
+$top-search-top-border-color: $light-gray; //Top search top border color
+$top-search-btn-bg: $text-orange; //Top search button bg
+$top-search-btn-hover-bg: #ff692e; //Top search button hover bg
+$top-search-btn-color: $white; //Top search button color
+$top-search-btn-hover-color: $white; //Top search button hover color
+$top-search-border-color: $light-gray; //Top search border color
+
+$top-search-input-border-color: #ccc; //Top search input border color
+
+$autocomplete-selected-bg: #F0F0F0; //Auto complete selected bg
+
+$top-user-dropdown-bg: #f9f9f9; //User dropdown bg
+$top-user-dropdown-color: #444; //User dropdown color
+$top-user-dropdown-border-color: $light-gray; //User dropdown top border color
+$top-user-create-acc-bg: $white; //Create account button bg
+$top-user-check-color: $white; //Top user check color
+$top-badge-bg-color: $text-green; //Top badge background color
+/* End:Header */
+$top-search-link-color: #007db8;
 $color-heading-links-hover: #007db8;
 $color-image-border: #737373;
-$color-danger: #ce1126;
 
-/* DemandBase Colors */
+/* Start:Footer */
+$footer-bg-color: $white; //Footer bg
+$footer-link-color: $darker-gray; //Footer link color
+$footer-link-hover-color: $footer-link-color; //Footer link hover color
+$footer-top-border-color: #aaa; //Footer top border color
 
-$color-demandbase-dropdown-background: #c0c0c0;
-$color-demandbase-dropdown-border: #c0c0c0;
+$footer-top-link: $darker-gray; //Footer top link color
 
-$brand-primary: #007db8 !default; //darken(#428bca, 6.5%) !default; // #337ab7
-$brand-success: #408001 !default;
+$footer-disclaimer-color: #cce7f3; //Footer disclaimer color
+
+$footer-cpy-link: $darker-gray; //Copyright link color
+$footer-cpy-border-color: $light-gray; //Copyright top border color
+
+$footer-xs-border-top-color: #aaa; //Footer top border color (Mobile)
+$footer-li-xs-border-bottom-color: $light-gray; //Footer links top border color (Mobile)
+$footer-li-xs-open-bg: $light-gray; //Footer links bg when open (Mobile)
+/* End:Footer */
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base: #000 !default;
+$gray-darker: lighten($gray-base, 13.5%) !default; // #222
+$gray-dark: lighten($gray-base, 26.5%) !default; // #444
+$gray: lighten($gray-base, 33.5%) !default; // #555
+$gray-light: lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
+
+/* Start:DemandBase */
+$color-demandbase-dropdown-background: #c0c0c0; // Demand base dropdown bg
+$color-demandbase-dropdown-border: #c0c0c0; //Demand base dropdown border color
+$color-demandbase-dropdown-div-bg-color: $white; //Demand base dropdown div bg
+/* End:DemandBase */
+
+$brand-primary: #003876 !default; //darken(#428bca, 6.5%) !default; // #337ab7
+$brand-success: #3E831C !default; //#408001
 $brand-info: #5bc0de !default;
 $brand-warning: #f0ad4e !default;
 $brand-danger: #d9534f !default;
@@ -59,27 +140,12 @@ $header-background-color: #007db8;
 $header-link-color: #007db8;
 $color-header-link-hover: #cce7f3;
 
-//== Scaffolding
-//
-//## Settings for some of the most global styles.
-
-//** Background color for `<body>`.
-$body-bg: #fff !default;
-//** Global text color on `<body>`.
-$text-color: #333 !default;
-
-//** Global textual link color.
-$link-color: #003876 !default;
-//** Link hover color set via `darken()` function.
-$link-hover-color: darken($link-color, 15%) !default;
-//** Link hover decoration.
-$link-hover-decoration: underline !default;
-
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family: 'Trebuchet MS', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Meiryo UI Reg', 'メイリオ Reg', 'MS UI Gothic Reg', 'Hiragino Kaku Gothic Reg', 'ヒラギノ角ゴ Pro W3 Reg', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'Microsoft JhengHei', '微軟正黑體', 'Malgun Gothic', Gulim, Tahoma, 'Arial Unicode', sans-serif !default;
+//$font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif !default;
+$font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "Microsoft YaHei", "Hiragino Sans GB", "Microsoft JhengHei", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif !default;
 
 $font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
@@ -105,8 +171,8 @@ $line-height-computed: floor(($font-size-base * $line-height-base)) !default; //
 
 //** By default, this inherits from the `<body>`.
 /*$headings-font-family:    inherit !default;*/
-$headings-font-family: 'Trebuchet MS', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Meiryo UI Reg', 'メイリオ Reg', 'MS UI Gothic Reg', 'Hiragino Kaku Gothic Reg', 'ヒラギノ角ゴ Pro W3 Reg', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'Microsoft JhengHei', '微軟正黑體', 'Malgun Gothic', Gulim, Tahoma, 'Arial Unicode', sans-serif !default;
-$headings2-font-family: 'Trebuchet MS', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Meiryo UI Reg', 'メイリオ Reg', 'MS UI Gothic Reg', 'Hiragino Kaku Gothic Reg', 'ヒラギノ角ゴ Pro W3 Reg', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', 'Microsoft JhengHei', '微軟正黑體', 'Malgun Gothic', Gulim, Tahoma, 'Arial Unicode', sans-serif !default;
+//$headings-font-family: "Trebuchet MS", "Roboto", "Segoe UI", "Helvetica Neue", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", "Malgun Gothic", Gulim, Tahoma, "Arial Unicode", sans-serif !default;
+$headings-font-family: $font-family;
 $headings-font-weight: 500 !default;
 $headings-line-height: 1.166667 !default;
 $headings-color: inherit !default;
@@ -125,6 +191,39 @@ $icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "/fonts/") !defa
 $icon-font-name: "glyphicons-halflings-regular" !default;
 //** Element ID within SVG icon file.
 $icon-font-svg-id: "glyphicons_halflingsregular" !default;
+//_image.scss
+$icon-ui-play-underlay-bg: $white;
+$img-overlay-icon-ui-play-color: $dell-gray-dark;
+$media-player-container-icon-ui-play-color: $dell-gray-dark;
+$img-header-overlay-color: $white;
+
+$icon-anchor-hover-color: $dell-blue;
+$icon-anchor-active-color: $dell-blue;
+
+/* Start:Zombie Nav */
+$affix-bg-color: #f7f7f7;
+$affix-border-color: #ccc; //Zombie border color
+$affix-li-border-color: #ccc; //Zombie border color
+$affix-li-active-border-color: $link-color;
+$affix-li-active-text-color: #444;
+$affix-li-a-focus-bg-color: transparent;
+$affix-li-a-hover-bg-color: #cce7f3;
+$affix-li-a-hover-text-color: $link-color;
+$affix-no-style-bg-color: $white;
+$affix-no-style-active-border-color: #ccc;
+$affix-no-style-disabled-border-color: $white;
+
+$affix-xs-ul-bg: $white; //Background color (mobile)
+$affix-xs-ul-border-color: #ccc;
+$affix-xs-li-border-color: #ccc;
+$affix-xs-li-active-hover-border-color: $white;
+$affix-xs-a-hover-bg: $gray-lighter;
+/* End:Zombie Nav */
+
+//Overlay
+$has-overlay-bg: $white;
+$has-overlay-bg-color: rgba(255, 255, 255, 0.9);
+$has-overlay-hover-text-color: $darker-gray;
 
 //== Components
 //
@@ -183,19 +282,32 @@ $table-border-color: #ddd !default;
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
+/* Start:Buttons */
 $btn-font-weight: normal !default;
 
-$btn-default-color: #007db8 !default; //#333 !default;
-$btn-default-bg: #eee !default; //#fff !default;
-$btn-default-border: #ccc !default;
+$btn-default-color: $link-color !default;
+$btn-default-bg: $light-gray !default;
+$btn-default-border: #aaaaaa !default;
+
+$btn-default-hover-color: $link-color !default;
+$btn-default-hover-bg: #d5d5d5 !default;
+$btn-default-hover-border: #aaaaaa !default;
 
 $btn-primary-color: #fff !default;
-$btn-primary-bg: $brand-primary !default;
+$btn-primary-bg: $link-color !default;
 $btn-primary-border: darken($btn-primary-bg, 5%) !default;
+
+$btn-primary-hover-color: #fff !default;
+$btn-primary-hover-bg: #003769 !default;
+$btn-primary-hover-border: darken($btn-primary-hover-bg, 5%) !default;
 
 $btn-success-color: #fff !default;
 $btn-success-bg: $brand-success !default;
 $btn-success-border: darken($btn-success-bg, 5%) !default;
+
+$btn-success-hover-color: #fff;
+$btn-success-hover-bg: #0B5000;
+$btn-success-hover-border: darken($btn-success-hover-bg, 5%) !default;
 
 $btn-info-color: #fff !default;
 $btn-info-bg: $brand-info !default;
@@ -205,16 +317,71 @@ $btn-warning-color: #fff !default;
 $btn-warning-bg: $brand-warning !default;
 $btn-warning-border: darken($btn-warning-bg, 5%) !default;
 
+$btn-warning-hover-color: #fff;
+$btn-warning-hover-bg: #be500e;
+$btn-warning-hover-border: #9d420b;
+
 $btn-danger-color: #fff !default;
 $btn-danger-bg: $brand-danger !default;
 $btn-danger-border: darken($btn-danger-bg, 5%) !default;
 
 $btn-link-disabled-color: $gray-light !default;
+$btn-default-disable-color: $dell-gray;
+$btn-default-disable-border-color: #aaaaaa;
+/* End:Buttons */
+
+/* Start:Flyout */
+$flyout-bg: $white;
+$flyout-btn-bg: $link-color;
+$flyout-btn-color: $white;
+$flyout-border-color: #a9a9a9;
+$flyout-border-left-color: $link-color;
+$flyout-link-hover-color: $link-color;
+$flyout-close-color: $dell-gray-medium;
+
+$flyout-btn-xs-bg: $link-color;
+$flyout-xs-border-color: $link-color;
+/* End:Flyout */
+
+/* Start:Country Dropdown */
+$country-selector-border-top-color: #aaa;
+$country-popup-bg-color: $white;
+$country-popup-link-color: $link-color;
+$country-popup-link-active-color: $white;
+$country-popup-link-active-bg-color: $link-color;
+
+/* End:Country Dropdown */
+
+//== Custom colors
+
+$bg-white: $white;
+$bg-black: $black;
+$bg-light-grey: $dell-gray-very-light;
+$bg-light-grey-text-color: $dell-gray-dark;
+$bg-grey: $dell-gray-very-light;
+
+$bg-light-grey-link-color: #007db8;
+
+$new-bg-color: $dell-orange;
+$new-text-color: $white;
+
+$col-striped-odd-bg: $dell-gray-very-light;
+$row-striped-odd-bg: $table-bg-accent;
+
+/* Start:Comparison Table */
+$comparison-border-color: $dell-blue;
+$comparison-active-bg: $dell-blue;
+$comparison-active-color: $white;
+$comparison-btn-inactive-color: $dell-gray;
+$comparison-fixed-col-border-color: #ccc;
+$comparison-panel-old-bg: $light-gray;
+/* End:Comparison Table */
 
 //== Forms
 //
 //##
 
+/* Start:Forms */
 //** `<input>` background color
 $input-bg: #fff !default;
 //** `<input disabled>` background color
@@ -224,6 +391,10 @@ $input-bg-disabled: $gray-lighter !default;
 $input-color: $gray !default;
 //** `<input>` border color
 $input-border: #ccc !default;
+
+$form-error-bg-color: #ffffc9;
+$form-error-border-color: #ce1126;
+$form-error-active-bg-color: $white;
 
 // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
 //** Default `.form-control` border radius
@@ -235,7 +406,7 @@ $input-border-radius-large: $border-radius-large !default;
 $input-border-radius-small: $border-radius-small !default;
 
 //** Border color for inputs on focus
-$input-border-focus: #66afe9 !default;
+$input-border-focus: $link-color !default;
 
 //** Placeholder text color
 $input-color-placeholder: #999 !default;
@@ -249,17 +420,50 @@ $input-height-small: (floor($font-size-small * $line-height-small) + ($padding-s
 
 //** `.form-group` margin
 $form-group-margin-bottom: 15px !default;
+/* End:Forms */
 
 $legend-color: $gray-dark !default;
 $legend-border-color: #e5e5e5 !default;
+
+/* Start:Multiple Select */
+$ms-choice-color: #444;
+$ms-choice-border-color: #ccc;
+$ms-choice-bg-color: $white;
+$ms-choice-focus-border-color: $link-color;
+$ms-choice-focus-shadow-color: rgba(1, 106, 156, 0.6);
+$ms-choice-disabled-bg-color: #f4f4f4;
+$ms-choice-disabled-border-color: #ddd;
+$ms-choice-span-color: #555;
+$ms-choice-placeholder-color: $darker-gray;
+$ms-choice-xs-span-color: #007db8;
+$ms-choice-xs-placeholder-color: #007db8;
+$ms-choice-xs-placeholder-hover-color: #00496c;
+
+$ms-drop-bg-color: $white;
+$ms-drop-text-color: #000;
+$ms-drop-border-color: #ccc;
+$ms-drop-hover-bg: $light-gray;
+$ms-drop-label-color: $link-color;
+
+$ms-search-input-bg-color: #aaa;
+$ms-search-input-border-color: #aaa;
+/* End:Multiple Select */
 
 //** Background color for textual input addons
 $input-group-addon-bg: $gray-lighter !default;
 //** Border color for textual input addons
 $input-group-addon-border-color: $input-border !default;
 
+// Input Group //
+$input-group-xs-btn-bg: #007db8;
+$input-group-xs-border-color: #007db8;
+$input-group-xs-icon-color: $white;
 //** Disabled cursor for form controls and buttons.
 $cursor-disabled: not-allowed !default;
+
+//== Dividers
+
+$polaris-divider-top-border-color: $light-gray;
 
 //== Dropdowns
 //
@@ -274,12 +478,13 @@ $dropdown-fallback-border: #ccc !default;
 //** Divider color for between dropdown items.
 $dropdown-divider-bg: #e5e5e5 !default;
 
+
 //** Dropdown link text color.
-$dropdown-link-color: $gray-dark !default;
+$dropdown-link-color: $darker-gray !default;
 //** Hover color for dropdown links.
 $dropdown-link-hover-color: darken($gray-dark, 5%) !default;
 //** Hover background for dropdown links.
-$dropdown-link-hover-bg: #cce5f1 !default; //#f5f5f5 !default;
+$dropdown-link-hover-bg: $light-gray !default; //#f5f5f5 !default;
 
 //** Active dropdown menu item text color.
 $dropdown-link-active-color: $component-active-color !default;
@@ -294,6 +499,19 @@ $dropdown-header-color: $gray-light !default;
 
 //** Deprecated `$dropdown-caret-color` as of v3.1.0
 $dropdown-caret-color: #000 !default;
+
+// Optional Dropdown
+$triangle-top-bg: $dell-gray-very-light;
+$has-collapsibles-color: #007db8;
+
+//-- Mark
+$mark-bg-color: #ff0;
+$mark-text-color: $black;
+
+//Fieldset
+$fieldset-border-color: #c0c0c0;
+
+
 
 //-- Z-index master list
 //
@@ -348,6 +566,9 @@ $screen-xs-max: ($screen-sm-min - 1) !default;
 $screen-sm-max: ($screen-md-min - 1) !default;
 $screen-md-max: ($screen-lg-min - 1) !default;
 
+//  Feature Products
+$featured-products-slick-border-color: $light-gray;
+
 //== Grid system
 //
 //## Define your custom responsive grid.
@@ -386,6 +607,10 @@ $container-lg: $container-large-desktop !default;
 //##
 
 // Basics of a navbar
+$navbar-brand-link-color: $white;
+
+
+
 $navbar-height: auto !default; //50px !default
 $navbar-margin-bottom: $line-height-computed !default;
 $navbar-border-radius: $border-radius-base !default;
@@ -399,7 +624,7 @@ $navbar-default-border: darken($navbar-default-bg, 6.5%) !default;
 
 // Navbar links
 $navbar-default-link-color: #777 !default;
-$navbar-default-link-hover-color: #333 !default;
+$navbar-default-link-hover-color: $darker-gray !default;
 $navbar-default-link-hover-bg: transparent !default;
 $navbar-default-link-active-color: #555 !default;
 $navbar-default-link-active-bg: darken($navbar-default-bg, 6.5%) !default;
@@ -419,7 +644,7 @@ $navbar-default-toggle-border-color: #ddd !default;
 // Inverted navbar
 // Reset inverted navbar basics
 $navbar-inverse-color: lighten($gray-light, 15%) !default;
-$navbar-inverse-bg: #007db8 !default;
+$navbar-inverse-bg: #ffffff !default;
 $navbar-inverse-border: darken($navbar-inverse-bg, 10%) !default;
 
 // Inverted navbar links
@@ -439,7 +664,7 @@ $navbar-inverse-brand-hover-bg: transparent !default;
 // Inverted navbar toggle
 $navbar-inverse-toggle-hover-bg: transparent !default; //#333 !default;
 $navbar-inverse-toggle-icon-bar-bg: #fff !default;
-$navbar-inverse-toggle-border-color: #333 !default;
+$navbar-inverse-toggle-border-color: $darker-gray !default;
 
 //== Navs
 //
@@ -488,6 +713,10 @@ $pagination-active-border: $brand-primary !default;
 $pagination-disabled-color: $gray-light !default;
 $pagination-disabled-bg: #fff !default;
 $pagination-disabled-border: #ddd !default;
+
+$pager-link-bg: $light-gray;
+$pager-border-color: #ccc;
+
 
 //== Pager
 //
@@ -641,6 +870,12 @@ $modal-sm: 300px !default;
 //== Alerts
 //
 //## Define alert colors, border radius, and padding.
+$alert-text-color: $dell-gray-dark;
+$alert-bg-color: #ffffc9;
+$alert-border-color: $light-gray;
+$alert-link-color: $dell-blue;
+$alert-link-hover-color: $dell-dark-blue;
+$alert-link-color-before: $dell-gray-dark;
 
 $alert-padding: 10px 35px 0 40px !default; //15px !default;
 $alert-border-radius: $border-radius-base !default;
@@ -654,13 +889,26 @@ $alert-info-bg: $state-info-bg !default;
 $alert-info-text: $state-info-text !default;
 $alert-info-border: $state-info-border !default;
 
-$alert-warning-bg: $state-warning-bg !default;
-$alert-warning-text: $state-warning-text !default;
-$alert-warning-border: $state-warning-border !default;
+$alert-warning-bg: #ee6411;
+$alert-warning-text: #ee6411;
+$alert-warning-border: #d6390f;
+$alert-warning-hr-top-border-color: #be330e;
+$alert-warning-link-color: #be500e;
 
 $alert-danger-bg: $state-danger-bg !default;
 $alert-danger-text: $state-danger-text !default;
 $alert-danger-border: $state-danger-border !default;
+
+$color-danger: #ce1126;
+$color-info: #007db8;
+$color-success: #6ea204;
+$color-warning: #d74324;
+
+//== Borders
+//
+//## Define borders color, style and size.
+$border-grey-color: $dell-gray-stroke;
+
 
 //== Progress bars
 //
@@ -715,7 +963,7 @@ $list-group-disabled-text-color: $list-group-disabled-color !default;
 
 $list-group-link-color: #555 !default;
 $list-group-link-hover-color: $list-group-link-color !default;
-$list-group-link-heading-color: #333 !default;
+$list-group-link-heading-color: $darker-gray !default;
 
 //== Panels
 //
@@ -754,6 +1002,36 @@ $panel-warning-heading-bg: $state-warning-bg !default;
 $panel-danger-text: $state-danger-text !default;
 $panel-danger-border: $state-danger-border !default;
 $panel-danger-heading-bg: $state-danger-bg !default;
+
+$panel-group-collapsible-border-color: $dell-gray;
+$panel-group-heading-text-color: $link-color;
+
+// Events
+$event-detail-border-color: #ccc;
+$event-on-demand-header-bg: #C44E26;
+$event-in-person-header-bg: #614F83;
+$event-online-header-bg: #3E831C;
+$event-detail-signed-off-border-color: #cbcbcb;
+$event-container-off-canvas-bg-color: $white;
+
+/*Documents*/
+$doc-casestudy: #003876;
+$doc-header-bg: $link-color;
+
+//Date
+$date-widget-border-color: #d9d9d9;
+$date-widget-header-color: $white;
+$date-body-bg-color: $white;
+
+// Introduction
+
+$grey-box-bg-color: $light-gray;
+
+// Listing Entries
+
+$listing-header-color: $white;
+$listing-entries-color: #444;
+$listing-entries-link-color: #444;
 
 //== Thumbnails
 //
@@ -829,6 +1107,13 @@ $carousel-indicator-border-color: #fff !default;
 
 $carousel-caption-color: #fff !default;
 
+$carousel-link-hover-color: #007db8;
+$carousel-h4-color: #444;
+$carousel-indicators-li-bg: #ccc;
+$carousel-indicators-active-bg: #444;
+
+
+
 //== Close
 //
 //##
@@ -845,7 +1130,7 @@ $code-color: #c7254e !default;
 $code-bg: #f9f2f4 !default;
 
 $kbd-color: #fff !default;
-$kbd-bg: #333 !default;
+$kbd-bg: $darker-gray !default;
 
 $pre-bg: #f5f5f5 !default;
 $pre-color: $gray-dark !default;
@@ -864,6 +1149,8 @@ $text-muted: $gray-light !default;
 $abbr-border-color: $gray-light !default;
 //** Headings small color
 $headings-small-color: $gray-light !default;
+//** Blockquote color
+$blockquote-color: $text-blue !default;
 //** Blockquote small color
 $blockquote-small-color: $gray-light !default;
 //** Blockquote font size
@@ -876,3 +1163,41 @@ $page-header-border-color: $gray-lighter !default;
 $dl-horizontal-offset: $component-offset-horizontal !default;
 //** Horizontal line color.
 $hr-border: $gray-lighter !default;
+
+/*Slick banners*/
+$slick-dots: $natural-gray;
+$slick-dots-active: $text-orange;
+$slick-list-loading-bg: #fff;
+$slick-arrow-color: $link-color;
+$slick-arrow-disabled-color: #444;
+$slick-1170-caption-bg: #f5f5f5;
+$slick-1170-caption-color: #007db8;
+$slick-1170-caption-hover-color: #007db8;
+$slick-770-caption-bg: #f5f5f5;
+$slick-770-caption-color: #007db8;
+$slick-770-caption-hover-color: #007db8;
+
+/*3 Play Media*/
+$play-3-media-border-color: $dell-gray;
+
+/* Variables below this line is only used on non-responsive stylesheet */
+
+//UI Widget
+$ui-widget-content-color: #222;
+$ui-widget-content-border: #dadada;
+$ui-widget-header-color: #222;
+$ui-widget-header-border: #dadada;
+$ui-widget-header-link: #222;
+
+//UI State
+$ui-state-border: #d3d3d3;
+$ui-state-color: #555;
+$ui-state-link: #555;
+
+$ui-state-hover-color: #212121;
+$ui-state-hover-border: #999;
+$ui-state-hover-link: #212121;
+
+$ui-state-active-color: #212121;
+$ui-state-active-border: #fff;
+$ui-state-active-link: #212121;

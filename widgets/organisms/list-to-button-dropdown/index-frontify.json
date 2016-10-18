@@ -1,0 +1,11 @@
+{
+	"name": "List to button drop-down",
+	"type": "Organism",
+	"stability": "stable",
+	"description": "List of links on Desktops and Tablets which turn to drop-down button on Mobile",
+	"assets": {
+		"html": [
+			"../widgets/organisms/list-to-button-dropdown/index.html"
+		]
+	}
+}

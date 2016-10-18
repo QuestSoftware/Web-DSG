@@ -1,3 +1,5 @@
+var RootPath = RootPath || '/';
+
 var populateListingPending = false, //prevent populate listing to load more than 1 at a time.
 	entriesPerType = { //xs,sm - need to consult with cindy chan.
 		'0': 6,
@@ -18,7 +20,8 @@ var populateListingPending = false, //prevent populate listing to load more than
 
 if ($.fn.multipleSelect) {
 	init();
-} else {
+}
+else {
 	// load multiple select stylesheet
 	if ($('html').hasClass('ie8')) {
 		$('<link/>', {rel: 'stylesheet', href: '/static/library/css/multiple-select.css'}).appendTo('head');
@@ -47,10 +50,6 @@ if ($.fn.multipleSelect) {
 
 		init();
 	});
-}
-
-if (typeof RootPath == 'undefined') {
-	RootPath = '/';
 }
 
 function init() {
@@ -211,7 +210,18 @@ function init() {
 		var filterInterval = null, filterElem = $('.filters');
 
 		//Populate all "filter by" dropdowns
-		getLocalizedContent(['DocumentLabelUpdated', 'EventLabelAllDates', 'LabelAllIndustries', 'LabelAllProducts', 'LabelAllProductLines', 'LabelAllSolutions', 'LabelAllLanguages', 'LabelAllCountries', 'LabelDocumentType', 'LabelAllDocumentTypes']).done(function () {
+		getLocalizedContent([
+			'DocumentLabelUpdated',
+			'EventLabelAllDates',
+			'LabelAllIndustries',
+			'LabelAllProducts',
+			'LabelAllProductLines',
+			'LabelAllSolutions',
+			'LabelAllLanguages',
+			'LabelAllCountries',
+			'LabelDocumentType',
+			'LabelAllDocumentTypes'
+		]).done(function () {
 			$.each(filterMap, function (id, entry) {
 				if (entry.init) {
 					ajaxArr.push(populateDropdowns(id, entry.data, entry.callback));
@@ -299,7 +309,7 @@ function init() {
 				ajaxArr.push(populateDropdowns(j, filterMap[j].data, filterMap[j].callback));
 			});
 
-			$.when(ajaxArr).done(function() {
+			$.when(ajaxArr).done(function () {
 				ajaxArr = [];
 				filterElem.data('continue', true);
 				populateListing(true);
@@ -358,7 +368,7 @@ function init() {
 					}
 				});
 
-				if(elem.attr('id') == 'brand' && value != '') {
+				if (elem.attr('id') == 'brand' && value != '') {
 					$.each(['product', 'solution'], function (i, j) {
 						populateDropdowns(j, $.extend({}, filterMap[j].data, {brand: value}), filterMap[j].callback);
 					});
@@ -379,16 +389,16 @@ function init() {
 			dataType: 'JSON',
 			data: data
 		}).done(function (dataopt) {
-			if(dropdown != 'content_type') {
+			if (dropdown != 'content_type') {
 				dataopt.title = allDropdownLabel[dropdown];
 				elem.append('<option value="">' + dataopt.title + '</option>');
 			}
 
 			$.each(dataopt.data, function (key, val) {
-				if(val.englishname) {
+				if (val.englishname) {
 					elem.append('<option value="' + val.id + '" data-name="' + val.englishname + '">' + val.value + '</option>');
 				}
-				else if(val.englishvalue) {
+				else if (val.englishvalue) {
 					elem.append('<option value="' + val.id + '" data-name="' + val.englishvalue + '">' + val.value + '</option>');
 				}
 				else {
@@ -423,7 +433,7 @@ function populateListing(clear) {
 
 	buildAHashTag();
 
-	var dataset = getDataSet(!clear), viewMoreButton = $('#view-more');;
+	var dataset = getDataSet(!clear), viewMoreButton = $('#view-more');
 
 	if (dataset === false) {
 		rowContainer.empty();
@@ -452,13 +462,37 @@ function populateListing(clear) {
 			rowContainer.empty();
 		}
 
+		var overlayClassName = '';
+
 		$.each(dataopt.data, function (key, val) {
+			switch (val.typeid) {
+				case 167:
+					overlayClassName = 'casestudy';
+					break;
+				case 152:
+					overlayClassName = 'whitepaper';
+					break;
+				case 153:
+					overlayClassName = 'techbrief';
+					break;
+				case 154:
+					overlayClassName = 'ebook';
+					break;
+				case 235:
+					overlayClassName = 'infograph';
+					break;
+				case 161:
+					overlayClassName = 'datasheet';
+					break;
+			}
+
 			var htmlFragment = '<div class="col-md-3 col-sm-4 col-xs-12" style="display: none;"> ' +
-				'<a href="' + val.url + '" target="'+ val.target +'">' +
+				'<a href="' + val.url + '" target="' + val.target + '">' +
 				'  <div class="border-grey img-crop">' +
+				'     <p class="img-header-overlay ' + overlayClassName + '">' + val.documenttype + '</p>' +
 				'    <img class="img-responsive center-block" src="' + val.imageurl + '" alt=""> ' +
 				'  </div> ' +
-				'  <h4 class="text-blue dotdotdot" data-max-line="3">' + val.documenttype + ': ' + val.title + ' </h4> ';
+				'  <h4 class="text-blue dotdotdot" data-max-line="3">' + val.title + ' </h4> ';
 
 			if (val.description != null) {
 				htmlFragment += '<p class="teaser dotdotdot" data-max-line="5"> ' + $('<div>' + val.description + '</div>').text() + ' </p>';
@@ -513,8 +547,8 @@ function buildAHashTag() {
 
 		if (id == 'content_type') {
 			if (val.length == 1) {
-				elem.find('option').each(function() {
-					if($(this).attr('value') == val[0]) {
+				elem.find('option').each(function () {
+					if ($(this).attr('value') == val[0]) {
 						hashArr.push($.trim($(this).data('name') || $(this).text()).toLowerCase().replace(/[\s\W]/g, ''));
 
 						return false;
@@ -523,8 +557,8 @@ function buildAHashTag() {
 			}
 		}
 		else if (id != 'language' || (id == 'language' && parseInt(val[0]) != getLanguageCode())) {
-			elem.find('option').each(function() {
-				if($(this).attr('value') == val[0]) {
+			elem.find('option').each(function () {
+				if ($(this).attr('value') == val[0]) {
 					hashArr.push(prefix + $.trim($(this).data('name') || $(this).text()).toLowerCase().replace(/[\s\W]/g, ''));
 
 					return false;
@@ -533,7 +567,7 @@ function buildAHashTag() {
 		}
 	});
 
-	if(hashArr.length) {
+	if (hashArr.length) {
 		var newHash = hashArr.join('_');
 		location.hash = (newHash == '') ? ' ' : newHash;
 	}
@@ -664,12 +698,12 @@ function caseStudyFilter() {
 function setFilterNum() {
 	var counter = 0;
 
-	$('.filters').find('select').each(function() {
-		if(($(this).is(':visible') || pageType == 0) && $(this).data('multipleSelect') !== undefined) {
+	$('.filters').find('select').each(function () {
+		if (($(this).is(':visible') || pageType == 0) && $(this).data('multipleSelect') !== undefined) {
 			var selects = $(this).multipleSelect('getSelects');
 
-			if(selects.length == 1) {
-				if(selects[0] != '') {
+			if (selects.length == 1) {
+				if (selects[0] != '') {
 					counter++;
 				}
 			}

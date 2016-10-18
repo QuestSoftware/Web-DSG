@@ -289,3 +289,14 @@
   }
 }
 
+//On Quest and DSG - Changing dropdown arrows to down and up accordingly
+
+.open {
+	.dropdown-toggle {
+		.caret {
+			border-bottom: 6px solid;
+			border-top: none;
+		}
+	}
+}
+

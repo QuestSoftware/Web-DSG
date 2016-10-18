@@ -9,16 +9,16 @@
 }
 /*claim box*/
 .grey-box{
-  background-color: #eee;
+	background-color: $grey-box-bg-color;
   padding: 20px;
   display: inline-block;
   h3 {
-    font-family: 'Museo Sans 700', 'Trebuchet MS', Arial;
+	  font-family: "Museo Sans 700", "Trebuchet MS", Arial;
     font-weight: 400;
     margin:0;
   }
   p {
-    font-family: 'Museo Sans 300', 'Trebuchet MS', Arial;
+	  font-family: "Museo Sans 300", "Trebuchet MS", Arial;
     font-size: 16px;
     &:last-child{
       margin-bottom:0;
@@ -27,7 +27,7 @@
 }
 
 /*mobile*/
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .grey-box {
     padding: 17px 15px;
     margin-bottom: 20px;
@@ -35,7 +35,7 @@
 }
 
 /*large*/
-@media (min-width: 1200px) {
+@media (min-width: $screen-lg-min) {
   /*home page - to make End-to-End IT solution in one line using responsive template*/
   .title-description h1 {
     width: 86%;
@@ -48,12 +48,12 @@
 		padding: 20px;
 		display: inline-block;
 		h3 {
-			font-family: 'Museo Sans 700', 'Trebuchet MS', Arial;
+			font-family: "Museo Sans 700", "Trebuchet MS", Arial;
 			font-weight: 400;
 			margin: 0;
 		}
 		p {
-			font-family: 'Museo Sans 300', 'Trebuchet MS', Arial;
+			font-family: "Museo Sans 300", "Trebuchet MS", Arial;
 			font-size: 16px;
 			&:last-child {
 				margin-bottom: 0;

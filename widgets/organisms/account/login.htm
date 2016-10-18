@@ -1,0 +1,86 @@
+<div class="container">
+
+
+	<!--[if lte IE 8]>
+	<style type="text/css">
+		.sign-in {
+			min-width: 320px;
+			width: 100%;
+		}
+
+		.wrap {
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+		}
+	</style>
+	<![endif]-->
+
+
+	<div class="wrap">
+		<div class="row">
+			<form action="/issue/hrd/login" class="" method="post" novalidate="novalidate"><input type="hidden" name="ResetValue" id="ResetValue" value="Reset">
+				<h1 class="">Dell Software Sign In</h1>
+				<div class="row">
+					<div class="form-horizontal-2">
+
+						<div class="form-group">
+							<label class="control-label" for="UserName">Email Address</label>
+
+							<input class="form-control email" data-val="true" data-val-required="The Email field is required." id="UserName" name="UserName" required="required"
+							       title="Email" type="text" value="" aria-required="true">
+
+							<input data-val="true" data-val-required="The UserNameReadonly field is required." id="UserNameReadonly" name="UserNameReadonly" type="hidden"
+							       value="False">
+						</div>
+
+						<div class="form-group">
+							<label class="control-label" for="Password">Password</label>
+							<input type="password" id="Password" name="Password" class="form-control" title="Password" required="" aria-required="true">
+						</div>
+
+						<div class="form-group">
+							<span></span>
+							<a href="/issue/hrd/resetpassword" class="text-sm">Forgot your Dell Software password?</a>
+						</div>
+						<br>
+						<div class="form-group">
+							<label class="control-label" for="RememberMe">Remember Me</label>
+
+							<input data-val="true" data-val-required="The Remember Me field is required." id="RememberMe" name="RememberMe" title="Remember Me" type="checkbox"
+							       value="true"><input name="RememberMe" type="hidden" value="false">
+
+						</div>
+						<div class="form-group">
+							<span></span>
+						</div>
+
+
+						<br>
+
+
+						<div class="form-group">
+							<div></div>
+							<div>
+								<button id="LogIn" type="submit" class="btn btn-primary btn-block mb-10">
+									Sign In
+								</button>
+								<a id="CreateAccount" class="btn btn-primary btn-block mb-10" href="http://software-dell-com/account/createaccount?urlback%3d%2f">Create Account</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<input name="__RequestVerificationToken" type="hidden" value="dwkXG0qSrdQWXn-aP_xQnuq-sIiBI652STsXuLuZX1T5HP3G8qfHuL9W27MYqa4xZc1ed1X-emjW8fk5FpwuRxsUyTY1"><input
+					id="OriginalSigninUrl" name="OriginalSigninUrl" type="hidden"
+					value="https://account.software.dell.com/issue/hrd?wa=wsignin1.0&amp;wtrealm=http%3a%2f%2fsoftware-dell-com%2f&amp;wreply=http%3a%2f%2fsoftware-dell-com%2faccount%2fsigninentrypoint%2f%3fr%3d%2f&amp;whr=DSG&amp;l=en-US&amp;payload=urlback%3d%2f"><input
+					id="OriginalSigninUrlQueryString" name="OriginalSigninUrlQueryString" type="hidden"
+					value="wa=wsignin1.0&amp;wtrealm=http%3a%2f%2fsoftware-dell-com%2f&amp;wreply=http%3a%2f%2fsoftware-dell-com%2faccount%2fsigninentrypoint%2f%3fr%3d%2f&amp;whr=DSG&amp;l=en-US&amp;payload=urlback%3d%2f"><input
+					data-val="true" data-val-number="The field RelyingPartyId must be a number." data-val-required="The RelyingPartyId field is required." id="RelyingPartyId"
+					name="RelyingPartyId" type="hidden" value="27"><input data-val="true" data-val-required="The ShowExternalProviders field is required."
+				                                                        id="ShowExternalProviders" name="ShowExternalProviders" type="hidden" value="False"></form>
+		</div>
+
+
+		<div class="other-in">
+		</div>
+	</div>
+</div>
