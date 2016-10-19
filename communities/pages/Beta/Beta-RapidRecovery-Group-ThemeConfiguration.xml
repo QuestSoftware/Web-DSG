@@ -1,0 +1,691 @@
+<theme name="3fc3f82483d14ec485ef92e206116d49" version="9.2.0.1667">
+  <dynamicConfiguration>
+    <properties>
+      <property id="inheritPageHeaders" dataType="Bool">
+        <value>True</value>
+      </property>
+      <property id="rawHeader" dataType="Html">
+        <value>&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;</value>
+      </property>
+      <property id="rawHeaderLast" dataType="Html">
+        <value />
+      </property>
+      <property id="cssFiles" dataType="Custom">
+        <value><![CDATA[]]></value>
+      </property>
+      <property id="ie6CssFiles" dataType="Custom">
+        <value><![CDATA[]]></value>
+      </property>
+      <property id="cssFilesModal" dataType="Custom">
+        <value><![CDATA[]]></value>
+      </property>
+      <property id="cssFilesMonModal" dataType="Custom">
+        <value><![CDATA[]]></value>
+      </property>
+      <property id="printCssFiles" dataType="Custom">
+        <value><![CDATA[]]></value>
+      </property>
+      <property id="styleSheetFiles" dataType="Custom" />
+      <property id="inheritContentFragments" dataType="Bool">
+        <value>True</value>
+      </property>
+      <property id="inheritHeaders" dataType="Bool">
+        <value>True</value>
+      </property>
+      <property id="inheritFooters" dataType="Bool">
+        <value>True</value>
+      </property>
+      <property id="files" dataType="Custom" />
+      <property id="inheritLeaderTemplates" dataType="Bool">
+        <value>True</value>
+      </property>
+      <property id="contentFragmentLeaderHtml" dataType="Html">
+        <value />
+      </property>
+      <property id="contentFragmentHeaderLeaderHtml" dataType="Html">
+        <value />
+      </property>
+      <property id="pageTabsLeaderHtml" dataType="Html">
+        <value />
+      </property>
+      <property id="layoutRegionLeaderHtml" dataType="Html">
+        <value />
+      </property>
+      <property id="inheritTrailerTemplates" dataType="Bool">
+        <value>True</value>
+      </property>
+      <property id="contentFragmentTrailerHtml" dataType="Html">
+        <value />
+      </property>
+      <property id="contentFragmentHeaderTrailerHtml" dataType="Html">
+        <value />
+      </property>
+      <property id="pageTabsTrailerHtml" dataType="Html">
+        <value />
+      </property>
+      <property id="layoutRegionTrailerHtml" dataType="Html">
+        <value />
+      </property>
+      <property id="cssOverrides" dataType="String">
+        <value />
+      </property>
+      <property id="supportReflow" dataType="Bool">
+        <value>True</value>
+      </property>
+      <property id="inheritContentFragmentWrappingFormats" dataType="Bool">
+        <value>True</value>
+      </property>
+      <property id="contentFragmentWrappingFormats" dataType="String">
+        <value />
+      </property>
+      <property id="defaultContentFragmentWrappingFormatWithHeader" dataType="String">
+        <value />
+      </property>
+      <property id="defaultContentFragmentWrappingFormatWithoutHeader" dataType="String">
+        <value />
+      </property>
+    </properties>
+  </dynamicConfiguration>
+  <contentFragmentHeaders>
+    <contentFragmentHeader layout="HeaderTopContent" themeType="c6108064-af65-11dd-b074-de1a56d89593">
+      <regions>
+        <region regionName="Header">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::c9932b3229d8453892c87cef53db657e" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="True" sourceConfiguredContentFragmentId="1648505811" configuration="fragmentHeader=%24%7Bresource%3ASiteBanner%7D&amp;dell-software-220x88.png=iVBORw0KGgoAAAANSUhEUgAAANwAAABYCAYAAACee5lPAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw%2FeHBhY2tldCBiZWdpbj0i77u%2FIiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8%2BIDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkM0ODYwNTA5MkY1MzExRTY4NUU4QjlFMkJGRERCOTdFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkM0ODYwNTBBMkY1MzExRTY4NUU4QjlFMkJGRERCOTdFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QzQ4NjA1MDcyRjUzMTFFNjg1RThCOUUyQkZEREI5N0UiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QzQ4NjA1MDgyRjUzMTFFNjg1RThCOUUyQkZEREI5N0UiLz4gPC9yZGY6RGVzY3JpcHRpb24%2BIDwvcmRmOlJERj4gPC94OnhtcG1ldGE%2BIDw%2FeHBhY2tldCBlbmQ9InIiPz6LuMLtAAAaqElEQVR42uxdCXhV1bVeN7lJCCSMCVMQERERZxxQUKHOj%2BrrpFZ9dawdrFW0zk%2BtrTzUWp%2BVYm0dvteq9TkgaMUBhyo4oLQIMghlUMYYJAkSEjLf3O4%2F9z9kZ2ffc4eM5O71fevLzbnn3HvuPuvf619r7712IBwOixMnTjpG0lwTOHHScRI0Dwy8%2B4POupd0dgDZSvdReojSA5UewP8HKO2rtAfP81wz%2FpYr%2FVrpV0o3K12jdDUVx0LUhr3lwdRl9JQRG9%2BR%2Fb54Q73u5Sy1i8vcl19KDnCdAPieSgcrPVHpKUqPVTqCAIxX8pTuZzm%2BW%2BkKpehF3lK6TOlOpfUEoBMnnevhOkAC9GIDlZ6q9DylJ%2FBYWwtcw3HUG5R%2Bic5I6QtKlyqtUFqreUsnTroN4EADeysdpfT7Sv9L6ZA4rgsbr8OkhmGCN41%2FAxqgo8lQpT%2BhwvM9pvQ1pYVKaxzwnHQHwAEAuUoPUnq50kuUZsUAF%2BheJT1QNakhqGCJ0ioqaGEmPSM%2Bvz%2B1B4%2Fl8HUgCggPVfp7pbcofUjpbKWbCDwnTvZKwGUSaBcpvYoAsEkDDX07FUmP5fRCazUPFEv6Mv4brfQIpYfRo%2FYjGNMt4IPXu1vplUrvUzpH6ba9KcHixAEunYmQbym9Sem%2BUbxZPY0boFqo9F2lH9ODJSPwgp9Sn%2BexAqUnMyFzJP%2Fva0nKIBM6k3R3OhMtux3NdNLVAQevNk7pdUyI2IAGb7Ve6SKlyKfOI%2FjaQ%2BAdn6IiZvy20v9QehQTN2YbIIEzizTzUdJM5%2B2cdEnA5dCgf610pOX9agINAHtG6ZIO%2Fr1FSv%2Bo9BGl31F6vtIJSgcZHi%2BHsR2ym7%2Bk161z5uKktdJWM00CpJAw0icsYAvR0zyp9AqlN3YC2MyYcTbp47VKX1e6y0IfJyv9f6UX%2BMSfTpx0qIcD2DDofJtEspCmIA76UOmflL7YxX5%2FA%2BnjKxJJ6iCDitktGdo5w0gvQUf%2FIJHMqRMnneLhcP1YpfdbwAZvsZ2JiMu7INh0qeJvAOCQpaw03seww12kl7nObJx0BuDg2UbTUL9jvIcECNL61yi9lXRybxDQ3B9KZHigyHgPyaCpBF2OMx0nHQ24kTTMM43jyEAivf8zpc%2FthW0CCoykz%2FUSGQ9ssIDuDolMG3PipEMAh3jmV0rPNo5Xa%2FHQwr28bZBFvVoicy510CG%2B%2Bzm9t0ukOGl3wIFOIbP3AwvY5tAQ13WT9nmLv2eRNM9gYoUDMq3IXqY7M3LSXoBD7%2B6l0nWppWfzZuR3J1lIcC03jmO6GIZBJjgzctIegMO5mJ0xjbGMJxhjW6D0ZkuiobsIhjUwRW2DcRxJIyRRBrf1F4YDaY3qJHUBN4jJAnNJDSYY3670i27eVm9KZKxxp3H8ZHr2rLYEW1ZNmWRV73SgS1HAYYAc06CmGMcxzvY%2FSv%2BRIu2FGPVBab5yAW14obTM1iYtdRnZMmzLhzJ88%2FzGUgtOUgtwGG8bS8qoCwaHMSdxdgq1F4D2uEQWreoCr49hkP5t8SWBcFhC6VmNGnBV1VIOcMhKXkVKuYf1KH1PIgs4U00wiP9biawi0AWrDH4s%2FivO46SU6Y3qJPUAB%2BPBQs4rjONIjsyQyArsVJR%2FKv2dRLKznoD7Yf3fAa2N37KrSiW7stiBLgUB15tUST8PRoZ5kfNSuN3q2QbzjeNHMZ5LOtOB%2BG1o4ccqfnuv8bWT1AGcNzH5fOM4Vmc%2F5pqusf7lo9J8ojPGKU9pjZfz4rf6YA8Xv6UY4DBt6VLjmDd1a5lrukbB%2BNzrxjGsdj87SUIpDWnpSoPiKjukFuAQu6G4jlkiAWNtT7tm2yOox%2FKc4eUQyyGBkp94%2FBaUXru3S05FkYTTgq51UwhweNoYc%2BurhxdK31e60jVbM8E8y%2Fcssdw3Eo%2FfesiQosWNY3AufkstwPWwxG4Y5H7BNZk1lptrcMBhpJYJpBnDjVlJ7CNQH3Tjb6kGuOFKj25mDZG1Ye%2B7JrMKhgk2WGK5EfF%2BAOI2UMncXVvU6wzXoikEOBybLM3retSQNnVGVWKA%2FzBpgwHldpTPJbLoVpcxEqmDGZcgKzlo21Ip2PqR1Ge4ZXapBDjQoFOMYxjgfrsT7g%2FJB5RwwIyWc6Trrj3bQS%2Bn80CsIDgwMTqZkyydBEIznTl3fbGlwjCVa7xBJzGzZKl2LEDPg5nyiO5tRVxxDpbuoPwcpkOtpmHGI%2FhMpNZv1Kjt%2FhKp4IyydV9G%2BS3YU%2B54adrsw%2BtU0GG84%2FP9AMckiWRmvapcmP1fTRq9Jo57%2Fhfvq4D%2FgyGgzDqylpX%2BdDJDUcmt0nfnBvU6btxg3uZEicwEymdbYy88VJ1eLO03CyiDdNmzEbTrKnHFcpMG3H40vD32QLBUGmACXXpY%2FMsMwOixnGUjjQBeEuNW5T7XoBryjyRS67%2FASERM52fZkjcAyDclsnrBFBjEOh%2FAjeF1o4zjAN8NcQKukMZeYLQlPnO5P53MkoHbl8vQLxfJ7l758Xg43C%2FKP5xP4DVobAWgwyygJ9hZtGVFa3TGP6Qeyud4tTTVfgEDQVWzOtqLy%2FzEAbiDjf8raUiJJF10YPajAqDflcg43oOWJIP33SiRfqmFPiJLinLln%2FGhFvAzarTvCvjcR1qM%2B7Rt0Fgt8U%2FTKpKWpSUK2FH4Ai7B2SXYA%2BEeiVS4%2FkTpb5RuoedBkgYV1C4hs1jUxoDDuOx9BBrKH2ICxEda22GGDeq9rCQT2eUgFhtwBxn%2F76aRm%2BL1YonEDtg2%2BBpSuOs0ahhk3IhKWadZrvuMD%2FpJ9uj%2FLZGxLsxn%2FDOBEfYxrhrx3%2FG0PkpCKJSAwaKdNlto38BY8RsoZSg9M16HcBHB9ne24Qrj%2FZfYlgB5bRvaCjq5i9k5YcHxnyznAPBYWfIa78MBLg7AjbL08uujeIVkM4fnkWr%2BhDQFmzNOtYAdBo%2BV1vdKJEsKGoNV19%2Fn%2B0eQ%2Fv4fPUyDjweLJW2RBS1iR%2BRleBG%2F5cWK3%2FqUbZT%2BO9YSdDEp3fEE0kMWsAmBtjyBpFm6xLf%2FOSayD2HnF62oL55pqdJiaVmhOtCBFNPblqytN4gJEDNJ7xcfjJJAMOOYRAq5VpFqVPMBgVLZajiit%2FyQgPmFtJwKVSaRUnVYe%2FYF4zN4Nr1oTz5723KN6nSm7GCyYoiWYOjvH7%2F1kEFfLZNhWz%2BSXb2HKUrZEMvLeEmqslbc5xAmPg4l3a8gkBZbvLQwQXYiQYfvPZyxIm72c3YyAxkSZPD1MTy3ktQ%2Fjd8ZZgKuKkpC5jh2KEvEvoFKb35OBalrNYGQxw77CI1VIN7%2FgAkt0%2B7H8e%2FH%2FB0H8Z4xXW%2BBwXj68XOPJkvzbPxDdi6tAtwAI%2BlRKomNv%2BGG7%2BDfPDbgVAuQkeS4n397G%2B%2FhAf2BSZkwqRNiA3OTEDwYlLL7Jxs9v5MBV84HMETzILn8jdY2TA%2FVSEneGOldtllyywuVl%2FMd9N5JGg7POZnGlMiuPvjws5ReRkqey3ts0IwcyZbZNGRPQBMvZPvmkHEECbpr%2BazxjL7F9yeyow0SFOgot%2FIcPMMfE9ymwKDvZphycZRk1ekSKdz0BpkX7vMMiZTTx2%2Fqw9%2FpMRbkH2bQKzdooL2HtnUBr7%2BaoHuD12zXWNRNzMr25mcE%2BTwRv07zyXHEBbg%2BFk8Tr3h7v63kQ4DMJ5f%2FnRHv2QBSy17jXlLJEYzrLpGWNf1LGNM9QA%2F8AzZeZ0ql4WUD9O69ogKuvlZKBxwkubsKJa9klVT2Uk0SPXFSRcM5hbFwDVnAhjjuLZPZxTvYqaJ936VhwZBOkshQzHh2GA9LU2Z6I71EP97DBgK9hOfU8ZwiZmZLNa%2Bynu9X836PZCe8zNJZIDY9ga9P4vfUGlRxCj3zM1qbAuAn0%2B4eJ7jT%2BBmXE%2Fxr%2BX6Ydj%2BWbOFihil4bm8zs%2Bt97lEEKz7%2FZYmslCnl8zyLodFAJgOLkwVclgGgRHcjDZJGbdOOPcV47bA4DPZdGgN6u%2Bns0UxZQwD%2Fmfd7Mz3gsE4GXJ0FWD3Er6JXICAZdRVSruhkcf4hCnibpcE%2FlkNCAqXYb2X7nEkQvkkjj5Yc8oZMwvRKc%2BihPPkrjRms404a%2Bxye%2F0f25rOZEb2F1DNNS1ghptzELPQCerWd9AgesP5CUOOZzjK%2BP5ugqWSbnc7fpY8n7scYdiM9keeFXyQ1XGFQYnzH1%2By0L2S7VbONNpECw3utJug%2Bo4OpZefyS4INv%2BUx417m0savYUd2b7KAC7cScGIJjkPsYWIBLpuG0Y98%2BgTLOe%2BQDrzNBM8tTKJ0hQ026iWJ6W%2FpIXi5MY3zKPOKV0qVv5erYUezhb3zqYxr4eFfp5Ets8RsV5K93MwMo%2FkFYCHP0ts9SFAulqbaLdXab6yK8jurpGnSQaXFdhbSy0xm56gD7liJTG6Yxb9H03uUGOeMJu3dqP2GJT4dOGzlCtpSlvY7GmgzO9lZLzWunUJbfJifYaP3aEsMw1zaGsC1VTbHNMQ%2BcVyXRUoz3vJeNQ0CHH8de0CA7RtJ3pO0w3XhKJm4cKyvyKwtl6%2F7HyBFQ4%2BRASX%2FklAwK5YnfZ2x6zGkYmewlz6TgJmlgeJYghJ06bkY94Pxs%2B%2BxfQ%2FTAJdDSheU6ENB2fR62VG8%2Bm56ouNJLZdpmcRz6dkeYyw1gyBZT4%2BTxv8D9LblUbK4CEMKtPvtyZjOi1d12w%2BTmi61fNZkXv8lE0aZUQAN4B4Yr4EEYxhYQBLfsKLB0vuNYWYrGQnR5T9Bfr6TPRaoQLylDOrFfyPFgM9vSWQDxowohhYXaJGhbMxSBuLGeAmB9z4p4UVsm%2FsIyln8DQWMO1bGEWtU0ABPl%2BarHRri7HBinfsq7xHe42%2B8n2x2nFvZmZbwmU0hjS1lpnQSAbjYSPn3JCgupGfsy3up094PW2x%2FF0OYdIOK92R%2BAb%2FjZ%2FRgmVHsakgiLNAGuNo2AFyd1uOgl7xRYg4A%2B4IFPfnv6SXvYZarv8XFbycITYtN03q6DO1YiI3lNyjuxWDebJWA5mVqLYDLtLSnfyZR0cfarFwZWrhIBhd9EotSRgPJ%2B1qy6lZSyH8wFsvU6Gg8wNmlGV4yEvbxoqCVqxivDSHgxhNQj%2FO3lBH0AM9QAu4o0smnDTqZzSz4VD4fxHHvSfOxwF9bbMID3EZLm%2BgeehHtKtqMox2JJBaDURp7qE%2FWMhb9GsAESSFTwJOk%2Bdo6HZgvsic5KYbXGM%2FAdX9mhkyjRnw4k999p%2BUzChiTFGoN6TX4bDaaza30JtUZJc2nh2XTIP5iGFa2EUt6HnK3rwsPZsqA4tWSX%2FyZ1GT1SRRsuiBB8Ajp5Tga6AbNIHLZnrGGEoZqHjShcFRiD3BXsXMYT9aDQfpz2Hav8f0wbeM%2BnreCNDSNgN1tZDZvYEczjZ%2B9gx1diM%2FwliidcIP2fbqUs3NKY8LowzicTNKA%2B9oAUP84H5IneTTuEL1DtIElNOJ1TJCgof4zynle9bDbtAeqC8aiMDg%2Bj9kiG3DymWAIae%2BnsRdcy6yaTUDDTmNvbKbYXyXN1R9WrjSfWeIBrjo6jVTeLTOncQwujmGBeKSUyYhxWufyOQ1yIjN9n%2FlcP4zxHu470f0i6uOklS%2BSpZxGWjmRVHGtdv18Gv0EpuMnkW5%2BbNjit2mjVzPGN8VLloQSCCdqpWleLIYg3mqr5IbNTW4z%2FocRJbI7TIBUJNcHbAhEb2embTnpwIwYrjloaZxnCO6XNY8U7Z6CbPhMapD31xBHr51paLQHhdhhkBF%2Ffu3X42OlQH7xKhm4fUU83i2L3stvH4P9GTMXS9PqiGXskA4m1czysYdrmND4myRenW0nvcORMZjRYsblYDYYY93XMgSwlskRfNaPaPgLmfYPWxhYtOmHN9IeQ1GeQ8CnU8Czu0r8tyTL8bHzuAD3hSWGGRmFpyczn2wZKcAr2jHwaGxaf4fEt5ljGbOVaMxPNOqZqHjjZsnM87MFyoMMulsVi5YlOJeygPEZ5o7%2BinQrV6Oz6M2nM459VZoKPpWxQ1tGA%2FotYyIzsXUXO7A1jJl3WBIifvHZKj6Pg%2FmMD6exBywe5B2GADexzV4zqCLa7nnS25%2FzmvnScm2hZy9XEbg60%2FpfenobbQzFeOaL2AYj%2Bfd7Rt6gBxM1D%2FGZJE0pzXlnPdmAC4xeIYd0MF7ZTNf8tLQsR%2BAFn48QfNeTQkiU%2B7uf3s1co9c3QdAM4DXpSSR18rQ4wHsAwy30fLtvdiHQlJ2MvI7Z0cxjGvpOeoel%2FI5%2BjHP2oTHPlOZba31KJjGN9OubTC5s47WgdYfQ%2B9zJRJXpXXPZZpk%2BMeQMetkrScXXsXP8yDj3Zcb6w8ReE8ZLsNTynNU8zwxtHmHncTEB9xGfCeznCMaBtzPjmq6xlgLadtAnOz6TYQXa60liYA3f21eayiHe3xrArbQA7giLd9vEHigYw9Pt4rlL2YClPueicecSnNfRoHSZxwacb%2BmdED9gAHROjF5Y9%2B5l9OiIV17gg62Ls90WG797kLRcaVEoMSZ%2BB%2BtrpDj%2FUOlV8ZWK4VY3UswY8dlMtiUAcwy9XE96anRWT7FTW2W5fgHT3OitJ0tk0DyHHgDPCGvrnhP7uNQOtn%2Bp%2BA%2BVAOw%2FZbLpWLapLdu5hEMZhzAWttkF7ulRgucthiBhi73%2BgoCbRPoZItBvIlDG0rZqtWzt62RFFTHa%2By52VlOIg2OkqYrAQt7X3LjjrbARMwy8%2B4N8Pqw8DVwLOU5SZ2TkBrC38DPu3ez5EqWfg2kc17JnRcM%2FINFXX3tet79BgfxizRAbtZYeLlq5CBtYd0vzMa2JNJz9tWN%2FJR0q88ugV%2FfoJyM%2Ff0MOXDNHdvcaGG9Nk56kO8PZPpUE3FqJPdslyGtH8doqJlbWSfQ1dFns1WvZicTqmHKYoMnmPe2MkqDpy%2Fuu8GEhGD4oIuijNU5fMrGhfIarNbY2Spqmc3kr04fzOW6Os5PNI%2B0exOu20xYbcx5zX34paQ9XRh5%2BhmaYBQxalxgce6u0n2yjq15HED0rzacC2WLKckl%2BiU5rt0seLc0HikMM5Mti4T6ztkJK8sc2lsnD1K5QMK6hz0r27skU5q0nCNYmcE1NgudXiH29ni5b47Ch0hisSE%2FYREvfr7fQxQ0JtlkJM%2BJtnqUMkRY0c3ykHx0tu0iRZsQAW2eLt0ZLLwtRHGcCSNIa6qQ8t0DK%2BoxofO2k%2B0o0wL0tLQd0J0vXrg3ZmbIf20eXNRJ3Wj2gaGSocdUAYrpwwDVzKgFOyOeXGfHOWLFPKnYS8W5jjGOfxuvhIsmTavlq8Dgp3GeCBOuqXYumGOAqma0ykxjnuiazJnemGPEwAuqlkkARn7SGeqnIGayo5TBHK1MQcAiqX5Hmg7tZpE0jXbM1E4wBnWEcW2qJg2PSSoAO6ph76gEO8dtGaTm%2BANp0oWu2PYJUMRYg6uUfvDIRWxL9MMRuqHECeuniuNQCnEcrza2FvY3jR7mm2%2BPdzjGOIRX%2BajIflqFity%2BHHitbhp%2BoXle51k0xwGGAEONubxrHMTPgMtd0jYOxWJ1gTtJ9V2KPP9lJZTgkVdl5kcHvhpBr4RQDHASDiQ8axzAqi%2BTJxBRvO8RtZxnHsPIBA%2FRJZz0AujQHtpQFHLwc1h%2FNMo5j3AlTrlJ1X1zMgr%2Fe%2BP11jHmXteaDXRyX2oCDYGoSStLpSyeQAsearJ%2BmYJthZv1UUmtd0DFh5nqrymsjdiscNkE27TtZva50FpqCgIOXQ5r7AeM4JqdiseKpKdZeyNKeZxzHpFqvdF2rBMt0qnv0lers%2FrHKnjvppoCDYOoDCrwsNI5j9jgWjY5OkfZCSQCsrTL3SsBU8efb6kv2VO9ykrKAg2BWN6ofmaW8UbYaFX0HdPO2wrQ2LKQcbKGS90iMQkFOnCQKOHS5WMCIBXn6xGas%2FkW27l7pvkmUQwiqI43jRTy%2B3pmSk7YGHMQrs%2F24cRxAu6Cbgg5gwyrzE6X5nCt4NNTMmNf2XxloLH8OddO8UhtwkFIC6w3jOOIa7FSCjGZeN2mfcfw9iN30ycnIRGIWDmr017b1lwbrqxpnm2wacbJ67TKVqQ44yEaJbGRgFoZB5hKbSqDuxpi9vG2wJRQqMk02wAY6jUWx09orbkPCpDazV2O9Spc8cYDz4jks7Z9qAR08HSb0omLt6XthmwBcKFKKXVPGG2BrINiQmd3RnjeBuiaBcNhZqAPcHsH8oyUEnVlLIkuaavZdI377o3UtKSCFRDZytNE%2BIYINFaALnek46WjA6aBD3b7XjPdQ3wMFSZHVRKJlYhdvh%2FMlUusSZdbMIQ4ki7AFMgp%2BbnVm46Q19EnaAHReufJCGqwumE2POojYRWcWwbe5C7UBaCOmqGEy8iBLJ4RCRtOZINnlTMZJZwPOAx3qoGAWxjr%2B1ev8Y6wONVFQmhxTwVC3%2FtlO9hbIQF5GoI0Qe6n0VYzXXpUkdjZ14qS9AAdBhI9aHjPp8W5jHLcnDyCRhAo2RkAFWyRWUB0MmyZ82oHUEYP03%2BV9jBD7JiHoQFDT5TcEXb0zFSddDXCeYN7l3yVSaBOD4Sg33dMwegwfHEcvg7V1qJD7Jq9b1w73NIGe7EQmQwaJfesr4X1Poxf23fnGiZOuADihRwBwsEvLO0yqnGvxNljMOobJlUmMAxHfLabXW0EAJELnsHwGm12gUvRR%2FIvsIwbjsyV6oqiCcRpizLXOqznZmwDnUUxMk1hIA8Zm7VdJy%2BU83t5t%2FQkWeKATpGnnUPxFFeMiJi0qCMBaArYH40Vci4nF%2BQRWL2oGvyPg45GR7n%2BM9LHSeTUneyPg9HgIZcqxGhoz67H9MGqBnC3NS4OLBoye0nwjdO9vnTTtSxeWpj230%2Fk6TfucWFJCb4ZYbQ3B7YDmZK8HnA48bNCBbYIwUI4yDagAhqpXY6NcEzD%2BtnYAHYDFnmjPMF7cRm%2FpgOak2wFOBx6SEShQhL2msbvkQRKZBoYtsQ6T6FsHJ0NrMTaIjfywj9cCxoR1LkZzkiqA08FQQ%2F2AdBOrEDDLA0tiDuffERLJKvYlZQz7JGpAEzG2hzHB5VTQxXLSUFcOy0mnSosNGZ04cdJ%2BkuaawImTjpN%2FCzAAt7M%2BXgoTWeUAAAAASUVORK5CYII%3D&amp;logo=%7BEMBEDDED_FILE%3A%3A%3A1%3Adell-software-220x88.png%7D&amp;siteNavigation=exclude&amp;groupSelectionCustom=&amp;navigation=%3Cnavigation%3E%0D%0A%20%20%3Clinks%20%2F%3E%0D%0A%3C%2Fnavigation%3E&amp;links=Link%3DNotifications%26Link%3DInbox%26Link%3DBookmarks%26Link%3DUser%26Link%3DInvite%26Link%3DUserInformation%26Link%3DSettings%26Link%3DSignOut" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::50c816b46c7647d5a7cea85b3f47d4d6" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="True" sourceConfiguredContentFragmentId="103" configuration="title=%24%7Bresource%3ACF_GenericContent%7D&amp;html=%3Ctable%20style%3D%22height%3A24px%3B%22%20width%3D%22100%25%22%3E%0D%0A%3Ctbody%3E%0D%0A%3Ctr%3E%0D%0A%3Ctd%20width%3D%2220%25%22%3E%0D%0A%3Ch4%3E%3Ca%20title%3D%22Blog%22%20href%3D%22~%2Fb%2Fen%22%3EBlog%3C%2Fa%3E%3C%2Fh4%3E%0D%0A%3C%2Ftd%3E%0D%0A%3Ctd%20width%3D%2220%25%22%3E%0D%0A%3Ch4%3E%3Ca%20title%3D%22Products%22%20href%3D%22~%2Fproducts%2F%22%3EForums%3C%2Fa%3E%3C%2Fh4%3E%0D%0A%3C%2Ftd%3E%0D%0A%3Ctd%20width%3D%2220%25%22%3E%0D%0A%3Ch4%3E%3Ca%20title%3D%22Beta%22%20href%3D%22~%2Fbeta%2F%22%3EBeta%3C%2Fa%3E%3C%2Fh4%3E%0D%0A%3C%2Ftd%3E%0D%0A%3Ctd%20width%3D%2220%25%22%3E%0D%0A%3Ch4%3E%3Ca%20title%3D%22About%22%20href%3D%22~%2Fabout%2F%22%3EAbout%3C%2Fa%3E%3C%2Fh4%3E%0D%0A%3C%2Ftd%3E%0D%0A%3Ctd%20width%3D%2220%25%22%3E%0D%0A%3Ch4%3E%3Ca%20title%3D%22Dell%20Software%22%20href%3D%22http%3A%2F%2Fsoftware.dell.com%2F%22%20target%3D%22_blank%22%3EDell%20Software%3C%2Fa%3E%3C%2Fh4%3E%0D%0A%3C%2Ftd%3E%0D%0A%3C%2Ftr%3E%0D%0A%3C%2Ftbody%3E%0D%0A%3C%2Ftable%3E&amp;backgroundColor=&amp;backgroundImage=&amp;height=" />
+          </contentFragments>
+        </region>
+      </regions>
+    </contentFragmentHeader>
+  </contentFragmentHeaders>
+  <contentFragmentFooters>
+    <contentFragmentFooter layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::50c816b46c7647d5a7cea85b3f47d4d6" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="title=%24%7Bresource%3ACF_GenericContent%7D&amp;html=%3Ctable%20style%3D%22height%3A114px%3B%22%20width%3D%22100%25%22%3E%0D%0A%3Ctbody%3E%0D%0A%3Ctr%20valign%3D%22top%22%3E%0D%0A%3Ctd%20width%3D%2225%25%22%3E%0D%0A%3Cp%3E%3Cstrong%3EAbout%20Us%3C%2Fstrong%3E%3C%2Fp%3E%0D%0A%3Cp%3E%3Ca%20title%3D%22Company%22%20href%3D%22http%3A%2F%2Fsoftware.dell.com%2Fcompany%2F%22%20target%3D%22_blank%22%3ECompany%3C%2Fa%3E%3Cbr%20%2F%3E%3Ca%20title%3D%22News%22%20href%3D%22http%3A%2F%2Fwww.dell.com%2FLearn%2Fus%2Fen%2Fuscorp1%2Fabout-dell-newsroom%3Fc%3Dus%26amp%3Bl%3Den%26amp%3Bs%3Dcorp%26amp%3Bref%3Dff42%26amp%3Bdelphi%3Agr%3Dtrue%22%20target%3D%22_blank%22%3ENews%3C%2Fa%3E%3Cbr%20%2F%3E%3Ca%20title%3D%22Partners%22%20href%3D%22%2Fpartners%2F%22%20target%3D%22_blank%22%3EPartners%3C%2Fa%3E%3C%2Fp%3E%0D%0A%3C%2Ftd%3E%0D%0A%3Ctd%20width%3D%2225%25%22%3E%0D%0A%3Cp%3E%3Cstrong%3ECommunities%3C%2Fstrong%3E%3C%2Fp%3E%0D%0A%3Cp%3E%3Ca%20title%3D%22SIM%20Blogs%22%20href%3D%22%2Fblog%22%3ESIM%20Blogs%3C%2Fa%3E%3Cbr%20%2F%3E%3Ca%20title%3D%22Tech%20Center%22%20href%3D%22http%3A%2F%2Fdelltechcenter.com%2F%22%20target%3D%22_blank%22%3ETech%20Center%3C%2Fa%3E%3Cbr%20%2F%3E%3Ca%20title%3D%22IT%20Ninja%22%20href%3D%22http%3A%2F%2Fitninja.com%2F%22%20target%3D%22_blank%22%3EIT%20Ninja%3C%2Fa%3E%3Cbr%20%2F%3E%3Ca%20title%3D%22Toad%20World%22%20href%3D%22http%3A%2F%2Ftoadworld.com%2F%22%20target%3D%22_blank%22%3EToad%20World%3C%2Fa%3E%3Cbr%20%2F%3E%3Ca%20title%3D%22Boomi%22%20href%3D%22https%3A%2F%2Fcommunity.boomi.com%2Fwelcome%22%20target%3D%22_blank%22%3EBoomi%3C%2Fa%3E%3C%2Fp%3E%0D%0A%3C%2Ftd%3E%0D%0A%3Ctd%20width%3D%2225%25%22%3E%0D%0A%3Cp%3E%3Cstrong%3ESocial%20Networks%3C%2Fstrong%3E%3C%2Fp%3E%0D%0A%3Cp%3E%3Ca%20title%3D%22Facebook%22%20href%3D%22http%3A%2F%2Fwww.facebook.com%2Fdellsoftware%22%20target%3D%22_blank%22%3EFacebook%3C%2Fa%3E%3Cbr%20%2F%3E%3Ca%20title%3D%22Google%2B%22%20href%3D%22https%3A%2F%2Fplus.google.com%2Fu%2F0%2F103474799682341904292%2Fposts%22%20target%3D%22_blank%22%3EGoogle%2B%3C%2Fa%3E%3Cbr%20%2F%3E%3Ca%20title%3D%22LinkedIn%22%20href%3D%22http%3A%2F%2Fwww.linkedin.com%2Fgroups%2FDell-Software-4793472%3Fgid%3D4793472%26amp%3BmostPopular%3D%26amp%3Btrk%3Dtyah%22%20target%3D%22_blank%22%3ELinkedIn%3C%2Fa%3E%3Cbr%20%2F%3E%3Ca%20title%3D%22Twitter%22%20href%3D%22http%3A%2F%2Ftwitter.com%2Fdellsoftware%22%20target%3D%22_blank%22%3ETwitter%3C%2Fa%3E%3C%2Fp%3E%0D%0A%3Cp%3E%26nbsp%3B%3C%2Fp%3E%0D%0A%3C%2Ftd%3E%0D%0A%3Ctd%20width%3D%2225%25%22%3E%0D%0A%3Cp%3E%3Cstrong%3EResources%3C%2Fstrong%3E%3C%2Fp%3E%0D%0A%3Cp%3E%3Ca%20title%3D%22Documents%22%20href%3D%22%2Fdocuments%2F%22%20target%3D%22_blank%22%3EDocuments%3C%2Fa%3E%3Cbr%20%2F%3E%3Ca%20title%3D%22Events%22%20href%3D%22http%3A%2F%2Fsoftware.dell.com%2Fevents%2F%22%20target%3D%22_blank%22%3EEvents%3C%2Fa%3E%3Cbr%20%2F%3E%3Ca%20title%3D%22Videos%22%20href%3D%22%2Fvideo-gallery%2F%22%20target%3D%22_blank%22%3EVideos%3C%2Fa%3E%3Cbr%20%2F%3E%3Ca%20title%3D%22Technical%20Support%22%20href%3D%22https%3A%2F%2Fsupport.software.dell.com%2F%22%20target%3D%22_blank%22%3ETechnical%20Support%3C%2Fa%3E%3Cbr%20%2F%3E%3Ca%20title%3D%22Feedback%22%20href%3D%22~%2Fabout%2Ff%2Ffeedback-and-support%22%3EFeedback%3C%2Fa%3E%3C%2Fp%3E%0D%0A%3C%2Ftd%3E%0D%0A%3C%2Ftr%3E%0D%0A%3C%2Ftbody%3E%0D%0A%3C%2Ftable%3E&amp;backgroundColor=&amp;backgroundImage=&amp;height=" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::50c816b46c7647d5a7cea85b3f47d4d6" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="title=%24%7Bresource%3ACF_GenericContent%7D&amp;html=%3Cp%20align%3D%22center%22%3E%26copy%3B2016%20Dell%20Inc.%20ALL%20RIGHTS%20RESERVED.%20%26nbsp%3B%20%26nbsp%3B%26nbsp%3B%3Ca%20title%3D%22Terms%20of%20Use%22%20href%3D%22http%3A%2F%2Fsoftware.dell.com%2Flegal%2F%22%20target%3D%22_blank%22%3ETerms%20of%20Use%3C%2Fa%3E%26nbsp%3B%20%26nbsp%3B%20%26nbsp%3B%3Ca%20title%3D%22Privacy%22%20href%3D%22http%3A%2F%2Fsoftware.dell.com%2Flegal%2Fprivacy.aspx%22%20target%3D%22_blank%22%3EPrivacy%3C%2Fa%3E%26nbsp%3B%20%26nbsp%3B%20%26nbsp%3B%3Ca%20title%3D%22SIM%20Community%20Guidelines%22%20href%3D%22~%2Fabout%2Ff%2Ffeedback-and-support%2F9%2Ffaq--getting-started%22%3ESIM%20Community%20Guidelines%3C%2Fa%3E%26nbsp%3B%20%26nbsp%3B%20%26nbsp%3B%3Ca%20title%3D%22Contact%20Us%22%20href%3D%22mailto%3AQDL.Marketing.SocialMedia%40software.dell.com%22%3EContact%20Us%3C%2Fa%3E%3C%2Fp%3E&amp;backgroundColor=&amp;backgroundImage=&amp;height=" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::212f71d69e37457887f33f32918f6ae2" showHeader="False" cssClassAddition="no-wrapper" isLocked="True" sourceConfiguredContentFragmentId="2" configuration="profileFields=" />
+            <contentFragment type="Telligent.Evolution.Controls.ContentFragments.FreeAttribution, Telligent.Evolution.Controls" showHeader="False" cssClassAddition="no-wrapper with-spacing" isLocked="True" sourceConfiguredContentFragmentId="1291327019" configuration="" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::064087c399074d4dba630192735509ef" showHeader="False" cssClassAddition="no-wrapper" isLocked="True" sourceConfiguredContentFragmentId="3" configuration="duration=10&amp;native=True" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::22e271b19ea14e54a503441c1f4f167e" showHeader="False" cssClassAddition="no-wrapper" isLocked="True" sourceConfiguredContentFragmentId="1291327022" configuration="Title=%24%7Bresource%3ATourTips_Name%7D&amp;SuppressDuration=86400" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::fe757b55a68043478a5014bd2d91f8db" showHeader="False" cssClassAddition="no-wrapper" isLocked="True" sourceConfiguredContentFragmentId="1291327023" configuration="" />
+          </contentFragments>
+        </region>
+      </regions>
+    </contentFragmentFooter>
+  </contentFragmentFooters>
+  <contentFragmentPages>
+    <contentFragmentPage pageName="calendar_events" isCustom="false" layout="HeaderTopContent" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Calendar Home">
+      <regions>
+        <region regionName="Header">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::29aa41eefc8e406b9196f989452c5f22" showHeader="True" cssClassAddition="full-border with-header" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ACalendar_Title_Title%7D" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::36ee9a45ac7a497ca43b07458e37d5c9" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-3" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3Acalendar_CalendarWidgetTitle%7D&amp;viewType=large&amp;isAggregate=False&amp;hide=false&amp;selectedCalendarOrGroup=&amp;links=Link%3DcalendarSubscribe%26Link%3DcalendarRss" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::36ee9a45ac7a497ca43b07458e37d5c9" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-3" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3Acalendar_CalendarWidgetTitle%7D&amp;viewType=small&amp;isAggregate=False&amp;hide=True&amp;selectedCalendarOrGroup=&amp;links=Link%3DcalendarSubscribe%26Link%3DcalendarRss" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="calendars" isCustom="false" layout="HeaderTopContent" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Calendars Home">
+      <regions>
+        <region regionName="Header">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::29aa41eefc8e406b9196f989452c5f22" showHeader="True" cssClassAddition="full-border with-header" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ACalendar_Title_Title%7D" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::b6a41a942283418b98ceec1055d26a13" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-3" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3Acalendar_CalendarListWidget_Title%7D&amp;pageSize=5&amp;showAll=False" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="calendar-event-addedit" isCustom="false" layout="HeaderTopContent" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Create/Edit Calendar Event">
+      <regions>
+        <region regionName="Header">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::29aa41eefc8e406b9196f989452c5f22" showHeader="True" cssClassAddition="full-border with-header" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ACalendar_Title_Title%7D" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::82dced9f1b7a4eb68157ea4f1e3f5104" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-3" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ACalendar_EventAddEdit_Title%7D" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="calendar-event" isCustom="false" layout="HeaderTopContent" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Calendar Event">
+      <regions>
+        <region regionName="Header">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::29aa41eefc8e406b9196f989452c5f22" showHeader="True" cssClassAddition="full-border with-header" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ACalendar_Title_Title%7D" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::e3edd58fe7234374ae00e52bcbad33c3" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-3" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ACalendar_EventWidget_Title%7D&amp;mapZoom=15&amp;mapHeight=300&amp;mapWidth=920&amp;links=Link%3DeventSubscribe%26Link%3Dfeature%26Link%3DeventEdit%26Link%3DviewRegistrations%26Link%3DcancelEvent%26Link%3DdeleteEvent%26Link%3Dconvert%26Link%3Ddownload%26Link%3Drss%26Link%3Dabuse" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::f2a2ded1f5044948a6d1c8ccd0918ebb" showHeader="False" cssClassAddition="no-wrapper-with-spacing" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ACommentForm_Name%7D&amp;displayCommentThreshold=0" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::e4e96f3241434dc7bc4a04d39c30192f" showHeader="False" cssClassAddition="no-wrapper-with-spacing" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AComments_Name%7D&amp;pageSize=15" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="event-registration" isCustom="false" layout="ContentLeftSidebarRight" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Calendar Event Registered Users">
+      <regions>
+        <region regionName="RightSidebar">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::504c489a79bb4522bf4f3e782e46bad6" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-3" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ACalendar_EventRegistrationAdd_Title%7D" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::29aa41eefc8e406b9196f989452c5f22" showHeader="False" cssClassAddition="no-wrapper" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ACalendar_Title_Title%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::0b4814f2885d4374bf18de5d71221981" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-3" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ACalendar_EventRegistrationList_Title%7D&amp;pageSize=15" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="ideas-challenges" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Ideas Home">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::679decf2a911416fa4cc50e5b84cbe64" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AIdeas_Title_Title%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::dbc0d67480b04803a4cbe2f84042e815" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ABrowseChallenges_Title_BrowseChallenges%7D&amp;showTitleColumn=true&amp;showGroupColumn=false&amp;showPostsColumn=true&amp;showLastPostColumn=true&amp;groupAndSubGroups=false&amp;itemsBeforeScroll=5&amp;defaultSortOrder=ApplicationName&amp;includeGroupName=false" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="ideas-idealist" isCustom="false" layout="ContentLeftSidebarRight" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Ideation Home">
+      <regions>
+        <region regionName="RightSidebar">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::fb0cf555017f4690bbe0703922c03f75" showHeader="False" cssClassAddition="no-wrapper responsive-3" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AIdeaLinks_Title%7D&amp;links=Link%3DideationSubscriptions" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::679decf2a911416fa4cc50e5b84cbe64" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AIdeas_Title_Title%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::5574af2a95e745b8b58751cc6e528466" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-2" isLocked="False" configuration="fragmentHeader=&amp;queryType=all&amp;challengeOrGroup=challenge&amp;selectedChallenge=&amp;selectedGroup=&amp;includeSubGroups=false&amp;excerptSize=250&amp;pageSize=10" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="ideas-createeditidea" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Create/Edit Ideation Idea">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::679decf2a911416fa4cc50e5b84cbe64" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AIdeas_Title_Title%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::8f2eba6966c04afd9ee93aa6ee88ab3d" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AIdea_Create_Title%7D" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="ideas-idea" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Ideation Idea">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::679decf2a911416fa4cc50e5b84cbe64" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AIdeas_Title_Title%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::3f6151c2e4674f7bac9e21cabae80131" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AReportAbuse_Name%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::80fbac27fe0b47bdab294d1d1a91f09f" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AIdea_Title%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::f2a2ded1f5044948a6d1c8ccd0918ebb" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-3" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ACommentForm_Name%7D&amp;displayCommentThreshold=0" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::e4e96f3241434dc7bc4a04d39c30192f" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-3" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AComments_Name%7D&amp;pageSize=15" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="taglist" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Tags">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::98b406bf9f224e61b50ee7293c5732fd" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="670389842" configuration="fragmentHeader=%24%7Bresource%3AGroups_GroupTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::8c838436a4184f83a6f70318e8cc031a" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="670389843" configuration="fragmentHeader=%24%7Bresource%3ATagCloud_Title%7D&amp;applicationType=Unknown&amp;ignoreFilterTags=False&amp;maximumTags=25&amp;minimumPostsPerTag=1&amp;filterTags=&amp;showTagCounts=False&amp;enableNoTagsMessage=True&amp;noTagsText=%24%7Bresource%3ATagCloud_NoTagsDefined%7D&amp;linkTo=ContextualTagBrowser" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::ec913ce1a28f4602af498bf572f374e1" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="670389844" configuration="fragmentHeader=&amp;pageSize=25&amp;dataSource=context&amp;logicallyOrTags=True&amp;userDefinedTags=&amp;searchSettings=" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="home" isCustom="false" layout="HeaderTopContent" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Home">
+      <regions>
+        <region regionName="Header">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::50c816b46c7647d5a7cea85b3f47d4d6" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="title=%24%7Bresource%3ACF_GenericContent%7D&amp;html=%3Ctable%20border%3D%220%22%20width%3D%22100%25%22%20cellspacing%3D%222%22%20cellpadding%3D%220%22%3E%0D%0A%3Ctbody%3E%0D%0A%3Ctr%3E%0D%0A%3Ctd%20colspan%3D%224%22%3E%0D%0A%3Ch1%3EWelcome%20to%20the%20Rapid%26nbsp%3BRecovery%20BETA%20Community%21%3C%2Fh1%3E%0D%0A%3C%2Ftd%3E%0D%0A%3C%2Ftr%3E%0D%0A%3C%2Ftbody%3E%0D%0A%3C%2Ftable%3E&amp;backgroundColor=&amp;backgroundImage=&amp;height=" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::ab92f9a89af24721bba1c464c1334be6" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AGroups_GroupBanner_Name%7D&amp;navigation=%3Cnavigation%3E%0D%0A%20%20%3Clinks%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Controls.SingleGroupCustomNavigationPlugin%2C%20Telligent.Evolution.Controls%22%20id%3D%22ad164b2a370c415bbc34a89e1380c6a3%22%20configuration%3D%22group%3DGroup%253D0%2526GroupPath%253D%26amp%3Blabel%3DHome%26amp%3BloadedFor%3D10%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Blogs.Controls.GroupBlogsCustomNavigationPlugin%2C%20Telligent.Evolution.Blogs%22%20id%3D%22113e18ef8b6b41f4baf146ee9a38e829%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DBlog%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Discussions.Controls.GroupForumsCustomNavigationPlugin%2C%20Telligent.Evolution.Discussions%22%20id%3D%22bfc84935bef1446495b965b82930e643%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DForums%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.MediaGalleries.Controls.GroupMediaGalleriesCustomNavigationPlugin%2C%20Telligent.Evolution.MediaGalleries%22%20id%3D%22e02e429fdfd048959b66dc13c1da8b73%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DDownloads%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Wikis.Controls.GroupWikisCustomNavigationPlugin%2C%20Telligent.Evolution.Wikis%22%20id%3D%2213b28afcc6ee48eab4a25b8e96bfb3e6%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DDocuments%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Controls.SingleGroupMembersCustomNavigationPlugin%2C%20Telligent.Evolution.Controls%22%20id%3D%22571a092e69064b83ae78ff3b3e54eeb1%22%20configuration%3D%22group%3DIncludeSubGroups%253D%252520False%2526Group%253D0%2526GroupPath%253D%26amp%3Blabel%3DMembers%22%20%2F%3E%0D%0A%20%20%3C%2Flinks%3E%0D%0A%3C%2Fnavigation%3E&amp;includeParent=True" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::59feef7f27aa473180bb52071008660b" showHeader="True" cssClassAddition="no-wrapper with-spacing with-header responsive-1" isLocked="False" configuration="fragmentHeader=Rapid%20Recovery%20BETA%20Forums&amp;showTitleColumn=True&amp;showGroupColumn=True&amp;showPostsColumn=True&amp;showLastPostColumn=True&amp;group=IncludeSubGroups%3D%2520False%26Group%3D0%26GroupPath%3D&amp;groupAndSubGroups=False&amp;itemsBeforeScroll=20&amp;defaultSortOrder=ApplicationName&amp;forumSelection=&amp;includeGroupName=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::c6af9d06240940beae71ade1bf750570" showHeader="True" cssClassAddition="no-wrapper with-spacing with-header responsive-1" isLocked="False" configuration="fragmentHeader=Rapid%20Recovery%20Beta%206.1%20Forum%20Posts&amp;includeDiscussions=True&amp;includeQuestions=True&amp;supportUserFiltering=True&amp;filter=Active&amp;sortBy=LastPost&amp;sortOrder=Descending&amp;popularOnly=False&amp;selectedForumOrGroup=IncludeSubGroups%3D%2520False%26Group%3D-1%26GroupPath%3D&amp;pageSize=15&amp;hideEmpty=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::0df71baf88f84214bf4a2907d004bc2c" showHeader="True" cssClassAddition="top-border with-spacing with-header responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AMoreContent_Name%7D&amp;moreType=related&amp;display=as-slider&amp;slideAt=bottom&amp;includeBlogPost=True&amp;includeWikiPage=True&amp;includeMedia=True&amp;includeForumThread=True&amp;includeGroup=True&amp;groups=IncludeSubGroups%3D%2520False%26Group%3D0%26GroupPath%3D&amp;includeSubGroups=True&amp;pageSize=5" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="contact" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Contact">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::98b406bf9f224e61b50ee7293c5732fd" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="446225294" configuration="fragmentHeader=%24%7Bresource%3AGroups_GroupTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::fe031c8fd1fe4d5bbddbfd9014140fc8" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="446225296" configuration="fragmentHeader=%24%7Bresource%3ACore_GroupContact_Title_ContactGroup%7D" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="members" isCustom="false" layout="ContentLeftSidebarRight" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Members">
+      <regions>
+        <region regionName="RightSidebar">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::3321fc78780f472eb8031802f1592937" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1098454307" configuration="fragmentHeader=%24%7Bresource%3AGroups_GroupMembershipList_Name%7D&amp;viewType=options&amp;pageSize=16" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::98b406bf9f224e61b50ee7293c5732fd" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1098454307" configuration="fragmentHeader=%24%7Bresource%3AGroups_GroupTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::ab92f9a89af24721bba1c464c1334be6" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AGroups_GroupBanner_Name%7D&amp;navigation=%3Cnavigation%3E%0D%0A%20%20%3Clinks%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Controls.SingleGroupCustomNavigationPlugin%2C%20Telligent.Evolution.Controls%22%20id%3D%22ad164b2a370c415bbc34a89e1380c6a3%22%20configuration%3D%22group%3DGroup%253D0%2526GroupPath%253D%26amp%3Blabel%3DHome%26amp%3BloadedFor%3D10%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Blogs.Controls.GroupBlogsCustomNavigationPlugin%2C%20Telligent.Evolution.Blogs%22%20id%3D%22113e18ef8b6b41f4baf146ee9a38e829%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DBlog%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Discussions.Controls.GroupForumsCustomNavigationPlugin%2C%20Telligent.Evolution.Discussions%22%20id%3D%22bfc84935bef1446495b965b82930e643%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DForums%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.MediaGalleries.Controls.GroupMediaGalleriesCustomNavigationPlugin%2C%20Telligent.Evolution.MediaGalleries%22%20id%3D%22e02e429fdfd048959b66dc13c1da8b73%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DDownloads%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Wikis.Controls.GroupWikisCustomNavigationPlugin%2C%20Telligent.Evolution.Wikis%22%20id%3D%2213b28afcc6ee48eab4a25b8e96bfb3e6%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DDocuments%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Controls.SingleGroupMembersCustomNavigationPlugin%2C%20Telligent.Evolution.Controls%22%20id%3D%22571a092e69064b83ae78ff3b3e54eeb1%22%20configuration%3D%22group%3DIncludeSubGroups%253D%252520False%2526Group%253D0%2526GroupPath%253D%26amp%3Blabel%3DMembers%22%20%2F%3E%0D%0A%20%20%3C%2Flinks%3E%0D%0A%3C%2Fnavigation%3E&amp;includeParent=True" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::3321fc78780f472eb8031802f1592937" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-2" isLocked="False" sourceConfiguredContentFragmentId="1098454310" configuration="fragmentHeader=%24%7Bresource%3ACore_GroupMembershipList_Title_Members%7D&amp;viewType=list&amp;pageSize=16" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="mentionlist" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Mentions">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::98b406bf9f224e61b50ee7293c5732fd" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1408526064" configuration="fragmentHeader=%24%7Bresource%3AGroups_GroupTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::7f2edee679dd4f47985960a90294e6e9" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1408526065" configuration="fragmentHeader=%24%7Bresource%3ATitle%7D&amp;pageSize=15" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="contact-requests" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Contact Requests">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::98b406bf9f224e61b50ee7293c5732fd" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="497929647" configuration="fragmentHeader=%24%7Bresource%3AGroups_GroupTitle_Name%7D&amp;visible=True" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::34d079e77aa44988878104f83a304485" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="497929649" configuration="fragmentHeader=%24%7Bresource%3ACore_GroupContactRequestList_Title_ContactRequests%7D" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="subgrouplist" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Sub-Groups">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::98b406bf9f224e61b50ee7293c5732fd" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1414245069" configuration="fragmentHeader=%24%7Bresource%3AGroups_GroupTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::b89c5ca74a5d4904a06695ace5917fac" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1561799254" configuration="fragmentHeader=&amp;queryType=subGroups&amp;viewType=thumbnails&amp;sortByCustom=alphabetical&amp;groupSelectionCustom=&amp;sortOrderCustom=ascending&amp;sortBy=alphabetical&amp;sortOrder=ascending&amp;pageSize=18" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="blogs-postlist" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Blogs Home">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::ab83412b2d074c4ca17fc451ae3ec7f8" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1104633155" configuration="fragmentHeader=%24%7Bresource%3ABlogs_BlogTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::14cf475b5faa466eac0bfab2127e177f" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1104633156" configuration="fragmentHeader=%24%7Bresource%3ABlogs_BrowseBlogs_Title_BrowseBlogsIn%7D&amp;showTitleColumn=True&amp;showGroupColumn=False&amp;showPostsColumn=True&amp;showLastPostColumn=True&amp;group=Group%3D-1%26GroupPath%3D&amp;groupAndSubGroups=False&amp;itemsBeforeScroll=20&amp;defaultSortOrder=ApplicationName&amp;includeGroupName=True" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="blogs-taglist" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Blog Tags">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::ab83412b2d074c4ca17fc451ae3ec7f8" showHeader="False" cssClassAddition="full-border" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ABlogs_BlogTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::8c838436a4184f83a6f70318e8cc031a" showHeader="True" cssClassAddition="full-border with-header" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ATagCloud_Title%7D&amp;applicationType=Unknown&amp;ignoreFilterTags=False&amp;maximumTags=25&amp;minimumPostsPerTag=1&amp;filterTags=&amp;showTagCounts=False&amp;enableNoTagsMessage=True&amp;noTagsText=%24%7Bresource%3ATagCloud_NoTagsDefined%7D&amp;linkTo=ContextualTagBrowser" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::ec913ce1a28f4602af498bf572f374e1" showHeader="True" cssClassAddition="full-border with-header" isLocked="False" configuration="fragmentHeader=&amp;pageSize=25&amp;dataSource=context&amp;logicallyOrTags=true&amp;userDefinedTags=&amp;searchSettings=" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="forums-grouplist" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Forums Home">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::735da753bdc14bd293168f140576c9cc" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1383449078" configuration="fragmentHeader=%24%7Bresource%3AForums_ForumTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::59feef7f27aa473180bb52071008660b" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1383449083" configuration="fragmentHeader=%24%7Bresource%3AForums_BrowseForums_Title_BrowseForums%7D&amp;showTitleColumn=True&amp;showGroupColumn=False&amp;showPostsColumn=True&amp;showLastPostColumn=True&amp;group=Group%3D-1%26GroupPath%3D&amp;groupAndSubGroups=False&amp;itemsBeforeScroll=20&amp;defaultSortOrder=ApplicationName&amp;forumSelection=&amp;includeGroupName=False" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="forums-taglist" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Forum Tags">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::735da753bdc14bd293168f140576c9cc" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="727905209" configuration="fragmentHeader=%24%7Bresource%3AForums_ForumTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::8c838436a4184f83a6f70318e8cc031a" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="727905210" configuration="fragmentHeader=%24%7Bresource%3ATagCloud_Title%7D&amp;applicationType=Unknown&amp;ignoreFilterTags=False&amp;maximumTags=25&amp;minimumPostsPerTag=1&amp;filterTags=&amp;showTagCounts=False&amp;enableNoTagsMessage=True&amp;noTagsText=%24%7Bresource%3ATagCloud_NoTagsDefined%7D&amp;linkTo=ContextualTagBrowser" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::ec913ce1a28f4602af498bf572f374e1" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="727905211" configuration="fragmentHeader=&amp;pageSize=25&amp;dataSource=context&amp;logicallyOrTags=True&amp;userDefinedTags=&amp;searchSettings=" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="forums-threadlist" isCustom="false" layout="HeaderTopContentLeftSidebarRight" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Forum Home">
+      <regions>
+        <region regionName="Header">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::ab92f9a89af24721bba1c464c1334be6" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AGroups_GroupBanner_Name%7D&amp;navigation=%3Cnavigation%3E%0D%0A%20%20%3Clinks%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Controls.SingleGroupCustomNavigationPlugin%2C%20Telligent.Evolution.Controls%22%20id%3D%22ad164b2a370c415bbc34a89e1380c6a3%22%20configuration%3D%22group%3DGroup%253D0%2526GroupPath%253D%26amp%3Blabel%3DHome%26amp%3BloadedFor%3D10%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Blogs.Controls.GroupBlogsCustomNavigationPlugin%2C%20Telligent.Evolution.Blogs%22%20id%3D%22113e18ef8b6b41f4baf146ee9a38e829%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DBlog%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Discussions.Controls.GroupForumsCustomNavigationPlugin%2C%20Telligent.Evolution.Discussions%22%20id%3D%22bfc84935bef1446495b965b82930e643%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DForums%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.MediaGalleries.Controls.GroupMediaGalleriesCustomNavigationPlugin%2C%20Telligent.Evolution.MediaGalleries%22%20id%3D%22e02e429fdfd048959b66dc13c1da8b73%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DDownloads%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Wikis.Controls.GroupWikisCustomNavigationPlugin%2C%20Telligent.Evolution.Wikis%22%20id%3D%2213b28afcc6ee48eab4a25b8e96bfb3e6%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DDocuments%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Controls.SingleGroupMembersCustomNavigationPlugin%2C%20Telligent.Evolution.Controls%22%20id%3D%22571a092e69064b83ae78ff3b3e54eeb1%22%20configuration%3D%22group%3DIncludeSubGroups%253D%252520False%2526Group%253D0%2526GroupPath%253D%26amp%3Blabel%3DMembers%22%20%2F%3E%0D%0A%20%20%3C%2Flinks%3E%0D%0A%3C%2Fnavigation%3E&amp;includeParent=True" />
+          </contentFragments>
+        </region>
+        <region regionName="RightSidebar">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::36d01e0513d242b4bbe68f4ee8b3a66c" showHeader="True" cssClassAddition="no-wrapper with-spacing with-header responsive-1" isLocked="False" sourceConfiguredContentFragmentId="239797001" configuration="fragmentHeader=%24%7Bresource%3AForums_Details%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::c6af9d06240940beae71ade1bf750570" showHeader="True" cssClassAddition="no-wrapper with-spacing with-header responsive-3" isLocked="False" sourceConfiguredContentFragmentId="239797002" configuration="fragmentHeader=Answered%20Questions&amp;includeDiscussions=False&amp;includeQuestions=True&amp;supportUserFiltering=False&amp;filter=Answered&amp;sortBy=TotalVotes&amp;sortOrder=Descending&amp;popularOnly=False&amp;selectedForumOrGroup=IncludeSubGroups%3D%2520False%26Group%3D-1%26GroupPath%3D&amp;pageSize=5&amp;hideEmpty=True" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::64648d80b1014325a41b8742d7957af3" showHeader="False" cssClassAddition="no-wrapper responsive-3" isLocked="False" sourceConfiguredContentFragmentId="239797003" configuration="fragmentHeader=%24%7Bresource%3AForums_ForumLinks_Title_Options%7D&amp;collapsed=False&amp;links=Link%3DforumSubscriptions%26Link%3DforumFavorites%26Link%3DforumRss%26Link%3Dfeature" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::3321fc78780f472eb8031802f1592937" showHeader="True" cssClassAddition="no-wrapper with-spacing with-header responsive-1" isLocked="False" configuration="fragmentHeader=Group%20Members&amp;viewType=list&amp;pageSize=4" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::8c838436a4184f83a6f70318e8cc031a" showHeader="True" cssClassAddition="top-border with-spacing with-header responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ATagCloud_Title%7D&amp;applicationType=Unknown&amp;ignoreFilterTags=False&amp;maximumTags=25&amp;minimumPostsPerTag=1&amp;filterTags=&amp;showTagCounts=False&amp;enableNoTagsMessage=False&amp;noTagsText=%24%7Bresource%3ATagCloud_NoTagsDefined%7D&amp;linkTo=ContextualTagBrowser" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::735da753bdc14bd293168f140576c9cc" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="239797001" configuration="fragmentHeader=%24%7Bresource%3AForums_ForumTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::f3810cda32ed45db871f26fcdd08b46f" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-2" isLocked="False" sourceConfiguredContentFragmentId="239797006" configuration="fragmentHeader=%24%7Bresource%3AForums_AskAQuestion%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::c6af9d06240940beae71ade1bf750570" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-2" isLocked="False" sourceConfiguredContentFragmentId="239797006" configuration="fragmentHeader=%20%24%7Bapplication_name%7D&amp;includeDiscussions=True&amp;includeQuestions=True&amp;supportUserFiltering=True&amp;filter=Active&amp;sortBy=LastPost&amp;sortOrder=Descending&amp;popularOnly=False&amp;selectedForumOrGroup=IncludeSubGroups%3D%2520False%26Group%3D-1%26GroupPath%3D&amp;pageSize=20&amp;hideEmpty=False" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="forums-createeditpost" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Create/Edit Forum Thread/Reply">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::735da753bdc14bd293168f140576c9cc" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1537280417" configuration="fragmentHeader=%24%7Bresource%3AForums_ForumTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::4a28ceff9af348d8956a4e59d92ffa32" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1537280418" configuration="fragmentHeader=%24%7Bresource%3AForums_CreateEditPost_Title_CreateEditPost%7D&amp;showForumInHeader=False" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="forums-capture" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Forum Thread Capture">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::f33c85127b2449d3903659092cba6e37" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="735851777" configuration="fragmentHeader=Forum%20-%20Capture%20Thread" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="forums-thread" isCustom="false" layout="HeaderTopContentLeftSidebarRight" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Forum Thread">
+      <regions>
+        <region regionName="Header">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::ab92f9a89af24721bba1c464c1334be6" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AGroups_GroupBanner_Name%7D&amp;navigation=%3Cnavigation%3E%0D%0A%20%20%3Clinks%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Controls.SingleGroupCustomNavigationPlugin%2C%20Telligent.Evolution.Controls%22%20id%3D%22ad164b2a370c415bbc34a89e1380c6a3%22%20configuration%3D%22group%3DGroup%253D0%2526GroupPath%253D%26amp%3Blabel%3DHome%26amp%3BloadedFor%3D10%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Blogs.Controls.GroupBlogsCustomNavigationPlugin%2C%20Telligent.Evolution.Blogs%22%20id%3D%22113e18ef8b6b41f4baf146ee9a38e829%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DBlog%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Discussions.Controls.GroupForumsCustomNavigationPlugin%2C%20Telligent.Evolution.Discussions%22%20id%3D%22bfc84935bef1446495b965b82930e643%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DForums%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.MediaGalleries.Controls.GroupMediaGalleriesCustomNavigationPlugin%2C%20Telligent.Evolution.MediaGalleries%22%20id%3D%22e02e429fdfd048959b66dc13c1da8b73%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DDownloads%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Wikis.Controls.GroupWikisCustomNavigationPlugin%2C%20Telligent.Evolution.Wikis%22%20id%3D%2213b28afcc6ee48eab4a25b8e96bfb3e6%22%20configuration%3D%22group%3DGroup%253D0%26amp%3Blabel%3DDocuments%22%20%2F%3E%0D%0A%20%20%20%20%3Clink%20type%3D%22Telligent.Evolution.Controls.SingleGroupMembersCustomNavigationPlugin%2C%20Telligent.Evolution.Controls%22%20id%3D%22571a092e69064b83ae78ff3b3e54eeb1%22%20configuration%3D%22group%3DIncludeSubGroups%253D%252520False%2526Group%253D0%2526GroupPath%253D%26amp%3Blabel%3DMembers%22%20%2F%3E%0D%0A%20%20%3C%2Flinks%3E%0D%0A%3C%2Fnavigation%3E&amp;includeParent=True" />
+          </contentFragments>
+        </region>
+        <region regionName="RightSidebar">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::35f3b1e334ba4b3abac07feb8ecfd586" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="239031343" configuration="fragmentHeader=%24%7Bresource%3AGroups_GroupMembershipList_Name%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::64648d80b1014325a41b8742d7957af3" showHeader="True" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="239031344" configuration="fragmentHeader=%24%7Bresource%3AForums_ForumLinks_Title_Options%7D&amp;collapsed=False&amp;links=Link%3DforumSubscriptions" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::64648d80b1014325a41b8742d7957af3" showHeader="True" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="239031345" configuration="fragmentHeader=%24%7Bresource%3AForums_ForumLinks_Title_Options%7D&amp;collapsed=True&amp;links=Link%3Dfeature%26Link%3DforumCapture%26Link%3DforumThreadShare%26Link%3DforumModeration" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::0df71baf88f84214bf4a2907d004bc2c" showHeader="True" cssClassAddition="top-border with-spacing with-header responsive-1" isLocked="False" sourceConfiguredContentFragmentId="239031344" configuration="fragmentHeader=%24%7Bresource%3ARelated%7D&amp;moreType=related&amp;display=as-list&amp;slideAt=middle&amp;includeBlogPost=False&amp;includeWikiPage=False&amp;includeMedia=False&amp;includeForumThread=True&amp;includeGroup=True&amp;groups=IncludeSubGroups%3D%2520False%26Group%3D0%26GroupPath%3D&amp;includeSubGroups=True&amp;pageSize=5" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::735da753bdc14bd293168f140576c9cc" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="239031344" configuration="fragmentHeader=%24%7Bresource%3AForums_ForumTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::3f6151c2e4674f7bac9e21cabae80131" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="239031343" configuration="fragmentHeader=%24%7Bresource%3AReportAbuse_Name%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::70eb79f7675b42078f78355560839784" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="239031347" configuration="showRatingsOrLikes=likes&amp;pageSize=15" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="media-grouplist" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Media Galleries Home">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::67c5692c89014492ad521eaeb0bddc11" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1789849356" configuration="fragmentHeader=%24%7Bresource%3AMediaGalleries_MediaGalleryTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::9ede0520b2374b0c851730e85afc2c17" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1789849357" configuration="fragmentHeader=%24%7Bresource%3AMediaGalleries_BrowseMediaGalleries_Title_BrowseFileGalleries%7D&amp;showTitleColumn=True&amp;showGroupColumn=False&amp;showPostsColumn=True&amp;showLastPostColumn=True&amp;group=Group%3D-1%26GroupPath%3D&amp;groupAndSubGroups=False&amp;itemsBeforeScroll=20&amp;defaultSortOrder=ApplicationName&amp;includeGroupName=False" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="media-tagslist" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Media Gallery Tags">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::67c5692c89014492ad521eaeb0bddc11" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AMediaGalleries_MediaGalleryTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::8c838436a4184f83a6f70318e8cc031a" showHeader="True" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ATagCloud_Title%7D&amp;applicationType=Unknown&amp;ignoreFilterTags=False&amp;maximumTags=25&amp;minimumPostsPerTag=1&amp;filterTags=&amp;showTagCounts=False&amp;enableNoTagsMessage=True&amp;noTagsText=%24%7Bresource%3ATagCloud_NoTagsDefined%7D&amp;linkTo=ContextualTagBrowser" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::ec913ce1a28f4602af498bf572f374e1" showHeader="True" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=&amp;pageSize=25&amp;dataSource=context&amp;logicallyOrTags=true&amp;userDefinedTags=&amp;searchSettings=" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="media-postlist" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Media Gallery Home">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::67c5692c89014492ad521eaeb0bddc11" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AMediaGalleries_MediaGalleryTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::8883c000f76a47938a05d43c71f7307a" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AMediaGalleries_MediaGalleryPostList_Title_MediaGallery%7D&amp;sortBy=PostDate&amp;viewType=default&amp;selectedMediaGalleryOrGroup=&amp;pageSize=20" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::72597c89a4c24cc9958a0472397ec379" showHeader="False" cssClassAddition="no-wrapper responsive-hidden" isLocked="False" configuration="" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="media-slideshow" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Media Gallery Slideshow">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::67c5692c89014492ad521eaeb0bddc11" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AMediaGalleries_MediaGalleryTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::82156261057d45bfa7ccef017709ead7" showHeader="True" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AMediaGalleries_MediaGallerySlideshow_Title_Slideshow%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::72597c89a4c24cc9958a0472397ec379" showHeader="False" cssClassAddition="no-wrapper responsive-hidden" isLocked="False" configuration="" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="media-post" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Media File">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::67c5692c89014492ad521eaeb0bddc11" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1489977993" configuration="fragmentHeader=%24%7Bresource%3AMediaGalleries_MediaGalleryTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::3f6151c2e4674f7bac9e21cabae80131" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1489977994" configuration="fragmentHeader=%24%7Bresource%3AReportAbuse_Name%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::b428807bb6cf4d0095faea813e702dee" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1489977996" configuration="fragmentHeader=%24%7Bresource%3AMediaGalleries_MediaGalleryPost_Title_File%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::f2a2ded1f5044948a6d1c8ccd0918ebb" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-3" isLocked="False" sourceConfiguredContentFragmentId="1489977997" configuration="fragmentHeader=%24%7Bresource%3ACommentForm_Name%7D&amp;displayCommentThreshold=0" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::e4e96f3241434dc7bc4a04d39c30192f" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-3" isLocked="False" sourceConfiguredContentFragmentId="1489977998" configuration="fragmentHeader=%24%7Bresource%3AComments_Name%7D&amp;pageSize=15" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="media-downloadpost" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Download Media">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::67c5692c89014492ad521eaeb0bddc11" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AMediaGalleries_MediaGalleryTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::091cfb5f6c124a83829b5ee52d155d8c" showHeader="True" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AMediaGalleries_DownloadMediaGalleryPost_Title_DownloadFile%7D" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="media-createeditpost" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Create/Edit Media">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::67c5692c89014492ad521eaeb0bddc11" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AMediaGalleries_MediaGalleryTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::75edf77994c94b259ea6378148f9c14d" showHeader="True" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AMediaGalleries_UploadEditMediaGalleryPost_Title_UploadEditFile%7D" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="wikis-wikilist" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Wikis Home">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::7ea28463ab8b4e0ca289e07f18b9e421" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="659681650" configuration="fragmentHeader=%24%7Bresource%3AWikis_WikiTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::1c53e7f3d0e147cd88cda740602fa4e4" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="659681653" configuration="fragmentHeader=%24%7Bresource%3AWikis_BrowseWikis_Title_BrowseWikis_In%7D&amp;showTitleColumn=True&amp;showGroupColumn=False&amp;showPostsColumn=True&amp;showLastPostColumn=True&amp;group=Group%3D-1%26GroupPath%3D&amp;groupAndSubGroups=False&amp;itemsBeforeScroll=20&amp;includeGroupName=True" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="wikis-taglist" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Wiki Tags">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::7ea28463ab8b4e0ca289e07f18b9e421" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="761508658" configuration="fragmentHeader=%24%7Bresource%3AWikis_WikiTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::8c838436a4184f83a6f70318e8cc031a" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="761508659" configuration="fragmentHeader=%24%7Bresource%3ATagCloud_Title%7D&amp;applicationType=Unknown&amp;ignoreFilterTags=False&amp;maximumTags=25&amp;minimumPostsPerTag=1&amp;filterTags=&amp;showTagCounts=False&amp;enableNoTagsMessage=True&amp;noTagsText=%24%7Bresource%3ATagCloud_NoTagsDefined%7D&amp;linkTo=ContextualTagBrowser" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::ec913ce1a28f4602af498bf572f374e1" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" sourceConfiguredContentFragmentId="761508660" configuration="fragmentHeader=&amp;pageSize=25&amp;dataSource=context&amp;logicallyOrTags=True&amp;userDefinedTags=&amp;searchSettings=" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="wikis-pagelist" isCustom="false" layout="SidebarLeftContentRight" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Wiki Home">
+      <regions>
+        <region regionName="LeftSidebar">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::23efcf2931104e89a2bb43a57f52f2d3" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-2" isLocked="False" sourceConfiguredContentFragmentId="1009509176" configuration="fragmentHeader=%24%7Bresource%3AWikis_WikiPageHierarchy_Title_TableOfContents%7D&amp;selectedWikiOrGroup=" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::7ea28463ab8b4e0ca289e07f18b9e421" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1009509175" configuration="fragmentHeader=%24%7Bresource%3AWikis_WikiTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::3be81e4a13d74e78ab039be987d2f7fb" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1009509179" configuration="fragmentHeader=%24%7Bresource%3AWikis_Page_Name%7D" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="wikis-pageedit" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Create/Edit Wiki Page">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::7ea28463ab8b4e0ca289e07f18b9e421" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1773076515" configuration="fragmentHeader=%24%7Bresource%3AWikis_WikiTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::f44dd5ccd9034401893a3641b55a620c" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1773076518" configuration="fragmentHeader=%24%7Bresource%3AWikis_PageEdit_Name%7D" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="wikis-page" isCustom="false" layout="SidebarLeftContentRight" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Wiki Page">
+      <regions>
+        <region regionName="LeftSidebar">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::23efcf2931104e89a2bb43a57f52f2d3" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-2" isLocked="False" sourceConfiguredContentFragmentId="1324417660" configuration="fragmentHeader=%24%7Bresource%3AWikis_WikiPageHierarchy_Title_TableOfContents%7D&amp;selectedWikiOrGroup=" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::3f6151c2e4674f7bac9e21cabae80131" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1324417657" configuration="fragmentHeader=%24%7Bresource%3AReportAbuse_Name%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::7ea28463ab8b4e0ca289e07f18b9e421" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1324417658" configuration="fragmentHeader=%24%7Bresource%3AWikis_WikiTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::3be81e4a13d74e78ab039be987d2f7fb" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1324417666" configuration="fragmentHeader=%24%7Bresource%3AWikis_Page_Name%7D" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::0df71baf88f84214bf4a2907d004bc2c" showHeader="True" cssClassAddition="top-border with-spacing with-header responsive-2" isLocked="False" sourceConfiguredContentFragmentId="1009509180" configuration="fragmentHeader=%24%7Bresource%3ARelated%7D&amp;moreType=related&amp;display=as-list&amp;slideAt=bottom&amp;includeBlogPost=True&amp;includeWikiPage=True&amp;includeMedia=True&amp;includeForumThread=True&amp;includeGroup=true&amp;groups=IncludeSubGroups%3D%2520False%26Group%3D0%26GroupPath%3D&amp;includeSubGroups=True&amp;pageSize=3" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::0df71baf88f84214bf4a2907d004bc2c" showHeader="True" cssClassAddition="top-border with-spacing with-header responsive-2" isLocked="False" sourceConfiguredContentFragmentId="1009509181" configuration="fragmentHeader=%24%7Bresource%3ARecommended%7D&amp;moreType=recommended&amp;display=as-list&amp;slideAt=bottom&amp;includeBlogPost=True&amp;includeWikiPage=True&amp;includeMedia=True&amp;includeForumThread=True&amp;includeGroup=true&amp;groups=IncludeSubGroups%3D%2520False%26Group%3D0%26GroupPath%3D&amp;includeSubGroups=True&amp;pageSize=3" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="wikis-history" isCustom="false" layout="SidebarLeftContentRight" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Wiki Page History">
+      <regions>
+        <region regionName="LeftSidebar">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::23efcf2931104e89a2bb43a57f52f2d3" showHeader="False" cssClassAddition="no-wrapper responsive-2" isLocked="False" sourceConfiguredContentFragmentId="62698743" configuration="fragmentHeader=%24%7Bresource%3AWikis_WikiPageHierarchy_Title_TableOfContents%7D&amp;selectedWikiOrGroup=" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::7ea28463ab8b4e0ca289e07f18b9e421" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="62698742" configuration="fragmentHeader=%24%7Bresource%3AWikis_WikiTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::be2489b0472c4ce88243bf2d9d5f0c61" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="62698746" configuration="fragmentHeader=%24%7Bresource%3AWikis_History_Name%7D" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="wikis-compare" isCustom="false" layout="SidebarLeftContentRight" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Wiki Page Comparison">
+      <regions>
+        <region regionName="LeftSidebar">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::23efcf2931104e89a2bb43a57f52f2d3" showHeader="False" cssClassAddition="no-wrapper responsive-2" isLocked="False" sourceConfiguredContentFragmentId="1305256360" configuration="fragmentHeader=%24%7Bresource%3AWikis_WikiPageHierarchy_Title_TableOfContents%7D&amp;selectedWikiOrGroup=" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::7ea28463ab8b4e0ca289e07f18b9e421" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1305256359" configuration="fragmentHeader=%24%7Bresource%3AWikis_WikiTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::875b8baaad9b45f1b117cec30109fd3f" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="1305256363" configuration="fragmentHeader=%24%7Bresource%3AWikis_Compare_Name%7D" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="wikis-revision" isCustom="false" layout="SidebarLeftContentRight" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Wiki Page Revision">
+      <regions>
+        <region regionName="LeftSidebar">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::23efcf2931104e89a2bb43a57f52f2d3" showHeader="False" cssClassAddition="no-wrapper responsive-2" isLocked="False" sourceConfiguredContentFragmentId="463441888" configuration="fragmentHeader=%24%7Bresource%3AWikis_WikiPageHierarchy_Name%7D&amp;selectedWikiOrGroup=" />
+          </contentFragments>
+        </region>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::7ea28463ab8b4e0ca289e07f18b9e421" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="463441887" configuration="fragmentHeader=%24%7Bresource%3AWikis_WikiTitle_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::23e010899f3b4eae93f20255d4687ae7" showHeader="False" cssClassAddition="no-wrapper responsive-1" isLocked="False" sourceConfiguredContentFragmentId="463441892" configuration="fragmentHeader=%24%7Bresource%3AWikis_Revision_Name%7D" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="leaders-list" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Leaderboards">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::e7f32628f5e24f59ad25cf309d9178bf" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ALeaderboard_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::f68e8c5ecc7c42bd950b83b3967abd61" showHeader="True" cssClassAddition="top-border with-spacing with-header responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ALeaderboardList_Name%7D&amp;group=IncludeSubGroups%3D%2520False%26Group%3D0%26GroupPath%3D&amp;pageSize=10&amp;defaultSortOrder=ApplicationName&amp;leaderboardSelection=&amp;numberOfColumns=two-column&amp;leadersSize=5&amp;showValue=true&amp;showCurrentUser=true" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+    <contentFragmentPage pageName="leaders-show" isCustom="false" layout="Content" themeType="c6108064-af65-11dd-b074-de1a56d89593" title="Leaderboard">
+      <regions>
+        <region regionName="Content">
+          <contentFragments>
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::e7f32628f5e24f59ad25cf309d9178bf" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ALeaderboard_Name%7D&amp;visible=False" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::f975d8bccd8f4609844b4e93e770f9fd" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ALeaderboard_Name%7D&amp;viewType=full&amp;pageSize=10&amp;showValue=true&amp;showCurrentUser=true&amp;selectedLeaderboard=" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::f2a2ded1f5044948a6d1c8ccd0918ebb" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3ACommentForm_Name%7D&amp;displayCommentThreshold=0" />
+            <contentFragment type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::e4e96f3241434dc7bc4a04d39c30192f" showHeader="False" cssClassAddition="no-wrapper with-spacing responsive-1" isLocked="False" configuration="fragmentHeader=%24%7Bresource%3AComments_Name%7D&amp;pageSize=15" />
+          </contentFragments>
+        </region>
+      </regions>
+      <contentFragmentTabs />
+    </contentFragmentPage>
+  </contentFragmentPages>
+  <scopedProperties>
+    <scopedProperty type="Telligent.Evolution.ScriptedContentFragments.ScriptedContentFragment, Telligent.Evolution.ScriptedContentFragments::ab92f9a89af24721bba1c464c1334be6" name="navigation" value="&lt;navigation&gt;&#xD;&#xA;  &lt;links&gt;&#xD;&#xA;    &lt;link type=&quot;Telligent.Evolution.Controls.SingleGroupCustomNavigationPlugin, Telligent.Evolution.Controls&quot; id=&quot;ad164b2a370c415bbc34a89e1380c6a3&quot; configuration=&quot;group=Group%3D0%26GroupPath%3D&amp;amp;label=Home&amp;amp;loadedFor=10&quot; /&gt;&#xD;&#xA;    &lt;link type=&quot;Telligent.Evolution.Blogs.Controls.GroupBlogsCustomNavigationPlugin, Telligent.Evolution.Blogs&quot; id=&quot;113e18ef8b6b41f4baf146ee9a38e829&quot; configuration=&quot;group=Group%3D0&amp;amp;label=Blog&quot; /&gt;&#xD;&#xA;    &lt;link type=&quot;Telligent.Evolution.Discussions.Controls.GroupForumsCustomNavigationPlugin, Telligent.Evolution.Discussions&quot; id=&quot;bfc84935bef1446495b965b82930e643&quot; configuration=&quot;group=Group%3D0&amp;amp;label=Forums&quot; /&gt;&#xD;&#xA;    &lt;link type=&quot;Telligent.Evolution.MediaGalleries.Controls.GroupMediaGalleriesCustomNavigationPlugin, Telligent.Evolution.MediaGalleries&quot; id=&quot;e02e429fdfd048959b66dc13c1da8b73&quot; configuration=&quot;group=Group%3D0&amp;amp;label=Downloads&quot; /&gt;&#xD;&#xA;    &lt;link type=&quot;Telligent.Evolution.Wikis.Controls.GroupWikisCustomNavigationPlugin, Telligent.Evolution.Wikis&quot; id=&quot;13b28afcc6ee48eab4a25b8e96bfb3e6&quot; configuration=&quot;group=Group%3D0&amp;amp;label=Documents&quot; /&gt;&#xD;&#xA;    &lt;link type=&quot;Telligent.Evolution.Controls.SingleGroupMembersCustomNavigationPlugin, Telligent.Evolution.Controls&quot; id=&quot;571a092e69064b83ae78ff3b3e54eeb1&quot; configuration=&quot;group=IncludeSubGroups%3D%2520False%26Group%3D0%26GroupPath%3D&amp;amp;label=Members&quot; /&gt;&#xD;&#xA;  &lt;/links&gt;&#xD;&#xA;&lt;/navigation&gt;" />
+  </scopedProperties>
+</theme>

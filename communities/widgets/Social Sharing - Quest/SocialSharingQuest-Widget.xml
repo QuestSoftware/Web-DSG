@@ -1,0 +1,39 @@
+<scriptedContentFragments>
+	<scriptedContentFragment name="Social Sharing - Quest" version="9.2.0.1667" description="Social sharing plugins similar to what is used on quest.com" instanceIdentifier="8592e7b4d03444b697639fc7053cee33" theme="" isCacheable="false" varyCacheByUser="false" showHeaderByDefault="false" cssClass="social-sharing">
+		<contentScript><![CDATA[<div class="social-media-toolbar">
+	<ul>
+		<li class="facebook">
+			<a href="#">
+				<span class="facebook icons-social-media">&nbsp;</span>
+				<span class="hidden">Facebook</span>
+			</a>
+		</li>
+		<li class="twitter">
+			<a href="#">
+				<span class="twitter icons-social-media">&nbsp;</span>
+				<span class="hidden">Twitter</span>
+			</a>
+		</li>
+		<li class="linkedin">
+			<a href="#">
+				<span class="linkedin icons-social-media">&nbsp;</span>
+				<span class="hidden">LinkedIn</span>
+			</a>
+		</li>
+		<li class="googleshare">
+			<a href="#">
+				<span class="googleshare icons-social-media">&nbsp;</span>
+				<span class="hidden">Google+</span>
+			</a>
+		</li>
+	</ul>
+</div>
+
+#registerEndOfPageHtml('telligent.evolution.widgets.SocialSharing')
+<script type="text/javascript" src="$core_v2_encoding.HtmlAttributeEncode($core_v2_widget.GetFileUrl('social-sharing.js'))"></script>
+#end]]></contentScript>
+		<files>
+			<file name="social-sharing.js">KGZ1bmN0aW9uICgkKSB7Cgl2YXIgYml0bHlVUkwgPSB1cmwgPSBsb2NhdGlvbi5ocmVmOwoKCWlmICgkKCcuZy1wbHVzb25lJykubGVuZ3RoKSB7CgkJJCgnLmctcGx1c29uZScpLmF0dHIoJ2RhdGEtaHJlZicsIGJpdGx5VVJMKTsKCgkJLy9Hb29nbGUrCgkJKGZ1bmN0aW9uICgpIHsKCQkJdmFyIHBvID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7CgkJCXBvLnR5cGUgPSAndGV4dC9qYXZhc2NyaXB0JzsKCQkJcG8uYXN5bmMgPSB0cnVlOwoJCQlwby5zcmMgPSAnLy9hcGlzLmdvb2dsZS5jb20vanMvcGx1c29uZS5qcyc7CgkJCXZhciBzID0gZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ3NjcmlwdCcpWzBdOwoJCQlzLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKHBvLCBzKTsKCQl9KSgpOwoJfQoKLy9SZXRyaWV2ZSBiaXQubHkgdXJsLgoJaWYgKHdpbmRvdy5YTUxIdHRwUmVxdWVzdCAmJiBsb2NhdGlvbi5ob3N0ID09ICdzb2Z0d2FyZS5kZWxsLmNvbScgJiYgIS9cL2VtYWlsY2xcLy8udGVzdChsb2NhdGlvbi5wYXRobmFtZSkpIHsKCQl2YXIgeGhyID0gbmV3IFhNTEh0dHBSZXF1ZXN0KCk7CgkJeGhyLm9wZW4oIkdFVCIsICIvaGlkZGVuL2JpdGx5LmFzbXgvZ2V0P1VSST0iICsgZW5jb2RlVVJJQ29tcG9uZW50KHVybCkpOwoJCXhoci5vbnJlYWR5c3RhdGVjaGFuZ2UgPSBmdW5jdGlvbiAoKSB7CgkJCWlmICh4aHIucmVhZHlTdGF0ZSA9PSA0KSB7CgkJCQlpZiAoeGhyLnN0YXR1cyA9PSAyMDApIHsKCQkJCQl4bWwgPSAkKCQucGFyc2VYTUwoeGhyLnJlc3BvbnNlVGV4dCkpOwoJCQkJCXZhciBvYmogPSBqUXVlcnkucGFyc2VKU09OKHhtbC5maW5kKCJzdHJpbmciKS50ZXh0KCkpOwoKCQkJCQlpZiAodHlwZW9mIG9iai5kYXRhICE9ICd1bmRlZmluZWQnKSB7CgkJCQkJCWJpdGx5VVJMID0gb2JqLmRhdGEudXJsOwoJCQkJCX0KCQkJCX0KCQkJfQoJCX07CgkJeGhyLnNlbmQoKTsKCX0KCgkkKCcuc29jaWFsLW1lZGlhLXRvb2xiYXInKS5vbignY2xpY2snLCAnYScsIGZ1bmN0aW9uIChlKSB7CgkJdmFyIHBhcmVudCA9ICQodGhpcykucGFyZW50KCksIHRpdGxlID0gZG9jdW1lbnQudGl0bGU7CgoJCWlmIChwYXJlbnQuaGFzQ2xhc3MoJ2ZhY2Vib29rJykpIHsKCQkJZS5wcmV2ZW50RGVmYXVsdCgpOwoJCQl3aW5kb3cub3BlbignaHR0cDovL3d3dy5mYWNlYm9vay5jb20vc2hhcmVyLnBocD91PScgKyBlbmNvZGVVUklDb21wb25lbnQoYml0bHlVUkwpICsgJyZ0PScgKyBlbmNvZGVVUklDb21wb25lbnQodGl0bGUpLCAnZmFjZWJvb2snLCAnd2lkdGg9NDgwLGhlaWdodD0yNDAsdG9vbGJhcj0wLHN0YXR1cz0wLHJlc2l6YWJsZT0xJyk7CgkJfQoJCWVsc2UgaWYgKHBhcmVudC5oYXNDbGFzcygndHdpdHRlcicpKSB7CgkJCWUucHJldmVudERlZmF1bHQoKTsKCQkJd2luZG93Lm9wZW4oJ2h0dHA6Ly90d2l0dGVyLmNvbS9zaGFyZT92aWE9RGVsbFNvZnR3YXJlJnVybD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGJpdGx5VVJMKSArICcmdGV4dD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KHRpdGxlKSArICcsJTIwJmNvdW50dXJsPScgKyBlbmNvZGVVUklDb21wb25lbnQodXJsKSwgJ3R3aXR0ZXInLCAnd2lkdGg9NDgwLGhlaWdodD0zODAsdG9vbGJhcj0wLHN0YXR1cz0wLHJlc2l6YWJsZT0xJyk7CgkJfQoJCWVsc2UgaWYgKHBhcmVudC5oYXNDbGFzcygnbGlua2VkaW4nKSkgewoJCQllLnByZXZlbnREZWZhdWx0KCk7CgkJCXdpbmRvdy5vcGVuKCdodHRwOi8vd3d3LmxpbmtlZGluLmNvbS9zaGFyZUFydGljbGU/bWluaT10cnVlJnVybD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGJpdGx5VVJMKSArICcmdGl0bGU9JyArIGVuY29kZVVSSUNvbXBvbmVudCh0aXRsZSksICdsaW5rZWRpbicsICd3aWR0aD00ODAsaGVpZ2h0PTM2MCx0b29sYmFyPTAsc3RhdHVzPTAscmVzaXphYmxlPTEnKTsKCQl9CgkJZWxzZSBpZiAocGFyZW50Lmhhc0NsYXNzKCdnb29nbGVzaGFyZScpKSB7CgkJCWUucHJldmVudERlZmF1bHQoKTsKCQkJd2luZG93Lm9wZW4oJ2h0dHBzOi8vcGx1cy5nb29nbGUuY29tL3NoYXJlP3VybD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGxvY2F0aW9uLmhyZWYpLCAnJywgJ21lbnViYXI9bm8sdG9vbGJhcj1ubyxyZXNpemFibGU9eWVzLHNjcm9sbGJhcnM9eWVzLGhlaWdodD02MDAsd2lkdGg9NjAwJyk7CgkJfQoJfSk7Cn0oalF1ZXJ5KSk7</file>
+		</files>
+	</scriptedContentFragment>
+</scriptedContentFragments>
