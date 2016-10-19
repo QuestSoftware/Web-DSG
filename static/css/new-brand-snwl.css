@@ -1,7 +1,14 @@
 @charset "UTF-8";
+/* Header Styling*/
+#svg_fallback   {
+background:url("/images/logos/new_brand_sonicwall.png");
+}
 .masthead {
 margin: 0;
 background-color: #fff;
+}
+.masthead a {
+color: #005D84;
 }
 .top-header {
 display: none;
@@ -13,93 +20,24 @@ height: 42px;
 .masthead-shadow-section{
 display:none;
 }
-.btn-primary {
-background-color: #e2642c;
-border-color: #e2642c;
-}
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary.focus,
-.btn-primary:active,
-.btn-primary.active,
-.open > .btn-primary.dropdown-toggle {
-background-color:#e2642c;
-border-color:#e2642c;
-}
-.navbar-inverse {
-background-color: #fff;
-}
-.navbar-inverse > div:nth-child(2){
-background-color: #63666a;
-}
-.masthead .utility-section-wrapper {
-border-bottom: 1px solid #fff;
-}
-.masthead .utility-section-wrapper {
-background-color: #FFF;
-}
 .masthead .main-nav-section ul.tier1 li.open > a {
 color: #e2642c;
-background-color: #dbdbdb;
+background-color: #fff;
 }
-.masthead .main-nav-section ul div.tier2 {
-/**background-color: #d4d4d4;**/
-}
-.masthead a {
-color: #005D84;
-}
-.masthead  > .tier2  a:hover{
-/**color: #e2642c;**/
-}
-.masthead .main-nav-section ul div.tier2 > .container > div > a {
+.masthead .utility a:link, .masthead .utility a:visited { 
 color: #4a4a4a;
 }
-.masthead .main-nav-section ul div.tier2>.container>div>a:hover {
-/**color: #e2642c;**/
+.masthead .utility a:hover, .masthead .utility a:focus {
+color: #005D84;
 }
-.masthead .main-nav-section ul div.tier3 a:hover {
-/**color: #e2642c;**/
+.masthead ul.tier1 > li:hover > a {
+color: #e2642c;
 }
-.masthead .main-nav-section ul div.tier2 .tier3 .container .row > div aside {
-background-color: #fff;
-border: 1px solid #eee;
+.masthead .navbar-brand {
+margin:20px 20px 0 15px;
 }
-#footer .footer-top-section {
-background-color: #4a4a4a;
-}
-*::before, *::after {
-box-sizing: border-box;
-}
-*::before, *::after {
-box-sizing: border-box;
-}
-#footer .footer-copyright-section {
-font-size: 1.3em;
-text-align: center;
-}
-#footer .footer-copyright-section {
-background-color: #63666a;
-color: #EEEEEE;
-}
-#footer .footer-copyright-section a {
-color: #ffffff;
-}
-a.text-primary:hover {
-color: #e2642c
-}
-a.bg-primary:hover {
-background-color: #e2642c
-}
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary.focus,
-.btn-primary:active,
-.btn-primary.active,
-.open>.btn-primary.dropdown-toggle {
-background-color: #e2642c;
-}
-.navbar-inverse {
-border-color: #005D84
+.shadow-overlay-left{
+display: none !important;
 }
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.active>a:hover,
@@ -117,34 +55,75 @@ background-color: #005D84
 .navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:focus {
 background-color: #e2642c
 }
-.label-primary[href]:hover,
-.label-primary[href]:focus {
-background-color: #005D84
+.navbar-inverse {
+background-color: #fff;
 }
-#svg_fallback   {
-background:url("/images/logos/new_brand_sonicwall.png");
+.navbar-inverse > div:nth-child(2){
+background-color: #63666a;
 }
-.masthead .utility a:link, .masthead .utility a:visited { 
-color:#4a4a4a
+.masthead .utility-section-wrapper {
+border-bottom: 1px solid #fff;
+background-color: #FFF;
 }
-.masthead .utility a:hover, .masthead .utility a:focus {
-color: #005D84
+.masthead .main-nav-section ul div.tier2 > .container > div > a {
+color: #4a4a4a;
 }
-.masthead a {
-color: #005D84;
+.masthead .main-nav-section ul div.tier2 .tier3 .container .row > div aside {
+background-color: #fff;
+border: 1px solid #eee;
 }
-.tier3 a{
-color:#005D84;
-}
-.masthead .main-nav-section ul.tier1 li.open > a {
-color: #FFFFFF;
-}
+/*Footer Styling*/
 #footer {
 margin-top: 0px
 }
-.masthead .main-nav-section ul.tier1 li.open > a {
-color: #e2642c;
-background-color: #fff;
+@media (min-width: 768px){
+#footer .footer-top-section {
+background-color: #4a4a4a !important;
+}
+#footer .footer-copyright-section {
+background-color: #63666a;
+color: #EEE;
+}
+#footer .footer-copyright-section a {
+color: #EEE;
+}
+}
+/* Tablet Styling*/
+@media (max-width: 991px) and (min-width: 768px){
+.masthead .main-nav-section .tier1 ul {
+border-bottom: 4px solid #E2642C !important;
+}
+.masthead ul.tier1 li:hover a {
+color: #4a4a4a !important;
+}
+.masthead .main-nav-section ul.tier2>li i.menu-indicator {
+color: #E2642C !important;
+}
+}
+/* Mobile Styling*/
+@media (max-width: 767px) {
+.masthead ul.tier3 {
+border-left: 4px solid #E2642C !important;  
+}
+.masthead ul.tier4 {
+border-left: 4px solid #E2642C !important;  
+}
+.masthead ul.tier1 > li:hover > a {
+color: #005D84 !important;
+}
+.masthead .search-container {
+border-bottom: 4px solid #E2642C !important;
+}
+.masthead .main-nav-section {
+background-color: #f7f7f7 !important;
+}
+}
+/* Button Styling*/
+.btn {
+padding:7px 12px 6px 11px;
+}
+.btn-link-xs {
+padding: 3px 6px; color: #fff;
 }
 .btn-success {
 background-color: #005d84;
@@ -158,24 +137,40 @@ border-color: #4197B4;
 .open>.btn-success.dropdown-toggle {
 background-color: #4a4a4a;
 }
-.masthead .main-nav-section ul.tier2 {
-border-bottom: 4px solid #E2642C;
+.btn-primary {
+background-color: #e2642c;
+border-color: #e2642c;
 }
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .btn-primary.dropdown-toggle {
+background-color:#e2642c;
+border-color:#e2642c;
+}
+/*Typography Styling*/
 body {
-font-family:"calibri","avenir-book","Segoe UI","Helvetica Neue","Meiryo UI Reg","MS UI Gothic Reg","Hiragino Kaku Gothic Reg","Microsoft YaHei","Hiragino Sans GB","Microsoft JhengHei","Malgun Gothic",Gulim,Tahoma,"Arial Unicode",sans-serif;
+font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,"Helvetica Neue","Meiryo UI Reg","MS UI Gothic Reg","Hiragino Kaku Gothic Reg","Microsoft YaHei","Hiragino Sans GB","Microsoft JhengHei","Malgun Gothic",Gulim,Tahoma,"Arial Unicode",sans-serif;
 }
-h1,h2,h3,h4,h5,h6   {
-font-family:"avenir-book","calibri","Segoe UI","Helvetica Neue","Meiryo UI Reg","πâíπéñπâ¬πé¬ Reg","MS UI Gothic Reg","Hiragino Kaku Gothic Reg","πâÆπâ⌐πé«πâÄΦºÆπé┤ Pro W3 Reg","Microsoft YaHei","σ╛«Φ╜»Θ¢àΘ╗æ","Hiragino Sans GB","Microsoft JhengHei","σ╛«Φ╗ƒµ¡úΘ╗æΘ½ö","Malgun Gothic",Gulim,Tahoma,"Arial Unicode",sans-serif;
+h1,h2,h3,h4,h5,h6 {
+font-family: Avenir,Calibri,Candara,Segoe,"Segoe UI",Optima,"Helvetica Neue","Meiryo UI Reg","MS UI Gothic Reg","Hiragino Kaku Gothic Reg","Microsoft YaHei","Hiragino Sans GB","Microsoft JhengHei","Malgun Gothic",Gulim,Tahoma,"Arial Unicode",sans-serif;
+font-weight: 100;
 }
-.btn{
-padding:7px 12px 6px 11px;
+*::before, *::after {
+box-sizing: border-box;
 }
-.masthead .navbar-brand {
-margin-top: 21px;
+*::before, *::after {
+box-sizing: border-box;
 }
-.masthead .search-container {
-border-bottom: 4px solid #E2642C;
+a.text-primary:hover {
+color: #e2642c
 }
-.btn-link-xs {
-padding: 3px 6px; color: #fff;
+a.bg-primary:hover {
+background-color: #e2642c
+}
+.label-primary[href]:hover,
+.label-primary[href]:focus {
+background-color: #005D84
 }
