@@ -152,3 +152,78 @@
 @small-sidebars: ~'.left-sidebar, .split-sidebar-right, .split-sidebar-left, .content-left-sidebar-right .right-sidebar, .sidebar-left-content-center-sidebar-right .right-sidebar, .header-top-sidebar-left-content-center-sidebar-right .right-sidebar, .header-top-content-left-sidebar-right .right-sidebar, .header-top-content-left-sidebar-right-footer .right-sidebar, .header-top-sidebar-left-content-center-sidebar-right-footer .right-sidebar, .header-top-content-left-split-sidebar-right-top-single-sidebar-right-bottom-footer .right-sidebar';
 
 @medium-sidebars: ~'.content-left-split-sidebar-right-top-single-sidebar-right-bottom .right-sidebar, .header-top-content-left-split-sidebar-right-top-single-sidebar-right-bottom .right-sidebar, .split-content .right-sidebar, .header-top-split-content .right-sidebar,  .header-top-content-left-split-sidebar-right-top-single-sidebar-right-bottom-footer .right-sidebar, .header-top-split-content-footer .right-sidebar';
+
+.button-size(@padding-vertical, @padding-horizontal, @font-size, @line-height, @border-radius) {
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}
+
+.user-select(@select) {
+  -webkit-user-select: @select;
+  -moz-user-select: @select;
+  -ms-user-select: @select; // IE10+
+  user-select: @select;
+}
+
+.button-variant-v2(@color, @background, @border, @hover-color, @hover-background, @hover-border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: @color;
+    background-color: @hover-background;
+    border-color: @hover-border;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: @background;
+      border-color: @border;
+    }
+  }
+
+  .badge {
+    color: @background;
+    background-color: @color;
+  }
+}
+
+.placeholder(@color) {
+  // Firefox
+  &::-moz-placeholder {
+    color: @color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: @color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: @color; } // Safari and Chrome
+}
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
