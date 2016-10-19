@@ -20,7 +20,7 @@
     font-weight: 300;
     display: block;
     height: 50px;
-    font: Avenir,Calibri,Candara,Segoe,"Segoe UI",Optima,"Helvetica Neue","Meiryo UI Reg","MS UI Gothic Reg","Hiragino Kaku Gothic Reg","Microsoft YaHei","Hiragino Sans GB","Microsoft JhengHei","Malgun Gothic",Gulim,Tahoma,"Arial Unicode",sans-serif
+    font-family: Avenir,Calibri,Candara,Segoe,"Segoe UI",Optima,"Helvetica Neue","Meiryo UI Reg","MS UI Gothic Reg","Hiragino Kaku Gothic Reg","Microsoft YaHei","Hiragino Sans GB","Microsoft JhengHei","Malgun Gothic",Gulim,Tahoma,"Arial Unicode",sans-serif
   }
   .card .card-image {
     position: relative;
