@@ -15,12 +15,14 @@
     transition: box-shadow 0.5s ease;
     background-color: #FFFFFF
   }
+  /* 
   .card span.card-title {
     font-size: 18px;
     font-weight: 300;
     display: block;
     height: 50px;
   }
+  */
   .card .card-image {
     position: relative;
     overflow: hidden;
@@ -48,9 +50,11 @@
     .card .card-image {
       height: 280px !important;
     }
+  /*     
     .card span.card-title {
       height: 25px;
     }
+  */ 
     .card-text > p {
       height: 75px !important;
     }
@@ -89,7 +93,7 @@
     }
   }
 
-  /* Trending Cards Images - ONLY CHANGE URL*/
+  /* Trending Cards Images - ONLY CHANGE URLs and bg-position (if needed) */
   .trend-card-1{
     background: url(/images/banner/seahawk/snwl-ransomware-card.jpg) no-repeat center center;
     background-size: cover;
@@ -98,12 +102,12 @@
   .trend-card-2{
     background: url(/images/banner/seahawk/snwl-capture-card.jpg) no-repeat center center;
     background-size: cover;
-    background-position: right top;
+  /* background-position: right top; */ 
   }
   .trend-card-3{
     background: url(/images/banner/seahawk/Multiple-exposure-with-business-and-night-cityscape-000080696529_XXXLarge.jpg) no-repeat center center;
     background-size: cover;
-    background-position: right top;
+  /* background-position: right top; */
   }
 
   /* Hero Area / Jumbtron */
