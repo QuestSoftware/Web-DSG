@@ -13,10 +13,6 @@ color: #005D84;
 .top-header {
 display: none;
 }
-.masthead .main-nav-section {
-background-color: #63666a;
-height: 42px;
-}
 .masthead-shadow-section{
 display:none;
 }
@@ -34,7 +30,7 @@ color: #005D84;
 color: #e2642c;
 }
 .masthead .navbar-brand {
-margin:20px 20px 0 15px;
+margin: 20px 20px 0 15px;
 }
 .shadow-overlay-left{
 display: none !important;
@@ -56,14 +52,12 @@ background-color: #005D84;
 background-color: #e2642c;
 }
 .navbar-inverse {
-background-color: #fff;
-}
-.navbar-inverse > div:nth-child(2){
 background-color: #63666a;
 }
 .masthead .utility-section-wrapper {
-border-bottom: 1px solid #fff;
+border-bottom: none;
 background-color: #FFF;
+margin: 0px;
 }
 .masthead .main-nav-section ul div.tier2 > .container > div > a {
 color: #4a4a4a;
