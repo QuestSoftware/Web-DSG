@@ -158,6 +158,7 @@ h1,h2,h3,h4,h5,h6 {
 font-family: Avenir,Calibri,Candara,Segoe,"Segoe UI",Optima,"Helvetica Neue","Meiryo UI Reg","MS UI Gothic Reg","Hiragino Kaku Gothic Reg","Microsoft YaHei","Hiragino Sans GB","Microsoft JhengHei","Malgun Gothic",Gulim,Tahoma,"Arial Unicode",sans-serif;
 font-weight: 100;
 }
+/*Misc Styling*/
 *::before, *::after {
 box-sizing: border-box;
 }
@@ -173,4 +174,8 @@ background-color: #e2642c
 .label-primary[href]:hover,
 .label-primary[href]:focus {
 background-color: #005D84
+}
+ul.breadcrumb{
+	padding-top: 8px;
+	text-transform: capitalize;
 }
