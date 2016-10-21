@@ -175,7 +175,7 @@ background-color: #e2642c
 .label-primary[href]:focus {
 background-color: #005D84
 }
-ul.breadcrumb{
+.breadcrumb{
 padding-top: 8px;
 text-transform: capitalize;
 }
