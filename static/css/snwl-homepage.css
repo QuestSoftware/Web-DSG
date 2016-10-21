@@ -6,7 +6,7 @@
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   }
   .card:hover {
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.30);
   }
   .card {
     box-sizing: border-box;
@@ -20,7 +20,6 @@
     font-weight: 300;
     display: block;
     height: 50px;
-    font-family: Avenir,Calibri,Candara,Segoe,"Segoe UI",Optima,"Helvetica Neue","Meiryo UI Reg","MS UI Gothic Reg","Hiragino Kaku Gothic Reg","Microsoft YaHei","Hiragino Sans GB","Microsoft JhengHei","Malgun Gothic",Gulim,Tahoma,"Arial Unicode",sans-serif
   }
   .card .card-image {
     position: relative;
@@ -92,24 +91,24 @@
 
   /* Trending Cards Images - ONLY CHANGE URL*/
   .trend-card-1{
-    background: url(/images/banner/seahawk/Multiple-exposure-with-business-and-night-cityscape-000080696529_XXXLarge.jpg) no-repeat center center;
+    background: url(/images/banner/seahawk/snwl-ransomware-card.jpg) no-repeat center center;
     background-size: cover;
     background-position: right top;
   }
   .trend-card-2{
-    background: url(/images/banner/seahawk/HPG-NetSec_Capture.jpg) no-repeat center center;
+    background: url(/images/banner/seahawk/snwl-capture-card.jpg) no-repeat center center;
     background-size: cover;
     background-position: right top;
   }
   .trend-card-3{
-    background: url(/images/banner/seahawk/IT-engineer-000102344647_XXXLarge.jpg) no-repeat center center;
+    background: url(/images/banner/seahawk/Multiple-exposure-with-business-and-night-cityscape-000080696529_XXXLarge.jpg) no-repeat center center;
     background-size: cover;
     background-position: right top;
   }
 
   /* Hero Area / Jumbtron */
   .jumbotron{
-    background: url("/images/banner/seahawk/snwl-hero-6f1e.jpg") no-repeat center center;
+    background: url("/images/banner/seahawk/snwl-new-era-hero.jpg") no-repeat center center;
     height: 400px;
     background-size: cover;
     background-position: right top;
