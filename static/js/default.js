@@ -415,6 +415,7 @@ $(document).ready(function () {
 	if ($('.comparison-table').data('xs-collapsibles')) {
 		addResize('processComparisonTable', true);
 	}
+
 });
 
 $(window).load(function () {
