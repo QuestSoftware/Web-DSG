@@ -24,11 +24,18 @@ h4 {
 #left-rail a{
     color: #005d84 !important;
 }
+#booklink {
+    font-weight: bold;
+    font-size: 16px;
+}
 .breadcrumb * {
     font-size: 13px !important;
 }
 #body-container {
     font-size:14px;
+}
+.platform-template {
+    padding-left: 0px;
 }
 /* Layouts*/
 .banner .headline {
@@ -49,12 +56,19 @@ h4 {
     width: 1000px;
     }
 }
+#tabs > ul > li.ui-tabs-active {
+    border-top: 5px solid #E2642C !important;
+}
 /* Breadcrumb Fix*/
 .breadcrumb>li+li:before {
     content: '';
 }
 .breadcrumb > li:first-child a::before {
     content: '';
+}
+.breadcrumb{
+padding-top: 14px;
+text-transform: capitalize;
 }
 
 /* NEW BRAND STYLES*/
@@ -186,47 +200,47 @@ border-color: #4197B4;
 .lrg-cta a.btn, 
 .button.blue, 
 .btn-primary {
-    background-color: #e2642c;
-    border-color: #e2642c;
+    background-color: #e2642c !important;
+    border-color: #e2642c !important;
 }
 .lrg-cta a.btn:hover, 
 .button.blue:hover, 
 .btn-primary:hover,
 .button.blue:focus {
   color: #fff;
-  background-color: #e2642c;
-  border-color: #e2642c;
+  background-color: #e2642c !important;
+  border-color: #e2642c !important;
 }
 .btn-primary:focus,
 .btn-primary.focus,
 .btn-primary:active,
 .btn-primary.active {
     color: #fff;
-    background-color: #e2642c;
-    border-color: #e2642c
+    background-color: #e2642c !important;
+    border-color: #e2642c !important;
 }
 .open>.dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #e2642c;
-    border-color: #e2642c;
+    background-color: #e2642c !important;
+    border-color: #e2642c !important;
 }
 .btn-primary.disabled,
 .btn-primary[disabled] {
-    background-color: #e2642c;
-    border-color: #e2642c;
+    background-color: #e2642c !important;
+    border-color: #e2642c !important;
 }
 .btn-primary.disabled:hover,
 .btn-primary[disabled]:hover {
-    background-color: #e2642c;
-    border-color: #e2642c;
+    background-color: #e2642c !important;
+    border-color: #e2642c !important;
 }
 fieldset[disabled] .btn-primary {
-    background-color: #e2642c;
-    border-color: #e2642c
+    background-color: #e2642c !important;
+    border-color: #e2642c !important;
 }
 fieldset[disabled] .btn-primary:hover {
-    background-color: #e2642c;
-    border-color: #e2642c;
+    background-color: #e2642c !important;
+    border-color: #e2642c !important;
 }
 
 /*Misc Styling*/
@@ -245,10 +259,6 @@ background-color: #e2642c;
 .label-primary[href]:hover,
 .label-primary[href]:focus {
 background-color: #005D84;
-}
-.breadcrumb{
-padding-top: 8px;
-text-transform: capitalize;
 }
 @media (max-width: 767px) {
 #resources-mobile a{
