@@ -1095,67 +1095,57 @@ function socialMediaToolbar() {
 
 	//Interaction when clicking on facebook, twitter and linkedin
 	$('.social-media-toolbar').on('click', 'a', function (e) {
-		var parent = $(this).parent(), title = document.title, via = 'DellSoftware';
+		var parent = $(this).parent(), title = document.title, via = 'QuestSoftware';
 
 		if (parent.hasClass('facebook')) {
-			if (typeof s == 'object' && false) {
-				//s.tl(this, 'o', 'Share-Facebook');
-				s.events = "event13";
-				s.eVar18 = "Facebook";
-				s.linkTrackVars = "events,eVar18";
-				s.linkTrackEvents = "event13";
-				s.tl(true, 'o', 'Social Media');
-			}
-
-			//_gaq.push(['_trackSocial', 'Facebook', 'Share']);
-
 			e.preventDefault();
+
+			setSCTrackLink('Facebook');
+
 			window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(url) + '&t=' + encodeURIComponent(title), 'facebook', 'width=480,height=240,toolbar=0,status=0,resizable=1');
 		}
 		else if (parent.hasClass('twitter')) {
-			if (typeof s == 'object' && false) {
-				//s.tl(this, 'o', 'Share-Twitter');
-				s.events = "event13";
-				s.eVar18 = "Twitter";
-				s.linkTrackVars = "events,eVar18";
-				s.linkTrackEvents = "event13";
-				s.tl(true, 'o', 'Social Media');
-			}
-			//_gaq.push(['_trackSocial', 'Twitter', 'Tweet']);
-			//console.log(bitlyURL);
-			//console.log(url);
+			e.preventDefault();
+
+			setSCTrackLink('Twitter');
+
 			//Override twitter title for security (adding #)
 			if (location.host == 'security.dell.com') {
 				title = 'Dell Security Solutions: Be the #DeptofYes';
 			}
 
-			e.preventDefault();
-
-			if (url.includes("quest")) {
-				via = 'QuestSoftware';
+			if (location.hostname.includes("sonicwall")) {
+				via = 'SonicWALL';
 			}
 
 			window.open('http://twitter.com/share?via=' + via + '&url=' + encodeURIComponent(bitlyURL) + '&text=' + encodeURIComponent(title) + ',%20&counturl=' + encodeURIComponent(url), 'twitter', 'width=480,height=380,toolbar=0,status=0,resizable=1');
 		}
 		else if (parent.hasClass('linkedin')) {
-			if (typeof s == 'object' && false) {
-				//s.tl(this, 'o', 'Share-LinkedIn');
-				s.events = "event13";
-				s.eVar18 = "LinkedIn";
-				s.linkTrackVars = "events,eVar18";
-				s.linkTrackEvents = "event13";
-				s.tl(true, 'o', 'Social Media');
-			}
-			//_gaq.push(['_trackSocial', 'LinkedIn', 'Share']);
-
 			e.preventDefault();
+
+			setSCTrackLink('LinkedIn');
 
 			window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title), 'linkedin', 'width=480,height=360,toolbar=0,status=0,resizable=1');
 		}
 		else if (parent.hasClass('googleshare')) {
 			e.preventDefault();
+
+			setSCTrackLink('Google+');
+
 			window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
 			return false;
+		}
+
+		function setSCTrackLink(eVar18) {
+			if (typeof s == 'object' && false) {
+				s.events = "event13";
+				s.eVar18 = eVar18;
+				s.linkTrackVars = "events,eVar18";
+				s.linkTrackEvents = "event13";
+				s.tl(true, 'o', 'Social Media');
+			}
+
+			//_gaq.push(['_trackSocial', eVar18, 'Share']);
 		}
 	});
 }

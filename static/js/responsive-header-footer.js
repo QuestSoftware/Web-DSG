@@ -93,7 +93,7 @@ $(document).ready(function () {
 			var URL = $(this).attr('href'), URLTarget = $(this).attr('target'), redirect = false;
 
 			//Only track links pointing to shop.software.dell.com
-			if (typeof s != "undefined" && /^https\:\/\/shop\.software\.dell\.com/.test(URL)) {
+			if (typeof s != "undefined" && /^https\:\/\/shop\.(quest|software\.dell)\.com/.test(URL)) {
 				e.preventDefault();
 
 				var newWin = null;
