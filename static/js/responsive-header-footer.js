@@ -90,7 +90,7 @@ $(document).ready(function () {
 			//Site Catalyst Custom Event Tracking for Buy Online
 			//TODO: Might want to generalize this so that this can be used for other custom events.
 
-			var URL = $(this).attr('href'), URLTarget = $(this).attr('target');
+			var URL = $(this).attr('href'), URLTarget = $(this).attr('target'), redirect = false;
 
 			//Only track links pointing to shop.software.dell.com
 			if (typeof s != "undefined" && /^https\:\/\/shop\.software\.dell\.com/.test(URL)) {
@@ -109,15 +109,25 @@ $(document).ready(function () {
 				s.pageName = sc_GetPageName("");
 				sc_CookieSet("SCBuy", s.events, 20);
 
+				setTimeout(redirectURL, 1000);
+
 				//Submit tracking link to site catalyst. Once done, redirect user to desired destination.
 				s.tl(this, 'o', $(this).text(), null, function () {
+					redirectURL();
+				});
+			}
+
+			function redirectURL() {
+				if (!redirect) {
+					redirect = true;
+
 					if (newWin) {
 						newWin.location = URL;
 					}
 					else {
 						location.href = URL;
 					}
-				});
+				}
 			}
 		})
 		.on('click', '.dropdown', function (e) {
