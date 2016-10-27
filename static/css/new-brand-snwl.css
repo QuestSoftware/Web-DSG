@@ -153,6 +153,9 @@ font-family: Avenir,Calibri,Candara,Segoe,"Segoe UI",Optima,"Helvetica Neue","Me
 font-weight: 100;
 }
 /*Misc Styling*/
+#PageNotFoundAnchor{
+margin-top: 75px;
+}
 *::before, *::after {
 box-sizing: border-box;
 }
