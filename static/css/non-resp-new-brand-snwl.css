@@ -1,9 +1,9 @@
-  /* Do not remove @charset encoding*/
+/* Do not remove @charset encoding*/
 @charset "UTF-8";
 
 /*Typography Styling*/
 #wrapper * {
-font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,"Helvetica Neue","Meiryo UI Reg","MS UI Gothic Reg","Hiragino Kaku Gothic Reg","Microsoft YaHei","Hiragino Sans GB","Microsoft JhengHei","Malgun Gothic",Gulim,Tahoma,"Arial Unicode",sans-serif;
+font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,"Helvetica Neue","Meiryo UI Reg","MS UI Gothic Reg","Hiragino Kaku Gothic Reg","Microsoft YaHei","Hiragino Sans GB","Microsoft JhengHei","Malgun Gothic",Gulim,Tahoma,"Arial Unicode","icon-ui",sans-serif;
 }
 h1 {
     font-size: 24px;
@@ -70,7 +70,9 @@ h4 {
 padding-top: 14px;
 text-transform: capitalize;
 }
-
+.breadcrumb>li:first-child span {
+    display: block !important;
+}
 /* NEW BRAND STYLES*/
 
 /* Header Styling*/
