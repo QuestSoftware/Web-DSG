@@ -1095,7 +1095,7 @@ function socialMediaToolbar() {
 
 	//Interaction when clicking on facebook, twitter and linkedin
 	$('.social-media-toolbar').on('click', 'a', function (e) {
-		var parent = $(this).parent(), title = document.title, via = 'QuestSoftware';
+		var parent = $(this).parent(), title = document.title, via = 'Quest';
 
 		if (parent.hasClass('facebook')) {
 			e.preventDefault();
