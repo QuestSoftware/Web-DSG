@@ -221,6 +221,11 @@ border-color: #4197B4;
     background-color: #e2642c !important;
     border-color: #e2642c !important;
 }
+.btn-polaris{
+    color: #fff;
+    background-color: #e2642c !important;
+    border-color: #e2642c !important;
+}
 .open>.dropdown-toggle.btn-primary {
     color: #fff;
     background-color: #e2642c !important;
