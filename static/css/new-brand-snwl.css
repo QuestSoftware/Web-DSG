@@ -3,6 +3,9 @@
 #svg_fallback   {
 background:url("/images/logos/new_brand_sonicwall.png");
 }
+object {
+pointer-events: none;
+}
 .masthead {
 margin: 0;
 background-color: #fff;
@@ -93,6 +96,11 @@ color: #4a4a4a !important;
 .masthead .main-nav-section ul.tier2>li i.menu-indicator {
 color: #E2642C !important;
 }
+}
+@media (max-width: 835px) and (min-width: 768px){
+.main-nav-section {
+	font-size: 14px;
+	}
 }
 /* Mobile Styling*/
 @media (max-width: 767px) {
