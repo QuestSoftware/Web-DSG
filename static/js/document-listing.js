@@ -486,6 +486,10 @@ function populateListing(clear) {
 					break;
 			}
 
+			if (isChrome) {
+				val.target = '_self';
+			}
+
 			var htmlFragment = '<div class="col-md-3 col-sm-4 col-xs-12" style="display: none;"> ' +
 				'<a href="' + val.url + '" target="' + val.target + '">' +
 				'  <div class="border-grey img-crop">' +
