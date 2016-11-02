@@ -661,8 +661,7 @@ function initSearch() {
 
 	function initAdobeSearch() {
 		var config = {
-			account: "sp10050c33",
-			//searchDomain: "http://sp10050c33.guided.ss-omtrdc.net",
+			account: "sp10050ecd",
 			searchDomain: siteTags.SiteSearchDomainUnified,
 			inputElement: "#searchterm",
 			inputFormElement: "#search-form",
