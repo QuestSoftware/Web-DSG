@@ -897,6 +897,24 @@ i.menu-indicator {
 			float: right;
 		}
 	}
+	.br-pt, .fr-fr {
+		.footer-top-section {
+			li {
+				&.subLinks {
+					padding-right: 4% !important;
+				}
+			}
+		}
+	}
+	.de-de {
+		.footer-top-section {
+			li {
+				&.subLinks {
+					padding-right: 3% !important;
+				}
+			}
+		}
+	}
 }
 
 //tablet and desktop mode
