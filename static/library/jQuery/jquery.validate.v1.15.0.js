@@ -74,11 +74,7 @@
 							if (validator.submitButton) {
 
 								// Insert a hidden input as a replacement for the missing submit button
-								hidden = $("<input type="
-								hidden
-								"/>"
-							)
-							.
+								hidden = $('<input type="hidden"/>').
 								attr("name", validator.submitButton.name)
 									.val($(validator.submitButton).val())
 									.appendTo(validator.currentForm);

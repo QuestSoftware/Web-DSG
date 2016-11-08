@@ -21,7 +21,15 @@ gen
 /shop/**/*.css
 /shop/**/*.map
 
-/static/library/jQuery/*.min.js
+/static/library/jQuery/**/*.min.js
 !/static/library/jQuery/jquery-1.9.1.min.js
 !/static/library/jQuery/jquery-1.11.3.min.js
 !/static/library/jQuery/jquery.fancybox.min.js
+
+/static/library/jQuery/slick-1.5.9/slick-theme.css
+/static/library/jQuery/slick-1.5.9/slick-theme.min.css
+/static/library/jQuery/slick-1.5.9/slick.min.css
+/static/library/jQuery/slick-1.5.9/slick.css.map
+/static/library/jQuery/slick-1.5.9/slick.css
+/static/library/jQuery/slick-1.5.9/slick.min.css
+/static/library/jQuery/slick-1.5.9/slick.css
