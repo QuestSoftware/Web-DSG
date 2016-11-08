@@ -20,3 +20,8 @@ gen
 
 /shop/**/*.css
 /shop/**/*.map
+
+/static/library/jQuery/*.min.js
+!/static/library/jQuery/jquery-1.9.1.min.js
+!/static/library/jQuery/jquery-1.11.3.min.js
+!/static/library/jQuery/jquery.fancybox.min.js
