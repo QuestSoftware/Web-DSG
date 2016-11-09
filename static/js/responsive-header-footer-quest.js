@@ -16,76 +16,83 @@ $(document).ready(function () {
 
 	processHeaderFooter();
 
+
 	$('body')
 		.on('click', '.ga', function (e) {
-			//GA event tracking - naveen
-			//Class "ga" should only be applied on to anchor tag.
-
-			//This will prevent the default action of the anchor tag.
-			e.preventDefault();
-
-			//Retrieving URL of the anchor tag to be used later after GA Event Tracking is successfully submitted
-			var URL = $(this).attr('href'), eLabel = $(this).data('gal'), eValue = $(this).data('gav'), redirect = false;
-
-			//Object to send to GA Event Tracking.
-			var obj = {
-				hitType: 'event',
-				eventCategory: $(this).data('gac'),
-				eventAction: $(this).data('gaa')
-			};
-
-			if (eLabel !== undefined) {
-				obj.eventLabel = eLabel;
+			// GTM implementation : disable tracking with URL ?disableGAE
+			if (window.location.search.indexOf('disableGAE') > -1) {
 			}
+			else {
+				//GA event tracking
+				//Class "ga" should only be applied on to anchor tag.
 
-			if (eValue !== undefined) {
-				obj.eventValue = parseInt(eValue);
-			}
+				//This will prevent the default action of the anchor tag.
+				e.preventDefault();
 
-			//Redirect after event tracking is successfully sent to GA if URL is not undefined.
-			if (URL !== undefined) {
-				obj.hitCallback = redirectURL;
-			}
+				//Retrieving URL of the anchor tag to be used later after GA Event Tracking is successfully submitted
+				var URL = $(this).attr('href'), eLabel = $(this).data('gal'), eValue = $(this).data('gav'), redirect = false;
 
-			/* To be implemented later */
-			/*var targetURLHost = parseUri($(this).attr('href'))['host'].toLowerCase();
+				//Object to send to GA Event Tracking.
+				var obj = {
+					hitType: 'event',
+					eventCategory: $(this).data('gac'),
+					eventAction: $(this).data('gaa')
+				};
 
-			 if (targetURLHost != '' && location.host != targetURLHost && targetURLHost != 'www.dellsoftware.com') {
-			 obj.transport = 'beacon';
-			 obj.eventCategory = 'Outbound Link';
-			 obj.eventAction = 'click';
-			 obj.eventLabel = $(this).attr('href');
-			 }*/
-
-			// adds Event10 for siteCatalyst bug# 22253
-			if ($(this).attr('data-gaa') == 'Buy Online') {
-				sc_LinkTrackSetBuy();
-			}
-
-			//Make sure that GA is loaded
-			if (typeof ga != 'undefined' && ga.hasOwnProperty('loaded') && ga.loaded === true) {
-				if (URL !== undefined) {
-					//Fallback if hitCallback does not execute in time.
-					setTimeout(redirectURL, 1000);
+				if (eLabel !== undefined) {
+					obj.eventLabel = eLabel;
 				}
 
-				//Send event tracking to google.
-				ga('send', obj);
-			}
-			else if (URL !== undefined) {
-				redirectURL();
-			}
+				if (eValue !== undefined) {
+					obj.eventValue = parseInt(eValue);
+				}
 
-			/**
-			 * Redirect function.
-			 */
-			function redirectURL() {
-				if (!redirect) {
-					redirect = true;
-					location.href = URL;
+				//Redirect after event tracking is successfully sent to GA if URL is not undefined.
+				if (URL !== undefined) {
+					obj.hitCallback = redirectURL;
+				}
+
+				/* To be implemented later */
+				/*var targetURLHost = parseUri($(this).attr('href'))['host'].toLowerCase();
+
+				 if (targetURLHost != '' && location.host != targetURLHost && targetURLHost != 'www.dellsoftware.com') {
+				 obj.transport = 'beacon';
+				 obj.eventCategory = 'Outbound Link';
+				 obj.eventAction = 'click';
+				 obj.eventLabel = $(this).attr('href');
+				 }*/
+
+				// adds Event10 for siteCatalyst bug# 22253
+				if ($(this).attr('data-gaa') == 'Buy Online') {
+					sc_LinkTrackSetBuy();
+				}
+
+				//Make sure that GA is loaded
+				if (typeof ga != 'undefined' && ga.hasOwnProperty('loaded') && ga.loaded === true) {
+					if (URL !== undefined) {
+						//Fallback if hitCallback does not execute in time.
+						setTimeout(redirectURL, 1000);
+					}
+
+					//Send event tracking to google.
+					ga('send', obj);
+				}
+				else if (URL !== undefined) {
+					redirectURL();
+				}
+
+				/**
+				 * Redirect function.
+				 */
+				function redirectURL() {
+					if (!redirect) {
+						redirect = true;
+						location.href = URL;
+					}
 				}
 			}
 		})
+
 		.on('click', '.btn-buy', function (e) {
 			//Site Catalyst Custom Event Tracking for Buy Online
 			//TODO: Might want to generalize this so that this can be used for other custom events.
@@ -144,6 +151,7 @@ $(document).ready(function () {
 			}
 		});
 });
+
 
 $(window).load(function () {
 	//This is only used on the new header/footer not responsive.
