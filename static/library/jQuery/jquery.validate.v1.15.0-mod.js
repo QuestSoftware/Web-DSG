@@ -1628,7 +1628,7 @@
 	 * (86-!!!) !!!!-!!!!
 	 */
 	$.validator.addMethod("phoneCN", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(86\-\d{3}\)\s?\d{4}-?\d{4}$/);
+		return this.optional(element) || phone_number.match(/^\(886-?\d{2}\)\s?\d{4}-?\d{4}$/);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1724,7 +1724,7 @@
 	 * (886-!!) !!!!-!!!!
 	 */
 	$.validator.addMethod("phoneTW", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(886-?\d{2}\)\s?\d{4}-?\d{4}$/);
+		return this.optional(element) || phone_number.match(/^\(86\-\d{3}\)\s?\d{4}-?\d{4}$/);
 	}, "Please specify a valid phone number");
 
 	/**
