@@ -1600,11 +1600,13 @@
 	 * (212) 999-2345 x12345
 	 */
 	$.validator.addMethod("phoneUS", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\([2-9]([02-9]\d|1[02-9])\)\s?[2-9]([02-9]\d|1[02-9])-?\d{4}(\sx\d{1,5}|\sx\d{0,5}_{0,5})?$/);
+		//return this.optional(element) || phone_number.match(/^\([2-9]([02-9]\d|1[02-9])\)\s?[2-9]([02-9]\d|1[02-9])-?\d{4}(\sx\d{1,5}|\sx\d{0,5}_{0,5})?$/);
+		return this.optional(element) || getNumDigits(phone_number) >= 10 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	$.validator.addMethod("phoneCA", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\([2-9]([02-9]\d|1[02-9])\)\s?[2-9]([02-9]\d|1[02-9])-?\d{4}(\sx\d{1,5}|\sx\d{0,5}_{0,5})?$/);
+		//return this.optional(element) || phone_number.match(/^\([2-9]([02-9]\d|1[02-9])\)\s?[2-9]([02-9]\d|1[02-9])-?\d{4}(\sx\d{1,5}|\sx\d{0,5}_{0,5})?$/);
+		return this.optional(element) || getNumDigits(phone_number) >= 10 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1616,7 +1618,8 @@
 	 * (61!) !!!!-!!!!
 	 */
 	$.validator.addMethod("phoneAU", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(61\d\)\s?\d{4}-?\d{4}$/);
+		//return this.optional(element) || phone_number.match(/^\(61\d\)\s?\d{4}-?\d{4}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 10 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1628,7 +1631,21 @@
 	 * (86-!!!) !!!!-!!!!
 	 */
 	$.validator.addMethod("phoneCN", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(886-?\d{2}\)\s?\d{4}-?\d{4}$/);
+		//return this.optional(element) || phone_number.match(/^\(886-?\d{2}\)\s?\d{4}-?\d{4}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 12 && /[\(\)\s\-]+/.test(phone_number);
+	}, "Please specify a valid phone number");
+
+	/**
+	 * Matches ID (Indonesia) phone number format
+	 *
+	 * where the area code may not start with 1 and the prefix may not start with 1
+	 * allows '-' or ' ' as a separator and allows parens around area code
+	 *
+	 * (91) !! !!!!-!!!!
+	 */
+	$.validator.addMethod("phoneIN", function (phone_number, element) {
+		//return this.optional(element) || phone_number.match(/^\(91\)\s?\d{2}\s?\d{4}-?\d{4}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 12 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1640,7 +1657,8 @@
 	 * (91) !! !!!!-!!!!
 	 */
 	$.validator.addMethod("phoneIN", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(91\)\s?\d{2}\s?\d{4}-?\d{4}$/);
+		//return this.optional(element) || phone_number.match(/^\(91\)\s?\d{2}\s?\d{4}-?\d{4}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 12 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1652,7 +1670,8 @@
 	 * (60) !!!!!!!!!
 	 */
 	$.validator.addMethod("phoneMY", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(60\)\s?\d{9}$/);
+		//return this.optional(element) || phone_number.match(/^\(60\)\s?\d{9}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 11 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1664,7 +1683,8 @@
 	 * (64) ! !!!-!!!!
 	 */
 	$.validator.addMethod("phoneNZ", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(64\)\s?\d{1}\s?\d{3}-?\d{4}$/);
+		//return this.optional(element) || phone_number.match(/^\(64\)\s?\d{1}\s?\d{3}-?\d{4}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 10 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1676,7 +1696,21 @@
 	 * (65) !!!!-!!!!
 	 */
 	$.validator.addMethod("phoneSG", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(65\)\s?\d{4}-?\d{4}$/);
+		//return this.optional(element) || phone_number.match(/^\(65\)\s?\d{4}-?\d{4}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 11 && /[\(\)\s\-]+/.test(phone_number);
+	}, "Please specify a valid phone number");
+
+	/**
+	 * Matches JP (Japan) phone number format
+	 *
+	 * where the area code may not start with 1 and the prefix may not start with 1
+	 * allows '-' or ' ' as a separator and allows parens around area code
+	 *
+	 * (82) !!!-!!!!-!!!!
+	 */
+	$.validator.addMethod("phoneJP", function (phone_number, element) {
+		//return this.optional(element) || phone_number.match(/^\(82\)\s?\d{3}-?\d{4}-?\d{4}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 11 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1688,7 +1722,8 @@
 	 * (82) !!!-!!!!-!!!!
 	 */
 	$.validator.addMethod("phoneKR", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(82\)\s?\d{3}-?\d{4}-?\d{4}$/);
+		//return this.optional(element) || phone_number.match(/^\(82\)\s?\d{3}-?\d{4}-?\d{4}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 13 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1700,7 +1735,8 @@
 	 * (62) !!!!!!!!!!
 	 */
 	$.validator.addMethod("phonePH", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(62\)\s?\d{10}$/);
+		//return this.optional(element) || phone_number.match(/^\(62\)\s?\d{10}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 12 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1712,7 +1748,8 @@
 	 * (852) !!!!-!!!!
 	 */
 	$.validator.addMethod("phoneHK", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(852\)\s?\d{4}-?\d{4}$/);
+		//return this.optional(element) || phone_number.match(/^\(852\)\s?\d{4}-?\d{4}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 11 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1724,7 +1761,8 @@
 	 * (886-!!) !!!!-!!!!
 	 */
 	$.validator.addMethod("phoneTW", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(86\-\d{3}\)\s?\d{4}-?\d{4}$/);
+		//return this.optional(element) || phone_number.match(/^\(86\-\d{3}\)\s?\d{4}-?\d{4}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 13 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1736,7 +1774,8 @@
 	 * (66) !!!!!!!!!
 	 */
 	$.validator.addMethod("phoneTH", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(66\)\s?\d{9}$/);
+		//return this.optional(element) || phone_number.match(/^\(66\)\s?\d{9}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 11 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1748,6 +1787,19 @@
 	 * (84) !!!!!!!!!
 	 */
 	$.validator.addMethod("phoneVN", function (phone_number, element) {
-		return this.optional(element) || phone_number.match(/^\(84\)\s?\d{9}$/);
+		//return this.optional(element) || phone_number.match(/^\(84\)\s?\d{9}$/);
+		return this.optional(element) || getNumDigits(phone_number) <= 11 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
+
+	function getNumDigits(phone) {
+		var i = 0, numDigits = 0;
+
+		for (i; i < phone.length; i++) {
+			if (phone.substr(i, 1).match(/\d/)) {
+				numDigits++;
+			}
+		}
+
+		return numDigits;
+	}
 }));
