@@ -36,6 +36,7 @@ function DemandBaseInitialize(frm, btn, companyID, ltg, connectObj, callback) {
 				'sub_industry': 'DB_SubIndustry'
 			}
 		};
+
 	//Reset form
 	$(frm).find(':visible:input').each(function () {
 		if ($.inArray($(this).attr('type'), ['button', 'submit', 'checkbox']) == -1) {
@@ -46,10 +47,8 @@ function DemandBaseInitialize(frm, btn, companyID, ltg, connectObj, callback) {
 	//Test for DemandBase
 	//Waits for user input in the company field - JL
 	$('#' + companyID).on($('html').hasClass('ie8') ? 'propertychange' : 'input', function () {
-		if ($(frm).data('isFrmOpen') == undefined) {
-			if ($(this).val().length >= 2) {
-				testAutocompleteWidget(frm, companyID);
-			}
+		if ($(frm).data('isFrmOpen') == undefined && $(this).val().length >= 2) {
+			testAutocompleteWidget(frm, companyID);
 		}
 	});
 
@@ -68,14 +67,6 @@ function DemandBaseInitialize(frm, btn, companyID, ltg, connectObj, callback) {
 
 	//IS can control siteTags.DemandBaseUp value.
 	if (siteTags.DemandBaseUp != "false") {
-		//Disable submit button. Button should already be disabled. But this is just in case.
-		if ($('#chklicense').length) {
-			$('#chklicense').trigger('change');
-		}
-		else {
-			$(frm).find('[type=submit]').prop('disabled', true);
-		}
-
 		(function () {
 			var dbt = document.createElement('script');
 			dbt.type = 'text/javascript';
@@ -83,24 +74,25 @@ function DemandBaseInitialize(frm, btn, companyID, ltg, connectObj, callback) {
 			dbt.id = 'demandbase-form';
 			dbt.onload = function () {
 				var version = $().jquery.split('.');
+
 				if (version[0] == 1 && version[1] < 9) {
 					$.noConflict();
 				}
+
 				Demandbase.jQuery.ajaxSetup({
 					beforeSend: function () {
-						var str = this.url,
-							regexp = /demandbase\.com\/autocomplete\?callback/g,
-							isRealCallback = str.match(regexp);
-						if (isRealCallback !== null) {
+						if (this.url.match(/demandbase\.com\/autocomplete\?callback/g) !== null) {
 							startAjaxCallTracker(frm, companyID);
 						}
 					}
 				});
 
 			};
+
 			dbt.onerror = function () {
-				PopulateDBFieldsWebFormConnector({}, frm, companyID);
+				DemandBaseOpenForm(frm, id);
 			};
+
 			dbt.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'scripts.demandbase.com/formWidget.js';
 
 			var s = document.getElementsByTagName('script')[0];
@@ -110,14 +102,7 @@ function DemandBaseInitialize(frm, btn, companyID, ltg, connectObj, callback) {
 	}
 	else {
 		//Demandbase is not running.
-
-		//Enable submit button
-		if ($('#chklicense').length) {
-			$('#chklicense').trigger('change');
-		}
-		else {
-			$(frm).find('[type=submit]').prop('disabled', false);
-		}
+		DemandBaseOpenForm(frm, id);
 	}
 
 	db_hook_init = function () {
@@ -147,18 +132,19 @@ function DemandBaseInitialize(frm, btn, companyID, ltg, connectObj, callback) {
 			var hasTr = $(frm).find('[id^="tr_"]');
 
 			if (hasTr.length) {
-        if (data.country == 'CA') {
-          hasTr.show();
-        } else {
-          hasTr
-            .not('[id^="tr_OptIn"]')
-            .not('[id^="tr_Privacy"]')
-            .show();
-        }
-      }
+				if (data.country == 'CA') {
+					hasTr.show();
+				}
+				else {
+					hasTr
+						.not('[id^="tr_OptIn"]')
+						.not('[id^="tr_Privacy"]')
+						.show();
+				}
+			}
 
 			$(frm).find("div[firstscreen=0]").show();
-    }
+		}
 	};
 
 	// When there is an error with demandbase
@@ -199,7 +185,9 @@ function DemandBaseOnComplete(frm, btn, id, ltg) {
 	}, 100);
 
 	function DemandBaseBind() {
-		var autoElem = Demandbase.jQuery(Demandbase.CompanyAutocomplete.textField), ajaxtrackerSet = false, widgetContainer = $('#demandbase-company-autocomplete-widget');
+		var autoElem = Demandbase.jQuery(Demandbase.CompanyAutocomplete.textField),
+			ajaxtrackerSet = false,
+			widgetContainer = $('#demandbase-company-autocomplete-widget');
 
 		//Prevent browser from display its own autofill dialog.
 		autoElem.attr('autocomplete', /Chrome/.test(navigator.userAgent) ? false : 'off');
@@ -222,41 +210,15 @@ function DemandBaseOnComplete(frm, btn, id, ltg) {
 				if ((e.keyCode == 13 || e.keyCode == 9)) {
 					autoElem.data('key13_9clicked', true);
 
-					//clear dataset
-					dbDataSet = '';
-
-					PopulateDBFieldsWebFormConnector({}, frm, id);
-
-					autoElem.autocomplete('close');
-					notice.css('display', 'none');
-
-					for (var i in ltg) {
-						$('#tr_' + ltg[i]).show();
-					}
-
-					if ($('#chklicense').length) {
-						$('#chklicense').trigger('change');
-					}
-					else {
-						$(frm).find('[type=submit]').prop('disabled', false);
-					}
+					DemandBaseOpenForm(frm, id);
 				}
 			})
 			.on('blur', function () {
 				var elem = this;
 
 				setTimeout(function () {
-					if (!autoElem.data('destroyed')) {
-						if ($(elem).val() != '' && !autoElem.data('selected') && !autoElem.data('mouseenter') && !widgetContainer.find('> ul').is(':visible') && !autoElem.data('key13_9clicked')) {
-							PopulateDBFieldsWebFormConnector({}, frm, id);
-
-							if ($('#chklicense').length) {
-								$('#chklicense').trigger('change');
-							}
-							else {
-								$(frm).find('[type=submit]').prop('disabled', false);
-							}
-						}
+					if ($(elem).val() != '' && !autoElem.data('selected') && !autoElem.data('mouseenter') && !widgetContainer.find('> ul').is(':visible') && !autoElem.data('key13_9clicked')) {
+						DemandBaseOpenForm(frm, id);
 					}
 				}, 200);
 			})
@@ -269,54 +231,43 @@ function DemandBaseOnComplete(frm, btn, id, ltg) {
 				}
 			});
 
-		var notice = $('<div class="dbwrapper"><div>Select your company<div>Don\'t see your company? <a href="#" id="use-input-value">Close List &gt;</a></div></div></div>').appendTo('body'),
-			ul = widgetContainer.find('> ul:last-child');
+		var ul = widgetContainer.find('> ul:last-child');
 
 		$('#demandbase-autocomplete').css('zIndex', 998);
+
+		$('#demandbase-company-autocomplete-widget')
+			.hide()
+			.prepend('<div style="padding: 0 0 0 5px;">Select your company</div>')
+			.append('<div style="padding: 0 0 0 5px;">Don\'t see your company? <a href="#" id="use-input-value">Close List &gt;</a></div>');
 
 		$('#use-input-value').on('click', function (e) {
 			e.preventDefault();
 			e.stopPropagation();
 
-			dbDataSet = '';
-
-			autoElem.data('destroyed', true).autocomplete('destroy');
-			notice.css('display', 'none');
-
-			PopulateDBFieldsWebFormConnector({}, frm, id);
-
-			if ($('#chklicense').length) {
-				$('#chklicense').trigger('change');
-			}
-			else {
-				$(frm).find('[type=submit]').prop('disabled', false);
-			}
-
-			setTimeout(function () {
-				autoElem.parents('form').find(':input:visible').each(function (i) {
-					if ($(this).css('background-color') == 'rgb(248, 254, 190)') {
-						$(this).css('background-color', 'transparent');
-					}
-				});
-			}, 200);
+			DemandBaseOpenForm(frm, id);
 		});
 
 		autoElem
 		// autocompletesearch is trigger right before ajax call is made - JL
 			.bind('autocompletesearch', function (event, ui) {
-				if ($('.ie8').length > 0) {
-					if (!ajaxtrackerSet) {
-						ie8UnbindTrigger(id);
-						startAjaxCallTracker(frm, id);
-						ajaxtrackerSet = true;
-					}
+				if ($('.ie8').length > 0 && !ajaxtrackerSet) {
+					ie8UnbindTrigger(id);
+					startAjaxCallTracker(frm, id);
+					ajaxtrackerSet = true;
 				}
-
 			})
 			.bind('autocompleteselect', function () {
 				autoElem.data('selected', true);
+				$('#demandbase-company-autocomplete-widget').hide();
 			})
 			.bind('autocompleteopen', function () {
+				//If there is no data visible assume an error has occured and show the whole form
+				// [OR] Do not show when user clicks on tab or enter before this opens up.
+				if (!$('#demandbase-company-autocomplete-widget').find('ul').length || autoElem.data('key13_9clicked')) {
+					DemandBaseOpenForm(frm, id);
+					return false;
+				}
+
 				companyOpen = true;
 
 				// Check if form is already open JL
@@ -324,44 +275,31 @@ function DemandBaseOnComplete(frm, btn, id, ltg) {
 					return;
 				}
 
-				//Do not show when user clicks on tab or enter before this opens up.
-				if (autoElem.data('key13_9clicked')) {
-					autoElem.data('key13_9clicked', false).autocomplete('close');
-					return false;
-				}
-
 				autoElem.data('selected', false);
 
-				var ulWidth = ul.outerWidth(true), position = {
+				$('#demandbase-company-autocomplete-widget').css({
+					position: 'absolute',
 					top: autoElem.offset().top + autoElem.outerHeight(false),
-					left: autoElem.offset().left - (ulWidth - autoElem.outerWidth(true))
-				};
+					left: autoElem.offset().left,
+					backgroundColor: '#c0c0c0',
+					fontFamily: '"Trebuchet MS"',
+					fontSize: 14,
+					border: '1px solid #c0c0c0',
+					width: autoElem.outerWidth()
+				}).show();
 
-				if (ulWidth < 243) {
-					ulWidth = 243;
-					ul.css('width', 243);
-				}
-
-				ul.show().parent().show().end().css({
-					top: position.top + 24,
-					left: position.left + 1
-				});
-
-				notice.css({
-					top: position.top,
-					left: ($('body').hasClass('off-canvas-mode') ? document.body.clientWidth : 0) + position.left,
-					width: ulWidth + 2,
-					height: ul.outerHeight(true) + 24 + 24,
-					display: 'block',
-					zIndex: ul.css('zIndex') - 1
+				ul.css({
+					position: 'static',
+					width: '100%'
 				});
 
 				if ($('body').hasClass('off-canvas-mode')) {
-					ul.css('left', parseInt(ul.css('left')) + document.body.clientWidth);
+					$('#demandbase-company-autocomplete-widget').css('left', parseInt(ul.css('left')) + document.body.clientWidth);
 				}
 			})
 			.bind('autocompleteclose', function () {
-				notice.css('display', 'none');
+				//notice.css('display', 'none');
+				$('#demandbase-company-autocomplete-widget').hide();
 			});
 
 		//Automatically perform search if field is not empty.
@@ -382,15 +320,10 @@ function testAutocompleteWidget(frm, id) {
 	}
 
 	setTimeout(function () {
-		if (!$('#demandbase-company-autocomplete-widget').find('> ul').length > 0) {
-			PopulateDBFieldsWebFormConnector({}, frm, id);
-			$(frm).find('[type=submit]').prop('disabled', false);
+		if (!$('#demandbase-company-autocomplete-widget').find('> ul').length) {
+			DemandBaseOpenForm(frm, id);
 			ie8UnbindTrigger(id);
 			document.getElementById(id).focus();
-			/* needed for ie8 */
-			$(frm).data('isFrmOpen', 'true');
-			/* prevents script to re-run is form is already open */
-
 		}
 	}, 1500);
 }
@@ -402,16 +335,49 @@ function startAjaxCallTracker(frm, id) {
 	if (companyOpen === false) {
 		setTimeout(function () {
 			if (companyOpen === false) {
-				$('#' + id).removeClass('ui-autocomplete-loading');
-				PopulateDBFieldsWebFormConnector({}, frm, id);
-				var autoElem = Demandbase.jQuery(Demandbase.CompanyAutocomplete.textField);
-				autoElem.autocomplete('destroy');
-				$(frm).find('[type=submit]').prop('disabled', false);
-
-				$(frm).data('isFrmOpen', 'true');
-
+				DemandBaseOpenForm(frm, id);
 			}
 		}, 1800);
+	}
+}
+
+function DemandBaseOpenForm(frm, id) {
+	if ($(frm).data('isFrmOpen') !== 'true') {
+		$('#demandbase-company-autocomplete-widget').hide();
+
+		PopulateDBFieldsWebFormConnector({}, frm, id);
+
+		$('#' + id).removeClass('ui-autocomplete-loading');
+
+		//Destroy autocomplete.
+		try {
+			var autoElem = Demandbase.jQuery(Demandbase.CompanyAutocomplete.textField);
+			autoElem.autocomplete('destroy');
+
+			setTimeout(function () {
+				autoElem.parents('form').find(':input:visible').each(function (i) {
+					if ($(this).css('background-color') == 'rgb(248, 254, 190)') {
+						$(this).css('background-color', 'transparent');
+					}
+				});
+			}, 200);
+		}
+		catch (e) {
+
+		}
+
+		disableFormValidCheck(frm, true);
+
+		setTimeout(function () {
+			$(frm).find('[type=submit]').prop('disabled', false);
+		}, 100);
+
+		/* needed for ie8 */
+		$(frm).data('isFrmOpen', 'true');
+		/* prevents script to re-run is form is already open */
+
+		//Sometimes PopulateDBFieldsWebFormConnector does not open all fields. This will force it to open.
+		$(frm).find('[firstscreen="0"]').show();
 	}
 }
 
