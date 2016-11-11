@@ -1619,7 +1619,7 @@
 	 */
 	$.validator.addMethod("phoneAU", function (phone_number, element) {
 		//return this.optional(element) || phone_number.match(/^\(61\d\)\s?\d{4}-?\d{4}$/);
-		return this.optional(element) || getNumDigits(phone_number) >= 8 && getNumDigits(phone_number) <= 10 && /[\(\)\s\-]+/.test(phone_number);
+		return this.optional(element) || getNumDigits(phone_number) >= 10 && getNumDigits(phone_number) <= 11 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1632,7 +1632,7 @@
 	 */
 	$.validator.addMethod("phoneCN", function (phone_number, element) {
 		//return this.optional(element) || phone_number.match(/^\(886-?\d{2}\)\s?\d{4}-?\d{4}$/);
-		return this.optional(element) || getNumDigits(phone_number) >= 8 && getNumDigits(phone_number) <= 12 && /[\(\)\s\-]+/.test(phone_number);
+		return this.optional(element) || getNumDigits(phone_number) >= 10 && getNumDigits(phone_number) <= 13 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1645,7 +1645,7 @@
 	 */
 	$.validator.addMethod("phoneID", function (phone_number, element) {
 		//return this.optional(element) || phone_number.match(/^\(91\)\s?\d{2}\s?\d{4}-?\d{4}$/);
-		return this.optional(element) || getNumDigits(phone_number) >= 8 && getNumDigits(phone_number) <= 12 && /[\(\)\s\-]+/.test(phone_number);
+		return this.optional(element) || getNumDigits(phone_number) >= 10 && getNumDigits(phone_number) <= 12 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1658,7 +1658,7 @@
 	 */
 	$.validator.addMethod("phoneIN", function (phone_number, element) {
 		//return this.optional(element) || phone_number.match(/^\(91\)\s?\d{2}\s?\d{4}-?\d{4}$/);
-		return this.optional(element) || getNumDigits(phone_number) >= 8 && getNumDigits(phone_number) <= 12 && /[\(\)\s\-]+/.test(phone_number);
+		return this.optional(element) || getNumDigits(phone_number) >= 10 && getNumDigits(phone_number) <= 12 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1671,7 +1671,7 @@
 	 */
 	$.validator.addMethod("phoneMY", function (phone_number, element) {
 		//return this.optional(element) || phone_number.match(/^\(60\)\s?\d{9}$/);
-		return this.optional(element) || getNumDigits(phone_number) >= 8 && getNumDigits(phone_number) <= 11 && /[\(\)\s\-]+/.test(phone_number);
+		return this.optional(element) || getNumDigits(phone_number) >= 10 && getNumDigits(phone_number) <= 11 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1684,7 +1684,7 @@
 	 */
 	$.validator.addMethod("phoneNZ", function (phone_number, element) {
 		//return this.optional(element) || phone_number.match(/^\(64\)\s?\d{1}\s?\d{3}-?\d{4}$/);
-		return this.optional(element) || getNumDigits(phone_number) >= 8 && getNumDigits(phone_number) <= 10 && /[\(\)\s\-]+/.test(phone_number);
+		return this.optional(element) || getNumDigits(phone_number) == 10 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1697,7 +1697,7 @@
 	 */
 	$.validator.addMethod("phoneSG", function (phone_number, element) {
 		//return this.optional(element) || phone_number.match(/^\(65\)\s?\d{4}-?\d{4}$/);
-		return this.optional(element) || getNumDigits(phone_number) >= 8 && getNumDigits(phone_number) <= 11 && /[\(\)\s\-]+/.test(phone_number);
+		return this.optional(element) || getNumDigits(phone_number) == 10 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1723,7 +1723,7 @@
 	 */
 	$.validator.addMethod("phoneKR", function (phone_number, element) {
 		//return this.optional(element) || phone_number.match(/^\(82\)\s?\d{3}-?\d{4}-?\d{4}$/);
-		return this.optional(element) || getNumDigits(phone_number) >= 8 && getNumDigits(phone_number) <= 13 && /[\(\)\s\-]+/.test(phone_number);
+		return this.optional(element) || getNumDigits(phone_number) >= 10 && getNumDigits(phone_number) <= 13 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1736,7 +1736,7 @@
 	 */
 	$.validator.addMethod("phonePH", function (phone_number, element) {
 		//return this.optional(element) || phone_number.match(/^\(62\)\s?\d{10}$/);
-		return this.optional(element) || getNumDigits(phone_number) >= 8 && getNumDigits(phone_number) <= 12 && /[\(\)\s\-]+/.test(phone_number);
+		return this.optional(element) || getNumDigits(phone_number) >= 10 && getNumDigits(phone_number) <= 12 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1749,7 +1749,7 @@
 	 */
 	$.validator.addMethod("phoneHK", function (phone_number, element) {
 		//return this.optional(element) || phone_number.match(/^\(852\)\s?\d{4}-?\d{4}$/);
-		return this.optional(element) || getNumDigits(phone_number) >= 8 && getNumDigits(phone_number) <= 11 && /[\(\)\s\-]+/.test(phone_number);
+		return this.optional(element) || getNumDigits(phone_number) == 11 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1762,7 +1762,7 @@
 	 */
 	$.validator.addMethod("phoneTW", function (phone_number, element) {
 		//return this.optional(element) || phone_number.match(/^\(86\-\d{3}\)\s?\d{4}-?\d{4}$/);
-		return this.optional(element) || getNumDigits(phone_number) >= 8 && getNumDigits(phone_number) <= 13 && /[\(\)\s\-]+/.test(phone_number);
+		return this.optional(element) || getNumDigits(phone_number) >= 11 && getNumDigits(phone_number) <= 13 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1775,7 +1775,7 @@
 	 */
 	$.validator.addMethod("phoneTH", function (phone_number, element) {
 		//return this.optional(element) || phone_number.match(/^\(66\)\s?\d{9}$/);
-		return this.optional(element) || getNumDigits(phone_number) >= 9 && getNumDigits(phone_number) <= 11 && /[\(\)\s\-]+/.test(phone_number);
+		return this.optional(element) || getNumDigits(phone_number) == 11 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	/**
@@ -1788,7 +1788,7 @@
 	 */
 	$.validator.addMethod("phoneVN", function (phone_number, element) {
 		//return this.optional(element) || phone_number.match(/^\(84\)\s?\d{9}$/);
-		return this.optional(element) || getNumDigits(phone_number) >= 9 && getNumDigits(phone_number) <= 11 && /[\(\)\s\-]+/.test(phone_number);
+		return this.optional(element) || getNumDigits(phone_number) == 11 && /[\(\)\s\-]+/.test(phone_number);
 	}, "Please specify a valid phone number");
 
 	function getNumDigits(phone) {
