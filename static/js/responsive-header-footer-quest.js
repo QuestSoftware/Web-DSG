@@ -345,7 +345,7 @@ function processHeaderFooter() {
 	//Issue with iPad Chrome where links couldn't be clicked.
 	//Reason was for SiteCatalyst injecting onclick attribute to all anchor tag.
 	if (isChrome) {
-		$('footer').on('click', 'a', function (e) {
+		$('footer').find('a').each(function (e) {
 			var target = $(this).attr('target');
 
 			if (target !== undefined && target != '_self') {
