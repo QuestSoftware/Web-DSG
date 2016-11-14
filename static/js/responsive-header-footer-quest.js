@@ -32,7 +32,7 @@ $(document).ready(function () {
 
 				//Determine if destination URL needs to open in a new window/tab.
 				if (URLTarget !== undefined && URLTarget != '_self' && URLTarget != '') {
-					//Need to open immediately or else chrome/firefox popup block will block it.
+					//Need to open immediately or else firefox popup block will block it. This does not work for chrome anymore.
 					newWin = window.open('', URLTarget);
 				}
 
@@ -341,18 +341,6 @@ function processHeaderFooter() {
 			$('#country-popup').toggle();
 		}
 	});
-
-	//Issue with iPad Chrome where links couldn't be clicked.
-	//Reason was for SiteCatalyst injecting onclick attribute to all anchor tag.
-	if (isChrome) {
-		$('footer').find('a').each(function (e) {
-			var target = $(this).attr('target');
-
-			if (target !== undefined && target != '_self') {
-				$(this).attr('target', '_self');
-			}
-		});
-	}
 
 	function bgAnimate(target) {
 		var elm = $(target);

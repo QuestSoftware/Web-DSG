@@ -1,6 +1,6 @@
 /* Used on Responsive New Header/Footer */
 
-var burl = location.href, isChrome = /chrome/i.test(navigator.userAgent);
+var burl = location.href;
 
 $(document).ready(function () {
 	//Social media toolbar
@@ -425,17 +425,6 @@ $(window).load(function () {
 
 	//match columns height
 	addResize('matchHeight', true);
-
-	//Check for PDF that is opening up to a new tab. Chrome workaround for the time being.
-	if (isChrome) {
-		$('a').each(function () {
-			var url = $(this).attr('href'), target = $(this).attr('target');
-
-			if (/\.pdf/.test(url) && target != '_self') {
-				$(this).attr('target', '_self');
-			}
-		});
-	}
 });
 
 //Flex box degradation
