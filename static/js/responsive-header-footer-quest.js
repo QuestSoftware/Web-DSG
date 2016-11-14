@@ -344,17 +344,15 @@ function processHeaderFooter() {
 
 	//Issue with iPad Chrome where links couldn't be clicked.
 	//Reason was for SiteCatalyst injecting onclick attribute to all anchor tag.
-	$('footer').on('click', 'a', function (e) {
-		e.preventDefault();
-		e.stopImmediatePropagation();
-		//added this condition to open links in a new tab when needed
-		if ($(this).attr('target') != undefined && $(this).attr('target') == '_blank') {
-			window.open($(this).attr('href'));
-		}
-		else {
-			location.href = $(this).attr('href');
-		}
-	});
+	if (isChrome) {
+		$('footer').on('click', 'a', function (e) {
+			var target = $(this).attr('target');
+
+			if (target !== undefined && target != '_self') {
+				$(this).attr('target', '_self');
+			}
+		});
+	}
 
 	function bgAnimate(target) {
 		var elm = $(target);
